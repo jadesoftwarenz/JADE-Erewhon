@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.28010.2016
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ErewhonDotNetShop", "ErewhonDotNetShop.csproj", "{ABF76CE4-878D-4282-9FDE-4E229FD6201D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetExposure", "..\Erewhon12.9\DotNetExposure.csproj", "{7ED33CCF-7D7D-4F88-98A2-F7EA7E2C4403}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetExposure", "..\ErewhonDotNetExposure\DotNetExposure.csproj", "{7ED33CCF-7D7D-4F88-98A2-F7EA7E2C4403}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

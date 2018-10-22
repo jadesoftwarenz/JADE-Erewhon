@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\Jades\unicode15.10\TestGit\Erewhon\ErewhonDotNetShop\obj\x64\Debug\
+D:\Jades\unicode15.10\Erewhon\Erewhon\Erewhon\ErewhonDotNetShop\obj\x64\Debug\
 ErewhonTest
 none
 false
 DEBUG;TRACE
-D:\Jades\unicode15.10\TestGit\Erewhon\ErewhonDotNetShop\App.xaml
+D:\Jades\unicode15.10\Erewhon\Erewhon\Erewhon\ErewhonDotNetShop\App.xaml
 5-1940732467
 
-272024243112
-126-578172047
+23-1434880810
+1261061135585
 Views\Checkout.xaml;Views\Confirmation.xaml;Views\ItemDetails.xaml;Views\MainWindow.xaml;Views\Shop.xaml;
 
-True
+False
 
