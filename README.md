@@ -1,26 +1,11 @@
 <a href="https://www.jadeworld.com/solutions-for/dev-partners/"><img src="" title="Jade Software" alt="Jade Software"></a>
 (Will be some kind of JADE banner)
 
-# JADE Example Schemas
-This repository contains example JADE schemas in the hopes that you might find them educational and informative.
+# JADE Erewhon Example Schema
+This repository contains the example JADE schema, Erewhon. Erewhon is a fictional E-Commerce platform where agents sell high-end items and clients may bid on or purchase them.
 
-## Schema Guide
----
-#### Erewhon Demonstration System
-- A demonstration system showcasing the various features and best practices of JADE development. 
-- The Erewhon system models an online retailer and showcases the use of multiple front-end interfaces to a single, multi-user database.	
-- **Documentation:** <a href="https://www.jadeworld.com/pdf/white-papers/71/WP_Erewhon.pdf">Erewhon Documentation</a>
----
-#### Banking Schema (From the JADE Developer's course)
-- This schema is a model answer for the banking schema implemented in the JADE Developer's Course.
-- **Documentation:** <a href="https://www.jadeworld.com/docs/jade-71/content/resources/dotnetdev/ch3introtutorial/chapter3.htm">Banking Schema guide</a>
-- **Developer's Course:** <a href="https://www.jadeworld.com/docs/jade-71/content/resources/dotnetdev/ch3introtutorial/chapter3.htm">Developer's Course material</a>
----
-#### ATCG (Automated Test Code Generator)
-- The Automated Test Code Generator (ATCG) enables you to record and replay GUI actions in JADE applications.
-- ATCG is typically used to create regression tests or benchmark systems. Although it has many uses, its primary purpose is to generate code that you can use in data driven testing.
-- **Documentation:** <a href="https://flaredocs.cnw.co.nz/JADE_2018/#resources/releaseinfo2018/chgsnewfeatures2018/atcgrefdocument.htm">ATCG Documentation</a>
----
+## Documentation Guide
+Documentation for the Erewhon system may be found here: <a href="https://www.jadeworld.com/pdf/white-papers/71/WP_Erewhon.pdf">Erewhon Documentation</a>
 
 ## Getting Started
 These instructions will get a copy of the projects up and running on your local machine.
@@ -50,7 +35,7 @@ Before you can load the schemas, you will need JADE 2018 installed:
 
 1. In the **Browse menu**, select **Git Source Control Client** -> **Clone…**  
 (The local path will be filled in for you as the path you selected in Step 1)
-2. For the Repository URL, enter https://github.com/jadesoftwarenz/tim-repo
+2. For the Repository URL, enter https://github.com/jadesoftwarenz/Erewhon
 3. Click on the **Clone** button.
 
 **Step 3: Importing the Erewhon database**
@@ -59,8 +44,6 @@ Before you can load the schemas, you will need JADE 2018 installed:
 3. Select the **ErewhonInvestments.mul** file in the folder you selected as your working directory.
 4. Click the **OK** button, and the Erewhon schemas will be loaded into your Schema Browser ready for use.
 
-Note: To import one of the other schemas, repeat Step 3, but with the desired schema's .mul file.
-
 ## Frequently Asked Questions
 **Q.** Can I contribute to or change these schemas?
 > The schemas contained in this repository are for demonstration purposes and as such are not open to pull requests. However, you are welcome to create a fork and make changes to your own copy, subject to our license ([LICENSE.txt](LICENSE.txt))
@@ -68,14 +51,8 @@ Note: To import one of the other schemas, repeat Step 3, but with the desired sc
 **Q.** What can I do with this Erewhon system?
 > Using the Administration application, you can take the role of a Sales Agent and post items for your (fictional) clients to buy. Using the ErewhonShop applicaiton, you can take the role of a client and bid for or buy (fictional) items. For more information, see the <a href="https://www.jadeworld.com/pdf/white-papers/71/WP_Erewhon.pdf">Erewhon Documentation</a>
 
-
-**Q.** What is the meaning of life?
-> 42.
-
 ## Authors
-> *Do we need Authors for a commercial git?*
 * **Timothy Aitchison** - *Erewhon 2018 update*
-* **Others** - *Specific contribution*
 
 ## License
 
