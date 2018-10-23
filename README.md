@@ -51,9 +51,6 @@ Before you can load the schemas, you will need JADE 2018 installed:
 **Q.** What can I do with this Erewhon system?
 > Using the Administration application, you can take the role of a Sales Agent and post items for your (fictional) clients to buy. Using the ErewhonShop applicaiton, you can take the role of a client and bid for or buy (fictional) items. For more information, see the <a href="https://www.jadeworld.com/pdf/white-papers/71/WP_Erewhon.pdf">Erewhon Documentation</a>
 
-## Authors
-* **Timothy Aitchison** - *Erewhon 2018 update*
-
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.txt](LICENSE.txt) file for details
