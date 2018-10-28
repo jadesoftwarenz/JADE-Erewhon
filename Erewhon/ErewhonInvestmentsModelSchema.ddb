@@ -1,0 +1,314 @@
+﻿JadeVersionNumber 99.0.00
+JadePatchNumber 0
+Platform WindowsNT 10.0 
+Encoding UnicodeUTF8 
+Version 7/99.0.00 
+Schema ErewhonInvestmentsModelSchema CompleteDefinition
+Locales 5129 
++++++RelationalViewDefinitions 
+<<<<<InstanceData 
+^^^^^RelationalView 
+786/RelationalView _modifiedBy String 31 _modifiedTimestamp TimeStamp 8 _patchVersion Integer 4 _sourceParcel JadeSourceParcel 6 _systemVersion String 9 creator String 31 defaultVisibility Integer 4 includeSystemClasses Boolean 1 name String 101 resyncOnExecute Boolean 1 rootClass String 101 rpsDatabaseName String 129 rpsDatabaseType Integer 4 rpsDefaultConnectionString String -1 rpsDefaultPassword String 129 rpsDefaultUserName String 31 rpsExceptionCreate Integer 4 rpsExceptionDelete Integer 4 rpsExceptionUpdate Integer 4 rpsLoggingOptions Integer 4 rpsShowMethods Boolean 1 rpsShowObjectFeatures Boolean 1 rpsShowVirtualProperties Integer 4 rpsTopSchemaName String 101 rpsUseOidClassInstMap Boolean 1 schema Schema 6 securityMethod String 101 timeCreated TimeStamp 8 uuid Binary 16 
+184/1000217.1 10/ErewhonRPS 6/cnwta3 23/2018:10:01:15:48:44.525 0 0.0 7/99.0.00 6/cnwta3 0 0 10/ErewhonRPS 0 0/ 0/ 1 0/ 0/ 0/ 0 0 0 0 0 0 0 0/ 0 1000001.7 0/ 23/2018:10:01:15:48:44.378 0/ 
+*****RelationalView 
+^^^^^ExternalRPSClassMaps 
+314/ExternalRPSClassMap _modifiedBy String 31 _modifiedTimestamp TimeStamp 8 _patchVersion Integer 4 _systemVersion String 9 constraint RAMethod 6 excluded Boolean 1 guid String 39 includeInCallback Boolean 1 noDeletes Boolean 1 rpsClass Class 6 rpsDatabase RelationalView 6 tableMode Integer 4 typeMapValue Binary -1 
+160/1000755.1 19/ExternalRPSClassMap 6/cnwta3 23/2018:10:01:15:48:44.459 0 7/99.0.00 0.0 0 38/{2349a87b-24c5-e811-99e7-00ff881fbdd2} 0 0 1000002.113 1000217.1 0 0/ 
+160/1000755.2 19/ExternalRPSClassMap 6/cnwta3 23/2018:10:01:15:48:44.468 0 7/99.0.00 0.0 0 38/{912f4c7c-24c5-e811-99e9-00ff881fbdd2} 0 0 1000002.114 1000217.1 0 0/ 
+160/1000755.3 19/ExternalRPSClassMap 6/cnwta3 23/2018:10:01:15:48:44.468 0 7/99.0.00 0.0 0 38/{e728f27c-24c5-e811-99ea-00ff881fbdd2} 0 0 1000002.115 1000217.1 0 0/ 
+160/1000755.4 19/ExternalRPSClassMap 6/cnwta3 23/2018:10:01:15:48:44.469 0 7/99.0.00 0.0 0 38/{e11aa87d-24c5-e811-99eb-00ff881fbdd2} 0 0 1000002.117 1000217.1 0 0/ 
+160/1000755.5 19/ExternalRPSClassMap 6/cnwta3 23/2018:09:19:11:14:45.107 0 7/99.0.00 0.0 0 38/{584ab6ed-3bb6-e811-83c3-00ff881fbdd2} 0 0 1000002.125 1000217.1 0 0/ 
+123/1000755.6 19/ExternalRPSClassMap 0/ 0/ 0 0/ 0.0 0 38/{4b2f4c93-0f24-da11-9d5a-000d60ed2e76} 0 0 1000002.116 1000217.1 0 0/ 
+136/1000755.7 19/ExternalRPSClassMap 0/ 0/ 0 0/ 0.0 0 38/{4903c193-0f24-da11-9d5b-000d60ed2e76} 0 0 1000002.118 1000217.1 0 12/TG9jYXRpb24= 
+168/1000755.8 19/ExternalRPSClassMap 6/cnwta3 23/2018:09:12:13:17:12.329 0 7/99.0.00 0.0 0 38/{a5393894-0f24-da11-9d5c-000d60ed2e76} 0 0 1000002.121 1000217.1 0 8/U2FsZQ== 
+164/1000755.9 19/ExternalRPSClassMap 6/cnwta3 23/2018:09:19:11:14:45.112 0 7/99.0.00 0.0 0 38/{cd21a194-0f24-da11-9d5e-000d60ed2e76} 0 0 1000002.124 1000217.1 0 4/U0k= 
+124/1000755.10 19/ExternalRPSClassMap 0/ 0/ 0 0/ 0.0 0 38/{f5090a95-0f24-da11-9d62-000d60ed2e76} 0 0 1000002.127 1000217.1 0 0/ 
+124/1000755.11 19/ExternalRPSClassMap 0/ 0/ 0 0/ 0.0 0 38/{afa28395-0f24-da11-9d64-000d60ed2e76} 0 0 1000002.128 1000217.1 0 0/ 
+137/1000755.12 19/ExternalRPSClassMap 0/ 0/ 0 0/ 0.0 0 38/{6cf41b99-0f24-da11-9d74-000d60ed2e76} 0 0 1000002.119 1000217.1 0 12/Q291bnRyeQ== 
+132/1000755.13 19/ExternalRPSClassMap 0/ 0/ 0 0/ 0.0 0 38/{ca561e99-0f24-da11-9d76-000d60ed2e76} 0 0 1000002.120 1000217.1 0 8/UmVnaW9u 
+165/1000755.14 19/ExternalRPSClassMap 6/cnwta3 23/2018:09:12:13:17:12.329 0 7/99.0.00 0.0 0 38/{70aa949a-0f24-da11-9d79-000d60ed2e76} 0 0 1000002.122 1000217.1 0 4/UlM= 
+165/1000755.15 19/ExternalRPSClassMap 6/cnwta3 23/2018:09:12:13:17:12.329 0 7/99.0.00 0.0 0 38/{ce0c979a-0f24-da11-9d7d-000d60ed2e76} 0 0 1000002.123 1000217.1 0 4/VFM= 
+165/1000755.16 19/ExternalRPSClassMap 6/cnwta3 23/2018:09:19:11:14:45.112 0 7/99.0.00 0.0 0 38/{395f2c9c-0f24-da11-9d86-000d60ed2e76} 0 0 1000002.126 1000217.1 0 4/VFNJ 
+*****ExternalRPSClassMap 
+^^^^^RelationalTableClass
+451/RelationalTableClass _sourceParcel JadeSourceParcel 6 firstClassName String 101 name String 101 rView RelationalView 6 rpsClassMap ExternalRPSClassMap 6 rpsExcluded Boolean 1 rpsExtra Boolean 1 rpsIncludeInCallback Boolean 1 rpsShowMethods Boolean 1 rpsShowObjectFeatures Boolean 1 rpsShowVirtualProperties Boolean 1 rpsTableKind Integer 4 uuid Binary 16 bCallIFAllInstances Boolean 1 entityDesc JadeRelationalEntityIF 6 rootCollectionName String 101 
+116/1000399.1 7/Address 0.0 38/{c022a87b-24c5-e811-99e7-00ff881fbdd2} 7/Address 0.0 1000755.1 0 0 0 0 0 0 0 0/ 0 0.0 0/ 
+112/1000399.2 5/Agent 0.0 38/{912f4c7c-24c5-e811-99e8-00ff881fbdd2} 5/Agent 0.0 1000755.2 0 0 0 0 0 0 0 0/ 0 0.0 0/ 
+114/1000399.3 6/Client 0.0 38/{e728f27c-24c5-e811-99e9-00ff881fbdd2} 6/Client 0.0 1000755.3 0 0 0 0 0 0 0 0/ 0 0.0 0/ 
+116/1000399.4 7/Company 0.0 38/{e11aa87d-24c5-e811-99ea-00ff881fbdd2} 7/Company 0.0 1000755.4 0 0 0 0 0 0 0 0/ 0 0.0 0/ 
+132/1000399.5 14/RetailSaleItem 0.0 38/{584ab6ed-3bb6-e811-83c2-00ff881fbdd2} 14/RetailSaleItem 0.0 1000755.5 0 0 0 0 0 0 0 0/ 0 0.0 0/ 
+132/1000399.6 14/CommissionRate 0.0 38/{4b2f4c93-0f24-da11-9d59-000d60ed2e76} 14/CommissionRate 0.0 1000755.6 0 0 0 0 0 0 0 0/ 0 0.0 0/ 
+118/1000399.7 8/Location 0.0 38/{4903c193-0f24-da11-9d5a-000d60ed2e76} 8/Location 0.0 1000755.7 0 0 0 0 0 0 0 0/ 0 0.0 0/ 
+110/1000399.8 4/Sale 0.0 38/{a5393894-0f24-da11-9d5b-000d60ed2e76} 4/Sale 0.0 1000755.8 0 0 0 0 0 0 0 0/ 0 0.0 0/ 
+118/1000399.9 8/SaleItem 0.0 38/{cd21a194-0f24-da11-9d5d-000d60ed2e76} 8/SaleItem 0.0 1000755.9 0 0 0 0 0 0 0 0/ 0 0.0 0/ 
+138/1000399.10 16/SaleItemCategory 0.0 38/{f5090a95-0f24-da11-9d61-000d60ed2e76} 16/SaleItemCategory 0.0 1000755.10 0 0 0 0 0 0 0 0/ 0 0.0 0/ 
+116/1000399.11 6/Tender 0.0 38/{afa28395-0f24-da11-9d63-000d60ed2e76} 6/Tender 0.0 1000755.11 0 0 0 0 0 0 0 0/ 0 0.0 0/ 
+120/1000399.12 8/Location 0.0 38/{6cf41b99-0f24-da11-9d73-000d60ed2e76} 8/Location 0.0 1000755.12 0 0 0 0 0 0 0 0/ 0 0.0 0/ 
+120/1000399.13 8/Location 0.0 38/{ca561e99-0f24-da11-9d75-000d60ed2e76} 8/Location 0.0 1000755.13 0 0 0 0 0 0 0 0/ 0 0.0 0/ 
+112/1000399.14 4/Sale 0.0 38/{70aa949a-0f24-da11-9d78-000d60ed2e76} 4/Sale 0.0 1000755.14 0 0 0 0 0 0 0 0/ 0 0.0 0/ 
+112/1000399.15 4/Sale 0.0 38/{ce0c979a-0f24-da11-9d7c-000d60ed2e76} 4/Sale 0.0 1000755.15 0 0 0 0 0 0 0 0/ 0 0.0 0/ 
+120/1000399.16 8/SaleItem 0.0 38/{395f2c9c-0f24-da11-9d85-000d60ed2e76} 8/SaleItem 0.0 1000755.16 0 0 0 0 0 0 0 0/ 0 0.0 0/ 
+*****RelationalTableClass
+^^^^^RARpsProperty
+333/RARpsProperty attrName String 101 decimals Integer 4 feature Feature 6 length Integer 4 name String 101 referencedClassName String 101 rpsColType Integer 4 rpsExcluded Boolean 1 rpsKeyKind Integer 4 rpsMapKind Integer 4 sqlType Integer 4 table RelationalTable 6 attrDesc JadeRelationalAttributeIF 6 excluded Boolean 1 guid String 39 
+119/1000750.1 4/city 4/city 0 1000012.82 50 4/city 0/ 0 0 0 0 12 1000399.1 0.0 0 38/{e659b27b-24c5-e811-99e7-00ff881fbdd2} 
+128/1000750.2 7/country 7/country 0 1000012.83 50 7/country 0/ 0 0 0 0 12 1000399.1 0.0 0 38/{fd80b27b-24c5-e811-99e7-00ff881fbdd2} 
+122/1000750.3 5/email 5/email 0 1000012.84 60 5/email 0/ 0 0 0 0 12 1000399.1 0.0 0 38/{03a8b27b-24c5-e811-99e7-00ff881fbdd2} 
+116/1000750.4 3/fax 3/fax 0 1000012.85 25 3/fax 0/ 0 0 0 0 12 1000399.1 0.0 0 38/{04a8b27b-24c5-e811-99e7-00ff881fbdd2} 
+119/1000750.5 4/name 4/name 0 1000012.86 80 4/name 0/ 0 0 0 0 12 1000399.1 0.0 0 38/{03a8b27b-24c5-e811-99e8-00ff881fbdd2} 
+110/1000750.6 3/oid 3/oid 0 0.0 16 3/oid 0/ 1 0 1 0 -50 1000399.1 0.0 0 38/{2249a87b-24c5-e811-99e7-00ff881fbdd2} 
+122/1000750.7 5/phone 5/phone 0 1000012.87 25 5/phone 0/ 0 0 0 0 12 1000399.1 0.0 0 38/{0ccfb27b-24c5-e811-99e8-00ff881fbdd2} 
+125/1000750.8 6/street 6/street 0 1000012.88 50 6/street 0/ 0 0 0 0 12 1000399.1 0.0 0 38/{0dcfb27b-24c5-e811-99e8-00ff881fbdd2} 
+128/1000750.9 7/webSite 7/webSite 0 1000012.89 60 7/webSite 0/ 0 0 0 0 12 1000399.1 0.0 0 38/{17f6b27b-24c5-e811-99e8-00ff881fbdd2} 
+138/1000750.10 9/myAddress 9/myAddress 0 1000013.142 28 9/myAddress 0/ 0 0 0 28 -50 1000399.2 0.0 0 38/{89dc4d7c-24c5-e811-99e9-00ff881fbdd2} 
+136/1000750.11 9/myCompany 9/myCompany 0 1000014.6 28 9/myCompany 0/ 0 0 0 28 -50 1000399.2 0.0 0 38/{8e034e7c-24c5-e811-99e9-00ff881fbdd2} 
+120/1000750.12 4/name 4/name 0 1000012.90 80 4/name 0/ 0 0 0 0 12 1000399.2 0.0 0 38/{718e4d7c-24c5-e811-99e9-00ff881fbdd2} 
+111/1000750.13 3/oid 3/oid 0 0.0 16 3/oid 0/ 1 0 1 0 -50 1000399.2 0.0 0 38/{922f4c7c-24c5-e811-99e8-00ff881fbdd2} 
+138/1000750.14 9/myAddress 9/myAddress 0 1000013.143 28 9/myAddress 0/ 0 0 0 28 -50 1000399.3 0.0 0 38/{4c37f77c-24c5-e811-99ea-00ff881fbdd2} 
+137/1000750.15 9/myCompany 9/myCompany 0 1000014.10 28 9/myCompany 0/ 0 0 0 28 -50 1000399.3 0.0 0 38/{4d37f77c-24c5-e811-99ea-00ff881fbdd2} 
+120/1000750.16 4/name 4/name 0 1000012.91 80 4/name 0/ 0 0 0 0 12 1000399.3 0.0 0 38/{db10f77c-24c5-e811-99ea-00ff881fbdd2} 
+111/1000750.17 3/oid 3/oid 0 0.0 16 3/oid 0/ 1 0 1 0 -50 1000399.3 0.0 0 38/{e828f27c-24c5-e811-99e9-00ff881fbdd2} 
+138/1000750.18 9/myAddress 9/myAddress 0 1000013.144 28 9/myAddress 0/ 0 0 0 28 -50 1000399.4 0.0 0 38/{3a34ae7d-24c5-e811-99eb-00ff881fbdd2} 
+120/1000750.19 4/name 4/name 0 1000012.93 80 4/name 0/ 0 0 0 0 12 1000399.4 0.0 0 38/{3934ae7d-24c5-e811-99eb-00ff881fbdd2} 
+111/1000750.20 3/oid 3/oid 0 0.0 16 3/oid 0/ 1 0 1 0 -50 1000399.4 0.0 0 38/{e21aa87d-24c5-e811-99ea-00ff881fbdd2} 
+139/1000750.21 10/codeNumber 10/codeNumber 0 1000012.98 4 10/codeNumber 0/ 0 0 0 0 4 1000399.5 0.0 0 38/{e2fdbded-3bb6-e811-83c4-00ff881fbdd2} 
+140/1000750.22 10/codePrefix 10/codePrefix 0 1000012.99 4 10/codePrefix 0/ 0 0 0 0 12 1000399.5 0.0 0 38/{e024beed-3bb6-e811-83c4-00ff881fbdd2} 
+144/1000750.23 11/forSaleDate 11/forSaleDate 0 1000012.100 23 11/forSaleDate 0/ 0 0 0 0 9 1000399.5 0.0 0 38/{cdd6bded-3bb6-e811-83c3-00ff881fbdd2} 
+165/1000750.24 15/fullDescription 15/fullDescription 0 1000012.101 2147483647 15/fullDescription 0/ 0 0 0 0 -1 1000399.5 0.0 0 38/{e124beed-3bb6-e811-83c4-00ff881fbdd2} 
+131/1000750.25 7/myAgent 7/myAgent 0 1000014.28 28 7/myAgent 0/ 0 0 0 28 -50 1000399.5 0.0 0 38/{e024beed-3bb6-e811-83c5-00ff881fbdd2} 
+137/1000750.26 9/myCompany 9/myCompany 0 1000014.29 28 9/myCompany 0/ 0 0 0 28 -50 1000399.5 0.0 0 38/{eb4bbeed-3bb6-e811-83c5-00ff881fbdd2} 
+134/1000750.27 8/myRegion 8/myRegion 0 1000014.30 28 8/myRegion 0/ 0 0 0 28 -50 1000399.5 0.0 0 38/{ec4bbeed-3bb6-e811-83c5-00ff881fbdd2} 
+128/1000750.28 6/mySale 6/mySale 0 1000014.31 28 6/mySale 0/ 0 0 0 28 -50 1000399.5 0.0 0 38/{eb4bbeed-3bb6-e811-83c6-00ff881fbdd2} 
+167/1000750.29 18/mySaleItemCategory 18/mySaleItemCategory 0 1000014.32 28 18/mySaleItemCategory 0/ 0 0 0 28 -50 1000399.5 0.0 0 38/{ec4bbeed-3bb6-e811-83c6-00ff881fbdd2} 
+111/1000750.30 3/oid 3/oid 0 0.0 16 3/oid 0/ 1 0 1 0 -50 1000399.5 0.0 0 38/{594ab6ed-3bb6-e811-83c2-00ff881fbdd2} 
+132/1000750.31 5/photo 5/photo 0 1000012.102 2147483647 5/photo 0/ 0 0 0 0 -4 1000399.5 0.0 0 38/{e1fdbded-3bb6-e811-83c3-00ff881fbdd2} 
+123/1000750.32 5/price 5/price 2 1000012.103 12 5/price 0/ 0 0 0 0 3 1000399.5 0.0 0 38/{5a6a169f-0eba-e811-8b26-00ff881fbdd2} 
+160/1000750.33 16/shortDescription 16/shortDescription 0 1000012.104 30 16/shortDescription 0/ 0 0 0 0 12 1000399.5 0.0 0 38/{e2fdbded-3bb6-e811-83c3-00ff881fbdd2} 
+166/1000750.34 18/mySaleItemCategory 18/mySaleItemCategory 0 1000014.12 16 18/mySaleItemCategory 0/ 0 0 0 0 -50 1000399.6 0.0 0 38/{a9914e93-0f24-da11-9d5a-000d60ed2e76} 
+111/1000750.35 3/oid 3/oid 0 0.0 16 3/oid 0/ 1 0 1 0 -50 1000399.6 0.0 0 38/{4c2f4c93-0f24-da11-9d59-000d60ed2e76} 
+139/1000750.36 10/percentage 10/percentage 2 1000012.92 5 10/percentage 0/ 0 0 0 0 3 1000399.6 0.0 0 38/{4c2f4c93-0f24-da11-9d5a-000d60ed2e76} 
+115/1000750.37 5/_type 5/_type 0 0.0 20 5/_type 0/ 6 0 0 0 1 1000399.7 0.0 0 38/{6bf41b99-0f24-da11-9d73-000d60ed2e76} 
+120/1000750.38 4/name 4/name 0 1000012.94 80 4/name 0/ 0 0 0 0 12 1000399.7 0.0 0 38/{8adb19a2-935b-da11-8f8b-b0778beeca24} 
+111/1000750.39 3/oid 3/oid 0 0.0 16 3/oid 0/ 1 0 1 0 -50 1000399.7 0.0 0 38/{4a03c193-0f24-da11-9d5a-000d60ed2e76} 
+115/1000750.40 5/_type 5/_type 0 0.0 20 5/_type 0/ 6 0 0 0 1 1000399.8 0.0 0 38/{6faa949a-0f24-da11-9d78-000d60ed2e76} 
+133/1000750.41 8/myClient 8/myClient 0 1000014.24 16 8/myClient 0/ 0 0 0 0 -50 1000399.8 0.0 0 38/{a5393894-0f24-da11-9d5d-000d60ed2e76} 
+136/1000750.42 9/myCompany 9/myCompany 0 1000014.25 16 9/myCompany 0/ 0 0 0 0 -50 1000399.8 0.0 0 38/{039c3a94-0f24-da11-9d5d-000d60ed2e76} 
+142/1000750.43 10/mySaleItem 10/mySaleItem 0 1000014.26 16 10/mySaleItem 0/ 0 0 0 0 -50 1000399.8 0.0 0 38/{049c3a94-0f24-da11-9d5d-000d60ed2e76} 
+111/1000750.44 3/oid 3/oid 0 0.0 16 3/oid 0/ 1 0 1 0 -50 1000399.8 0.0 0 38/{a6393894-0f24-da11-9d5b-000d60ed2e76} 
+157/1000750.45 16/zAgentCommission 15/agentCommission 2 1000012.95 12 16/zAgentCommission 0/ 0 0 0 0 3 1000399.8 0.0 0 38/{a6393894-0f24-da11-9d5c-000d60ed2e76} 
+115/1000750.46 5/_type 5/_type 0 0.0 20 5/_type 0/ 6 0 0 0 1 1000399.9 0.0 0 38/{1f38259c-0f24-da11-9d7f-000d60ed2e76} 
+139/1000750.47 10/codeNumber 10/codeNumber 0 1000012.98 4 10/codeNumber 0/ 0 0 0 0 4 1000399.9 0.0 0 38/{d148c619-9db4-e811-9668-00ff881fbdd2} 
+140/1000750.48 10/codePrefix 10/codePrefix 0 1000012.99 4 10/codePrefix 0/ 0 0 0 0 12 1000399.9 0.0 0 38/{6bbc2f34-9db4-e811-9668-00ff881fbdd2} 
+144/1000750.49 11/forSaleDate 11/forSaleDate 0 1000012.100 23 11/forSaleDate 0/ 0 0 0 0 9 1000399.9 0.0 0 38/{d3325fb7-935b-da11-8fad-b0778beeca24} 
+165/1000750.50 15/fullDescription 15/fullDescription 0 1000012.101 2147483647 15/fullDescription 0/ 0 0 0 0 -1 1000399.9 0.0 0 38/{588e5191-9db4-e811-9668-00ff881fbdd2} 
+130/1000750.51 7/myAgent 7/myAgent 0 1000014.28 16 7/myAgent 0/ 0 0 0 0 -50 1000399.9 0.0 0 38/{289561b7-935b-da11-8fb3-b0778beeca24} 
+136/1000750.52 9/myCompany 9/myCompany 0 1000014.29 16 9/myCompany 0/ 0 0 0 0 -50 1000399.9 0.0 0 38/{299561b7-935b-da11-8fb4-b0778beeca24} 
+133/1000750.53 8/myRegion 8/myRegion 0 1000014.30 16 8/myRegion 0/ 0 0 0 0 -50 1000399.9 0.0 0 38/{289561b7-935b-da11-8fb6-b0778beeca24} 
+127/1000750.54 6/mySale 6/mySale 0 1000014.31 16 6/mySale 0/ 0 0 0 0 -50 1000399.9 0.0 0 38/{299561b7-935b-da11-8fb7-b0778beeca24} 
+166/1000750.55 18/mySaleItemCategory 18/mySaleItemCategory 0 1000014.32 16 18/mySaleItemCategory 0/ 0 0 0 0 -50 1000399.9 0.0 0 38/{289561b7-935b-da11-8fb9-b0778beeca24} 
+111/1000750.56 3/oid 3/oid 0 0.0 16 3/oid 0/ 1 0 1 0 -50 1000399.9 0.0 0 38/{ce21a194-0f24-da11-9d5d-000d60ed2e76} 
+132/1000750.57 5/photo 5/photo 0 1000012.102 2147483647 5/photo 0/ 0 0 0 0 -4 1000399.9 0.0 0 38/{d3325fb7-935b-da11-8fb0-b0778beeca24} 
+123/1000750.58 5/price 5/price 2 1000012.103 12 5/price 0/ 0 0 0 0 3 1000399.9 0.0 0 38/{5a6a169f-0eba-e811-8b26-00ff881fbdd2} 
+160/1000750.59 16/shortDescription 16/shortDescription 0 1000012.104 30 16/shortDescription 0/ 0 0 0 0 12 1000399.9 0.0 0 38/{d2325fb7-935b-da11-8fb2-b0778beeca24} 
+154/1000750.60 11/description 11/description 0 1000012.106 2147483647 11/description 0/ 0 0 0 0 -1 1000399.10 0.0 0 38/{3823fdb9-935b-da11-8fba-b0778beeca24} 
+137/1000750.61 9/myCompany 9/myCompany 0 1000014.37 16 9/myCompany 0/ 0 0 0 0 -50 1000399.10 0.0 0 38/{536c0c95-0f24-da11-9d63-000d60ed2e76} 
+122/1000750.62 4/name 4/name 0 1000012.107 40 4/name 0/ 0 0 0 0 12 1000399.10 0.0 0 38/{2c39d2b9-935b-da11-8fba-b0778beeca24} 
+112/1000750.63 3/oid 3/oid 0 0.0 16 3/oid 0/ 1 0 1 0 -50 1000399.10 0.0 0 38/{f6090a95-0f24-da11-9d61-000d60ed2e76} 
+134/1000750.64 8/myClient 8/myClient 0 1000014.38 16 8/myClient 0/ 0 0 0 0 -50 1000399.11 0.0 0 38/{0d058695-0f24-da11-9d65-000d60ed2e76} 
+149/1000750.65 12/myTenderSale 12/myTenderSale 0 1000014.39 16 12/myTenderSale 0/ 0 0 0 0 -50 1000399.11 0.0 0 38/{0e058695-0f24-da11-9d65-000d60ed2e76} 
+161/1000750.66 16/myTenderSaleItem 16/myTenderSaleItem 0 1000014.40 16 16/myTenderSaleItem 0/ 0 0 0 0 -50 1000399.11 0.0 0 38/{6b678895-0f24-da11-9d65-000d60ed2e76} 
+124/1000750.67 5/offer 5/offer 2 1000012.108 12 5/offer 0/ 0 0 0 0 3 1000399.11 0.0 0 38/{0d058695-0f24-da11-9d64-000d60ed2e76} 
+112/1000750.68 3/oid 3/oid 0 0.0 16 3/oid 0/ 1 0 1 0 -50 1000399.11 0.0 0 38/{b0a28395-0f24-da11-9d63-000d60ed2e76} 
+137/1000750.69 9/timeStamp 9/timeStamp 0 1000012.109 16 9/timeStamp 0/ 0 0 0 0 11 1000399.11 0.0 0 38/{0e058695-0f24-da11-9d64-000d60ed2e76} 
+116/1000750.70 5/_type 5/_type 0 0.0 20 5/_type 0/ 6 0 0 0 1 1000399.12 0.0 0 38/{c9561e99-0f24-da11-9d75-000d60ed2e76} 
+137/1000750.71 9/myCompany 9/myCompany 0 1000014.21 16 9/myCompany 0/ 0 0 0 0 -50 1000399.12 0.0 0 38/{ca561e99-0f24-da11-9d74-000d60ed2e76} 
+121/1000750.72 4/name 4/name 0 1000012.94 80 4/name 0/ 0 0 0 0 12 1000399.12 0.0 0 38/{8adb19a2-935b-da11-8f8b-b0778beeca24} 
+112/1000750.73 3/oid 3/oid 0 0.0 16 3/oid 0/ 1 0 1 0 -50 1000399.12 0.0 0 38/{6bf41b99-0f24-da11-9d74-000d60ed2e76} 
+116/1000750.74 5/_type 5/_type 0 0.0 20 5/_type 0/ 6 0 0 0 1 1000399.13 0.0 0 38/{c9561e99-0f24-da11-9d78-000d60ed2e76} 
+137/1000750.75 9/myCountry 9/myCountry 0 1000014.23 16 9/myCountry 0/ 0 0 0 0 -50 1000399.13 0.0 0 38/{ca561e99-0f24-da11-9d77-000d60ed2e76} 
+121/1000750.76 4/name 4/name 0 1000012.94 80 4/name 0/ 0 0 0 0 12 1000399.13 0.0 0 38/{8adb19a2-935b-da11-8f8b-b0778beeca24} 
+112/1000750.77 3/oid 3/oid 0 0.0 16 3/oid 0/ 1 0 1 0 -50 1000399.13 0.0 0 38/{c9561e99-0f24-da11-9d76-000d60ed2e76} 
+116/1000750.78 5/_type 5/_type 0 0.0 20 5/_type 0/ 6 0 0 0 1 1000399.14 0.0 0 38/{cd0c979a-0f24-da11-9d7c-000d60ed2e76} 
+134/1000750.79 8/myClient 8/myClient 0 1000014.24 16 8/myClient 0/ 0 0 0 0 -50 1000399.14 0.0 0 38/{ce0c979a-0f24-da11-9d7a-000d60ed2e76} 
+137/1000750.80 9/myCompany 9/myCompany 0 1000014.25 16 9/myCompany 0/ 0 0 0 0 -50 1000399.14 0.0 0 38/{cd0c979a-0f24-da11-9d7b-000d60ed2e76} 
+143/1000750.81 10/mySaleItem 10/mySaleItem 0 1000014.26 16 10/mySaleItem 0/ 0 0 0 0 -50 1000399.14 0.0 0 38/{ce0c979a-0f24-da11-9d7b-000d60ed2e76} 
+112/1000750.82 3/oid 3/oid 0 0.0 16 3/oid 0/ 1 0 1 0 -50 1000399.14 0.0 0 38/{6faa949a-0f24-da11-9d79-000d60ed2e76} 
+123/1000750.83 5/price 5/price 2 1000012.96 12 5/price 0/ 0 0 0 0 3 1000399.14 0.0 0 38/{70aa949a-0f24-da11-9d7a-000d60ed2e76} 
+136/1000750.84 9/timeStamp 9/timeStamp 0 1000012.97 16 9/timeStamp 0/ 0 0 0 0 11 1000399.14 0.0 0 38/{cd0c979a-0f24-da11-9d7a-000d60ed2e76} 
+158/1000750.85 16/zAgentCommission 15/agentCommission 2 1000012.95 12 16/zAgentCommission 0/ 0 0 0 0 3 1000399.14 0.0 0 38/{6faa949a-0f24-da11-9d7a-000d60ed2e76} 
+116/1000750.86 5/_type 5/_type 0 0.0 20 5/_type 0/ 6 0 0 0 1 1000399.15 0.0 0 38/{2c6f999a-0f24-da11-9d7f-000d60ed2e76} 
+134/1000750.87 8/myClient 8/myClient 0 1000014.24 16 8/myClient 0/ 0 0 0 0 -50 1000399.15 0.0 0 38/{2c6f999a-0f24-da11-9d7d-000d60ed2e76} 
+137/1000750.88 9/myCompany 9/myCompany 0 1000014.25 16 9/myCompany 0/ 0 0 0 0 -50 1000399.15 0.0 0 38/{2b6f999a-0f24-da11-9d7e-000d60ed2e76} 
+143/1000750.89 10/mySaleItem 10/mySaleItem 0 1000014.26 16 10/mySaleItem 0/ 0 0 0 0 -50 1000399.15 0.0 0 38/{2c6f999a-0f24-da11-9d7e-000d60ed2e76} 
+134/1000750.90 8/myTender 8/myTender 0 1000014.27 16 8/myTender 0/ 0 0 0 0 -50 1000399.15 0.0 0 38/{2b6f999a-0f24-da11-9d7f-000d60ed2e76} 
+112/1000750.91 3/oid 3/oid 0 0.0 16 3/oid 0/ 1 0 1 0 -50 1000399.15 0.0 0 38/{cd0c979a-0f24-da11-9d7d-000d60ed2e76} 
+158/1000750.92 16/zAgentCommission 15/agentCommission 2 1000012.95 12 16/zAgentCommission 0/ 0 0 0 0 3 1000399.15 0.0 0 38/{2b6f999a-0f24-da11-9d7d-000d60ed2e76} 
+116/1000750.93 5/_type 5/_type 0 0.0 20 5/_type 0/ 6 0 0 0 1 1000399.16 0.0 0 38/{5386339c-0f24-da11-9d8b-000d60ed2e76} 
+145/1000750.94 11/closureDate 11/closureDate 0 1000012.105 16 11/closureDate 0/ 0 0 0 0 9 1000399.16 0.0 0 38/{97c12e9c-0f24-da11-9d89-000d60ed2e76} 
+140/1000750.95 10/codeNumber 10/codeNumber 0 1000012.98 4 10/codeNumber 0/ 0 0 0 0 4 1000399.16 0.0 0 38/{d148c619-9db4-e811-9668-00ff881fbdd2} 
+141/1000750.96 10/codePrefix 10/codePrefix 0 1000012.99 4 10/codePrefix 0/ 0 0 0 0 12 1000399.16 0.0 0 38/{6bbc2f34-9db4-e811-9668-00ff881fbdd2} 
+145/1000750.97 11/forSaleDate 11/forSaleDate 0 1000012.100 23 11/forSaleDate 0/ 0 0 0 0 9 1000399.16 0.0 0 38/{d3325fb7-935b-da11-8fad-b0778beeca24} 
+166/1000750.98 15/fullDescription 15/fullDescription 0 1000012.101 2147483647 15/fullDescription 0/ 0 0 0 0 -1 1000399.16 0.0 0 38/{588e5191-9db4-e811-9668-00ff881fbdd2} 
+131/1000750.99 7/myAgent 7/myAgent 0 1000014.28 16 7/myAgent 0/ 0 0 0 0 -50 1000399.16 0.0 0 38/{289561b7-935b-da11-8fb3-b0778beeca24} 
+138/1000750.100 9/myCompany 9/myCompany 0 1000014.29 16 9/myCompany 0/ 0 0 0 0 -50 1000399.16 0.0 0 38/{299561b7-935b-da11-8fb4-b0778beeca24} 
+135/1000750.101 8/myRegion 8/myRegion 0 1000014.30 16 8/myRegion 0/ 0 0 0 0 -50 1000399.16 0.0 0 38/{289561b7-935b-da11-8fb6-b0778beeca24} 
+129/1000750.102 6/mySale 6/mySale 0 1000014.31 16 6/mySale 0/ 0 0 0 0 -50 1000399.16 0.0 0 38/{299561b7-935b-da11-8fb7-b0778beeca24} 
+168/1000750.103 18/mySaleItemCategory 18/mySaleItemCategory 0 1000014.32 16 18/mySaleItemCategory 0/ 0 0 0 0 -50 1000399.16 0.0 0 38/{289561b7-935b-da11-8fb9-b0778beeca24} 
+113/1000750.104 3/oid 3/oid 0 0.0 16 3/oid 0/ 1 0 1 0 -50 1000399.16 0.0 0 38/{3a5f2c9c-0f24-da11-9d85-000d60ed2e76} 
+134/1000750.105 5/photo 5/photo 0 1000012.102 2147483647 5/photo 0/ 0 0 0 0 -4 1000399.16 0.0 0 38/{d3325fb7-935b-da11-8fb0-b0778beeca24} 
+125/1000750.106 5/price 5/price 2 1000012.103 12 5/price 0/ 0 0 0 0 3 1000399.16 0.0 0 38/{5a6a169f-0eba-e811-8b26-00ff881fbdd2} 
+162/1000750.107 16/shortDescription 16/shortDescription 0 1000012.104 30 16/shortDescription 0/ 0 0 0 0 12 1000399.16 0.0 0 38/{d2325fb7-935b-da11-8fb2-b0778beeca24} 
+*****RARpsProperty
+>>>>>InstanceData 
+<<<<<CollectionData 
+^^^^^RelationalView 
+53/RelationalView includedObjectFeatures FeatureArray 6 
+27/1000217.1 10/ErewhonRPS 0/ 
+*****RelationalView 
+^^^^^RelationalTable 
+35/RelationalTable classes ClassSet 6 
+23/1000399.1 7/Address 0/ 
+21/1000399.2 5/Agent 0/ 
+22/1000399.3 6/Client 0/ 
+23/1000399.4 7/Company 0/ 
+31/1000399.5 14/RetailSaleItem 0/ 
+31/1000399.6 14/CommissionRate 0/ 
+48/1000399.7 8/Location 23/1000002.119 1000002.120 
+44/1000399.8 4/Sale 23/1000002.122 1000002.123 
+36/1000399.9 8/SaleItem 11/1000002.126 
+34/1000399.10 16/SaleItemCategory 0/ 
+23/1000399.11 6/Tender 0/ 
+25/1000399.12 8/Location 0/ 
+25/1000399.13 8/Location 0/ 
+21/1000399.14 4/Sale 0/ 
+21/1000399.15 4/Sale 0/ 
+25/1000399.16 8/SaleItem 0/ 
+*****RelationalTable 
+>>>>>CollectionData 
+<<<<<FixupData 
+^^^^^Class
+6/Class 
+22/1000002.113 7/Address 
+20/1000002.114 5/Agent 
+21/1000002.115 6/Client 
+30/1000002.116 14/CommissionRate 
+22/1000002.117 7/Company 
+23/1000002.118 8/Location 
+22/1000002.119 7/Country 
+21/1000002.120 6/Region 
+19/1000002.121 4/Sale 
+26/1000002.122 10/RetailSale 
+26/1000002.123 10/TenderSale 
+23/1000002.124 8/SaleItem 
+30/1000002.125 14/RetailSaleItem 
+30/1000002.126 14/TenderSaleItem 
+32/1000002.127 16/SaleItemCategory 
+21/1000002.128 6/Tender 
+*****Class 
+^^^^^Property 
+35/Property schemaTypeName String 100 
+28/1000012.82 4/city 7/Address 
+31/1000012.83 7/country 7/Address 
+29/1000012.84 5/email 7/Address 
+27/1000012.85 3/fax 7/Address 
+28/1000012.86 4/name 7/Address 
+29/1000012.87 5/phone 7/Address 
+30/1000012.88 6/street 7/Address 
+31/1000012.89 7/webSite 7/Address 
+26/1000012.90 4/name 5/Agent 
+27/1000012.91 4/name 6/Client 
+43/1000012.92 10/percentage 14/CommissionRate 
+28/1000012.93 4/name 7/Company 
+29/1000012.94 4/name 8/Location 
+37/1000012.95 15/agentCommission 4/Sale 
+33/1000012.96 5/price 10/RetailSale 
+37/1000012.97 9/timeStamp 10/RetailSale 
+36/1000012.98 10/codeNumber 8/SaleItem 
+36/1000012.99 10/codePrefix 8/SaleItem 
+38/1000012.100 11/forSaleDate 8/SaleItem 
+42/1000012.101 15/fullDescription 8/SaleItem 
+31/1000012.102 5/photo 8/SaleItem 
+31/1000012.103 5/price 8/SaleItem 
+43/1000012.104 16/shortDescription 8/SaleItem 
+45/1000012.105 11/closureDate 14/TenderSaleItem 
+47/1000012.106 11/description 16/SaleItemCategory 
+39/1000012.107 4/name 16/SaleItemCategory 
+29/1000012.108 5/offer 6/Tender 
+33/1000012.109 9/timeStamp 6/Tender 
+32/1000013.142 9/myAddress 5/Agent 
+33/1000013.143 9/myAddress 6/Client 
+34/1000013.144 9/myAddress 7/Company 
+30/1000014.6 9/myCompany 5/Agent 
+32/1000014.10 9/myCompany 6/Client 
+51/1000014.12 18/mySaleItemCategory 14/CommissionRate 
+33/1000014.21 9/myCompany 7/Country 
+32/1000014.23 9/myCountry 6/Region 
+29/1000014.24 8/myClient 4/Sale 
+30/1000014.25 9/myCompany 4/Sale 
+32/1000014.26 10/mySaleItem 4/Sale 
+36/1000014.27 8/myTender 10/TenderSale 
+32/1000014.28 7/myAgent 8/SaleItem 
+34/1000014.29 9/myCompany 8/SaleItem 
+33/1000014.30 8/myRegion 8/SaleItem 
+31/1000014.31 6/mySale 8/SaleItem 
+44/1000014.32 18/mySaleItemCategory 8/SaleItem 
+43/1000014.37 9/myCompany 16/SaleItemCategory 
+31/1000014.38 8/myClient 6/Tender 
+36/1000014.39 12/myTenderSale 6/Tender 
+40/1000014.40 16/myTenderSaleItem 6/Tender 
+*****Property 
+^^^^^Method 
+33/Method schemaTypeName String 100 
+*****Method 
+>>>>>FixupData 
+-----RelationalViewDefinitions
++++++AppGlobalDefinitions 
+<<<<<InstanceData 
+^^^^^Application 
+2179/Application __htmlAttributeOffsetDict Object 6 __inspectorObject Object 6 __jadeHttpConnection Object 6 __overridePatchNumber Integer 4 __patchControlString String -1 __patchVersionDict Object 6 __reportWriterRef Object 6 _aboutFormName String 101 _consoleMemRefs Binary 33 _defaultLocaleId Integer 4 _dynamicPropertyBag Object 6 _internetPipe Connection 6 _internetPipeName String -1 _modifiedBy String 31 _modifiedTimestamp TimeStamp 8 _numberOfPipes Integer 4 _patchVersion Integer 4 _propertyBag Binary -1 _restServicesOptions Integer 4 _sourceParcel JadeSourceParcel 6 _startupFormName String 101 _systemVersion String 9 _useXMLConfigFile Boolean 1 _useXMLDocumentParser Boolean 1 _webAppDirectory String -1 _webAppExtension JadeWebAppExtension 6 _webBaseURL String -1 _webConfigDynamicProperties Object 6 _webDelayBetweenApps Integer 4 _webDisplayMessages Boolean 1 _webDisplayPreference Character 1 _webEnabled Boolean 1 _webFinalizeMethod JadeMethod 6 _webHomePage String 101 _webInitializeMethod JadeMethod 6 _webIsSecure Boolean 1 _webLogFile Object 6 _webMachineName String -1 _webMaxHTMLSize Integer 4 _webMessage JadeWebMessage 6 _webMethodExecutionPrefix String 31 _webQueue JadeWebQueue 6 _webServiceClasses String -1 _webSession WebSession 6 _webSessionManager WebSessionManager 6 _webSessionTimeout Integer 4 _webShowContent Boolean 1 _webShowModal Boolean 1 _webStartupForm Form 6 _webStartupFormName String 101 _webStatusLineDisplay String -1 _webUseHTML32 Boolean 1 _webUseSessionHandling Boolean 1 _webVirtualDirectory String -1 _webWaitForReply Boolean 1 aboutForm Form 6 appVersion String 31 applicationType Character 1 controlSpacing Integer 4 currentLocale Locale 6 currentLocaleInfo LocaleFullInfo 6 defaultApp Boolean 1 defaultMdi Boolean 1 finalizeMethod Method 6 fontBold Boolean 1 fontName String 101 fontSize Real 8 formMargin Integer 4 heightSingleLineControl Integer 4 helpFile String -1 icon Binary -1 initializeMethod Method 6 jadeWebServiceManager JadeWebServiceManager 6 name String 101 printer Printer 6 schema Schema 6 showBubbleHelp Boolean 1 startupForm Form 6 useBorderStyleOnly Boolean 1 uuid Binary 16 webMinimumResponseTime Integer 4 
+316/1000183.15 10/DataLoader 0.0 0.0 0.0 0 0/ 0.0 0.0 0/ 0/ 0 0.0 0.0 0/ 6/cnwtb5 0/ 0 0 0/ 0 0.0 0/ 0/ 0 0 0/ 0.0 0/ 0.0 0 0 0/ 0 0/ 0/ 0/ 0 0.0 0/ 0 0.0 0/ 0.0 0/ 0.0 0.0 0 0 0 0.0 0/ 0/ 0 0 0/ 0 0.0 0/ 1/S 4 0.0 0.0 0 0 0/ 0 13/MS Sans Serif 8.25 7 14 0/ 0/ dataLoaderApp 0.0 10/DataLoader 0.0 1000001.7 0 0.0 1 0/ 0 
+374/1000183.16 29/ErewhonInvestmentsModelSchema 0.0 0.0 0.0 0 0/ 0.0 0.0 0/ 0/ 0 0.0 0.0 0/ 6/cnwtb5 23/2018:09:12:15:30:59.653 0 0 0/ 0 0.0 0/ 7/99.0.00 0 0 0/ 0.0 0/ 0.0 0 0 0/ 0 0/ 0/ 0/ 0 0.0 0/ 0 0.0 0/ 0.0 0/ 0.0 0.0 0 0 0 0.0 0/ 0/ 0 0 0/ 0 0.0 0/ 1/G 4 0.0 0.0 1 0 0/ 0 13/MS Sans Serif 8.25 7 14 0/ 0/ 0/ 0.0 29/ErewhonInvestmentsModelSchema 0.0 1000001.7 1 0.0 0 0/ 0 
+*****Application
+^^^^^Class 
+6/Class 
+16/5.10 8/CheckBox 
+16/5.14 8/GroupBox 
+21/5.26 12/OptionButton 
+*****Class 
+>>>>>InstanceData 
+<<<<<CollectionData 
+^^^^^Application 
+68/Application threeDControls ClassColl 6 _webEventClasses ClassColl 6 
+47/1000183.15 11/Application 14/5.10 5.14 5.26 0/ 
+47/1000183.16 11/Application 14/5.10 5.14 5.26 0/ 
+*****Application 
+>>>>>CollectionData 
+<<<<<FixupData 
+>>>>>FixupData 
+-----AppGlobalDefinitions
++++++FormDefinitions 
+<<<<<InstanceData 
+^^^^^Form 
+1570/Form ___windowPtr MemoryAddress 12 __userObject Object 6 _hyperText String -1 _modifiedBy String 31 _modifiedTimestamp TimeStamp 8 _patchVersion Integer 4 _sysDHTMLScript String -1 _systemVersion String 9 _webCssClass String -1 _webCssDefinition String -1 _webEventMappings String -1 backBrushStyle Integer 4 backColor Integer 4 borderStyle Integer 4 bubbleHelp String -1 description String -1 disableReason String -1 dragCursor Binary -1 enabled Boolean 1 height Real 8 helpContextId Integer 4 helpKeyword String -1 ignoreSkin Boolean 1 left Real 8 mouseCursor Binary -1 mousePointer Integer 4 name String 101 securityLevelEnabled Integer 4 securityLevelVisible Integer 4 skinCategoryName String 101 tag String -1 top Real 8 userObject Object 6 userScript String -1 visible Boolean 1 width Real 8 _eventMappings Binary -1 _painterModifiedTimeStamp TimeStamp 8 _webEnableHttpRequest Boolean 1 _webRegenPage Boolean 1 allowDocking Integer 4 backBrush Binary -1 caption String 256 clientHeight Integer 4 clientWidth Integer 4 clipControls Boolean 1 controlBox Boolean 1 icon Binary -1 locale Locale 6 maxButton Boolean 1 mdiChild Integer 4 mdiFrame Boolean 1 minButton Boolean 1 minimumHeight Integer 4 minimumWidth Integer 4 paintedDialogBaseUnits Integer 4 printerForm Boolean 1 scaleForm Boolean 1 scrollBars Integer 4 secureForm Boolean 1 userProfile UserProfile 6 webBrowserAutoRefreshInterval Integer 4 webBrowserAutoRefreshURL String -1 webBrowserDisableBackButton Boolean 1 webEncodingType Character 1 webFileName String -1 webForm Boolean 1 windowState Integer 4 
+Locale 5129
+60/10/txbExample 10/btnExample 9/tblParams 9/btnCancel 5/btnOK 
+310/1000189.5 22/MethodParametersDialog 0/ 0.0 0/ 0/ 0/ 0 0/ 0/ 0/ 0/ 0/ 0 -2147483633 3 0/ 0/ 0/ 0/ 1 427 0 0/ 0 29 0/ 0 22/MethodParametersDialog 0 0 0/ 0/ 18 0.0 0/ 1 378 0/ 23/2018:10:29:10:52:45.393 0 0 0 0/ 22/MethodParametersDialog 402 372 1 1 0/ 1000045.19 0 1 0 0 0 0 1048584 0 1 0 0 0.0 0 0/ 0 0/ 0/ 0 0 
+*****Form 
+^^^^^Button
+1625/Button ___windowPtr MemoryAddress 12 __userObject Object 6 _hyperText String -1 _modifiedBy String 31 _modifiedTimestamp TimeStamp 8 _patchVersion Integer 4 _sysDHTMLScript String -1 _systemVersion String 9 _webCssClass String -1 _webCssDefinition String -1 _webEventMappings String -1 backBrushStyle Integer 4 backColor Integer 4 borderStyle Integer 4 bubbleHelp String -1 description String -1 disableReason String -1 dragCursor Binary -1 enabled Boolean 1 height Real 8 helpContextId Integer 4 helpKeyword String -1 ignoreSkin Boolean 1 left Real 8 mouseCursor Binary -1 mousePointer Integer 4 name String 101 securityLevelEnabled Integer 4 securityLevelVisible Integer 4 skinCategoryName String 101 tag String -1 top Real 8 userObject Object 6 userScript String -1 visible Boolean 1 width Real 8 _eventMappings Binary -1 _webAutoPostBack Boolean 1 _webInFocus Boolean 1 backBrush Binary -1 borderColorSingle Integer 4 focusBackColor Integer 4 focusForeColor Integer 4 fontBold Boolean 1 fontItalic Boolean 1 fontName String 32 fontSize Real 8 fontStrikethru Boolean 1 fontUnderline Boolean 1 fontWeight Integer 4 foreColor Integer 4 form Form 6 index Integer 4 parent Window 6 parentAspect Integer 4 parentBottomOffset Integer 4 parentRightOffset Integer 4 relativeHeight Boolean 1 relativeLeft Boolean 1 relativeTop Boolean 1 relativeWidth Boolean 1 show3D Integer 4 tabIndex Integer 4 tabStop Boolean 1 autoSize Integer 4 buttonPicture Integer 4 cancel Boolean 1 caption String -1 default Boolean 1 picture Binary -1 pictureDisabled Binary -1 pictureDown Binary -1 style Integer 4 value Boolean 1 webFileName String -1 
+274/1000491.13 10/btnExample 0/ 0.0 0/ 0/ 0/ 0 0/ 0/ 0/ 0/ 0/ 0 -2147483633 0 0/ 0/ 0/ 0/ 1 36 0 0/ 0 8 0/ 0 10/btnExample 0 0 0/ 0/ 239 0.0 0/ 1 117 0/ 0 0 0/ 0 0 0 0 0 0/ 8.25 0 0 0 -2147483630 1000189.5 0 1000189.5 0 0 0 0 0 0 0 0 2 1 0 5 0 12/Hide Example 0 0/ 0/ 0/ 0 0 0/ 
+264/1000491.14 9/btnCancel 0/ 0.0 0/ 0/ 0/ 0 0/ 0/ 0/ 0/ 0/ 0 -2147483633 0 0/ 0/ 0/ 0/ 1 36 0 0/ 0 279 0/ 0 9/btnCancel 0 0 0/ 0/ 239 0.0 0/ 1 85 0/ 0 0 0/ 0 0 0 0 0 0/ 8.25 0 0 0 -2147483630 1000189.5 0 1000189.5 0 0 0 0 0 0 0 0 4 1 0 2 1 6/Cancel 0 0/ 0/ 0/ 0 0 0/ 
+252/1000491.15 5/btnOK 0/ 0.0 0/ 0/ 0/ 0 0/ 0/ 0/ 0/ 0/ 0 -2147483633 0 0/ 0/ 0/ 0/ 1 36 0 0/ 0 186 0/ 0 5/btnOK 0 0 0/ 0/ 239 0.0 0/ 1 85 0/ 0 0 0/ 0 0 0 0 0 0/ 8.25 0 0 0 -2147483630 1000189.5 0 1000189.5 0 0 0 0 0 0 0 0 3 1 0 1 0 2/OK 1 0/ 0/ 0/ 0 0 0/ 
+*****Button
+^^^^^Table
+2393/Table ___windowPtr MemoryAddress 12 __userObject Object 6 _hyperText String -1 _modifiedBy String 31 _modifiedTimestamp TimeStamp 8 _patchVersion Integer 4 _sysDHTMLScript String -1 _systemVersion String 9 _webCssClass String -1 _webCssDefinition String -1 _webEventMappings String -1 backBrushStyle Integer 4 backColor Integer 4 borderStyle Integer 4 bubbleHelp String -1 description String -1 disableReason String -1 dragCursor Binary -1 enabled Boolean 1 height Real 8 helpContextId Integer 4 helpKeyword String -1 ignoreSkin Boolean 1 left Real 8 mouseCursor Binary -1 mousePointer Integer 4 name String 101 securityLevelEnabled Integer 4 securityLevelVisible Integer 4 skinCategoryName String 101 tag String -1 top Real 8 userObject Object 6 userScript String -1 visible Boolean 1 width Real 8 _eventMappings Binary -1 _webAutoPostBack Boolean 1 _webInFocus Boolean 1 backBrush Binary -1 borderColorSingle Integer 4 focusBackColor Integer 4 focusForeColor Integer 4 fontBold Boolean 1 fontItalic Boolean 1 fontName String 32 fontSize Real 8 fontStrikethru Boolean 1 fontUnderline Boolean 1 fontWeight Integer 4 foreColor Integer 4 form Form 6 index Integer 4 parent Window 6 parentAspect Integer 4 parentBottomOffset Integer 4 parentRightOffset Integer 4 relativeHeight Boolean 1 relativeLeft Boolean 1 relativeTop Boolean 1 relativeWidth Boolean 1 show3D Integer 4 tabIndex Integer 4 tabStop Boolean 1 accessedCell JadeTableCell 6 accessedColumn JadeTableColumn 6 accessedRow JadeTableRow 6 accessedSheet JadeTableSheet 6 allowDrag Integer 4 allowResize Integer 4 autoSize Integer 4 columnVisible InternalPseudoArrayBoolean 6 columnWidth InternalPseudoArrayInteger 6 columns Integer 4 defaultRowHeight Integer 4 displayHotKey Boolean 1 dropDown Integer 4 expandedHeight Integer 4 fixed3D Boolean 1 fixedColumns Integer 4 fixedRows Integer 4 gridColor Integer 4 gridLines Boolean 1 hyperlinkColumn IntegerArray 6 readOnly Boolean 1 rowHeight InternalPseudoArrayInteger 6 rowVisible InternalPseudoArrayBoolean 6 rows Integer 4 scrollBars Integer 4 selectMode Integer 4 sheetVisible InternalPseudoArrayBoolean 6 sheets Integer 4 showFocus Boolean 1 sortAsc InternalPseudoArrayBoolean 6 sortCased InternalPseudoArrayBoolean 6 sortColumn InternalPseudoArrayInteger 6 sortType InternalPseudoArrayInteger 6 stretch Integer 4 tabActiveColor Integer 4 tabInactiveColor Integer 4 tabKey Integer 4 
+505/1000508.1 9/tblParams 0/ 0.0 0/ 0/ 0/ 0 0/ 0/ 0/ 0/ 0/ 0 -2147483643 1 0/ 0/ 0/ 0/ 1 219 0 0/ 0 8 0/ 0 9/tblParams 0 0 0/ 0/ 8 0.0 0/ 1 356 0/ 0 0 0/ 0 0 0 0 0 0/ 8.25 0 0 0 -2147483640 1000189.5 0 1000189.5 0 0 0 0 0 0 0 0 1 1 0.0 0.0 0.0 0.0 0 1 0 1000280.1.1000508.4.3 1000281.1.1000508.4.4 2 0 0 0 219 1 0 1 -2147483632 1 0/ 0 1000281.1.1000508.4.5 1000280.1.1000508.4.6 1 3 0 1000280.1.1000508.4.7 1 0 1000280.1.1000508.4.8 1000280.1.1000508.4.9 1000281.1.1000508.4.10 1000281.1.1000508.4.11 0 0 0 0 
+*****Table
+^^^^^TextBox
+1857/TextBox ___windowPtr MemoryAddress 12 __userObject Object 6 _hyperText String -1 _modifiedBy String 31 _modifiedTimestamp TimeStamp 8 _patchVersion Integer 4 _sysDHTMLScript String -1 _systemVersion String 9 _webCssClass String -1 _webCssDefinition String -1 _webEventMappings String -1 backBrushStyle Integer 4 backColor Integer 4 borderStyle Integer 4 bubbleHelp String -1 description String -1 disableReason String -1 dragCursor Binary -1 enabled Boolean 1 height Real 8 helpContextId Integer 4 helpKeyword String -1 ignoreSkin Boolean 1 left Real 8 mouseCursor Binary -1 mousePointer Integer 4 name String 101 securityLevelEnabled Integer 4 securityLevelVisible Integer 4 skinCategoryName String 101 tag String -1 top Real 8 userObject Object 6 userScript String -1 visible Boolean 1 width Real 8 _eventMappings Binary -1 _webAutoPostBack Boolean 1 _webInFocus Boolean 1 backBrush Binary -1 borderColorSingle Integer 4 focusBackColor Integer 4 focusForeColor Integer 4 fontBold Boolean 1 fontItalic Boolean 1 fontName String 32 fontSize Real 8 fontStrikethru Boolean 1 fontUnderline Boolean 1 fontWeight Integer 4 foreColor Integer 4 form Form 6 index Integer 4 parent Window 6 parentAspect Integer 4 parentBottomOffset Integer 4 parentRightOffset Integer 4 relativeHeight Boolean 1 relativeLeft Boolean 1 relativeTop Boolean 1 relativeWidth Boolean 1 show3D Integer 4 tabIndex Integer 4 tabStop Boolean 1 alignment Integer 4 autoTab Boolean 1 case Integer 4 dataType Integer 4 decimals Integer 4 formatOut String 101 hintBackColor Integer 4 hintForeColor Integer 4 hintText String -1 integralHeight Boolean 1 maxLength Integer 4 passwordField Boolean 1 readOnly Boolean 1 scrollBars Integer 4 scrollHorizontal Boolean 1 scrollVertical Boolean 1 selectionStyle Integer 4 text String -1 textOffset Integer 4 wantReturn Boolean 1 webInputType Character 1 
+280/1000509.4 10/txbExample 0/ 0.0 0/ 0/ 0/ 0 0/ 0/ 0/ 0/ 0/ 0 -2147483643 1 0/ 0/ 0/ 0/ 1 109 0 0/ 0 8 0/ 0 10/txbExample 0 0 0/ 0/ 285 0.0 0/ 1 356 0/ 0 0 0/ 0 0 0 0 0 0/ 8.25 0 0 0 -2147483640 1000189.5 0 1000189.5 0 0 0 0 0 0 0 0 5 1 0 0 0 0 0 0/ 0 0 0/ 0 0 0 1 3 1 1 0 0/ 0 0 0/ 
+*****TextBox
+>>>>>InstanceData 
+<<<<<FixupData 
+>>>>>FixupData 
+-----FormDefinitions 
