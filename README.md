@@ -8,7 +8,7 @@ This repository contains the example JADE schema, Erewhon. Erewhon is a fictiona
 Documentation for the Erewhon system may be found here: <a href="https://www.jadeworld.com/pdf/white-papers/71/WP_Erewhon.pdf">Erewhon Documentation</a>
 
 ## Getting Started
-These instructions will get a copy of the projects up and running on your local machine.
+These instructions will get a copy of the Erewhon system up and running on your local machine.
 
 ### Prerequisites
 
