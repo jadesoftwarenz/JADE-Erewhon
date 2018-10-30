@@ -35,7 +35,7 @@ Before you can load the schemas, you will need JADE 2018 installed:
 
 1. In the **Browse menu**, select **Git Source Control Client** -> **Clone…**  
 (The local path will be filled in for you as the path you selected in Step 1)
-2. For the Repository URL, enter https://github.com/jadesoftwarenz/Erewhon
+2. For the Repository URL, enter https://github.com/jadesoftwarenz/JADE-Erewhon
 3. Click on the **Clone** button.
 
 **Step 3: Importing the Erewhon database**
