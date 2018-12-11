@@ -2,7 +2,7 @@
 This repository contains the example JADE schema, Erewhon. Erewhon is a fictional E-Commerce platform where agents sell high-end items and clients may bid on or purchase them.
 
 ## Documentation Guide
-Documentation for the Erewhon system may be found here: https://www.jadeworld.com/pdf/white-papers/2016/WP_Erewhon.pdf
+Documentation for the Erewhon system may be found here: https://www.jadeworld.com/pdf/white-papers/2018/WP_Erewhon.pdf
 
 ## Getting Started
 These instructions will get a copy of the Erewhon system up and running on your local machine.
@@ -46,7 +46,7 @@ Before you can load the schemas, you will need JADE 2018 installed:
 > The schemas contained in this repository are for demonstration purposes and as such are not open to pull requests. However, you are welcome to create a fork and make changes to your own copy, subject to our license ([LICENSE.txt](LICENSE.txt))
 
 **Q.** What can I do with this Erewhon system?
-> Using the Administration application, you can take the role of a Sales Agent and post items for your (fictional) clients to buy. Using the ErewhonShop applicaiton, you can take the role of a client and bid for or buy (fictional) items. For more information, see the <a href="https://www.jadeworld.com/pdf/white-papers/71/WP_Erewhon.pdf">Erewhon Documentation</a>
+> Using the Administration application, you can take the role of a Sales Agent and post items for your (fictional) clients to buy. Using the ErewhonShop applicaiton, you can take the role of a client and bid for or buy (fictional) items. For more information, see the <a href="https://www.jadeworld.com/pdf/white-papers/2018/WP_Erewhon.pdf">Erewhon Documentation</a>
 
 ## License
 
