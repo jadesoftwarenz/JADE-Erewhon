@@ -1,6 +1,3 @@
-<a href="https://www.jadeworld.com/solutions-for/dev-partners/"><img src="" title="Jade Software" alt="Jade Software"></a>
-(Will be some kind of JADE banner)
-
 # JADE Erewhon Example Schema
 This repository contains the example JADE schema, Erewhon. Erewhon is a fictional E-Commerce platform where agents sell high-end items and clients may bid on or purchase them.
 
