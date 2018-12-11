@@ -2,7 +2,7 @@
 This repository contains the example JADE schema, Erewhon. Erewhon is a fictional E-Commerce platform where agents sell high-end items and clients may bid on or purchase them.
 
 ## Documentation Guide
-Documentation for the Erewhon system may be found here: <a href="https://www.jadeworld.com/pdf/white-papers/71/WP_Erewhon.pdf">Erewhon Documentation</a>
+Documentation for the Erewhon system may be found here: https://www.jadeworld.com/pdf/white-papers/2016/WP_Erewhon.pdf
 
 ## Getting Started
 These instructions will get a copy of the Erewhon system up and running on your local machine.
@@ -16,7 +16,7 @@ Before you can load the schemas, you will need JADE 2018 installed:
 3. Open the installer and follow the instructions in the easy install wizard.
 4. JADE is now installed, and a shortcut has been placed in your Start menu. You're good to go!
 
-> For more detailed instructions for installing JADE, visit https://www.jadeworld.com/downloads/tech/manuals/2016/InstallConfig.pdf
+> For more detailed instructions for installing JADE, visit https://www.jadeworld.com/downloads/tech/manuals/2018/InstallConfig.pdf
 
 ### Loading the schemas using JADE Git Integration
 
