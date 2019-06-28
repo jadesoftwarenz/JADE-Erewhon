@@ -41,6 +41,23 @@ Before you can load the schemas, you will need JADE 2018 installed:
 3. Select the **ErewhonInvestments.mul** file in the folder you selected as your working directory.
 4. Click the **OK** button, and the Erewhon schemas will be loaded into your Schema Browser ready for use.
 
+**Optional Step: Using the DotNet Shop**
+1. Load the Erewhon schemas.
+2. Load the initial data using the **initializeData** JadeScript method in ErewhonInvestmentsModelSchema
+3. From the ErewhonInvestmentsViewSchema, select **Exposures** from the **Browse menu** and double-click on **DotNetExposure** on the **C#** sheet.
+4. Click through until you get to the Generate sheet. On this sheet, tick **Generate Sample .csproj File** and **Generate Sample .config File**. For the Output Directory, set **<Your-Local-Repository-Directory>\Erewhon\ErewhonDotNetExposure\**, creating the ErewhonDotNetExposure folder if necessary.
+5. Open the generated **DotNetExposure.csproj** in Visual Studio
+6. Right click DotNetExposure, select Build, Platform target: to **x64**
+7. Build the project
+8. Exit Visual Studio (Don’t need to save the solution)
+9. Navigate to the ErewhonDotNetShop folder in your local repository directory.
+	
+	(For the next two steps, you can skip them if you have installed JADE in C:\Jade)
+10. Open app.config in your preferred text editor (e.g. notepad++), change all instances of “C:\Jade” to your JADE install dir.
+11. If you have renamed your system folder or if your jade.ini file does not live in the jade base directory, modify the file paths as needed.
+12. Open **ErewhonDotNetShop.csproj** in your preferred text editor (e.g. notepad++), change all instances of “C:\Jade” to your JADE install dir
+13. Make sure you have a rap running for your JADE db, then open **ErewhonDotNetShop.sln** in Microsoft Visual Studio, build and run it.
+
 ## Frequently Asked Questions
 **Q.** Can I contribute to or change these schemas?
 > The schemas contained in this repository are for demonstration purposes and as such are not open to pull requests. However, you are welcome to create a fork and make changes to your own copy, subject to our license ([LICENSE.txt](LICENSE.txt))
