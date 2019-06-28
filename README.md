@@ -56,7 +56,7 @@ Before you can load the schemas, you will need JADE 2018 installed:
 10. Open app.config in your preferred text editor (e.g. notepad++), change all instances of “C:\Jade” to your JADE install dir.
 11. If you have renamed your system folder or if your jade.ini file does not live in the jade base directory, modify the file paths as needed.
 12. Open **ErewhonDotNetShop.csproj** in your preferred text editor (e.g. notepad++), change all instances of “C:\Jade” to your JADE install dir
-13. Make sure you have a rap running for your JADE db, then open ErewhonDotNetShop.sln in Microsoft Visual Studio, build and run it.
+13. Make sure you have a rap running for your JADE db, then open **ErewhonDotNetShop.sln** in Microsoft Visual Studio, build and run it.
 
 ## Frequently Asked Questions
 **Q.** Can I contribute to or change these schemas?
