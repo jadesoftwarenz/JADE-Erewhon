@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\ErewhonFix\Erewhon\ErewhonDotNetShop\obj\x64\Debug\
+C:\ErewhonFinalFix\Erewhon\ErewhonDotNetShop\obj\x64\Debug\
 ErewhonTest
 none
 false
 DEBUG;TRACE
-C:\ErewhonFix\Erewhon\ErewhonDotNetShop\App.xaml
+C:\ErewhonFinalFix\Erewhon\ErewhonDotNetShop\App.xaml
 5-1940732467
 
-23-1434880810
-126-901337283
+272024243112
+126-1572699498
 Views\Checkout.xaml;Views\Confirmation.xaml;Views\ItemDetails.xaml;Views\MainWindow.xaml;Views\Shop.xaml;
 
-False
+True
 
