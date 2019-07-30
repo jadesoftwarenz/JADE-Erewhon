@@ -1,4 +1,4 @@
-jadeVersionNumber "18.0.01";
+jadeVersionNumber "99.0.00";
 schemaDefinition
 ErewhonInvestmentsViewSchema subschemaOf ErewhonInvestmentsModelSchema completeDefinition, patchVersioningEnabled = false;
 		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:09;
@@ -666,7 +666,7 @@ typeHeaders
 	TestViewTenderSaleItem subclassOf TestViewSaleItem highestOrdinal = 1, number = 2133;
 	TestViewTender subclassOf JadeTestCase number = 2155;
 	ErewhonInvestmentsService subclassOf JadeWebServiceProvider transient, sharedTransientAllowed, transientAllowed, subclassSharedTransientAllowed, subclassTransientAllowed, number = 2261;
-	ErewhonInvestmentsServiceAdmin subclassOf ErewhonInvestmentsService transient, sharedTransientAllowed, transientAllowed, subclassSharedTransientAllowed, subclassTransientAllowed, number = 2156;
+	ErewhonInvestmentsServiceAdmin subclassOf ErewhonInvestmentsService transient, sharedTransientAllowed, transientAllowed, subclassSharedTransientAllowed, subclassTransientAllowed, number = 2065;
 	SaleItemSearch subclassOf Object transient, sharedTransientAllowed, transientAllowed, highestOrdinal = 8, number = 2209;
 	SErewhonInvestmentsViewSchema subclassOf SErewhonInvestmentsModelSchema highestSubId = 3, highestOrdinal = 5, number = 2157;
 	FormBase subclassOf Form transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 1, number = 2158;
@@ -1822,6 +1822,8 @@ is raised.`
 		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:09;
 		zInvalidPictureExHandler(exObj: Exception): Integer protected, number = 1009;
 		setModifiedTimeStamp "cnwta3" "16.0.02" 2018:08:16:16:07:18.852;
+		zResynchObjectAndGetEdition(obj: Object) updating, number = 1010;
+		setModifiedTimeStamp "cnwta32" "99.0.00" 2019:07:30:14:13:56.063;
 		zSynchronizeForm(
 			eventType: Integer; 
 			theObject: Object; 
@@ -2868,7 +2870,7 @@ member 'documents' itself).
 		setAddressableEntity(address: Address) updating, number = 1003;
 		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:17:12:22:25.063;
 		zInitializeForm() updating, protected, number = 1004;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:17:12:22:25.064;
+		setModifiedTimeStamp "cnwta32" "99.0.00" 2019:07:30:14:15:18.994;
 		zValidateForm(): Integer protected, number = 1005;
 		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:05:15:51:01.143;
  
@@ -2882,7 +2884,7 @@ member 'documents' itself).
  
 	jadeMethodDefinitions
 		zDoAction(): Boolean updating, protected, number = 1001;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:17:12:22:25.067;
+		setModifiedTimeStamp "cnwta32" "99.0.00" 2019:07:30:14:14:26.164;
 		zValidateForm(): Integer protected, number = 1002;
 		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:17:12:22:25.069;
 	)
@@ -2892,7 +2894,7 @@ member 'documents' itself).
  
 	jadeMethodDefinitions
 		zDoAction(): Boolean updating, protected, number = 1001;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:17:12:22:25.065;
+		setModifiedTimeStamp "cnwta3" "99.0.00" 2019:07:30:14:08:19.843;
 		zValidateForm(): Integer protected, number = 1002;
 		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:17:12:22:25.068;
 	)
@@ -2902,7 +2904,7 @@ member 'documents' itself).
  
 	jadeMethodDefinitions
 		zDoAction(): Boolean updating, protected, number = 1001;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:12:13:33:05.204;
+		setModifiedTimeStamp "cnwta3" "99.0.00" 2019:07:30:14:07:34.747;
 	)
 	FormCommissionRate completeDefinition
 	(
@@ -4063,7 +4065,7 @@ ErewhonInvestmentsViewSchemaDb
 	databaseFileDefinitions
 		"erecart" number=88;
 		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:09;
-		"eredef" number=55;
+		"eredef" number=54;
 		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
 	defaultFileDefinition "eredef";
 	classMapDefinitions
@@ -8746,6 +8748,30 @@ begin
 end;
 }
 
+zResynchObjectAndGetEdition
+{
+zResynchObjectAndGetEdition(obj : Object) updating;
+// --------------------------------------------------------------------------------
+// Method:		zResynchObjectAndGetEdition
+//
+// Purpose:		We want the latest edition of the object, and to ensure the object
+//				*is* the latest edition, so we first resynch it, then grab the
+//				edition and save it as zObjEdition. If the object is updated later
+//				by someone else, we then know what edition it was when we first
+//				opened the form.
+//
+// Parameters:	obj - The object to resynch and get the edition of.
+// --------------------------------------------------------------------------------
+
+begin
+	obj.resynchObject(obj);
+	self.zObjEdition := obj.edition;
+	write obj.edition;
+	write zObjEdition;
+end;
+
+}
+
 zSynchronizeForm
 {
 zSynchronizeForm(eventType: Integer; theObject: Object; eventTag: Integer; userInfo: Any) updating, protected;
@@ -12180,6 +12206,7 @@ begin
 		txtName.readOnly	:=	false;
 	else
 		caption				:=	$Edit & " " & caption;
+		self.zResynchObjectAndGetEdition(address);
 		txtName.readOnly	:=	true;
 		txtName.text		:=	address.name;
 		txtAddress1.text	:=	address.street;
@@ -12262,7 +12289,7 @@ zDoAction() : Boolean updating, protected;
 vars
 	agent       : Agent;
 	agentName	: String;
-	address1	: String;
+	street		: String;
 	city		: String;
 	country		: String;
 	phone		: String;
@@ -12274,7 +12301,7 @@ vars
 
 begin
 	agentName	:=	txtName.text.trimBlanks;
-	address1	:=	txtAddress1.text.trimBlanks;
+	street		:=	txtAddress1.text.trimBlanks;
 	city		:=	txtAddress2.text.trimBlanks;
 	country		:=	txtAddress3.text.trimBlanks;
 	phone		:=	txtPhone.text.trimBlanks;
@@ -12286,7 +12313,7 @@ begin
 	if address = null then
 		errorCode := app.myTA.trxCreateAddress(	
 										agentName,
-										address1,
+										street,
 										city,
 										country,
 										email,
@@ -12299,16 +12326,17 @@ begin
 			errorCode := app.myTA.trxCreateAgent( address, agent );
 		endif;
 	else
+		write self.zObjEdition;
 		errorCode := app.myTA.trxUpdateAddress(	
 										address,
 										self.zObjEdition,
 										agentName,
-										address1,
+										street,
 										city,
 										country,
-										phone,
-										fax,
 										email,
+										fax,
+										phone,
 										webSite
 										);
 	endif;
@@ -12358,7 +12386,7 @@ zDoAction() : Boolean updating, protected;
 vars
 	client		: Client;
 	clientName	: String;
-	address1	: String;
+	street		: String;
 	city		: String;
 	country		: String;
 	phone		: String;
@@ -12370,7 +12398,7 @@ vars
 
 begin
 	clientName	:=	txtName.text.trimBlanks;
-	address1	:=	txtAddress1.text.trimBlanks;
+	street		:=	txtAddress1.text.trimBlanks;
 	city		:=	txtAddress2.text.trimBlanks;
 	country		:=	txtAddress3.text.trimBlanks;
 	phone		:=	txtPhone.text.trimBlanks;
@@ -12382,7 +12410,7 @@ begin
 	if address = null then
 		errorCode := app.myTA.trxCreateAddress(
 										clientName,
-										address1,
+										street,
 										city,
 										country,
 										email,
@@ -12402,12 +12430,12 @@ begin
 										address,
 										self.zObjEdition,
 										clientName,
-										address1,
+										street,
 										city,
 										country,
-										phone,
-										fax,
 										email,
+										fax,
+										phone,
 										webSite
 										);
 	endif;
@@ -12456,7 +12484,7 @@ zDoAction() : Boolean updating, protected;
 vars
 	company		: Company;
 	entityName	: String;
-	address1	: String;
+	street		: String;
 	city		: String;
 	country		: String;
 	phone		: String;
@@ -12468,7 +12496,7 @@ vars
 
 begin
 	entityName	:=	txtName.text.trimBlanks;
-	address1	:=	txtAddress1.text.trimBlanks;
+	street		:=	txtAddress1.text.trimBlanks;
 	city		:=	txtAddress2.text.trimBlanks;
 	country		:=	txtAddress3.text.trimBlanks;
 	phone		:=	txtPhone.text.trimBlanks;
@@ -12483,12 +12511,12 @@ begin
 											address,
 											self.zObjEdition,
 											entityName,
-											address1,
+											street,
 											city,
 											country,
-											phone,
-											fax,
 											email,
+											fax,
+											phone,
 											webSite);
 	endif;
 

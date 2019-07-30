@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<schema name="ErewhonInvestmentsViewSchema" JadeVersionNumber="18.0.01" JadePatchNumber="0" CompleteDefinition="true">
+<schema name="ErewhonInvestmentsViewSchema" JadeVersionNumber="99.0.00" JadePatchNumber="0" CompleteDefinition="true">
 
 	<Application name="Administration">
 		<__overridePatchNumber>0</__overridePatchNumber>
@@ -522,7 +522,7 @@
 	</Global>
 
 	<Form locale="5129" name="FormBase">
-		<_painterModifiedTimeStamp>2019:02:18:13:52:48.275</_painterModifiedTimeStamp>
+		<_painterModifiedTimeStamp>2019:07:30:14:04:12.985</_painterModifiedTimeStamp>
 		<allowDocking>0</allowDocking>
 		<backBrush/>
 		<backBrushStyle>0</backBrushStyle>
@@ -578,7 +578,7 @@
 	</Form>
 
 	<Form locale="5129" name="FormAbout">
-		<_painterModifiedTimeStamp>2019:02:18:13:52:48.276</_painterModifiedTimeStamp>
+		<_painterModifiedTimeStamp>2019:07:30:14:04:13.052</_painterModifiedTimeStamp>
 		<allowDocking>0</allowDocking>
 		<backBrush/>
 		<backBrushStyle>0</backBrushStyle>
@@ -1968,7 +1968,7 @@ Note: The full names, contact details and products referred to in the program ar
 	</Form>
 
 	<Form locale="5129" name="FormAdminApp">
-		<_painterModifiedTimeStamp>2019:02:18:13:52:48.276</_painterModifiedTimeStamp>
+		<_painterModifiedTimeStamp>2019:07:30:14:04:13.052</_painterModifiedTimeStamp>
 		<allowDocking>0</allowDocking>
 		<backBrush/>
 		<backBrushStyle>0</backBrushStyle>
@@ -2024,7 +2024,7 @@ Note: The full names, contact details and products referred to in the program ar
 	</Form>
 
 	<Form locale="5129" name="FormAdminMdi">
-		<_painterModifiedTimeStamp>2019:02:18:15:04:50.995</_painterModifiedTimeStamp>
+		<_painterModifiedTimeStamp>2019:07:30:14:04:12.986</_painterModifiedTimeStamp>
 		<allowDocking>0</allowDocking>
 		<backBrush/>
 		<backBrushStyle>0</backBrushStyle>
@@ -2844,7 +2844,7 @@ Note: The full names, contact details and products referred to in the program ar
 	</Form>
 
 	<Form locale="5129" name="FormMdiChild">
-		<_painterModifiedTimeStamp>2019:02:18:13:52:48.277</_painterModifiedTimeStamp>
+		<_painterModifiedTimeStamp>2019:07:30:14:04:13.052</_painterModifiedTimeStamp>
 		<allowDocking>0</allowDocking>
 		<backBrush/>
 		<backBrushStyle>0</backBrushStyle>
@@ -2900,7 +2900,7 @@ Note: The full names, contact details and products referred to in the program ar
 	</Form>
 
 	<Form locale="5129" name="FormAgentClientList">
-		<_painterModifiedTimeStamp>2019:02:18:15:04:50.996</_painterModifiedTimeStamp>
+		<_painterModifiedTimeStamp>2019:07:30:14:04:12.986</_painterModifiedTimeStamp>
 		<allowDocking>0</allowDocking>
 		<backBrush/>
 		<backBrushStyle>0</backBrushStyle>
@@ -4167,7 +4167,7 @@ Note: The full names, contact details and products referred to in the program ar
 	</Form>
 
 	<Form locale="5129" name="FormAgentCommissionRates">
-		<_painterModifiedTimeStamp>2019:02:18:15:04:50.997</_painterModifiedTimeStamp>
+		<_painterModifiedTimeStamp>2019:07:30:14:04:12.986</_painterModifiedTimeStamp>
 		<allowDocking>0</allowDocking>
 		<backBrush/>
 		<backBrushStyle>0</backBrushStyle>
@@ -5179,7 +5179,7 @@ Note: The full names, contact details and products referred to in the program ar
 	</Form>
 
 	<Form locale="5129" name="FormCommissionRatesList">
-		<_painterModifiedTimeStamp>2019:02:18:15:04:51.013</_painterModifiedTimeStamp>
+		<_painterModifiedTimeStamp>2019:07:30:14:04:13</_painterModifiedTimeStamp>
 		<allowDocking>0</allowDocking>
 		<backBrush/>
 		<backBrushStyle>0</backBrushStyle>
@@ -5627,7 +5627,7 @@ Note: The full names, contact details and products referred to in the program ar
 	</Form>
 
 	<Form locale="5129" name="FormDocumentorSetup">
-		<_painterModifiedTimeStamp>2019:02:18:13:52:48.278</_painterModifiedTimeStamp>
+		<_painterModifiedTimeStamp>2019:07:30:14:04:13.052</_painterModifiedTimeStamp>
 		<allowDocking>0</allowDocking>
 		<backBrush/>
 		<backBrushStyle>0</backBrushStyle>
@@ -5980,7 +5980,7 @@ wBgAAP/4AAD/+AAA</pictureOpen>
 	</Form>
 
 	<Form locale="5129" name="FormLocationsList">
-		<_painterModifiedTimeStamp>2019:02:18:15:04:51.014</_painterModifiedTimeStamp>
+		<_painterModifiedTimeStamp>2019:07:30:14:04:13.002</_painterModifiedTimeStamp>
 		<allowDocking>0</allowDocking>
 		<backBrush/>
 		<backBrushStyle>0</backBrushStyle>
@@ -7124,7 +7124,7 @@ wBgAAP/4AAD/+AAA</pictureOpen>
 	</Form>
 
 	<Form locale="5129" name="FormSaleItemCategoryList">
-		<_painterModifiedTimeStamp>2019:02:18:15:04:51.019</_painterModifiedTimeStamp>
+		<_painterModifiedTimeStamp>2019:07:30:14:04:13.002</_painterModifiedTimeStamp>
 		<allowDocking>0</allowDocking>
 		<backBrush/>
 		<backBrushStyle>0</backBrushStyle>
@@ -7809,7 +7809,7 @@ wBgAAP/4AAD/+AAA</pictureOpen>
 	</Form>
 
 	<Form locale="5129" name="FormSaleItemList">
-		<_painterModifiedTimeStamp>2019:02:18:15:04:51.020</_painterModifiedTimeStamp>
+		<_painterModifiedTimeStamp>2019:07:30:14:04:13.003</_painterModifiedTimeStamp>
 		<allowDocking>0</allowDocking>
 		<backBrush/>
 		<backBrushStyle>0</backBrushStyle>
@@ -8200,7 +8200,7 @@ wBgAAP/4AAD/+AAA</pictureOpen>
 	</Form>
 
 	<Form locale="5129" name="FormSalesList">
-		<_painterModifiedTimeStamp>2019:02:18:15:04:51.020</_painterModifiedTimeStamp>
+		<_painterModifiedTimeStamp>2019:07:30:14:04:13.003</_painterModifiedTimeStamp>
 		<allowDocking>0</allowDocking>
 		<backBrush/>
 		<backBrushStyle>0</backBrushStyle>
@@ -9015,7 +9015,7 @@ wBgAAP/4AAD/+AAA</pictureOpen>
 	</Form>
 
 	<Form locale="5129" name="FormNonMdiChild">
-		<_painterModifiedTimeStamp>2019:02:18:13:52:48.279</_painterModifiedTimeStamp>
+		<_painterModifiedTimeStamp>2019:07:30:14:04:13.052</_painterModifiedTimeStamp>
 		<allowDocking>0</allowDocking>
 		<backBrush/>
 		<backBrushStyle>0</backBrushStyle>
@@ -9071,7 +9071,7 @@ wBgAAP/4AAD/+AAA</pictureOpen>
 	</Form>
 
 	<Form locale="5129" name="FormAddressableEntity">
-		<_painterModifiedTimeStamp>2019:02:18:15:04:50.989</_painterModifiedTimeStamp>
+		<_painterModifiedTimeStamp>2019:07:30:14:04:12.987</_painterModifiedTimeStamp>
 		<allowDocking>0</allowDocking>
 		<backBrush/>
 		<backBrushStyle>0</backBrushStyle>
@@ -10481,7 +10481,7 @@ wBgAAP/4AAD/+AAA</pictureOpen>
 	</Form>
 
 	<Form locale="5129" name="FormAgent">
-		<_painterModifiedTimeStamp>2019:02:18:15:04:50.992</_painterModifiedTimeStamp>
+		<_painterModifiedTimeStamp>2019:07:30:14:04:12.988</_painterModifiedTimeStamp>
 		<allowDocking>0</allowDocking>
 		<backBrush/>
 		<backBrushStyle>0</backBrushStyle>
@@ -10537,7 +10537,7 @@ wBgAAP/4AAD/+AAA</pictureOpen>
 	</Form>
 
 	<Form locale="5129" name="FormClient">
-		<_painterModifiedTimeStamp>2019:02:18:15:04:50.993</_painterModifiedTimeStamp>
+		<_painterModifiedTimeStamp>2019:07:30:14:04:12.988</_painterModifiedTimeStamp>
 		<allowDocking>0</allowDocking>
 		<backBrush/>
 		<backBrushStyle>0</backBrushStyle>
@@ -10593,7 +10593,7 @@ wBgAAP/4AAD/+AAA</pictureOpen>
 	</Form>
 
 	<Form locale="5129" name="FormCompany">
-		<_painterModifiedTimeStamp>2019:02:18:15:04:50.994</_painterModifiedTimeStamp>
+		<_painterModifiedTimeStamp>2019:07:30:14:04:12.988</_painterModifiedTimeStamp>
 		<allowDocking>0</allowDocking>
 		<backBrush/>
 		<backBrushStyle>0</backBrushStyle>
@@ -10649,7 +10649,7 @@ wBgAAP/4AAD/+AAA</pictureOpen>
 	</Form>
 
 	<Form locale="5129" name="FormCommissionRate">
-		<_painterModifiedTimeStamp>2019:02:18:15:04:51.012</_painterModifiedTimeStamp>
+		<_painterModifiedTimeStamp>2019:07:30:14:04:13.005</_painterModifiedTimeStamp>
 		<allowDocking>0</allowDocking>
 		<backBrush/>
 		<backBrushStyle>0</backBrushStyle>
@@ -11155,7 +11155,7 @@ wBgAAP/4AAD/+AAA</pictureOpen>
 	</Form>
 
 	<Form locale="5129" name="FormCountry">
-		<_painterModifiedTimeStamp>2019:02:18:15:04:51.013</_painterModifiedTimeStamp>
+		<_painterModifiedTimeStamp>2019:07:30:14:04:13.005</_painterModifiedTimeStamp>
 		<allowDocking>0</allowDocking>
 		<backBrush/>
 		<backBrushStyle>0</backBrushStyle>
@@ -11498,7 +11498,7 @@ wBgAAP/4AAD/+AAA</pictureOpen>
 	</Form>
 
 	<Form locale="5129" name="FormFindSaleItem">
-		<_painterModifiedTimeStamp>2019:02:18:13:52:48.281</_painterModifiedTimeStamp>
+		<_painterModifiedTimeStamp>2019:07:30:14:04:13.053</_painterModifiedTimeStamp>
 		<allowDocking>0</allowDocking>
 		<backBrush/>
 		<backBrushStyle>0</backBrushStyle>
@@ -11841,7 +11841,7 @@ wBgAAP/4AAD/+AAA</pictureOpen>
 	</Form>
 
 	<Form locale="5129" name="FormRegion">
-		<_painterModifiedTimeStamp>2019:02:18:15:04:51.015</_painterModifiedTimeStamp>
+		<_painterModifiedTimeStamp>2019:07:30:14:04:13.006</_painterModifiedTimeStamp>
 		<allowDocking>0</allowDocking>
 		<backBrush/>
 		<backBrushStyle>0</backBrushStyle>
@@ -12295,7 +12295,7 @@ wBgAAP/4AAD/+AAA</pictureOpen>
 	</Form>
 
 	<Form locale="5129" name="FormSaleItem">
-		<_painterModifiedTimeStamp>2019:02:18:15:04:51.016</_painterModifiedTimeStamp>
+		<_painterModifiedTimeStamp>2019:07:30:14:04:13.006</_painterModifiedTimeStamp>
 		<allowDocking>0</allowDocking>
 		<backBrush/>
 		<backBrushStyle>0</backBrushStyle>
@@ -13662,7 +13662,7 @@ wBgAAP/4AAD/+AAA</pictureOpen>
 	</Form>
 
 	<Form locale="5129" name="FormRetailSaleItem">
-		<_painterModifiedTimeStamp>2019:02:18:15:04:51.017</_painterModifiedTimeStamp>
+		<_painterModifiedTimeStamp>2019:07:30:14:04:13.007</_painterModifiedTimeStamp>
 		<allowDocking>0</allowDocking>
 		<backBrush/>
 		<backBrushStyle>0</backBrushStyle>
@@ -13884,7 +13884,7 @@ wBgAAP/4AAD/+AAA</pictureOpen>
 	</Form>
 
 	<Form locale="5129" name="FormTenderSaleItem">
-		<_painterModifiedTimeStamp>2019:02:18:15:04:51.018</_painterModifiedTimeStamp>
+		<_painterModifiedTimeStamp>2019:07:30:14:04:13.007</_painterModifiedTimeStamp>
 		<allowDocking>0</allowDocking>
 		<backBrush/>
 		<backBrushStyle>0</backBrushStyle>
@@ -14224,7 +14224,7 @@ wBgAAP/4AAD/+AAA</pictureOpen>
 	</Form>
 
 	<Form locale="5129" name="FormSaleItemCategory">
-		<_painterModifiedTimeStamp>2019:02:18:15:04:51.018</_painterModifiedTimeStamp>
+		<_painterModifiedTimeStamp>2019:07:30:14:04:13.008</_painterModifiedTimeStamp>
 		<allowDocking>0</allowDocking>
 		<backBrush/>
 		<backBrushStyle>0</backBrushStyle>
@@ -14684,7 +14684,7 @@ wBgAAP/4AAD/+AAA</pictureOpen>
 	</Form>
 
 	<Form locale="5129" name="FormClientApp">
-		<_painterModifiedTimeStamp>2019:02:18:15:04:51</_painterModifiedTimeStamp>
+		<_painterModifiedTimeStamp>2019:07:30:14:04:13.008</_painterModifiedTimeStamp>
 		<allowDocking>0</allowDocking>
 		<backBrush/>
 		<backBrushStyle>0</backBrushStyle>
@@ -14740,7 +14740,7 @@ wBgAAP/4AAD/+AAA</pictureOpen>
 	</Form>
 
 	<Form locale="5129" name="FormShopClient">
-		<_painterModifiedTimeStamp>2019:02:22:10:32:53.964</_painterModifiedTimeStamp>
+		<_painterModifiedTimeStamp>2019:07:30:14:04:13.010</_painterModifiedTimeStamp>
 		<allowDocking>0</allowDocking>
 		<backBrush/>
 		<backBrushStyle>0</backBrushStyle>
@@ -15705,7 +15705,7 @@ j4bgIJVk35V2gY7GPW0bYkHHMW68DLvQtkTtvHjYBE/OR7JWmqPrOAEM99E2/sMnXQs7ux96WfIg
 	</Form>
 
 	<Form locale="5129" name="FormShopCheckout">
-		<_painterModifiedTimeStamp>2019:02:22:10:32:53.969</_painterModifiedTimeStamp>
+		<_painterModifiedTimeStamp>2019:07:30:14:04:13.053</_painterModifiedTimeStamp>
 		<allowDocking>0</allowDocking>
 		<backBrush/>
 		<backBrushStyle>0</backBrushStyle>
@@ -16173,7 +16173,7 @@ j4bgIJVk35V2gY7GPW0bYkHHMW68DLvQtkTtvHjYBE/OR7JWmqPrOAEM99E2/sMnXQs7ux96WfIg
 	</Form>
 
 	<Form locale="5129" name="FormShopConfirmation">
-		<_painterModifiedTimeStamp>2019:02:22:10:32:53.976</_painterModifiedTimeStamp>
+		<_painterModifiedTimeStamp>2019:07:30:14:04:13.053</_painterModifiedTimeStamp>
 		<allowDocking>0</allowDocking>
 		<backBrush/>
 		<backBrushStyle>0</backBrushStyle>
@@ -16422,7 +16422,7 @@ j4bgIJVk35V2gY7GPW0bYkHHMW68DLvQtkTtvHjYBE/OR7JWmqPrOAEM99E2/sMnXQs7ux96WfIg
 	</Form>
 
 	<Form locale="5129" name="FormShopSaleItems">
-		<_painterModifiedTimeStamp>2019:02:22:10:32:53.981</_painterModifiedTimeStamp>
+		<_painterModifiedTimeStamp>2019:07:30:14:04:13.011</_painterModifiedTimeStamp>
 		<allowDocking>0</allowDocking>
 		<backBrush/>
 		<backBrushStyle>0</backBrushStyle>
@@ -19225,7 +19225,7 @@ j4bgIJVk35V2gY7GPW0bYkHHMW68DLvQtkTtvHjYBE/OR7JWmqPrOAEM99E2/sMnXQs7ux96WfIg
 	</Form>
 
 	<Form locale="5129" name="FormWebClientApp">
-		<_painterModifiedTimeStamp>2019:02:18:15:04:51.007</_painterModifiedTimeStamp>
+		<_painterModifiedTimeStamp>2019:07:30:14:04:13.011</_painterModifiedTimeStamp>
 		<allowDocking>0</allowDocking>
 		<backBrush/>
 		<backBrushStyle>0</backBrushStyle>
@@ -19903,7 +19903,7 @@ AAAASUVORK5CYII=</picture>
 	</Form>
 
 	<Form locale="5129" name="FormWebCheckout">
-		<_painterModifiedTimeStamp>2019:02:18:15:04:51.009</_painterModifiedTimeStamp>
+		<_painterModifiedTimeStamp>2019:07:30:14:04:13.012</_painterModifiedTimeStamp>
 		<allowDocking>0</allowDocking>
 		<backBrush/>
 		<backBrushStyle>0</backBrushStyle>
@@ -20191,7 +20191,7 @@ AAAASUVORK5CYII=</picture>
 	</Form>
 
 	<Form locale="5129" name="FormWebClientSaleItems">
-		<_painterModifiedTimeStamp>2019:02:18:15:04:51.010</_painterModifiedTimeStamp>
+		<_painterModifiedTimeStamp>2019:07:30:14:04:13.013</_painterModifiedTimeStamp>
 		<allowDocking>0</allowDocking>
 		<backBrush/>
 		<backBrushStyle>0</backBrushStyle>
@@ -22439,7 +22439,7 @@ AAAASUVORK5CYII=</picture>
 	</Form>
 
 	<Form locale="5129" name="FormWebConfirmation">
-		<_painterModifiedTimeStamp>2019:02:18:15:04:51.010</_painterModifiedTimeStamp>
+		<_painterModifiedTimeStamp>2019:07:30:14:04:13.013</_painterModifiedTimeStamp>
 		<allowDocking>0</allowDocking>
 		<backBrush/>
 		<backBrushStyle>0</backBrushStyle>
@@ -22619,7 +22619,7 @@ AAAASUVORK5CYII=</picture>
 	</Form>
 
 	<Form locale="5129" name="FormWebLogon">
-		<_painterModifiedTimeStamp>2019:02:18:15:04:51.011</_painterModifiedTimeStamp>
+		<_painterModifiedTimeStamp>2019:07:30:14:04:13.013</_painterModifiedTimeStamp>
 		<allowDocking>0</allowDocking>
 		<backBrush/>
 		<backBrushStyle>0</backBrushStyle>
@@ -22840,7 +22840,7 @@ AAAASUVORK5CYII=</picture>
 	</Form>
 
 	<Form locale="5129" name="FormCloseTenders">
-		<_painterModifiedTimeStamp>2019:02:18:13:52:48.286</_painterModifiedTimeStamp>
+		<_painterModifiedTimeStamp>2019:07:30:14:04:13.053</_painterModifiedTimeStamp>
 		<allowDocking>0</allowDocking>
 		<backBrush/>
 		<backBrushStyle>0</backBrushStyle>
@@ -23861,7 +23861,7 @@ AAAASUVORK5CYII=</picture>
 	</Form>
 
 	<Form locale="5129" name="FormLogon">
-		<_painterModifiedTimeStamp>2019:02:18:15:04:51.014</_painterModifiedTimeStamp>
+		<_painterModifiedTimeStamp>2019:07:30:14:04:13.014</_painterModifiedTimeStamp>
 		<allowDocking>0</allowDocking>
 		<backBrush/>
 		<backBrushStyle>0</backBrushStyle>
