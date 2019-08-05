@@ -37,7 +37,7 @@ Before you can load the schemas, you need JADE 2018 installed.
 
 **Step 3: Importing the Erewhon Database**
 1. In the Schema menu, select the **Load** command.
-2. Check the **Load Multiple Schemas** option.
+2. Check the **Load Multiple Schemas** check box.
 3. Select the **ErewhonInvestments.mul** file in the folder you selected as your working directory.
 4. Click the **OK** button, and the Erewhon schemas will be loaded into your Schema Browser ready for use.
 
@@ -45,7 +45,7 @@ Before you can load the schemas, you need JADE 2018 installed.
 1. Load the Erewhon schemas.
 2. Load the initial data using the **initializeData** JadeScript method in ErewhonInvestmentsModelSchema.
 3. From the ErewhonInvestmentsViewSchema, select **Exposures** from the Browse menu and double-click on **DotNetExposure** on the **C#** sheet.
-4. Click through until you get to the **Generate** sheet. On this sheet, check the **Generate Sample .csproj File** and **Generate Sample .config File** checkboxes. For the Output Directory, set **\<Your-Local-Repository-Directory\>\Erewhon\ErewhonDotNetExposure\\**, creating the ErewhonDotNetExposure folder, if necessary.
+4. Click through until you get to the **Generate** sheet. On this sheet, check the **Generate Sample .csproj File** and **Generate Sample .config File** check boxes. For the Output Directory, set **\<Your-Local-Repository-Directory\>\Erewhon\ErewhonDotNetExposure\\**, creating the ErewhonDotNetExposure folder, if necessary.
 5. Open the generated **DotNetExposure.csproj** in Visual Studio.
 6. Right-click **DotNetExposure**, select Build, Platform target: to **x64**.
 7. Build the project.
