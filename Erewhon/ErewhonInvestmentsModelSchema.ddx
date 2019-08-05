@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<schema name="ErewhonInvestmentsModelSchema" JadeVersionNumber="18.0.01" JadePatchNumber="0" CompleteDefinition="true">
+<schema name="ErewhonInvestmentsModelSchema" JadeVersionNumber="99.0.00" JadePatchNumber="0" CompleteDefinition="true">
 
 	<Application name="DataLoader">
 		<__overridePatchNumber>0</__overridePatchNumber>
@@ -82,7 +82,7 @@
 	</Global>
 
 	<Form locale="5129" name="MethodParametersDialog">
-		<_painterModifiedTimeStamp>2019:02:18:17:12:49.643</_painterModifiedTimeStamp>
+		<_painterModifiedTimeStamp>2019:08:05:11:11:58.309</_painterModifiedTimeStamp>
 		<allowDocking>0</allowDocking>
 		<backBrush/>
 		<backBrushStyle>0</backBrushStyle>

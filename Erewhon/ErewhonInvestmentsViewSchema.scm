@@ -1,3 +1,4 @@
+/* JADE COMMAND FILE NAME C:\Erewhon\Erewhon\ErewhonInvestmentsViewSchema.jcf */
 jadeVersionNumber "99.0.00";
 schemaDefinition
 ErewhonInvestmentsViewSchema subschemaOf ErewhonInvestmentsModelSchema completeDefinition, patchVersioningEnabled = false;
@@ -669,6 +670,7 @@ typeHeaders
 	ErewhonInvestmentsServiceAdmin subclassOf ErewhonInvestmentsService transient, sharedTransientAllowed, transientAllowed, subclassSharedTransientAllowed, subclassTransientAllowed, number = 2065;
 	SaleItemSearch subclassOf Object transient, sharedTransientAllowed, transientAllowed, highestOrdinal = 8, number = 2209;
 	SErewhonInvestmentsViewSchema subclassOf SErewhonInvestmentsModelSchema highestSubId = 3, highestOrdinal = 5, number = 2157;
+	Erhgerh subclassOf Form transient, transientAllowed, subclassTransientAllowed, number = 2298;
 	FormBase subclassOf Form transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 1, number = 2158;
 	FormAbout subclassOf FormBase transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 6, number = 2159;
 	FormAdminApp subclassOf FormBase transient, transientAllowed, subclassTransientAllowed, number = 2160;
@@ -1775,6 +1777,10 @@ flexible approach to be taken in how you expose your data.`
 	Form completeDefinition
 	(
 	)
+	Erhgerh completeDefinition
+	(
+		setModifiedTimeStamp "wilbur" "99.0.00" 2019:08:05:11:54:27.896;
+	)
 	FormBase completeDefinition
 	(
 		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:07:15:19:53.856;
@@ -1823,7 +1829,7 @@ is raised.`
 		zInvalidPictureExHandler(exObj: Exception): Integer protected, number = 1009;
 		setModifiedTimeStamp "cnwta3" "16.0.02" 2018:08:16:16:07:18.852;
 		zResynchObjectAndGetEdition(obj: Object) updating, number = 1010;
-		setModifiedTimeStamp "cnwta32" "99.0.00" 2019:07:30:14:13:56.063;
+		setModifiedTimeStamp "wilbur" "99.0.00" 2019:08:05:11:12:59.957;
 		zSynchronizeForm(
 			eventType: Integer; 
 			theObject: Object; 
@@ -2809,7 +2815,7 @@ member 'documents' itself).
 	)
 	FormAddressableEntity completeDefinition
 	(
-		setModifiedTimeStamp "cnwta3" "16.0.02" 2018:08:13:11:32:30.827;
+		setModifiedTimeStamp "wilbur" "99.0.00" 2019:08:05:11:14:32.918;
 	referenceDefinitions
 		btnCancel:                     Button  number = 1, ordinal = 1;
 		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:09;
@@ -2884,7 +2890,7 @@ member 'documents' itself).
  
 	jadeMethodDefinitions
 		zDoAction(): Boolean updating, protected, number = 1001;
-		setModifiedTimeStamp "cnwta32" "99.0.00" 2019:07:30:14:14:26.164;
+		setModifiedTimeStamp "wilbur" "99.0.00" 2019:08:05:11:12:54.058;
 		zValidateForm(): Integer protected, number = 1002;
 		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:17:12:22:25.069;
 	)
@@ -3643,7 +3649,7 @@ member 'documents' itself).
 	)
 	FormWebClientApp completeDefinition
 	(
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:18:09:06:52.224;
+		setModifiedTimeStamp "wilbur" "99.0.00" 2019:08:05:11:36:18.276;
 	referenceDefinitions
 		lblClient:                     Label  number = 2, ordinal = 2;
 		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:09;
@@ -8766,8 +8772,6 @@ zResynchObjectAndGetEdition(obj : Object) updating;
 begin
 	obj.resynchObject(obj);
 	self.zObjEdition := obj.edition;
-	write obj.edition;
-	write zObjEdition;
 end;
 
 }
@@ -12326,7 +12330,6 @@ begin
 			errorCode := app.myTA.trxCreateAgent( address, agent );
 		endif;
 	else
-		write self.zObjEdition;
 		errorCode := app.myTA.trxUpdateAddress(	
 										address,
 										self.zObjEdition,
