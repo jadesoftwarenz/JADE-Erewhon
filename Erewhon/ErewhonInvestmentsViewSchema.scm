@@ -14,6 +14,8 @@ constantDefinitions
 		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:10:29:11:08:18.975;
 		AtcgReplayApp:                 String = "AtcgReplayApp";
 		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:10:29:11:08:05.183;
+		CustomerWebServiceApp:         String = "CustomerWebServiceApp";
+		setModifiedTimeStamp "wilbur" "99.0.00" 2019:08:05:16:45:42.085;
 		ErewhonDotNetShop:             String = "ErewhonDotNetShop";
 		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:09;
 		JadeUnitTest:                  String = "JadeUnitTest";
@@ -665,6 +667,7 @@ typeHeaders
 	TestViewRetailSaleItem subclassOf TestViewSaleItem highestOrdinal = 1, number = 2132;
 	TestViewTenderSaleItem subclassOf TestViewSaleItem highestOrdinal = 1, number = 2133;
 	TestViewTender subclassOf JadeTestCase number = 2155;
+	CustomerService subclassOf JadeWebServiceProvider transient, sharedTransientAllowed, transientAllowed, subclassSharedTransientAllowed, subclassTransientAllowed, number = 2299;
 	ErewhonInvestmentsService subclassOf JadeWebServiceProvider transient, sharedTransientAllowed, transientAllowed, subclassSharedTransientAllowed, subclassTransientAllowed, number = 2261;
 	ErewhonInvestmentsServiceAdmin subclassOf ErewhonInvestmentsService transient, sharedTransientAllowed, transientAllowed, subclassSharedTransientAllowed, subclassTransientAllowed, number = 2065;
 	SaleItemSearch subclassOf Object transient, sharedTransientAllowed, transientAllowed, highestOrdinal = 8, number = 2209;
@@ -893,13 +896,13 @@ starts, therefore they cannot be debugged.`
 		getAndValidateUser(
 			usercode: String output; 
 			password: String output): Boolean number = 1002;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:10:29:11:10:40.083;
+		setModifiedTimeStamp "wilbur" "99.0.00" 2019:08:05:16:45:55.746;
 		getErrorString(errorNo: Integer): String number = 1003;
 		setModifiedTimeStamp "cnwta3" "16.0.02" 2018:08:13:10:04:04.502;
 		isUserValid(
 			usercode: String; 
 			password: String): Boolean number = 1004;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:10:29:11:08:32.956;
+		setModifiedTimeStamp "wilbur" "99.0.00" 2019:08:05:16:46:05.648;
 	)
 	JadeRestService completeDefinition
 	(
@@ -1131,6 +1134,100 @@ starts, therefore they cannot be debugged.`
 		wsdl = ``;
 		secureService = default;
 	)
+	)
+	CustomerService completeDefinition
+	(
+		setModifiedTimeStamp "wilbur" "99.0.00" 2019:08:05:14:16:10.248;
+	webServicesClassProperties
+	(
+		additionalInfo = ``;
+		wsdl = ``;
+		secureService = default;
+	)
+ 
+	webServicesMethodDefinitions
+		getClient(clientName: String): Client updating, webService, number = 1001;
+	documentationText
+`Given a client name, this method will return a client object. If a client with the supplied name does not exist, error 23 will be returned.`
+
+		setModifiedTimeStamp "wilbur" "99.0.00" 2019:08:05:14:26:37.825;
+		webServicesMethodProperties
+		(
+			inputEncodingStyle = "";
+			inputNamespace = "";
+			inputUsesEncodedFormat = false;
+			outputEncodingStyle = "";
+			outputNamespace = "";
+			outputUsesEncodedFormat = false;
+			soapAction = "";
+			useBareStyle = false;
+			useSoap12 = false;
+			usesRPC = default;
+			wsdlName = "";
+			soapHeaders = null;
+		)
+		getClientNames(): StringArray webService, number = 1002;
+	documentationText
+`This method will return a string array of client names.`
+
+		setModifiedTimeStamp "wilbur" "99.0.00" 2019:08:05:14:26:16.888;
+		webServicesMethodProperties
+		(
+			inputEncodingStyle = "";
+			inputNamespace = "";
+			inputUsesEncodedFormat = false;
+			outputEncodingStyle = "";
+			outputNamespace = "";
+			outputUsesEncodedFormat = false;
+			soapAction = "";
+			useBareStyle = false;
+			useSoap12 = false;
+			usesRPC = default;
+			wsdlName = "";
+			soapHeaders = null;
+		)
+		updateClient(
+			name: String; 
+			street: String; 
+			city: String; 
+			country: String; 
+			phone: String; 
+			fax: String; 
+			email: String; 
+			website: String) updating, webService, number = 1003;
+		setModifiedTimeStamp "wilbur" "99.0.00" 2019:08:05:14:31:50.457;
+		webServicesMethodProperties
+		(
+			inputEncodingStyle = "";
+			inputNamespace = "";
+			inputUsesEncodedFormat = false;
+			outputEncodingStyle = "";
+			outputNamespace = "";
+			outputUsesEncodedFormat = false;
+			soapAction = "";
+			useBareStyle = false;
+			useSoap12 = false;
+			usesRPC = default;
+			wsdlName = "";
+			soapHeaders = null;
+		)
+		updateClientWithProxy(proxyClient: Client) updating, webService, number = 1004;
+		setModifiedTimeStamp "wilbur" "99.0.00" 2019:08:05:14:58:55.772;
+		webServicesMethodProperties
+		(
+			inputEncodingStyle = "";
+			inputNamespace = "";
+			inputUsesEncodedFormat = false;
+			outputEncodingStyle = "";
+			outputNamespace = "";
+			outputUsesEncodedFormat = false;
+			soapAction = "";
+			useBareStyle = false;
+			useSoap12 = false;
+			usesRPC = default;
+			wsdlName = "";
+			soapHeaders = null;
+		)
 	)
 	ErewhonInvestmentsService completeDefinition
 	(
@@ -4090,6 +4187,119 @@ ErewhonInvestmentsViewSchemaDb
 	)
 schemaViewDefinitions
 _exposedListDefinitions
+CustomerService version=1, priorVersion=0, registryId="_WebServices_Provider"
+		setModifiedTimeStamp "wilbur" "99.0.00" 2019:08:05:14:33:55.018;
+(
+	Address
+	(
+	_exposedPropertyDefinitions
+		city;
+		country;
+		email;
+		fax;
+		name;
+		phone;
+		street;
+		webSite;
+	)
+	Agent
+	(
+	_exposedPropertyDefinitions
+		name;
+	)
+	Array
+	(
+	)
+	Client
+	(
+	_exposedPropertyDefinitions
+		name;
+	)
+	Collection
+	(
+	)
+	CommissionRate
+	(
+	_exposedPropertyDefinitions
+		percentage;
+	)
+	Company
+	(
+	_exposedPropertyDefinitions
+		name;
+	)
+	Country
+	(
+	)
+	CustomerService defaultStyle=99
+	(
+	)
+	List
+	(
+	)
+	Location
+	(
+	_exposedPropertyDefinitions
+		name;
+	)
+	ModelEntity
+	(
+	)
+	Object
+	(
+	)
+	Region
+	(
+	)
+	RetailSale
+	(
+	_exposedPropertyDefinitions
+		price;
+		timeStamp;
+	)
+	RetailSaleItem
+	(
+	)
+	Sale
+	(
+	_exposedPropertyDefinitions
+		agentCommission;
+	)
+	SaleItem
+	(
+	_exposedPropertyDefinitions
+		codeNumber;
+		codePrefix;
+		forSaleDate;
+		fullDescription;
+		photo;
+		price;
+		shortDescription;
+	)
+	SaleItemCategory
+	(
+	_exposedPropertyDefinitions
+		description;
+		name;
+	)
+	StringArray
+	(
+	)
+	Tender
+	(
+	_exposedPropertyDefinitions
+		offer;
+		timeStamp;
+	)
+	TenderSale
+	(
+	)
+	TenderSaleItem
+	(
+	_exposedPropertyDefinitions
+		closureDate;
+	)
+)
 DotNetExposure version=1, priorVersion=0, registryId="_CSharp_Exposure"
 		setModifiedTimeStamp "<unknown>" "" 2018:09:17:13:13:57;
 (
@@ -5303,6 +5513,7 @@ begin
 			not app.isWebShopApp and
 			app.name <> WebServiceOverHttpApp and 
 			app.name <> WebServiceOverTcpApp and
+			app.name <> CustomerWebServiceApp and
 			app.name <> TenderClosureApp then
 		app.msgBox($UnknownApplication, $Error, MsgBox_Stop_Icon + MsgBox_OK_Only);
 		return false;
@@ -5315,6 +5526,7 @@ begin
 		app.name = AtcgControlApp or
 		app.name = AtcgRecordApp or
 		app.name = AtcgReplayApp or
+		app.name = CustomerWebServiceApp or
 		app.name = WebServiceOverTcpApp then
 		return true;
 	else
@@ -5393,6 +5605,7 @@ begin
 		app.name = WebServiceOverHttpApp or
 		app.name = AtcgControlApp or
 		app.name = AtcgReplayApp or
+		app.name = CustomerWebServiceApp or
 		app.name = AtcgRecordApp or
 		app.name = WebServiceOverTcpApp then
 		isValid := true;
@@ -6832,6 +7045,92 @@ vars
 
 begin
 
+end;
+
+}
+
+	)
+	CustomerService (
+	webServicesMethodSources
+getClient
+{
+getClient(clientName: String): Client webService, updating;
+vars
+	client: Client;
+begin
+	client := app.myCompany.allClients[clientName];
+	if client = null then
+		setError(23, clientName, "Client does not exist");
+	endif;
+	return client;
+end;
+}
+
+getClientNames
+{
+getClientNames(): StringArray webService;
+vars
+	names: StringArray;
+	client: Client;
+begin
+	create names transient;
+	foreach client in app.myCompany.allClients do
+		names.add(client.name);
+	endforeach;
+	return names;
+end;
+}
+
+updateClient
+{
+updateClient(name, street, city, country, phone, fax, email, website: String) webService, updating;
+vars
+	client: Client;
+	result: Integer;
+	address : Address;
+begin
+	client := app.myCompany.allClients[name];
+	if client = null then
+		setError(23, name, "Client does not exist");
+		return;
+	endif;
+	
+	address := create Address(name, street, city, country, email, fax, phone, website) transient;
+	
+	result := app.myTA.trxUpdateClient(client, client.edition, address);
+	if result <> 0 then
+		setError(result, name, "Client update failed");
+	endif;
+	
+epilog
+	delete address;
+end;
+
+}
+
+updateClientWithProxy
+{
+updateClientWithProxy(proxyClient : Client) updating, webService;
+vars
+	client 	: Client;
+	result	: Integer;
+begin
+	client := app.myCompany.allClients[proxyClient.name];
+	
+	if client = null then
+		setError(23, proxyClient.name, "Client does not exist");
+		return;
+	endif;
+	
+	result := app.myTA.trxUpdateClient(	
+									client,
+									client.edition,
+									proxyClient.myAddress
+									);
+										
+	if result <> 0 then
+		setError(result, proxyClient.name, global.getErrorString(app.getLastError));
+	endif;										
 end;
 
 }
