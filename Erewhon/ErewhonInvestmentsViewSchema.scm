@@ -1,4 +1,3 @@
-/* JADE COMMAND FILE NAME C:\Erewhon\Erewhon\ErewhonInvestmentsViewSchema.jcf */
 jadeVersionNumber "99.0.00";
 schemaDefinition
 ErewhonInvestmentsViewSchema subschemaOf ErewhonInvestmentsModelSchema completeDefinition, patchVersioningEnabled = false;

@@ -1,4 +1,3 @@
-/* JADE COMMAND FILE NAME C:\Erewhon\Erewhon\ErewhonInvestmentsModelSchema.jcf */
 /* JADE RPS MAPPING FILE C:\Erewhon\Erewhon\ErewhonInvestmentsModelSchema.ddbx */
 jadeVersionNumber "99.0.00";
 schemaDefinition
