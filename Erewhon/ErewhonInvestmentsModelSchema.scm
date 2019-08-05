@@ -1,5 +1,5 @@
-/* JADE RPS MAPPING FILE D:\ErewhonPatch\Erewhon\ErewhonInvestmentsModelSchema.ddbx */
-jadeVersionNumber "18.0.01";
+/* JADE RPS MAPPING FILE C:\Erewhon\Erewhon\ErewhonInvestmentsModelSchema.ddbx */
+jadeVersionNumber "99.0.00";
 schemaDefinition
 ErewhonInvestmentsModelSchema subschemaOf CommonSchema completeDefinition, patchVersioningEnabled = false;
 		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
@@ -375,11 +375,11 @@ typeHeaders
 	TestClient subclassOf JadeTestCase highestOrdinal = 2, number = 2056;
 	TestCommissionRate subclassOf JadeTestCase highestOrdinal = 2, number = 2058;
 	TestCompany subclassOf JadeTestCase highestOrdinal = 12, number = 2059;
-	TestCountry subclassOf JadeTestCase highestOrdinal = 2, number = 2048;
+	TestCountry subclassOf JadeTestCase highestOrdinal = 2, number = 2052;
 	TestItemDetails subclassOf JadeTestCase highestOrdinal = 1, number = 2060;
 	TestModelApp subclassOf JadeTestCase number = 2094;
 	TestOrderProxy subclassOf JadeTestCase highestOrdinal = 10, number = 2074;
-	TestRetailOrderProxy subclassOf TestOrderProxy highestOrdinal = 1, number = 2052;
+	TestRetailOrderProxy subclassOf TestOrderProxy highestOrdinal = 1, number = 2054;
 	TestTenderOrderProxy subclassOf TestOrderProxy highestOrdinal = 1, number = 2075;
 	TestRegion subclassOf JadeTestCase highestOrdinal = 2, number = 2066;
 	TestSale subclassOf JadeTestCase highestOrdinal = 11, number = 2083;
@@ -397,8 +397,8 @@ typeHeaders
 	CommissionRate subclassOf ModelEntity highestSubId = 1, highestOrdinal = 3, number = 2108;
 	Company subclassOf ModelEntity objectVolatility="stable", highestSubId = 9, highestOrdinal = 9, number = 2107;
 	Location subclassOf ModelEntity abstract, highestOrdinal = 1, number = 2109;
-	Country subclassOf Location highestSubId = 1, highestOrdinal = 2, number = 2110;
-	Region subclassOf Location highestSubId = 1, highestOrdinal = 2, number = 2111;
+	Country subclassOf Location highestSubId = 1, highestOrdinal = 2, number = 2061;
+	Region subclassOf Location highestSubId = 1, highestOrdinal = 2, number = 2062;
 	Sale subclassOf ModelEntity abstract, highestOrdinal = 4, number = 2112;
 	RetailSale subclassOf Sale highestOrdinal = 2, number = 2113;
 	TenderSale subclassOf Sale highestOrdinal = 1, number = 2114;
@@ -892,6 +892,10 @@ endif;`
 		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:10:04:13:20:10.600;
 		canAccessDesigner(userName: String): Integer updating, number = 1002;
 		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:10:04:13:19:59.042;
+	)
+	JadeRestService completeDefinition
+	(
+		setModifiedTimeStamp "cnwrjd1" "9.9.00" 71113 2014:03:04:16:22:14.983;
 	)
 	JadeScript completeDefinition
 	(
@@ -2576,18 +2580,6 @@ tenders to be processed in one transaction).`
 		action() updating, number = 1001;
 		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:12:14:39:43.213;
 	)
-	Process completeDefinition
-	(
-	)
-	SchemaEntity completeDefinition
-	(
-	)
-	Type completeDefinition
-	(
-	)
-	Class completeDefinition
-	(
-	)
 	WebSession completeDefinition
 	(
 	)
@@ -2782,19 +2774,6 @@ parameter's class means that it is not scalable.`
 	(
 		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
 	)
-	List completeDefinition
-	(
-	)
-	Array completeDefinition
-	(
-	)
-	ObjectArray completeDefinition
-	(
-	)
-	StringArray completeDefinition
-	(
-		setModifiedTimeStamp "<unknown>" "" 2002:02:08:16:19:20;
-	)
 	String completeDefinition
 	(
  
@@ -2920,7 +2899,7 @@ ErewhonInvestmentsModelSchemaDb
 	(
 		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
 	databaseFileDefinitions
-		"ereaddress" number=52;
+		"ereaddress" number=53;
 		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:08:29:15:31:37.559;
 		"ereagent" number=101;
 		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
@@ -2934,7 +2913,7 @@ ErewhonInvestmentsModelSchemaDb
 		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
 		"erewebservice" number=110;
 		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
-		"eredef" number=51;
+		"eredef" number=54;
 		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
 	defaultFileDefinition "eredef";
 	classMapDefinitions

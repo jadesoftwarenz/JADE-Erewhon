@@ -521,8 +521,64 @@
 	<Global name="GErewhonInvestmentsViewSchema">
 	</Global>
 
+	<Form locale="5129" name="Erhgerh">
+		<_painterModifiedTimeStamp/>
+		<allowDocking>0</allowDocking>
+		<backBrush/>
+		<backBrushStyle>0</backBrushStyle>
+		<backColor>-2147483633</backColor>
+		<borderStyle>2</borderStyle>
+		<bubbleHelp/>
+		<caption>Erhgerh</caption>
+		<clientHeight>0</clientHeight>
+		<clientWidth>0</clientWidth>
+		<clipControls>true</clipControls>
+		<controlBox>true</controlBox>
+		<description/>
+		<disableEvents>false</disableEvents>
+		<disableReason/>
+		<dragCursor/>
+		<enabled>true</enabled>
+		<height>370</height>
+		<helpContextId>0</helpContextId>
+		<helpKeyword/>
+		<icon/>
+		<ignoreSkin>false</ignoreSkin>
+		<left>54</left>
+		<maxButton>true</maxButton>
+		<mdiChild>0</mdiChild>
+		<mdiFrame>false</mdiFrame>
+		<minButton>true</minButton>
+		<minimumHeight>0</minimumHeight>
+		<minimumWidth>0</minimumWidth>
+		<mouseCursor/>
+		<mousePointer>0</mousePointer>
+		<name>Erhgerh</name>
+		<paintedDialogBaseUnits>1048584</paintedDialogBaseUnits>
+		<printerForm>false</printerForm>
+		<scaleForm>true</scaleForm>
+		<scrollBars>0</scrollBars>
+		<secureForm>false</secureForm>
+		<securityLevelEnabled>0</securityLevelEnabled>
+		<securityLevelVisible>0</securityLevelVisible>
+		<skinCategoryName/>
+		<top>29</top>
+		<visible>true</visible>
+		<webBrowserAutoRefreshInterval>0</webBrowserAutoRefreshInterval>
+		<webBrowserAutoRefreshURL/>
+		<webBrowserDisableBackButton>false</webBrowserDisableBackButton>
+		<webEncodingType/>
+		<webFileName/>
+		<width>413</width>
+		<windowState>0</windowState>
+		<controlList>
+		</controlList>
+		<menuList>
+		</menuList>
+	</Form>
+
 	<Form locale="5129" name="FormBase">
-		<_painterModifiedTimeStamp>2019:07:30:14:04:12.985</_painterModifiedTimeStamp>
+		<_painterModifiedTimeStamp>2019:08:05:11:11:58.310</_painterModifiedTimeStamp>
 		<allowDocking>0</allowDocking>
 		<backBrush/>
 		<backBrushStyle>0</backBrushStyle>
@@ -578,7 +634,7 @@
 	</Form>
 
 	<Form locale="5129" name="FormAbout">
-		<_painterModifiedTimeStamp>2019:07:30:14:04:13.052</_painterModifiedTimeStamp>
+		<_painterModifiedTimeStamp>2019:08:05:11:11:58.310</_painterModifiedTimeStamp>
 		<allowDocking>0</allowDocking>
 		<backBrush/>
 		<backBrushStyle>0</backBrushStyle>
@@ -1968,7 +2024,7 @@ Note: The full names, contact details and products referred to in the program ar
 	</Form>
 
 	<Form locale="5129" name="FormAdminApp">
-		<_painterModifiedTimeStamp>2019:07:30:14:04:13.052</_painterModifiedTimeStamp>
+		<_painterModifiedTimeStamp>2019:08:05:11:11:58.310</_painterModifiedTimeStamp>
 		<allowDocking>0</allowDocking>
 		<backBrush/>
 		<backBrushStyle>0</backBrushStyle>
@@ -2024,7 +2080,7 @@ Note: The full names, contact details and products referred to in the program ar
 	</Form>
 
 	<Form locale="5129" name="FormAdminMdi">
-		<_painterModifiedTimeStamp>2019:07:30:14:04:12.986</_painterModifiedTimeStamp>
+		<_painterModifiedTimeStamp>2019:08:05:11:11:58.221</_painterModifiedTimeStamp>
 		<allowDocking>0</allowDocking>
 		<backBrush/>
 		<backBrushStyle>0</backBrushStyle>
@@ -2844,7 +2900,7 @@ Note: The full names, contact details and products referred to in the program ar
 	</Form>
 
 	<Form locale="5129" name="FormMdiChild">
-		<_painterModifiedTimeStamp>2019:07:30:14:04:13.052</_painterModifiedTimeStamp>
+		<_painterModifiedTimeStamp>2019:08:05:11:11:58.310</_painterModifiedTimeStamp>
 		<allowDocking>0</allowDocking>
 		<backBrush/>
 		<backBrushStyle>0</backBrushStyle>
@@ -2900,7 +2956,7 @@ Note: The full names, contact details and products referred to in the program ar
 	</Form>
 
 	<Form locale="5129" name="FormAgentClientList">
-		<_painterModifiedTimeStamp>2019:07:30:14:04:12.986</_painterModifiedTimeStamp>
+		<_painterModifiedTimeStamp>2019:08:05:11:11:58.222</_painterModifiedTimeStamp>
 		<allowDocking>0</allowDocking>
 		<backBrush/>
 		<backBrushStyle>0</backBrushStyle>
@@ -4167,7 +4223,7 @@ Note: The full names, contact details and products referred to in the program ar
 	</Form>
 
 	<Form locale="5129" name="FormAgentCommissionRates">
-		<_painterModifiedTimeStamp>2019:07:30:14:04:12.986</_painterModifiedTimeStamp>
+		<_painterModifiedTimeStamp>2019:08:05:11:11:58.222</_painterModifiedTimeStamp>
 		<allowDocking>0</allowDocking>
 		<backBrush/>
 		<backBrushStyle>0</backBrushStyle>
@@ -5179,7 +5235,7 @@ Note: The full names, contact details and products referred to in the program ar
 	</Form>
 
 	<Form locale="5129" name="FormCommissionRatesList">
-		<_painterModifiedTimeStamp>2019:07:30:14:04:13</_painterModifiedTimeStamp>
+		<_painterModifiedTimeStamp>2019:08:05:11:11:58.229</_painterModifiedTimeStamp>
 		<allowDocking>0</allowDocking>
 		<backBrush/>
 		<backBrushStyle>0</backBrushStyle>
@@ -5627,7 +5683,7 @@ Note: The full names, contact details and products referred to in the program ar
 	</Form>
 
 	<Form locale="5129" name="FormDocumentorSetup">
-		<_painterModifiedTimeStamp>2019:07:30:14:04:13.052</_painterModifiedTimeStamp>
+		<_painterModifiedTimeStamp>2019:08:05:11:11:58.310</_painterModifiedTimeStamp>
 		<allowDocking>0</allowDocking>
 		<backBrush/>
 		<backBrushStyle>0</backBrushStyle>
@@ -5980,7 +6036,7 @@ wBgAAP/4AAD/+AAA</pictureOpen>
 	</Form>
 
 	<Form locale="5129" name="FormLocationsList">
-		<_painterModifiedTimeStamp>2019:07:30:14:04:13.002</_painterModifiedTimeStamp>
+		<_painterModifiedTimeStamp>2019:08:05:11:11:58.229</_painterModifiedTimeStamp>
 		<allowDocking>0</allowDocking>
 		<backBrush/>
 		<backBrushStyle>0</backBrushStyle>
@@ -7124,7 +7180,7 @@ wBgAAP/4AAD/+AAA</pictureOpen>
 	</Form>
 
 	<Form locale="5129" name="FormSaleItemCategoryList">
-		<_painterModifiedTimeStamp>2019:07:30:14:04:13.002</_painterModifiedTimeStamp>
+		<_painterModifiedTimeStamp>2019:08:05:11:11:58.232</_painterModifiedTimeStamp>
 		<allowDocking>0</allowDocking>
 		<backBrush/>
 		<backBrushStyle>0</backBrushStyle>
@@ -7809,7 +7865,7 @@ wBgAAP/4AAD/+AAA</pictureOpen>
 	</Form>
 
 	<Form locale="5129" name="FormSaleItemList">
-		<_painterModifiedTimeStamp>2019:07:30:14:04:13.003</_painterModifiedTimeStamp>
+		<_painterModifiedTimeStamp>2019:08:05:11:11:58.232</_painterModifiedTimeStamp>
 		<allowDocking>0</allowDocking>
 		<backBrush/>
 		<backBrushStyle>0</backBrushStyle>
@@ -8200,7 +8256,7 @@ wBgAAP/4AAD/+AAA</pictureOpen>
 	</Form>
 
 	<Form locale="5129" name="FormSalesList">
-		<_painterModifiedTimeStamp>2019:07:30:14:04:13.003</_painterModifiedTimeStamp>
+		<_painterModifiedTimeStamp>2019:08:05:11:11:58.233</_painterModifiedTimeStamp>
 		<allowDocking>0</allowDocking>
 		<backBrush/>
 		<backBrushStyle>0</backBrushStyle>
@@ -9015,7 +9071,7 @@ wBgAAP/4AAD/+AAA</pictureOpen>
 	</Form>
 
 	<Form locale="5129" name="FormNonMdiChild">
-		<_painterModifiedTimeStamp>2019:07:30:14:04:13.052</_painterModifiedTimeStamp>
+		<_painterModifiedTimeStamp>2019:08:05:11:11:58.310</_painterModifiedTimeStamp>
 		<allowDocking>0</allowDocking>
 		<backBrush/>
 		<backBrushStyle>0</backBrushStyle>
@@ -9071,7 +9127,7 @@ wBgAAP/4AAD/+AAA</pictureOpen>
 	</Form>
 
 	<Form locale="5129" name="FormAddressableEntity">
-		<_painterModifiedTimeStamp>2019:07:30:14:04:12.987</_painterModifiedTimeStamp>
+		<_painterModifiedTimeStamp>2019:08:05:11:14:32.920</_painterModifiedTimeStamp>
 		<allowDocking>0</allowDocking>
 		<backBrush/>
 		<backBrushStyle>0</backBrushStyle>
@@ -9130,7 +9186,7 @@ wBgAAP/4AAD/+AAA</pictureOpen>
 				<borderColorSingle>0</borderColorSingle>
 				<borderStyle>0</borderStyle>
 				<bubbleHelp/>
-				<caption>Fields marked with a * must be entered.</caption>
+				<caption>Fields marked with an * must be entered.</caption>
 				<description/>
 				<dragCursor/>
 				<enabled>true</enabled>
@@ -9566,8 +9622,8 @@ wBgAAP/4AAD/+AAA</pictureOpen>
 				<height>21</height>
 				<helpContextId>0</helpContextId>
 				<helpKeyword/>
-				<hintBackColor>0</hintBackColor>
-				<hintForeColor>0</hintForeColor>
+				<hintBackColor>-2147483648</hintBackColor>
+				<hintForeColor>-2147483648</hintForeColor>
 				<hintText/>
 				<ignoreSkin>false</ignoreSkin>
 				<integralHeight>false</integralHeight>
@@ -9683,8 +9739,8 @@ wBgAAP/4AAD/+AAA</pictureOpen>
 				<height>21</height>
 				<helpContextId>0</helpContextId>
 				<helpKeyword/>
-				<hintBackColor>0</hintBackColor>
-				<hintForeColor>0</hintForeColor>
+				<hintBackColor>-2147483648</hintBackColor>
+				<hintForeColor>-2147483648</hintForeColor>
 				<hintText/>
 				<ignoreSkin>false</ignoreSkin>
 				<integralHeight>false</integralHeight>
@@ -9800,8 +9856,8 @@ wBgAAP/4AAD/+AAA</pictureOpen>
 				<height>21</height>
 				<helpContextId>0</helpContextId>
 				<helpKeyword/>
-				<hintBackColor>0</hintBackColor>
-				<hintForeColor>0</hintForeColor>
+				<hintBackColor>-2147483648</hintBackColor>
+				<hintForeColor>-2147483648</hintForeColor>
 				<hintText/>
 				<ignoreSkin>false</ignoreSkin>
 				<integralHeight>false</integralHeight>
@@ -9917,8 +9973,8 @@ wBgAAP/4AAD/+AAA</pictureOpen>
 				<height>21</height>
 				<helpContextId>0</helpContextId>
 				<helpKeyword/>
-				<hintBackColor>0</hintBackColor>
-				<hintForeColor>0</hintForeColor>
+				<hintBackColor>-2147483648</hintBackColor>
+				<hintForeColor>-2147483648</hintForeColor>
 				<hintText/>
 				<ignoreSkin>false</ignoreSkin>
 				<integralHeight>false</integralHeight>
@@ -10034,8 +10090,8 @@ wBgAAP/4AAD/+AAA</pictureOpen>
 				<height>21</height>
 				<helpContextId>0</helpContextId>
 				<helpKeyword/>
-				<hintBackColor>0</hintBackColor>
-				<hintForeColor>0</hintForeColor>
+				<hintBackColor>-2147483648</hintBackColor>
+				<hintForeColor>-2147483648</hintForeColor>
 				<hintText/>
 				<ignoreSkin>false</ignoreSkin>
 				<integralHeight>false</integralHeight>
@@ -10151,8 +10207,8 @@ wBgAAP/4AAD/+AAA</pictureOpen>
 				<height>21</height>
 				<helpContextId>0</helpContextId>
 				<helpKeyword/>
-				<hintBackColor>0</hintBackColor>
-				<hintForeColor>0</hintForeColor>
+				<hintBackColor>-2147483648</hintBackColor>
+				<hintForeColor>-2147483648</hintForeColor>
 				<hintText/>
 				<ignoreSkin>false</ignoreSkin>
 				<integralHeight>false</integralHeight>
@@ -10268,8 +10324,8 @@ wBgAAP/4AAD/+AAA</pictureOpen>
 				<height>21</height>
 				<helpContextId>0</helpContextId>
 				<helpKeyword/>
-				<hintBackColor>0</hintBackColor>
-				<hintForeColor>0</hintForeColor>
+				<hintBackColor>-2147483648</hintBackColor>
+				<hintForeColor>-2147483648</hintForeColor>
 				<hintText/>
 				<ignoreSkin>false</ignoreSkin>
 				<integralHeight>false</integralHeight>
@@ -10385,8 +10441,8 @@ wBgAAP/4AAD/+AAA</pictureOpen>
 				<height>21</height>
 				<helpContextId>0</helpContextId>
 				<helpKeyword/>
-				<hintBackColor>0</hintBackColor>
-				<hintForeColor>0</hintForeColor>
+				<hintBackColor>-2147483648</hintBackColor>
+				<hintForeColor>-2147483648</hintForeColor>
 				<hintText/>
 				<ignoreSkin>false</ignoreSkin>
 				<integralHeight>false</integralHeight>
@@ -10481,7 +10537,7 @@ wBgAAP/4AAD/+AAA</pictureOpen>
 	</Form>
 
 	<Form locale="5129" name="FormAgent">
-		<_painterModifiedTimeStamp>2019:07:30:14:04:12.988</_painterModifiedTimeStamp>
+		<_painterModifiedTimeStamp>2019:08:05:11:14:32.923</_painterModifiedTimeStamp>
 		<allowDocking>0</allowDocking>
 		<backBrush/>
 		<backBrushStyle>0</backBrushStyle>
@@ -10537,7 +10593,7 @@ wBgAAP/4AAD/+AAA</pictureOpen>
 	</Form>
 
 	<Form locale="5129" name="FormClient">
-		<_painterModifiedTimeStamp>2019:07:30:14:04:12.988</_painterModifiedTimeStamp>
+		<_painterModifiedTimeStamp>2019:08:05:11:14:32.925</_painterModifiedTimeStamp>
 		<allowDocking>0</allowDocking>
 		<backBrush/>
 		<backBrushStyle>0</backBrushStyle>
@@ -10593,7 +10649,7 @@ wBgAAP/4AAD/+AAA</pictureOpen>
 	</Form>
 
 	<Form locale="5129" name="FormCompany">
-		<_painterModifiedTimeStamp>2019:07:30:14:04:12.988</_painterModifiedTimeStamp>
+		<_painterModifiedTimeStamp>2019:08:05:11:14:32.927</_painterModifiedTimeStamp>
 		<allowDocking>0</allowDocking>
 		<backBrush/>
 		<backBrushStyle>0</backBrushStyle>
@@ -10649,7 +10705,7 @@ wBgAAP/4AAD/+AAA</pictureOpen>
 	</Form>
 
 	<Form locale="5129" name="FormCommissionRate">
-		<_painterModifiedTimeStamp>2019:07:30:14:04:13.005</_painterModifiedTimeStamp>
+		<_painterModifiedTimeStamp>2019:08:05:11:11:58.228</_painterModifiedTimeStamp>
 		<allowDocking>0</allowDocking>
 		<backBrush/>
 		<backBrushStyle>0</backBrushStyle>
@@ -11155,7 +11211,7 @@ wBgAAP/4AAD/+AAA</pictureOpen>
 	</Form>
 
 	<Form locale="5129" name="FormCountry">
-		<_painterModifiedTimeStamp>2019:07:30:14:04:13.005</_painterModifiedTimeStamp>
+		<_painterModifiedTimeStamp>2019:08:05:11:11:58.229</_painterModifiedTimeStamp>
 		<allowDocking>0</allowDocking>
 		<backBrush/>
 		<backBrushStyle>0</backBrushStyle>
@@ -11498,7 +11554,7 @@ wBgAAP/4AAD/+AAA</pictureOpen>
 	</Form>
 
 	<Form locale="5129" name="FormFindSaleItem">
-		<_painterModifiedTimeStamp>2019:07:30:14:04:13.053</_painterModifiedTimeStamp>
+		<_painterModifiedTimeStamp>2019:08:05:11:11:58.311</_painterModifiedTimeStamp>
 		<allowDocking>0</allowDocking>
 		<backBrush/>
 		<backBrushStyle>0</backBrushStyle>
@@ -11841,7 +11897,7 @@ wBgAAP/4AAD/+AAA</pictureOpen>
 	</Form>
 
 	<Form locale="5129" name="FormRegion">
-		<_painterModifiedTimeStamp>2019:07:30:14:04:13.006</_painterModifiedTimeStamp>
+		<_painterModifiedTimeStamp>2019:08:05:11:11:58.230</_painterModifiedTimeStamp>
 		<allowDocking>0</allowDocking>
 		<backBrush/>
 		<backBrushStyle>0</backBrushStyle>
@@ -12295,7 +12351,7 @@ wBgAAP/4AAD/+AAA</pictureOpen>
 	</Form>
 
 	<Form locale="5129" name="FormSaleItem">
-		<_painterModifiedTimeStamp>2019:07:30:14:04:13.006</_painterModifiedTimeStamp>
+		<_painterModifiedTimeStamp>2019:08:05:11:11:58.231</_painterModifiedTimeStamp>
 		<allowDocking>0</allowDocking>
 		<backBrush/>
 		<backBrushStyle>0</backBrushStyle>
@@ -13662,7 +13718,7 @@ wBgAAP/4AAD/+AAA</pictureOpen>
 	</Form>
 
 	<Form locale="5129" name="FormRetailSaleItem">
-		<_painterModifiedTimeStamp>2019:07:30:14:04:13.007</_painterModifiedTimeStamp>
+		<_painterModifiedTimeStamp>2019:08:05:11:11:58.231</_painterModifiedTimeStamp>
 		<allowDocking>0</allowDocking>
 		<backBrush/>
 		<backBrushStyle>0</backBrushStyle>
@@ -13884,7 +13940,7 @@ wBgAAP/4AAD/+AAA</pictureOpen>
 	</Form>
 
 	<Form locale="5129" name="FormTenderSaleItem">
-		<_painterModifiedTimeStamp>2019:07:30:14:04:13.007</_painterModifiedTimeStamp>
+		<_painterModifiedTimeStamp>2019:08:05:11:11:58.231</_painterModifiedTimeStamp>
 		<allowDocking>0</allowDocking>
 		<backBrush/>
 		<backBrushStyle>0</backBrushStyle>
@@ -14224,7 +14280,7 @@ wBgAAP/4AAD/+AAA</pictureOpen>
 	</Form>
 
 	<Form locale="5129" name="FormSaleItemCategory">
-		<_painterModifiedTimeStamp>2019:07:30:14:04:13.008</_painterModifiedTimeStamp>
+		<_painterModifiedTimeStamp>2019:08:05:11:11:58.232</_painterModifiedTimeStamp>
 		<allowDocking>0</allowDocking>
 		<backBrush/>
 		<backBrushStyle>0</backBrushStyle>
@@ -14684,7 +14740,7 @@ wBgAAP/4AAD/+AAA</pictureOpen>
 	</Form>
 
 	<Form locale="5129" name="FormClientApp">
-		<_painterModifiedTimeStamp>2019:07:30:14:04:13.008</_painterModifiedTimeStamp>
+		<_painterModifiedTimeStamp>2019:08:05:11:11:58.223</_painterModifiedTimeStamp>
 		<allowDocking>0</allowDocking>
 		<backBrush/>
 		<backBrushStyle>0</backBrushStyle>
@@ -14740,7 +14796,7 @@ wBgAAP/4AAD/+AAA</pictureOpen>
 	</Form>
 
 	<Form locale="5129" name="FormShopClient">
-		<_painterModifiedTimeStamp>2019:07:30:14:04:13.010</_painterModifiedTimeStamp>
+		<_painterModifiedTimeStamp>2019:08:05:11:11:58.225</_painterModifiedTimeStamp>
 		<allowDocking>0</allowDocking>
 		<backBrush/>
 		<backBrushStyle>0</backBrushStyle>
@@ -15705,7 +15761,7 @@ j4bgIJVk35V2gY7GPW0bYkHHMW68DLvQtkTtvHjYBE/OR7JWmqPrOAEM99E2/sMnXQs7ux96WfIg
 	</Form>
 
 	<Form locale="5129" name="FormShopCheckout">
-		<_painterModifiedTimeStamp>2019:07:30:14:04:13.053</_painterModifiedTimeStamp>
+		<_painterModifiedTimeStamp>2019:08:05:11:11:58.311</_painterModifiedTimeStamp>
 		<allowDocking>0</allowDocking>
 		<backBrush/>
 		<backBrushStyle>0</backBrushStyle>
@@ -16173,7 +16229,7 @@ j4bgIJVk35V2gY7GPW0bYkHHMW68DLvQtkTtvHjYBE/OR7JWmqPrOAEM99E2/sMnXQs7ux96WfIg
 	</Form>
 
 	<Form locale="5129" name="FormShopConfirmation">
-		<_painterModifiedTimeStamp>2019:07:30:14:04:13.053</_painterModifiedTimeStamp>
+		<_painterModifiedTimeStamp>2019:08:05:11:11:58.311</_painterModifiedTimeStamp>
 		<allowDocking>0</allowDocking>
 		<backBrush/>
 		<backBrushStyle>0</backBrushStyle>
@@ -16422,7 +16478,7 @@ j4bgIJVk35V2gY7GPW0bYkHHMW68DLvQtkTtvHjYBE/OR7JWmqPrOAEM99E2/sMnXQs7ux96WfIg
 	</Form>
 
 	<Form locale="5129" name="FormShopSaleItems">
-		<_painterModifiedTimeStamp>2019:07:30:14:04:13.011</_painterModifiedTimeStamp>
+		<_painterModifiedTimeStamp>2019:08:05:11:11:58.226</_painterModifiedTimeStamp>
 		<allowDocking>0</allowDocking>
 		<backBrush/>
 		<backBrushStyle>0</backBrushStyle>
@@ -19225,7 +19281,7 @@ j4bgIJVk35V2gY7GPW0bYkHHMW68DLvQtkTtvHjYBE/OR7JWmqPrOAEM99E2/sMnXQs7ux96WfIg
 	</Form>
 
 	<Form locale="5129" name="FormWebClientApp">
-		<_painterModifiedTimeStamp>2019:07:30:14:04:13.011</_painterModifiedTimeStamp>
+		<_painterModifiedTimeStamp>2019:08:05:11:36:18.277</_painterModifiedTimeStamp>
 		<allowDocking>0</allowDocking>
 		<backBrush/>
 		<backBrushStyle>0</backBrushStyle>
@@ -19568,97 +19624,54 @@ ABBgADzJQrhKddgtAAAAAElFTkSuQmCC</picture>
 				<parentAspect>0</parentAspect>
 				<parentBottomOffset>17</parentBottomOffset>
 				<parentRightOffset>1188</parentRightOffset>
-				<picture>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
-AAAAAElFTkSuQmCC</picture>
+				<picture>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
+/2biv0lrL3wSPaSkAAAAAElFTkSuQmCC</picture>
 				<pictureDisabled/>
 				<pictureDown/>
 				<relativeHeight>false</relativeHeight>
@@ -19671,13 +19684,13 @@ AAAAAElFTkSuQmCC</picture>
 				<securityLevelVisible>0</securityLevelVisible>
 				<show3D>3</show3D>
 				<skinCategoryName/>
-				<stretch>5</stretch>
+				<stretch>4</stretch>
 				<tabIndex>13</tabIndex>
 				<tabStop>false</tabStop>
 				<tag/>
 				<top>4</top>
-				<transparent>true</transparent>
-				<transparentColor>0</transparentColor>
+				<transparent>false</transparent>
+				<transparentColor>-2147483628</transparentColor>
 				<visible>true</visible>
 				<width>155</width>
 			</Picture>
@@ -19903,7 +19916,7 @@ AAAASUVORK5CYII=</picture>
 	</Form>
 
 	<Form locale="5129" name="FormWebCheckout">
-		<_painterModifiedTimeStamp>2019:07:30:14:04:13.012</_painterModifiedTimeStamp>
+		<_painterModifiedTimeStamp>2019:08:05:11:36:18.278</_painterModifiedTimeStamp>
 		<allowDocking>0</allowDocking>
 		<backBrush/>
 		<backBrushStyle>0</backBrushStyle>
@@ -20191,7 +20204,7 @@ AAAASUVORK5CYII=</picture>
 	</Form>
 
 	<Form locale="5129" name="FormWebClientSaleItems">
-		<_painterModifiedTimeStamp>2019:07:30:14:04:13.013</_painterModifiedTimeStamp>
+		<_painterModifiedTimeStamp>2019:08:05:11:36:18.280</_painterModifiedTimeStamp>
 		<allowDocking>0</allowDocking>
 		<backBrush/>
 		<backBrushStyle>0</backBrushStyle>
@@ -22439,7 +22452,7 @@ AAAASUVORK5CYII=</picture>
 	</Form>
 
 	<Form locale="5129" name="FormWebConfirmation">
-		<_painterModifiedTimeStamp>2019:07:30:14:04:13.013</_painterModifiedTimeStamp>
+		<_painterModifiedTimeStamp>2019:08:05:11:36:18.287</_painterModifiedTimeStamp>
 		<allowDocking>0</allowDocking>
 		<backBrush/>
 		<backBrushStyle>0</backBrushStyle>
@@ -22619,7 +22632,7 @@ AAAASUVORK5CYII=</picture>
 	</Form>
 
 	<Form locale="5129" name="FormWebLogon">
-		<_painterModifiedTimeStamp>2019:07:30:14:04:13.013</_painterModifiedTimeStamp>
+		<_painterModifiedTimeStamp>2019:08:05:11:36:18.289</_painterModifiedTimeStamp>
 		<allowDocking>0</allowDocking>
 		<backBrush/>
 		<backBrushStyle>0</backBrushStyle>
@@ -22840,7 +22853,7 @@ AAAASUVORK5CYII=</picture>
 	</Form>
 
 	<Form locale="5129" name="FormCloseTenders">
-		<_painterModifiedTimeStamp>2019:07:30:14:04:13.053</_painterModifiedTimeStamp>
+		<_painterModifiedTimeStamp>2019:08:05:11:11:58.311</_painterModifiedTimeStamp>
 		<allowDocking>0</allowDocking>
 		<backBrush/>
 		<backBrushStyle>0</backBrushStyle>
@@ -23861,7 +23874,7 @@ AAAASUVORK5CYII=</picture>
 	</Form>
 
 	<Form locale="5129" name="FormLogon">
-		<_painterModifiedTimeStamp>2019:07:30:14:04:13.014</_painterModifiedTimeStamp>
+		<_painterModifiedTimeStamp>2019:08:05:11:11:58.230</_painterModifiedTimeStamp>
 		<allowDocking>0</allowDocking>
 		<backBrush/>
 		<backBrushStyle>0</backBrushStyle>
