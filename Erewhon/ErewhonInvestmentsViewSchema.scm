@@ -14,6 +14,8 @@ constantDefinitions
 		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:10:29:11:08:18.975;
 		AtcgReplayApp:                 String = "AtcgReplayApp";
 		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:10:29:11:08:05.183;
+		CustomerWebServiceApp:         String = "CustomerWebServiceApp";
+		setModifiedTimeStamp "wilbur" "99.0.00" 2019:08:05:16:45:42.085;
 		ErewhonDotNetShop:             String = "ErewhonDotNetShop";
 		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:09;
 		JadeUnitTest:                  String = "JadeUnitTest";
@@ -669,7 +671,6 @@ typeHeaders
 	ErewhonInvestmentsServiceAdmin subclassOf ErewhonInvestmentsService transient, sharedTransientAllowed, transientAllowed, subclassSharedTransientAllowed, subclassTransientAllowed, number = 2065;
 	SaleItemSearch subclassOf Object transient, sharedTransientAllowed, transientAllowed, highestOrdinal = 8, number = 2209;
 	SErewhonInvestmentsViewSchema subclassOf SErewhonInvestmentsModelSchema highestSubId = 3, highestOrdinal = 5, number = 2157;
-	Erhgerh subclassOf Form transient, transientAllowed, subclassTransientAllowed, number = 2298;
 	FormBase subclassOf Form transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 1, number = 2158;
 	FormAbout subclassOf FormBase transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 6, number = 2159;
 	FormAdminApp subclassOf FormBase transient, transientAllowed, subclassTransientAllowed, number = 2160;
@@ -893,13 +894,13 @@ starts, therefore they cannot be debugged.`
 		getAndValidateUser(
 			usercode: String output; 
 			password: String output): Boolean number = 1002;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:10:29:11:10:40.083;
+		setModifiedTimeStamp "wilbur" "99.0.00" 2019:08:05:16:45:55.746;
 		getErrorString(errorNo: Integer): String number = 1003;
 		setModifiedTimeStamp "cnwta3" "16.0.02" 2018:08:13:10:04:04.502;
 		isUserValid(
 			usercode: String; 
 			password: String): Boolean number = 1004;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:10:29:11:08:32.956;
+		setModifiedTimeStamp "wilbur" "99.0.00" 2019:08:05:16:46:05.648;
 	)
 	JadeRestService completeDefinition
 	(
@@ -1775,10 +1776,6 @@ flexible approach to be taken in how you expose your data.`
 	)
 	Form completeDefinition
 	(
-	)
-	Erhgerh completeDefinition
-	(
-		setModifiedTimeStamp "wilbur" "99.0.00" 2019:08:05:11:54:27.896;
 	)
 	FormBase completeDefinition
 	(
@@ -5303,6 +5300,7 @@ begin
 			not app.isWebShopApp and
 			app.name <> WebServiceOverHttpApp and 
 			app.name <> WebServiceOverTcpApp and
+			app.name <> CustomerWebServiceApp and
 			app.name <> TenderClosureApp then
 		app.msgBox($UnknownApplication, $Error, MsgBox_Stop_Icon + MsgBox_OK_Only);
 		return false;
@@ -5315,6 +5313,7 @@ begin
 		app.name = AtcgControlApp or
 		app.name = AtcgRecordApp or
 		app.name = AtcgReplayApp or
+		app.name = CustomerWebServiceApp or
 		app.name = WebServiceOverTcpApp then
 		return true;
 	else
@@ -5393,6 +5392,7 @@ begin
 		app.name = WebServiceOverHttpApp or
 		app.name = AtcgControlApp or
 		app.name = AtcgReplayApp or
+		app.name = CustomerWebServiceApp or
 		app.name = AtcgRecordApp or
 		app.name = WebServiceOverTcpApp then
 		isValid := true;
