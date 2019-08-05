@@ -45,26 +45,26 @@ Before you can load the schemas, you need JADE 2018 installed.
 1. Load the Erewhon schemas.
 2. Load the initial data using the **initializeData** JadeScript method in ErewhonInvestmentsModelSchema.
 3. From the ErewhonInvestmentsViewSchema, select **Exposures** from the Browse menu and double-click on **DotNetExposure** on the **C#** sheet.
-4. Click through until you get to the **Generate** sheet. On this sheet, check the **Generate Sample .csproj File** and **Generate Sample .config File** checkboxes. For the Output Directory, set **<Your-Local-Repository-Directory>\Erewhon\ErewhonDotNetExposure\**, creating the ErewhonDotNetExposure folder, if necessary.
-5. Open the generated **DotNetExposure.csproj** in Visual Studio
-6. Right click DotNetExposure, select Build, Platform target: to **x64**
-7. Build the project
-8. Exit Visual Studio (Don’t need to save the solution)
-9. Navigate to the ErewhonDotNetShop folder in your local repository directory.
+4. Click through until you get to the **Generate** sheet. On this sheet, check the **Generate Sample .csproj File** and **Generate Sample .config File** checkboxes. For the Output Directory, set **\<Your-Local-Repository-Directory\>\Erewhon\ErewhonDotNetExposure\\**, creating the ErewhonDotNetExposure folder, if necessary.
+5. Open the generated **DotNetExposure.csproj** in Visual Studio.
+6. Right-click **DotNetExposure**, select Build, Platform target: to **x64**.
+7. Build the project.
+8. Exit from Visual Studio. (You don’t need to save the solution.)
+9. Navigate to the **ErewhonDotNetShop** folder in your local repository directory.
 	
-	(For the next two steps, you can skip them if you have installed JADE in C:\Jade)
-10. Open app.config in your preferred text editor (e.g. notepad++), change all instances of “C:\Jade” to your JADE install dir.
-11. If you have renamed your system folder or if your jade.ini file does not live in the jade base directory, modify the file paths as needed.
-12. Open **ErewhonDotNetShop.csproj** in your preferred text editor (e.g. notepad++), change all instances of “C:\Jade” to your JADE install dir
-13. Make sure you have a rap running for your JADE db, then open **ErewhonDotNetShop.sln** in Microsoft Visual Studio, build and run it.
+	(You can skip the next two steps if you have installed JADE in **C:\Jade**.)
+10. Open **app.config** in your preferred text editor (for example, Notepad++), and change all instances of **C:\Jade** to your JADE install directory.
+11. If you have renamed your system folder or if your **jade.ini** file is not located in the JADE base directory, modify the file paths, as needed.
+12. Open **ErewhonDotNetShop.csproj** in your preferred text editor (for example, Notepad++), and change all instances of **C:\Jade** to your JADE install directory.
+13. Make sure you have a JADE database on a server node (that is, jadrap) running for your JADE database, then open **ErewhonDotNetShop.sln** in Microsoft Visual Studio, build, and run it.
 
 ## Frequently Asked Questions
 **Q.** Can I contribute to or change these schemas?
-> The schemas contained in this repository are for demonstration purposes and as such are not open to pull requests. However, you are welcome to create a fork and make changes to your own copy, subject to our license ([LICENSE.txt](LICENSE.txt))
+> The schemas contained in this repository are for demonstration purposes, and as such, are not open to pull requests. However, you are welcome to create a fork and make changes to your own copy, subject to our license ([LICENSE.txt](LICENSE.txt)).
 
 **Q.** What can I do with this Erewhon system?
-> Using the Administration application, you can take the role of a Sales Agent and post items for your (fictional) clients to buy. Using the ErewhonShop applicaiton, you can take the role of a client and bid for or buy (fictional) items. For more information, see the <a href="https://www.jadeworld.com/pdf/white-papers/2018/WP_Erewhon.pdf">Erewhon Documentation</a>
+> Using the Administration application, you can take the role of a sales agent and post items for your (fictional) clients to buy. Using the **ErewhonShop** application, you can take the role of a client and bid for or buy (fictional) items. For more details, see the <a href="https://www.jadeworld.com/pdf/white-papers/2018/WP_Erewhon.pdf">*Erewhon Demonstration System Reference*</a>.
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.txt](LICENSE.txt) file for details
+This project is licensed under the MIT License. See the [LICENSE.txt](LICENSE.txt) file for details.
