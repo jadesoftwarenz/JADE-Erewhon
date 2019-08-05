@@ -1,51 +1,51 @@
-# JADE Erewhon Example Schema
-This repository contains the example JADE schema, Erewhon. Erewhon is a fictional E-Commerce platform where agents sell high-end items and clients may bid on or purchase them.
+# JADE Erewhon Example Schemas
+This repository contains **Erewhon**, the example JADE schema. Erewhon is a fictional E-commerce platform where agents sell high-end items and clients can bid on or purchase them.
 
-## Documentation Guide
-Documentation for the Erewhon system may be found here: https://www.jadeworld.com/pdf/white-papers/2018/WP_Erewhon.pdf
+## Documentation
+Documentation for the Erewhon system can be found at: https://www.jadeworld.com/pdf/white-papers/2018/WP_Erewhon.pdf.
 
 ## Getting Started
-These instructions will get a copy of the Erewhon system up and running on your local machine.
+These instructions get a copy of the Erewhon system up and running on your local machine.
 
 ### Prerequisites
 
-Before you can load the schemas, you will need JADE 2018 installed:
+Before you can load the schemas, you need JADE 2018 installed.
 
-1. Grab a FREE Developer's license at https://secure.jadeworld.com/devlicense/
-2. Download the JADE 2018 release at https://www.jadeworld.com/solutions-for/dev-partners/ 
-3. Open the installer and follow the instructions in the easy install wizard.
+1. Grab a FREE Developer's license at https://secure.jadeworld.com/devlicense/.
+2. Download the JADE 2018 release at https://www.jadeworld.com/solutions-for/dev-partners/ .
+3. Open the installer and follow the instructions in the install wizard.
 4. JADE is now installed, and a shortcut has been placed in your Start menu. You're good to go!
 
-> For more detailed instructions for installing JADE, visit https://www.jadeworld.com/downloads/tech/manuals/2018/InstallConfig.pdf
+> For details about installing JADE, see https://www.jadeworld.com/downloads/tech/manuals/2018/InstallConfig.pdf.
 
-### Loading the schemas using JADE Git Integration
+### Loading the Schemas using JADE Git Integration
 
-**Step 1: Setting your Username and Email**
+**Step 1: Setting your username and email**
 
-1. In the Options menu, select the **Preferences** option.
-2. Select the **Source Management** tab
-3. Enter your name and email address into **Commit Details** section of the **Source Control** section.
-4. Select a valid working directory (This can be whatever you like so long as you will remember it)
-5. Click the **OK** btton
+1. In the Options menu, select the **Preferences** command.
+2. Select the **Source Management** sheet.
+3. Enter your name and email address in the **Commit Details** group box inside the **Source Control** group box.
+4. Select a valid working directory. (This can be whatever you like, as long as you remember it.)
+5. Click the **OK** button.
 
-**Step 2: Cloning the Repo**
+**Step 2: Cloning the Repository**
 
-1. In the **Browse menu**, select **Git Source Control Client** -> **Clone…**  
-(The local path will be filled in for you as the path you selected in Step 1)
-2. For the Repository URL, enter https://github.com/jadesoftwarenz/JADE-Erewhon
-3. Click on the **Clone** button.
+1. In the Browse menu, select the **Clone** command from the Git Source Control Client submenu.
+(The local path is filled in for you as the path you selected in Step 1.)
+2. For the Repository URL, enter https://github.com/jadesoftwarenz/JADE-Erewhon.
+3. Click the **Clone** button.
 
-**Step 3: Importing the Erewhon database**
-1. In the **Schema menu**, select the **Load** option.
-2. Tick the **Load Multiple Schemas** option
+**Step 3: Importing the Erewhon Database**
+1. In the Schema menu, select the **Load** command.
+2. Check the **Load Multiple Schemas** option.
 3. Select the **ErewhonInvestments.mul** file in the folder you selected as your working directory.
 4. Click the **OK** button, and the Erewhon schemas will be loaded into your Schema Browser ready for use.
 
 **Optional Step: Using the DotNet Shop**
 1. Load the Erewhon schemas.
-2. Load the initial data using the **initializeData** JadeScript method in ErewhonInvestmentsModelSchema
-3. From the ErewhonInvestmentsViewSchema, select **Exposures** from the **Browse menu** and double-click on **DotNetExposure** on the **C#** sheet.
-4. Click through until you get to the Generate sheet. On this sheet, tick **Generate Sample .csproj File** and **Generate Sample .config File**. For the Output Directory, set **<Your-Local-Repository-Directory>\Erewhon\ErewhonDotNetExposure\**, creating the ErewhonDotNetExposure folder if necessary.
+2. Load the initial data using the **initializeData** JadeScript method in ErewhonInvestmentsModelSchema.
+3. From the ErewhonInvestmentsViewSchema, select **Exposures** from the Browse menu and double-click on **DotNetExposure** on the **C#** sheet.
+4. Click through until you get to the **Generate** sheet. On this sheet, check the **Generate Sample .csproj File** and **Generate Sample .config File** checkboxes. For the Output Directory, set **<Your-Local-Repository-Directory>\Erewhon\ErewhonDotNetExposure\**, creating the ErewhonDotNetExposure folder, if necessary.
 5. Open the generated **DotNetExposure.csproj** in Visual Studio
 6. Right click DotNetExposure, select Build, Platform target: to **x64**
 7. Build the project
