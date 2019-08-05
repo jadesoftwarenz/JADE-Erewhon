@@ -671,7 +671,6 @@ typeHeaders
 	ErewhonInvestmentsServiceAdmin subclassOf ErewhonInvestmentsService transient, sharedTransientAllowed, transientAllowed, subclassSharedTransientAllowed, subclassTransientAllowed, number = 2065;
 	SaleItemSearch subclassOf Object transient, sharedTransientAllowed, transientAllowed, highestOrdinal = 8, number = 2209;
 	SErewhonInvestmentsViewSchema subclassOf SErewhonInvestmentsModelSchema highestSubId = 3, highestOrdinal = 5, number = 2157;
-	Erhgerh subclassOf Form transient, transientAllowed, subclassTransientAllowed, number = 2298;
 	FormBase subclassOf Form transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 1, number = 2158;
 	FormAbout subclassOf FormBase transient, transientAllowed, subclassTransientAllowed, highestOrdinal = 6, number = 2159;
 	FormAdminApp subclassOf FormBase transient, transientAllowed, subclassTransientAllowed, number = 2160;
@@ -1777,10 +1776,6 @@ flexible approach to be taken in how you expose your data.`
 	)
 	Form completeDefinition
 	(
-	)
-	Erhgerh completeDefinition
-	(
-		setModifiedTimeStamp "wilbur" "99.0.00" 2019:08:05:11:54:27.896;
 	)
 	FormBase completeDefinition
 	(
