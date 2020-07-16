@@ -12,7 +12,7 @@ These instructions get a copy of the Erewhon system up and running on your local
 Before you can load the schemas, you need JADE 2018 installed.
 
 1. Grab a FREE Developer's license at https://secure.jadeworld.com/devlicense/.
-2. Download the JADE 2018 release at https://www.jadeworld.com/solutions-for/dev-partners/ .
+2. Download the JADE 2018 release at https://www.jadeworld.com/developer-center/download-jade .
 3. Open the installer and follow the instructions in the install wizard.
 4. JADE is now installed, and a shortcut has been placed in your Start menu. You're good to go!
 
