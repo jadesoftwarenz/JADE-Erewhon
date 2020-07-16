@@ -2,7 +2,7 @@
 This repository contains **Erewhon**, the example JADE schema. Erewhon is a fictional E-commerce platform where agents sell high-end items and clients can bid on or purchase them.
 
 ## Documentation
-Documentation for the Erewhon system can be found at: https://www.jadeworld.com/pdf/white-papers/2018/WP_Erewhon.pdf.
+Documentation for the Erewhon system can be found at: https://secure.jadeworld.com/JADETech/JADE2018/WhitePapers/WP_Erewhon.pdf.
 
 ## Getting Started
 These instructions get a copy of the Erewhon system up and running on your local machine.
