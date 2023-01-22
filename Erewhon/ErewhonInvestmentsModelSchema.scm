@@ -1,8 +1,8 @@
-/* JADE RPS MAPPING FILE D:\JadeGitSource\JADE-Erewhon\Erewhon\ErewhonInvestmentsModelSchema.ddbx */
-jadeVersionNumber "20.0.01";
+/* JADE RPS MAPPING FILE D:\Erewhon\JADE-Erewhon\Erewhon\ErewhonInvestmentsModelSchema.ddbx */
+jadeVersionNumber "20.0.02";
 schemaDefinition
 ErewhonInvestmentsModelSchema subschemaOf CommonSchema completeDefinition, patchVersioningEnabled = false;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
+		setModifiedTimeStamp "cnwhm6" "7.0.00" 2022:08:11:15:40:15;
 importedPackageDefinitions
 	DocumentorPackage is SelfDocumentorSchema::DocumentorPackage
 	(
@@ -161,25 +161,25 @@ localeDefinitions
 	5129 "English (New Zealand)" schemaDefaultLocale;
 		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
 	10249 "English (Belize)" _cloneOf 5129;
-		setModifiedTimeStamp "<unknown>" "" 2021:09:27:14:14:09;
+		setModifiedTimeStamp "<unknown>" "" 2022:07:08:11:35:35;
 	1033 "English (United States)" _cloneOf 5129;
-		setModifiedTimeStamp "<unknown>" "" 2021:09:27:14:14:09;
+		setModifiedTimeStamp "<unknown>" "" 2022:07:08:11:35:35;
 	11273 "English (Trinidad & Tobago)" _cloneOf 5129;
-		setModifiedTimeStamp "<unknown>" "" 2021:09:27:14:14:09;
+		setModifiedTimeStamp "<unknown>" "" 2022:07:08:11:35:35;
 	2057 "English (United Kingdom)" _cloneOf 5129;
-		setModifiedTimeStamp "<unknown>" "" 2021:09:27:14:14:09;
+		setModifiedTimeStamp "<unknown>" "" 2022:07:08:11:35:35;
 	3081 "English (Australia)" _cloneOf 5129;
-		setModifiedTimeStamp "<unknown>" "" 2021:09:27:14:14:09;
+		setModifiedTimeStamp "<unknown>" "" 2022:07:08:11:35:35;
 	4105 "English (Canada)" _cloneOf 5129;
-		setModifiedTimeStamp "<unknown>" "" 2021:09:27:14:14:09;
+		setModifiedTimeStamp "<unknown>" "" 2022:07:08:11:35:35;
 	6153 "English (Ireland)" _cloneOf 5129;
-		setModifiedTimeStamp "<unknown>" "" 2021:09:27:14:14:09;
+		setModifiedTimeStamp "<unknown>" "" 2022:07:08:11:35:35;
 	7177 "English (South Africa)" _cloneOf 5129;
-		setModifiedTimeStamp "<unknown>" "" 2021:09:27:14:14:09;
+		setModifiedTimeStamp "<unknown>" "" 2022:07:08:11:35:35;
 	8201 "English (Jamaica)" _cloneOf 5129;
-		setModifiedTimeStamp "<unknown>" "" 2021:09:27:14:14:09;
+		setModifiedTimeStamp "<unknown>" "" 2022:07:08:11:35:35;
 	9225 "English (Caribbean)" _cloneOf 5129;
-		setModifiedTimeStamp "<unknown>" "" 2021:09:27:14:14:09;
+		setModifiedTimeStamp "<unknown>" "" 2022:07:08:11:35:35;
 translatableStringDefinitions
 	5129 "English (New Zealand)"
 	(
@@ -361,79 +361,79 @@ translatableStringDefinitions
 	)
 libraryDefinitions
 typeHeaders
-	ActivityAgent subclassOf Object abstract, transient, subclassSharedTransientAllowed, subclassTransientAllowed, highestSubId = 2, highestOrdinal = 2, number = 2103;
-	TransactionAgent subclassOf ActivityAgent transient, sharedTransientAllowed, transientAllowed, subclassSharedTransientAllowed, subclassTransientAllowed, number = 2104;
-	ErewhonInvestmentsModelApp subclassOf CommonSchemaApp transient, sharedTransientAllowed, transientAllowed, subclassSharedTransientAllowed, subclassTransientAllowed, highestOrdinal = 5, number = 2105;
-	ModelException subclassOf NormalException transient, sharedTransientAllowed, transientAllowed, subclassSharedTransientAllowed, subclassTransientAllowed, number = 2106;
-	GErewhonInvestmentsModelSchema subclassOf GCommonSchema transient, sharedTransientAllowed, transientAllowed, subclassSharedTransientAllowed, subclassTransientAllowed, number = 2107;
-	InitialDataLoader subclassOf Object transient, sharedTransientAllowed, transientAllowed, subclassSharedTransientAllowed, subclassTransientAllowed, highestOrdinal = 2, number = 2108;
+	ActivityAgent subclassOf Object abstract, transient, subclassSharedTransientAllowed, subclassTransientAllowed, highestSubId = 2, highestOrdinal = 2, number = 2107;
+	TransactionAgent subclassOf ActivityAgent transient, sharedTransientAllowed, transientAllowed, subclassSharedTransientAllowed, subclassTransientAllowed, number = 2108;
+	ErewhonInvestmentsModelApp subclassOf CommonSchemaApp transient, sharedTransientAllowed, transientAllowed, subclassSharedTransientAllowed, subclassTransientAllowed, highestOrdinal = 5, number = 2109;
+	ModelException subclassOf NormalException transient, sharedTransientAllowed, transientAllowed, subclassSharedTransientAllowed, subclassTransientAllowed, number = 2110;
+	GErewhonInvestmentsModelSchema subclassOf GCommonSchema transient, sharedTransientAllowed, transientAllowed, subclassSharedTransientAllowed, subclassTransientAllowed, number = 2111;
+	InitialDataLoader subclassOf Object transient, sharedTransientAllowed, transientAllowed, subclassSharedTransientAllowed, subclassTransientAllowed, highestOrdinal = 2, number = 2112;
 	ReportSecurity subclassOf JadeReportWriterSecurity transient, sharedTransientAllowed, transientAllowed, subclassSharedTransientAllowed, subclassTransientAllowed, number = 2207;
-	TestActivityAgent subclassOf JadeTestCase number = 2109;
-	TestTransactionAgent subclassOf TestActivityAgent highestOrdinal = 5, number = 2110;
-	TestAddress subclassOf JadeTestCase highestOrdinal = 1, number = 2111;
-	TestAgent subclassOf JadeTestCase highestOrdinal = 2, number = 2112;
-	TestClient subclassOf JadeTestCase highestOrdinal = 2, number = 2113;
-	TestCommissionRate subclassOf JadeTestCase highestOrdinal = 2, number = 2114;
-	TestCompany subclassOf JadeTestCase highestOrdinal = 12, number = 2115;
-	TestCountry subclassOf JadeTestCase highestOrdinal = 2, number = 2116;
-	TestItemDetails subclassOf JadeTestCase highestOrdinal = 1, number = 2117;
-	TestModelApp subclassOf JadeTestCase number = 2118;
-	TestOrderProxy subclassOf JadeTestCase highestOrdinal = 10, number = 2119;
-	TestRetailOrderProxy subclassOf TestOrderProxy highestOrdinal = 1, number = 2120;
-	TestTenderOrderProxy subclassOf TestOrderProxy highestOrdinal = 1, number = 2121;
-	TestRegion subclassOf JadeTestCase highestOrdinal = 2, number = 2122;
-	TestSale subclassOf JadeTestCase highestOrdinal = 11, number = 2123;
-	TestRetailSale subclassOf TestSale highestOrdinal = 1, number = 2124;
-	TestTenderSale subclassOf TestSale highestOrdinal = 1, number = 2125;
-	TestSaleItem subclassOf JadeTestCase highestSubId = 1, highestOrdinal = 10, number = 2126;
-	TestRetailSaleItem subclassOf TestSaleItem highestOrdinal = 2, number = 2127;
-	TestTenderSaleItem subclassOf TestSaleItem highestOrdinal = 2, number = 2128;
-	TestSaleItemCategory subclassOf JadeTestCase highestOrdinal = 2, number = 2129;
-	TestTender subclassOf JadeTestCase highestOrdinal = 3, number = 2130;
+	TestActivityAgent subclassOf JadeTestCase number = 2113;
+	TestTransactionAgent subclassOf TestActivityAgent highestOrdinal = 5, number = 2114;
+	TestAddress subclassOf JadeTestCase highestOrdinal = 1, number = 2115;
+	TestAgent subclassOf JadeTestCase highestOrdinal = 2, number = 2116;
+	TestClient subclassOf JadeTestCase highestOrdinal = 2, number = 2117;
+	TestCommissionRate subclassOf JadeTestCase highestOrdinal = 2, number = 2118;
+	TestCompany subclassOf JadeTestCase highestOrdinal = 12, number = 2119;
+	TestCountry subclassOf JadeTestCase highestOrdinal = 2, number = 2120;
+	TestItemDetails subclassOf JadeTestCase highestOrdinal = 1, number = 2121;
+	TestModelApp subclassOf JadeTestCase number = 2122;
+	TestOrderProxy subclassOf JadeTestCase highestOrdinal = 10, number = 2123;
+	TestRetailOrderProxy subclassOf TestOrderProxy highestOrdinal = 1, number = 2124;
+	TestTenderOrderProxy subclassOf TestOrderProxy highestOrdinal = 1, number = 2125;
+	TestRegion subclassOf JadeTestCase highestOrdinal = 2, number = 2126;
+	TestSale subclassOf JadeTestCase highestOrdinal = 11, number = 2127;
+	TestRetailSale subclassOf TestSale highestOrdinal = 1, number = 2128;
+	TestTenderSale subclassOf TestSale highestOrdinal = 1, number = 2129;
+	TestSaleItem subclassOf JadeTestCase highestSubId = 1, highestOrdinal = 10, number = 2130;
+	TestRetailSaleItem subclassOf TestSaleItem highestOrdinal = 2, number = 2131;
+	TestTenderSaleItem subclassOf TestSaleItem highestOrdinal = 2, number = 2132;
+	TestSaleItemCategory subclassOf JadeTestCase highestOrdinal = 2, number = 2133;
+	TestTender subclassOf JadeTestCase highestOrdinal = 3, number = 2134;
 	ModelEntity subclassOf Object number = 2193;
-	Address subclassOf ModelEntity highestOrdinal = 10, number = 2131;
-	Agent subclassOf ModelEntity objectVolatility="stable", highestSubId = 3, highestOrdinal = 6, number = 2132;
-	Client subclassOf ModelEntity highestSubId = 4, highestOrdinal = 6, number = 2133;
-	CommissionRate subclassOf ModelEntity highestSubId = 1, highestOrdinal = 3, number = 2134;
-	Company subclassOf ModelEntity objectVolatility="stable", highestSubId = 9, highestOrdinal = 9, number = 2135;
-	Location subclassOf ModelEntity abstract, highestOrdinal = 1, number = 2136;
-	Country subclassOf Location highestSubId = 1, highestOrdinal = 2, number = 2137;
-	Region subclassOf Location highestSubId = 1, highestOrdinal = 2, number = 2138;
-	Sale subclassOf ModelEntity abstract, highestOrdinal = 4, number = 2139;
-	RetailSale subclassOf Sale highestOrdinal = 2, number = 2140;
-	TenderSale subclassOf Sale highestOrdinal = 1, number = 2141;
-	SaleItem subclassOf ModelEntity abstract, highestOrdinal = 16, number = 2142;
-	RetailSaleItem subclassOf SaleItem highestOrdinal = 1, number = 2143;
-	TenderSaleItem subclassOf SaleItem highestSubId = 2, highestOrdinal = 4, number = 2144;
-	SaleItemCategory subclassOf ModelEntity highestSubId = 2, highestOrdinal = 5, number = 2145;
-	Tender subclassOf ModelEntity highestOrdinal = 5, number = 2146;
+	Address subclassOf ModelEntity highestOrdinal = 10, number = 2135;
+	Agent subclassOf ModelEntity objectVolatility="stable", highestSubId = 3, highestOrdinal = 6, number = 2136;
+	Client subclassOf ModelEntity highestSubId = 4, highestOrdinal = 6, number = 2137;
+	CommissionRate subclassOf ModelEntity highestSubId = 1, highestOrdinal = 3, number = 2138;
+	Company subclassOf ModelEntity objectVolatility="stable", highestSubId = 9, highestOrdinal = 9, number = 2139;
+	Location subclassOf ModelEntity abstract, highestOrdinal = 1, number = 2140;
+	Country subclassOf Location highestSubId = 1, highestOrdinal = 2, number = 2141;
+	Region subclassOf Location highestSubId = 1, highestOrdinal = 2, number = 2142;
+	Sale subclassOf ModelEntity abstract, highestOrdinal = 4, number = 2143;
+	RetailSale subclassOf Sale highestOrdinal = 2, number = 2144;
+	TenderSale subclassOf Sale highestOrdinal = 1, number = 2145;
+	SaleItem subclassOf ModelEntity abstract, highestOrdinal = 16, number = 2146;
+	RetailSaleItem subclassOf SaleItem highestOrdinal = 1, number = 2147;
+	TenderSaleItem subclassOf SaleItem highestSubId = 2, highestOrdinal = 4, number = 2148;
+	SaleItemCategory subclassOf ModelEntity highestSubId = 2, highestOrdinal = 5, number = 2149;
+	Tender subclassOf ModelEntity highestOrdinal = 5, number = 2150;
 	ModelTransient subclassOf Object transient, number = 2194;
-	ItemDetails subclassOf ModelTransient transient, sharedTransientAllowed, transientAllowed, highestOrdinal = 10, number = 2147;
-	OrderProxy subclassOf ModelTransient abstract, transient, subclassSharedTransientAllowed, subclassTransientAllowed, highestOrdinal = 4, number = 2148;
-	RetailOrderProxy subclassOf OrderProxy transient, sharedTransientAllowed, transientAllowed, subclassSharedTransientAllowed, subclassTransientAllowed, highestOrdinal = 3, number = 2149;
-	TenderOrderProxy subclassOf OrderProxy transient, sharedTransientAllowed, transientAllowed, subclassSharedTransientAllowed, subclassTransientAllowed, highestOrdinal = 1, number = 2150;
-	SErewhonInvestmentsModelSchema subclassOf SCommonSchema number = 2151;
-	MethodParametersDialog subclassOf Form transient, transientAllowed, subclassTransientAllowed, highestSubId = 3, highestOrdinal = 10, number = 2152;
-	AgentByNameDict subclassOf MemberKeyDictionary loadFactor = 66, number = 2153;
-	ClientByNameDict subclassOf MemberKeyDictionary loadFactor = 66, number = 2154;
-	CommissionRateByCategoryDict subclassOf MemberKeyDictionary number = 2155;
-	CommissionRateByPercentDict subclassOf MemberKeyDictionary number = 2156;
-	CountryByNameDict subclassOf MemberKeyDictionary number = 2157;
-	OrderProxyByItemDict subclassOf MemberKeyDictionary loadFactor = 66, transient, number = 2158;
-	RegionByNameDict subclassOf MemberKeyDictionary number = 2159;
-	RetailSaleByTimeItemDict subclassOf MemberKeyDictionary loadFactor = 66, number = 2160;
-	SaleByItemDict subclassOf MemberKeyDictionary loadFactor = 66, number = 2161;
-	SaleItemByCategoryCodeDict subclassOf MemberKeyDictionary loadFactor = 66, number = 2162;
-	SaleItemByCodeDict subclassOf MemberKeyDictionary loadFactor = 66, number = 2163;
-	SaleItemCategoryByNameDict subclassOf MemberKeyDictionary number = 2164;
-	TenderByItemTimeOfferDict subclassOf MemberKeyDictionary loadFactor = 66, number = 2165;
-	TenderByOfferTimeDict subclassOf MemberKeyDictionary number = 2166;
-	TenderByTimeOfferDict subclassOf MemberKeyDictionary number = 2167;
-	TenderItemBySaleDateCodeDict subclassOf MemberKeyDictionary loadFactor = 66, number = 2168;
-	TenderSaleByTimeItemDict subclassOf MemberKeyDictionary loadFactor = 66, number = 2169;
-	ClientSet subclassOf ObjectSet number = 2170;
-	RegionSet subclassOf ObjectSet number = 2171;
-	SaleSet subclassOf ObjectSet number = 2172;
+	ItemDetails subclassOf ModelTransient transient, sharedTransientAllowed, transientAllowed, highestOrdinal = 10, number = 2151;
+	OrderProxy subclassOf ModelTransient abstract, transient, subclassSharedTransientAllowed, subclassTransientAllowed, highestOrdinal = 4, number = 2152;
+	RetailOrderProxy subclassOf OrderProxy transient, sharedTransientAllowed, transientAllowed, subclassSharedTransientAllowed, subclassTransientAllowed, highestOrdinal = 3, number = 2153;
+	TenderOrderProxy subclassOf OrderProxy transient, sharedTransientAllowed, transientAllowed, subclassSharedTransientAllowed, subclassTransientAllowed, highestOrdinal = 1, number = 2154;
+	SErewhonInvestmentsModelSchema subclassOf SCommonSchema number = 2155;
+	MethodParametersDialog subclassOf Form transient, transientAllowed, subclassTransientAllowed, highestSubId = 3, highestOrdinal = 10, number = 2156;
+	AgentByNameDict subclassOf MemberKeyDictionary loadFactor = 66, number = 2157;
+	ClientByNameDict subclassOf MemberKeyDictionary loadFactor = 66, number = 2158;
+	CommissionRateByCategoryDict subclassOf MemberKeyDictionary number = 2159;
+	CommissionRateByPercentDict subclassOf MemberKeyDictionary number = 2160;
+	CountryByNameDict subclassOf MemberKeyDictionary number = 2161;
+	OrderProxyByItemDict subclassOf MemberKeyDictionary loadFactor = 66, transient, number = 2162;
+	RegionByNameDict subclassOf MemberKeyDictionary number = 2163;
+	RetailSaleByTimeItemDict subclassOf MemberKeyDictionary loadFactor = 66, number = 2164;
+	SaleByItemDict subclassOf MemberKeyDictionary loadFactor = 66, number = 2165;
+	SaleItemByCategoryCodeDict subclassOf MemberKeyDictionary loadFactor = 66, number = 2166;
+	SaleItemByCodeDict subclassOf MemberKeyDictionary loadFactor = 66, number = 2167;
+	SaleItemCategoryByNameDict subclassOf MemberKeyDictionary number = 2168;
+	TenderByItemTimeOfferDict subclassOf MemberKeyDictionary loadFactor = 66, number = 2169;
+	TenderByOfferTimeDict subclassOf MemberKeyDictionary number = 2170;
+	TenderByTimeOfferDict subclassOf MemberKeyDictionary number = 2171;
+	TenderItemBySaleDateCodeDict subclassOf MemberKeyDictionary loadFactor = 66, number = 2172;
+	TenderSaleByTimeItemDict subclassOf MemberKeyDictionary loadFactor = 66, number = 2173;
+	ClientSet subclassOf ObjectSet number = 2174;
+	RegionSet subclassOf ObjectSet number = 2175;
+	SaleSet subclassOf ObjectSet number = 2176;
  
 interfaceDefs
 	ICartable number = 1286
@@ -2191,6 +2191,8 @@ endif;`
 		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
  
 	jadeMethodDefinitions
+		getAmount(): Decimal abstract, number = 1002;
+		setModifiedTimeStamp "cnwhm6" "7.0.00" 2022:08:11:15:38:19;
 		getDate(): Date number = 1003;
 		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:10:04:09:15:57.565;
 		zCalculateAgentCommission(salePrice: Decimal) updating, protected, number = 1005;
@@ -2212,6 +2214,8 @@ endif;`
 			price: Decimal; 
 			timeStamp: TimeStamp) updating, number = 1002;
 		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:12:12:01:16.381;
+		getAmount(): Decimal number = 1005;
+		setModifiedTimeStamp "cnwta3" "7.0.00" 2022:08:11:15:38:19;
 		getDate(): Date number = 1003;
 		setModifiedTimeStamp "cnwta3" "16.0.02" 2018:08:27:14:00:54.414;
 		getDebugString(): String number = 1004;
@@ -2234,6 +2238,8 @@ endif;`
 			tenderSaleItem: TenderSaleItem; 
 			tender: Tender) updating, number = 1002;
 		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:24:11:31:42.591;
+		getAmount(): Decimal number = 1007;
+		setModifiedTimeStamp "cnwta3" "7.0.00" 2022:08:11:15:38:19;
 		getDate(): Date number = 1003;
 		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:24:11:35:44.118;
 		getDebugString(): String number = 1004;
@@ -2909,7 +2915,7 @@ ErewhonInvestmentsModelSchemaDb
 	(
 		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
 	databaseFileDefinitions
-		"ereaddress" number = 55;
+		"ereaddress" number = 58;
 		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:08:29:15:31:37.559;
 		"ereagent" number = 101;
 		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
@@ -2923,7 +2929,7 @@ ErewhonInvestmentsModelSchemaDb
 		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
 		"erewebservice" number = 110;
 		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
-		"eredef" number = 56;
+		"eredef" number = 59;
 		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
 	defaultFileDefinition "eredef";
 	classMapDefinitions
@@ -15071,6 +15077,11 @@ end;
 	)
 	Sale (
 	jadeMethodSources
+getAmount
+{
+getAmount(): Decimal abstract, number = 1002;
+}
+
 getDate
 {
 getDate(): Date;
@@ -15218,6 +15229,19 @@ begin
 end;
 }
 
+getAmount
+{
+getAmount() : Decimal;
+// --------------------------------------------------------------------------------
+// Method:		getAmount
+//
+// Returns:     The price of the retail sale
+// --------------------------------------------------------------------------------
+begin
+	return price;
+end;
+}
+
 getDate
 {
 getDate() : Date;
@@ -15314,6 +15338,22 @@ begin
 
 	// Calculate the agent's commission on the sale
 	self.zCalculateAgentCommission(self.myTender.offer);
+end;
+}
+
+getAmount
+{
+getAmount() : Decimal;
+// --------------------------------------------------------------------------------
+// Method:		getAmount
+//
+// Returns:     The amount of the tender sale from its winning tender
+// --------------------------------------------------------------------------------
+begin
+	if myTender = null then
+		return 0;
+	endif;
+	return myTender.offer;
 end;
 }
 
@@ -16344,6 +16384,7 @@ begin
 									);
 end;
 }
+
 create
 {
 create(
@@ -16363,6 +16404,7 @@ create(
 begin
 end;
 }
+
 	)
 	TenderOrderProxy (
 	jadeMethodSources
@@ -16391,6 +16433,7 @@ begin
 						);
 end;
 }
+
 create
 {
 create(
@@ -16410,6 +16453,7 @@ create(
 begin
 end;
 }
+
 	)
 	MethodParametersDialog (
 	jadeMethodSources
