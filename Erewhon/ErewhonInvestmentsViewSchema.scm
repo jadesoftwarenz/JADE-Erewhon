@@ -1,4 +1,4 @@
-jadeVersionNumber "20.0.01";
+jadeVersionNumber "18.0.00";
 schemaDefinition
 ErewhonInvestmentsViewSchema subschemaOf ErewhonInvestmentsModelSchema completeDefinition, patchVersioningEnabled = false;
 		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:09;
@@ -4110,9 +4110,9 @@ ErewhonInvestmentsViewSchemaDb
 	(
 		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:09;
 	databaseFileDefinitions
-		"erecart" number = 88;
+		"erecart" number=88;
 		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:09;
-		"eredef" number = 56;
+		"eredef" number=56;
 		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
 	defaultFileDefinition "eredef";
 	classMapDefinitions

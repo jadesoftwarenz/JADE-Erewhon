@@ -1,5 +1,5 @@
-/* JADE RPS MAPPING FILE D:\JadeGitSource\JADE-Erewhon\Erewhon\ErewhonInvestmentsModelSchema.ddbx */
-jadeVersionNumber "20.0.01";
+/* JADE RPS MAPPING FILE D:\Erewhon\JADE-Erewhon\Erewhon\2018_Schemas\ErewhonInvestmentsModelSchema.ddbx */
+jadeVersionNumber "18.0.00";
 schemaDefinition
 ErewhonInvestmentsModelSchema subschemaOf CommonSchema completeDefinition, patchVersioningEnabled = false;
 		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
@@ -2909,21 +2909,21 @@ ErewhonInvestmentsModelSchemaDb
 	(
 		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
 	databaseFileDefinitions
-		"ereaddress" number = 55;
+		"ereaddress" number=55;
 		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:08:29:15:31:37.559;
-		"ereagent" number = 101;
+		"ereagent" number=101;
 		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
-		"ereclnt" number = 102;
+		"ereclnt" number=102;
 		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
-		"ereitem" number = 103;
+		"ereitem" number=103;
 		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
-		"eresale" number = 104;
+		"eresale" number=104;
 		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
-		"eretendr" number = 105;
+		"eretendr" number=105;
 		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
-		"erewebservice" number = 110;
+		"erewebservice" number=110;
 		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
-		"eredef" number = 56;
+		"eredef" number=56;
 		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
 	defaultFileDefinition "eredef";
 	classMapDefinitions
@@ -16344,6 +16344,7 @@ begin
 									);
 end;
 }
+
 create
 {
 create(
@@ -16363,6 +16364,7 @@ create(
 begin
 end;
 }
+
 	)
 	TenderOrderProxy (
 	jadeMethodSources
@@ -16391,6 +16393,7 @@ begin
 						);
 end;
 }
+
 create
 {
 create(
@@ -16410,6 +16413,7 @@ create(
 begin
 end;
 }
+
 	)
 	MethodParametersDialog (
 	jadeMethodSources

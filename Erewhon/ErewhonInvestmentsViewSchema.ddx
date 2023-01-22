@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<schema name="ErewhonInvestmentsViewSchema" JadeVersionNumber="20.0.01" JadePatchNumber="0" CompleteDefinition="true">
+<schema name="ErewhonInvestmentsViewSchema" JadeVersionNumber="18.0.00" JadePatchNumber="0" CompleteDefinition="true">
 
 	<Application name="Administration">
 		<__overridePatchNumber>0</__overridePatchNumber>
@@ -26,8 +26,6 @@
 		<helpFile/>
 		<icon/>
 		<initializeMethod/>
-		<mdiStyle>0</mdiStyle>
-		<mdiWindowListOrder>0</mdiWindowListOrder>
 		<name>Administration</name>
 		<showBubbleHelp>false</showBubbleHelp>
 		<startupForm/>
@@ -74,8 +72,6 @@
 		<helpFile/>
 		<icon/>
 		<initializeMethod/>
-		<mdiStyle>0</mdiStyle>
-		<mdiWindowListOrder>0</mdiWindowListOrder>
 		<name>ErewhonDotNetShop</name>
 		<showBubbleHelp>false</showBubbleHelp>
 		<startupForm/>
@@ -143,8 +139,6 @@
 		<helpFile/>
 		<icon/>
 		<initializeMethod/>
-		<mdiStyle>0</mdiStyle>
-		<mdiWindowListOrder>0</mdiWindowListOrder>
 		<name>ErewhonRestApp</name>
 		<showBubbleHelp>false</showBubbleHelp>
 		<startupForm/>
@@ -196,8 +190,6 @@
 		<helpFile/>
 		<icon/>
 		<initializeMethod/>
-		<mdiStyle>0</mdiStyle>
-		<mdiWindowListOrder>0</mdiWindowListOrder>
 		<name>ErewhonShop</name>
 		<showBubbleHelp>false</showBubbleHelp>
 		<startupForm/>
@@ -244,8 +236,6 @@
 		<helpFile/>
 		<icon/>
 		<initializeMethod/>
-		<mdiStyle>0</mdiStyle>
-		<mdiWindowListOrder>0</mdiWindowListOrder>
 		<name>TenderClosureApp</name>
 		<showBubbleHelp>false</showBubbleHelp>
 		<startupForm/>
@@ -313,8 +303,6 @@
 		<helpFile/>
 		<icon/>
 		<initializeMethod/>
-		<mdiStyle>0</mdiStyle>
-		<mdiWindowListOrder>0</mdiWindowListOrder>
 		<name>Test</name>
 		<showBubbleHelp>false</showBubbleHelp>
 		<startupForm/>
@@ -390,8 +378,6 @@
 		<helpFile/>
 		<icon/>
 		<initializeMethod/>
-		<mdiStyle>0</mdiStyle>
-		<mdiWindowListOrder>0</mdiWindowListOrder>
 		<name>WebServiceOverHttpApp</name>
 		<showBubbleHelp>false</showBubbleHelp>
 		<startupForm/>
@@ -479,8 +465,6 @@
 		<helpFile/>
 		<icon/>
 		<initializeMethod/>
-		<mdiStyle>0</mdiStyle>
-		<mdiWindowListOrder>0</mdiWindowListOrder>
 		<name>WebServiceOverTcpApp</name>
 		<showBubbleHelp>false</showBubbleHelp>
 		<startupForm/>
@@ -568,8 +552,6 @@
 		<helpFile/>
 		<icon/>
 		<initializeMethod/>
-		<mdiStyle>0</mdiStyle>
-		<mdiWindowListOrder>0</mdiWindowListOrder>
 		<name>WebShop</name>
 		<showBubbleHelp>false</showBubbleHelp>
 		<startupForm name="FormWebLogon" />
@@ -620,7 +602,6 @@
 		<maxButton>true</maxButton>
 		<mdiChild>2</mdiChild>
 		<mdiFrame>false</mdiFrame>
-		<mdiPinned>false</mdiPinned>
 		<minButton>true</minButton>
 		<minimumHeight>0</minimumHeight>
 		<minimumWidth>0</minimumWidth>
@@ -634,12 +615,6 @@
 		<secureForm>false</secureForm>
 		<securityLevelEnabled>0</securityLevelEnabled>
 		<securityLevelVisible>0</securityLevelVisible>
-		<showMdiCloseAllButPinnedMenu>false</showMdiCloseAllButPinnedMenu>
-		<showMdiCloseAllButThisMenu>false</showMdiCloseAllButThisMenu>
-		<showMdiCloseMenu>false</showMdiCloseMenu>
-		<showMdiDockMenu>false</showMdiDockMenu>
-		<showMdiFloatMenu>false</showMdiFloatMenu>
-		<showMdiPinMenu>false</showMdiPinMenu>
 		<skinCategoryName/>
 		<tag/>
 		<top>17</top>
@@ -683,7 +658,6 @@
 		<maxButton>true</maxButton>
 		<mdiChild>2</mdiChild>
 		<mdiFrame>false</mdiFrame>
-		<mdiPinned>false</mdiPinned>
 		<minButton>true</minButton>
 		<minimumHeight>0</minimumHeight>
 		<minimumWidth>0</minimumWidth>
@@ -697,12 +671,6 @@
 		<secureForm>false</secureForm>
 		<securityLevelEnabled>0</securityLevelEnabled>
 		<securityLevelVisible>0</securityLevelVisible>
-		<showMdiCloseAllButPinnedMenu>false</showMdiCloseAllButPinnedMenu>
-		<showMdiCloseAllButThisMenu>false</showMdiCloseAllButThisMenu>
-		<showMdiCloseMenu>false</showMdiCloseMenu>
-		<showMdiDockMenu>false</showMdiDockMenu>
-		<showMdiFloatMenu>false</showMdiFloatMenu>
-		<showMdiPinMenu>false</showMdiPinMenu>
 		<skinCategoryName/>
 		<tag/>
 		<top>18</top>
@@ -2122,7 +2090,6 @@ Note: The full names, contact details and products referred to in the program ar
 		<maxButton>true</maxButton>
 		<mdiChild>2</mdiChild>
 		<mdiFrame>false</mdiFrame>
-		<mdiPinned>false</mdiPinned>
 		<minButton>true</minButton>
 		<minimumHeight>0</minimumHeight>
 		<minimumWidth>0</minimumWidth>
@@ -2136,12 +2103,6 @@ Note: The full names, contact details and products referred to in the program ar
 		<secureForm>false</secureForm>
 		<securityLevelEnabled>0</securityLevelEnabled>
 		<securityLevelVisible>0</securityLevelVisible>
-		<showMdiCloseAllButPinnedMenu>false</showMdiCloseAllButPinnedMenu>
-		<showMdiCloseAllButThisMenu>false</showMdiCloseAllButThisMenu>
-		<showMdiCloseMenu>false</showMdiCloseMenu>
-		<showMdiDockMenu>false</showMdiDockMenu>
-		<showMdiFloatMenu>false</showMdiFloatMenu>
-		<showMdiPinMenu>false</showMdiPinMenu>
 		<skinCategoryName/>
 		<tag/>
 		<top>17</top>
@@ -2185,7 +2146,6 @@ Note: The full names, contact details and products referred to in the program ar
 		<maxButton>true</maxButton>
 		<mdiChild>1</mdiChild>
 		<mdiFrame>false</mdiFrame>
-		<mdiPinned>false</mdiPinned>
 		<minButton>true</minButton>
 		<minimumHeight>0</minimumHeight>
 		<minimumWidth>0</minimumWidth>
@@ -2199,12 +2159,6 @@ Note: The full names, contact details and products referred to in the program ar
 		<secureForm>false</secureForm>
 		<securityLevelEnabled>0</securityLevelEnabled>
 		<securityLevelVisible>0</securityLevelVisible>
-		<showMdiCloseAllButPinnedMenu>false</showMdiCloseAllButPinnedMenu>
-		<showMdiCloseAllButThisMenu>false</showMdiCloseAllButThisMenu>
-		<showMdiCloseMenu>false</showMdiCloseMenu>
-		<showMdiDockMenu>false</showMdiDockMenu>
-		<showMdiFloatMenu>false</showMdiFloatMenu>
-		<showMdiPinMenu>false</showMdiPinMenu>
 		<skinCategoryName/>
 		<tag/>
 		<top>240</top>
@@ -3029,7 +2983,6 @@ Note: The full names, contact details and products referred to in the program ar
 		<maxButton>true</maxButton>
 		<mdiChild>2</mdiChild>
 		<mdiFrame>false</mdiFrame>
-		<mdiPinned>false</mdiPinned>
 		<minButton>true</minButton>
 		<minimumHeight>0</minimumHeight>
 		<minimumWidth>0</minimumWidth>
@@ -3043,12 +2996,6 @@ Note: The full names, contact details and products referred to in the program ar
 		<secureForm>false</secureForm>
 		<securityLevelEnabled>0</securityLevelEnabled>
 		<securityLevelVisible>0</securityLevelVisible>
-		<showMdiCloseAllButPinnedMenu>false</showMdiCloseAllButPinnedMenu>
-		<showMdiCloseAllButThisMenu>false</showMdiCloseAllButThisMenu>
-		<showMdiCloseMenu>false</showMdiCloseMenu>
-		<showMdiDockMenu>false</showMdiDockMenu>
-		<showMdiFloatMenu>false</showMdiFloatMenu>
-		<showMdiPinMenu>false</showMdiPinMenu>
 		<skinCategoryName/>
 		<tag/>
 		<top>17</top>
@@ -3092,7 +3039,6 @@ Note: The full names, contact details and products referred to in the program ar
 		<maxButton>false</maxButton>
 		<mdiChild>2</mdiChild>
 		<mdiFrame>false</mdiFrame>
-		<mdiPinned>false</mdiPinned>
 		<minButton>true</minButton>
 		<minimumHeight>0</minimumHeight>
 		<minimumWidth>0</minimumWidth>
@@ -3106,12 +3052,6 @@ Note: The full names, contact details and products referred to in the program ar
 		<secureForm>false</secureForm>
 		<securityLevelEnabled>0</securityLevelEnabled>
 		<securityLevelVisible>0</securityLevelVisible>
-		<showMdiCloseAllButPinnedMenu>false</showMdiCloseAllButPinnedMenu>
-		<showMdiCloseAllButThisMenu>false</showMdiCloseAllButThisMenu>
-		<showMdiCloseMenu>false</showMdiCloseMenu>
-		<showMdiDockMenu>false</showMdiDockMenu>
-		<showMdiFloatMenu>false</showMdiFloatMenu>
-		<showMdiPinMenu>false</showMdiPinMenu>
 		<skinCategoryName/>
 		<tag/>
 		<top>45</top>
@@ -4511,7 +4451,6 @@ Note: The full names, contact details and products referred to in the program ar
 		<maxButton>false</maxButton>
 		<mdiChild>2</mdiChild>
 		<mdiFrame>false</mdiFrame>
-		<mdiPinned>false</mdiPinned>
 		<minButton>true</minButton>
 		<minimumHeight>0</minimumHeight>
 		<minimumWidth>0</minimumWidth>
@@ -4525,12 +4464,6 @@ Note: The full names, contact details and products referred to in the program ar
 		<secureForm>false</secureForm>
 		<securityLevelEnabled>0</securityLevelEnabled>
 		<securityLevelVisible>0</securityLevelVisible>
-		<showMdiCloseAllButPinnedMenu>false</showMdiCloseAllButPinnedMenu>
-		<showMdiCloseAllButThisMenu>false</showMdiCloseAllButThisMenu>
-		<showMdiCloseMenu>false</showMdiCloseMenu>
-		<showMdiDockMenu>false</showMdiDockMenu>
-		<showMdiFloatMenu>false</showMdiFloatMenu>
-		<showMdiPinMenu>false</showMdiPinMenu>
 		<skinCategoryName/>
 		<tag/>
 		<top>7</top>
@@ -5050,7 +4983,6 @@ Note: The full names, contact details and products referred to in the program ar
 				<borderColorSingle>0</borderColorSingle>
 				<borderStyle>1</borderStyle>
 				<bubbleHelp/>
-				<defaultLineHeight>0</defaultLineHeight>
 				<description/>
 				<disableReason/>
 				<dragCursor/>
@@ -5632,7 +5564,6 @@ Note: The full names, contact details and products referred to in the program ar
 		<maxButton>true</maxButton>
 		<mdiChild>2</mdiChild>
 		<mdiFrame>false</mdiFrame>
-		<mdiPinned>false</mdiPinned>
 		<minButton>true</minButton>
 		<minimumHeight>300</minimumHeight>
 		<minimumWidth>405</minimumWidth>
@@ -5646,12 +5577,6 @@ Note: The full names, contact details and products referred to in the program ar
 		<secureForm>false</secureForm>
 		<securityLevelEnabled>0</securityLevelEnabled>
 		<securityLevelVisible>0</securityLevelVisible>
-		<showMdiCloseAllButPinnedMenu>false</showMdiCloseAllButPinnedMenu>
-		<showMdiCloseAllButThisMenu>false</showMdiCloseAllButThisMenu>
-		<showMdiCloseMenu>false</showMdiCloseMenu>
-		<showMdiDockMenu>false</showMdiDockMenu>
-		<showMdiFloatMenu>false</showMdiFloatMenu>
-		<showMdiPinMenu>false</showMdiPinMenu>
 		<skinCategoryName/>
 		<tag/>
 		<top>17</top>
@@ -5672,7 +5597,6 @@ Note: The full names, contact details and products referred to in the program ar
 				<borderColorSingle>0</borderColorSingle>
 				<borderStyle>1</borderStyle>
 				<bubbleHelp/>
-				<defaultLineHeight>0</defaultLineHeight>
 				<description/>
 				<disableReason/>
 				<dragCursor/>
@@ -6130,7 +6054,6 @@ Note: The full names, contact details and products referred to in the program ar
 		<maxButton>true</maxButton>
 		<mdiChild>2</mdiChild>
 		<mdiFrame>false</mdiFrame>
-		<mdiPinned>false</mdiPinned>
 		<minButton>true</minButton>
 		<minimumHeight>350</minimumHeight>
 		<minimumWidth>300</minimumWidth>
@@ -6144,12 +6067,6 @@ Note: The full names, contact details and products referred to in the program ar
 		<secureForm>false</secureForm>
 		<securityLevelEnabled>0</securityLevelEnabled>
 		<securityLevelVisible>0</securityLevelVisible>
-		<showMdiCloseAllButPinnedMenu>false</showMdiCloseAllButPinnedMenu>
-		<showMdiCloseAllButThisMenu>false</showMdiCloseAllButThisMenu>
-		<showMdiCloseMenu>false</showMdiCloseMenu>
-		<showMdiDockMenu>false</showMdiDockMenu>
-		<showMdiFloatMenu>false</showMdiFloatMenu>
-		<showMdiPinMenu>false</showMdiPinMenu>
 		<skinCategoryName/>
 		<tag/>
 		<top>42</top>
@@ -6507,7 +6424,6 @@ wBgAAP/4AAD/+AAA</pictureOpen>
 		<maxButton>false</maxButton>
 		<mdiChild>2</mdiChild>
 		<mdiFrame>false</mdiFrame>
-		<mdiPinned>false</mdiPinned>
 		<minButton>true</minButton>
 		<minimumHeight>0</minimumHeight>
 		<minimumWidth>0</minimumWidth>
@@ -6521,12 +6437,6 @@ wBgAAP/4AAD/+AAA</pictureOpen>
 		<secureForm>false</secureForm>
 		<securityLevelEnabled>0</securityLevelEnabled>
 		<securityLevelVisible>0</securityLevelVisible>
-		<showMdiCloseAllButPinnedMenu>false</showMdiCloseAllButPinnedMenu>
-		<showMdiCloseAllButThisMenu>false</showMdiCloseAllButThisMenu>
-		<showMdiCloseMenu>false</showMdiCloseMenu>
-		<showMdiDockMenu>false</showMdiDockMenu>
-		<showMdiFloatMenu>false</showMdiFloatMenu>
-		<showMdiPinMenu>false</showMdiPinMenu>
 		<skinCategoryName/>
 		<tag/>
 		<top>45</top>
@@ -7212,7 +7122,6 @@ wBgAAP/4AAD/+AAA</pictureOpen>
 				<borderColorSingle>0</borderColorSingle>
 				<borderStyle>1</borderStyle>
 				<bubbleHelp/>
-				<defaultLineHeight>0</defaultLineHeight>
 				<description/>
 				<disableReason/>
 				<dragCursor/>
@@ -7794,7 +7703,6 @@ wBgAAP/4AAD/+AAA</pictureOpen>
 		<maxButton>false</maxButton>
 		<mdiChild>2</mdiChild>
 		<mdiFrame>false</mdiFrame>
-		<mdiPinned>false</mdiPinned>
 		<minButton>true</minButton>
 		<minimumHeight>315</minimumHeight>
 		<minimumWidth>420</minimumWidth>
@@ -7808,12 +7716,6 @@ wBgAAP/4AAD/+AAA</pictureOpen>
 		<secureForm>false</secureForm>
 		<securityLevelEnabled>0</securityLevelEnabled>
 		<securityLevelVisible>0</securityLevelVisible>
-		<showMdiCloseAllButPinnedMenu>false</showMdiCloseAllButPinnedMenu>
-		<showMdiCloseAllButThisMenu>false</showMdiCloseAllButThisMenu>
-		<showMdiCloseMenu>false</showMdiCloseMenu>
-		<showMdiDockMenu>false</showMdiDockMenu>
-		<showMdiFloatMenu>false</showMdiFloatMenu>
-		<showMdiPinMenu>false</showMdiPinMenu>
 		<skinCategoryName/>
 		<tag/>
 		<top>11</top>
@@ -8549,7 +8451,6 @@ wBgAAP/4AAD/+AAA</pictureOpen>
 		<maxButton>true</maxButton>
 		<mdiChild>2</mdiChild>
 		<mdiFrame>false</mdiFrame>
-		<mdiPinned>false</mdiPinned>
 		<minButton>true</minButton>
 		<minimumHeight>250</minimumHeight>
 		<minimumWidth>500</minimumWidth>
@@ -8563,12 +8464,6 @@ wBgAAP/4AAD/+AAA</pictureOpen>
 		<secureForm>false</secureForm>
 		<securityLevelEnabled>0</securityLevelEnabled>
 		<securityLevelVisible>0</securityLevelVisible>
-		<showMdiCloseAllButPinnedMenu>false</showMdiCloseAllButPinnedMenu>
-		<showMdiCloseAllButThisMenu>false</showMdiCloseAllButThisMenu>
-		<showMdiCloseMenu>false</showMdiCloseMenu>
-		<showMdiDockMenu>false</showMdiDockMenu>
-		<showMdiFloatMenu>false</showMdiFloatMenu>
-		<showMdiPinMenu>false</showMdiPinMenu>
 		<skinCategoryName/>
 		<tag/>
 		<top>17</top>
@@ -8986,7 +8881,6 @@ wBgAAP/4AAD/+AAA</pictureOpen>
 		<maxButton>true</maxButton>
 		<mdiChild>2</mdiChild>
 		<mdiFrame>false</mdiFrame>
-		<mdiPinned>false</mdiPinned>
 		<minButton>true</minButton>
 		<minimumHeight>300</minimumHeight>
 		<minimumWidth>400</minimumWidth>
@@ -9000,12 +8894,6 @@ wBgAAP/4AAD/+AAA</pictureOpen>
 		<secureForm>false</secureForm>
 		<securityLevelEnabled>0</securityLevelEnabled>
 		<securityLevelVisible>0</securityLevelVisible>
-		<showMdiCloseAllButPinnedMenu>false</showMdiCloseAllButPinnedMenu>
-		<showMdiCloseAllButThisMenu>false</showMdiCloseAllButThisMenu>
-		<showMdiCloseMenu>false</showMdiCloseMenu>
-		<showMdiDockMenu>false</showMdiDockMenu>
-		<showMdiFloatMenu>false</showMdiFloatMenu>
-		<showMdiPinMenu>false</showMdiPinMenu>
 		<skinCategoryName/>
 		<tag/>
 		<top>4</top>
@@ -9374,7 +9262,6 @@ wBgAAP/4AAD/+AAA</pictureOpen>
 				<borderColorSingle>0</borderColorSingle>
 				<borderStyle>1</borderStyle>
 				<bubbleHelp/>
-				<defaultLineHeight>0</defaultLineHeight>
 				<description/>
 				<disableReason/>
 				<dragCursor/>
@@ -9438,7 +9325,6 @@ wBgAAP/4AAD/+AAA</pictureOpen>
 				<borderColorSingle>0</borderColorSingle>
 				<borderStyle>1</borderStyle>
 				<bubbleHelp/>
-				<defaultLineHeight>0</defaultLineHeight>
 				<description/>
 				<disableReason/>
 				<dragCursor/>
@@ -9882,7 +9768,6 @@ wBgAAP/4AAD/+AAA</pictureOpen>
 		<maxButton>false</maxButton>
 		<mdiChild>1</mdiChild>
 		<mdiFrame>false</mdiFrame>
-		<mdiPinned>false</mdiPinned>
 		<minButton>true</minButton>
 		<minimumHeight>0</minimumHeight>
 		<minimumWidth>0</minimumWidth>
@@ -9896,12 +9781,6 @@ wBgAAP/4AAD/+AAA</pictureOpen>
 		<secureForm>false</secureForm>
 		<securityLevelEnabled>0</securityLevelEnabled>
 		<securityLevelVisible>0</securityLevelVisible>
-		<showMdiCloseAllButPinnedMenu>false</showMdiCloseAllButPinnedMenu>
-		<showMdiCloseAllButThisMenu>false</showMdiCloseAllButThisMenu>
-		<showMdiCloseMenu>false</showMdiCloseMenu>
-		<showMdiDockMenu>false</showMdiDockMenu>
-		<showMdiFloatMenu>false</showMdiFloatMenu>
-		<showMdiPinMenu>false</showMdiPinMenu>
 		<skinCategoryName/>
 		<tag/>
 		<top>17</top>
@@ -9945,7 +9824,6 @@ wBgAAP/4AAD/+AAA</pictureOpen>
 		<maxButton>false</maxButton>
 		<mdiChild>1</mdiChild>
 		<mdiFrame>false</mdiFrame>
-		<mdiPinned>false</mdiPinned>
 		<minButton>true</minButton>
 		<minimumHeight>375</minimumHeight>
 		<minimumWidth>400</minimumWidth>
@@ -9959,12 +9837,6 @@ wBgAAP/4AAD/+AAA</pictureOpen>
 		<secureForm>false</secureForm>
 		<securityLevelEnabled>0</securityLevelEnabled>
 		<securityLevelVisible>0</securityLevelVisible>
-		<showMdiCloseAllButPinnedMenu>false</showMdiCloseAllButPinnedMenu>
-		<showMdiCloseAllButThisMenu>false</showMdiCloseAllButThisMenu>
-		<showMdiCloseMenu>false</showMdiCloseMenu>
-		<showMdiDockMenu>false</showMdiDockMenu>
-		<showMdiFloatMenu>false</showMdiFloatMenu>
-		<showMdiPinMenu>false</showMdiPinMenu>
 		<skinCategoryName/>
 		<tag/>
 		<top>17</top>
@@ -11499,7 +11371,6 @@ wBgAAP/4AAD/+AAA</pictureOpen>
 		<maxButton>false</maxButton>
 		<mdiChild>1</mdiChild>
 		<mdiFrame>false</mdiFrame>
-		<mdiPinned>false</mdiPinned>
 		<minButton>true</minButton>
 		<minimumHeight>375</minimumHeight>
 		<minimumWidth>400</minimumWidth>
@@ -11513,12 +11384,6 @@ wBgAAP/4AAD/+AAA</pictureOpen>
 		<secureForm>false</secureForm>
 		<securityLevelEnabled>0</securityLevelEnabled>
 		<securityLevelVisible>0</securityLevelVisible>
-		<showMdiCloseAllButPinnedMenu>false</showMdiCloseAllButPinnedMenu>
-		<showMdiCloseAllButThisMenu>false</showMdiCloseAllButThisMenu>
-		<showMdiCloseMenu>false</showMdiCloseMenu>
-		<showMdiDockMenu>false</showMdiDockMenu>
-		<showMdiFloatMenu>false</showMdiFloatMenu>
-		<showMdiPinMenu>false</showMdiPinMenu>
 		<skinCategoryName/>
 		<tag/>
 		<top>17</top>
@@ -11562,7 +11427,6 @@ wBgAAP/4AAD/+AAA</pictureOpen>
 		<maxButton>false</maxButton>
 		<mdiChild>1</mdiChild>
 		<mdiFrame>false</mdiFrame>
-		<mdiPinned>false</mdiPinned>
 		<minButton>true</minButton>
 		<minimumHeight>375</minimumHeight>
 		<minimumWidth>400</minimumWidth>
@@ -11576,12 +11440,6 @@ wBgAAP/4AAD/+AAA</pictureOpen>
 		<secureForm>false</secureForm>
 		<securityLevelEnabled>0</securityLevelEnabled>
 		<securityLevelVisible>0</securityLevelVisible>
-		<showMdiCloseAllButPinnedMenu>false</showMdiCloseAllButPinnedMenu>
-		<showMdiCloseAllButThisMenu>false</showMdiCloseAllButThisMenu>
-		<showMdiCloseMenu>false</showMdiCloseMenu>
-		<showMdiDockMenu>false</showMdiDockMenu>
-		<showMdiFloatMenu>false</showMdiFloatMenu>
-		<showMdiPinMenu>false</showMdiPinMenu>
 		<skinCategoryName/>
 		<tag/>
 		<top>17</top>
@@ -11625,7 +11483,6 @@ wBgAAP/4AAD/+AAA</pictureOpen>
 		<maxButton>false</maxButton>
 		<mdiChild>1</mdiChild>
 		<mdiFrame>false</mdiFrame>
-		<mdiPinned>false</mdiPinned>
 		<minButton>true</minButton>
 		<minimumHeight>375</minimumHeight>
 		<minimumWidth>400</minimumWidth>
@@ -11639,12 +11496,6 @@ wBgAAP/4AAD/+AAA</pictureOpen>
 		<secureForm>false</secureForm>
 		<securityLevelEnabled>0</securityLevelEnabled>
 		<securityLevelVisible>0</securityLevelVisible>
-		<showMdiCloseAllButPinnedMenu>false</showMdiCloseAllButPinnedMenu>
-		<showMdiCloseAllButThisMenu>false</showMdiCloseAllButThisMenu>
-		<showMdiCloseMenu>false</showMdiCloseMenu>
-		<showMdiDockMenu>false</showMdiDockMenu>
-		<showMdiFloatMenu>false</showMdiFloatMenu>
-		<showMdiPinMenu>false</showMdiPinMenu>
 		<skinCategoryName/>
 		<tag/>
 		<top>17</top>
@@ -11688,7 +11539,6 @@ wBgAAP/4AAD/+AAA</pictureOpen>
 		<maxButton>false</maxButton>
 		<mdiChild>1</mdiChild>
 		<mdiFrame>false</mdiFrame>
-		<mdiPinned>false</mdiPinned>
 		<minButton>true</minButton>
 		<minimumHeight>0</minimumHeight>
 		<minimumWidth>0</minimumWidth>
@@ -11702,12 +11552,6 @@ wBgAAP/4AAD/+AAA</pictureOpen>
 		<secureForm>false</secureForm>
 		<securityLevelEnabled>0</securityLevelEnabled>
 		<securityLevelVisible>0</securityLevelVisible>
-		<showMdiCloseAllButPinnedMenu>false</showMdiCloseAllButPinnedMenu>
-		<showMdiCloseAllButThisMenu>false</showMdiCloseAllButThisMenu>
-		<showMdiCloseMenu>false</showMdiCloseMenu>
-		<showMdiDockMenu>false</showMdiDockMenu>
-		<showMdiFloatMenu>false</showMdiFloatMenu>
-		<showMdiPinMenu>false</showMdiPinMenu>
 		<skinCategoryName/>
 		<tag/>
 		<top>51</top>
@@ -11982,7 +11826,6 @@ wBgAAP/4AAD/+AAA</pictureOpen>
 				<borderColorSingle>0</borderColorSingle>
 				<borderStyle>1</borderStyle>
 				<bubbleHelp/>
-				<defaultLineHeight>0</defaultLineHeight>
 				<description/>
 				<disableReason/>
 				<dragCursor/>
@@ -12249,7 +12092,6 @@ wBgAAP/4AAD/+AAA</pictureOpen>
 		<maxButton>false</maxButton>
 		<mdiChild>1</mdiChild>
 		<mdiFrame>false</mdiFrame>
-		<mdiPinned>false</mdiPinned>
 		<minButton>false</minButton>
 		<minimumHeight>0</minimumHeight>
 		<minimumWidth>0</minimumWidth>
@@ -12263,12 +12105,6 @@ wBgAAP/4AAD/+AAA</pictureOpen>
 		<secureForm>false</secureForm>
 		<securityLevelEnabled>0</securityLevelEnabled>
 		<securityLevelVisible>0</securityLevelVisible>
-		<showMdiCloseAllButPinnedMenu>false</showMdiCloseAllButPinnedMenu>
-		<showMdiCloseAllButThisMenu>false</showMdiCloseAllButThisMenu>
-		<showMdiCloseMenu>false</showMdiCloseMenu>
-		<showMdiDockMenu>false</showMdiDockMenu>
-		<showMdiFloatMenu>false</showMdiFloatMenu>
-		<showMdiPinMenu>false</showMdiPinMenu>
 		<skinCategoryName/>
 		<tag/>
 		<top>17</top>
@@ -12630,7 +12466,6 @@ wBgAAP/4AAD/+AAA</pictureOpen>
 		<maxButton>false</maxButton>
 		<mdiChild>1</mdiChild>
 		<mdiFrame>false</mdiFrame>
-		<mdiPinned>false</mdiPinned>
 		<minButton>false</minButton>
 		<minimumHeight>0</minimumHeight>
 		<minimumWidth>0</minimumWidth>
@@ -12644,12 +12479,6 @@ wBgAAP/4AAD/+AAA</pictureOpen>
 		<secureForm>false</secureForm>
 		<securityLevelEnabled>0</securityLevelEnabled>
 		<securityLevelVisible>0</securityLevelVisible>
-		<showMdiCloseAllButPinnedMenu>false</showMdiCloseAllButPinnedMenu>
-		<showMdiCloseAllButThisMenu>false</showMdiCloseAllButThisMenu>
-		<showMdiCloseMenu>false</showMdiCloseMenu>
-		<showMdiDockMenu>false</showMdiDockMenu>
-		<showMdiFloatMenu>false</showMdiFloatMenu>
-		<showMdiPinMenu>false</showMdiPinMenu>
 		<skinCategoryName/>
 		<tag/>
 		<top>53</top>
@@ -13011,7 +12840,6 @@ wBgAAP/4AAD/+AAA</pictureOpen>
 		<maxButton>false</maxButton>
 		<mdiChild>1</mdiChild>
 		<mdiFrame>false</mdiFrame>
-		<mdiPinned>false</mdiPinned>
 		<minButton>false</minButton>
 		<minimumHeight>0</minimumHeight>
 		<minimumWidth>0</minimumWidth>
@@ -13025,12 +12853,6 @@ wBgAAP/4AAD/+AAA</pictureOpen>
 		<secureForm>false</secureForm>
 		<securityLevelEnabled>0</securityLevelEnabled>
 		<securityLevelVisible>0</securityLevelVisible>
-		<showMdiCloseAllButPinnedMenu>false</showMdiCloseAllButPinnedMenu>
-		<showMdiCloseAllButThisMenu>false</showMdiCloseAllButThisMenu>
-		<showMdiCloseMenu>false</showMdiCloseMenu>
-		<showMdiDockMenu>false</showMdiDockMenu>
-		<showMdiFloatMenu>false</showMdiFloatMenu>
-		<showMdiPinMenu>false</showMdiPinMenu>
 		<skinCategoryName/>
 		<tag/>
 		<top>17</top>
@@ -13051,7 +12873,6 @@ wBgAAP/4AAD/+AAA</pictureOpen>
 				<borderColorSingle>0</borderColorSingle>
 				<borderStyle>1</borderStyle>
 				<bubbleHelp/>
-				<defaultLineHeight>0</defaultLineHeight>
 				<description/>
 				<disableReason/>
 				<dragCursor/>
@@ -13514,7 +13335,6 @@ wBgAAP/4AAD/+AAA</pictureOpen>
 		<maxButton>false</maxButton>
 		<mdiChild>1</mdiChild>
 		<mdiFrame>false</mdiFrame>
-		<mdiPinned>false</mdiPinned>
 		<minButton>true</minButton>
 		<minimumHeight>0</minimumHeight>
 		<minimumWidth>0</minimumWidth>
@@ -13528,12 +13348,6 @@ wBgAAP/4AAD/+AAA</pictureOpen>
 		<secureForm>false</secureForm>
 		<securityLevelEnabled>0</securityLevelEnabled>
 		<securityLevelVisible>0</securityLevelVisible>
-		<showMdiCloseAllButPinnedMenu>false</showMdiCloseAllButPinnedMenu>
-		<showMdiCloseAllButThisMenu>false</showMdiCloseAllButThisMenu>
-		<showMdiCloseMenu>false</showMdiCloseMenu>
-		<showMdiDockMenu>false</showMdiDockMenu>
-		<showMdiFloatMenu>false</showMdiFloatMenu>
-		<showMdiPinMenu>false</showMdiPinMenu>
 		<skinCategoryName/>
 		<tag/>
 		<top>7</top>
@@ -14310,7 +14124,6 @@ wBgAAP/4AAD/+AAA</pictureOpen>
 				<borderColorSingle>0</borderColorSingle>
 				<borderStyle>1</borderStyle>
 				<bubbleHelp/>
-				<defaultLineHeight>0</defaultLineHeight>
 				<description/>
 				<disableReason/>
 				<dragCursor/>
@@ -14374,7 +14187,6 @@ wBgAAP/4AAD/+AAA</pictureOpen>
 				<borderColorSingle>0</borderColorSingle>
 				<borderStyle>1</borderStyle>
 				<bubbleHelp/>
-				<defaultLineHeight>0</defaultLineHeight>
 				<description/>
 				<disableReason/>
 				<dragCursor/>
@@ -14496,7 +14308,6 @@ wBgAAP/4AAD/+AAA</pictureOpen>
 				<borderColorSingle>0</borderColorSingle>
 				<borderStyle>1</borderStyle>
 				<bubbleHelp/>
-				<defaultLineHeight>0</defaultLineHeight>
 				<description/>
 				<disableReason/>
 				<dragCursor/>
@@ -15028,7 +14839,6 @@ wBgAAP/4AAD/+AAA</pictureOpen>
 		<maxButton>false</maxButton>
 		<mdiChild>1</mdiChild>
 		<mdiFrame>false</mdiFrame>
-		<mdiPinned>false</mdiPinned>
 		<minButton>true</minButton>
 		<minimumHeight>0</minimumHeight>
 		<minimumWidth>0</minimumWidth>
@@ -15042,12 +14852,6 @@ wBgAAP/4AAD/+AAA</pictureOpen>
 		<secureForm>false</secureForm>
 		<securityLevelEnabled>0</securityLevelEnabled>
 		<securityLevelVisible>0</securityLevelVisible>
-		<showMdiCloseAllButPinnedMenu>false</showMdiCloseAllButPinnedMenu>
-		<showMdiCloseAllButThisMenu>false</showMdiCloseAllButThisMenu>
-		<showMdiCloseMenu>false</showMdiCloseMenu>
-		<showMdiDockMenu>false</showMdiDockMenu>
-		<showMdiFloatMenu>false</showMdiFloatMenu>
-		<showMdiPinMenu>false</showMdiPinMenu>
 		<skinCategoryName/>
 		<tag/>
 		<top>17</top>
@@ -15273,7 +15077,6 @@ wBgAAP/4AAD/+AAA</pictureOpen>
 		<maxButton>false</maxButton>
 		<mdiChild>1</mdiChild>
 		<mdiFrame>false</mdiFrame>
-		<mdiPinned>false</mdiPinned>
 		<minButton>true</minButton>
 		<minimumHeight>0</minimumHeight>
 		<minimumWidth>0</minimumWidth>
@@ -15287,12 +15090,6 @@ wBgAAP/4AAD/+AAA</pictureOpen>
 		<secureForm>false</secureForm>
 		<securityLevelEnabled>0</securityLevelEnabled>
 		<securityLevelVisible>0</securityLevelVisible>
-		<showMdiCloseAllButPinnedMenu>false</showMdiCloseAllButPinnedMenu>
-		<showMdiCloseAllButThisMenu>false</showMdiCloseAllButThisMenu>
-		<showMdiCloseMenu>false</showMdiCloseMenu>
-		<showMdiDockMenu>false</showMdiDockMenu>
-		<showMdiFloatMenu>false</showMdiFloatMenu>
-		<showMdiPinMenu>false</showMdiPinMenu>
 		<skinCategoryName/>
 		<tag/>
 		<top>17</top>
@@ -15652,7 +15449,6 @@ wBgAAP/4AAD/+AAA</pictureOpen>
 		<maxButton>false</maxButton>
 		<mdiChild>1</mdiChild>
 		<mdiFrame>false</mdiFrame>
-		<mdiPinned>false</mdiPinned>
 		<minButton>true</minButton>
 		<minimumHeight>0</minimumHeight>
 		<minimumWidth>0</minimumWidth>
@@ -15666,12 +15462,6 @@ wBgAAP/4AAD/+AAA</pictureOpen>
 		<secureForm>false</secureForm>
 		<securityLevelEnabled>0</securityLevelEnabled>
 		<securityLevelVisible>0</securityLevelVisible>
-		<showMdiCloseAllButPinnedMenu>false</showMdiCloseAllButPinnedMenu>
-		<showMdiCloseAllButThisMenu>false</showMdiCloseAllButThisMenu>
-		<showMdiCloseMenu>false</showMdiCloseMenu>
-		<showMdiDockMenu>false</showMdiDockMenu>
-		<showMdiFloatMenu>false</showMdiFloatMenu>
-		<showMdiPinMenu>false</showMdiPinMenu>
 		<skinCategoryName/>
 		<tag/>
 		<top>17</top>
@@ -16162,7 +15952,6 @@ wBgAAP/4AAD/+AAA</pictureOpen>
 		<maxButton>true</maxButton>
 		<mdiChild>1</mdiChild>
 		<mdiFrame>false</mdiFrame>
-		<mdiPinned>false</mdiPinned>
 		<minButton>true</minButton>
 		<minimumHeight>0</minimumHeight>
 		<minimumWidth>0</minimumWidth>
@@ -16176,12 +15965,6 @@ wBgAAP/4AAD/+AAA</pictureOpen>
 		<secureForm>false</secureForm>
 		<securityLevelEnabled>0</securityLevelEnabled>
 		<securityLevelVisible>0</securityLevelVisible>
-		<showMdiCloseAllButPinnedMenu>false</showMdiCloseAllButPinnedMenu>
-		<showMdiCloseAllButThisMenu>false</showMdiCloseAllButThisMenu>
-		<showMdiCloseMenu>false</showMdiCloseMenu>
-		<showMdiDockMenu>false</showMdiDockMenu>
-		<showMdiFloatMenu>false</showMdiFloatMenu>
-		<showMdiPinMenu>false</showMdiPinMenu>
 		<skinCategoryName/>
 		<tag/>
 		<top>16</top>
@@ -16225,7 +16008,6 @@ wBgAAP/4AAD/+AAA</pictureOpen>
 		<maxButton>false</maxButton>
 		<mdiChild>1</mdiChild>
 		<mdiFrame>false</mdiFrame>
-		<mdiPinned>false</mdiPinned>
 		<minButton>true</minButton>
 		<minimumHeight>0</minimumHeight>
 		<minimumWidth>0</minimumWidth>
@@ -16239,12 +16021,6 @@ wBgAAP/4AAD/+AAA</pictureOpen>
 		<secureForm>false</secureForm>
 		<securityLevelEnabled>0</securityLevelEnabled>
 		<securityLevelVisible>0</securityLevelVisible>
-		<showMdiCloseAllButPinnedMenu>false</showMdiCloseAllButPinnedMenu>
-		<showMdiCloseAllButThisMenu>false</showMdiCloseAllButThisMenu>
-		<showMdiCloseMenu>false</showMdiCloseMenu>
-		<showMdiDockMenu>false</showMdiDockMenu>
-		<showMdiFloatMenu>false</showMdiFloatMenu>
-		<showMdiPinMenu>false</showMdiPinMenu>
 		<skinCategoryName/>
 		<tag/>
 		<top>10</top>
@@ -17324,7 +17100,6 @@ j4bgIJVk35V2gY7GPW0bYkHHMW68DLvQtkTtvHjYBE/OR7JWmqPrOAEM99E2/sMnXQs7ux96WfIg
 		<maxButton>true</maxButton>
 		<mdiChild>1</mdiChild>
 		<mdiFrame>false</mdiFrame>
-		<mdiPinned>false</mdiPinned>
 		<minButton>true</minButton>
 		<minimumHeight>600</minimumHeight>
 		<minimumWidth>630</minimumWidth>
@@ -17338,12 +17113,6 @@ j4bgIJVk35V2gY7GPW0bYkHHMW68DLvQtkTtvHjYBE/OR7JWmqPrOAEM99E2/sMnXQs7ux96WfIg
 		<secureForm>false</secureForm>
 		<securityLevelEnabled>0</securityLevelEnabled>
 		<securityLevelVisible>0</securityLevelVisible>
-		<showMdiCloseAllButPinnedMenu>false</showMdiCloseAllButPinnedMenu>
-		<showMdiCloseAllButThisMenu>false</showMdiCloseAllButThisMenu>
-		<showMdiCloseMenu>false</showMdiCloseMenu>
-		<showMdiDockMenu>false</showMdiDockMenu>
-		<showMdiFloatMenu>false</showMdiFloatMenu>
-		<showMdiPinMenu>false</showMdiPinMenu>
 		<skinCategoryName/>
 		<tag/>
 		<top>10</top>
@@ -17841,7 +17610,6 @@ j4bgIJVk35V2gY7GPW0bYkHHMW68DLvQtkTtvHjYBE/OR7JWmqPrOAEM99E2/sMnXQs7ux96WfIg
 		<maxButton>true</maxButton>
 		<mdiChild>1</mdiChild>
 		<mdiFrame>false</mdiFrame>
-		<mdiPinned>false</mdiPinned>
 		<minButton>true</minButton>
 		<minimumHeight>600</minimumHeight>
 		<minimumWidth>630</minimumWidth>
@@ -17855,12 +17623,6 @@ j4bgIJVk35V2gY7GPW0bYkHHMW68DLvQtkTtvHjYBE/OR7JWmqPrOAEM99E2/sMnXQs7ux96WfIg
 		<secureForm>false</secureForm>
 		<securityLevelEnabled>0</securityLevelEnabled>
 		<securityLevelVisible>0</securityLevelVisible>
-		<showMdiCloseAllButPinnedMenu>false</showMdiCloseAllButPinnedMenu>
-		<showMdiCloseAllButThisMenu>false</showMdiCloseAllButThisMenu>
-		<showMdiCloseMenu>false</showMdiCloseMenu>
-		<showMdiDockMenu>false</showMdiDockMenu>
-		<showMdiFloatMenu>false</showMdiFloatMenu>
-		<showMdiPinMenu>false</showMdiPinMenu>
 		<skinCategoryName/>
 		<tag/>
 		<top>10</top>
@@ -18118,7 +17880,6 @@ j4bgIJVk35V2gY7GPW0bYkHHMW68DLvQtkTtvHjYBE/OR7JWmqPrOAEM99E2/sMnXQs7ux96WfIg
 		<maxButton>true</maxButton>
 		<mdiChild>1</mdiChild>
 		<mdiFrame>false</mdiFrame>
-		<mdiPinned>false</mdiPinned>
 		<minButton>true</minButton>
 		<minimumHeight>675</minimumHeight>
 		<minimumWidth>875</minimumWidth>
@@ -18132,12 +17893,6 @@ j4bgIJVk35V2gY7GPW0bYkHHMW68DLvQtkTtvHjYBE/OR7JWmqPrOAEM99E2/sMnXQs7ux96WfIg
 		<secureForm>false</secureForm>
 		<securityLevelEnabled>0</securityLevelEnabled>
 		<securityLevelVisible>0</securityLevelVisible>
-		<showMdiCloseAllButPinnedMenu>false</showMdiCloseAllButPinnedMenu>
-		<showMdiCloseAllButThisMenu>false</showMdiCloseAllButThisMenu>
-		<showMdiCloseMenu>false</showMdiCloseMenu>
-		<showMdiDockMenu>false</showMdiDockMenu>
-		<showMdiFloatMenu>false</showMdiFloatMenu>
-		<showMdiPinMenu>false</showMdiPinMenu>
 		<skinCategoryName/>
 		<tag/>
 		<top>53</top>
@@ -20007,7 +19762,6 @@ j4bgIJVk35V2gY7GPW0bYkHHMW68DLvQtkTtvHjYBE/OR7JWmqPrOAEM99E2/sMnXQs7ux96WfIg
 				<borderColorSingle>0</borderColorSingle>
 				<borderStyle>1</borderStyle>
 				<bubbleHelp/>
-				<defaultLineHeight>0</defaultLineHeight>
 				<description/>
 				<disableReason/>
 				<dragCursor/>
@@ -20129,7 +19883,6 @@ j4bgIJVk35V2gY7GPW0bYkHHMW68DLvQtkTtvHjYBE/OR7JWmqPrOAEM99E2/sMnXQs7ux96WfIg
 				<borderColorSingle>0</borderColorSingle>
 				<borderStyle>1</borderStyle>
 				<bubbleHelp/>
-				<defaultLineHeight>0</defaultLineHeight>
 				<description/>
 				<disableReason/>
 				<dragCursor/>
@@ -20251,7 +20004,6 @@ j4bgIJVk35V2gY7GPW0bYkHHMW68DLvQtkTtvHjYBE/OR7JWmqPrOAEM99E2/sMnXQs7ux96WfIg
 				<borderColorSingle>0</borderColorSingle>
 				<borderStyle>1</borderStyle>
 				<bubbleHelp/>
-				<defaultLineHeight>0</defaultLineHeight>
 				<description/>
 				<disableReason/>
 				<dragCursor/>
@@ -21237,7 +20989,6 @@ j4bgIJVk35V2gY7GPW0bYkHHMW68DLvQtkTtvHjYBE/OR7JWmqPrOAEM99E2/sMnXQs7ux96WfIg
 		<maxButton>false</maxButton>
 		<mdiChild>1</mdiChild>
 		<mdiFrame>false</mdiFrame>
-		<mdiPinned>false</mdiPinned>
 		<minButton>false</minButton>
 		<minimumHeight>0</minimumHeight>
 		<minimumWidth>0</minimumWidth>
@@ -21251,12 +21002,6 @@ j4bgIJVk35V2gY7GPW0bYkHHMW68DLvQtkTtvHjYBE/OR7JWmqPrOAEM99E2/sMnXQs7ux96WfIg
 		<secureForm>false</secureForm>
 		<securityLevelEnabled>0</securityLevelEnabled>
 		<securityLevelVisible>0</securityLevelVisible>
-		<showMdiCloseAllButPinnedMenu>false</showMdiCloseAllButPinnedMenu>
-		<showMdiCloseAllButThisMenu>false</showMdiCloseAllButThisMenu>
-		<showMdiCloseMenu>false</showMdiCloseMenu>
-		<showMdiDockMenu>false</showMdiDockMenu>
-		<showMdiFloatMenu>false</showMdiFloatMenu>
-		<showMdiPinMenu>false</showMdiPinMenu>
 		<skinCategoryName/>
 		<tag/>
 		<top>6</top>
@@ -21935,7 +21680,6 @@ AAAASUVORK5CYII=</picture>
 		<maxButton>false</maxButton>
 		<mdiChild>1</mdiChild>
 		<mdiFrame>false</mdiFrame>
-		<mdiPinned>false</mdiPinned>
 		<minButton>false</minButton>
 		<minimumHeight>0</minimumHeight>
 		<minimumWidth>0</minimumWidth>
@@ -21949,12 +21693,6 @@ AAAASUVORK5CYII=</picture>
 		<secureForm>false</secureForm>
 		<securityLevelEnabled>0</securityLevelEnabled>
 		<securityLevelVisible>0</securityLevelVisible>
-		<showMdiCloseAllButPinnedMenu>false</showMdiCloseAllButPinnedMenu>
-		<showMdiCloseAllButThisMenu>false</showMdiCloseAllButThisMenu>
-		<showMdiCloseMenu>false</showMdiCloseMenu>
-		<showMdiDockMenu>false</showMdiDockMenu>
-		<showMdiFloatMenu>false</showMdiFloatMenu>
-		<showMdiPinMenu>false</showMdiPinMenu>
 		<skinCategoryName/>
 		<tag/>
 		<top>-2</top>
@@ -22254,7 +21992,6 @@ AAAASUVORK5CYII=</picture>
 		<maxButton>false</maxButton>
 		<mdiChild>1</mdiChild>
 		<mdiFrame>false</mdiFrame>
-		<mdiPinned>false</mdiPinned>
 		<minButton>false</minButton>
 		<minimumHeight>0</minimumHeight>
 		<minimumWidth>0</minimumWidth>
@@ -22268,12 +22005,6 @@ AAAASUVORK5CYII=</picture>
 		<secureForm>false</secureForm>
 		<securityLevelEnabled>0</securityLevelEnabled>
 		<securityLevelVisible>0</securityLevelVisible>
-		<showMdiCloseAllButPinnedMenu>false</showMdiCloseAllButPinnedMenu>
-		<showMdiCloseAllButThisMenu>false</showMdiCloseAllButThisMenu>
-		<showMdiCloseMenu>false</showMdiCloseMenu>
-		<showMdiDockMenu>false</showMdiDockMenu>
-		<showMdiFloatMenu>false</showMdiFloatMenu>
-		<showMdiPinMenu>false</showMdiPinMenu>
 		<skinCategoryName/>
 		<tag/>
 		<top>-3</top>
@@ -23037,7 +22768,6 @@ AAAASUVORK5CYII=</picture>
 				<borderColorSingle>0</borderColorSingle>
 				<borderStyle>1</borderStyle>
 				<bubbleHelp/>
-				<defaultLineHeight>0</defaultLineHeight>
 				<description/>
 				<disableReason/>
 				<dragCursor/>
@@ -23159,7 +22889,6 @@ AAAASUVORK5CYII=</picture>
 				<borderColorSingle>0</borderColorSingle>
 				<borderStyle>1</borderStyle>
 				<bubbleHelp/>
-				<defaultLineHeight>0</defaultLineHeight>
 				<description/>
 				<disableReason/>
 				<dragCursor/>
@@ -24748,7 +24477,6 @@ AAAASUVORK5CYII=</picture>
 		<maxButton>false</maxButton>
 		<mdiChild>1</mdiChild>
 		<mdiFrame>false</mdiFrame>
-		<mdiPinned>false</mdiPinned>
 		<minButton>false</minButton>
 		<minimumHeight>0</minimumHeight>
 		<minimumWidth>0</minimumWidth>
@@ -24762,12 +24490,6 @@ AAAASUVORK5CYII=</picture>
 		<secureForm>false</secureForm>
 		<securityLevelEnabled>0</securityLevelEnabled>
 		<securityLevelVisible>0</securityLevelVisible>
-		<showMdiCloseAllButPinnedMenu>false</showMdiCloseAllButPinnedMenu>
-		<showMdiCloseAllButThisMenu>false</showMdiCloseAllButThisMenu>
-		<showMdiCloseMenu>false</showMdiCloseMenu>
-		<showMdiDockMenu>false</showMdiDockMenu>
-		<showMdiFloatMenu>false</showMdiFloatMenu>
-		<showMdiPinMenu>false</showMdiPinMenu>
 		<skinCategoryName/>
 		<tag/>
 		<top>-21</top>
@@ -24945,7 +24667,6 @@ AAAASUVORK5CYII=</picture>
 		<maxButton>false</maxButton>
 		<mdiChild>1</mdiChild>
 		<mdiFrame>false</mdiFrame>
-		<mdiPinned>false</mdiPinned>
 		<minButton>false</minButton>
 		<minimumHeight>0</minimumHeight>
 		<minimumWidth>0</minimumWidth>
@@ -24959,12 +24680,6 @@ AAAASUVORK5CYII=</picture>
 		<secureForm>false</secureForm>
 		<securityLevelEnabled>0</securityLevelEnabled>
 		<securityLevelVisible>0</securityLevelVisible>
-		<showMdiCloseAllButPinnedMenu>false</showMdiCloseAllButPinnedMenu>
-		<showMdiCloseAllButThisMenu>false</showMdiCloseAllButThisMenu>
-		<showMdiCloseMenu>false</showMdiCloseMenu>
-		<showMdiDockMenu>false</showMdiDockMenu>
-		<showMdiFloatMenu>false</showMdiFloatMenu>
-		<showMdiPinMenu>false</showMdiPinMenu>
 		<skinCategoryName/>
 		<tag/>
 		<top>7</top>
@@ -25046,7 +24761,6 @@ AAAASUVORK5CYII=</picture>
 				<borderColorSingle>0</borderColorSingle>
 				<borderStyle>1</borderStyle>
 				<bubbleHelp/>
-				<defaultLineHeight>0</defaultLineHeight>
 				<description/>
 				<disableReason/>
 				<dragCursor/>
@@ -25191,7 +24905,6 @@ AAAASUVORK5CYII=</picture>
 		<maxButton>false</maxButton>
 		<mdiChild>1</mdiChild>
 		<mdiFrame>false</mdiFrame>
-		<mdiPinned>false</mdiPinned>
 		<minButton>false</minButton>
 		<minimumHeight>0</minimumHeight>
 		<minimumWidth>0</minimumWidth>
@@ -25205,12 +24918,6 @@ AAAASUVORK5CYII=</picture>
 		<secureForm>false</secureForm>
 		<securityLevelEnabled>0</securityLevelEnabled>
 		<securityLevelVisible>0</securityLevelVisible>
-		<showMdiCloseAllButPinnedMenu>false</showMdiCloseAllButPinnedMenu>
-		<showMdiCloseAllButThisMenu>false</showMdiCloseAllButThisMenu>
-		<showMdiCloseMenu>false</showMdiCloseMenu>
-		<showMdiDockMenu>false</showMdiDockMenu>
-		<showMdiFloatMenu>false</showMdiFloatMenu>
-		<showMdiPinMenu>false</showMdiPinMenu>
 		<skinCategoryName/>
 		<tag/>
 		<top>62</top>
@@ -26331,7 +26038,6 @@ AAAASUVORK5CYII=</picture>
 		<maxButton>false</maxButton>
 		<mdiChild>1</mdiChild>
 		<mdiFrame>false</mdiFrame>
-		<mdiPinned>false</mdiPinned>
 		<minButton>false</minButton>
 		<minimumHeight>0</minimumHeight>
 		<minimumWidth>0</minimumWidth>
@@ -26345,12 +26051,6 @@ AAAASUVORK5CYII=</picture>
 		<secureForm>false</secureForm>
 		<securityLevelEnabled>0</securityLevelEnabled>
 		<securityLevelVisible>0</securityLevelVisible>
-		<showMdiCloseAllButPinnedMenu>false</showMdiCloseAllButPinnedMenu>
-		<showMdiCloseAllButThisMenu>false</showMdiCloseAllButThisMenu>
-		<showMdiCloseMenu>false</showMdiCloseMenu>
-		<showMdiDockMenu>false</showMdiDockMenu>
-		<showMdiFloatMenu>false</showMdiFloatMenu>
-		<showMdiPinMenu>false</showMdiPinMenu>
 		<skinCategoryName/>
 		<tag/>
 		<top>3</top>
@@ -27222,7 +26922,6 @@ AAAA8klEQVR42mJ06TnNgAQAAoiJARUABBA6HyCA0PkAAYTOBwggdD5AAKHzAQIInQ8QQOh8gABC
 				<borderColorSingle>0</borderColorSingle>
 				<borderStyle>1</borderStyle>
 				<bubbleHelp/>
-				<defaultLineHeight>0</defaultLineHeight>
 				<description/>
 				<disableReason/>
 				<dragCursor/>

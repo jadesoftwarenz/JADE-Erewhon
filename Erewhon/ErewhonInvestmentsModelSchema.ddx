@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<schema name="ErewhonInvestmentsModelSchema" JadeVersionNumber="20.0.01" JadePatchNumber="0" CompleteDefinition="true">
+<schema name="ErewhonInvestmentsModelSchema" JadeVersionNumber="18.0.00" JadePatchNumber="0" CompleteDefinition="true">
 
 	<Application name="DataLoader">
 		<__overridePatchNumber>0</__overridePatchNumber>
@@ -26,8 +26,6 @@
 		<helpFile/>
 		<icon/>
 		<initializeMethod name="dataLoaderApp" />
-		<mdiStyle>0</mdiStyle>
-		<mdiWindowListOrder>0</mdiWindowListOrder>
 		<name>DataLoader</name>
 		<showBubbleHelp>false</showBubbleHelp>
 		<startupForm/>
@@ -64,8 +62,6 @@
 		<helpFile/>
 		<icon/>
 		<initializeMethod/>
-		<mdiStyle>0</mdiStyle>
-		<mdiWindowListOrder>0</mdiWindowListOrder>
 		<name>ErewhonInvestmentsModelSchema</name>
 		<showBubbleHelp>true</showBubbleHelp>
 		<startupForm/>
@@ -106,7 +102,6 @@
 		<maxButton>false</maxButton>
 		<mdiChild>1</mdiChild>
 		<mdiFrame>false</mdiFrame>
-		<mdiPinned>false</mdiPinned>
 		<minButton>false</minButton>
 		<minimumHeight>0</minimumHeight>
 		<minimumWidth>0</minimumWidth>
@@ -120,12 +115,6 @@
 		<secureForm>false</secureForm>
 		<securityLevelEnabled>0</securityLevelEnabled>
 		<securityLevelVisible>0</securityLevelVisible>
-		<showMdiCloseAllButPinnedMenu>false</showMdiCloseAllButPinnedMenu>
-		<showMdiCloseAllButThisMenu>false</showMdiCloseAllButThisMenu>
-		<showMdiCloseMenu>false</showMdiCloseMenu>
-		<showMdiDockMenu>false</showMdiDockMenu>
-		<showMdiFloatMenu>false</showMdiFloatMenu>
-		<showMdiPinMenu>false</showMdiPinMenu>
 		<skinCategoryName/>
 		<tag/>
 		<top>18</top>
