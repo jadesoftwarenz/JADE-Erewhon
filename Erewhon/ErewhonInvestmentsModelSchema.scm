@@ -1,4 +1,4 @@
-/* JADE RPS MAPPING FILE D:\Erewhon\JADE-Erewhon\Erewhon\2018_Schemas\ErewhonInvestmentsModelSchema.ddbx */
+/* JADE RPS MAPPING FILE D:\JadeGitSource\Erewhon__Internal_Repo\Jade-Erewhon\Erewhon\ErewhonInvestmentsModelSchema.ddbx */
 jadeVersionNumber "18.0.00";
 schemaDefinition
 ErewhonInvestmentsModelSchema subschemaOf CommonSchema completeDefinition, patchVersioningEnabled = false;
@@ -161,25 +161,25 @@ localeDefinitions
 	5129 "English (New Zealand)" schemaDefaultLocale;
 		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
 	10249 "English (Belize)" _cloneOf 5129;
-		setModifiedTimeStamp "<unknown>" "" 2021:09:27:14:14:09;
+		setModifiedTimeStamp "<unknown>" "" 2023:01:23:15:15:45;
 	1033 "English (United States)" _cloneOf 5129;
-		setModifiedTimeStamp "<unknown>" "" 2021:09:27:14:14:09;
+		setModifiedTimeStamp "<unknown>" "" 2023:01:23:15:15:45;
 	11273 "English (Trinidad & Tobago)" _cloneOf 5129;
-		setModifiedTimeStamp "<unknown>" "" 2021:09:27:14:14:09;
+		setModifiedTimeStamp "<unknown>" "" 2023:01:23:15:15:45;
 	2057 "English (United Kingdom)" _cloneOf 5129;
-		setModifiedTimeStamp "<unknown>" "" 2021:09:27:14:14:09;
+		setModifiedTimeStamp "<unknown>" "" 2023:01:23:15:15:45;
 	3081 "English (Australia)" _cloneOf 5129;
-		setModifiedTimeStamp "<unknown>" "" 2021:09:27:14:14:09;
+		setModifiedTimeStamp "<unknown>" "" 2023:01:23:15:15:45;
 	4105 "English (Canada)" _cloneOf 5129;
-		setModifiedTimeStamp "<unknown>" "" 2021:09:27:14:14:09;
+		setModifiedTimeStamp "<unknown>" "" 2023:01:23:15:15:45;
 	6153 "English (Ireland)" _cloneOf 5129;
-		setModifiedTimeStamp "<unknown>" "" 2021:09:27:14:14:09;
+		setModifiedTimeStamp "<unknown>" "" 2023:01:23:15:15:45;
 	7177 "English (South Africa)" _cloneOf 5129;
-		setModifiedTimeStamp "<unknown>" "" 2021:09:27:14:14:09;
+		setModifiedTimeStamp "<unknown>" "" 2023:01:23:15:15:45;
 	8201 "English (Jamaica)" _cloneOf 5129;
-		setModifiedTimeStamp "<unknown>" "" 2021:09:27:14:14:09;
+		setModifiedTimeStamp "<unknown>" "" 2023:01:23:15:15:45;
 	9225 "English (Caribbean)" _cloneOf 5129;
-		setModifiedTimeStamp "<unknown>" "" 2021:09:27:14:14:09;
+		setModifiedTimeStamp "<unknown>" "" 2023:01:23:15:15:45;
 translatableStringDefinitions
 	5129 "English (New Zealand)"
 	(
@@ -2191,6 +2191,8 @@ endif;`
 		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
  
 	jadeMethodDefinitions
+		getAmount(): Decimal abstract, number = 1001;
+		setModifiedTimeStamp "cnwta3" "18.0.00" 2023:01:23:17:49:34.679;
 		getDate(): Date number = 1003;
 		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:10:04:09:15:57.565;
 		zCalculateAgentCommission(salePrice: Decimal) updating, protected, number = 1005;
@@ -2212,6 +2214,8 @@ endif;`
 			price: Decimal; 
 			timeStamp: TimeStamp) updating, number = 1002;
 		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:12:12:01:16.381;
+		getAmount(): Decimal number = 1005;
+		setModifiedTimeStamp "cnwta3" "18.0.00" 2023:01:23:17:50:05.601;
 		getDate(): Date number = 1003;
 		setModifiedTimeStamp "cnwta3" "16.0.02" 2018:08:27:14:00:54.414;
 		getDebugString(): String number = 1004;
@@ -2234,6 +2238,8 @@ endif;`
 			tenderSaleItem: TenderSaleItem; 
 			tender: Tender) updating, number = 1002;
 		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:24:11:31:42.591;
+		getAmount(): Decimal number = 1007;
+		setModifiedTimeStamp "cnwta3" "18.0.00" 2023:01:23:17:50:18.555;
 		getDate(): Date number = 1003;
 		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:24:11:35:44.118;
 		getDebugString(): String number = 1004;
@@ -15071,6 +15077,11 @@ end;
 	)
 	Sale (
 	jadeMethodSources
+getAmount
+{
+getAmount() : Decimal abstract;
+}
+
 getDate
 {
 getDate(): Date;
@@ -15218,6 +15229,19 @@ begin
 end;
 }
 
+getAmount
+{
+getAmount(): Decimal;
+// --------------------------------------------------------------------------------
+// Method:		getAmount
+//
+// Returns:     The price of the retail sale
+// --------------------------------------------------------------------------------
+begin
+	return price;
+end;
+}
+
 getDate
 {
 getDate() : Date;
@@ -15314,6 +15338,22 @@ begin
 
 	// Calculate the agent's commission on the sale
 	self.zCalculateAgentCommission(self.myTender.offer);
+end;
+}
+
+getAmount
+{
+getAmount(): Decimal;
+// --------------------------------------------------------------------------------
+// Method:		getAmount
+//
+// Returns:     The amount of the tender sale from its winning tender
+// --------------------------------------------------------------------------------
+begin
+	if myTender = null then
+		return 0;
+	endif;
+	return myTender.offer;
 end;
 }
 
