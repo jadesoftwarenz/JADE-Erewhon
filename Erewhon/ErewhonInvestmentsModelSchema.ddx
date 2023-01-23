@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<schema name="ErewhonInvestmentsModelSchema" JadeVersionNumber="99.0.00" JadePatchNumber="0" CompleteDefinition="true">
+<schema name="ErewhonInvestmentsModelSchema" JadeVersionNumber="99.0.00" CompleteDefinition="true">
 
 	<RelationalView name="ErewhonRPS">
 		<_modifiedBy>cnwta3</_modifiedBy>
