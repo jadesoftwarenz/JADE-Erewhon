@@ -3,11 +3,11 @@
 
 	<RelationalView name="ErewhonRPS">
 		<_modifiedBy>cnwta3</_modifiedBy>
-		<_modifiedTimestamp>2018:10:01:15:48:44.525</_modifiedTimestamp>
+		<_modifiedTimestamp>2023:01:23:22:20:32.115</_modifiedTimestamp>
 		<_patchVersion>0</_patchVersion>
 		<_systemVersion>99.0.00</_systemVersion>
 		<creator>cnwta3</creator>
-		<defaultVisibility>0</defaultVisibility>
+		<defaultVisibility>28</defaultVisibility>
 		<includeSystemClasses>false</includeSystemClasses>
 		<name>ErewhonRPS</name>
 		<resyncOnExecute>false</resyncOnExecute>
@@ -28,7 +28,7 @@
 		<rpsUseOidClassInstMap>false</rpsUseOidClassInstMap>
 		<schema name="ErewhonInvestmentsModelSchema" />
 		<securityMethod/>
-		<timeCreated>2018:10:01:15:48:44.378</timeCreated>
+		<timeCreated>2023:01:23:22:20:32.084</timeCreated>
 		<uuid/>
 		<includedObjectFeatures>
 		</includedObjectFeatures>
@@ -36,7 +36,7 @@
 			<ExternalRPSClassMap>
 				<constraint />
 				<_modifiedBy>cnwta3</_modifiedBy>
-				<_modifiedTimestamp>2018:10:01:15:48:44.459</_modifiedTimestamp>
+				<_modifiedTimestamp>2023:01:23:22:20:32.109</_modifiedTimestamp>
 				<_patchVersion>0</_patchVersion>
 				<_systemVersion>99.0.00</_systemVersion>
 				<excluded>false</excluded>
@@ -150,13 +150,13 @@
 								<excluded>false</excluded>
 								<feature/>
 								<guid>{2249a87b-24c5-e811-99e7-00ff881fbdd2}</guid>
-								<length>16</length>
+								<length>28</length>
 								<name>oid</name>
 								<referencedClassName/>
 								<rpsColType>1</rpsColType>
 								<rpsExcluded>false</rpsExcluded>
 								<rpsKeyKind>1</rpsKeyKind>
-								<rpsMapKind>0</rpsMapKind>
+								<rpsMapKind>28</rpsMapKind>
 								<sqlType>-50</sqlType>
 								<table name="Address" />
 							</RARpsProperty>
@@ -217,7 +217,7 @@
 			<ExternalRPSClassMap>
 				<constraint />
 				<_modifiedBy>cnwta3</_modifiedBy>
-				<_modifiedTimestamp>2018:10:01:15:48:44.468</_modifiedTimestamp>
+				<_modifiedTimestamp>2023:01:23:22:20:32.109</_modifiedTimestamp>
 				<_patchVersion>0</_patchVersion>
 				<_systemVersion>99.0.00</_systemVersion>
 				<excluded>false</excluded>
@@ -299,13 +299,13 @@
 								<excluded>false</excluded>
 								<feature/>
 								<guid>{922f4c7c-24c5-e811-99e8-00ff881fbdd2}</guid>
-								<length>16</length>
+								<length>28</length>
 								<name>oid</name>
 								<referencedClassName/>
 								<rpsColType>1</rpsColType>
 								<rpsExcluded>false</rpsExcluded>
 								<rpsKeyKind>1</rpsKeyKind>
-								<rpsMapKind>0</rpsMapKind>
+								<rpsMapKind>28</rpsMapKind>
 								<sqlType>-50</sqlType>
 								<table name="Agent" />
 							</RARpsProperty>
@@ -318,7 +318,7 @@
 			<ExternalRPSClassMap>
 				<constraint />
 				<_modifiedBy>cnwta3</_modifiedBy>
-				<_modifiedTimestamp>2018:10:01:15:48:44.468</_modifiedTimestamp>
+				<_modifiedTimestamp>2023:01:23:22:20:32.109</_modifiedTimestamp>
 				<_patchVersion>0</_patchVersion>
 				<_systemVersion>99.0.00</_systemVersion>
 				<excluded>false</excluded>
@@ -400,13 +400,13 @@
 								<excluded>false</excluded>
 								<feature/>
 								<guid>{e828f27c-24c5-e811-99e9-00ff881fbdd2}</guid>
-								<length>16</length>
+								<length>28</length>
 								<name>oid</name>
 								<referencedClassName/>
 								<rpsColType>1</rpsColType>
 								<rpsExcluded>false</rpsExcluded>
 								<rpsKeyKind>1</rpsKeyKind>
-								<rpsMapKind>0</rpsMapKind>
+								<rpsMapKind>28</rpsMapKind>
 								<sqlType>-50</sqlType>
 								<table name="Client" />
 							</RARpsProperty>
@@ -419,7 +419,7 @@
 			<ExternalRPSClassMap>
 				<constraint />
 				<_modifiedBy>cnwta3</_modifiedBy>
-				<_modifiedTimestamp>2018:10:01:15:48:44.469</_modifiedTimestamp>
+				<_modifiedTimestamp>2023:01:23:22:20:32.109</_modifiedTimestamp>
 				<_patchVersion>0</_patchVersion>
 				<_systemVersion>99.0.00</_systemVersion>
 				<excluded>false</excluded>
@@ -485,13 +485,13 @@
 								<excluded>false</excluded>
 								<feature/>
 								<guid>{e21aa87d-24c5-e811-99ea-00ff881fbdd2}</guid>
-								<length>16</length>
+								<length>28</length>
 								<name>oid</name>
 								<referencedClassName/>
 								<rpsColType>1</rpsColType>
 								<rpsExcluded>false</rpsExcluded>
 								<rpsKeyKind>1</rpsKeyKind>
-								<rpsMapKind>0</rpsMapKind>
+								<rpsMapKind>28</rpsMapKind>
 								<sqlType>-50</sqlType>
 								<table name="Company" />
 							</RARpsProperty>
@@ -504,7 +504,7 @@
 			<ExternalRPSClassMap>
 				<constraint />
 				<_modifiedBy>cnwta3</_modifiedBy>
-				<_modifiedTimestamp>2018:09:19:11:14:45.107</_modifiedTimestamp>
+				<_modifiedTimestamp>2023:01:23:22:20:32.115</_modifiedTimestamp>
 				<_patchVersion>0</_patchVersion>
 				<_systemVersion>99.0.00</_systemVersion>
 				<excluded>false</excluded>
@@ -682,13 +682,13 @@
 								<excluded>false</excluded>
 								<feature/>
 								<guid>{594ab6ed-3bb6-e811-83c2-00ff881fbdd2}</guid>
-								<length>16</length>
+								<length>28</length>
 								<name>oid</name>
 								<referencedClassName/>
 								<rpsColType>1</rpsColType>
 								<rpsExcluded>false</rpsExcluded>
 								<rpsKeyKind>1</rpsKeyKind>
-								<rpsMapKind>0</rpsMapKind>
+								<rpsMapKind>28</rpsMapKind>
 								<sqlType>-50</sqlType>
 								<table name="RetailSaleItem" />
 							</RARpsProperty>
@@ -748,10 +748,10 @@
 			</ExternalRPSClassMap>
 			<ExternalRPSClassMap>
 				<constraint />
-				<_modifiedBy/>
-				<_modifiedTimestamp/>
+				<_modifiedBy>cnwta3</_modifiedBy>
+				<_modifiedTimestamp>2023:01:23:22:20:32.115</_modifiedTimestamp>
 				<_patchVersion>0</_patchVersion>
-				<_systemVersion/>
+				<_systemVersion>99.0.00</_systemVersion>
 				<excluded>false</excluded>
 				<guid>{4b2f4c93-0f24-da11-9d5a-000d60ed2e76}</guid>
 				<includeInCallback>false</includeInCallback>
@@ -783,13 +783,13 @@
 								<excluded>false</excluded>
 								<feature name="mySaleItemCategory" />
 								<guid>{a9914e93-0f24-da11-9d5a-000d60ed2e76}</guid>
-								<length>16</length>
+								<length>28</length>
 								<name>mySaleItemCategory</name>
 								<referencedClassName/>
 								<rpsColType>0</rpsColType>
 								<rpsExcluded>false</rpsExcluded>
 								<rpsKeyKind>0</rpsKeyKind>
-								<rpsMapKind>0</rpsMapKind>
+								<rpsMapKind>28</rpsMapKind>
 								<sqlType>-50</sqlType>
 								<table name="CommissionRate" />
 							</RARpsProperty>
@@ -799,13 +799,13 @@
 								<excluded>false</excluded>
 								<feature/>
 								<guid>{4c2f4c93-0f24-da11-9d59-000d60ed2e76}</guid>
-								<length>16</length>
+								<length>28</length>
 								<name>oid</name>
 								<referencedClassName/>
 								<rpsColType>1</rpsColType>
 								<rpsExcluded>false</rpsExcluded>
 								<rpsKeyKind>1</rpsKeyKind>
-								<rpsMapKind>0</rpsMapKind>
+								<rpsMapKind>28</rpsMapKind>
 								<sqlType>-50</sqlType>
 								<table name="CommissionRate" />
 							</RARpsProperty>
@@ -833,10 +833,10 @@
 			</ExternalRPSClassMap>
 			<ExternalRPSClassMap>
 				<constraint />
-				<_modifiedBy/>
-				<_modifiedTimestamp/>
+				<_modifiedBy>cnwta3</_modifiedBy>
+				<_modifiedTimestamp>2023:01:23:22:20:32.115</_modifiedTimestamp>
 				<_patchVersion>0</_patchVersion>
-				<_systemVersion/>
+				<_systemVersion>99.0.00</_systemVersion>
 				<excluded>false</excluded>
 				<guid>{4903c193-0f24-da11-9d5b-000d60ed2e76}</guid>
 				<includeInCallback>false</includeInCallback>
@@ -900,13 +900,13 @@
 								<excluded>false</excluded>
 								<feature/>
 								<guid>{4a03c193-0f24-da11-9d5a-000d60ed2e76}</guid>
-								<length>16</length>
+								<length>28</length>
 								<name>oid</name>
 								<referencedClassName/>
 								<rpsColType>1</rpsColType>
 								<rpsExcluded>false</rpsExcluded>
 								<rpsKeyKind>1</rpsKeyKind>
-								<rpsMapKind>0</rpsMapKind>
+								<rpsMapKind>28</rpsMapKind>
 								<sqlType>-50</sqlType>
 								<table name="Location" />
 							</RARpsProperty>
@@ -921,7 +921,7 @@
 			<ExternalRPSClassMap>
 				<constraint />
 				<_modifiedBy>cnwta3</_modifiedBy>
-				<_modifiedTimestamp>2018:09:12:13:17:12.329</_modifiedTimestamp>
+				<_modifiedTimestamp>2023:01:23:22:20:32.115</_modifiedTimestamp>
 				<_patchVersion>0</_patchVersion>
 				<_systemVersion>99.0.00</_systemVersion>
 				<excluded>false</excluded>
@@ -971,13 +971,13 @@
 								<excluded>false</excluded>
 								<feature name="myClient" />
 								<guid>{a5393894-0f24-da11-9d5d-000d60ed2e76}</guid>
-								<length>16</length>
+								<length>28</length>
 								<name>myClient</name>
 								<referencedClassName/>
 								<rpsColType>0</rpsColType>
 								<rpsExcluded>false</rpsExcluded>
 								<rpsKeyKind>0</rpsKeyKind>
-								<rpsMapKind>0</rpsMapKind>
+								<rpsMapKind>28</rpsMapKind>
 								<sqlType>-50</sqlType>
 								<table name="Sale" />
 							</RARpsProperty>
@@ -987,13 +987,13 @@
 								<excluded>false</excluded>
 								<feature name="myCompany" />
 								<guid>{039c3a94-0f24-da11-9d5d-000d60ed2e76}</guid>
-								<length>16</length>
+								<length>28</length>
 								<name>myCompany</name>
 								<referencedClassName/>
 								<rpsColType>0</rpsColType>
 								<rpsExcluded>false</rpsExcluded>
 								<rpsKeyKind>0</rpsKeyKind>
-								<rpsMapKind>0</rpsMapKind>
+								<rpsMapKind>28</rpsMapKind>
 								<sqlType>-50</sqlType>
 								<table name="Sale" />
 							</RARpsProperty>
@@ -1003,13 +1003,13 @@
 								<excluded>false</excluded>
 								<feature name="mySaleItem" />
 								<guid>{049c3a94-0f24-da11-9d5d-000d60ed2e76}</guid>
-								<length>16</length>
+								<length>28</length>
 								<name>mySaleItem</name>
 								<referencedClassName/>
 								<rpsColType>0</rpsColType>
 								<rpsExcluded>false</rpsExcluded>
 								<rpsKeyKind>0</rpsKeyKind>
-								<rpsMapKind>0</rpsMapKind>
+								<rpsMapKind>28</rpsMapKind>
 								<sqlType>-50</sqlType>
 								<table name="Sale" />
 							</RARpsProperty>
@@ -1019,13 +1019,13 @@
 								<excluded>false</excluded>
 								<feature/>
 								<guid>{a6393894-0f24-da11-9d5b-000d60ed2e76}</guid>
-								<length>16</length>
+								<length>28</length>
 								<name>oid</name>
 								<referencedClassName/>
 								<rpsColType>1</rpsColType>
 								<rpsExcluded>false</rpsExcluded>
 								<rpsKeyKind>1</rpsKeyKind>
-								<rpsMapKind>0</rpsMapKind>
+								<rpsMapKind>28</rpsMapKind>
 								<sqlType>-50</sqlType>
 								<table name="Sale" />
 							</RARpsProperty>
@@ -1056,7 +1056,7 @@
 			<ExternalRPSClassMap>
 				<constraint />
 				<_modifiedBy>cnwta3</_modifiedBy>
-				<_modifiedTimestamp>2018:09:19:11:14:45.112</_modifiedTimestamp>
+				<_modifiedTimestamp>2023:01:23:22:20:32.115</_modifiedTimestamp>
 				<_patchVersion>0</_patchVersion>
 				<_systemVersion>99.0.00</_systemVersion>
 				<excluded>false</excluded>
@@ -1170,13 +1170,13 @@
 								<excluded>false</excluded>
 								<feature name="myAgent" />
 								<guid>{289561b7-935b-da11-8fb3-b0778beeca24}</guid>
-								<length>16</length>
+								<length>28</length>
 								<name>myAgent</name>
 								<referencedClassName/>
 								<rpsColType>0</rpsColType>
 								<rpsExcluded>false</rpsExcluded>
 								<rpsKeyKind>0</rpsKeyKind>
-								<rpsMapKind>0</rpsMapKind>
+								<rpsMapKind>28</rpsMapKind>
 								<sqlType>-50</sqlType>
 								<table name="SaleItem" />
 							</RARpsProperty>
@@ -1186,13 +1186,13 @@
 								<excluded>false</excluded>
 								<feature name="myCompany" />
 								<guid>{299561b7-935b-da11-8fb4-b0778beeca24}</guid>
-								<length>16</length>
+								<length>28</length>
 								<name>myCompany</name>
 								<referencedClassName/>
 								<rpsColType>0</rpsColType>
 								<rpsExcluded>false</rpsExcluded>
 								<rpsKeyKind>0</rpsKeyKind>
-								<rpsMapKind>0</rpsMapKind>
+								<rpsMapKind>28</rpsMapKind>
 								<sqlType>-50</sqlType>
 								<table name="SaleItem" />
 							</RARpsProperty>
@@ -1202,13 +1202,13 @@
 								<excluded>false</excluded>
 								<feature name="myRegion" />
 								<guid>{289561b7-935b-da11-8fb6-b0778beeca24}</guid>
-								<length>16</length>
+								<length>28</length>
 								<name>myRegion</name>
 								<referencedClassName/>
 								<rpsColType>0</rpsColType>
 								<rpsExcluded>false</rpsExcluded>
 								<rpsKeyKind>0</rpsKeyKind>
-								<rpsMapKind>0</rpsMapKind>
+								<rpsMapKind>28</rpsMapKind>
 								<sqlType>-50</sqlType>
 								<table name="SaleItem" />
 							</RARpsProperty>
@@ -1218,13 +1218,13 @@
 								<excluded>false</excluded>
 								<feature name="mySale" />
 								<guid>{299561b7-935b-da11-8fb7-b0778beeca24}</guid>
-								<length>16</length>
+								<length>28</length>
 								<name>mySale</name>
 								<referencedClassName/>
 								<rpsColType>0</rpsColType>
 								<rpsExcluded>false</rpsExcluded>
 								<rpsKeyKind>0</rpsKeyKind>
-								<rpsMapKind>0</rpsMapKind>
+								<rpsMapKind>28</rpsMapKind>
 								<sqlType>-50</sqlType>
 								<table name="SaleItem" />
 							</RARpsProperty>
@@ -1234,13 +1234,13 @@
 								<excluded>false</excluded>
 								<feature name="mySaleItemCategory" />
 								<guid>{289561b7-935b-da11-8fb9-b0778beeca24}</guid>
-								<length>16</length>
+								<length>28</length>
 								<name>mySaleItemCategory</name>
 								<referencedClassName/>
 								<rpsColType>0</rpsColType>
 								<rpsExcluded>false</rpsExcluded>
 								<rpsKeyKind>0</rpsKeyKind>
-								<rpsMapKind>0</rpsMapKind>
+								<rpsMapKind>28</rpsMapKind>
 								<sqlType>-50</sqlType>
 								<table name="SaleItem" />
 							</RARpsProperty>
@@ -1250,13 +1250,13 @@
 								<excluded>false</excluded>
 								<feature/>
 								<guid>{ce21a194-0f24-da11-9d5d-000d60ed2e76}</guid>
-								<length>16</length>
+								<length>28</length>
 								<name>oid</name>
 								<referencedClassName/>
 								<rpsColType>1</rpsColType>
 								<rpsExcluded>false</rpsExcluded>
 								<rpsKeyKind>1</rpsKeyKind>
-								<rpsMapKind>0</rpsMapKind>
+								<rpsMapKind>28</rpsMapKind>
 								<sqlType>-50</sqlType>
 								<table name="SaleItem" />
 							</RARpsProperty>
@@ -1317,10 +1317,10 @@
 			</ExternalRPSClassMap>
 			<ExternalRPSClassMap>
 				<constraint />
-				<_modifiedBy/>
-				<_modifiedTimestamp/>
+				<_modifiedBy>cnwta3</_modifiedBy>
+				<_modifiedTimestamp>2023:01:23:22:20:32.115</_modifiedTimestamp>
 				<_patchVersion>0</_patchVersion>
-				<_systemVersion/>
+				<_systemVersion>99.0.00</_systemVersion>
 				<excluded>false</excluded>
 				<guid>{f5090a95-0f24-da11-9d62-000d60ed2e76}</guid>
 				<includeInCallback>false</includeInCallback>
@@ -1368,13 +1368,13 @@
 								<excluded>false</excluded>
 								<feature name="myCompany" />
 								<guid>{536c0c95-0f24-da11-9d63-000d60ed2e76}</guid>
-								<length>16</length>
+								<length>28</length>
 								<name>myCompany</name>
 								<referencedClassName/>
 								<rpsColType>0</rpsColType>
 								<rpsExcluded>false</rpsExcluded>
 								<rpsKeyKind>0</rpsKeyKind>
-								<rpsMapKind>0</rpsMapKind>
+								<rpsMapKind>28</rpsMapKind>
 								<sqlType>-50</sqlType>
 								<table name="SaleItemCategory" />
 							</RARpsProperty>
@@ -1400,13 +1400,13 @@
 								<excluded>false</excluded>
 								<feature/>
 								<guid>{f6090a95-0f24-da11-9d61-000d60ed2e76}</guid>
-								<length>16</length>
+								<length>28</length>
 								<name>oid</name>
 								<referencedClassName/>
 								<rpsColType>1</rpsColType>
 								<rpsExcluded>false</rpsExcluded>
 								<rpsKeyKind>1</rpsKeyKind>
-								<rpsMapKind>0</rpsMapKind>
+								<rpsMapKind>28</rpsMapKind>
 								<sqlType>-50</sqlType>
 								<table name="SaleItemCategory" />
 							</RARpsProperty>
@@ -1418,10 +1418,10 @@
 			</ExternalRPSClassMap>
 			<ExternalRPSClassMap>
 				<constraint />
-				<_modifiedBy/>
-				<_modifiedTimestamp/>
+				<_modifiedBy>cnwta3</_modifiedBy>
+				<_modifiedTimestamp>2023:01:23:22:20:32.115</_modifiedTimestamp>
 				<_patchVersion>0</_patchVersion>
-				<_systemVersion/>
+				<_systemVersion>99.0.00</_systemVersion>
 				<excluded>false</excluded>
 				<guid>{afa28395-0f24-da11-9d64-000d60ed2e76}</guid>
 				<includeInCallback>false</includeInCallback>
@@ -1453,13 +1453,13 @@
 								<excluded>false</excluded>
 								<feature name="myClient" />
 								<guid>{0d058695-0f24-da11-9d65-000d60ed2e76}</guid>
-								<length>16</length>
+								<length>28</length>
 								<name>myClient</name>
 								<referencedClassName/>
 								<rpsColType>0</rpsColType>
 								<rpsExcluded>false</rpsExcluded>
 								<rpsKeyKind>0</rpsKeyKind>
-								<rpsMapKind>0</rpsMapKind>
+								<rpsMapKind>28</rpsMapKind>
 								<sqlType>-50</sqlType>
 								<table name="Tender" />
 							</RARpsProperty>
@@ -1469,13 +1469,13 @@
 								<excluded>false</excluded>
 								<feature name="myTenderSale" />
 								<guid>{0e058695-0f24-da11-9d65-000d60ed2e76}</guid>
-								<length>16</length>
+								<length>28</length>
 								<name>myTenderSale</name>
 								<referencedClassName/>
 								<rpsColType>0</rpsColType>
 								<rpsExcluded>false</rpsExcluded>
 								<rpsKeyKind>0</rpsKeyKind>
-								<rpsMapKind>0</rpsMapKind>
+								<rpsMapKind>28</rpsMapKind>
 								<sqlType>-50</sqlType>
 								<table name="Tender" />
 							</RARpsProperty>
@@ -1485,13 +1485,13 @@
 								<excluded>false</excluded>
 								<feature name="myTenderSaleItem" />
 								<guid>{6b678895-0f24-da11-9d65-000d60ed2e76}</guid>
-								<length>16</length>
+								<length>28</length>
 								<name>myTenderSaleItem</name>
 								<referencedClassName/>
 								<rpsColType>0</rpsColType>
 								<rpsExcluded>false</rpsExcluded>
 								<rpsKeyKind>0</rpsKeyKind>
-								<rpsMapKind>0</rpsMapKind>
+								<rpsMapKind>28</rpsMapKind>
 								<sqlType>-50</sqlType>
 								<table name="Tender" />
 							</RARpsProperty>
@@ -1517,13 +1517,13 @@
 								<excluded>false</excluded>
 								<feature/>
 								<guid>{b0a28395-0f24-da11-9d63-000d60ed2e76}</guid>
-								<length>16</length>
+								<length>28</length>
 								<name>oid</name>
 								<referencedClassName/>
 								<rpsColType>1</rpsColType>
 								<rpsExcluded>false</rpsExcluded>
 								<rpsKeyKind>1</rpsKeyKind>
-								<rpsMapKind>0</rpsMapKind>
+								<rpsMapKind>28</rpsMapKind>
 								<sqlType>-50</sqlType>
 								<table name="Tender" />
 							</RARpsProperty>
@@ -1551,10 +1551,10 @@
 			</ExternalRPSClassMap>
 			<ExternalRPSClassMap>
 				<constraint />
-				<_modifiedBy/>
-				<_modifiedTimestamp/>
+				<_modifiedBy>cnwta3</_modifiedBy>
+				<_modifiedTimestamp>2023:01:23:22:20:32.115</_modifiedTimestamp>
 				<_patchVersion>0</_patchVersion>
-				<_systemVersion/>
+				<_systemVersion>99.0.00</_systemVersion>
 				<excluded>false</excluded>
 				<guid>{6cf41b99-0f24-da11-9d74-000d60ed2e76}</guid>
 				<includeInCallback>false</includeInCallback>
@@ -1602,13 +1602,13 @@
 								<excluded>false</excluded>
 								<feature name="myCompany" />
 								<guid>{ca561e99-0f24-da11-9d74-000d60ed2e76}</guid>
-								<length>16</length>
+								<length>28</length>
 								<name>myCompany</name>
 								<referencedClassName/>
 								<rpsColType>0</rpsColType>
 								<rpsExcluded>false</rpsExcluded>
 								<rpsKeyKind>0</rpsKeyKind>
-								<rpsMapKind>0</rpsMapKind>
+								<rpsMapKind>28</rpsMapKind>
 								<sqlType>-50</sqlType>
 								<table name="Location" />
 							</RARpsProperty>
@@ -1634,13 +1634,13 @@
 								<excluded>false</excluded>
 								<feature/>
 								<guid>{6bf41b99-0f24-da11-9d74-000d60ed2e76}</guid>
-								<length>16</length>
+								<length>28</length>
 								<name>oid</name>
 								<referencedClassName/>
 								<rpsColType>1</rpsColType>
 								<rpsExcluded>false</rpsExcluded>
 								<rpsKeyKind>1</rpsKeyKind>
-								<rpsMapKind>0</rpsMapKind>
+								<rpsMapKind>28</rpsMapKind>
 								<sqlType>-50</sqlType>
 								<table name="Location" />
 							</RARpsProperty>
@@ -1652,10 +1652,10 @@
 			</ExternalRPSClassMap>
 			<ExternalRPSClassMap>
 				<constraint />
-				<_modifiedBy/>
-				<_modifiedTimestamp/>
+				<_modifiedBy>cnwta3</_modifiedBy>
+				<_modifiedTimestamp>2023:01:23:22:20:32.115</_modifiedTimestamp>
 				<_patchVersion>0</_patchVersion>
-				<_systemVersion/>
+				<_systemVersion>99.0.00</_systemVersion>
 				<excluded>false</excluded>
 				<guid>{ca561e99-0f24-da11-9d76-000d60ed2e76}</guid>
 				<includeInCallback>false</includeInCallback>
@@ -1703,13 +1703,13 @@
 								<excluded>false</excluded>
 								<feature name="myCountry" />
 								<guid>{ca561e99-0f24-da11-9d77-000d60ed2e76}</guid>
-								<length>16</length>
+								<length>28</length>
 								<name>myCountry</name>
 								<referencedClassName/>
 								<rpsColType>0</rpsColType>
 								<rpsExcluded>false</rpsExcluded>
 								<rpsKeyKind>0</rpsKeyKind>
-								<rpsMapKind>0</rpsMapKind>
+								<rpsMapKind>28</rpsMapKind>
 								<sqlType>-50</sqlType>
 								<table name="Location" />
 							</RARpsProperty>
@@ -1735,13 +1735,13 @@
 								<excluded>false</excluded>
 								<feature/>
 								<guid>{c9561e99-0f24-da11-9d76-000d60ed2e76}</guid>
-								<length>16</length>
+								<length>28</length>
 								<name>oid</name>
 								<referencedClassName/>
 								<rpsColType>1</rpsColType>
 								<rpsExcluded>false</rpsExcluded>
 								<rpsKeyKind>1</rpsKeyKind>
-								<rpsMapKind>0</rpsMapKind>
+								<rpsMapKind>28</rpsMapKind>
 								<sqlType>-50</sqlType>
 								<table name="Location" />
 							</RARpsProperty>
@@ -1754,7 +1754,7 @@
 			<ExternalRPSClassMap>
 				<constraint />
 				<_modifiedBy>cnwta3</_modifiedBy>
-				<_modifiedTimestamp>2018:09:12:13:17:12.329</_modifiedTimestamp>
+				<_modifiedTimestamp>2023:01:23:22:20:32.115</_modifiedTimestamp>
 				<_patchVersion>0</_patchVersion>
 				<_systemVersion>99.0.00</_systemVersion>
 				<excluded>false</excluded>
@@ -1804,13 +1804,13 @@
 								<excluded>false</excluded>
 								<feature name="myClient" />
 								<guid>{ce0c979a-0f24-da11-9d7a-000d60ed2e76}</guid>
-								<length>16</length>
+								<length>28</length>
 								<name>myClient</name>
 								<referencedClassName/>
 								<rpsColType>0</rpsColType>
 								<rpsExcluded>false</rpsExcluded>
 								<rpsKeyKind>0</rpsKeyKind>
-								<rpsMapKind>0</rpsMapKind>
+								<rpsMapKind>28</rpsMapKind>
 								<sqlType>-50</sqlType>
 								<table name="Sale" />
 							</RARpsProperty>
@@ -1820,13 +1820,13 @@
 								<excluded>false</excluded>
 								<feature name="myCompany" />
 								<guid>{cd0c979a-0f24-da11-9d7b-000d60ed2e76}</guid>
-								<length>16</length>
+								<length>28</length>
 								<name>myCompany</name>
 								<referencedClassName/>
 								<rpsColType>0</rpsColType>
 								<rpsExcluded>false</rpsExcluded>
 								<rpsKeyKind>0</rpsKeyKind>
-								<rpsMapKind>0</rpsMapKind>
+								<rpsMapKind>28</rpsMapKind>
 								<sqlType>-50</sqlType>
 								<table name="Sale" />
 							</RARpsProperty>
@@ -1836,13 +1836,13 @@
 								<excluded>false</excluded>
 								<feature name="mySaleItem" />
 								<guid>{ce0c979a-0f24-da11-9d7b-000d60ed2e76}</guid>
-								<length>16</length>
+								<length>28</length>
 								<name>mySaleItem</name>
 								<referencedClassName/>
 								<rpsColType>0</rpsColType>
 								<rpsExcluded>false</rpsExcluded>
 								<rpsKeyKind>0</rpsKeyKind>
-								<rpsMapKind>0</rpsMapKind>
+								<rpsMapKind>28</rpsMapKind>
 								<sqlType>-50</sqlType>
 								<table name="Sale" />
 							</RARpsProperty>
@@ -1852,13 +1852,13 @@
 								<excluded>false</excluded>
 								<feature/>
 								<guid>{6faa949a-0f24-da11-9d79-000d60ed2e76}</guid>
-								<length>16</length>
+								<length>28</length>
 								<name>oid</name>
 								<referencedClassName/>
 								<rpsColType>1</rpsColType>
 								<rpsExcluded>false</rpsExcluded>
 								<rpsKeyKind>1</rpsKeyKind>
-								<rpsMapKind>0</rpsMapKind>
+								<rpsMapKind>28</rpsMapKind>
 								<sqlType>-50</sqlType>
 								<table name="Sale" />
 							</RARpsProperty>
@@ -1919,7 +1919,7 @@
 			<ExternalRPSClassMap>
 				<constraint />
 				<_modifiedBy>cnwta3</_modifiedBy>
-				<_modifiedTimestamp>2018:09:12:13:17:12.329</_modifiedTimestamp>
+				<_modifiedTimestamp>2023:01:23:22:20:32.115</_modifiedTimestamp>
 				<_patchVersion>0</_patchVersion>
 				<_systemVersion>99.0.00</_systemVersion>
 				<excluded>false</excluded>
@@ -1969,13 +1969,13 @@
 								<excluded>false</excluded>
 								<feature name="myClient" />
 								<guid>{2c6f999a-0f24-da11-9d7d-000d60ed2e76}</guid>
-								<length>16</length>
+								<length>28</length>
 								<name>myClient</name>
 								<referencedClassName/>
 								<rpsColType>0</rpsColType>
 								<rpsExcluded>false</rpsExcluded>
 								<rpsKeyKind>0</rpsKeyKind>
-								<rpsMapKind>0</rpsMapKind>
+								<rpsMapKind>28</rpsMapKind>
 								<sqlType>-50</sqlType>
 								<table name="Sale" />
 							</RARpsProperty>
@@ -1985,13 +1985,13 @@
 								<excluded>false</excluded>
 								<feature name="myCompany" />
 								<guid>{2b6f999a-0f24-da11-9d7e-000d60ed2e76}</guid>
-								<length>16</length>
+								<length>28</length>
 								<name>myCompany</name>
 								<referencedClassName/>
 								<rpsColType>0</rpsColType>
 								<rpsExcluded>false</rpsExcluded>
 								<rpsKeyKind>0</rpsKeyKind>
-								<rpsMapKind>0</rpsMapKind>
+								<rpsMapKind>28</rpsMapKind>
 								<sqlType>-50</sqlType>
 								<table name="Sale" />
 							</RARpsProperty>
@@ -2001,13 +2001,13 @@
 								<excluded>false</excluded>
 								<feature name="mySaleItem" />
 								<guid>{2c6f999a-0f24-da11-9d7e-000d60ed2e76}</guid>
-								<length>16</length>
+								<length>28</length>
 								<name>mySaleItem</name>
 								<referencedClassName/>
 								<rpsColType>0</rpsColType>
 								<rpsExcluded>false</rpsExcluded>
 								<rpsKeyKind>0</rpsKeyKind>
-								<rpsMapKind>0</rpsMapKind>
+								<rpsMapKind>28</rpsMapKind>
 								<sqlType>-50</sqlType>
 								<table name="Sale" />
 							</RARpsProperty>
@@ -2017,13 +2017,13 @@
 								<excluded>false</excluded>
 								<feature name="myTender" />
 								<guid>{2b6f999a-0f24-da11-9d7f-000d60ed2e76}</guid>
-								<length>16</length>
+								<length>28</length>
 								<name>myTender</name>
 								<referencedClassName/>
 								<rpsColType>0</rpsColType>
 								<rpsExcluded>false</rpsExcluded>
 								<rpsKeyKind>0</rpsKeyKind>
-								<rpsMapKind>0</rpsMapKind>
+								<rpsMapKind>28</rpsMapKind>
 								<sqlType>-50</sqlType>
 								<table name="Sale" />
 							</RARpsProperty>
@@ -2033,13 +2033,13 @@
 								<excluded>false</excluded>
 								<feature/>
 								<guid>{cd0c979a-0f24-da11-9d7d-000d60ed2e76}</guid>
-								<length>16</length>
+								<length>28</length>
 								<name>oid</name>
 								<referencedClassName/>
 								<rpsColType>1</rpsColType>
 								<rpsExcluded>false</rpsExcluded>
 								<rpsKeyKind>1</rpsKeyKind>
-								<rpsMapKind>0</rpsMapKind>
+								<rpsMapKind>28</rpsMapKind>
 								<sqlType>-50</sqlType>
 								<table name="Sale" />
 							</RARpsProperty>
@@ -2068,7 +2068,7 @@
 			<ExternalRPSClassMap>
 				<constraint />
 				<_modifiedBy>cnwta3</_modifiedBy>
-				<_modifiedTimestamp>2018:09:19:11:14:45.112</_modifiedTimestamp>
+				<_modifiedTimestamp>2023:01:23:22:20:32.115</_modifiedTimestamp>
 				<_patchVersion>0</_patchVersion>
 				<_systemVersion>99.0.00</_systemVersion>
 				<excluded>false</excluded>
@@ -2198,13 +2198,13 @@
 								<excluded>false</excluded>
 								<feature name="myAgent" />
 								<guid>{289561b7-935b-da11-8fb3-b0778beeca24}</guid>
-								<length>16</length>
+								<length>28</length>
 								<name>myAgent</name>
 								<referencedClassName/>
 								<rpsColType>0</rpsColType>
 								<rpsExcluded>false</rpsExcluded>
 								<rpsKeyKind>0</rpsKeyKind>
-								<rpsMapKind>0</rpsMapKind>
+								<rpsMapKind>28</rpsMapKind>
 								<sqlType>-50</sqlType>
 								<table name="SaleItem" />
 							</RARpsProperty>
@@ -2214,13 +2214,13 @@
 								<excluded>false</excluded>
 								<feature name="myCompany" />
 								<guid>{299561b7-935b-da11-8fb4-b0778beeca24}</guid>
-								<length>16</length>
+								<length>28</length>
 								<name>myCompany</name>
 								<referencedClassName/>
 								<rpsColType>0</rpsColType>
 								<rpsExcluded>false</rpsExcluded>
 								<rpsKeyKind>0</rpsKeyKind>
-								<rpsMapKind>0</rpsMapKind>
+								<rpsMapKind>28</rpsMapKind>
 								<sqlType>-50</sqlType>
 								<table name="SaleItem" />
 							</RARpsProperty>
@@ -2230,13 +2230,13 @@
 								<excluded>false</excluded>
 								<feature name="myRegion" />
 								<guid>{289561b7-935b-da11-8fb6-b0778beeca24}</guid>
-								<length>16</length>
+								<length>28</length>
 								<name>myRegion</name>
 								<referencedClassName/>
 								<rpsColType>0</rpsColType>
 								<rpsExcluded>false</rpsExcluded>
 								<rpsKeyKind>0</rpsKeyKind>
-								<rpsMapKind>0</rpsMapKind>
+								<rpsMapKind>28</rpsMapKind>
 								<sqlType>-50</sqlType>
 								<table name="SaleItem" />
 							</RARpsProperty>
@@ -2246,13 +2246,13 @@
 								<excluded>false</excluded>
 								<feature name="mySale" />
 								<guid>{299561b7-935b-da11-8fb7-b0778beeca24}</guid>
-								<length>16</length>
+								<length>28</length>
 								<name>mySale</name>
 								<referencedClassName/>
 								<rpsColType>0</rpsColType>
 								<rpsExcluded>false</rpsExcluded>
 								<rpsKeyKind>0</rpsKeyKind>
-								<rpsMapKind>0</rpsMapKind>
+								<rpsMapKind>28</rpsMapKind>
 								<sqlType>-50</sqlType>
 								<table name="SaleItem" />
 							</RARpsProperty>
@@ -2262,13 +2262,13 @@
 								<excluded>false</excluded>
 								<feature name="mySaleItemCategory" />
 								<guid>{289561b7-935b-da11-8fb9-b0778beeca24}</guid>
-								<length>16</length>
+								<length>28</length>
 								<name>mySaleItemCategory</name>
 								<referencedClassName/>
 								<rpsColType>0</rpsColType>
 								<rpsExcluded>false</rpsExcluded>
 								<rpsKeyKind>0</rpsKeyKind>
-								<rpsMapKind>0</rpsMapKind>
+								<rpsMapKind>28</rpsMapKind>
 								<sqlType>-50</sqlType>
 								<table name="SaleItem" />
 							</RARpsProperty>
@@ -2278,13 +2278,13 @@
 								<excluded>false</excluded>
 								<feature/>
 								<guid>{3a5f2c9c-0f24-da11-9d85-000d60ed2e76}</guid>
-								<length>16</length>
+								<length>28</length>
 								<name>oid</name>
 								<referencedClassName/>
 								<rpsColType>1</rpsColType>
 								<rpsExcluded>false</rpsExcluded>
 								<rpsKeyKind>1</rpsKeyKind>
-								<rpsMapKind>0</rpsMapKind>
+								<rpsMapKind>28</rpsMapKind>
 								<sqlType>-50</sqlType>
 								<table name="SaleItem" />
 							</RARpsProperty>
