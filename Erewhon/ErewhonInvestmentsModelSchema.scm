@@ -1,527 +1,327 @@
-/* JADE RPS MAPPING FILE D:\JadeGitSource\JADE-Erewhon\Erewhon\ErewhonInvestmentsModelSchema.ddbx */
-jadeVersionNumber "20.0.01";
+﻿/* JADE RPS MAPPING FILE D:\JadeGitSource\Erewhon__Internal_Repo\Jade-Erewhon\Erewhon\ErewhonInvestmentsModelSchema.ddxx */
+jadeVersionNumber "99.0.00";
 schemaDefinition
-ErewhonInvestmentsModelSchema subschemaOf CommonSchema completeDefinition, patchVersioningEnabled = false;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
+ErewhonInvestmentsModelSchema subschemaOf CommonSchema completeDefinition;
 importedPackageDefinitions
 	DocumentorPackage is SelfDocumentorSchema::DocumentorPackage
 	(
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
-		importedClassDefinitions
-			DocumentHub
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
-		importedInterfaceDefinitions
-			DocumentInterface
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
+	importedClassDefinitions
+		DocumentHub
+	importedInterfaceDefinitions
+		DocumentInterface
 	)
 
 constantDefinitions
 	categoryDefinition ArrayConstants
-		setModifiedTimeStamp "cnwta3" "16.0.02" 2018:08:13:11:06:07.551;
 		ArrayNullIndex:                Integer = 0;
-		setModifiedTimeStamp "cnwta3" "16.0.02" 2018:08:15:11:08:13.409;
 		FirstIndex:                    Integer = 1;
-	documentationText
-`In JADE, Arrays begin at 1.`
-
-		setModifiedTimeStamp "cnwta3" "16.0.02" 2018:08:13:11:06:43.824;
+		documentationText
+		`In JADE, Arrays begin at 1.`
 	categoryDefinition Defaults
-		setModifiedTimeStamp "cnwta3" "16.0.02" 2018:08:10:16:28:21.514;
 		DecimalPercentPrecision:       Integer = 6;
-		setModifiedTimeStamp "cnwta3" "16.0.02" 2018:08:23:16:32:35.714;
 		DecimalPrecision:              Integer = 12;
-		setModifiedTimeStamp "cnwta3" "16.0.02" 2018:08:23:16:32:15.489;
 		DecimalScaleFactor:            Integer = 2;
-		setModifiedTimeStamp "cnwta3" "16.0.02" 2018:08:23:16:32:04.132;
 	categoryDefinition EmailConstants
-		setModifiedTimeStamp "cnwta3" "16.0.02" 2018:08:13:11:08:32.730;
 		AtSymbol:                      String = "@";
-		setModifiedTimeStamp "cnwta3" "16.0.02" 2018:08:13:11:09:02.687;
 	categoryDefinition FileConstants
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:07:13:43:51.316;
 		FirstIndexInLine:              Integer = 1;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:07:13:47:12.035;
 		LineSkipDelimiter:             Character = '#';
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:07:13:44:22.551;
 	categoryDefinition JadeErrorCodes
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:27:13:36:21.097;
 		AlreadyInTrx:                  Integer = 1025;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:27:15:55:45.277;
 		UpdateOutsideTrx:              Integer = 1048;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:27:13:37:27.793;
 	categoryDefinition ModelErrorCodes
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
 		AddressNotSet:                 Integer = 150045;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:12:09:17:03.369;
 		AgentAlreadyExists:            Integer = 150000;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
 		CannotCreatePersistentActAgent:Integer = 150001;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
 		CannotCreatePersistentOrdProxy:Integer = 150002;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
 		ClientAlreadyExists:           Integer = 150003;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
 		ClosureDatePriorToForSaleDate: Integer = 150004;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
 		CodeAllocationOutsideTranState:Integer = 150005;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
 		CommissionRateAlreadyExists:   Integer = 150006;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
 		CompanySingletonAlreadyExists: Integer = 150007;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
 		CountryAlreadyExists:          Integer = 150008;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
 		DatabaseNotInitialized:        Integer = 150009;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
 		InvalidAgent:                  Integer = 150010;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
 		InvalidClient:                 Integer = 150011;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
 		InvalidClosureDate:            Integer = 150012;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
 		InvalidCode:                   Integer = 150013;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
 		InvalidCommissionRate:         Integer = 150014;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
 		InvalidCompany:                Integer = 150015;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
 		InvalidCountry:                Integer = 150016;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
 		InvalidDateOrTime:             Integer = 150017;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
 		InvalidDescription:            Integer = 150018;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
 		InvalidDirectoryPath:          Integer = 150019;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
 		InvalidForSaleDate:            Integer = 150020;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
 		InvalidName:                   Integer = 150021;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
 		InvalidOfferPrice:             Integer = 150022;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
 		InvalidOrderProxy:             Integer = 150023;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
 		InvalidPercentage:             Integer = 150024;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
 		InvalidPhoto:                  Integer = 150025;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
 		InvalidPrice:                  Integer = 150026;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
 		InvalidRegion:                 Integer = 150027;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
 		InvalidSale:                   Integer = 150028;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
 		InvalidSaleItem:               Integer = 150029;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
 		InvalidSaleItemCategory:       Integer = 150030;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
 		InvalidTender:                 Integer = 150031;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
 		ItemAlreadySold:               Integer = 150032;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
 		NoAddress:                     Integer = 150033;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
 		NoContact:                     Integer = 150034;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
 		ObjectOutOfDate:               Integer = 150035;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
 		OfferPriceLessThanMinPrice:    Integer = 150036;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
 		RegionAlreadyExists:           Integer = 150037;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
 		ResourceLocked:                Integer = 150038;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
 		SaleItemCategoryAlreadyExists: Integer = 150039;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
 		SaleItemCodeAlreadyExists:     Integer = 150040;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
 		Success:                       Integer = 0;
-		setModifiedTimeStamp "cnwta3" "16.0.02" 2018:08:13:10:11:15.301;
 		TenderAlreadyAccepted:         Integer = 150041;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
 		TenderAlreadyExists:           Integer = 150042;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
 		TooManyCodeNumbersForPrefix:   Integer = 150043;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
 		UpdOperationOutsideTranState:  Integer = 150044;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
 	categoryDefinition TestConstants
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:07:13:56:18.305;
 		CancelModalForm:               Integer = 0;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:13:13:35:12.239;
 		OKModalForm:                   Integer = 1;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:13:13:35:04.138;
 	categoryDefinition TimeConstants
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
 		MillisecondsPerSecond:         Integer = 1000;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
 		SecondsPerMinute:              Integer = 60;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
 localeDefinitions
 	5129 "English (New Zealand)" schemaDefaultLocale;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
 	10249 "English (Belize)" _cloneOf 5129;
-		setModifiedTimeStamp "<unknown>" "" 2021:09:27:14:14:09;
 	1033 "English (United States)" _cloneOf 5129;
-		setModifiedTimeStamp "<unknown>" "" 2021:09:27:14:14:09;
 	11273 "English (Trinidad & Tobago)" _cloneOf 5129;
-		setModifiedTimeStamp "<unknown>" "" 2021:09:27:14:14:09;
 	2057 "English (United Kingdom)" _cloneOf 5129;
-		setModifiedTimeStamp "<unknown>" "" 2021:09:27:14:14:09;
 	3081 "English (Australia)" _cloneOf 5129;
-		setModifiedTimeStamp "<unknown>" "" 2021:09:27:14:14:09;
 	4105 "English (Canada)" _cloneOf 5129;
-		setModifiedTimeStamp "<unknown>" "" 2021:09:27:14:14:09;
 	6153 "English (Ireland)" _cloneOf 5129;
-		setModifiedTimeStamp "<unknown>" "" 2021:09:27:14:14:09;
 	7177 "English (South Africa)" _cloneOf 5129;
-		setModifiedTimeStamp "<unknown>" "" 2021:09:27:14:14:09;
 	8201 "English (Jamaica)" _cloneOf 5129;
-		setModifiedTimeStamp "<unknown>" "" 2021:09:27:14:14:09;
 	9225 "English (Caribbean)" _cloneOf 5129;
-		setModifiedTimeStamp "<unknown>" "" 2021:09:27:14:14:09;
 translatableStringDefinitions
-	5129 "English (New Zealand)"
+5129 "English (New Zealand)"
 	(
 	CompanyAddress1 = "Erewhon House";
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
 	CompanyAddress2 = "Christchurch";
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
 	CompanyAddress3 = "New Zealand";
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
 	CompanyEMail = "discover@jadeworld.com";
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
 	CompanyFax = "(64) 3 555 1267";
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
 	CompanyName = "Erewhon Investments Inc";
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
 	CompanyPhone = "(64) 3 555 4519";
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
 	CompanySingletonAlreadyExists = "Singleton Company instance already exists";
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
 	CompanyWebSite = "www.jadeworld.com";
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
 	ErrMdl100000 = "Cannot create persistent ActivityAgent";
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
 	ErrMdl100001 = "Cannot create persistent OrderProxy";
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
 	ErrMdl100002 = "Invalid name";
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
 	ErrMdl100003 = "Persistent Company singleton object already exists";
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
 	ErrMdl100004 = "Code allocation outside transaction state";
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
 	ErrMdl100005 = "No more code numbers can be allocated for prefix";
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
 	ErrMdl100006 = "Valid Until Date prior to tender Offer Date";
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
 	ErrMdl100007 = "Invalid directory path";
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
 	ErrMdl100008 = "Invalid sale item code";
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
 	ErrMdl100009 = "Closure Date cannot be prior to For Sale Date";
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
 	ErrMdl100010 = "System not initialized; Run JadeScript initializeData";
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
 	ErrMdl100011 = "Photo is not a valid image type";
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
 	ErrMdl100012 = "Update operation attempted outside transaction state";
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
 	ErrMdl150000 = "That Agent already exists.";
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:10:15:03:38.658;
 	ErrMdl150001 = "Cannot Create Persistent Activity Agent.";
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:10:15:04:31.725;
 	ErrMdl150002 = "Cannot create persistent Order Proxy";
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:10:15:04:54.263;
 	ErrMdl150003 = "That Client already exists.";
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:10:15:05:18.119;
 	ErrMdl150004 = "Closure date must be after the sale date.";
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:10:15:05:47.040;
 	ErrMdl150005 = "Cannot allocate code outside Transaction State.";
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:10:15:06:04.841;
 	ErrMdl150006 = "That Commission Rate already exists.";
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:10:15:06:24.258;
 	ErrMdl150007 = "The company already exists.";
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:10:15:06:51.099;
 	ErrMdl150008 = "That country already exists.";
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:10:15:07:06.443;
 	ErrMdl150009 = "The database has not yet been initialized.";
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:10:15:07:26.037;
 	ErrMdl150010 = "Invalid Agent.";
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:10:15:07:39.085;
 	ErrMdl150011 = "Invalid Client.";
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:10:15:07:47.925;
 	ErrMdl150012 = "Invalid Closure Date.";
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:10:15:08:04.102;
 	ErrMdl150013 = "Invalid Code.";
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:10:15:08:13.703;
 	ErrMdl150014 = "Invalid Commission Rate";
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:10:15:08:28.142;
 	ErrMdl150015 = "Invalid Company.";
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:10:15:08:51.784;
 	ErrMdl150016 = "Invalid Country.";
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:10:15:09:31.401;
 	ErrMdl150017 = "Invalid Date/Time.";
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:10:15:09:51.281;
 	ErrMdl150018 = "Invalid Description.";
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:10:15:10:01.002;
 	ErrMdl150019 = "Invalid directory path.";
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:10:15:10:14.250;
 	ErrMdl150020 = "Invalid Sale Date";
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:10:15:10:35.474;
 	ErrMdl150021 = "Invalid Name.";
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:10:15:10:47.443;
 	ErrMdl150022 = "Invalid Offer Price.";
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:10:15:11:04.796;
 	ErrMdl150023 = "Invalid Order Proxy.";
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:10:15:11:26.405;
 	ErrMdl150024 = "Invalid Percentage.";
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:10:15:11:40.765;
 	ErrMdl150025 = "Invalid Photo.";
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:10:15:11:58.236;
 	ErrMdl150026 = "Invalid Price.";
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:10:15:12:07.446;
 	ErrMdl150027 = "Invalid Region.";
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:10:15:12:42.374;
 	ErrMdl150028 = "Invalid Sale.";
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:10:15:13:17.727;
 	ErrMdl150029 = "Invalid Sale Item.";
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:10:15:13:29.807;
 	ErrMdl150030 = "Invalid Sale Item Category.";
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:10:15:13:44.280;
 	ErrMdl150031 = "Invalid Tender.";
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:10:15:13:53.520;
 	ErrMdl150032 = "Item already sold.";
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:10:15:15:16.698;
 	ErrMdl150033 = "Invalid Address.";
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:10:15:15:40.978;
 	ErrMdl150034 = "Invalid Contact.";
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:10:15:15:57.506;
 	ErrMdl150035 = "Object out of date.";
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:10:15:16:10.093;
 	ErrMdl150036 = "Offer price must not be less than reserve price.";
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:10:15:16:31.262;
 	ErrMdl150037 = "That region already exists.";
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:10:15:16:55.299;
 	ErrMdl150038 = "Resource locked.";
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:10:15:17:05.964;
 	ErrMdl150039 = "Sale Item Category already exists.";
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:10:15:17:22.853;
 	ErrMdl150040 = "Sale Item code already exists.";
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:10:15:17:42.349;
 	ErrMdl150041 = "Tender already accepted.";
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:10:15:18:14.592;
 	ErrMdl150042 = "Tender already exists.";
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:12:09:19:33.585;
 	ErrMdl150043 = "Too many Code Numbers for prefix.";
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:12:09:19:50.257;
 	ErrMdl150044 = "Cannot update outside transaction state.";
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:12:09:20:09.850;
 	ErrMdl150045 = "Address was not set.";
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:12:09:18:37.406;
 	MthParamsBinary = "binary value, or enter a file name from which to load a value (eg: a picture)";
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
 	MthParamsBoolean = "true or false";
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
 	MthParamsCaption(methodName) = "Parameters: " & methodName;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
 	MthParamsCharacter = "any character";
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
 	MthParamsDate = "any date (eg: 3 October 1999)";
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
 	MthParamsDecimal = "a decimal value (eg: 123.45)";
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
 	MthParamsHideExample = "Hide Example";
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
 	MthParamsInteger = "an integer value (eg: 123)";
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
 	MthParamsNameColHeading = "Parameter";
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
 	MthParamsObject(className, classNumber) =
 	className & " oid string (eg: " & classNumber & ".1)";
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
 	MthParamsPoint = "an x, y co-ordinate value (eg: 100, 200)";
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
 	MthParamsReal = "a real number value (eg: 100.55)";
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
 	MthParamsShowExample = "Show Example";
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
 	MthParamsString = "any string value";
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
 	MthParamsTime = "a time value in hours, minutes, seconds (eg: 21.15:33)";
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
 	MthParamsTimeStamp = "a combined date and time (eg: 3 October 1999 21.15:33)";
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
 	MthParamsValueColHeading = "Value";
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
 	RetailSaleItemType = "Retail";
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
 	TenderSaleItemType = "Tender";
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
 	)
-libraryDefinitions
 typeHeaders
-	ActivityAgent subclassOf Object abstract, transient, subclassSharedTransientAllowed, subclassTransientAllowed, highestSubId = 2, highestOrdinal = 2, number = 2103;
-	TransactionAgent subclassOf ActivityAgent transient, sharedTransientAllowed, transientAllowed, subclassSharedTransientAllowed, subclassTransientAllowed, number = 2104;
-	ErewhonInvestmentsModelApp subclassOf CommonSchemaApp transient, sharedTransientAllowed, transientAllowed, subclassSharedTransientAllowed, subclassTransientAllowed, highestOrdinal = 5, number = 2105;
-	ModelException subclassOf NormalException transient, sharedTransientAllowed, transientAllowed, subclassSharedTransientAllowed, subclassTransientAllowed, number = 2106;
-	GErewhonInvestmentsModelSchema subclassOf GCommonSchema transient, sharedTransientAllowed, transientAllowed, subclassSharedTransientAllowed, subclassTransientAllowed, number = 2107;
-	InitialDataLoader subclassOf Object transient, sharedTransientAllowed, transientAllowed, subclassSharedTransientAllowed, subclassTransientAllowed, highestOrdinal = 2, number = 2108;
-	ReportSecurity subclassOf JadeReportWriterSecurity transient, sharedTransientAllowed, transientAllowed, subclassSharedTransientAllowed, subclassTransientAllowed, number = 2207;
-	TestActivityAgent subclassOf JadeTestCase number = 2109;
-	TestTransactionAgent subclassOf TestActivityAgent highestOrdinal = 5, number = 2110;
-	TestAddress subclassOf JadeTestCase highestOrdinal = 1, number = 2111;
-	TestAgent subclassOf JadeTestCase highestOrdinal = 2, number = 2112;
-	TestClient subclassOf JadeTestCase highestOrdinal = 2, number = 2113;
-	TestCommissionRate subclassOf JadeTestCase highestOrdinal = 2, number = 2114;
-	TestCompany subclassOf JadeTestCase highestOrdinal = 12, number = 2115;
-	TestCountry subclassOf JadeTestCase highestOrdinal = 2, number = 2116;
-	TestItemDetails subclassOf JadeTestCase highestOrdinal = 1, number = 2117;
-	TestModelApp subclassOf JadeTestCase number = 2118;
-	TestOrderProxy subclassOf JadeTestCase highestOrdinal = 10, number = 2119;
-	TestRetailOrderProxy subclassOf TestOrderProxy highestOrdinal = 1, number = 2120;
-	TestTenderOrderProxy subclassOf TestOrderProxy highestOrdinal = 1, number = 2121;
-	TestRegion subclassOf JadeTestCase highestOrdinal = 2, number = 2122;
-	TestSale subclassOf JadeTestCase highestOrdinal = 11, number = 2123;
-	TestRetailSale subclassOf TestSale highestOrdinal = 1, number = 2124;
-	TestTenderSale subclassOf TestSale highestOrdinal = 1, number = 2125;
-	TestSaleItem subclassOf JadeTestCase highestSubId = 1, highestOrdinal = 10, number = 2126;
-	TestRetailSaleItem subclassOf TestSaleItem highestOrdinal = 2, number = 2127;
-	TestTenderSaleItem subclassOf TestSaleItem highestOrdinal = 2, number = 2128;
-	TestSaleItemCategory subclassOf JadeTestCase highestOrdinal = 2, number = 2129;
-	TestTender subclassOf JadeTestCase highestOrdinal = 3, number = 2130;
-	ModelEntity subclassOf Object number = 2193;
-	Address subclassOf ModelEntity highestOrdinal = 10, number = 2131;
-	Agent subclassOf ModelEntity objectVolatility="stable", highestSubId = 3, highestOrdinal = 6, number = 2132;
-	Client subclassOf ModelEntity highestSubId = 4, highestOrdinal = 6, number = 2133;
-	CommissionRate subclassOf ModelEntity highestSubId = 1, highestOrdinal = 3, number = 2134;
-	Company subclassOf ModelEntity objectVolatility="stable", highestSubId = 9, highestOrdinal = 9, number = 2135;
-	Location subclassOf ModelEntity abstract, highestOrdinal = 1, number = 2136;
-	Country subclassOf Location highestSubId = 1, highestOrdinal = 2, number = 2137;
-	Region subclassOf Location highestSubId = 1, highestOrdinal = 2, number = 2138;
-	Sale subclassOf ModelEntity abstract, highestOrdinal = 4, number = 2139;
-	RetailSale subclassOf Sale highestOrdinal = 2, number = 2140;
-	TenderSale subclassOf Sale highestOrdinal = 1, number = 2141;
-	SaleItem subclassOf ModelEntity abstract, highestOrdinal = 16, number = 2142;
-	RetailSaleItem subclassOf SaleItem highestOrdinal = 1, number = 2143;
-	TenderSaleItem subclassOf SaleItem highestSubId = 2, highestOrdinal = 4, number = 2144;
-	SaleItemCategory subclassOf ModelEntity highestSubId = 2, highestOrdinal = 5, number = 2145;
-	Tender subclassOf ModelEntity highestOrdinal = 5, number = 2146;
-	ModelTransient subclassOf Object transient, number = 2194;
-	ItemDetails subclassOf ModelTransient transient, sharedTransientAllowed, transientAllowed, highestOrdinal = 10, number = 2147;
-	OrderProxy subclassOf ModelTransient abstract, transient, subclassSharedTransientAllowed, subclassTransientAllowed, highestOrdinal = 4, number = 2148;
-	RetailOrderProxy subclassOf OrderProxy transient, sharedTransientAllowed, transientAllowed, subclassSharedTransientAllowed, subclassTransientAllowed, highestOrdinal = 3, number = 2149;
-	TenderOrderProxy subclassOf OrderProxy transient, sharedTransientAllowed, transientAllowed, subclassSharedTransientAllowed, subclassTransientAllowed, highestOrdinal = 1, number = 2150;
-	SErewhonInvestmentsModelSchema subclassOf SCommonSchema number = 2151;
-	MethodParametersDialog subclassOf Form transient, transientAllowed, subclassTransientAllowed, highestSubId = 3, highestOrdinal = 10, number = 2152;
-	AgentByNameDict subclassOf MemberKeyDictionary loadFactor = 66, number = 2153;
-	ClientByNameDict subclassOf MemberKeyDictionary loadFactor = 66, number = 2154;
-	CommissionRateByCategoryDict subclassOf MemberKeyDictionary number = 2155;
-	CommissionRateByPercentDict subclassOf MemberKeyDictionary number = 2156;
-	CountryByNameDict subclassOf MemberKeyDictionary number = 2157;
-	OrderProxyByItemDict subclassOf MemberKeyDictionary loadFactor = 66, transient, number = 2158;
-	RegionByNameDict subclassOf MemberKeyDictionary number = 2159;
-	RetailSaleByTimeItemDict subclassOf MemberKeyDictionary loadFactor = 66, number = 2160;
-	SaleByItemDict subclassOf MemberKeyDictionary loadFactor = 66, number = 2161;
-	SaleItemByCategoryCodeDict subclassOf MemberKeyDictionary loadFactor = 66, number = 2162;
-	SaleItemByCodeDict subclassOf MemberKeyDictionary loadFactor = 66, number = 2163;
-	SaleItemCategoryByNameDict subclassOf MemberKeyDictionary number = 2164;
-	TenderByItemTimeOfferDict subclassOf MemberKeyDictionary loadFactor = 66, number = 2165;
-	TenderByOfferTimeDict subclassOf MemberKeyDictionary number = 2166;
-	TenderByTimeOfferDict subclassOf MemberKeyDictionary number = 2167;
-	TenderItemBySaleDateCodeDict subclassOf MemberKeyDictionary loadFactor = 66, number = 2168;
-	TenderSaleByTimeItemDict subclassOf MemberKeyDictionary loadFactor = 66, number = 2169;
-	ClientSet subclassOf ObjectSet number = 2170;
-	RegionSet subclassOf ObjectSet number = 2171;
-	SaleSet subclassOf ObjectSet number = 2172;
- 
+	ActivityAgent subclassOf Object abstract, transient, subclassSharedTransientAllowed, subclassTransientAllowed;
+	TransactionAgent subclassOf ActivityAgent transient, sharedTransientAllowed, transientAllowed, subclassSharedTransientAllowed, subclassTransientAllowed;
+	ErewhonInvestmentsModelApp subclassOf CommonSchemaApp transient, sharedTransientAllowed, transientAllowed, subclassSharedTransientAllowed, subclassTransientAllowed;
+	ModelException subclassOf NormalException transient, sharedTransientAllowed, transientAllowed, subclassSharedTransientAllowed, subclassTransientAllowed;
+	GErewhonInvestmentsModelSchema subclassOf GCommonSchema transient, sharedTransientAllowed, transientAllowed, subclassSharedTransientAllowed, subclassTransientAllowed;
+	InitialDataLoader subclassOf Object transient, sharedTransientAllowed, transientAllowed, subclassSharedTransientAllowed, subclassTransientAllowed;
+	ReportSecurity subclassOf JadeReportWriterSecurity transient, sharedTransientAllowed, transientAllowed, subclassSharedTransientAllowed, subclassTransientAllowed;
+	TestActivityAgent subclassOf JadeTestCase;
+	TestTransactionAgent subclassOf TestActivityAgent;
+	TestAddress subclassOf JadeTestCase;
+	TestAgent subclassOf JadeTestCase;
+	TestClient subclassOf JadeTestCase;
+	TestCommissionRate subclassOf JadeTestCase;
+	TestCompany subclassOf JadeTestCase;
+	TestCountry subclassOf JadeTestCase;
+	TestItemDetails subclassOf JadeTestCase;
+	TestModelApp subclassOf JadeTestCase;
+	TestOrderProxy subclassOf JadeTestCase;
+	TestRetailOrderProxy subclassOf TestOrderProxy;
+	TestTenderOrderProxy subclassOf TestOrderProxy;
+	TestRegion subclassOf JadeTestCase;
+	TestSale subclassOf JadeTestCase;
+	TestRetailSale subclassOf TestSale;
+	TestTenderSale subclassOf TestSale;
+	TestSaleItem subclassOf JadeTestCase;
+	TestRetailSaleItem subclassOf TestSaleItem;
+	TestTenderSaleItem subclassOf TestSaleItem;
+	TestSaleItemCategory subclassOf JadeTestCase;
+	TestTender subclassOf JadeTestCase;
+	ModelEntity subclassOf Object;
+	Address subclassOf ModelEntity;
+	Agent subclassOf ModelEntity objectVolatility="stable";
+	Client subclassOf ModelEntity;
+	CommissionRate subclassOf ModelEntity;
+	Company subclassOf ModelEntity objectVolatility="stable";
+	Location subclassOf ModelEntity abstract;
+	Country subclassOf Location;
+	Region subclassOf Location;
+	Sale subclassOf ModelEntity abstract;
+	RetailSale subclassOf Sale;
+	TenderSale subclassOf Sale;
+	SaleItem subclassOf ModelEntity abstract;
+	RetailSaleItem subclassOf SaleItem;
+	TenderSaleItem subclassOf SaleItem;
+	SaleItemCategory subclassOf ModelEntity;
+	Tender subclassOf ModelEntity;
+	ModelTransient subclassOf Object transient;
+	ItemDetails subclassOf ModelTransient transient, sharedTransientAllowed, transientAllowed;
+	OrderProxy subclassOf ModelTransient abstract, transient, subclassSharedTransientAllowed, subclassTransientAllowed;
+	RetailOrderProxy subclassOf OrderProxy transient, sharedTransientAllowed, transientAllowed, subclassSharedTransientAllowed, subclassTransientAllowed;
+	TenderOrderProxy subclassOf OrderProxy transient, sharedTransientAllowed, transientAllowed, subclassSharedTransientAllowed, subclassTransientAllowed;
+	SErewhonInvestmentsModelSchema subclassOf SCommonSchema;
+	MethodParametersDialog subclassOf Form transient, transientAllowed, subclassTransientAllowed;
+	AgentByNameDict subclassOf MemberKeyDictionary loadFactor = 66;
+	ClientByNameDict subclassOf MemberKeyDictionary loadFactor = 66;
+	CommissionRateByCategoryDict subclassOf MemberKeyDictionary;
+	CommissionRateByPercentDict subclassOf MemberKeyDictionary;
+	CountryByNameDict subclassOf MemberKeyDictionary;
+	OrderProxyByItemDict subclassOf MemberKeyDictionary loadFactor = 66, transient;
+	RegionByNameDict subclassOf MemberKeyDictionary;
+	RetailSaleByTimeItemDict subclassOf MemberKeyDictionary loadFactor = 66;
+	SaleByItemDict subclassOf MemberKeyDictionary loadFactor = 66;
+	SaleItemByCategoryCodeDict subclassOf MemberKeyDictionary loadFactor = 66;
+	SaleItemByCodeDict subclassOf MemberKeyDictionary loadFactor = 66;
+	SaleItemCategoryByNameDict subclassOf MemberKeyDictionary;
+	TenderByItemTimeOfferDict subclassOf MemberKeyDictionary loadFactor = 66;
+	TenderByOfferTimeDict subclassOf MemberKeyDictionary;
+	TenderByTimeOfferDict subclassOf MemberKeyDictionary;
+	TenderItemBySaleDateCodeDict subclassOf MemberKeyDictionary loadFactor = 66;
+	TenderSaleByTimeItemDict subclassOf MemberKeyDictionary loadFactor = 66;
+	ClientSet subclassOf ObjectSet;
+	RegionSet subclassOf ObjectSet;
+	SaleSet subclassOf ObjectSet;
 interfaceDefs
-	ICartable number = 1286
+	ICartable
 	(
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:14:14:50:39.020;
- 
 	jadeMethodDefinitions
-		getCode(): String number = 1002;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:14:14:51:40.681;
-		getPrice(): Decimal number = 1004;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:14:14:51:55.202;
-		getShortDescription(): String number = 1003;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:14:14:52:09.204;
-		getTypeString(): String number = 1001;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:14:14:52:19.144;
+		getCode(): String;
+		getPrice(): Decimal;
+		getShortDescription(): String;
+		getTypeString(): String;
 	)
- 
-	ICodeable number = 1283
+	ICodeable
 	(
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:13:14:31:02.315;
- 
 	jadeMethodDefinitions
-		getCodeNumber(): Integer number = 1002;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:13:13:44:26.288;
-		getCodePrefix(): String number = 1003;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:13:13:44:19.563;
+		getCodeNumber(): Integer;
+		getCodePrefix(): String;
 	)
- 
-	IDebuggable number = 1287
+	IDebuggable
 	(
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:17:09:22:53.426;
- 
 	jadeMethodDefinitions
-		getDebugString(): String number = 1001;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:17:09:23:14.366;
+		getDebugString(): String;
 	)
- 
-	ISearchable number = 1284
+	ISearchable
 	(
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:05:13:06:00.589;
- 
 	jadeMethodDefinitions
-		getAllSales(saleSet: SaleSet input) number = 1001;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:05:13:07:44.702;
+		getAllSales(saleSet: SaleSet input);
 	)
- 
-	ISellable number = 1282
+	ISellable
 	(
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:13:13:21:16.781;
- 
 	jadeMethodDefinitions
-		getSale(): Sale number = 1001;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:13:13:22:48.124;
+		getSale(): Sale;
 	)
- 
 membershipDefinitions
-	AgentByNameDict of Agent ;
-	ClientByNameDict of Client ;
-	CommissionRateByCategoryDict of CommissionRate ;
-	CommissionRateByPercentDict of CommissionRate ;
-	CountryByNameDict of Country ;
-	OrderProxyByItemDict of OrderProxy ;
-	RegionByNameDict of Region ;
-	RetailSaleByTimeItemDict of RetailSale ;
-	SaleByItemDict of Sale ;
-	SaleItemByCategoryCodeDict of SaleItem ;
-	SaleItemByCodeDict of SaleItem ;
-	SaleItemCategoryByNameDict of SaleItemCategory ;
-	TenderByItemTimeOfferDict of Tender ;
-	TenderByOfferTimeDict of Tender ;
-	TenderByTimeOfferDict of Tender ;
-	TenderItemBySaleDateCodeDict of TenderSaleItem ;
-	TenderSaleByTimeItemDict of TenderSale ;
-	ClientSet of Client ;
-	RegionSet of Region ;
-	SaleSet of Sale ;
- 
+	AgentByNameDict of Agent;
+	ClientByNameDict of Client;
+	CommissionRateByCategoryDict of CommissionRate;
+	CommissionRateByPercentDict of CommissionRate;
+	CountryByNameDict of Country;
+	OrderProxyByItemDict of OrderProxy;
+	RegionByNameDict of Region;
+	RetailSaleByTimeItemDict of RetailSale;
+	SaleByItemDict of Sale;
+	SaleItemByCategoryCodeDict of SaleItem;
+	SaleItemByCodeDict of SaleItem;
+	SaleItemCategoryByNameDict of SaleItemCategory;
+	TenderByItemTimeOfferDict of Tender;
+	TenderByOfferTimeDict of Tender;
+	TenderByTimeOfferDict of Tender;
+	TenderItemBySaleDateCodeDict of TenderSaleItem;
+	TenderSaleByTimeItemDict of TenderSale;
+	ClientSet of Client;
+	RegionSet of Region;
+	SaleSet of Sale;
 typeDefinitions
 	DocumentorPackage::DocumentHub completeDefinition
 	(
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
 	)
 	Object completeDefinition
 	(
 	)
 	ActivityAgent completeDefinition
 	(
-	documentationText
+		documentationText
 `Abstract class providing common functionality and interface for all ActivityAgents.
 
 Persistents ActivityAgents are not allowed and the create method enforces this.
@@ -530,36 +330,24 @@ ActivityAgents implement interface/boundary layers between the model and views.
 They provide methods that wrap/bracket one or more model operations into activities.
 
 Every public ActivityAgent method should call zInitializeActivity at the start.`
-
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
 	attributeDefinitions
-		zRegisteredErrorCodes:         IntegerArray protected, subId = 2, number = 1, ordinal = 1;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
+		zRegisteredErrorCodes:         IntegerArray protected;
 	referenceDefinitions
-		zRegisteredObjects:            ObjectArray  implicitMemberInverse, protected, subId = 1, number = 2, ordinal = 2;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
- 
+		zRegisteredObjects:            ObjectArray  implicitMemberInverse, protected;
 	jadeMethodDefinitions
-		create() updating, number = 1001;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
-		zExceptionHandler(exceptionObj: Exception): Integer protected, number = 1002;
-		setModifiedTimeStamp "cnwta3" "16.0.02" 2018:08:16:16:03:09.772;
-		zInitializeActivity() protected, number = 1003;
-		setModifiedTimeStamp "cnwta3" "16.0.02" 2018:08:13:14:36:05.062;
-		zLockExceptionHandler(lockExObj: LockException): Integer protected, number = 1004;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
+		create() updating;
+		zExceptionHandler(exceptionObj: Exception): Integer protected;
+		zInitializeActivity() protected;
+		zLockExceptionHandler(lockExObj: LockException): Integer protected;
 		zRegisterObjectAndErrorCode(
 			obj: Object; 
-			err: Integer) protected, number = 1005;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
-		zSetErrorCode(errCode: Integer): Integer protected, number = 1006;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
-		zUnregisterObject(unregisterObj: Object) protected, number = 1007;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
+			err: Integer) protected;
+		zSetErrorCode(errCode: Integer): Integer protected;
+		zUnregisterObject(unregisterObj: Object) protected;
 	)
 	TransactionAgent completeDefinition
 	(
-	documentationText
+		documentationText
 `TransactionAgent provides activity methods that implement all transactions in the model.
 Except for development or peripheral tasks (eg: initializing the database), there are no
 other places in the model that begin or commit transactions. Our views also should rarely
@@ -580,16 +368,11 @@ Centralising transactions in this way brings several benefits:
   more easily into different transactions/activities
 - It provides a centralised layer for enforcing certain lock policies
 - It provides a centralised layer for exception handling`
-
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:10:14:35:53.865;
- 
 	jadeMethodDefinitions
-		trxActionOrderProxies(orderProxies: OrderProxyByItemDict): Integer number = 1001;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
+		trxActionOrderProxies(orderProxies: OrderProxyByItemDict): Integer;
 		trxCloseTendersAtDate(
 			date: Date; 
-			numClosed: Integer output): Integer serverExecution, number = 1002;
-		setModifiedTimeStamp "cnwta3" "16.0.02" 2018:08:16:16:05:11.473;
+			numClosed: Integer output): Integer serverExecution;
 		trxCreateAddress(
 			name: String; 
 			street: String; 
@@ -599,73 +382,53 @@ Centralising transactions in this way brings several benefits:
 			fax: String; 
 			phone: String; 
 			website: String; 
-			address: Address output): Integer number = 1017;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:24:12:40:00.964;
+			address: Address output): Integer;
 		trxCreateAgent(
 			address: Address; 
-			agent: Agent output): Integer number = 1003;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:13:09:15:36.044;
+			agent: Agent output): Integer;
 		trxCreateClient(
 			address: Address; 
-			client: Client output): Integer number = 1004;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:13:09:16:47.456;
+			client: Client output): Integer;
 		trxCreateCommissionRate(
 			saleItemCategory: SaleItemCategory; 
 			percentage: Decimal; 
-			commissionRate: CommissionRate output): Integer number = 1005;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
+			commissionRate: CommissionRate output): Integer;
 		trxCreateCountry(
 			countryName: String; 
-			country: Country output): Integer number = 1006;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
+			country: Country output): Integer;
 		trxCreateRegion(
 			regionName: String; 
 			country: Country; 
-			region: Region output): Integer number = 1007;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
+			region: Region output): Integer;
 		trxCreateRetailSaleItem(
 			itemDetails: ItemDetails; 
 			agent: Agent; 
 			price: Decimal; 
-			retailSaleItem: RetailSaleItem output): Integer number = 1008;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:10:10:58:37.039;
+			retailSaleItem: RetailSaleItem output): Integer;
 		trxCreateSaleItemCategory(
 			categoryName: String; 
 			categoryDescription: String; 
-			category: SaleItemCategory output): Integer number = 1009;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
+			category: SaleItemCategory output): Integer;
 		trxCreateTenderSaleItem(
 			itemDetails: ItemDetails; 
 			agent: Agent; 
 			closureDate: Date; 
 			minimumPrice: Decimal; 
-			tenderSaleItem: TenderSaleItem output): Integer number = 1010;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:10:11:18:09.172;
-		trxDeleteAgent(agent: Agent io): Integer number = 1011;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:12:09:02:01.817;
-		trxDeleteClient(client: Client io): Integer number = 1012;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
-		trxDeleteCommissionRate(commissionRate: CommissionRate io): Integer number = 1013;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
-		trxDeleteCountry(country: Country io): Integer number = 1014;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
-		trxDeleteRegion(region: Region io): Integer number = 1015;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
-		trxDeleteRetailSale(retailSale: RetailSale io): Integer number = 1016;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
-		trxDeleteSaleItem(saleItem: SaleItem io): Integer number = 1036;
-		setModifiedTimeStamp "cnwta3" "16.0.02" 2018:08:27:11:18:32.894;
-		trxDeleteSaleItemCategory(saleItemCategory: SaleItemCategory io): Integer number = 1018;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
-		trxDeleteTender(tender: Tender io): Integer number = 1019;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
-		trxDeleteTenderSale(tenderSale: TenderSale io): Integer number = 1020;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
+			tenderSaleItem: TenderSaleItem output): Integer;
+		trxDeleteAgent(agent: Agent io): Integer;
+		trxDeleteClient(client: Client io): Integer;
+		trxDeleteCommissionRate(commissionRate: CommissionRate io): Integer;
+		trxDeleteCountry(country: Country io): Integer;
+		trxDeleteRegion(region: Region io): Integer;
+		trxDeleteRetailSale(retailSale: RetailSale io): Integer;
+		trxDeleteSaleItem(saleItem: SaleItem io): Integer;
+		trxDeleteSaleItemCategory(saleItemCategory: SaleItemCategory io): Integer;
+		trxDeleteTender(tender: Tender io): Integer;
+		trxDeleteTenderSale(tenderSale: TenderSale io): Integer;
 		trxSetAgentsForCommissionRate(
 			agents: AgentByNameDict; 
 			commissionRate: CommissionRate; 
-			requiredEdition: Integer): Integer number = 1022;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:05:13:40:14.944;
+			requiredEdition: Integer): Integer;
 		trxUpdateAddress(
 			address: Address input; 
 			requiredEdition: Integer; 
@@ -676,66 +439,53 @@ Centralising transactions in this way brings several benefits:
 			email: String; 
 			fax: String; 
 			phone: String; 
-			webSite: String): Integer number = 1021;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:24:15:56:39.770;
+			webSite: String): Integer;
 		trxUpdateAgent(
 			agent: Agent input; 
 			requiredEdition: Integer; 
-			agentAddress: Address): Integer number = 1023;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:27:16:04:37.081;
+			agentAddress: Address): Integer;
 		trxUpdateClient(
 			client: Client input; 
 			requiredEdition: Integer; 
-			address: Address): Integer number = 1024;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:13:09:19:29.430;
+			address: Address): Integer;
 		trxUpdateCommissionRate(
 			commissionRate: CommissionRate input; 
 			requiredEdition: Integer; 
-			percentage: Decimal): Integer number = 1025;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
+			percentage: Decimal): Integer;
 		trxUpdateCountry(
 			country: Country input; 
 			requiredEdition: Integer; 
-			countryName: String): Integer number = 1027;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
+			countryName: String): Integer;
 		trxUpdateRegion(
 			region: Region input; 
 			requiredEdition: Integer; 
-			regionName: String): Integer number = 1028;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
+			regionName: String): Integer;
 		trxUpdateRetailSaleItem(
 			retailSaleItem: RetailSaleItem input; 
 			requiredEdition: Integer; 
 			itemDetails: ItemDetails; 
-			price: Decimal): Integer number = 1029;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:10:14:46:10.434;
+			price: Decimal): Integer;
 		trxUpdateSaleItemCategory(
 			saleItemCategory: SaleItemCategory input; 
 			requiredEdition: Integer; 
 			categoryName: String; 
-			categoryDescription: String): Integer number = 1030;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
+			categoryDescription: String): Integer;
 		trxUpdateTender(
 			tender: Tender input; 
 			requiredEdition: Integer; 
 			offer: Decimal; 
-			timeStamp: TimeStamp): Integer number = 1031;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
+			timeStamp: TimeStamp): Integer;
 		trxUpdateTenderSaleItem(
 			tenderSaleItem: TenderSaleItem input; 
 			requiredEdition: Integer; 
 			itemDetails: ItemDetails; 
 			closureDate: Date; 
-			minimumPrice: Decimal): Integer number = 1032;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:10:13:12:24.523;
-		zExceptionHandler(exceptionObj: Exception): Integer protected, number = 1033;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
-		zLockExceptionHandler(lockExObj: LockException): Integer protected, number = 1034;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
+			minimumPrice: Decimal): Integer;
+		zExceptionHandler(exceptionObj: Exception): Integer protected;
+		zLockExceptionHandler(lockExObj: LockException): Integer protected;
 		zSilentLockExceptionHandler(
 			lockExObj: LockException input; 
-			maxRetries: Integer): Integer protected, number = 1035;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
+			maxRetries: Integer): Integer protected;
 	)
 	Application completeDefinition
 	(
@@ -745,45 +495,28 @@ Centralising transactions in this way brings several benefits:
 	)
 	CommonSchemaApp completeDefinition
 	(
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
 	)
 	ErewhonInvestmentsModelApp completeDefinition
 	(
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
 	attributeDefinitions
-		zErrorCode:                    Integer protected, number = 1, ordinal = 1;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
+		zErrorCode:                    Integer protected;
 	referenceDefinitions
-		myCompany:                     Company  readonly, number = 2, ordinal = 2;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
-		myDocumentHub:                 DocumentorPackage::DocumentHub  number = 4, ordinal = 5;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
-		myTA:                          TransactionAgent  readonly, number = 3, ordinal = 3;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
- 
+		myCompany:                     Company  readonly;
+		myDocumentHub:                 DocumentorPackage::DocumentHub ;
+		myTA:                          TransactionAgent  readonly;
 	jadeMethodDefinitions
 		buildSimpleRTF(
 			heading: String; 
-			body: String): String number = 1010;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
-		dataLoaderApp(args: HugeStringArray) number = 1009;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:07:13:42:35.407;
-		finalize() updating, number = 1001;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:24:15:37:52.628;
-		getErrorString(errorNo: Integer): String number = 1007;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
-		getLastError(): Integer number = 1002;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
-		initialize() updating, number = 1003;
-		setModifiedTimeStamp "cnwta3" "16.0.02" 2018:08:13:14:36:22.231;
-		noErrors(): Boolean number = 1006;
-		setModifiedTimeStamp "cnwta3" "16.0.02" 2018:08:13:14:36:25.624;
-		raiseModelException(errorNo: Integer) number = 1008;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
-		setCompany(value: Company) updating, number = 1004;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
-		setErrorCode(errCode: Integer) updating, number = 1005;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
+			body: String): String;
+		dataLoaderApp(args: HugeStringArray);
+		finalize() updating;
+		getErrorString(errorNo: Integer): String;
+		getLastError(): Integer;
+		initialize() updating;
+		noErrors(): Boolean;
+		raiseModelException(errorNo: Integer);
+		setCompany(value: Company) updating;
+		setErrorCode(errCode: Integer) updating;
 	)
 	Exception completeDefinition
 	(
@@ -793,7 +526,7 @@ Centralising transactions in this way brings several benefits:
 	)
 	ModelException completeDefinition
 	(
-	documentationText
+		documentationText
 `The class of exceptions raised by GErewhonInvestmentsModelSchema::raiseModelException.
 
 Creating your own exception classes is useful when you want to add additional properties
@@ -815,8 +548,6 @@ or:
 if ModelException.hasInstance(exceptionObject) then
     // some code
 endif;`
-
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
 	)
 	Global completeDefinition
 	(
@@ -826,954 +557,525 @@ endif;`
 	)
 	GCommonSchema completeDefinition
 	(
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
 	)
 	GErewhonInvestmentsModelSchema completeDefinition
 	(
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
 	)
 	InitialDataLoader completeDefinition
 	(
-	documentationText
-`Utility class used to initialize the database`
-
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
+		documentationText
+		`Utility class used to initialize the database`
 	attributeDefinitions
-		zDirPath:                      String[301] protected, number = 1, ordinal = 1;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
+		zDirPath:                      String[301] protected;
 	referenceDefinitions
-		zCompany:                      Company  protected, number = 2, ordinal = 2;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
- 
+		zCompany:                      Company  protected;
 	jadeMethodDefinitions
-		loadData(directoryPath: String) updating, number = 1001;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:19:16:54:28.078;
-		zCloseTendersAtCurrentDate(total: Integer output) protected, serverExecution, number = 1002;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
-		zGetElapsedTimeString(startClock: Integer): String protected, number = 1003;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
+		loadData(directoryPath: String) updating;
+		zCloseTendersAtCurrentDate(total: Integer output) protected, serverExecution;
+		zGetElapsedTimeString(startClock: Integer): String protected;
 		zGetNextToken(
 			str: String; 
-			pos: Integer io): String protected, number = 1004;
-		setModifiedTimeStamp "cnwta3" "16.0.02" 2018:08:27:08:51:19.871;
-		zLoadAgentRates() protected, number = 1005;
-		setModifiedTimeStamp "cnwta3" "18.0.01" 2018:12:19:11:39:36.414;
-		zLoadAgents() protected, number = 1006;
-		setModifiedTimeStamp "cnwta3" "18.0.01" 2019:02:18:17:21:35.972;
-		zLoadCategories() protected, number = 1007;
-		setModifiedTimeStamp "cnwta3" "18.0.01" 2018:12:19:11:40:16.145;
-		zLoadCategoryRates() protected, number = 1008;
-		setModifiedTimeStamp "cnwta3" "18.0.01" 2018:12:19:11:39:28.771;
-		zLoadClients() protected, number = 1009;
-		setModifiedTimeStamp "cnwta3" "18.0.01" 2019:02:18:17:20:56.845;
-		zLoadLocations() protected, number = 1010;
-		setModifiedTimeStamp "cnwta3" "18.0.01" 2018:12:19:11:39:59.322;
-		zLoadRetailSaleItems() protected, number = 1011;
-		setModifiedTimeStamp "cnwta3" "18.0.01" 2018:12:19:11:39:02.598;
-		zLoadRetailSales() protected, number = 1012;
-		setModifiedTimeStamp "cnwta3" "18.0.01" 2018:12:19:11:39:51.809;
-		zLoadTenderSaleItems() protected, number = 1013;
-		setModifiedTimeStamp "cnwta3" "18.0.01" 2018:12:19:11:39:17.944;
-		zLoadTenders() protected, number = 1014;
-		setModifiedTimeStamp "cnwta3" "18.0.01" 2018:12:19:11:39:44.141;
-		zValidateDirectoryPath(directoryPath: String): String protected, number = 1015;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:07:13:50:22.878;
+			pos: Integer io): String protected;
+		zLoadAgentRates() protected;
+		zLoadAgents() protected;
+		zLoadCategories() protected;
+		zLoadCategoryRates() protected;
+		zLoadClients() protected;
+		zLoadLocations() protected;
+		zLoadRetailSaleItems() protected;
+		zLoadRetailSales() protected;
+		zLoadTenderSaleItems() protected;
+		zLoadTenders() protected;
+		zValidateDirectoryPath(directoryPath: String): String protected;
 	)
 	JadeReportWriterSecurity completeDefinition
 	(
-		setModifiedTimeStamp "<unknown>" "6.0.03" 2002:02:12:16:24:45.731;
 	)
 	ReportSecurity completeDefinition
 	(
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:10:04:12:24:38.206;
- 
 	jadeMethodDefinitions
-		canAccessConfiguration(userName: String): Integer updating, number = 1001;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:10:04:13:20:10.600;
-		canAccessDesigner(userName: String): Integer updating, number = 1002;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:10:04:13:19:59.042;
+		canAccessConfiguration(userName: String): Integer updating;
+		canAccessDesigner(userName: String): Integer updating;
 	)
 	JadeRestService completeDefinition
 	(
-		setModifiedTimeStamp "cnwrjd1" "9.9.00" 71113 2014:03:04:16:22:14.983;
 	)
 	JadeScript completeDefinition
 	(
- 
 	jadeMethodDefinitions
-		deleteAllData() number = 1001;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:17:10:49:08.614;
-		initializeData() number = 1002;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:10:29:11:05:14.645;
+		deleteAllData();
+		initializeData();
 	)
 	JadeTestCase completeDefinition
 	(
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:20:09:16:20.387;
- 
 	jadeMethodDefinitions
-		buildCompany(company: Company) number = 1001;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:27:09:15:12.470;
-		clearCompany() updating, unitTestBeforeAll, number = 1002;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:20:08:58:15.150;
-		deleteCompanyBeforeAll() unitTestBeforeAll, number = 1003;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:27:09:49:54.280;
+		buildCompany(company: Company);
+		clearCompany() updating, unitTestBeforeAll;
+		deleteCompanyBeforeAll() unitTestBeforeAll;
 	)
 	TestActivityAgent completeDefinition
 	(
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:26:13:32:14.268;
 	)
 	TestTransactionAgent completeDefinition
 	(
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:27:15:37:41.982;
 	referenceDefinitions
-		agentAddress:                  Address  protected, number = 1, ordinal = 1;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:24:12:15:52.764;
-		clientAddress:                 Address  protected, number = 2, ordinal = 2;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:24:12:16:03.904;
-		testAddress:                   Address  protected, number = 3, ordinal = 3;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:24:15:58:20.733;
-		testDetails:                   ItemDetails  protected, number = 4, ordinal = 4;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:24:16:21:34.017;
- 
+		agentAddress:                  Address  protected;
+		clientAddress:                 Address  protected;
+		testAddress:                   Address  protected;
+		testDetails:                   ItemDetails  protected;
 	jadeMethodDefinitions
-		setUp() updating, unitTestBefore, number = 1001;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:25:11:01:32.399;
-		tearDown() updating, unitTestAfter, number = 1002;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:24:15:38:34.081;
-		testActionOrderProxies() unitTest, number = 1042;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:25:11:19:36.883;
-		testActionOrderProxiesInvalidProxy() unitTest, number = 1045;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:25:11:28:03.248;
-		testActionOrderProxiesNullDict() unitTest, number = 1044;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:25:11:22:07.078;
-		testCloseTendersAtDate() unitTest, number = 1043;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:27:13:23:13.516;
-		testCreateAddress() unitTest, number = 1009;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:27:13:38:12.318;
-		testCreateAddressInvalidCompany() unitTest, number = 1010;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:27:15:28:33.997;
-		testCreateAddressOutsideTrx() unitTest, number = 1047;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:27:13:40:18.696;
-		testCreateAgent() unitTest, number = 1003;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:24:12:18:19.500;
-		testCreateAgentInvalidAddress() unitTest, number = 1005;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:24:12:26:42.993;
-		testCreateAgentInvalidCompany() unitTest, number = 1004;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:27:15:28:10.272;
-		testCreateAgentOutsideTrx() unitTest, number = 1048;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:27:13:41:01.044;
-		testCreateClient() unitTest, number = 1006;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:24:12:30:19.128;
-		testCreateClientInvalidAddress() unitTest, number = 1007;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:24:12:32:31.063;
-		testCreateClientInvalidCompany() unitTest, number = 1008;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:27:15:28:40.921;
-		testCreateClientOutsideTrx() unitTest, number = 1049;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:27:13:42:52.822;
-		testCreateCommRateNullCategory() unitTest, number = 1012;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:24:12:47:10.094;
-		testCreateCommRateOutsideTrx() unitTest, number = 1050;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:27:13:44:12.285;
-		testCreateCommissionRate() unitTest, number = 1011;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:24:12:46:17.167;
-		testCreateCountry() unitTest, number = 1013;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:24:12:51:26.850;
-		testCreateCountryInvalidCompany() unitTest, number = 1014;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:27:15:28:47.144;
-		testCreateCountryOutsideTrx() unitTest, number = 1051;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:27:14:17:49.470;
-		testCreateRegion() unitTest, number = 1015;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:24:12:57:41.650;
-		testCreateRegionInvalidCountry() unitTest, number = 1016;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:24:14:27:13.632;
-		testCreateRegionOutsideTrx() unitTest, number = 1052;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:27:14:17:39.717;
-		testCreateRetailItem() unitTest, number = 1017;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:24:13:55:50.606;
-		testCreateRetailItemInvalidCompany() unitTest, number = 1018;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:27:15:29:40.480;
-		testCreateRetailItemOutsideTrx() unitTest, number = 1053;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:27:14:17:21.407;
-		testCreateSaleCategory() unitTest, number = 1019;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:24:14:49:04.862;
-		testCreateSaleCategoryInvalidCompany() unitTest, number = 1059;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:27:15:32:10.323;
-		testCreateSaleCategoryOutsideTrx() unitTest, number = 1054;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:27:14:17:08.518;
-		testCreateTenderItem() unitTest, number = 1020;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:24:14:56:24.218;
-		testCreateTenderItemInvalidCompany() unitTest, number = 1060;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:27:15:34:18.345;
-		testCreateTenderItemOutsideTrx() unitTest, number = 1055;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:27:14:06:43.957;
-		testDeleteAgent() unitTest, number = 1021;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:24:15:00:04.505;
-		testDeleteAgentOutsideTrx() unitTest, number = 1056;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:27:15:23:29.726;
-		testDeleteClient() unitTest, number = 1022;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:24:15:01:51.837;
-		testDeleteClientOutsideTrx() unitTest, number = 1057;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:27:15:24:44.061;
-		testDeleteCommissionRate() unitTest, number = 1023;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:24:15:03:57.158;
-		testDeleteCommissionRateOutsideTrx() unitTest, number = 1058;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:27:15:26:21.729;
-		testDeleteCountry() unitTest, number = 1024;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:24:15:05:12.829;
-		testDeleteCountryOutsideTrx() unitTest, number = 1061;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:27:15:37:18.670;
-		testDeleteRegion() unitTest, number = 1025;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:24:15:06:53.286;
-		testDeleteRegionOutsideTrx() unitTest, number = 1062;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:27:15:39:11.480;
-		testDeleteRetailSale() unitTest, number = 1026;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:24:15:08:45.198;
-		testDeleteRetailSaleOutsideTrx() unitTest, number = 1063;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:27:15:40:28.402;
-		testDeleteSaleItem() unitTest, number = 1027;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:24:15:13:25.349;
-		testDeleteSaleItemCategory() unitTest, number = 1028;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:24:15:15:24.336;
-		testDeleteSaleItemCategoryOutsideTrx() unitTest, number = 1065;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:27:15:41:55.606;
-		testDeleteSaleItemOutsideTrx() unitTest, number = 1064;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:27:15:41:16.855;
-		testDeleteTender() unitTest, number = 1029;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:24:15:16:13.233;
-		testDeleteTenderOutsideTrx() unitTest, number = 1066;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:27:15:42:53.840;
-		testDeleteTenderSale() unitTest, number = 1030;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:24:15:18:10.246;
-		testDeleteTenderSaleOutsideTrx() unitTest, number = 1067;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:27:15:43:22.928;
-		testLockExceptionHandler() unitTestIgnore, number = 1046;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:25:11:46:58.023;
-		testSetAgentsForCommRateNullAgent() unitTest, number = 1099;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:27:17:01:45.373;
-		testSetAgentsForCommissionRate() unitTest, number = 1031;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:27:13:17:47.183;
-		testSetAgentsForCommissionRateOutOfDateEdition() unitTest, number = 1068;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:27:15:48:40.484;
-		testUpdateAddress() unitTest, number = 1032;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:24:15:57:18.998;
-		testUpdateAddressNull() unitTest, number = 1070;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:27:15:50:28.910;
-		testUpdateAddressOutOfDateEdition() unitTest, number = 1069;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:27:15:48:27.410;
-		testUpdateAddressOutsideTrx() unitTest, number = 1071;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:27:15:55:55.622;
-		testUpdateAgent() unitTest, number = 1033;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:24:16:13:01.944;
-		testUpdateAgentNull() unitTest, number = 1072;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:27:16:02:14.025;
-		testUpdateAgentOutOfDateEdition() unitTest, number = 1074;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:27:16:02:47.371;
-		testUpdateAgentOutsideTrx() unitTest, number = 1073;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:27:16:07:13.647;
-		testUpdateClient() unitTest, number = 1034;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:24:16:13:51.979;
-		testUpdateClientNull() unitTest, number = 1075;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:27:16:08:33.420;
-		testUpdateClientOutOfDateEdition() unitTest, number = 1076;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:27:16:08:58.639;
-		testUpdateClientOutsideTrx() unitTest, number = 1077;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:27:16:09:25.085;
-		testUpdateCommRate() unitTest, number = 1035;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:27:16:10:57.076;
-		testUpdateCommRateNull() unitTest, number = 1078;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:27:16:11:46.988;
-		testUpdateCommRateOutOfDateEdition() unitTest, number = 1079;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:27:16:12:52.254;
-		testUpdateCommRateOutsideTrx() unitTest, number = 1080;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:27:16:13:28.931;
-		testUpdateCountry() unitTest, number = 1036;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:24:16:19:18.674;
-		testUpdateCountryNull() unitTest, number = 1081;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:27:16:15:07.629;
-		testUpdateCountryOutOfDateEdition() unitTest, number = 1083;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:27:16:15:47.425;
-		testUpdateCountryOutsideTrx() unitTest, number = 1082;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:27:16:16:39.347;
-		testUpdateRegion() unitTest, number = 1037;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:24:16:20:17.460;
-		testUpdateRegionNull() unitTest, number = 1084;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:27:16:18:15.352;
-		testUpdateRegionOutOfDateEdition() unitTest, number = 1085;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:27:16:18:47.679;
-		testUpdateRegionOutsideTrx() unitTest, number = 1086;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:27:16:21:33.704;
-		testUpdateRetailSaleItem() unitTest, number = 1038;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:24:16:29:23.488;
-		testUpdateRetailSaleItemNull() unitTest, number = 1087;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:27:16:26:14.032;
-		testUpdateRetailSaleItemOutOfDateEdition() unitTest, number = 1088;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:27:16:26:51.352;
-		testUpdateRetailSaleItemOutsideTrx() unitTest, number = 1089;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:27:16:27:31.266;
-		testUpdateSaleItemCategory() unitTest, number = 1039;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:27:16:23:54.041;
-		testUpdateSaleItemCategoryNull() unitTest, number = 1090;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:27:16:29:08.894;
-		testUpdateSaleItemCategoryOutOfDateEdition() unitTest, number = 1091;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:27:16:30:19.852;
-		testUpdateSaleItemCategoryOutsideTrx() unitTest, number = 1092;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:27:16:30:53.329;
-		testUpdateTender() unitTest, number = 1040;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:24:16:55:07.512;
-		testUpdateTenderNull() unitTest, number = 1093;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:27:16:32:41.635;
-		testUpdateTenderOutOfDateEdition() unitTest, number = 1094;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:27:16:35:40.167;
-		testUpdateTenderOutsideTrx() unitTest, number = 1095;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:27:16:36:10.219;
-		testUpdateTenderSaleItem() unitTest, number = 1041;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:24:17:00:11.676;
-		testUpdateTenderSaleItemNull() unitTest, number = 1096;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:27:16:43:07.294;
-		testUpdateTenderSaleItemOutOfDateEdition() unitTest, number = 1097;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:27:16:44:08.876;
-		testUpdateTenderSaleItemOutsideTrx() unitTest, number = 1098;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:27:16:45:14.070;
+		setUp() updating, unitTestBefore;
+		tearDown() updating, unitTestAfter;
+		testActionOrderProxies() unitTest;
+		testActionOrderProxiesInvalidProxy() unitTest;
+		testActionOrderProxiesNullDict() unitTest;
+		testCloseTendersAtDate() unitTest;
+		testCreateAddress() unitTest;
+		testCreateAddressInvalidCompany() unitTest;
+		testCreateAddressOutsideTrx() unitTest;
+		testCreateAgent() unitTest;
+		testCreateAgentInvalidAddress() unitTest;
+		testCreateAgentInvalidCompany() unitTest;
+		testCreateAgentOutsideTrx() unitTest;
+		testCreateClient() unitTest;
+		testCreateClientInvalidAddress() unitTest;
+		testCreateClientInvalidCompany() unitTest;
+		testCreateClientOutsideTrx() unitTest;
+		testCreateCommRateNullCategory() unitTest;
+		testCreateCommRateOutsideTrx() unitTest;
+		testCreateCommissionRate() unitTest;
+		testCreateCountry() unitTest;
+		testCreateCountryInvalidCompany() unitTest;
+		testCreateCountryOutsideTrx() unitTest;
+		testCreateRegion() unitTest;
+		testCreateRegionInvalidCountry() unitTest;
+		testCreateRegionOutsideTrx() unitTest;
+		testCreateRetailItem() unitTest;
+		testCreateRetailItemInvalidCompany() unitTest;
+		testCreateRetailItemOutsideTrx() unitTest;
+		testCreateSaleCategory() unitTest;
+		testCreateSaleCategoryInvalidCompany() unitTest;
+		testCreateSaleCategoryOutsideTrx() unitTest;
+		testCreateTenderItem() unitTest;
+		testCreateTenderItemInvalidCompany() unitTest;
+		testCreateTenderItemOutsideTrx() unitTest;
+		testDeleteAgent() unitTest;
+		testDeleteAgentOutsideTrx() unitTest;
+		testDeleteClient() unitTest;
+		testDeleteClientOutsideTrx() unitTest;
+		testDeleteCommissionRate() unitTest;
+		testDeleteCommissionRateOutsideTrx() unitTest;
+		testDeleteCountry() unitTest;
+		testDeleteCountryOutsideTrx() unitTest;
+		testDeleteRegion() unitTest;
+		testDeleteRegionOutsideTrx() unitTest;
+		testDeleteRetailSale() unitTest;
+		testDeleteRetailSaleOutsideTrx() unitTest;
+		testDeleteSaleItem() unitTest;
+		testDeleteSaleItemCategory() unitTest;
+		testDeleteSaleItemCategoryOutsideTrx() unitTest;
+		testDeleteSaleItemOutsideTrx() unitTest;
+		testDeleteTender() unitTest;
+		testDeleteTenderOutsideTrx() unitTest;
+		testDeleteTenderSale() unitTest;
+		testDeleteTenderSaleOutsideTrx() unitTest;
+		testLockExceptionHandler() unitTestIgnore;
+		testSetAgentsForCommRateNullAgent() unitTest;
+		testSetAgentsForCommissionRate() unitTest;
+		testSetAgentsForCommissionRateOutOfDateEdition() unitTest;
+		testUpdateAddress() unitTest;
+		testUpdateAddressNull() unitTest;
+		testUpdateAddressOutOfDateEdition() unitTest;
+		testUpdateAddressOutsideTrx() unitTest;
+		testUpdateAgent() unitTest;
+		testUpdateAgentNull() unitTest;
+		testUpdateAgentOutOfDateEdition() unitTest;
+		testUpdateAgentOutsideTrx() unitTest;
+		testUpdateClient() unitTest;
+		testUpdateClientNull() unitTest;
+		testUpdateClientOutOfDateEdition() unitTest;
+		testUpdateClientOutsideTrx() unitTest;
+		testUpdateCommRate() unitTest;
+		testUpdateCommRateNull() unitTest;
+		testUpdateCommRateOutOfDateEdition() unitTest;
+		testUpdateCommRateOutsideTrx() unitTest;
+		testUpdateCountry() unitTest;
+		testUpdateCountryNull() unitTest;
+		testUpdateCountryOutOfDateEdition() unitTest;
+		testUpdateCountryOutsideTrx() unitTest;
+		testUpdateRegion() unitTest;
+		testUpdateRegionNull() unitTest;
+		testUpdateRegionOutOfDateEdition() unitTest;
+		testUpdateRegionOutsideTrx() unitTest;
+		testUpdateRetailSaleItem() unitTest;
+		testUpdateRetailSaleItemNull() unitTest;
+		testUpdateRetailSaleItemOutOfDateEdition() unitTest;
+		testUpdateRetailSaleItemOutsideTrx() unitTest;
+		testUpdateSaleItemCategory() unitTest;
+		testUpdateSaleItemCategoryNull() unitTest;
+		testUpdateSaleItemCategoryOutOfDateEdition() unitTest;
+		testUpdateSaleItemCategoryOutsideTrx() unitTest;
+		testUpdateTender() unitTest;
+		testUpdateTenderNull() unitTest;
+		testUpdateTenderOutOfDateEdition() unitTest;
+		testUpdateTenderOutsideTrx() unitTest;
+		testUpdateTenderSaleItem() unitTest;
+		testUpdateTenderSaleItemNull() unitTest;
+		testUpdateTenderSaleItemOutOfDateEdition() unitTest;
+		testUpdateTenderSaleItemOutsideTrx() unitTest;
 	)
 	TestAddress completeDefinition
 	(
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:18:09:30:00.152;
 	referenceDefinitions
-		address:                       Address  protected, number = 1, ordinal = 1;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:18:09:31:31.765;
- 
+		address:                       Address  protected;
 	jadeMethodDefinitions
-		setUp() updating, unitTestBefore, number = 1001;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:27:13:13:33.534;
-		tearDown() updating, unitTestAfter, number = 1003;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:20:09:04:53.761;
-		testGetDebugString() updating, unitTest, number = 1008;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:18:11:14:42.243;
-		testGetNameAndAddress() unitTest, number = 1002;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:18:11:10:26.740;
-		testProperties() unitTest, number = 1009;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:18:11:33:21.452;
-		testUpdate() updating, unitTest, number = 1004;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:18:11:10:01.277;
-		testUpdateFromProxy() updating, unitTest, number = 1006;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:18:11:10:13.290;
-		testUpdateFromProxyWithoutTrx() updating, unitTest, number = 1007;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:18:11:03:22.072;
-		testUpdateWithoutTrx() updating, unitTest, number = 1005;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:18:10:51:49.676;
+		setUp() updating, unitTestBefore;
+		tearDown() updating, unitTestAfter;
+		testGetDebugString() updating, unitTest;
+		testGetNameAndAddress() unitTest;
+		testProperties() unitTest;
+		testUpdate() updating, unitTest;
+		testUpdateFromProxy() updating, unitTest;
+		testUpdateFromProxyWithoutTrx() updating, unitTest;
+		testUpdateWithoutTrx() updating, unitTest;
 	)
 	TestAgent completeDefinition
 	(
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:18:11:16:49.534;
 	referenceDefinitions
-		agent:                         Agent  protected, number = 1, ordinal = 1;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:18:11:19:56.575;
-		company:                       Company  protected, number = 2, ordinal = 2;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:25:09:22:16.416;
- 
+		agent:                         Agent  protected;
+		company:                       Company  protected;
 	jadeMethodDefinitions
-		setUp() updating, unitTestBefore, number = 1001;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:27:13:13:52.761;
-		tearDown() updating, unitTestAfter, number = 1002;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:19:15:23:06.424;
-		testAddCommissionRate() unitTest, number = 1006;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:25:09:13:59.624;
-		testAddCommissionRateWithExistingRate() unitTest, number = 1012;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:25:09:14:45.656;
-		testAddCommissionRateWithoutTrx() unitTest, number = 1014;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:25:09:15:33.910;
-		testAddNullCommissionRate() unitTest, number = 1013;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:24:11:41:54.507;
-		testAddRedundantCommissionRate() unitTest, number = 1016;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:25:09:16:18.006;
-		testDefaultCommissionRateForCategory() unitTest, number = 1011;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:25:09:17:34.642;
-		testDocumentSelfRTF() unitTest, number = 1007;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:18:12:03:07.549;
-		testGetAllSales() unitTest, number = 1017;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:26:13:23:45.707;
-		testGetAllSalesEmptyAgent() unitTest, number = 1018;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:27:13:14:00.270;
-		testGetCommissionRateForCategory() unitTest, number = 1008;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:25:09:18:31.765;
-		testGetDebugString() unitTest, number = 1004;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:18:12:05:37.841;
-		testGetNameString() unitTest, number = 1005;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:18:12:06:16.460;
-		testInitialProperties() unitTest, number = 1003;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:18:11:40:36.705;
-		testNullCommissionRateForCategory() unitTest, number = 1010;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:25:09:18:57.860;
-		testUpdate() unitTest, number = 1009;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:18:12:21:37.565;
-		testUpdateWithoutTrx() unitTest, number = 1015;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:18:13:29:50.463;
+		setUp() updating, unitTestBefore;
+		tearDown() updating, unitTestAfter;
+		testAddCommissionRate() unitTest;
+		testAddCommissionRateWithExistingRate() unitTest;
+		testAddCommissionRateWithoutTrx() unitTest;
+		testAddNullCommissionRate() unitTest;
+		testAddRedundantCommissionRate() unitTest;
+		testDefaultCommissionRateForCategory() unitTest;
+		testDocumentSelfRTF() unitTest;
+		testGetAllSales() unitTest;
+		testGetAllSalesEmptyAgent() unitTest;
+		testGetCommissionRateForCategory() unitTest;
+		testGetDebugString() unitTest;
+		testGetNameString() unitTest;
+		testInitialProperties() unitTest;
+		testNullCommissionRateForCategory() unitTest;
+		testUpdate() unitTest;
+		testUpdateWithoutTrx() unitTest;
 	)
 	TestClient completeDefinition
 	(
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:18:13:57:02.176;
 	referenceDefinitions
-		client:                        Client  protected, number = 1, ordinal = 1;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:18:13:57:34.298;
-		company:                       Company  protected, number = 2, ordinal = 2;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:25:09:34:47.541;
- 
+		client:                        Client  protected;
+		company:                       Company  protected;
 	jadeMethodDefinitions
-		setUp() updating, unitTestBefore, number = 1001;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:27:13:14:10.282;
-		tearDown() updating, unitTestAfter, number = 1002;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:20:15:00:20.584;
-		testCreateTender() unitTest, number = 1003;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:25:09:40:09.582;
-		testGetAllSales() unitTest, number = 1004;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:25:09:42:52.622;
-		testGetDebugString() unitTest, number = 1005;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:19:13:31:15.564;
-		testUpdate() unitTest, number = 1006;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:20:15:02:00.970;
-		testUpdateWithoutTrx() unitTest, number = 1007;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:18:14:14:20.437;
+		setUp() updating, unitTestBefore;
+		tearDown() updating, unitTestAfter;
+		testCreateTender() unitTest;
+		testGetAllSales() unitTest;
+		testGetDebugString() unitTest;
+		testUpdate() unitTest;
+		testUpdateWithoutTrx() unitTest;
 	)
 	TestCommissionRate completeDefinition
 	(
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:18:14:27:19.858;
 	referenceDefinitions
-		company:                       Company  protected, number = 2, ordinal = 2;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:24:09:19:50.679;
-		rate:                          CommissionRate  protected, number = 1, ordinal = 1;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:18:14:29:11.777;
- 
+		company:                       Company  protected;
+		rate:                          CommissionRate  protected;
 	jadeMethodDefinitions
-		setUp() updating, unitTestBefore, number = 1001;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:25:09:47:16.423;
-		tearDown() updating, unitTestAfter, number = 1002;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:19:15:23:22.118;
-		testClearAllAgents() updating, unitTest, number = 1005;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:25:09:49:38.252;
-		testGetDebugString() unitTest, number = 1004;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:18:14:41:32.408;
-		testNonUniqueRate() unitTest, number = 1010;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:24:11:40:01.046;
-		testNullCategory() unitTest, number = 1009;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:24:11:39:36.677;
-		testPercentageHigh() unitTest, number = 1008;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:25:09:50:18.032;
-		testPercentageLow() unitTest, number = 1007;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:24:11:39:28.922;
-		testUpdate() unitTest, number = 1003;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:18:14:39:14.832;
-		testUpdateWithoutTrx() unitTest, number = 1006;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:18:14:39:26.262;
+		setUp() updating, unitTestBefore;
+		tearDown() updating, unitTestAfter;
+		testClearAllAgents() updating, unitTest;
+		testGetDebugString() unitTest;
+		testNonUniqueRate() unitTest;
+		testNullCategory() unitTest;
+		testPercentageHigh() unitTest;
+		testPercentageLow() unitTest;
+		testUpdate() unitTest;
+		testUpdateWithoutTrx() unitTest;
 	)
 	TestCompany completeDefinition
 	(
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:18:14:42:25.509;
 	referenceDefinitions
-		agentAddress:                  Address  protected, number = 5, ordinal = 5;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:19:10:36:05.046;
-		clientAddress:                 Address  protected, number = 4, ordinal = 4;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:19:10:35:54.989;
-		company:                       Company  protected, number = 1, ordinal = 1;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:18:14:42:58.238;
-		testAgent:                     Agent  protected, number = 2, ordinal = 2;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:19:10:35:31;
-		testCategory:                  SaleItemCategory  protected, number = 10, ordinal = 10;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:19:10:40:29.532;
-		testClient:                    Client  protected, number = 3, ordinal = 3;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:19:10:35:39.317;
-		testCountry:                   Country  protected, number = 6, ordinal = 6;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:19:10:37:10.904;
-		testDetails:                   ItemDetails  protected, number = 11, ordinal = 11;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:19:10:42:17.669;
-		testRegion:                    Region  protected, number = 7, ordinal = 7;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:19:10:37:16.375;
-		testRetailSaleItem:            RetailSaleItem  protected, number = 8, ordinal = 8;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:19:10:37:46.418;
-		testTender:                    Tender  protected, number = 12, ordinal = 12;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:19:11:25:12.585;
-		testTenderSaleItem:            TenderSaleItem  protected, number = 9, ordinal = 9;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:19:10:38:00.990;
- 
+		agentAddress:                  Address  protected;
+		clientAddress:                 Address  protected;
+		company:                       Company  protected;
+		testAgent:                     Agent  protected;
+		testCategory:                  SaleItemCategory  protected;
+		testClient:                    Client  protected;
+		testCountry:                   Country  protected;
+		testDetails:                   ItemDetails  protected;
+		testRegion:                    Region  protected;
+		testRetailSaleItem:            RetailSaleItem  protected;
+		testTender:                    Tender  protected;
+		testTenderSaleItem:            TenderSaleItem  protected;
 	jadeMethodDefinitions
 		handler(
 			e: Exception input; 
-			errorCode: Integer output): Integer number = 1025;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:10:01:17:21:55.985;
-		setUp() updating, unitTestBefore, number = 1001;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:19:11:29:09.547;
-		tearDown() updating, unitTestAfter, number = 1002;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:19:10:08:56.037;
-		testAgentAlreadyExists() unitTest, number = 1015;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:19:11:48:29.332;
-		testClientAlreadyExists() unitTest, number = 1016;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:19:11:50:37.839;
-		testCloseTendersAtDate() serverExecution, unitTest, number = 1017;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:19:14:09:29.854;
-		testCloseTendersOutsideTrx() unitTest, number = 1024;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:10:01:17:22:20.631;
-		testCreateAddress() unitTest, number = 1004;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:19:09:22:01.066;
-		testCreateAgent() unitTest, number = 1005;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:27:13:14:14.591;
-		testCreateCategory() unitTest, number = 1006;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:19:09:26:59.639;
-		testCreateClient() unitTest, number = 1007;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:27:13:17:13.196;
-		testCreateCountry() unitTest, number = 1008;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:19:10:08:09.864;
-		testCreateItemDetails() unitTest, number = 1009;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:19:10:56:23.816;
-		testCreateRetailSale() unitTest, number = 1010;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:19:10:47:54.798;
-		testCreateRetailSaleItem() unitTest, number = 1011;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:19:13:25:56.233;
-		testCreateTenderSale() unitTest, number = 1013;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:19:11:34:35.917;
-		testCreateTenderSaleItem() unitTest, number = 1014;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:19:11:42:10.006;
-		testForTwoSingletons() unitTest, number = 1012;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:24:11:39:22.022;
-		testGetAllSales() unitTest, number = 1018;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:19:13:09:50.682;
-		testGetDebugString() unitTest, number = 1019;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:19:13:31:41.036;
-		testGetNextCode() unitTest, number = 1020;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:27:13:17:21.308;
-		testGetNextCodeOverMax() unitTest, number = 1023;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:27:13:15:28.677;
-		testGetNumOfLocations() unitTest, number = 1021;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:19:13:16:46.078;
-		testGetRegion() unitTest, number = 1022;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:24:09:43:31.506;
-		testInitialProperties() unitTest, number = 1003;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:18:14:56:45.844;
+			errorCode: Integer output): Integer;
+		setUp() updating, unitTestBefore;
+		tearDown() updating, unitTestAfter;
+		testAgentAlreadyExists() unitTest;
+		testClientAlreadyExists() unitTest;
+		testCloseTendersAtDate() serverExecution, unitTest;
+		testCloseTendersOutsideTrx() unitTest;
+		testCreateAddress() unitTest;
+		testCreateAgent() unitTest;
+		testCreateCategory() unitTest;
+		testCreateClient() unitTest;
+		testCreateCountry() unitTest;
+		testCreateItemDetails() unitTest;
+		testCreateRetailSale() unitTest;
+		testCreateRetailSaleItem() unitTest;
+		testCreateTenderSale() unitTest;
+		testCreateTenderSaleItem() unitTest;
+		testForTwoSingletons() unitTest;
+		testGetAllSales() unitTest;
+		testGetDebugString() unitTest;
+		testGetNextCode() unitTest;
+		testGetNextCodeOverMax() unitTest;
+		testGetNumOfLocations() unitTest;
+		testGetRegion() unitTest;
+		testInitialProperties() unitTest;
 	)
 	TestCountry completeDefinition
 	(
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:19:14:14:31.724;
 	referenceDefinitions
-		company:                       Company  protected, number = 2, ordinal = 2;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:24:09:39:49.765;
-		country:                       Country  protected, number = 1, ordinal = 1;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:19:14:14:41.695;
- 
+		company:                       Company  protected;
+		country:                       Country  protected;
 	jadeMethodDefinitions
-		setUp() updating, unitTestBefore, number = 1001;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:24:09:39:57.160;
-		tearDown() updating, unitTestAfter, number = 1002;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:19:14:34:04.194;
-		testCreateRegion() unitTest, number = 1003;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:19:14:33:43.981;
-		testDuplicateCountry() updating, unitTest, number = 1009;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:24:11:39:06.004;
-		testGetDebugString() unitTest, number = 1004;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:19:14:36:08.976;
-		testInvalidCompany() unitTest, number = 1008;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:24:11:38:58.625;
-		testInvalidName() unitTest, number = 1007;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:24:11:38:55.870;
-		testUpdate() unitTest, number = 1005;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:19:14:52:00.255;
-		testUpdateCountryToSameName() updating, unitTest, number = 1010;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:24:09:42:34.847;
-		testUpdateOutsideTrx() unitTest, number = 1006;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:19:14:52:28.454;
+		setUp() updating, unitTestBefore;
+		tearDown() updating, unitTestAfter;
+		testCreateRegion() unitTest;
+		testDuplicateCountry() updating, unitTest;
+		testGetDebugString() unitTest;
+		testInvalidCompany() unitTest;
+		testInvalidName() unitTest;
+		testUpdate() unitTest;
+		testUpdateCountryToSameName() updating, unitTest;
+		testUpdateOutsideTrx() unitTest;
 	)
 	TestItemDetails completeDefinition
 	(
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:24:09:30:07.335;
 	referenceDefinitions
-		details:                       ItemDetails  protected, number = 1, ordinal = 1;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:19:13:37:01.238;
- 
+		details:                       ItemDetails  protected;
 	jadeMethodDefinitions
-		setUp() updating, unitTestBefore, number = 1001;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:19:13:45:22.867;
-		tearDown() updating, unitTestAfter, number = 1002;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:19:15:23:35.826;
-		testGetCodeNumber() unitTest, number = 1003;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:19:13:45:13.333;
-		testGetCodePrefix() unitTest, number = 1004;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:19:13:45:18.213;
+		setUp() updating, unitTestBefore;
+		tearDown() updating, unitTestAfter;
+		testGetCodeNumber() unitTest;
+		testGetCodePrefix() unitTest;
 	)
 	TestModelApp completeDefinition
 	(
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:25:12:25:04.299;
- 
 	jadeMethodDefinitions
-		setUp() unitTestBefore, number = 1001;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:25:13:12:56.710;
-		tearDown() unitTestAfter, number = 1002;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:25:13:12:42.856;
-		testGetErrorString() unitTest, number = 1004;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:25:12:29:04.438;
-		testSetCompany() unitTest, number = 1003;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:25:13:05:28.403;
+		setUp() unitTestBefore;
+		tearDown() unitTestAfter;
+		testGetErrorString() unitTest;
+		testSetCompany() unitTest;
 	)
 	TestOrderProxy completeDefinition
 	(
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:25:10:29:39.187;
 	referenceDefinitions
-		agent:                         Agent  protected, number = 3, ordinal = 3;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:19:15:44:27.513;
-		category:                      SaleItemCategory  protected, number = 6, ordinal = 6;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:19:15:53:26.016;
-		client:                        Client  protected, number = 1, ordinal = 1;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:19:15:41:43.836;
-		company:                       Company  protected, number = 4, ordinal = 4;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:19:15:44:33.071;
-		country:                       Country  protected, number = 7, ordinal = 7;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:19:15:54:23.085;
-		region:                        Region  protected, number = 5, ordinal = 5;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:19:15:53:02.417;
-		retailItem:                    RetailSaleItem  protected, number = 8, ordinal = 8;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:19:16:02:25.039;
-		tenderItem:                    TenderSaleItem  protected, number = 9, ordinal = 9;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:19:16:02:42.277;
- 
+		agent:                         Agent  protected;
+		category:                      SaleItemCategory  protected;
+		client:                        Client  protected;
+		company:                       Company  protected;
+		country:                       Country  protected;
+		region:                        Region  protected;
+		retailItem:                    RetailSaleItem  protected;
+		tenderItem:                    TenderSaleItem  protected;
 	jadeMethodDefinitions
-		build() updating, number = 1002;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:25:13:08:28.787;
-		setUp() updating, unitTestBefore, number = 1003;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:25:10:49:12.351;
-		tearDown() updating, unitTestAfter, number = 1004;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:25:10:48:26.213;
-		testAction() updating, unitTest, number = 1001;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:25:10:49:43.439;
+		build() updating;
+		setUp() updating, unitTestBefore;
+		tearDown() updating, unitTestAfter;
+		testAction() updating, unitTest;
 	)
 	TestRetailOrderProxy completeDefinition
 	(
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:24:09:49:22.580;
 	referenceDefinitions
-		retailProxy:                   RetailOrderProxy  protected, number = 1, ordinal = 1;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:25:10:28:51.496;
- 
+		retailProxy:                   RetailOrderProxy  protected;
 	jadeMethodDefinitions
-		setUp() updating, unitTestBefore, number = 1001;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:27:13:15:10.765;
-		tearDown() updating, unitTestAfter, number = 1002;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:19:16:07:37.100;
-		testAction() updating, unitTest, number = 1003;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:25:10:28:51.478;
-		testNullClient() unitTest, number = 1004;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:24:11:38:17.282;
+		setUp() updating, unitTestBefore;
+		tearDown() updating, unitTestAfter;
+		testAction() updating, unitTest;
+		testNullClient() unitTest;
 	)
 	TestTenderOrderProxy completeDefinition
 	(
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:19:15:39:57.578;
 	referenceDefinitions
-		tenderProxy:                   TenderOrderProxy  protected, number = 1, ordinal = 1;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:25:10:29:05.950;
- 
+		tenderProxy:                   TenderOrderProxy  protected;
 	jadeMethodDefinitions
-		setUp() updating, unitTestBefore, number = 1001;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:27:13:18:05.448;
-		tearDown() updating, unitTestAfter, number = 1002;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:20:09:11:22.252;
-		testAction() updating, unitTest, number = 1003;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:25:10:29:05.940;
-		testNullClient() unitTest, number = 1004;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:24:11:37:58.495;
+		setUp() updating, unitTestBefore;
+		tearDown() updating, unitTestAfter;
+		testAction() updating, unitTest;
+		testNullClient() unitTest;
 	)
 	TestRegion completeDefinition
 	(
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:19:14:54:08.107;
 	referenceDefinitions
-		company:                       Company  protected, number = 2, ordinal = 2;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:24:09:54:05.996;
-		region:                        Region  protected, number = 1, ordinal = 1;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:19:14:54:16.711;
- 
+		company:                       Company  protected;
+		region:                        Region  protected;
 	jadeMethodDefinitions
-		setUp() updating, unitTestBefore, number = 1001;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:24:09:54:25.189;
-		tearDown() updating, unitTestAfter, number = 1002;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:19:15:23:39.102;
-		testDocumentSelfRTF() unitTest, number = 1003;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:19:15:13:13.575;
-		testGetDebugString() unitTest, number = 1005;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:19:15:20:37.051;
-		testGetNames() unitTest, number = 1004;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:25:09:51:51.026;
-		testInvalidCountry() updating, unitTest, number = 1008;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:24:11:42:41.147;
-		testInvalidName() unitTest, number = 1007;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:24:11:42:49.071;
-		testUniqueRegion() unitTest, number = 1009;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:24:11:42:54.907;
-		testUpdate() unitTest, number = 1006;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:24:10:01:32.820;
-		testUpdateWithoutTrx() unitTest, number = 1010;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:24:10:02:01.077;
+		setUp() updating, unitTestBefore;
+		tearDown() updating, unitTestAfter;
+		testDocumentSelfRTF() unitTest;
+		testGetDebugString() unitTest;
+		testGetNames() unitTest;
+		testInvalidCountry() updating, unitTest;
+		testInvalidName() unitTest;
+		testUniqueRegion() unitTest;
+		testUpdate() unitTest;
+		testUpdateWithoutTrx() unitTest;
 	)
 	TestSale completeDefinition
 	(
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:20:09:03:14.796;
 	attributeDefinitions
-		timestamp:                     TimeStamp protected, number = 10, ordinal = 10;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:20:10:09:22.887;
+		timestamp:                     TimeStamp protected;
 	referenceDefinitions
-		agent:                         Agent  protected, number = 1, ordinal = 1;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:20:09:17:37.074;
-		category:                      SaleItemCategory  protected, number = 2, ordinal = 2;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:20:09:17:44.297;
-		client:                        Client  protected, number = 3, ordinal = 3;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:20:09:17:48.480;
-		company:                       Company  protected, number = 4, ordinal = 4;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:20:09:17:52.833;
-		country:                       Country  protected, number = 5, ordinal = 5;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:20:09:17:58.432;
-		details:                       ItemDetails  protected, number = 11, ordinal = 11;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:24:10:17:33.607;
-		region:                        Region  protected, number = 6, ordinal = 6;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:20:09:18:02.272;
-		retailItem:                    RetailSaleItem  protected, number = 7, ordinal = 7;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:20:09:18:13.368;
-		tender:                        Tender  protected, number = 9, ordinal = 9;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:20:09:18:34.268;
-		tenderItem:                    TenderSaleItem  protected, number = 8, ordinal = 8;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:20:09:18:29.808;
- 
+		agent:                         Agent  protected;
+		category:                      SaleItemCategory  protected;
+		client:                        Client  protected;
+		company:                       Company  protected;
+		country:                       Country  protected;
+		details:                       ItemDetails  protected;
+		region:                        Region  protected;
+		retailItem:                    RetailSaleItem  protected;
+		tender:                        Tender  protected;
+		tenderItem:                    TenderSaleItem  protected;
 	jadeMethodDefinitions
-		build() updating, number = 1001;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:24:10:17:43.721;
-		setUp() updating, unitTestBefore, number = 1003;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:25:11:57:26.180;
-		tearDown() updating, unitTestAfter, number = 1004;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:25:11:53:41.412;
-		testGetDate() unitTest, number = 1002;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:25:13:14:25.374;
+		build() updating;
+		setUp() updating, unitTestBefore;
+		tearDown() updating, unitTestAfter;
+		testGetDate() unitTest;
 	)
 	TestRetailSale completeDefinition
 	(
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:20:09:34:35.193;
 	referenceDefinitions
-		sale:                          RetailSale  protected, number = 1, ordinal = 1;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:20:09:24:53.916;
- 
+		sale:                          RetailSale  protected;
 	jadeMethodDefinitions
-		setUp() updating, unitTestBefore, number = 1001;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:24:10:03:24.219;
-		tearDown() updating, unitTestAfter, number = 1002;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:20:09:33:29.913;
-		testAgentCommWithoutTrx() unitTest, number = 1013;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:24:10:40:13.953;
-		testAgentCommission() unitTest, number = 1005;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:20:09:51:45.231;
-		testAlreadySold() unitTest, number = 1011;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:24:11:44:03.428;
-		testCreateWithoutTrx() unitTest, number = 1010;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:24:10:12:04.810;
-		testGetDate() unitTest, number = 1003;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:20:09:54:18.206;
-		testGetDebugString() unitTest, number = 1004;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:20:10:29:59.549;
-		testInvalidClient() unitTest, number = 1007;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:24:11:45:06.483;
-		testInvalidCompany() unitTest, number = 1012;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:24:11:43:35.981;
-		testInvalidItem() unitTest, number = 1006;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:24:11:43:42.600;
-		testInvalidPrice() unitTest, number = 1008;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:24:11:43:47.043;
-		testInvalidTime() unitTest, number = 1009;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:24:11:43:51.528;
+		setUp() updating, unitTestBefore;
+		tearDown() updating, unitTestAfter;
+		testAgentCommWithoutTrx() unitTest;
+		testAgentCommission() unitTest;
+		testAlreadySold() unitTest;
+		testCreateWithoutTrx() unitTest;
+		testGetDate() unitTest;
+		testGetDebugString() unitTest;
+		testInvalidClient() unitTest;
+		testInvalidCompany() unitTest;
+		testInvalidItem() unitTest;
+		testInvalidPrice() unitTest;
+		testInvalidTime() unitTest;
 	)
 	TestTenderSale completeDefinition
 	(
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:20:09:03:36.983;
 	referenceDefinitions
-		sale:                          TenderSale  protected, number = 1, ordinal = 1;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:20:10:07:52.560;
- 
+		sale:                          TenderSale  protected;
 	jadeMethodDefinitions
-		setUp() updating, unitTestBefore, number = 1001;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:20:10:14:12.292;
-		tearDown() updating, unitTestAfter, number = 1002;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:20:10:54:32.432;
-		testCreateOutsideTrx() unitTest, number = 1008;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:24:11:41:11.089;
-		testGetDate() unitTest, number = 1003;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:20:10:14:02.406;
-		testGetDebugString() unitTest, number = 1005;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:20:10:31:24.489;
-		testGetTime() unitTest, number = 1004;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:20:10:54:25.657;
-		testInvalidItem() unitTest, number = 1006;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:24:11:47:37.458;
-		testInvalidTender() unitTest, number = 1007;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:24:11:47:40.616;
+		setUp() updating, unitTestBefore;
+		tearDown() updating, unitTestAfter;
+		testCreateOutsideTrx() unitTest;
+		testGetDate() unitTest;
+		testGetDebugString() unitTest;
+		testGetTime() unitTest;
+		testInvalidItem() unitTest;
+		testInvalidTender() unitTest;
 	)
 	TestSaleItem completeDefinition
 	(
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:25:12:13:57.776;
 	attributeDefinitions
-		timestamp:                     TimeStamp protected, number = 1, ordinal = 1;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:20:14:01:43.318;
+		timestamp:                     TimeStamp protected;
 	referenceDefinitions
-		agent:                         Agent  protected, number = 3, ordinal = 3;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:20:14:02:02.056;
-		allItems:                      SaleItemByCodeDict  implicitMemberInverse, protected, subId = 1, number = 9, ordinal = 9;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:25:12:10:53.832;
-		category:                      SaleItemCategory  protected, number = 7, ordinal = 7;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:20:14:02:34.162;
-		client:                        Client  protected, number = 4, ordinal = 4;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:20:14:02:07.022;
-		company:                       Company  protected, number = 2, ordinal = 2;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:20:14:01:51.441;
-		country:                       Country  protected, number = 5, ordinal = 5;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:20:14:02:25.095;
-		region:                        Region  protected, number = 6, ordinal = 6;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:20:14:02:28.438;
- 
+		agent:                         Agent  protected;
+		allItems:                      SaleItemByCodeDict  implicitMemberInverse, protected;
+		category:                      SaleItemCategory  protected;
+		client:                        Client  protected;
+		company:                       Company  protected;
+		country:                       Country  protected;
+		region:                        Region  protected;
 	jadeMethodDefinitions
-		build() updating, number = 1001;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:27:13:17:25.667;
-		setUp() updating, unitTestBefore, number = 1002;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:27:13:17:40.304;
-		tearDown() updating, unitTestAfter, number = 1003;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:25:12:16:23.471;
-		testGetPrice() unitTest, number = 1004;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:25:13:14:48.292;
-		testGetTypeString() unitTest, number = 1005;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:25:13:14:53.186;
+		build() updating;
+		setUp() updating, unitTestBefore;
+		tearDown() updating, unitTestAfter;
+		testGetPrice() unitTest;
+		testGetTypeString() unitTest;
 	)
 	TestRetailSaleItem completeDefinition
 	(
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:25:12:07:44.768;
 	referenceDefinitions
-		item:                          RetailSaleItem  protected, number = 1, ordinal = 2;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:25:12:14:05.665;
- 
+		item:                          RetailSaleItem  protected;
 	jadeMethodDefinitions
-		setUp() updating, unitTestBefore, number = 1001;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:20:14:56:54.880;
-		tearDown() updating, unitTestAfter, number = 1002;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:20:14:15:38.885;
-		testCreateWithoutCode() updating, unitTest, number = 1014;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:24:10:53:49.263;
-		testGetCode() unitTest, number = 1008;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:20:14:16:23.753;
-		testGetCodeNumber() unitTest, number = 1009;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:20:14:17:49.591;
-		testGetCodePrefix() unitTest, number = 1010;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:20:14:18:09.616;
-		testGetDebugString() unitTest, number = 1003;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:20:14:28:43.804;
-		testGetPrice() unitTest, number = 1004;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:20:14:29:56.994;
-		testGetSale() unitTest, number = 1011;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:20:14:33:47.892;
-		testGetShortDescription() unitTest, number = 1012;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:20:14:34:30.053;
-		testGetTypeString() unitTest, number = 1005;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:20:14:35:10.558;
-		testUpdate() updating, unitTest, number = 1006;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:20:14:57:24.866;
-		testUpdateToExisting() unitTest, number = 1013;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:24:11:45:23.102;
-		testUpdateWithoutTrx() unitTest, number = 1007;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:20:14:59:29.324;
+		setUp() updating, unitTestBefore;
+		tearDown() updating, unitTestAfter;
+		testCreateWithoutCode() updating, unitTest;
+		testGetCode() unitTest;
+		testGetCodeNumber() unitTest;
+		testGetCodePrefix() unitTest;
+		testGetDebugString() unitTest;
+		testGetPrice() unitTest;
+		testGetSale() unitTest;
+		testGetShortDescription() unitTest;
+		testGetTypeString() unitTest;
+		testUpdate() updating, unitTest;
+		testUpdateToExisting() unitTest;
+		testUpdateWithoutTrx() unitTest;
 	)
 	TestTenderSaleItem completeDefinition
 	(
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:25:12:07:54.003;
 	referenceDefinitions
-		item:                          TenderSaleItem  protected, number = 1, ordinal = 2;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:25:12:14:16.603;
- 
+		item:                          TenderSaleItem  protected;
 	jadeMethodDefinitions
-		setUp() updating, unitTestBefore, number = 1004;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:25:10:04:54.233;
-		tearDown() unitTestAfter, number = 1005;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:25:10:05:36.960;
-		testGetDebugString() unitTest, number = 1001;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:25:10:10:08.157;
-		testGetPrice() unitTest, number = 1002;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:25:10:10:45.693;
-		testGetTypeString() unitTest, number = 1003;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:25:10:11:08.196;
-		testUpdate() unitTest, number = 1006;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:25:10:18:44.120;
-		testUpdateToExisting() unitTest, number = 1008;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:26:13:30:00.810;
-		testUpdateWithoutTrx() unitTest, number = 1007;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:25:10:19:24.356;
+		setUp() updating, unitTestBefore;
+		tearDown() unitTestAfter;
+		testGetDebugString() unitTest;
+		testGetPrice() unitTest;
+		testGetTypeString() unitTest;
+		testUpdate() unitTest;
+		testUpdateToExisting() unitTest;
+		testUpdateWithoutTrx() unitTest;
 	)
 	TestSaleItemCategory completeDefinition
 	(
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:20:10:56:03.621;
 	referenceDefinitions
-		category:                      SaleItemCategory  protected, number = 1, ordinal = 1;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:20:10:57:17.727;
-		company:                       Company  protected, number = 2, ordinal = 2;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:24:10:55:51.430;
- 
+		category:                      SaleItemCategory  protected;
+		company:                       Company  protected;
 	jadeMethodDefinitions
-		setUp() updating, unitTestBefore, number = 1001;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:24:10:56:35.106;
-		tearDown() updating, unitTestAfter, number = 1002;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:20:12:28:51.342;
-		testAlreadyExists() unitTest, number = 1010;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:24:11:46:20.799;
-		testCreateCommissionRate() unitTest, number = 1003;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:20:12:57:30.065;
-		testGetDebugString() unitTest, number = 1004;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:20:13:00:37.514;
-		testInvalidCompany() unitTest, number = 1009;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:24:11:46:12.203;
-		testInvalidDescription() unitTest, number = 1008;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:24:11:46:02.340;
-		testInvalidName() unitTest, number = 1007;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:24:11:45:56.932;
-		testUpdate() unitTest, number = 1005;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:20:13:03:41.548;
-		testUpdateWithoutTrx() unitTest, number = 1006;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:20:13:04:06.257;
+		setUp() updating, unitTestBefore;
+		tearDown() updating, unitTestAfter;
+		testAlreadyExists() unitTest;
+		testCreateCommissionRate() unitTest;
+		testGetDebugString() unitTest;
+		testInvalidCompany() unitTest;
+		testInvalidDescription() unitTest;
+		testInvalidName() unitTest;
+		testUpdate() unitTest;
+		testUpdateWithoutTrx() unitTest;
 	)
 	TestTender completeDefinition
 	(
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:20:13:22:08.092;
 	attributeDefinitions
-		timestamp:                     TimeStamp protected, number = 2, ordinal = 2;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:20:13:36:20.674;
+		timestamp:                     TimeStamp protected;
 	referenceDefinitions
-		company:                       Company  protected, number = 3, ordinal = 3;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:24:11:08:49.985;
-		tender:                        Tender  protected, number = 1, ordinal = 1;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:20:13:04:33.038;
- 
+		company:                       Company  protected;
+		tender:                        Tender  protected;
 	jadeMethodDefinitions
-		setUp() updating, unitTestBefore, number = 1001;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:27:13:17:33.372;
-		tearDown() updating, unitTestAfter, number = 1002;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:20:13:24:36.838;
-		testAlreadyExists() unitTest, number = 1013;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:24:11:46:37.382;
-		testGetDate() unitTest, number = 1003;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:20:13:24:11.250;
-		testGetDebugString() unitTest, number = 1004;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:20:13:56:18.036;
-		testGetTime() unitTest, number = 1005;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:20:13:39:20.971;
-		testInvalidOffer() unitTest, number = 1010;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:24:11:47:15.753;
-		testInvalidTimestamp() unitTest, number = 1011;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:24:11:46:52.812;
-		testNullClient() unitTest, number = 1008;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:24:11:46:57.950;
-		testNullItem() unitTest, number = 1009;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:24:11:47:01.408;
-		testOfferTooLow() unitTest, number = 1012;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:24:11:47:05.464;
-		testUpdate() unitTest, number = 1006;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:20:13:46:37.767;
-		testUpdateWithoutTrx() unitTest, number = 1007;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:20:13:47:05.048;
+		setUp() updating, unitTestBefore;
+		tearDown() updating, unitTestAfter;
+		testAlreadyExists() unitTest;
+		testGetDate() unitTest;
+		testGetDebugString() unitTest;
+		testGetTime() unitTest;
+		testInvalidOffer() unitTest;
+		testInvalidTimestamp() unitTest;
+		testNullClient() unitTest;
+		testNullItem() unitTest;
+		testOfferTooLow() unitTest;
+		testUpdate() unitTest;
+		testUpdateWithoutTrx() unitTest;
 	)
 	JadeWebService completeDefinition
 	(
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
 	webServicesClassProperties
 	(
 		wsdl = ``;
@@ -1781,7 +1083,6 @@ endif;`
 	)
 	JadeWebServiceProvider completeDefinition
 	(
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
 	webServicesClassProperties
 	(
 		additionalInfo = ``;
@@ -1791,29 +1092,18 @@ endif;`
 	)
 	ModelEntity completeDefinition
 	(
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:27:09:36:42.199;
 	)
 	Address completeDefinition
 	(
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:27:09:38:26.798;
 	attributeDefinitions
-		city:                          String[51] readonly, number = 2, ordinal = 2;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:12:10:28:54.153;
-		country:                       String[51] readonly, number = 3, ordinal = 3;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:12:10:29:02.730;
-		email:                         String[61] readonly, number = 4, ordinal = 4;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:08:29:15:36:40.277;
-		fax:                           String[26] readonly, number = 5, ordinal = 5;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:08:29:15:37:02.421;
-		name:                          String[81] readonly, number = 6, ordinal = 6;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:08:29:15:37:46.117;
-		phone:                         String[26] readonly, number = 7, ordinal = 7;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:08:29:15:38:10.381;
-		street:                        String[51] readonly, number = 1, ordinal = 1;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:12:10:28:42.124;
-		webSite:                       String[61] readonly, number = 8, ordinal = 8;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:08:29:15:38:21.989;
- 
+		city:                          String[51] readonly;
+		country:                       String[51] readonly;
+		email:                         String[61] readonly;
+		fax:                           String[26] readonly;
+		name:                          String[81] readonly;
+		phone:                         String[26] readonly;
+		street:                        String[51] readonly;
+		webSite:                       String[61] readonly;
 	jadeMethodDefinitions
 		create(
 			name: String; 
@@ -1823,12 +1113,9 @@ endif;`
 			email: String; 
 			fax: String; 
 			phone: String; 
-			website: String) updating, number = 1001;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:13:10:37:34.580;
-		getDebugString(): String number = 1002;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:17:09:30:43.819;
-		getNameAndAddress(): String number = 1003;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:12:10:34:30.361;
+			website: String) updating;
+		getDebugString(): String;
+		getNameAndAddress(): String;
 		update(
 			name: String; 
 			street: String; 
@@ -1837,10 +1124,8 @@ endif;`
 			email: String; 
 			fax: String; 
 			phone: String; 
-			website: String) updating, number = 1004;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:12:13:42:27.013;
-		updateFromProxy(proxyAddress: Address) updating, number = 1006;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:18:10:51:01.813;
+			website: String) updating;
+		updateFromProxy(proxyAddress: Address) updating;
 		zSetProps(
 			name: String; 
 			street: String; 
@@ -1849,181 +1134,125 @@ endif;`
 			email: String; 
 			fax: String; 
 			phone: String; 
-			website: String) updating, protected, number = 1005;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:12:14:38:47.961;
+			website: String) updating, protected;
 	implementInterfaces
 		IDebuggable
 		(
-		getDebugString is getDebugString;
+			getDebugString is getDebugString;
 		)
 	)
 	Agent completeDefinition
 	(
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:27:09:39:03.736;
 	attributeDefinitions
-		name:                          String[81] readonly, number = 5, ordinal = 5;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:05:13:44:01.481;
+		name:                          String[81] readonly;
 	referenceDefinitions
-		allCommissionRates:            CommissionRateByCategoryDict   explicitInverse, readonly, subId = 2, number = 1, ordinal = 1;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
-		allSaleItems:                  SaleItemByCategoryCodeDict   explicitInverse, readonly, subId = 1, number = 2, ordinal = 2;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
-		allSoldSaleItems:              SaleItemByCategoryCodeDict  where SaleItem::isSold explicitInverse, readonly, subId = 3, number = 6, ordinal = 6;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:13:13:17:24.262;
-		myAddress:                     Address  readonly, number = 4, ordinal = 4;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:10:11:34:41.194;
-		myCompany:                     Company   explicitEmbeddedInverse, readonly, number = 3, ordinal = 3;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
- 
+		allCommissionRates:            CommissionRateByCategoryDict   explicitInverse, readonly;
+		allSaleItems:                  SaleItemByCategoryCodeDict   explicitInverse, readonly;
+		allSoldSaleItems:              SaleItemByCategoryCodeDict  where SaleItem::isSold explicitInverse, readonly;
+		myAddress:                     Address  readonly;
+		myCompany:                     Company   explicitEmbeddedInverse, readonly;
 	jadeMethodDefinitions
-		addCommissionRate(rate: CommissionRate) number = 1001;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:12:14:43:38.286;
+		addCommissionRate(rate: CommissionRate);
 		create(
 			address: Address; 
-			company: Company) updating, number = 1006;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:12:13:53:41.146;
-		documentSelfRTF(): String number = 1012;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:12:10:47:18.854;
-		getAllSales(saleSet: SaleSet input) number = 1003;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:26:13:24:17.016;
-		getCommissionRateForCategory(categoryName: String): CommissionRate number = 1004;
-		setModifiedTimeStamp "cnwta3" "16.0.02" 2018:08:27:13:12:15.390;
-		getDebugString(): String number = 1011;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:18:14:15:20.614;
-		getNameString(): String number = 1010;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:12:10:52:42.408;
-		update(address: Address) updating, number = 1005;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:18:12:21:06.722;
-		zCollAddExceptionHandler(exObj: Exception): Integer protected, number = 1002;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:17:09:14:05.478;
+			company: Company) updating;
+		documentSelfRTF(): String;
+		getAllSales(saleSet: SaleSet input);
+		getCommissionRateForCategory(categoryName: String): CommissionRate;
+		getDebugString(): String;
+		getNameString(): String;
+		update(address: Address) updating;
+		zCollAddExceptionHandler(exObj: Exception): Integer protected;
 	implementInterfaces
 		DocumentorPackage::DocumentInterface
 		(
-		documentSelf is getDebugString;
-		documentSelfRTF is documentSelfRTF;
-		listEntryDescription is getNameString;
+			documentSelf is getDebugString;
+			documentSelfRTF is documentSelfRTF;
+			listEntryDescription is getNameString;
 		)
 		IDebuggable
 		(
-		getDebugString is getDebugString;
+			getDebugString is getDebugString;
 		)
 		ISearchable
 		(
-		getAllSales is getAllSales;
+			getAllSales is getAllSales;
 		)
 	)
 	Client completeDefinition
 	(
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:27:09:38:19.187;
 	attributeDefinitions
-		name:                          String[81] readonly, number = 6, ordinal = 6;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:05:13:43:55.639;
+		name:                          String[81] readonly;
 	referenceDefinitions
-		allRetailSales:                RetailSaleByTimeItemDict   explicitInverse, readonly, subId = 4, number = 1, ordinal = 1;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
-		allTenderSales:                TenderSaleByTimeItemDict   explicitInverse, readonly, subId = 3, number = 2, ordinal = 2;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
-		allTenders:                    TenderByItemTimeOfferDict   explicitInverse, readonly, subId = 1, number = 3, ordinal = 3;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
-		myAddress:                     Address  readonly, number = 5, ordinal = 5;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:10:11:34:57.534;
-		myCompany:                     Company   explicitEmbeddedInverse, readonly, number = 4, ordinal = 4;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
- 
+		allRetailSales:                RetailSaleByTimeItemDict   explicitInverse, readonly;
+		allTenderSales:                TenderSaleByTimeItemDict   explicitInverse, readonly;
+		allTenders:                    TenderByItemTimeOfferDict   explicitInverse, readonly;
+		myAddress:                     Address  readonly;
+		myCompany:                     Company   explicitEmbeddedInverse, readonly;
 	jadeMethodDefinitions
 		create(
 			address: Address; 
-			company: Company) updating, number = 1005;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:12:13:54:21.179;
+			company: Company) updating;
 		createTender(
 			offer: Decimal; 
 			timeStamp: TimeStamp; 
-			tenderSaleItem: TenderSaleItem): Tender number = 1002;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:12:09:34:45.269;
-		getAllSales(saleSet: SaleSet input) number = 1003;
-		setModifiedTimeStamp "cnwta3" "16.0.02" 2018:08:27:13:35:07.980;
-		getDebugString(): String number = 1001;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:18:14:19:14.948;
-		update(address: Address) updating, number = 1004;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:20:15:01:48.520;
+			tenderSaleItem: TenderSaleItem): Tender;
+		getAllSales(saleSet: SaleSet input);
+		getDebugString(): String;
+		update(address: Address) updating;
 	implementInterfaces
 		IDebuggable
 		(
-		getDebugString is getDebugString;
+			getDebugString is getDebugString;
 		)
 		ISearchable
 		(
-		getAllSales is getAllSales;
+			getAllSales is getAllSales;
 		)
 	)
 	CommissionRate completeDefinition
 	(
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:27:09:38:57.048;
 	attributeDefinitions
-		percentage:                    Decimal[5,2] readonly, number = 1, ordinal = 1;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
+		percentage:                    Decimal[5,2] readonly;
 	referenceDefinitions
-		allAgents:                     AgentByNameDict   explicitInverse, readonly, subId = 1, number = 2, ordinal = 2;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
-		mySaleItemCategory:            SaleItemCategory   explicitEmbeddedInverse, readonly, number = 3, ordinal = 3;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
- 
+		allAgents:                     AgentByNameDict   explicitInverse, readonly;
+		mySaleItemCategory:            SaleItemCategory   explicitEmbeddedInverse, readonly;
 	jadeMethodDefinitions
-		clearAllAgents() number = 1001;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:12:14:00:45.010;
+		clearAllAgents();
 		create(
 			saleItemCategory: SaleItemCategory; 
-			percentage: Decimal) updating, number = 1006;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:27:13:12:06.332;
-		getDebugString(): String number = 1003;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:17:09:30:53.204;
-		update(percentage: Decimal) updating, number = 1004;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:12:15:56:00.328;
+			percentage: Decimal) updating;
+		getDebugString(): String;
+		update(percentage: Decimal) updating;
 		zSetProps(
 			percentage: Decimal; 
-			saleItemCategory: SaleItemCategory) updating, number = 1002;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:24:09:44:36.636;
+			saleItemCategory: SaleItemCategory) updating;
 	implementInterfaces
 		IDebuggable
 		(
-		getDebugString is getDebugString;
+			getDebugString is getDebugString;
 		)
 	)
 	Company completeDefinition
 	(
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:27:09:38:08.271;
 	attributeDefinitions
-		name:                          String[81] readonly, number = 9, ordinal = 9;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:05:13:47:49.169;
+		name:                          String[81] readonly;
 	referenceDefinitions
-		allAgents:                     AgentByNameDict   explicitInverse, readonly, subId = 1, number = 1, ordinal = 1;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
-		allClients:                    ClientByNameDict   explicitInverse, readonly, subId = 4, number = 2, ordinal = 2;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
-		allCountries:                  CountryByNameDict   explicitInverse, readonly, subId = 2, number = 3, ordinal = 3;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
-		allSaleItemCategories:         SaleItemCategoryByNameDict   explicitInverse, readonly, subId = 3, number = 4, ordinal = 4;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
-		allSaleItems:                  SaleItemByCodeDict   explicitInverse, readonly, subId = 5, number = 5, ordinal = 5;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
-		allSalesByItem:                SaleByItemDict   explicitInverse, readonly, subId = 6, number = 6, ordinal = 6;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
-		allTenderSaleItems:            TenderItemBySaleDateCodeDict   explicitInverse, readonly, subId = 9, number = 7, ordinal = 7;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
-		myAddress:                     Address  readonly, number = 8, ordinal = 8;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:10:11:34:06.006;
- 
+		allAgents:                     AgentByNameDict   explicitInverse, readonly;
+		allClients:                    ClientByNameDict   explicitInverse, readonly;
+		allCountries:                  CountryByNameDict   explicitInverse, readonly;
+		allSaleItemCategories:         SaleItemCategoryByNameDict   explicitInverse, readonly;
+		allSaleItems:                  SaleItemByCodeDict   explicitInverse, readonly;
+		allSalesByItem:                SaleByItemDict   explicitInverse, readonly;
+		allTenderSaleItems:            TenderItemBySaleDateCodeDict   explicitInverse, readonly;
+		myAddress:                     Address  readonly;
 	jadeMethodDefinitions
-		agentAlreadyExists(agentName: String): Boolean number = 1016;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:12:11:19:09.314;
-		clientAlreadyExists(clientName: String): Boolean number = 1017;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:12:11:19:33.230;
+		agentAlreadyExists(agentName: String): Boolean;
+		clientAlreadyExists(clientName: String): Boolean;
 		closeTendersAtDate(
 			date: Date; 
-			numClosed: Integer output) serverExecution, number = 1001;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:19:14:09:29.001;
-		create() updating, number = 1002;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:27:13:12:21.579;
+			numClosed: Integer output) serverExecution;
+		create() updating;
 		createAddress(
 			name: String; 
 			street: String; 
@@ -2032,18 +1261,13 @@ endif;`
 			email: String; 
 			fax: String; 
 			phone: String; 
-			webSite: String): Address number = 1026;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:19:09:21:11.123;
-		createAgent(address: Address): Agent number = 1003;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:12:11:23:28.268;
+			webSite: String): Address;
+		createAgent(address: Address): Agent;
 		createCategory(
 			categoryName: String; 
-			categoryDescription: String): SaleItemCategory number = 1004;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:12:11:23:32.124;
-		createClient(address: Address): Client number = 1005;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:12:11:23:34.866;
-		createCountry(countryName: String): Country number = 1006;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:12:11:23:38.395;
+			categoryDescription: String): SaleItemCategory;
+		createClient(address: Address): Client;
+		createCountry(countryName: String): Country;
 		createItemDetails(
 			codePrefix: String; 
 			codeNumber: Integer; 
@@ -2052,456 +1276,326 @@ endif;`
 			forSaleDate: Date; 
 			photo: Binary; 
 			region: Region; 
-			saleItemCategory: SaleItemCategory): ItemDetails number = 1011;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:12:11:30:52.126;
+			saleItemCategory: SaleItemCategory): ItemDetails;
 		createRetailSale(
 			retailSaleItem: RetailSaleItem; 
 			client: Client; 
 			price: Decimal; 
-			timeStamp: TimeStamp): RetailSale number = 1007;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:12:09:47:46.997;
+			timeStamp: TimeStamp): RetailSale;
 		createRetailSaleItem(
 			itemDetails: ItemDetails; 
 			agent: Agent; 
-			price: Decimal): RetailSaleItem number = 1008;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:27:13:12:28.232;
+			price: Decimal): RetailSaleItem;
 		createTenderSale(
 			tenderSaleItem: TenderSaleItem; 
-			tender: Tender): TenderSale number = 1009;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:12:09:49:26.351;
+			tender: Tender): TenderSale;
 		createTenderSaleItem(
 			itemDetails: ItemDetails; 
 			agent: Agent; 
 			closureDate: Date; 
-			minimumPrice: Decimal): TenderSaleItem number = 1010;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:27:13:12:34.010;
+			minimumPrice: Decimal): TenderSaleItem;
 		findSaleItemByCode(
 			codePrefix: String; 
-			codeNumber: Integer): SaleItem number = 1018;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:12:15:36:39.574;
-		getAllSales(saleSet: SaleSet input) number = 1012;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
-		getDebugString(): String number = 1019;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:19:13:30:59.985;
-		getNextCodeNumberForPrefix(prefix: String): Integer number = 1013;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:13:14:13:28.740;
-		getNumberOfLocations(): Integer number = 1014;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:07:13:40:36.714;
+			codeNumber: Integer): SaleItem;
+		getAllSales(saleSet: SaleSet input);
+		getDebugString(): String;
+		getNextCodeNumberForPrefix(prefix: String): Integer;
+		getNumberOfLocations(): Integer;
 		getRegion(
 			countryName: String; 
-			regionName: String): Region number = 1015;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
+			regionName: String): Region;
 	implementInterfaces
 		IDebuggable
 		(
-		getDebugString is getDebugString;
+			getDebugString is getDebugString;
 		)
 		ISearchable
 		(
-		getAllSales is getAllSales;
+			getAllSales is getAllSales;
 		)
 	)
 	Location completeDefinition
 	(
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:27:09:37:05.056;
 	attributeDefinitions
-		name:                          String[81] readonly, number = 1, ordinal = 1;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
+		name:                          String[81] readonly;
 	)
 	Country completeDefinition
 	(
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:19:14:16:22.196;
 	referenceDefinitions
-		allRegions:                    RegionByNameDict   explicitInverse, readonly, subId = 1, number = 1, ordinal = 1;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
-		myCompany:                     Company   explicitEmbeddedInverse, readonly, number = 2, ordinal = 2;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
- 
+		allRegions:                    RegionByNameDict   explicitInverse, readonly;
+		myCompany:                     Company   explicitEmbeddedInverse, readonly;
 	jadeMethodDefinitions
 		create(
 			name: String; 
-			company: Company) updating, number = 1005;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:12:14:14:55.100;
-		createRegion(regionName: String): Region number = 1002;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:12:09:44:08.191;
-		getDebugString(): String number = 1003;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:17:09:30:57.871;
-		update(name: String) updating, number = 1004;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:12:14:15:40.439;
+			company: Company) updating;
+		createRegion(regionName: String): Region;
+		getDebugString(): String;
+		update(name: String) updating;
 		zSetProps(
 			name: String; 
-			company: Company) updating, protected, number = 1001;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:24:09:41:57.359;
+			company: Company) updating, protected;
 	implementInterfaces
 		IDebuggable
 		(
-		getDebugString is getDebugString;
+			getDebugString is getDebugString;
 		)
 	)
 	Region completeDefinition
 	(
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:19:14:16:27.692;
 	referenceDefinitions
-		allSaleItems:                  SaleItemByCodeDict   explicitInverse, readonly, subId = 1, number = 1, ordinal = 1;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
-		myCountry:                     Country   explicitEmbeddedInverse, readonly, number = 2, ordinal = 2;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
- 
+		allSaleItems:                  SaleItemByCodeDict   explicitInverse, readonly;
+		myCountry:                     Country   explicitEmbeddedInverse, readonly;
 	jadeMethodDefinitions
 		create(
 			name: String; 
-			country: Country) updating, number = 1007;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:12:14:37:34.856;
-		documentSelfRTF(): String number = 1009;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:12:11:51:43.688;
-		getCountryAndRegionNames(): String number = 1008;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:12:11:55:27.699;
-		getDebugString(): String number = 1002;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:19:15:20:38.287;
-		update(name: String) updating, number = 1003;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:12:14:20:55.427;
+			country: Country) updating;
+		documentSelfRTF(): String;
+		getCountryAndRegionNames(): String;
+		getDebugString(): String;
+		update(name: String) updating;
 		zSetProps(
 			name: String; 
-			country: Country) updating, protected, number = 1001;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:12:14:37:40.140;
+			country: Country) updating, protected;
 	implementInterfaces
 		DocumentorPackage::DocumentInterface
 		(
-		documentSelf is getDebugString;
-		documentSelfRTF is documentSelfRTF;
-		listEntryDescription is getCountryAndRegionNames;
+			documentSelf is getDebugString;
+			documentSelfRTF is documentSelfRTF;
+			listEntryDescription is getCountryAndRegionNames;
 		)
 		IDebuggable
 		(
-		getDebugString is getDebugString;
+			getDebugString is getDebugString;
 		)
 	)
 	Sale completeDefinition
 	(
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:27:09:37:41.557;
 	attributeDefinitions
-		agentCommission:               Decimal[12,2] readonly, number = 1, ordinal = 1;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:12:13:17:11.580;
+		agentCommission:               Decimal[12,2] readonly;
 	referenceDefinitions
-		myClient:                      Client   explicitEmbeddedInverse, readonly, number = 2, ordinal = 2;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
-		myCompany:                     Company   explicitEmbeddedInverse, readonly, number = 3, ordinal = 3;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
-		mySaleItem:                    SaleItem   explicitEmbeddedInverse, readonly, number = 4, ordinal = 4;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
- 
+		myClient:                      Client   explicitEmbeddedInverse, readonly;
+		myCompany:                     Company   explicitEmbeddedInverse, readonly;
+		mySaleItem:                    SaleItem   explicitEmbeddedInverse, readonly;
 	jadeMethodDefinitions
-		getDate(): Date number = 1003;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:10:04:09:15:57.565;
-		zCalculateAgentCommission(salePrice: Decimal) updating, protected, number = 1005;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:24:10:38:18.858;
+		getAmount(): Decimal abstract;
+		getDate(): Date;
+		zCalculateAgentCommission(salePrice: Decimal) updating, protected;
 	)
 	RetailSale completeDefinition
 	(
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:17:09:34:12.460;
 	attributeDefinitions
-		price:                         Decimal[12,2] readonly, number = 1, ordinal = 1;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
-		timeStamp:                     TimeStamp readonly, number = 2, ordinal = 2;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
- 
+		price:                         Decimal[12,2] readonly;
+		timeStamp:                     TimeStamp readonly;
 	jadeMethodDefinitions
 		create(
 			retailSaleItem: RetailSaleItem; 
 			client: Client; 
 			price: Decimal; 
-			timeStamp: TimeStamp) updating, number = 1002;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:12:12:01:16.381;
-		getDate(): Date number = 1003;
-		setModifiedTimeStamp "cnwta3" "16.0.02" 2018:08:27:14:00:54.414;
-		getDebugString(): String number = 1004;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:20:09:58:19.719;
+			timeStamp: TimeStamp) updating;
+		getAmount(): Decimal;
+		getDate(): Date;
+		getDebugString(): String;
 	implementInterfaces
 		IDebuggable
 		(
-		getDebugString is getDebugString;
+			getDebugString is getDebugString;
 		)
 	)
 	TenderSale completeDefinition
 	(
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:17:09:34:19.443;
 	referenceDefinitions
-		myTender:                      Tender   explicitEmbeddedInverse, readonly, number = 1, ordinal = 1;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
- 
+		myTender:                      Tender   explicitEmbeddedInverse, readonly;
 	jadeMethodDefinitions
 		create(
 			tenderSaleItem: TenderSaleItem; 
-			tender: Tender) updating, number = 1002;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:24:11:31:42.591;
-		getDate(): Date number = 1003;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:24:11:35:44.118;
-		getDebugString(): String number = 1004;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:20:10:30:58.076;
-		getTime(): Time number = 1005;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:20:10:52:45.307;
+			tender: Tender) updating;
+		getAmount(): Decimal;
+		getDate(): Date;
+		getDebugString(): String;
+		getTime(): Time;
 	implementInterfaces
 		IDebuggable
 		(
-		getDebugString is getDebugString;
+			getDebugString is getDebugString;
 		)
 	)
 	SaleItem completeDefinition
 	(
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:27:09:37:45.692;
 	attributeDefinitions
-		codeNumber:                    Integer readonly, number = 1, ordinal = 13;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:10:13:59:06.999;
-		codePrefix:                    String[5] readonly, number = 2, ordinal = 14;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:10:13:59:51.311;
-		forSaleDate:                   Date readonly, number = 3, ordinal = 3;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
-		fullDescription:               String readonly, subId = 1, number = 4, ordinal = 15;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:10:14:02:27.561;
-		photo:                         Binary readonly, subId = 2, number = 5, ordinal = 5;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
-		price:                         Decimal[12,2] readonly, number = 13, ordinal = 16;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:17:12:14:19.604;
-		shortDescription:              String[31] readonly, number = 6, ordinal = 6;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
+		codeNumber:                    Integer readonly;
+		codePrefix:                    String[5] readonly;
+		forSaleDate:                   Date readonly;
+		fullDescription:               String readonly;
+		photo:                         Binary readonly;
+		price:                         Decimal[12,2] readonly;
+		shortDescription:              String[31] readonly;
 	referenceDefinitions
-		myAgent:                       Agent   explicitEmbeddedInverse, readonly, number = 7, ordinal = 7;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:13:13:17:24.379;
-		myCompany:                     Company   explicitEmbeddedInverse, readonly, number = 8, ordinal = 8;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
-		myRegion:                      Region   explicitEmbeddedInverse, readonly, number = 9, ordinal = 9;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
-		mySale:                        Sale   explicitEmbeddedInverse, readonly, number = 10, ordinal = 10;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
-		mySaleItemCategory:            SaleItemCategory   explicitEmbeddedInverse, readonly, number = 11, ordinal = 11;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
- 
+		myAgent:                       Agent   explicitEmbeddedInverse, readonly;
+		myCompany:                     Company   explicitEmbeddedInverse, readonly;
+		myRegion:                      Region   explicitEmbeddedInverse, readonly;
+		mySale:                        Sale   explicitEmbeddedInverse, readonly;
+		mySaleItemCategory:            SaleItemCategory   explicitEmbeddedInverse, readonly;
 	jadeMethodDefinitions
 		create(
 			itemDetails: ItemDetails; 
 			agent: Agent; 
-			company: Company) updating, number = 1008;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:24:10:50:44.436;
-		getCode(): String number = 1001;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:12:15:51:38.283;
-		getCodeNumber(): Integer number = 1013;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:14:15:06:04.947;
-		getCodePrefix(): String number = 1012;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:14:15:06:14.934;
-		getDebugString(): String number = 1002;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:17:12:17:25.888;
-		getPrice(): Decimal abstract, number = 1003;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:12:15:51:38.948;
-		getSale(): Sale number = 1009;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:13:13:22:16.251;
-		getShortDescription(): String number = 1014;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:14:15:08:00.746;
-		getTypeString(): String abstract, number = 1004;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:12:15:51:39.269;
-		isSold(): Boolean condition, number = 1006;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:20:14:08:51.549;
-		setDetails(itemDetails: ItemDetails) updating, number = 1005;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:24:11:23:58.811;
+			company: Company) updating;
+		getCode(): String;
+		getCodeNumber(): Integer;
+		getCodePrefix(): String;
+		getDebugString(): String;
+		getPrice(): Decimal abstract;
+		getSale(): Sale;
+		getShortDescription(): String;
+		getTypeString(): String abstract;
+		isSold(): Boolean condition;
+		setDetails(itemDetails: ItemDetails) updating;
 	implementInterfaces
 		ICartable
 		(
-		getCode is getCode;
-		getPrice is getPrice;
-		getShortDescription is getShortDescription;
-		getTypeString is getTypeString;
+			getCode is getCode;
+			getPrice is getPrice;
+			getShortDescription is getShortDescription;
+			getTypeString is getTypeString;
 		)
 		ICodeable
 		(
-		getCodeNumber is getCodeNumber;
-		getCodePrefix is getCodePrefix;
+			getCodeNumber is getCodeNumber;
+			getCodePrefix is getCodePrefix;
 		)
 		IDebuggable
 		(
-		getDebugString is getDebugString;
+			getDebugString is getDebugString;
 		)
 		ISellable
 		(
-		getSale is getSale;
+			getSale is getSale;
 		)
 	)
 	RetailSaleItem completeDefinition
 	(
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:17:12:13:57.881;
- 
 	jadeMethodDefinitions
 		create(
 			itemDetails: ItemDetails; 
 			agent: Agent; 
 			company: Company; 
-			price: Decimal) updating, number = 1011;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:17:12:14:35.518;
-		getDebugString(): String number = 1013;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:17:10:00:56.548;
-		getPrice(): Decimal number = 1002;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:17:12:20:50.473;
-		getTypeString(): String number = 1003;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
+			price: Decimal) updating;
+		getDebugString(): String;
+		getPrice(): Decimal;
+		getTypeString(): String;
 		update(
 			itemDetails: ItemDetails; 
-			price: Decimal) updating, number = 1004;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:17:12:14:49.407;
+			price: Decimal) updating;
 	implementInterfaces
 		IDebuggable
 		(
-		getDebugString is getDebugString;
+			getDebugString is getDebugString;
 		)
 	)
 	TenderSaleItem completeDefinition
 	(
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:17:12:14:04.366;
 	attributeDefinitions
-		closureDate:                   Date readonly, number = 1, ordinal = 1;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
+		closureDate:                   Date readonly;
 	referenceDefinitions
-		allTendersByOfferTime:         TenderByOfferTimeDict   explicitInverse, readonly, subId = 2, number = 3, ordinal = 3;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
-		allTendersByTimeOffer:         TenderByTimeOfferDict   explicitInverse, readonly, subId = 1, number = 4, ordinal = 4;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
- 
+		allTendersByOfferTime:         TenderByOfferTimeDict   explicitInverse, readonly;
+		allTendersByTimeOffer:         TenderByTimeOfferDict   explicitInverse, readonly;
 	jadeMethodDefinitions
-		acceptHighestTender(): Tender number = 1001;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:19:12:23:15.762;
+		acceptHighestTender(): Tender;
 		create(
 			itemDetails: ItemDetails; 
 			agent: Agent; 
 			company: Company; 
 			closureDate: Date; 
-			minPrice: Decimal) updating, number = 1014;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:17:12:14:49.686;
-		getDebugString(): String number = 1003;
-		setModifiedTimeStamp "cnwta3" "16.0.02" 2018:08:27:14:26:23.625;
-		getPrice(): Decimal number = 1004;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:17:12:20:44.056;
-		getTypeString(): String number = 1005;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
+			minPrice: Decimal) updating;
+		getDebugString(): String;
+		getPrice(): Decimal;
+		getTypeString(): String;
 		update(
 			itemDetails: ItemDetails; 
 			closureDate: Date; 
-			minimumPrice: Decimal) updating, number = 1006;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:17:12:14:50.017;
+			minimumPrice: Decimal) updating;
 	implementInterfaces
 		IDebuggable
 		(
-		getDebugString is getDebugString;
+			getDebugString is getDebugString;
 		)
 	)
 	SaleItemCategory completeDefinition
 	(
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:27:09:37:56.796;
 	attributeDefinitions
-		description:                   String readonly, subId = 1, number = 1, ordinal = 1;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
-		name:                          String[41] readonly, number = 2, ordinal = 2;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
+		description:                   String readonly;
+		name:                          String[41] readonly;
 	referenceDefinitions
-		allCommissionRates:            CommissionRateByPercentDict   explicitInverse, readonly, subId = 2, number = 3, ordinal = 3;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
-		allSaleItems:                  SaleItemByCodeDict   explicitInverse, readonly, subId = 1, number = 4, ordinal = 4;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
-		myCompany:                     Company   explicitEmbeddedInverse, readonly, number = 5, ordinal = 5;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
- 
+		allCommissionRates:            CommissionRateByPercentDict   explicitInverse, readonly;
+		allSaleItems:                  SaleItemByCodeDict   explicitInverse, readonly;
+		myCompany:                     Company   explicitEmbeddedInverse, readonly;
 	jadeMethodDefinitions
 		create(
 			name: String; 
 			description: String; 
-			company: Company) updating, number = 1006;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:12:14:24:50.322;
-		createCommissionRate(percentage: Decimal): CommissionRate number = 1001;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:12:09:41:28.453;
-		getDebugString(): String number = 1003;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:17:09:17:27.042;
+			company: Company) updating;
+		createCommissionRate(percentage: Decimal): CommissionRate;
+		getDebugString(): String;
 		update(
 			name: String; 
-			description: String) updating, number = 1004;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:12:14:24:50.323;
+			description: String) updating;
 		zSetProps(
 			name: String; 
 			description: String; 
-			company: Company) updating, protected, number = 1005;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:12:14:37:07.316;
+			company: Company) updating, protected;
 	implementInterfaces
 		IDebuggable
 		(
-		getDebugString is getDebugString;
+			getDebugString is getDebugString;
 		)
 	)
 	Tender completeDefinition
 	(
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:27:09:38:02.927;
 	attributeDefinitions
-		offer:                         Decimal[12,2] readonly, number = 1, ordinal = 1;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
-		timeStamp:                     TimeStamp readonly, number = 2, ordinal = 2;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
+		offer:                         Decimal[12,2] readonly;
+		timeStamp:                     TimeStamp readonly;
 	referenceDefinitions
-		myClient:                      Client   explicitEmbeddedInverse, readonly, number = 3, ordinal = 3;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
-		myTenderSale:                  TenderSale   explicitEmbeddedInverse, readonly, number = 4, ordinal = 4;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
-		myTenderSaleItem:              TenderSaleItem   explicitEmbeddedInverse, readonly, number = 5, ordinal = 5;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
- 
+		myClient:                      Client   explicitEmbeddedInverse, readonly;
+		myTenderSale:                  TenderSale   explicitEmbeddedInverse, readonly;
+		myTenderSaleItem:              TenderSaleItem   explicitEmbeddedInverse, readonly;
 	jadeMethodDefinitions
 		create(
 			offer: Decimal; 
 			timeStamp: TimeStamp; 
 			client: Client; 
-			tenderSaleItem: TenderSaleItem) updating, number = 1001;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:12:14:35:14.990;
-		getDate(): Date number = 1002;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
-		getDebugString(): String number = 1003;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:20:13:24:58.711;
-		getTime(): Time number = 1004;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
+			tenderSaleItem: TenderSaleItem) updating;
+		getDate(): Date;
+		getDebugString(): String;
+		getTime(): Time;
 		update(
 			offer: Decimal; 
-			timeStamp: TimeStamp) updating, number = 1005;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:27:13:12:57.992;
+			timeStamp: TimeStamp) updating;
 		zSetProps(
 			offer: Decimal; 
 			timeStamp: TimeStamp; 
 			client: Client; 
-			tenderSaleItem: TenderSaleItem) updating, protected, number = 1007;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:17:12:14:49.546;
+			tenderSaleItem: TenderSaleItem) updating, protected;
 	implementInterfaces
 		IDebuggable
 		(
-		getDebugString is getDebugString;
+			getDebugString is getDebugString;
 		)
 	)
 	ModelTransient completeDefinition
 	(
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:27:09:37:25.812;
 	)
 	ItemDetails completeDefinition
 	(
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:27:09:38:47.736;
 	attributeDefinitions
-		codeNumber:                    Integer readonly, number = 2, ordinal = 2;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:10:10:18:39.465;
-		codePrefix:                    String[5] readonly, number = 1, ordinal = 1;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:10:10:19:19.060;
-		forSaleDate:                   Date readonly, number = 5, ordinal = 5;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:10:10:20:28.391;
-		fullDescription:               String readonly, subId = 1, number = 4, ordinal = 4;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:10:10:20:04.253;
-		photo:                         Binary readonly, subId = 2, number = 6, ordinal = 6;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:10:10:21:02.425;
-		shortDescription:              String[31] readonly, number = 3, ordinal = 3;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:10:10:19:38.517;
+		codeNumber:                    Integer readonly;
+		codePrefix:                    String[5] readonly;
+		forSaleDate:                   Date readonly;
+		fullDescription:               String readonly;
+		photo:                         Binary readonly;
+		shortDescription:              String[31] readonly;
 	referenceDefinitions
-		myRegion:                      Region  readonly, number = 7, ordinal = 7;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:10:10:22:34.156;
-		mySaleItemCategory:            SaleItemCategory  readonly, number = 8, ordinal = 8;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:10:10:22:47.283;
- 
+		myRegion:                      Region  readonly;
+		mySaleItemCategory:            SaleItemCategory  readonly;
 	jadeMethodDefinitions
 		create(
 			codePrefix: String; 
@@ -2511,99 +1605,74 @@ endif;`
 			forSaleDate: Date; 
 			photo: Binary; 
 			region: Region; 
-			saleItemCategory: SaleItemCategory) updating, number = 1001;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:24:09:30:32.846;
-		getCodeNumber(): Integer number = 1002;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:14:15:04:42.617;
-		getCodePrefix(): String number = 1003;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:14:15:05:34.777;
+			saleItemCategory: SaleItemCategory) updating;
+		getCodeNumber(): Integer;
+		getCodePrefix(): String;
 	implementInterfaces
 		ICodeable
 		(
-		getCodeNumber is getCodeNumber;
-		getCodePrefix is getCodePrefix;
+			getCodeNumber is getCodeNumber;
+			getCodePrefix is getCodePrefix;
 		)
 	)
 	OrderProxy completeDefinition
 	(
-	documentationText
+		documentationText
 `OrderProxy objects are used by views to hold the details of operations.
 Collections of OrderProxy objects can then be passed to TransactionAgent
 methods for processing.`
-
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:27:09:37:36.011;
 	attributeDefinitions
-		price:                         Decimal[12,2] readonly, number = 4, ordinal = 4;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:10:09:29:23.160;
-		timeStamp:                     TimeStamp readonly, number = 1, ordinal = 1;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
+		price:                         Decimal[12,2] readonly;
+		timeStamp:                     TimeStamp readonly;
 	referenceDefinitions
-		myClient:                      Client  readonly, number = 2, ordinal = 2;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
-		mySaleItem:                    SaleItem  readonly, number = 3, ordinal = 3;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
- 
+		myClient:                      Client  readonly;
+		mySaleItem:                    SaleItem  readonly;
 	jadeMethodDefinitions
-		action() updating, abstract, number = 1001;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
+		action() updating, abstract;
 		create(
 			saleItem: SaleItem; 
 			client: Client; 
-			price: Decimal) updating, number = 1002;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:24:09:49:11.064;
+			price: Decimal) updating;
 	)
 	RetailOrderProxy completeDefinition
 	(
-	documentationText
+		documentationText
 `RetailOrderProxy objects are used by views to hold the details of retail sale operations.
 Collections of RetailOrderProxy objects can then be passed to TransactionAgent and
 methods for processing (ie: a collection of RetailOrderProxy objects allows multiple
 retail sales to be processed in one transaction).`
-
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:10:09:32:28.685;
- 
 	jadeMethodDefinitions
-		action() updating, number = 1001;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:10:09:37:02.090;
+		action() updating;
 		create(
 			saleItem: SaleItem; 
 			client: Client; 
-			price: Decimal) updating, number = 1002;
-		setModifiedTimeStamp "cnwmh7" "99.0.00" 2022:02:03:10:01:45.061;
+			price: Decimal) updating;
 	)
 	TenderOrderProxy completeDefinition
 	(
-	documentationText
+		documentationText
 `TenderOrderProxy objects are used by views to hold the details of tender bid operations.
 Collections of TenderOrderProxy objects can then be passed to TransactionAgent and
 methods for processing (ie: a collection of TenderOrderProxy objects allows multiple
 tenders to be processed in one transaction).`
-
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:10:09:32:33.060;
- 
 	jadeMethodDefinitions
-		action() updating, number = 1001;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:12:14:39:43.213;
+		action() updating;
 		create(
 			saleItem: SaleItem; 
 			client: Client; 
-			price: Decimal) updating, number = 1002;
-		setModifiedTimeStamp "cnwmh7" "99.0.00" 2022:02:03:10:02:03.734;
+			price: Decimal) updating;
 	)
 	WebSession completeDefinition
 	(
 	)
 	RootSchemaSession completeDefinition
 	(
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
 	)
 	SCommonSchema completeDefinition
 	(
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
 	)
 	SErewhonInvestmentsModelSchema completeDefinition
 	(
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
 	)
 	Window completeDefinition
 	(
@@ -2613,7 +1682,7 @@ tenders to be processed in one transaction).`
 	)
 	MethodParametersDialog completeDefinition
 	(
-	documentationText
+		documentationText
 `Generic dialog box that will display a table allowing the user to enter values
 for the non-output parameters of a specified method.
 The dialog box is given a method on creation, and it parses the signature of
@@ -2627,59 +1696,32 @@ This dialog box is intended only for development, testing, debugging, etc. It
 is not intended for production use, or for use with production-size databases.
 The fact that it populates reference combo boxes with all instances of the
 parameter's class means that it is not scalable.`
-
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
 	attributeDefinitions
-		paramNames:                    StringArray readonly, subId = 1, number = 1, ordinal = 1;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
-		paramValues:                   StringArray readonly, subId = 3, number = 2, ordinal = 2;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
-		zExampleShowing:               Boolean protected, number = 3, ordinal = 3;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
+		paramNames:                    StringArray readonly;
+		paramValues:                   StringArray readonly;
+		zExampleShowing:               Boolean protected;
 	referenceDefinitions
-		btnCancel:                     Button  number = 4, ordinal = 4;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
-		btnExample:                    Button  number = 5, ordinal = 5;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
-		btnOK:                         Button  number = 6, ordinal = 6;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
-		myMethod:                      Method  readonly, number = 7, ordinal = 7;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
-		paramTypes:                    ObjectArray  implicitMemberInverse, readonly, subId = 2, number = 8, ordinal = 8;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
-		tblParams:                     Table  number = 9, ordinal = 9;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
-		txbExample:                    TextBox  number = 10, ordinal = 10;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
- 
+		btnCancel:                     Button ;
+		btnExample:                    Button ;
+		btnOK:                         Button ;
+		myMethod:                      Method  readonly;
+		paramTypes:                    ObjectArray  implicitMemberInverse, readonly;
+		tblParams:                     Table ;
+		txbExample:                    TextBox ;
 	jadeMethodDefinitions
-		btnCancel_click(btn: Button input) updating, number = 1001;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:07:13:56:39.424;
-		btnExample_click(btn: Button input) updating, number = 1002;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
-		btnOK_click(btn: Button input) updating, number = 1003;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:13:13:35:24.645;
-		getParameterObject(paramNumber: Integer): Object number = 1004;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:07:13:57:19.817;
-		getParameterValue(paramNumber: Integer): Any number = 1005;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:07:13:57:34.415;
-		initialize(mth: Method) updating, number = 1006;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
-		load() updating, number = 1007;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
-		zBuildExampleString(): String protected, number = 1008;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:07:13:58:27.969;
-		zGetTypeByName(typeName: String): Type protected, number = 1009;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
-		zLoadParamValues() protected, number = 1010;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:07:14:01:20.832;
-		zLoadParameters() protected, number = 1011;
-		setModifiedTimeStamp "cnwta3" "16.0.02" 2018:08:16:16:04:55.835;
-		zLoadTable() protected, number = 1012;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:17:09:30:28.628;
-		zShowExample(showIt: Boolean) updating, protected, number = 1013;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
- 
+		btnCancel_click(btn: Button input) updating;
+		btnExample_click(btn: Button input) updating;
+		btnOK_click(btn: Button input) updating;
+		getParameterObject(paramNumber: Integer): Object;
+		getParameterValue(paramNumber: Integer): Any;
+		initialize(mth: Method) updating;
+		load() updating;
+		zBuildExampleString(): String protected;
+		zGetTypeByName(typeName: String): Type protected;
+		zLoadParamValues() protected;
+		zLoadParameters() protected;
+		zLoadTable() protected;
+		zShowExample(showIt: Boolean) updating, protected;
 	eventMethodMappings
 		btnCancel_click = click of Button;
 		btnExample_click = click of Button;
@@ -2700,71 +1742,54 @@ parameter's class means that it is not scalable.`
 	)
 	AgentByNameDict completeDefinition
 	(
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:05:13:39:52.586;
 	)
 	ClientByNameDict completeDefinition
 	(
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:05:14:17:58.360;
 	)
 	CommissionRateByCategoryDict completeDefinition
 	(
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
 	)
 	CommissionRateByPercentDict completeDefinition
 	(
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
 	)
 	CountryByNameDict completeDefinition
 	(
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
 	)
 	OrderProxyByItemDict completeDefinition
 	(
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:10:14:16:14.808;
 	)
 	RegionByNameDict completeDefinition
 	(
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
 	)
 	RetailSaleByTimeItemDict completeDefinition
 	(
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:10:14:16:39.912;
 	)
 	SaleByItemDict completeDefinition
 	(
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:10:14:15:52.576;
 	)
 	SaleItemByCategoryCodeDict completeDefinition
 	(
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:19:11:14:29.519;
 	)
 	SaleItemByCodeDict completeDefinition
 	(
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:12:15:33:52.423;
 	)
 	SaleItemCategoryByNameDict completeDefinition
 	(
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
 	)
 	TenderByItemTimeOfferDict completeDefinition
 	(
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:10:14:17:19.630;
 	)
 	TenderByOfferTimeDict completeDefinition
 	(
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
 	)
 	TenderByTimeOfferDict completeDefinition
 	(
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
 	)
 	TenderItemBySaleDateCodeDict completeDefinition
 	(
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:10:14:15:23.625;
 	)
 	TenderSaleByTimeItemDict completeDefinition
 	(
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:09:10:14:17:36.057;
 	)
 	Set completeDefinition
 	(
@@ -2774,27 +1799,20 @@ parameter's class means that it is not scalable.`
 	)
 	ClientSet completeDefinition
 	(
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
 	)
 	RegionSet completeDefinition
 	(
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
 	)
 	SaleSet completeDefinition
 	(
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
 	)
 	String completeDefinition
 	(
- 
 	jadeMethodDefinitions
 		getCodePrefixAndNumber(
 			prefix: String output; 
-			number: Integer output) number = 1002;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
+			number: Integer output);
 	)
- 
- 
 memberKeyDefinitions
 	AgentByNameDict completeDefinition
 	(
@@ -2881,7 +1899,6 @@ memberKeyDefinitions
 		mySaleItem.codePrefix;
 		mySaleItem.codeNumber;
 	)
- 
 inverseDefinitions
 	allCommissionRates of Agent peerOf allAgents of CommissionRate;
 	allSaleItems of Agent automatic peerOf myAgent of SaleItem manual;
@@ -2904,104 +1921,94 @@ inverseDefinitions
 	allSaleItems of SaleItemCategory automatic parentOf mySaleItemCategory of SaleItem manual;
 	allTendersByOfferTime of TenderSaleItem automatic parentOf myTenderSaleItem of Tender manual;
 	allTendersByTimeOffer of TenderSaleItem automatic parentOf myTenderSaleItem of Tender manual;
+
 databaseDefinitions
-ErewhonInvestmentsModelSchemaDb
+	ErewhonInvestmentsModelSchemaDb
 	(
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
 	databaseFileDefinitions
-		"ereaddress" number = 55;
-		setModifiedTimeStamp "cnwta3" "99.0.00" 2018:08:29:15:31:37.559;
-		"ereagent" number = 101;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
-		"ereclnt" number = 102;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
-		"ereitem" number = 103;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
-		"eresale" number = 104;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
-		"eretendr" number = 105;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
-		"erewebservice" number = 110;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
-		"eredef" number = 56;
-		setModifiedTimeStamp "<unknown>" "" 2018:08:08:12:06:06;
+		"ereaddress";
+		"ereagent";
+		"ereclnt";
+		"ereitem";
+		"eresale";
+		"eretendr";
+		"erewebservice";
+		"eredef";
 	defaultFileDefinition "eredef";
 	classMapDefinitions
-		SErewhonInvestmentsModelSchema in "_environ";
-		ErewhonInvestmentsModelApp in "_usergui";
+		ActivityAgent in "eredef";
 		Address in "ereaddress";
 		Agent in "ereagent";
 		AgentByNameDict in "ereagent";
 		Client in "ereclnt";
-		ClientSet in "ereclnt";
 		ClientByNameDict in "ereclnt";
-		CountryByNameDict in "ereclnt";
-		GErewhonInvestmentsModelSchema in "eredef";
-		Company in "eredef";
-		Region in "eredef";
-		Location in "eredef";
-		Country in "eredef";
-		InitialDataLoader in "eredef";
-		ModelException in "eredef";
-		RegionSet in "eredef";
-		RegionByNameDict in "eredef";
+		ClientSet in "ereclnt";
 		CommissionRate in "eredef";
 		CommissionRateByCategoryDict in "eredef";
 		CommissionRateByPercentDict in "eredef";
-		TransactionAgent in "eredef";
-		ActivityAgent in "eredef";
+		Company in "eredef";
+		Country in "eredef";
+		CountryByNameDict in "ereclnt";
+		ErewhonInvestmentsModelApp in "_usergui";
+		GErewhonInvestmentsModelSchema in "eredef";
+		InitialDataLoader in "eredef";
+		ItemDetails in "ereitem";
+		Location in "eredef";
+		ModelEntity in "eredef";
+		ModelException in "eredef";
+		ModelTransient in "eredef";
+		OrderProxy in "eresale";
+		OrderProxyByItemDict in "eresale";
+		Region in "eredef";
+		RegionByNameDict in "eredef";
+		RegionSet in "eredef";
+		ReportSecurity in "eredef";
+		RetailOrderProxy in "eresale";
+		RetailSale in "eresale";
+		RetailSaleByTimeItemDict in "eresale";
+		RetailSaleItem in "ereitem";
+		SErewhonInvestmentsModelSchema in "_environ";
+		Sale in "eresale";
+		SaleByItemDict in "eresale";
+		SaleItem in "ereitem";
+		SaleItemByCategoryCodeDict in "ereitem";
+		SaleItemByCodeDict in "ereitem";
+		SaleItemCategory in "ereitem";
+		SaleItemCategoryByNameDict in "eresale";
+		SaleSet in "eresale";
+		Tender in "eretendr";
+		TenderByItemTimeOfferDict in "eretendr";
+		TenderByOfferTimeDict in "eretendr";
+		TenderByTimeOfferDict in "eretendr";
+		TenderItemBySaleDateCodeDict in "ereitem";
+		TenderOrderProxy in "eresale";
+		TenderSale in "eresale";
+		TenderSaleByTimeItemDict in "eresale";
+		TenderSaleItem in "ereitem";
+		TestActivityAgent in "eredef";
 		TestAddress in "eredef";
 		TestAgent in "eredef";
 		TestClient in "eredef";
 		TestCommissionRate in "eredef";
 		TestCompany in "eredef";
 		TestCountry in "eredef";
+		TestItemDetails in "ereitem";
+		TestModelApp in "eredef";
+		TestOrderProxy in "eredef";
 		TestRegion in "eredef";
 		TestRetailOrderProxy in "eredef";
-		TestOrderProxy in "eredef";
-		TestTenderOrderProxy in "eredef";
-		TestSale in "eredef";
 		TestRetailSale in "eredef";
-		TestTenderSale in "eredef";
+		TestRetailSaleItem in "eredef";
+		TestSale in "eredef";
+		TestSaleItem in "eredef";
 		TestSaleItemCategory in "eredef";
 		TestTender in "eredef";
-		TestSaleItem in "eredef";
-		TestRetailSaleItem in "eredef";
+		TestTenderOrderProxy in "eredef";
+		TestTenderSale in "eredef";
 		TestTenderSaleItem in "eredef";
-		TestActivityAgent in "eredef";
 		TestTransactionAgent in "eredef";
-		TestModelApp in "eredef";
-		ModelEntity in "eredef";
-		ModelTransient in "eredef";
-		ReportSecurity in "eredef";
-		SaleItem in "ereitem";
-		TenderSaleItem in "ereitem";
-		RetailSaleItem in "ereitem";
-		SaleItemCategory in "ereitem";
-		SaleItemByCodeDict in "ereitem";
-		SaleItemByCategoryCodeDict in "ereitem";
-		TenderItemBySaleDateCodeDict in "ereitem";
-		ItemDetails in "ereitem";
-		TestItemDetails in "ereitem";
-		Sale in "eresale";
-		RetailSale in "eresale";
-		TenderSale in "eresale";
-		SaleSet in "eresale";
-		SaleItemCategoryByNameDict in "eresale";
-		RetailSaleByTimeItemDict in "eresale";
-		SaleByItemDict in "eresale";
-		TenderSaleByTimeItemDict in "eresale";
-		OrderProxy in "eresale";
-		RetailOrderProxy in "eresale";
-		TenderOrderProxy in "eresale";
-		OrderProxyByItemDict in "eresale";
-		Tender in "eretendr";
-		TenderByTimeOfferDict in "eretendr";
-		TenderByOfferTimeDict in "eretendr";
-		TenderByItemTimeOfferDict in "eretendr";
+		TransactionAgent in "eredef";
 	)
-schemaViewDefinitions
-exportedPackageDefinitions
 typeSources
 	ActivityAgent (
 	jadeMethodSources
@@ -3023,7 +2030,6 @@ begin
 	endif;
 end;
 }
-
 zExceptionHandler
 {
 zExceptionHandler(exceptionObj : Exception) : Integer protected;
@@ -3084,7 +2090,6 @@ begin
 	return Ex_Resume_Next;
 end;
 }
-
 zInitializeActivity
 {
 zInitializeActivity() protected;
@@ -3101,7 +2106,6 @@ begin
 	self.zRegisteredErrorCodes.clear;
 end;
 }
-
 zLockExceptionHandler
 {
 zLockExceptionHandler(lockExObj : LockException) : Integer protected;
@@ -3134,7 +2138,6 @@ begin
 	return Ex_Resume_Next;
 end;
 }
-
 zRegisterObjectAndErrorCode
 {
 zRegisterObjectAndErrorCode(obj : Object; err : Integer) protected;
@@ -3155,7 +2158,6 @@ begin
 	self.zRegisteredErrorCodes.add(err);
 end;
 }
-
 zSetErrorCode
 {
 zSetErrorCode(errCode : Integer) : Integer protected;
@@ -3175,7 +2177,6 @@ begin
 	return errCode;
 end;
 }
-
 zUnregisterObject
 {
 zUnregisterObject(unregisterObj : Object) protected;
@@ -3214,7 +2215,6 @@ begin
 	endwhile;
 end;
 }
-
 	)
 	TransactionAgent (
 	jadeMethodSources
@@ -3293,7 +2293,6 @@ epilog
 	return app.getLastError;
 end;
 }
-
 trxCloseTendersAtDate
 {
 trxCloseTendersAtDate(date : Date; numClosed : Integer output) : Integer serverExecution;
@@ -3361,7 +2360,6 @@ epilog
 	return app.getLastError;
 end;
 }
-
 trxCreateAddress
 {
 trxCreateAddress(name, street, city, country, email, fax, phone, website : String; address : Address output) : Integer;
@@ -3414,7 +2412,6 @@ epilog
 	return app.getLastError;
 end;
 }
-
 trxCreateAgent
 {
 trxCreateAgent(
@@ -3469,7 +2466,6 @@ epilog
 	return app.getLastError;
 end;
 }
-
 trxCreateClient
 {
 trxCreateClient(
@@ -3524,7 +2520,6 @@ epilog
 	return app.getLastError;
 end;
 }
-
 trxCreateCommissionRate
 {
 trxCreateCommissionRate(
@@ -3580,7 +2575,6 @@ epilog
 	return app.getLastError;
 end;
 }
-
 trxCreateCountry
 {
 trxCreateCountry(countryName : String; country : Country output) : Integer;
@@ -3633,7 +2627,6 @@ epilog
 	return app.getLastError;
 end;
 }
-
 trxCreateRegion
 {
 trxCreateRegion(regionName : String; country : Country; region : Region output) : Integer;
@@ -3686,7 +2679,6 @@ epilog
 	return app.getLastError;
 end;
 }
-
 trxCreateRetailSaleItem
 {
 trxCreateRetailSaleItem(
@@ -3743,7 +2735,6 @@ epilog
 	return app.getLastError;
 end;
 }
-
 trxCreateSaleItemCategory
 {
 trxCreateSaleItemCategory(
@@ -3799,7 +2790,6 @@ epilog
 	return app.getLastError;
 end;
 }
-
 trxCreateTenderSaleItem
 {
 trxCreateTenderSaleItem(
@@ -3857,7 +2847,6 @@ epilog
 	return app.getLastError;
 end;
 }
-
 trxDeleteAgent
 {
 trxDeleteAgent(agent : Agent io) : Integer;
@@ -3906,7 +2895,6 @@ epilog
 	return app.getLastError;
 end;
 }
-
 trxDeleteClient
 {
 trxDeleteClient(client : Client io) : Integer;
@@ -3962,7 +2950,6 @@ epilog
 	return app.getLastError;
 end;
 }
-
 trxDeleteCommissionRate
 {
 trxDeleteCommissionRate(commissionRate : CommissionRate io) : Integer;
@@ -4018,7 +3005,6 @@ epilog
 	return app.getLastError;
 end;
 }
-
 trxDeleteCountry
 {
 trxDeleteCountry(country : Country io) : Integer;
@@ -4074,7 +3060,6 @@ epilog
 	return app.getLastError;
 end;
 }
-
 trxDeleteRegion
 {
 trxDeleteRegion(region : Region io) : Integer;
@@ -4130,7 +3115,6 @@ epilog
 	return app.getLastError;
 end;
 }
-
 trxDeleteRetailSale
 {
 trxDeleteRetailSale(retailSale : RetailSale io) : Integer;
@@ -4186,7 +3170,6 @@ epilog
 	return app.getLastError;
 end;
 }
-
 trxDeleteSaleItem
 {
 trxDeleteSaleItem(saleItem : SaleItem io) : Integer;
@@ -4242,7 +3225,6 @@ epilog
 	return app.getLastError;
 end;
 }
-
 trxDeleteSaleItemCategory
 {
 trxDeleteSaleItemCategory(saleItemCategory : SaleItemCategory io) : Integer;
@@ -4298,7 +3280,6 @@ epilog
 	return app.getLastError;
 end;
 }
-
 trxDeleteTender
 {
 trxDeleteTender(tender : Tender io) : Integer;
@@ -4354,7 +3335,6 @@ epilog
 	return app.getLastError;
 end;
 }
-
 trxDeleteTenderSale
 {
 trxDeleteTenderSale(tenderSale : TenderSale io) : Integer;
@@ -4410,7 +3390,6 @@ epilog
 	return app.getLastError;
 end;
 }
-
 trxSetAgentsForCommissionRate
 {
 trxSetAgentsForCommissionRate(
@@ -4515,7 +3494,6 @@ epilog
 	return app.getLastError;
 end;
 }
-
 trxUpdateAddress
 {
 trxUpdateAddress(		
@@ -4604,7 +3582,6 @@ epilog
 	return app.getLastError;
 end;
 }
-
 trxUpdateAgent
 {
 trxUpdateAgent(
@@ -4686,7 +3663,6 @@ epilog
 	return app.getLastError;
 end;
 }
-
 trxUpdateClient
 {
 trxUpdateClient(
@@ -4777,7 +3753,6 @@ epilog
 	return app.getLastError;
 end;
 }
-
 trxUpdateCommissionRate
 {
 trxUpdateCommissionRate(
@@ -4868,7 +3843,6 @@ epilog
 	return app.getLastError;
 end;
 }
-
 trxUpdateCountry
 {
 trxUpdateCountry(
@@ -4959,7 +3933,6 @@ epilog
 	return app.getLastError;
 end;
 }
-
 trxUpdateRegion
 {
 trxUpdateRegion(
@@ -5050,7 +4023,6 @@ epilog
 	return app.getLastError;
 end;
 }
-
 trxUpdateRetailSaleItem
 {
 trxUpdateRetailSaleItem(
@@ -5139,7 +4111,6 @@ epilog
 	return app.getLastError;
 end;
 }
-
 trxUpdateSaleItemCategory
 {
 trxUpdateSaleItemCategory(
@@ -5232,7 +4203,6 @@ epilog
 	return app.getLastError;
 end;
 }
-
 trxUpdateTender
 {
 trxUpdateTender(
@@ -5323,7 +4293,6 @@ epilog
 	return app.getLastError;
 end;
 }
-
 trxUpdateTenderSaleItem
 {
 trxUpdateTenderSaleItem(
@@ -5406,7 +4375,6 @@ epilog
 	return app.getLastError;
 end;
 }
-
 zExceptionHandler
 {
 zExceptionHandler(exceptionObj : Exception) : Integer protected;
@@ -5427,7 +4395,6 @@ begin
 	return inheritMethod(exceptionObj);
 end;
 }
-
 zLockExceptionHandler
 {
 zLockExceptionHandler(lockExObj : LockException) : Integer protected;
@@ -5454,7 +4421,6 @@ begin
 	return Ex_Resume_Next;
 end;
 }
-
 zSilentLockExceptionHandler
 {
 zSilentLockExceptionHandler(lockExObj : LockException input; maxRetries : Integer) : Integer protected;
@@ -5488,7 +4454,6 @@ begin
 	return Ex_Resume_Next;
 end;
 }
-
 	)
 	ErewhonInvestmentsModelApp (
 	jadeMethodSources
@@ -5505,9 +4470,7 @@ vars
 begin
 	return PREHEADER & heading & PREBODY & body & FOOTER;
 end;
-
 }
-
 dataLoaderApp
 {
 dataLoaderApp(args : HugeStringArray);
@@ -5553,7 +4516,6 @@ epilog
 	terminate;
 end;
 }
-
 finalize
 {
 finalize() updating;
@@ -5568,7 +4530,6 @@ begin
 	delete self.myTA;
 end;
 }
-
 getErrorString
 {
 getErrorString(errorNo : Integer) : String;
@@ -5587,7 +4548,6 @@ begin
 	return self.currentLocale.getStringValue("ErrMdl" & errorNo.String);
 end;
 }
-
 getLastError
 {
 getLastError() : Integer;
@@ -5600,7 +4560,6 @@ begin
 	return self.zErrorCode;
 end;
 }
-
 initialize
 {
 initialize() updating;
@@ -5632,7 +4591,6 @@ begin
 	on LockException do global.commonLockExceptionHandler(exception) global;
 end;
 }
-
 noErrors
 {
 noErrors() : Boolean;
@@ -5641,7 +4599,6 @@ begin
 	return self.zErrorCode = Success;
 end;
 }
-
 raiseModelException
 {
 raiseModelException(errorNo : Integer);
@@ -5663,7 +4620,6 @@ begin
 	raise exceptionObject;
 end;
 }
-
 setCompany
 {
 setCompany(value: Company) updating;
@@ -5676,7 +4632,6 @@ begin
 	self.myCompany := value;
 end;
 }
-
 setErrorCode
 {
 setErrorCode(errCode : Integer) updating;
@@ -5689,7 +4644,6 @@ begin
 	self.zErrorCode := errCode;
 end;
 }
-
 	)
 	InitialDataLoader (
 	jadeMethodSources
@@ -5769,7 +4723,6 @@ epilog
 	write "Database initialized in " & ((app.clock - startTime) div MillisecondsPerSecond).String & " seconds";
 end;
 }
-
 zCloseTendersAtCurrentDate
 {
 zCloseTendersAtCurrentDate(total : Integer output) serverExecution, protected;
@@ -5793,7 +4746,6 @@ begin
 	commitTransaction;
 end;
 }
-
 zGetElapsedTimeString
 {
 zGetElapsedTimeString(startClock : Integer) : String protected;
@@ -5814,7 +4766,6 @@ begin
 	return elapsedTime.String & " seconds";
 end;
 }
-
 zGetNextToken
 {
 zGetNextToken(str : String; pos : Integer io) : String protected;
@@ -5886,7 +4837,6 @@ begin
 	return token;
 end;
 }
-
 zLoadAgentRates
 {
 zLoadAgentRates() protected;
@@ -5948,7 +4898,6 @@ epilog
 	write count.String & " agent rates loaded in " & self.zGetElapsedTimeString(startClock);
 end;
 }
-
 zLoadAgents
 {
 zLoadAgents() protected;
@@ -6024,7 +4973,6 @@ epilog
 	write self.zCompany.allAgents.size.String & " agents loaded in " & self.zGetElapsedTimeString(startClock);
 end;
 }
-
 zLoadCategories
 {
 zLoadCategories() protected;
@@ -6077,7 +5025,6 @@ epilog
 	write self.zCompany.allAgents.size.String & " categories loaded in " & self.zGetElapsedTimeString(startClock);
 end;
 }
-
 zLoadCategoryRates
 {
 zLoadCategoryRates() protected;
@@ -6133,7 +5080,6 @@ epilog
 	write count.String & " category rates loaded in " & self.zGetElapsedTimeString(startClock);
 end;
 }
-
 zLoadClients
 {
 zLoadClients() protected;
@@ -6210,7 +5156,6 @@ epilog
 	write self.zCompany.allClients.size.String & " clients loaded in " & self.zGetElapsedTimeString(startClock);
 end;
 }
-
 zLoadLocations
 {
 zLoadLocations() protected;
@@ -6268,7 +5213,6 @@ epilog
 	write self.zCompany.getNumberOfLocations.String & " locations loaded in " & self.zGetElapsedTimeString(startClock);
 end;
 }
-
 zLoadRetailSaleItems
 {
 zLoadRetailSaleItems() protected;
@@ -6362,7 +5306,6 @@ epilog
 	write totalItems.String & " retail sale items loaded in " & self.zGetElapsedTimeString(startClock);
 end;
 }
-
 zLoadRetailSales
 {
 zLoadRetailSales() protected;
@@ -6429,7 +5372,6 @@ epilog
 	write totalSales.String & " retail sales loaded in " & self.zGetElapsedTimeString(startClock);
 end;
 }
-
 zLoadTenderSaleItems
 {
 zLoadTenderSaleItems() protected;
@@ -6524,7 +5466,6 @@ epilog
 	write totalItems.String & " tender sale items loaded in " & self.zGetElapsedTimeString(startClock);
 end;
 }
-
 zLoadTenders
 {
 zLoadTenders() protected;
@@ -6597,7 +5538,6 @@ epilog
 	write totalTenders.String & " tenders loaded in " & self.zGetElapsedTimeString(startClock);
 end;
 }
-
 zValidateDirectoryPath
 {
 zValidateDirectoryPath(directoryPath : String) : String protected;
@@ -6644,7 +5584,6 @@ epilog
 	delete dir; // does nothing if dir is null
 end;
 }
-
 	)
 	ReportSecurity (
 	jadeMethodSources
@@ -6661,9 +5600,7 @@ begin
 		return NO_ACCESS;
 	endif;
 end;
-
 }
-
 canAccessDesigner
 {
 canAccessDesigner(userName: String): Integer updating;
@@ -6678,7 +5615,6 @@ begin
 	endif;
 end;
 }
-
 	)
 	JadeScript (
 	jadeMethodSources
@@ -6727,7 +5663,6 @@ begin
 	
 end;
 }
-
 initializeData
 {
 initializeData();
@@ -6761,7 +5696,6 @@ epilog
 	delete fileFolder; // does nothing if fileFolder is null
 end;
 }
-
 	)
 	JadeTestCase (
 	jadeMethodSources
@@ -6906,7 +5840,6 @@ begin
 	commitTransaction;	
 end;
 }
-
 clearCompany
 {
 clearCompany() unitTestBeforeAll, updating;
@@ -6919,9 +5852,7 @@ begin
 	Address.instances.purge();
 	commitTransaction;
 end;
-
 }
-
 deleteCompanyBeforeAll
 {
 deleteCompanyBeforeAll() unitTestBeforeAll;
@@ -6931,9 +5862,7 @@ begin
 	Company.instances.purge();
 	commitTransaction;
 end;
-
 }
-
 	)
 	TestTransactionAgent (
 	jadeMethodSources
@@ -6999,9 +5928,7 @@ begin
 										);
 	commitTransaction;
 end;
-
 }
-
 tearDown
 {
 tearDown() updating, unitTestAfter;
@@ -7014,9 +5941,7 @@ begin
 	on DeadlockException do null global;
 	on LockException do null global;
 end;
-
 }
-
 testActionOrderProxies
 {
 testActionOrderProxies() unitTest;
@@ -7074,9 +5999,7 @@ begin
 epilog
 	delete proxyDict;
 end;
-
 }
-
 testActionOrderProxiesInvalidProxy
 {
 testActionOrderProxiesInvalidProxy() unitTest;
@@ -7104,9 +6027,7 @@ begin
 epilog
 	delete proxies;
 end;
-
 }
-
 testActionOrderProxiesNullDict
 {
 testActionOrderProxiesNullDict() unitTest;
@@ -7118,9 +6039,7 @@ begin
 	code := app.myTA.trxActionOrderProxies(null);
 	assertEquals(InvalidOrderProxy, code);
 end;
-
 }
-
 testCloseTendersAtDate
 {
 testCloseTendersAtDate() unitTest;
@@ -7171,9 +6090,7 @@ begin
 epilog
 	abortTransaction;
 end;
-
 }
-
 testCreateAddress
 {
 testCreateAddress() unitTest;
@@ -7205,9 +6122,7 @@ begin
 	assertEquals( "www.jadeworld.com", address.webSite );
 
 end;
-
 }
-
 testCreateAddressInvalidCompany
 {
 testCreateAddressInvalidCompany() unitTest;
@@ -7238,7 +6153,6 @@ begin
 	assertNull(address);
 end;
 }
-
 testCreateAddressOutsideTrx
 {
 testCreateAddressOutsideTrx() unitTest;
@@ -7267,9 +6181,7 @@ begin
 epilog
 	abortTransaction;
 end;
-
 }
-
 testCreateAgent
 {
 testCreateAgent() unitTest;
@@ -7293,9 +6205,7 @@ begin
 	assertEquals( "New Agent", agent.name );
 	assertNotNull( agent.myCompany );
 end;
-
 }
-
 testCreateAgentInvalidAddress
 {
 testCreateAgentInvalidAddress() unitTest;
@@ -7313,9 +6223,7 @@ begin
 	// Should be no exception, but an error code
 	assertEquals(NullObject, code);
 end;
-
 }
-
 testCreateAgentInvalidCompany
 {
 testCreateAgentInvalidCompany() unitTest;
@@ -7336,7 +6244,6 @@ begin
 	assertNull(agent);
 end;
 }
-
 testCreateAgentOutsideTrx
 {
 testCreateAgentOutsideTrx() unitTest;
@@ -7355,9 +6262,7 @@ begin
 epilog
 	abortTransaction;
 end;
-
 }
-
 testCreateClient
 {
 testCreateClient() unitTest;
@@ -7382,7 +6287,6 @@ begin
 	assertEquals( "New Client", client.name );
 end;
 }
-
 testCreateClientInvalidAddress
 {
 testCreateClientInvalidAddress() unitTest;
@@ -7401,9 +6305,7 @@ begin
 	// Should be no exception, but an error code
 	assertEquals(NullObject, code);
 end;
-
 }
-
 testCreateClientInvalidCompany
 {
 testCreateClientInvalidCompany() unitTest;
@@ -7424,7 +6326,6 @@ begin
 	assertNull(client);
 end;
 }
-
 testCreateClientOutsideTrx
 {
 testCreateClientOutsideTrx() unitTest;
@@ -7443,9 +6344,7 @@ begin
 epilog
 	abortTransaction;
 end;
-
 }
-
 testCreateCommRateNullCategory
 {
 testCreateCommRateNullCategory() unitTest;
@@ -7460,9 +6359,7 @@ begin
 	
 	assertEquals(InvalidSaleItemCategory, code);
 end;
-
 }
-
 testCreateCommRateOutsideTrx
 {
 testCreateCommRateOutsideTrx() unitTest;
@@ -7486,7 +6383,6 @@ epilog
 	abortTransaction;
 end;
 }
-
 testCreateCommissionRate
 {
 testCreateCommissionRate() unitTest;
@@ -7505,9 +6401,7 @@ begin
 	assertEquals(13.5.Decimal, rate.percentage);
 	assertEquals(category, rate.mySaleItemCategory);
 end;
-
 }
-
 testCreateCountry
 {
 testCreateCountry() unitTest;
@@ -7523,9 +6417,7 @@ begin
 	assertNotNull(country);
 	assertEquals("NewPlace", country.name);
 end;
-
 }
-
 testCreateCountryInvalidCompany
 {
 testCreateCountryInvalidCompany() unitTest;
@@ -7546,7 +6438,6 @@ begin
 	assertNull(country);
 end;
 }
-
 testCreateCountryOutsideTrx
 {
 testCreateCountryOutsideTrx() unitTest;
@@ -7567,7 +6458,6 @@ epilog
 	abortTransaction;
 end;
 }
-
 testCreateRegion
 {
 testCreateRegion() unitTest;
@@ -7583,9 +6473,7 @@ begin
 	assertNotNull(region);
 	assertEquals("New Region", region.name);
 end;
-
 }
-
 testCreateRegionInvalidCountry
 {
 testCreateRegionInvalidCountry() unitTest;
@@ -7602,7 +6490,6 @@ begin
 	assertNull(region);
 end;
 }
-
 testCreateRegionOutsideTrx
 {
 testCreateRegionOutsideTrx() unitTest;
@@ -7621,9 +6508,7 @@ begin
 epilog
 	abortTransaction;
 end;
-
 }
-
 testCreateRetailItem
 {
 testCreateRetailItem() unitTest;
@@ -7666,9 +6551,7 @@ begin
 	assertEquals(app.myCompany.allCountries.first().allRegions.first(), item.myRegion);
 	assertEquals(app.myCompany.allSaleItemCategories.first(), item.mySaleItemCategory);
 end;
-
 }
-
 testCreateRetailItemInvalidCompany
 {
 testCreateRetailItemInvalidCompany() unitTest;
@@ -7694,7 +6577,6 @@ begin
 	assertNull(item);									
 end;
 }
-
 testCreateRetailItemOutsideTrx
 {
 testCreateRetailItemOutsideTrx() unitTest;
@@ -7719,9 +6601,7 @@ begin
 epilog
 	abortTransaction;						
 end;
-
 }
-
 testCreateSaleCategory
 {
 testCreateSaleCategory() unitTest;
@@ -7742,9 +6622,7 @@ begin
 	assertEquals("TestCategory", category.name);
 	assertEquals("Test Sale Item Category", category.description);
 end;
-
 }
-
 testCreateSaleCategoryInvalidCompany
 {
 testCreateSaleCategoryInvalidCompany() unitTest;
@@ -7766,9 +6644,7 @@ begin
 	assertEquals(InvalidCompany, code);
 	assertNull(category);	
 end;
-
 }
-
 testCreateSaleCategoryOutsideTrx
 {
 testCreateSaleCategoryOutsideTrx() unitTest;
@@ -7793,9 +6669,7 @@ begin
 epilog
 	abortTransaction;						
 end;
-
 }
-
 testCreateTenderItem
 {
 testCreateTenderItem() unitTest;
@@ -7841,7 +6715,6 @@ begin
 	assertEquals(app.myCompany.allSaleItemCategories.first(), item.mySaleItemCategory);
 end;
 }
-
 testCreateTenderItemInvalidCompany
 {
 testCreateTenderItemInvalidCompany() unitTest;
@@ -7866,9 +6739,7 @@ begin
 	assertEquals(InvalidCompany, code);
 	assertNull(item);	
 end;
-
 }
-
 testCreateTenderItemOutsideTrx
 {
 testCreateTenderItemOutsideTrx() unitTest;
@@ -7895,9 +6766,7 @@ begin
 epilog
 	abortTransaction;					
 end;
-
 }
-
 testDeleteAgent
 {
 testDeleteAgent() unitTest;
@@ -7916,9 +6785,7 @@ begin
 	assertNull(agent);
 	
 end;
-
 }
-
 testDeleteAgentOutsideTrx
 {
 testDeleteAgentOutsideTrx() unitTest;
@@ -7940,9 +6807,7 @@ begin
 epilog
 	abortTransaction;					
 end;
-
 }
-
 testDeleteClient
 {
 testDeleteClient() unitTest;
@@ -7960,9 +6825,7 @@ begin
 	assertEquals(Success, code);
 	assertNull(client);
 end;
-
 }
-
 testDeleteClientOutsideTrx
 {
 testDeleteClientOutsideTrx() unitTest;
@@ -7984,9 +6847,7 @@ begin
 epilog
 	abortTransaction;					
 end;
-
 }
-
 testDeleteCommissionRate
 {
 testDeleteCommissionRate() unitTest;
@@ -8004,9 +6865,7 @@ begin
 	assertEquals(Success, code);
 	assertNull(rate);
 end;
-
 }
-
 testDeleteCommissionRateOutsideTrx
 {
 testDeleteCommissionRateOutsideTrx() unitTest;
@@ -8028,9 +6887,7 @@ begin
 epilog
 	abortTransaction;				
 end;
-
 }
-
 testDeleteCountry
 {
 testDeleteCountry() unitTest;
@@ -8048,9 +6905,7 @@ begin
 	assertEquals(Success, code);
 	assertNull(country);
 end;
-
 }
-
 testDeleteCountryOutsideTrx
 {
 testDeleteCountryOutsideTrx() unitTest;
@@ -8073,7 +6928,6 @@ epilog
 	abortTransaction;				
 end;
 }
-
 testDeleteRegion
 {
 testDeleteRegion() unitTest;
@@ -8091,9 +6945,7 @@ begin
 	assertEquals(Success, code);
 	assertNull(region);
 end;
-
 }
-
 testDeleteRegionOutsideTrx
 {
 testDeleteRegionOutsideTrx() unitTest;
@@ -8116,9 +6968,7 @@ begin
 epilog
 	abortTransaction;	
 end;
-
 }
-
 testDeleteRetailSale
 {
 testDeleteRetailSale() unitTest;
@@ -8136,9 +6986,7 @@ begin
 	assertEquals(Success, code);
 	assertNull(sale);
 end;
-
 }
-
 testDeleteRetailSaleOutsideTrx
 {
 testDeleteRetailSaleOutsideTrx() unitTest;
@@ -8161,9 +7009,7 @@ begin
 epilog
 	abortTransaction;
 end;
-
 }
-
 testDeleteSaleItem
 {
 testDeleteSaleItem() unitTest;
@@ -8182,7 +7028,6 @@ begin
 	assertNull(item);
 end;
 }
-
 testDeleteSaleItemCategory
 {
 testDeleteSaleItemCategory() unitTest;
@@ -8201,7 +7046,6 @@ begin
 	assertNull(category);
 end;
 }
-
 testDeleteSaleItemCategoryOutsideTrx
 {
 testDeleteSaleItemCategoryOutsideTrx() unitTest;
@@ -8226,7 +7070,6 @@ epilog
 	abortTransaction;
 end;
 }
-
 testDeleteSaleItemOutsideTrx
 {
 testDeleteSaleItemOutsideTrx() unitTest;
@@ -8251,7 +7094,6 @@ epilog
 	abortTransaction;
 end;
 }
-
 testDeleteTender
 {
 testDeleteTender() unitTest;
@@ -8270,7 +7112,6 @@ begin
 	assertNull(tender);
 end;
 }
-
 testDeleteTenderOutsideTrx
 {
 testDeleteTenderOutsideTrx() unitTest;
@@ -8294,7 +7135,6 @@ epilog
 	abortTransaction;
 end;
 }
-
 testDeleteTenderSale
 {
 testDeleteTenderSale() unitTest;
@@ -8313,7 +7153,6 @@ begin
 	assertNull(sale);
 end;
 }
-
 testDeleteTenderSaleOutsideTrx
 {
 testDeleteTenderSaleOutsideTrx() unitTest;
@@ -8337,7 +7176,6 @@ epilog
 	abortTransaction;
 end;
 }
-
 testLockExceptionHandler
 {
 testLockExceptionHandler() unitTestIgnore;
@@ -8354,9 +7192,7 @@ begin
 	assertEquals(Success, code);
 	assertNotNull(agent);
 end;
-
 }
-
 testSetAgentsForCommRateNullAgent
 {
 testSetAgentsForCommRateNullAgent() unitTest;
@@ -8389,7 +7225,6 @@ begin
 	assertEquals(0, rate.allAgents.size());
 end;
 }
-
 testSetAgentsForCommissionRate
 {
 testSetAgentsForCommissionRate() unitTest;
@@ -8414,7 +7249,6 @@ begin
 	assertEquals(1, rate.allAgents.size());
 end;
 }
-
 testSetAgentsForCommissionRateOutOfDateEdition
 {
 testSetAgentsForCommissionRateOutOfDateEdition() unitTest;
@@ -8438,7 +7272,6 @@ begin
 	assertEquals(ObjectOutOfDate, code);
 end;
 }
-
 testUpdateAddress
 {
 testUpdateAddress() unitTest;
@@ -8483,9 +7316,7 @@ begin
 	assertEquals("1234999", address.phone);
 	assertEquals("web.site.com", address.webSite);
 end;
-
 }
-
 testUpdateAddressNull
 {
 testUpdateAddressNull() unitTest;
@@ -8509,9 +7340,7 @@ begin
 								
 	assertEquals(AddressNotSet, code);
 end;
-
 }
-
 testUpdateAddressOutOfDateEdition
 {
 testUpdateAddressOutOfDateEdition() unitTest;
@@ -8538,9 +7367,7 @@ begin
 								
 	assertEquals(ObjectOutOfDate, code);
 end;
-
 }
-
 testUpdateAddressOutsideTrx
 {
 testUpdateAddressOutsideTrx() unitTest;
@@ -8573,7 +7400,6 @@ epilog
 	abortTransaction;
 end;
 }
-
 testUpdateAgent
 {
 testUpdateAgent() unitTest;
@@ -8592,9 +7418,7 @@ begin
 	assertEquals(Success, code);
 	assertTrue(self.testAddress.name = agent.myAddress.name);
 end;
-
 }
-
 testUpdateAgentNull
 {
 testUpdateAgentNull() unitTest;
@@ -8606,9 +7430,7 @@ begin
 	code 	:= app.myTA.trxUpdateAgent(null, 0, self.testAddress);
 	assertEquals(InvalidAgent, code);
 end;
-
 }
-
 testUpdateAgentOutOfDateEdition
 {
 testUpdateAgentOutOfDateEdition() unitTest;
@@ -8626,9 +7448,7 @@ begin
 	
 	assertEquals(ObjectOutOfDate, code);
 end;
-
 }
-
 testUpdateAgentOutsideTrx
 {
 testUpdateAgentOutsideTrx() unitTest;
@@ -8653,9 +7473,7 @@ begin
 epilog
 	abortTransaction;
 end;
-
 }
-
 testUpdateClient
 {
 testUpdateClient() unitTest;
@@ -8675,7 +7493,6 @@ begin
 	assertTrue(self.testAddress.name = client.myAddress.name);
 end;
 }
-
 testUpdateClientNull
 {
 testUpdateClientNull() unitTest;
@@ -8687,9 +7504,7 @@ begin
 	code 	:= app.myTA.trxUpdateClient(null, 0, self.testAddress);
 	assertEquals(InvalidClient, code);
 end;
-
 }
-
 testUpdateClientOutOfDateEdition
 {
 testUpdateClientOutOfDateEdition() unitTest;
@@ -8707,9 +7522,7 @@ begin
 	
 	assertEquals(ObjectOutOfDate, code);
 end;
-
 }
-
 testUpdateClientOutsideTrx
 {
 testUpdateClientOutsideTrx() unitTest;
@@ -8734,9 +7547,7 @@ begin
 epilog
 	abortTransaction;
 end;
-
 }
-
 testUpdateCommRate
 {
 testUpdateCommRate() unitTest;
@@ -8756,7 +7567,6 @@ begin
 	assertEquals(33.0.Decimal, rate.percentage);
 end;
 }
-
 testUpdateCommRateNull
 {
 testUpdateCommRateNull() unitTest;
@@ -8768,9 +7578,7 @@ begin
 	code 	:= app.myTA.trxUpdateCommissionRate(null, 0, 33);
 	assertEquals(InvalidCommissionRate, code);
 end;
-
 }
-
 testUpdateCommRateOutOfDateEdition
 {
 testUpdateCommRateOutOfDateEdition() unitTest;
@@ -8787,7 +7595,6 @@ begin
 	assertEquals(ObjectOutOfDate, code);
 end;
 }
-
 testUpdateCommRateOutsideTrx
 {
 testUpdateCommRateOutsideTrx() unitTest;
@@ -8812,7 +7619,6 @@ epilog
 	abortTransaction;
 end;
 }
-
 testUpdateCountry
 {
 testUpdateCountry() unitTest;
@@ -8832,7 +7638,6 @@ begin
 	assertEquals("NotFrance", country.name);
 end;
 }
-
 testUpdateCountryNull
 {
 testUpdateCountryNull() unitTest;
@@ -8845,7 +7650,6 @@ begin
 	assertEquals(InvalidCountry, code);
 end;
 }
-
 testUpdateCountryOutOfDateEdition
 {
 testUpdateCountryOutOfDateEdition() unitTest;
@@ -8863,7 +7667,6 @@ begin
 	assertEquals(ObjectOutOfDate, code);
 end;
 }
-
 testUpdateCountryOutsideTrx
 {
 testUpdateCountryOutsideTrx() unitTest;
@@ -8887,7 +7690,6 @@ epilog
 	abortTransaction;
 end;
 }
-
 testUpdateRegion
 {
 testUpdateRegion() unitTest;
@@ -8907,7 +7709,6 @@ begin
 	assertEquals("NotParis", region.name);
 end;
 }
-
 testUpdateRegionNull
 {
 testUpdateRegionNull() unitTest;
@@ -8920,7 +7721,6 @@ begin
 	assertEquals(InvalidRegion, code);
 end;
 }
-
 testUpdateRegionOutOfDateEdition
 {
 testUpdateRegionOutOfDateEdition() unitTest;
@@ -8937,7 +7737,6 @@ begin
 	assertEquals(ObjectOutOfDate, code);
 end;
 }
-
 testUpdateRegionOutsideTrx
 {
 testUpdateRegionOutsideTrx() unitTest;
@@ -8961,7 +7760,6 @@ epilog
 	abortTransaction;
 end;
 }
-
 testUpdateRetailSaleItem
 {
 testUpdateRetailSaleItem() unitTest;
@@ -8983,7 +7781,6 @@ begin
 	assertEquals(88.00.Decimal, item.price);
 end;
 }
-
 testUpdateRetailSaleItemNull
 {
 testUpdateRetailSaleItemNull() unitTest;
@@ -8996,7 +7793,6 @@ begin
 	assertEquals(InvalidSaleItem, code);
 end;
 }
-
 testUpdateRetailSaleItemOutOfDateEdition
 {
 testUpdateRetailSaleItemOutOfDateEdition() unitTest;
@@ -9014,7 +7810,6 @@ begin
 	assertEquals(ObjectOutOfDate, code);
 end;
 }
-
 testUpdateRetailSaleItemOutsideTrx
 {
 testUpdateRetailSaleItemOutsideTrx() unitTest;
@@ -9039,7 +7834,6 @@ epilog
 
 end;
 }
-
 testUpdateSaleItemCategory
 {
 testUpdateSaleItemCategory() unitTest;
@@ -9065,9 +7859,7 @@ begin
 	assertEquals("Tangibles", category.name);
 	assertEquals("Items that are definitely real", category.description);
 end;
-
 }
-
 testUpdateSaleItemCategoryNull
 {
 testUpdateSaleItemCategoryNull() unitTest;
@@ -9078,9 +7870,7 @@ begin
 	code := app.myTA.trxUpdateSaleItemCategory(null, 0, "", "");
 	assertEquals(InvalidSaleItemCategory, code);
 end;
-
 }
-
 testUpdateSaleItemCategoryOutOfDateEdition
 {
 testUpdateSaleItemCategoryOutOfDateEdition() unitTest;
@@ -9102,9 +7892,7 @@ begin
 	assertEquals(ObjectOutOfDate, code);
 
 end;
-
 }
-
 testUpdateSaleItemCategoryOutsideTrx
 {
 testUpdateSaleItemCategoryOutsideTrx() unitTest;
@@ -9131,9 +7919,7 @@ begin
 epilog
 	abortTransaction;
 end;
-
 }
-
 testUpdateTender
 {
 testUpdateTender() unitTest;
@@ -9158,9 +7944,7 @@ begin
 	assertEquals(Success, code);
 	assertEquals(444.44.Decimal, tender.offer);
 end;
-
 }
-
 testUpdateTenderNull
 {
 testUpdateTenderNull() unitTest;
@@ -9180,9 +7964,7 @@ begin
 	assertEquals(InvalidTender, code);
 
 end;
-
 }
-
 testUpdateTenderOutOfDateEdition
 {
 testUpdateTenderOutOfDateEdition() unitTest;
@@ -9205,9 +7987,7 @@ begin
 	
 	assertEquals(ObjectOutOfDate, code);
 end;
-
 }
-
 testUpdateTenderOutsideTrx
 {
 testUpdateTenderOutsideTrx() unitTest;
@@ -9235,9 +8015,7 @@ begin
 epilog
 	abortTransaction;
 end;
-
 }
-
 testUpdateTenderSaleItem
 {
 testUpdateTenderSaleItem() unitTest;
@@ -9263,9 +8041,7 @@ begin
 	assertEquals(Success, code);
 	assertEquals(0.01.Decimal, item.price);
 end;
-
 }
-
 testUpdateTenderSaleItemNull
 {
 testUpdateTenderSaleItemNull() unitTest;
@@ -9284,9 +8060,7 @@ begin
 										
 	assertEquals(InvalidSaleItem, code);
 end;
-
 }
-
 testUpdateTenderSaleItemOutOfDateEdition
 {
 testUpdateTenderSaleItemOutOfDateEdition() unitTest;
@@ -9309,9 +8083,7 @@ begin
 										);
 	assertEquals(ObjectOutOfDate, code);
 end;
-
 }
-
 testUpdateTenderSaleItemOutsideTrx
 {
 testUpdateTenderSaleItemOutsideTrx() unitTest;
@@ -9340,9 +8112,7 @@ begin
 epilog
 	abortTransaction;
 end;
-
 }
-
 	)
 	TestAddress (
 	jadeMethodSources
@@ -9362,9 +8132,7 @@ begin
 							"www.jadeworld.com"
 							) transient;
 end;
-
 }
-
 tearDown
 {
 tearDown() unitTestAfter, updating;
@@ -9375,9 +8143,7 @@ begin
 	Company.instances.purge();
 	commitTransaction;
 end;
-
 }
-
 testGetDebugString
 {
 testGetDebugString() unitTest, updating;
@@ -9388,9 +8154,7 @@ begin
 	oid := address.getOidString();
 	assertEquals(oid & " Address: John Smith, 314 Nohwere Lane, Christchurch, New Zealand", address.getDebugString());
 end;
-
 }
-
 testGetNameAndAddress
 {
 testGetNameAndAddress() unitTest;
@@ -9398,9 +8162,7 @@ testGetNameAndAddress() unitTest;
 begin
 	assertEquals("John Smith, 314 Nohwere Lane, Christchurch, New Zealand", address.getNameAndAddress());
 end;
-
 }
-
 testProperties
 {
 testProperties() unitTest;
@@ -9415,9 +8177,7 @@ begin
 	assertEquals("555 1234567", address.phone);
 	assertEquals("www.jadeworld.com", address.webSite);
 end;
-
 }
-
 testUpdate
 {
 testUpdate() unitTest, updating;
@@ -9447,9 +8207,7 @@ begin
 	assertEquals("https://www.jadeworld.com/contact-us/", address.webSite);
 
 end;
-
 }
-
 testUpdateFromProxy
 {
 testUpdateFromProxy() unitTest, updating;
@@ -9487,9 +8245,7 @@ begin
 epilog
 	delete proxyAddress;
 end;
-
 }
-
 testUpdateFromProxyWithoutTrx
 {
 testUpdateFromProxyWithoutTrx() unitTest, updating;
@@ -9514,9 +8270,7 @@ begin
 epilog
 	delete proxyAddress;
 end;
-
 }
-
 testUpdateWithoutTrx
 {
 testUpdateWithoutTrx() unitTest, updating;
@@ -9533,9 +8287,7 @@ begin
 			"https://www.jadeworld.com/contact-us/"
 			);
 end;
-
 }
-
 	)
 	TestAgent (
 	jadeMethodSources
@@ -9550,9 +8302,7 @@ begin
 	self.buildCompany(self.company);
 	self.agent := self.company.allAgents.first();
 end;
-
 }
-
 tearDown
 {
 tearDown() unitTestAfter, updating;
@@ -9562,9 +8312,7 @@ begin
 	Company.instances.purge();
 	commitTransaction;
 end;
-
 }
-
 testAddCommissionRate
 {
 testAddCommissionRate() unitTest;
@@ -9587,9 +8335,7 @@ begin
 	assertEquals(2, agent.allCommissionRates.size());
 	assertEquals(rate, agent.allCommissionRates.last());
 end;
-
 }
-
 testAddCommissionRateWithExistingRate
 {
 testAddCommissionRateWithExistingRate() unitTest;
@@ -9616,7 +8362,6 @@ begin
 	assertEquals(secondRate, agent.allCommissionRates.last());
 end;
 }
-
 testAddCommissionRateWithoutTrx
 {
 testAddCommissionRateWithoutTrx() unitTest;
@@ -9640,9 +8385,7 @@ begin
 	agent.addCommissionRate(rate);
 	
 end;
-
 }
-
 testAddNullCommissionRate
 {
 testAddNullCommissionRate() unitTest;
@@ -9660,7 +8403,6 @@ epilog
 	abortTransaction;
 end;
 }
-
 testAddRedundantCommissionRate
 {
 testAddRedundantCommissionRate() unitTest;
@@ -9685,9 +8427,7 @@ begin
 	assertEquals(rate, agent.allCommissionRates.last());
 
 end;
-
 }
-
 testDefaultCommissionRateForCategory
 {
 testDefaultCommissionRateForCategory() unitTest;
@@ -9717,7 +8457,6 @@ begin
 	assertEquals(secondRate, foundRate);
 end;
 }
-
 testDocumentSelfRTF
 {
 testDocumentSelfRTF() unitTest;
@@ -9735,9 +8474,7 @@ begin
 			&	" Agent\f2\fs17\par}";
 	assertEquals(rtf, agent.documentSelfRTF());
 end;
-
 }
-
 testGetAllSales
 {
 testGetAllSales() unitTest;
@@ -9776,7 +8513,6 @@ epilog
 	delete sales;
 end;
 }
-
 testGetAllSalesEmptyAgent
 {
 testGetAllSalesEmptyAgent() unitTest;
@@ -9797,7 +8533,6 @@ epilog
 	delete sales;
 end;
 }
-
 testGetCommissionRateForCategory
 {
 testGetCommissionRateForCategory() unitTest;
@@ -9825,9 +8560,7 @@ begin
 	// Check the result
 	assertEquals(secondRate, foundRate);
 end;
-
 }
-
 testGetDebugString
 {
 testGetDebugString() unitTest;
@@ -9838,9 +8571,7 @@ begin
 	oid := self.agent.getOidString();
 	assertEquals(oid & " Agent", self.agent.getDebugString());
 end;
-
 }
-
 testGetNameString
 {
 testGetNameString() unitTest;
@@ -9850,9 +8581,7 @@ vars
 begin
 	assertEquals("John Smith", self.agent.getNameString());
 end;
-
 }
-
 testInitialProperties
 {
 testInitialProperties() unitTest;
@@ -9877,9 +8606,7 @@ begin
 	assertEquals( "John Smith", agent.name );
 	assertNotNull( agent.myCompany );
 end;
-
 }
-
 testNullCommissionRateForCategory
 {
 testNullCommissionRateForCategory() unitTest;
@@ -9905,9 +8632,7 @@ begin
 	// Check the result
 	assertNull(foundRate);
 end;
-
 }
-
 testUpdate
 {
 testUpdate() unitTest;
@@ -9950,9 +8675,7 @@ begin
 	assertEquals( "Jane Doe", agent.name );
 	assertNotNull( agent.myCompany );
 end;
-
 }
-
 testUpdateWithoutTrx
 {
 testUpdateWithoutTrx() unitTest;
@@ -9980,7 +8703,6 @@ begin
 	self.agent.update(proxyAddress);
 end;
 }
-
 	)
 	TestClient (
 	jadeMethodSources
@@ -9995,9 +8717,7 @@ begin
 	self.buildCompany(self.company);
 	self.client := self.company.allClients.first();
 end;
-
 }
-
 tearDown
 {
 tearDown() unitTestAfter, updating;
@@ -10008,9 +8728,7 @@ begin
 	Address.instances.purge();
 	commitTransaction;
 end;
-
 }
-
 testCreateTender
 {
 testCreateTender() unitTest;
@@ -10036,7 +8754,6 @@ begin
 	assertEquals(timeStamp, tender.timeStamp);
 end;
 }
-
 testGetAllSales
 {
 testGetAllSales() unitTest;
@@ -10060,9 +8777,7 @@ begin
 epilog
 	delete sales;
 end;
-
 }
-
 testGetDebugString
 {
 testGetDebugString() unitTest;
@@ -10070,9 +8785,7 @@ testGetDebugString() unitTest;
 begin
 	assertEquals(client.getOidString() & " Client", client.getDebugString());
 end;
-
 }
-
 testUpdate
 {
 testUpdate() unitTest;
@@ -10111,9 +8824,7 @@ begin
 	assertEquals( "Jane Doe", client.name );
 
 end;
-
 }
-
 testUpdateWithoutTrx
 {
 testUpdateWithoutTrx() unitTest;
@@ -10141,7 +8852,6 @@ begin
 	self.client.update(proxyAddress);
 end;
 }
-
 	)
 	TestCommissionRate (
 	jadeMethodSources
@@ -10162,9 +8872,7 @@ begin
 	self.rate := create CommissionRate(category, 11.00);
 	commitTransaction;
 end;
-
 }
-
 tearDown
 {
 tearDown() unitTestAfter, updating;
@@ -10174,9 +8882,7 @@ begin
 	Company.instances.purge();
 	commitTransaction;
 end;
-
 }
-
 testClearAllAgents
 {
 testClearAllAgents() updating, unitTest;
@@ -10196,9 +8902,7 @@ begin
 	assertEquals(0, rate.allAgents.size());
 	commitTransaction;
 end;
-
 }
-
 testGetDebugString
 {
 testGetDebugString() unitTest;
@@ -10208,9 +8912,7 @@ vars
 begin
 	assertEquals(self.rate.getOidString() & " CommissionRate: 11.00%", self.rate.getDebugString());
 end;
-
 }
-
 testNonUniqueRate
 {
 testNonUniqueRate() unitTest;
@@ -10231,9 +8933,7 @@ begin
 epilog
 	abortTransaction;
 end;
-
 }
-
 testNullCategory
 {
 testNullCategory() unitTest;
@@ -10248,9 +8948,7 @@ begin
 epilog
 	abortTransaction;
 end;
-
 }
-
 testPercentageHigh
 {
 testPercentageHigh() unitTest;
@@ -10263,9 +8961,7 @@ begin
 epilog
 	abortTransaction;
 end;
-
 }
-
 testPercentageLow
 {
 testPercentageLow() unitTest;
@@ -10277,9 +8973,7 @@ begin
 epilog
 	abortTransaction;
 end;
-
 }
-
 testUpdate
 {
 testUpdate() unitTest;
@@ -10291,9 +8985,7 @@ begin
 	commitTransaction;
 	assertEquals(12.00.Decimal, self.rate.percentage);
 end;
-
 }
-
 testUpdateWithoutTrx
 {
 testUpdateWithoutTrx() unitTest;
@@ -10302,9 +8994,7 @@ begin
 	expectedException(UpdOperationOutsideTranState);	
 	self.rate.update(12.00);
 end;
-
 }
-
 	)
 	TestCompany (
 	jadeMethodSources
@@ -10320,9 +9010,7 @@ begin
 	endif;
 	return Ex_Pass_Back;
 end;
-
 }
-
 setUp
 {
 setUp() unitTestBefore, updating;
@@ -10453,9 +9141,7 @@ begin
 
 	commitTransaction;
 end;
-
 }
-
 tearDown
 {
 tearDown() unitTestAfter, updating;
@@ -10468,9 +9154,7 @@ begin
 	Address.instances.purge();
 	commitTransaction;
 end;
-
 }
-
 testAgentAlreadyExists
 {
 testAgentAlreadyExists() unitTest;
@@ -10494,9 +9178,7 @@ begin
 	assertFalse(self.company.agentAlreadyExists(nullName));
 	assertFalse(self.company.agentAlreadyExists(emptyName));
 end;
-
 }
-
 testClientAlreadyExists
 {
 testClientAlreadyExists() unitTest;
@@ -10520,9 +9202,7 @@ begin
 	assertFalse(self.company.clientAlreadyExists(nullName));
 	assertFalse(self.company.clientAlreadyExists(emptyName));
 end;
-
 }
-
 testCloseTendersAtDate
 {
 testCloseTendersAtDate() unitTest, serverExecution;
@@ -10541,9 +9221,7 @@ begin
 	
 	assertEquals(1, TenderSale.instances.size());
 end;
-
 }
-
 testCloseTendersOutsideTrx
 {
 testCloseTendersOutsideTrx() unitTest;
@@ -10559,9 +9237,7 @@ begin
 	self.company.closeTendersAtDate(date, numClosed);
 	//assertEquals(UpdOperationOutsideTranState, errorCode);
 end;
-
 }
-
 testCreateAddress
 {
 testCreateAddress() unitTest;
@@ -10592,9 +9268,7 @@ begin
 	assertEquals("555 1234567", address.phone);
 	assertEquals("www.jadeworld.com", address.webSite);
 end;
-
 }
-
 testCreateAgent
 {
 testCreateAgent() unitTest;
@@ -10620,9 +9294,7 @@ begin
 	assertEquals( "John Smith", agent.name );
 	assertEquals(self.company, agent.myCompany);
 end;
-
 }
-
 testCreateCategory
 {
 testCreateCategory() unitTest;
@@ -10638,9 +9310,7 @@ begin
 	assertEquals(category.name, "categoryName");
 	assertEquals(category.description, "categoryDescription");
 end;
-
 }
-
 testCreateClient
 {
 testCreateClient() unitTest;
@@ -10666,9 +9336,7 @@ begin
 	assertEquals(self.company, client.myCompany);
 
 end;
-
 }
-
 testCreateCountry
 {
 testCreateCountry() unitTest;
@@ -10685,9 +9353,7 @@ begin
 	assertEquals("England", country.name); 
 	assertEquals(self.company, country.myCompany);
 end;
-
 }
-
 testCreateItemDetails
 {
 testCreateItemDetails() unitTest;
@@ -10720,9 +9386,7 @@ begin
 	assertEquals(self.testRegion, details.myRegion);
 	assertEquals(self.testCategory, details.mySaleItemCategory);
 end;
-
 }
-
 testCreateRetailSale
 {
 testCreateRetailSale() unitTest;
@@ -10746,9 +9410,7 @@ begin
 	assertEquals(timestamp, sale.timeStamp);
 	
 end;
-
 }
-
 testCreateRetailSaleItem
 {
 testCreateRetailSaleItem() unitTest;
@@ -10774,9 +9436,7 @@ begin
 	assertEquals("An Item", item.shortDescription);
 	
 end;
-
 }
-
 testCreateTenderSale
 {
 testCreateTenderSale() unitTest;
@@ -10799,9 +9459,7 @@ begin
 	assertEquals(self.company, sale.myCompany);
 	assertEquals(self.testTenderSaleItem, sale.mySaleItem);
 end;
-
 }
-
 testCreateTenderSaleItem
 {
 testCreateTenderSaleItem() unitTest;
@@ -10831,9 +9489,7 @@ begin
 	assertEquals(99.01.Decimal, item.price);
 	assertEquals("An Item", item.shortDescription);
 end;
-
 }
-
 testForTwoSingletons
 {
 testForTwoSingletons() unitTest;
@@ -10847,9 +9503,7 @@ begin
 epilog
 	abortTransaction;
 end;
-
 }
-
 testGetAllSales
 {
 testGetAllSales() unitTest;
@@ -10888,9 +9542,7 @@ begin
 	assertTrue(sales.includes(retailSale));
 	assertTrue(sales.includes(tenderSale));
 end;
-
 }
-
 testGetDebugString
 {
 testGetDebugString() unitTest;
@@ -10899,9 +9551,7 @@ begin
 	assertEquals(self.company.getOidString() & " Company", self.company.getDebugString());
 end;
 
-
 }
-
 testGetNextCode
 {
 testGetNextCode() unitTest;
@@ -10928,9 +9578,7 @@ begin
 	expectedException(CodeAllocationOutsideTranState);
 	code := self.company.getNextCodeNumberForPrefix(newPrefix);
 end;
-
 }
-
 testGetNextCodeOverMax
 {
 testGetNextCodeOverMax() unitTest;
@@ -10962,7 +9610,6 @@ epilog
 	abortTransaction;
 end;
 }
-
 testGetNumOfLocations
 {
 testGetNumOfLocations() unitTest;
@@ -10975,9 +9622,7 @@ begin
 	
 	assertEquals(2, count); // "Australia" and "East Coast"
 end;
-
 }
-
 testGetRegion
 {
 testGetRegion() unitTest;
@@ -10991,9 +9636,7 @@ begin
 	region := self.company.getRegion("Not a real place", "Shouldn't be found");
 	assertEquals(null, region);
 end;
-
 }
-
 testInitialProperties
 {
 testInitialProperties() unitTest;
@@ -11001,9 +9644,7 @@ testInitialProperties() unitTest;
 begin
 	assertEquals($CompanyName, company.name);
 end;
-
 }
-
 	)
 	TestCountry (
 	jadeMethodSources
@@ -11019,9 +9660,7 @@ begin
 	self.country := create Country("Africa", self.company);
 	commitTransaction;
 end;
-
 }
-
 tearDown
 {
 tearDown() unitTestAfter, updating;
@@ -11033,9 +9672,7 @@ begin
 	Company.instances.purge();
 	commitTransaction;
 end;
-
 }
-
 testCreateRegion
 {
 testCreateRegion() unitTest;
@@ -11058,9 +9695,7 @@ begin
 	assertTrue(self.country.allRegions.includes(firstRegion));
 	assertTrue(self.country.allRegions.includes(secondRegion));
 end;
-
 }
-
 testDuplicateCountry
 {
 testDuplicateCountry() updating, unitTest;
@@ -11076,7 +9711,6 @@ epilog
 	abortTransaction;
 end;
 }
-
 testGetDebugString
 {
 testGetDebugString() unitTest;
@@ -11085,9 +9719,7 @@ begin
 	assertEquals(self.country.getOidString() & " Country: Africa", self.country.getDebugString());
 end;
 
-
 }
-
 testInvalidCompany
 {
 testInvalidCompany() unitTest;
@@ -11103,7 +9735,6 @@ epilog
 	abortTransaction;
 end;
 }
-
 testInvalidName
 {
 testInvalidName() unitTest;
@@ -11115,9 +9746,7 @@ begin
 epilog
 	abortTransaction;
 end;
-
 }
-
 testUpdate
 {
 testUpdate() unitTest;
@@ -11128,9 +9757,7 @@ begin
 	commitTransaction;
 	assertEquals("Asia", self.country.name);
 end;
-
 }
-
 testUpdateCountryToSameName
 {
 testUpdateCountryToSameName() unitTest, updating;
@@ -11141,9 +9768,7 @@ begin
 	commitTransaction;
 	assertEquals("Africa", self.country.name);
 end;
-
 }
-
 testUpdateOutsideTrx
 {
 testUpdateOutsideTrx() unitTest;
@@ -11152,9 +9777,7 @@ begin
 	expectedException(UpdOperationOutsideTranState);
 	self.country.update("Asia");
 end;
-
 }
-
 	)
 	TestItemDetails (
 	jadeMethodSources
@@ -11189,9 +9812,7 @@ begin
 								);
 	commitTransaction;
 end;
-
 }
-
 tearDown
 {
 tearDown() unitTestAfter, updating;
@@ -11201,9 +9822,7 @@ begin
 	Company.instances.purge();
 	commitTransaction;
 end;
-
 }
-
 testGetCodeNumber
 {
 testGetCodeNumber() unitTest;
@@ -11211,9 +9830,7 @@ testGetCodeNumber() unitTest;
 begin
 	assertEquals(1111, details.getCodeNumber());
 end;
-
 }
-
 testGetCodePrefix
 {
 testGetCodePrefix() unitTest;
@@ -11222,9 +9839,7 @@ begin
 	assertEquals("ITEM", details.getCodePrefix());
 
 end;
-
 }
-
 	)
 	TestModelApp (
 	jadeMethodSources
@@ -11235,9 +9850,7 @@ setUp() unitTestBefore;
 begin
 	app.initialize();
 end;
-
 }
-
 tearDown
 {
 tearDown() unitTestAfter;
@@ -11254,9 +9867,7 @@ begin
 	on DeadlockException do null global;
 	on LockException do null global;
 end;
-
 }
-
 testGetErrorString
 {
 testGetErrorString() unitTest;
@@ -11266,9 +9877,7 @@ vars
 begin
 
 end;
-
 }
-
 testSetCompany
 {
 testSetCompany() unitTest;
@@ -11288,9 +9897,7 @@ begin
 	assertNotNull(app.myCompany);
 	assertEquals(company, app.myCompany);
 end;
-
 }
-
 	)
 	TestOrderProxy (
 	jadeMethodSources
@@ -11397,9 +10004,7 @@ begin
 	commitTransaction;
 end;
 
-
 }
-
 setUp
 {
 setUp() updating, unitTestBefore;
@@ -11407,9 +10012,7 @@ setUp() updating, unitTestBefore;
 begin
 	self.build();
 end;
-
 }
-
 tearDown
 {
 tearDown() updating, unitTestAfter;
@@ -11420,9 +10023,7 @@ begin
 	Address.instances.purge();
 	commitTransaction;
 end;
-
 }
-
 testAction
 {
 testAction() updating, unitTest;
@@ -11463,9 +10064,7 @@ begin
 epilog
 	delete proxyDict;
 end;
-
 }
-
 	)
 	TestRetailOrderProxy (
 	jadeMethodSources
@@ -11484,9 +10083,7 @@ begin
 									);
 	commitTransaction;
 end;
-
 }
-
 tearDown
 {
 tearDown() unitTestAfter, updating;
@@ -11499,9 +10096,7 @@ begin
 	Address.instances.purge();
 	commitTransaction;
 end;
-
 }
-
 testAction
 {
 testAction() unitTest, updating;
@@ -11515,9 +10110,7 @@ begin
 	
 	assertEquals(1, RetailSale.instances.size());
 end;
-
 }
-
 testNullClient
 {
 testNullClient() unitTest;
@@ -11533,9 +10126,7 @@ begin
 epilog
 	abortTransaction;
 end;
-
 }
-
 	)
 	TestTenderOrderProxy (
 	jadeMethodSources
@@ -11554,9 +10145,7 @@ begin
 									);
 	commitTransaction;
 end;
-
 }
-
 tearDown
 {
 tearDown() unitTestAfter, updating;
@@ -11567,9 +10156,7 @@ begin
 	Address.instances.purge();
 	commitTransaction;
 end;
-
 }
-
 testAction
 {
 testAction() unitTest, updating;
@@ -11585,9 +10172,7 @@ begin
 	
 	assertEquals(1, Tender.instances.size());
 end;
-
 }
-
 testNullClient
 {
 testNullClient() unitTest;
@@ -11608,9 +10193,7 @@ begin
 epilog
 	abortTransaction;
 end;
-
 }
-
 	)
 	TestRegion (
 	jadeMethodSources
@@ -11628,9 +10211,7 @@ begin
 	self.region := create Region("Christchurch", country);
 	commitTransaction;
 end;
-
 }
-
 tearDown
 {
 tearDown() unitTestAfter, updating;
@@ -11640,9 +10221,7 @@ begin
 	Company.instances.purge();
 	commitTransaction;
 end;
-
 }
-
 testDocumentSelfRTF
 {
 testDocumentSelfRTF() unitTest;
@@ -11666,9 +10245,7 @@ begin
 	
 	assertEquals(expected, actual);
 end;
-
 }
-
 testGetDebugString
 {
 testGetDebugString() unitTest;
@@ -11679,9 +10256,7 @@ begin
 			self.region.getDebugString()
 			);
 end;
-
 }
-
 testGetNames
 {
 testGetNames() unitTest;
@@ -11689,9 +10264,7 @@ testGetNames() unitTest;
 begin
 assertEquals("New Zealand Christchurch", self.region.getCountryAndRegionNames());
 end;
-
 }
-
 testInvalidCountry
 {
 testInvalidCountry() updating, unitTest;
@@ -11703,9 +10276,7 @@ begin
 epilog
 	abortTransaction;
 end;
-
 }
-
 testInvalidName
 {
 testInvalidName() unitTest;
@@ -11718,7 +10289,6 @@ epilog
 	abortTransaction;
 end;
 }
-
 testUniqueRegion
 {
 testUniqueRegion() unitTest;
@@ -11736,9 +10306,7 @@ begin
 epilog
 	abortTransaction;
 end;
-
 }
-
 testUpdate
 {
 testUpdate() unitTest;
@@ -11757,9 +10325,7 @@ begin
 	// Check that the name has changed after update.
 	assertEquals("Auckland", self.region.name);
 end;
-
 }
-
 testUpdateWithoutTrx
 {
 testUpdateWithoutTrx() unitTest;
@@ -11770,9 +10336,7 @@ begin
 	expectedException(UpdOperationOutsideTranState);
 	self.region.update("Auckland");
 end;
-
 }
-
 	)
 	TestSale (
 	jadeMethodSources
@@ -11906,7 +10470,6 @@ begin
 	commitTransaction;
 end;
 }
-
 setUp
 {
 setUp() updating, unitTestBefore;
@@ -11930,9 +10493,7 @@ begin
 						);
 	commitTransaction;
 end;
-
 }
-
 tearDown
 {
 tearDown() updating, unitTestAfter;
@@ -11943,9 +10504,7 @@ begin
 	Address.instances.purge();
 	commitTransaction;
 end;
-
 }
-
 testGetDate
 {
 testGetDate() unitTest;
@@ -11968,9 +10527,7 @@ begin
 	sale := sales.last();
 	assertEquals(date, sale.getDate());
 end;
-
 }
-
 	)
 	TestRetailSale (
 	jadeMethodSources
@@ -11989,9 +10546,7 @@ begin
 							);
 	commitTransaction;
 end;
-
 }
-
 tearDown
 {
 tearDown() unitTestAfter, updating;
@@ -12002,7 +10557,6 @@ begin
 	commitTransaction;
 end;
 }
-
 testAgentCommWithoutTrx
 {
 testAgentCommWithoutTrx() unitTest;
@@ -12019,9 +10573,7 @@ begin
 							self.timestamp
 							) transient;
 end;
-
 }
-
 testAgentCommission
 {
 testAgentCommission() unitTest;
@@ -12029,9 +10581,7 @@ testAgentCommission() unitTest;
 begin
 	assertEquals(100.00.Decimal, sale.agentCommission); // 25% of $400.00 = $100.00
 end;
-
 }
-
 testAlreadySold
 {
 testAlreadySold() unitTest;
@@ -12051,7 +10601,6 @@ epilog
 	abortTransaction;
 end;
 }
-
 testCreateWithoutTrx
 {
 testCreateWithoutTrx() unitTest;
@@ -12063,9 +10612,7 @@ begin
 	expectedException(UpdOperationOutsideTranState);
 	newSale := create RetailSale(self.retailItem, self.client, 1234.56, self.timestamp) transient;
 end;
-
 }
-
 testGetDate
 {
 testGetDate() unitTest;
@@ -12077,9 +10624,7 @@ begin
 	date := date - 1; // Yesterday
 	assertEquals(date, sale.getDate());
 end;
-
 }
-
 testGetDebugString
 {
 testGetDebugString() unitTest;
@@ -12095,9 +10640,7 @@ begin
 	
 	assertEquals(expected, actual);
 end;
-
 }
-
 testInvalidClient
 {
 testInvalidClient() unitTest;
@@ -12112,9 +10655,7 @@ begin
 epilog
 	abortTransaction;
 end;
-
 }
-
 testInvalidCompany
 {
 testInvalidCompany() unitTest;
@@ -12136,9 +10677,7 @@ begin
 epilog
 	abortTransaction;
 end;
-
 }
-
 testInvalidItem
 {
 testInvalidItem() unitTest;
@@ -12154,7 +10693,6 @@ epilog
 	abortTransaction;
 end;
 }
-
 testInvalidPrice
 {
 testInvalidPrice() unitTest;
@@ -12169,9 +10707,7 @@ begin
 epilog
 	abortTransaction;
 end;
-
 }
-
 testInvalidTime
 {
 testInvalidTime() unitTest;
@@ -12186,9 +10722,7 @@ begin
 epilog
 	abortTransaction;
 end;
-
 }
-
 	)
 	TestTenderSale (
 	jadeMethodSources
@@ -12207,9 +10741,7 @@ begin
 							);
 	commitTransaction;
 end;
-
 }
-
 tearDown
 {
 tearDown() unitTestAfter, updating;
@@ -12219,9 +10751,7 @@ begin
 	Company.instances.purge();
 	commitTransaction;
 end;
-
 }
-
 testCreateOutsideTrx
 {
 testCreateOutsideTrx() unitTest;
@@ -12236,9 +10766,7 @@ begin
 							self.tender
 							) transient;
 end;
-
 }
-
 testGetDate
 {
 testGetDate() unitTest;
@@ -12251,7 +10779,6 @@ begin
 	assertEquals(date, sale.getDate());
 end;
 }
-
 testGetDebugString
 {
 testGetDebugString() unitTest;
@@ -12268,7 +10795,6 @@ begin
 	assertEquals(expected, actual);
 end;
 }
-
 testGetTime
 {
 testGetTime() unitTest;
@@ -12276,9 +10802,7 @@ testGetTime() unitTest;
 begin
 	assertEquals(self.timestamp.Time, sale.getTime());
 end;
-
 }
-
 testInvalidItem
 {
 testInvalidItem() unitTest;
@@ -12296,9 +10820,7 @@ begin
 epilog
 	abortTransaction;
 end;
-
 }
-
 testInvalidTender
 {
 testInvalidTender() unitTest;
@@ -12316,9 +10838,7 @@ begin
 epilog
 	abortTransaction;
 end;
-
 }
-
 	)
 	TestSaleItem (
 	jadeMethodSources
@@ -12387,7 +10907,6 @@ begin
 	commitTransaction;
 end;
 }
-
 setUp
 {
 setUp() updating, unitTestBefore;
@@ -12439,9 +10958,7 @@ begin
 	allItems.add(item);
 	commitTransaction;
 end;
-
 }
-
 tearDown
 {
 tearDown() updating, unitTestAfter;
@@ -12453,9 +10970,7 @@ begin
 	allItems.purge();
 	commitTransaction;
 end;
-
 }
-
 testGetPrice
 {
 testGetPrice() unitTest;
@@ -12469,9 +10984,7 @@ begin
 		assertEquals(0.01.Decimal, item.getPrice());
 	endforeach;
 end;
-
 }
-
 testGetTypeString
 {
 testGetTypeString() unitTest;
@@ -12490,9 +11003,7 @@ begin
 	assertTrue(item.isKindOf(TenderSaleItem));
 	assertEquals($TenderSaleItemType, item.getTypeString());
 end;
-
 }
-
 	)
 	TestRetailSaleItem (
 	jadeMethodSources
@@ -12526,9 +11037,7 @@ begin
 								);
 	commitTransaction;
 end;
-
 }
-
 tearDown
 {
 tearDown() updating, unitTestAfter;
@@ -12540,9 +11049,7 @@ begin
 	Company.instances.purge();
 	commitTransaction;
 end;
-
 }
-
 testCreateWithoutCode
 {
 testCreateWithoutCode() updating, unitTest;
@@ -12573,9 +11080,7 @@ begin
 	commitTransaction;
 	assertEquals(100, newItem.codeNumber);
 end;
-
 }
-
 testGetCode
 {
 testGetCode() unitTest;
@@ -12590,9 +11095,7 @@ begin
 	
 	assertEquals(expected, actual);
 end;
-
 }
-
 testGetCodeNumber
 {
 testGetCodeNumber() unitTest;
@@ -12607,9 +11110,7 @@ begin
 	
 	assertEquals(expected, actual);
 end;
-
 }
-
 testGetCodePrefix
 {
 testGetCodePrefix() unitTest;
@@ -12624,9 +11125,7 @@ begin
 	
 	assertEquals(expected, actual);
 end;
-
 }
-
 testGetDebugString
 {
 testGetDebugString() unitTest;
@@ -12643,9 +11142,7 @@ begin
 	
 	assertEquals(expected, actual);
 end;
-
 }
-
 testGetPrice
 {
 testGetPrice() unitTest;
@@ -12655,9 +11152,7 @@ vars
 begin
 	assertEquals(5.50.Decimal, item.getPrice());
 end;
-
 }
-
 testGetSale
 {
 testGetSale() unitTest;
@@ -12683,9 +11178,7 @@ begin
 	// .. and that sale should be the one we just created.
 	assertEquals(sale, item.getSale());
 end;
-
 }
-
 testGetShortDescription
 {
 testGetShortDescription() unitTest;
@@ -12693,9 +11186,7 @@ testGetShortDescription() unitTest;
 begin
 	assertEquals("Test Retail", item.getShortDescription());
 end;
-
 }
-
 testGetTypeString
 {
 testGetTypeString() unitTest;
@@ -12704,7 +11195,6 @@ begin
 	assertEquals($RetailSaleItemType, item.getTypeString());
 end;
 }
-
 testUpdate
 {
 testUpdate() updating, unitTest;
@@ -12768,9 +11258,7 @@ begin
 	
 end;
 
-
 }
-
 testUpdateToExisting
 {
 testUpdateToExisting() unitTest;
@@ -12814,9 +11302,7 @@ begin
 epilog
 	abortTransaction;
 end;
-
 }
-
 testUpdateWithoutTrx
 {
 testUpdateWithoutTrx() unitTest;
@@ -12827,9 +11313,7 @@ begin
 	// throw an exception if not in transaction.
 	self.item.update(null, null);
 end;
-
 }
-
 	)
 	TestTenderSaleItem (
 	jadeMethodSources
@@ -12864,9 +11348,7 @@ begin
 							);
 	commitTransaction;
 end;
-
 }
-
 tearDown
 {
 tearDown() unitTestAfter;
@@ -12876,9 +11358,7 @@ begin
 	Company.instances.purge();
 	commitTransaction;
 end;
-
 }
-
 testGetDebugString
 {
 testGetDebugString() unitTest;
@@ -12895,9 +11375,7 @@ begin
 	actual	:= item.getDebugString();
 	assertEquals(expected, actual);
 end;
-
 }
-
 testGetPrice
 {
 testGetPrice() unitTest;
@@ -12905,9 +11383,7 @@ testGetPrice() unitTest;
 begin
 	assertEquals(0.01.Decimal, self.item.getPrice());
 end;
-
 }
-
 testGetTypeString
 {
 testGetTypeString() unitTest;
@@ -12915,9 +11391,7 @@ testGetTypeString() unitTest;
 begin
 	assertEquals($TenderSaleItemType, item.getTypeString());
 end;
-
 }
-
 testUpdate
 {
 testUpdate() unitTest;
@@ -12958,9 +11432,7 @@ begin
 	assertEquals("A New Tender item", item.fullDescription);
 	assertEquals(self.timestamp.date() - 2, item.forSaleDate);
 end;
-
 }
-
 testUpdateToExisting
 {
 testUpdateToExisting() unitTest;
@@ -12998,9 +11470,7 @@ epilog
 	abortTransaction;
 	delete details;
 end;
-
 }
-
 testUpdateWithoutTrx
 {
 testUpdateWithoutTrx() unitTest;
@@ -13009,9 +11479,7 @@ begin
 	expectedException(UpdOperationOutsideTranState);
 	self.item.update(null, null, 0);
 end;
-
 }
-
 	)
 	TestSaleItemCategory (
 	jadeMethodSources
@@ -13029,9 +11497,7 @@ begin
 										);
 	commitTransaction;
 end;
-
 }
-
 tearDown
 {
 tearDown() unitTestAfter, updating;
@@ -13043,9 +11509,7 @@ begin
 	Company.instances.purge();
 	commitTransaction;
 end;
-
 }
-
 testAlreadyExists
 {
 testAlreadyExists() unitTest;
@@ -13070,9 +11534,7 @@ begin
 epilog
 	abortTransaction;
 end;
-
 }
-
 testCreateCommissionRate
 {
 testCreateCommissionRate() unitTest;
@@ -13089,7 +11551,6 @@ begin
 	assertEquals(10.00.Decimal, rate.percentage);
 end;
 }
-
 testGetDebugString
 {
 testGetDebugString() unitTest;
@@ -13106,7 +11567,6 @@ begin
 	assertEquals(expected, actual);
 end;
 }
-
 testInvalidCompany
 {
 testInvalidCompany() unitTest;
@@ -13125,9 +11585,7 @@ begin
 epilog
 	abortTransaction;
 end;
-
 }
-
 testInvalidDescription
 {
 testInvalidDescription() unitTest;
@@ -13146,9 +11604,7 @@ begin
 epilog
 	abortTransaction;
 end;
-
 }
-
 testInvalidName
 {
 testInvalidName() unitTest;
@@ -13168,7 +11624,6 @@ epilog
 	abortTransaction;
 end;
 }
-
 testUpdate
 {
 testUpdate() unitTest;
@@ -13181,9 +11636,7 @@ begin
 	assertEquals("UpdatedTest", category.name);
 	assertEquals("Checked Tests, all answers confirmed correct.", category.description);
 end;
-
 }
-
 testUpdateWithoutTrx
 {
 testUpdateWithoutTrx() unitTest;
@@ -13192,9 +11645,7 @@ begin
 	expectedException(UpdOperationOutsideTranState);
 	category.update("UpdatedTest", "Checked Tests, all answers confirmed correct.");
 end;
-
 }
-
 	)
 	TestTender (
 	jadeMethodSources
@@ -13224,9 +11675,7 @@ begin
 							);
 	commitTransaction;
 end;
-
 }
-
 tearDown
 {
 tearDown() unitTestAfter, updating;
@@ -13236,9 +11685,7 @@ begin
 	Company.instances.purge();
 	commitTransaction;
 end;
-
 }
-
 testAlreadyExists
 {
 testAlreadyExists() unitTest;
@@ -13256,7 +11703,6 @@ epilog
 	abortTransaction;
 end;
 }
-
 testGetDate
 {
 testGetDate() unitTest;
@@ -13267,9 +11713,7 @@ begin
 	date := date - 1;	// Yesterday
 	assertEquals(date, tender.getDate());
 end;
-
 }
-
 testGetDebugString
 {
 testGetDebugString() unitTest;
@@ -13285,9 +11729,7 @@ begin
 	
 	assertEquals(expected, actual);
 end;
-
 }
-
 testGetTime
 {
 testGetTime() unitTest;
@@ -13295,9 +11737,7 @@ testGetTime() unitTest;
 begin
 	assertEquals(self.timestamp.Time, tender.getTime());
 end;
-
 }
-
 testInvalidOffer
 {
 testInvalidOffer() unitTest;
@@ -13312,9 +11752,7 @@ begin
 epilog
 	abortTransaction;
 end;
-
 }
-
 testInvalidTimestamp
 {
 testInvalidTimestamp() unitTest;
@@ -13330,7 +11768,6 @@ epilog
 	abortTransaction;
 end;
 }
-
 testNullClient
 {
 testNullClient() unitTest;
@@ -13345,9 +11782,7 @@ begin
 epilog
 	abortTransaction;
 end;
-
 }
-
 testNullItem
 {
 testNullItem() unitTest;
@@ -13362,9 +11797,7 @@ begin
 epilog
 	abortTransaction;
 end;
-
 }
-
 testOfferTooLow
 {
 testOfferTooLow() unitTest;
@@ -13382,9 +11815,7 @@ begin
 epilog
 	abortTransaction;
 end;
-
 }
-
 testUpdate
 {
 testUpdate() unitTest;
@@ -13409,9 +11840,7 @@ begin
 	assertEquals(45.00.Decimal, tender.offer);
 	assertEquals(newTimestamp, tender.timeStamp);
 end;
-
 }
-
 testUpdateWithoutTrx
 {
 testUpdateWithoutTrx() unitTest;
@@ -13420,9 +11849,7 @@ begin
 	expectedException(UpdOperationOutsideTranState);
 	tender.update(45.00, self.timestamp);
 end;
-
 }
-
 	)
 	Address (
 	jadeMethodSources
@@ -13459,9 +11886,7 @@ create(name, street, city, country, email, fax, phone, website : String) updatin
 begin
 	self.zSetProps(name, street, city, country, email, fax, phone, website);
 end;
-
 }
-
 getDebugString
 {
 getDebugString(): String;
@@ -13475,9 +11900,7 @@ getDebugString(): String;
 begin
 	return self.getOidString & " " & self.class.name & ": " & getNameAndAddress;
 end;
-
 }
-
 getNameAndAddress
 {
 getNameAndAddress() : String;
@@ -13490,9 +11913,7 @@ getNameAndAddress() : String;
 begin
 	return name & ", " & street & ", " & city & ", " & country;
 end;
-
 }
-
 update
 {
 update(name, street, city, country, email, fax, phone, website : String) updating;
@@ -13550,7 +11971,6 @@ begin
 	self.zSetProps(name, street, city, country, email, fax, phone, website);
 end;
 }
-
 updateFromProxy
 {
 updateFromProxy(proxyAddress : Address) updating;
@@ -13601,9 +12021,7 @@ begin
 	self.street := proxyAddress.street;
 	self.webSite := proxyAddress.webSite;
 end;
-
 }
-
 zSetProps
 {
 zSetProps(name, street, city, country, email, fax, phone, website : String) updating, protected;
@@ -13643,9 +12061,7 @@ begin
 	self.phone := phone;
 	self.webSite := website;
 end;
-
 }
-
 	)
 	Agent (
 	jadeMethodSources
@@ -13707,7 +12123,6 @@ begin
 	self.allCommissionRates.add(rate);
 end;
 }
-
 create
 {
 create(
@@ -13735,9 +12150,7 @@ begin
 	// Set reference to parent
 	self.myCompany 	:= company;
 end;
-
 }
-
 documentSelfRTF
 {
 documentSelfRTF() : String;
@@ -13753,9 +12166,7 @@ documentSelfRTF() : String;
 begin
 	return app.buildSimpleRTF(self.name, self.getDebugString());
 end;
-
 }
-
 getAllSales
 {
 getAllSales(saleSet : SaleSet input);
@@ -13780,7 +12191,6 @@ begin
 	endforeach;
 end;
 }
-
 getCommissionRateForCategory
 {
 getCommissionRateForCategory(categoryName : String) : CommissionRate;
@@ -13823,7 +12233,6 @@ begin
 	return null;
 end;
 }
-
 getDebugString
 {
 getDebugString() : String;
@@ -13842,9 +12251,7 @@ getDebugString() : String;
 begin
 	return self.getOidString & " " & self.class.name;
 end;
-
 }
-
 getNameString
 {
 getNameString(): String;
@@ -13863,9 +12270,7 @@ getNameString(): String;
 begin
 	return self.name;
 end;
-
 }
-
 update
 {
 update(	address	: Address ) updating;
@@ -13909,7 +12314,6 @@ begin
 	self.myAddress.updateFromProxy(address);
 end;
 }
-
 zCollAddExceptionHandler
 {
 zCollAddExceptionHandler(exObj : Exception) : Integer protected;
@@ -13937,7 +12341,6 @@ begin
     return Ex_Pass_Back;
 end;
 }
-
 	)
 	Client (
 	jadeMethodSources
@@ -13966,9 +12369,7 @@ begin
 	// Set reference to parent
 	self.myCompany 	:= company;
 end;
-
 }
-
 createTender
 {
 createTender(offer          : Decimal;
@@ -13993,7 +12394,6 @@ begin
 	return tender;
 end;
 }
-
 getAllSales
 {
 getAllSales(saleSet : SaleSet input);
@@ -14017,7 +12417,6 @@ begin
 	endif;
 end;
 }
-
 getDebugString
 {
 getDebugString() : String;
@@ -14032,7 +12431,6 @@ begin
 	return self.getOidString & " " & self.class.name;
 end;
 }
-
 update
 {
 update( address : Address ) updating;
@@ -14075,7 +12473,6 @@ begin
 	self.myAddress.updateFromProxy(address);
 end;
 }
-
 	)
 	CommissionRate (
 	jadeMethodSources
@@ -14094,7 +12491,6 @@ begin
 	self.allAgents.clear;
 end;
 }
-
 create
 {
 create( saleItemCategory : SaleItemCategory; percentage : Decimal ) updating;
@@ -14114,7 +12510,6 @@ begin
 	self.zSetProps(percentage, saleItemCategory);
 end;
 }
-
 getDebugString
 {
 getDebugString() : String;
@@ -14127,7 +12522,6 @@ begin
 	return self.getOidString & " " & self.class.name & ": " & percentage.String & "%";
 end;
 }
-
 update
 {
 update( percentage : Decimal ) updating;
@@ -14167,7 +12561,6 @@ begin
 	self.zSetProps( percentage, self.mySaleItemCategory );
 end;
 }
-
 zSetProps
 {
 zSetProps(percentage : Decimal; saleItemCategory : SaleItemCategory) updating;
@@ -14204,9 +12597,7 @@ begin
 	// Set reference to parent
 	self.mySaleItemCategory := saleItemCategory;
 end;
-
 }
-
 	)
 	Company (
 	jadeMethodSources
@@ -14233,9 +12624,7 @@ begin
 	endforeach;
 	return false;
 end;
-
 }
-
 clientAlreadyExists
 {
 clientAlreadyExists(clientName : String) : Boolean;
@@ -14259,9 +12648,7 @@ begin
 	endforeach;
 	return false;
 end;
-
 }
-
 closeTendersAtDate
 {
 closeTendersAtDate(date : Date; numClosed : Integer output) serverExecution;
@@ -14307,7 +12694,6 @@ begin
 	endforeach;
 end;
 }
-
 create
 {
 create() updating;
@@ -14345,7 +12731,6 @@ begin
 	endif;
 end;
 }
-
 createAddress
 {
 createAddress(
@@ -14374,9 +12759,7 @@ begin
 	address := create Address(name, street, city, country, email, fax, phone, webSite) persistent;
 	return address;
 end;
-
 }
-
 createAgent
 {
 createAgent(address : Address) : Agent;
@@ -14398,7 +12781,6 @@ begin
 	return agent;
 end;
 }
-
 createCategory
 {
 createCategory(categoryName : String; categoryDescription : String) : SaleItemCategory;
@@ -14418,7 +12800,6 @@ begin
 	return saleItemCategory;
 end;
 }
-
 createClient
 {
 createClient( address : Address ) : Client;
@@ -14438,7 +12819,6 @@ begin
 	return client;
 end;
 }
-
 createCountry
 {
 createCountry(countryName : String) : Country;
@@ -14458,7 +12838,6 @@ begin
 	return country;
 end;
 }
-
 createItemDetails
 {
 createItemDetails(
@@ -14510,9 +12889,7 @@ begin
 									) transient;								 
 	return newItemDetails;
 end;
-
 }
-
 createRetailSale
 {
 createRetailSale(retailSaleItem : RetailSaleItem;
@@ -14539,7 +12916,6 @@ begin
 	return retailSale;
 end;
 }
-
 createRetailSaleItem
 {
 createRetailSaleItem(
@@ -14562,7 +12938,6 @@ begin
 	return retailSaleItem;
 end;
 }
-
 createTenderSale
 {
 createTenderSale(tenderSaleItem : TenderSaleItem; tender : Tender) : TenderSale;
@@ -14581,7 +12956,6 @@ begin
 	return tenderSale;
 end;
 }
-
 createTenderSaleItem
 {
 createTenderSaleItem(
@@ -14605,7 +12979,6 @@ begin
 	return tenderSaleItem;
 end;
 }
-
 findSaleItemByCode
 {
 findSaleItemByCode(codePrefix  : String; codeNumber : Integer) : SaleItem;
@@ -14624,9 +12997,7 @@ findSaleItemByCode(codePrefix  : String; codeNumber : Integer) : SaleItem;
 begin
 	return self.allSaleItems[codePrefix, codeNumber];
 end;
-
 }
-
 getAllSales
 {
 getAllSales(saleSet : SaleSet input);
@@ -14644,7 +13015,6 @@ begin
 	endif;
 end;
 }
-
 getDebugString
 {
 getDebugString() : String;
@@ -14662,9 +13032,7 @@ getDebugString() : String;
 begin
 	return self.getOidString & " " & self.class.name;
 end;
-
 }
-
 getNextCodeNumberForPrefix
 {
 getNextCodeNumberForPrefix(prefix : String) : Integer;
@@ -14727,7 +13095,6 @@ begin
 	return saleItemWithHighestCode.getCodeNumber() + 1;
 end;
 }
-
 getNumberOfLocations
 {
 getNumberOfLocations() : Integer;
@@ -14752,7 +13119,6 @@ begin
 	return total;
 end;
 }
-
 getRegion
 {
 getRegion(countryName, regionName : String) : Region;
@@ -14773,7 +13139,6 @@ begin
 	return null;
 end;
 }
-
 	)
 	Country (
 	jadeMethodSources
@@ -14794,7 +13159,6 @@ begin
 	self.zSetProps(name, company);
 end;
 }
-
 createRegion
 {
 createRegion(regionName : String) : Region;
@@ -14813,7 +13177,6 @@ begin
 	return region;
 end;
 }
-
 getDebugString
 {
 getDebugString() : String;
@@ -14826,7 +13189,6 @@ begin
 	return self.getOidString & " " & self.class.name & ": " & name;
 end;
 }
-
 update
 {
 update(name : String) updating;
@@ -14865,7 +13227,6 @@ begin
 	self.zSetProps(name, self.myCompany);
 end;
 }
-
 zSetProps
 {
 zSetProps(name : String; company : Company) updating, protected;
@@ -14906,9 +13267,7 @@ begin
 	// Set reference to parent
 	self.myCompany := company;
 end;
-
 }
-
 	)
 	Region (
 	jadeMethodSources
@@ -14927,7 +13286,6 @@ begin
 	self.zSetProps( name, country );
 end;
 }
-
 documentSelfRTF
 {
 documentSelfRTF() : String;
@@ -14943,9 +13301,7 @@ documentSelfRTF() : String;
 begin
 	return app.buildSimpleRTF( self.name, self.getDebugString() );
 end;
-
 }
-
 getCountryAndRegionNames
 {
 getCountryAndRegionNames() : String;
@@ -14961,9 +13317,7 @@ getCountryAndRegionNames() : String;
 begin
 	return self.myCountry.name & " " & self.name;
 end;
-
 }
-
 getDebugString
 {
 getDebugString() : String;
@@ -14983,7 +13337,6 @@ begin
 	return self.getOidString & " " & self.class.name & ": " & name & " of " & myCountry.name;
 end;
 }
-
 update
 {
 update(name : String) updating;
@@ -15025,7 +13378,6 @@ begin
 	self.zSetProps(name, self.myCountry);
 end;
 }
-
 zSetProps
 {
 zSetProps(name : String; country : Country) updating, protected;
@@ -15067,10 +13419,13 @@ begin
 	self.myCountry :=country;
 end;
 }
-
 	)
 	Sale (
 	jadeMethodSources
+getAmount
+{
+getAmount(): Decimal abstract, number = 1002;
+}
 getDate
 {
 getDate(): Date;
@@ -15079,7 +13434,6 @@ begin
 	return null;
 end;
 }
-
 zCalculateAgentCommission
 {
 zCalculateAgentCommission(salePrice : Decimal) updating, protected;
@@ -15135,7 +13489,6 @@ begin
 	endif;
 end;
 }
-
 	)
 	RetailSale (
 	jadeMethodSources
@@ -15217,7 +13570,18 @@ begin
 	self.zCalculateAgentCommission(price);
 end;
 }
-
+getAmount
+{
+getAmount() : Decimal;
+// --------------------------------------------------------------------------------
+// Method:		getAmount
+//
+// Returns:     The price of the retail sale
+// --------------------------------------------------------------------------------
+begin
+	return price;
+end;
+}
 getDate
 {
 getDate() : Date;
@@ -15233,7 +13597,6 @@ begin
 	return timeStamp.date;
 end;
 }
-
 getDebugString
 {
 getDebugString() : String;
@@ -15253,7 +13616,6 @@ begin
 	return str;
 end;
 }
-
 	)
 	TenderSale (
 	jadeMethodSources
@@ -15316,7 +13678,21 @@ begin
 	self.zCalculateAgentCommission(self.myTender.offer);
 end;
 }
-
+getAmount
+{
+getAmount() : Decimal;
+// --------------------------------------------------------------------------------
+// Method:		getAmount
+//
+// Returns:     The amount of the tender sale from its winning tender
+// --------------------------------------------------------------------------------
+begin
+	if myTender = null then
+		return 0;
+	endif;
+	return myTender.offer;
+end;
+}
 getDate
 {
 getDate() : Date;
@@ -15329,7 +13705,6 @@ begin
 	return myTender.getDate();
 end;
 }
-
 getDebugString
 {
 getDebugString() : String;
@@ -15350,7 +13725,6 @@ begin
 	return str;
 end;
 }
-
 getTime
 {
 getTime() : Time;
@@ -15363,7 +13737,6 @@ begin
 	return myTender.getTime();
 end;
 }
-
 	)
 	SaleItem (
 	jadeMethodSources
@@ -15395,9 +13768,7 @@ begin
 	self.myAgent			:= agent;
 	self.myCompany			:= company;
 end;
-
 }
-
 getCode
 {
 getCode() : String;
@@ -15411,7 +13782,6 @@ begin
 	return self.codePrefix & self.codeNumber.String.padLeadingZeros(4);
 end;
 }
-
 getCodeNumber
 {
 getCodeNumber() : Integer;
@@ -15429,9 +13799,7 @@ getCodeNumber() : Integer;
 begin
 	return self.codeNumber;
 end;
-
 }
-
 getCodePrefix
 {
 getCodePrefix() : String;
@@ -15450,9 +13818,7 @@ getCodePrefix() : String;
 begin
 	return self.codePrefix;
 end;
-
 }
-
 getDebugString
 {
 getDebugString() : String;
@@ -15467,12 +13833,10 @@ begin
 	return self.getOidString & " " & self.class.name & ": " & getCode & ", " & shortDescription & ", $" & self.price.String;
 end;
 }
-
 getPrice
 {
 getPrice(): Decimal abstract, number = 1003;
 }
-
 getSale
 {
 getSale() : Sale;
@@ -15480,9 +13844,7 @@ getSale() : Sale;
 begin
 	return self.mySale;
 end;
-
 }
-
 getShortDescription
 {
 getShortDescription() : String;
@@ -15499,14 +13861,11 @@ getShortDescription() : String;
 begin
 	return self.shortDescription;
 end;
-
 }
-
 getTypeString
 {
 getTypeString(): String abstract, number = 1004;
 }
-
 isSold
 {
 isSold() : Boolean condition;
@@ -15514,9 +13873,7 @@ isSold() : Boolean condition;
 begin
 	return self.mySale <> null;
 end;
-
 }
-
 setDetails
 {
 setDetails(itemDetails : ItemDetails) updating;
@@ -15549,9 +13906,7 @@ begin
 	self.mySaleItemCategory	:= itemDetails.mySaleItemCategory;
 
 end;
-
 }
-
 	)
 	RetailSaleItem (
 	jadeMethodSources
@@ -15584,9 +13939,7 @@ begin
 	// and the rest is done in SaleItem's create method.
 	self.price := price;
 end;
-
 }
-
 getDebugString
 {
 getDebugString() : String;
@@ -15600,9 +13953,7 @@ getDebugString() : String;
 begin
 	return inheritMethod();
 end;
-
 }
-
 getPrice
 {
 getPrice() : Decimal;
@@ -15615,7 +13966,6 @@ begin
 	return price;
 end;
 }
-
 getTypeString
 {
 getTypeString() : String;
@@ -15628,7 +13978,6 @@ begin
 	return $RetailSaleItemType;
 end;
 }
-
 update
 {
 update(
@@ -15683,7 +14032,6 @@ begin
 	endif;
 end;
 }
-
 	)
 	TenderSaleItem (
 	jadeMethodSources
@@ -15716,7 +14064,6 @@ begin
 	return highestTender;
 end;
 }
-
 create
 {
 create(
@@ -15750,9 +14097,7 @@ begin
 	self.closureDate 	:= closureDate;
 	self.price 	:= minPrice;
 end;
-
 }
-
 getDebugString
 {
 getDebugString() : String;
@@ -15766,7 +14111,6 @@ begin
 	return inheritMethod & ", " & closureDate.String;
 end;
 }
-
 getPrice
 {
 getPrice() : Decimal;
@@ -15779,7 +14123,6 @@ begin
 	return price;
 end;
 }
-
 getTypeString
 {
 getTypeString() : String;
@@ -15792,7 +14135,6 @@ begin
 	return $TenderSaleItemType;
 end;
 }
-
 update
 {
 update(
@@ -15849,7 +14191,6 @@ begin
 	endif;
 end;
 }
-
 	)
 	SaleItemCategory (
 	jadeMethodSources
@@ -15881,7 +14222,6 @@ begin
 	self.myCompany := company;
 end;
 }
-
 createCommissionRate
 {
 createCommissionRate(percentage : Decimal) : CommissionRate;
@@ -15903,7 +14243,6 @@ begin
 	return commRate;
 end;
 }
-
 getDebugString
 {
 getDebugString() : String;
@@ -15917,7 +14256,6 @@ begin
 	return self.getOidString & " " & self.class.name & ": " & name & ", " & description;
 end;
 }
-
 update
 {
 update(name : String; description : String) updating;
@@ -15958,7 +14296,6 @@ begin
 	self.zSetProps(name, description, self.myCompany);
 end;
 }
-
 zSetProps
 {
 zSetProps(
@@ -16005,7 +14342,6 @@ begin
 	self.description := trimmedDescription;
 end;
 }
-
 	)
 	Tender (
 	jadeMethodSources
@@ -16034,7 +14370,6 @@ begin
 	self.zSetProps(offer, timeStamp, client, tenderSaleItem);
 end;
 }
-
 getDate
 {
 getDate() : Date;
@@ -16047,7 +14382,6 @@ begin
 	return timeStamp.date;
 end;
 }
-
 getDebugString
 {
 getDebugString() : String;
@@ -16065,7 +14399,6 @@ begin
 	return str & myClient.name;
 end;
 }
-
 getTime
 {
 getTime() : Time;
@@ -16078,7 +14411,6 @@ begin
 	return timeStamp.time;
 end;
 }
-
 update
 {
 update(offer : Decimal; timeStamp : TimeStamp) updating;
@@ -16121,7 +14453,6 @@ begin
 	self.zSetProps(offer, timeStamp, self.myClient, self.myTenderSaleItem);
 end;
 }
-
 zSetProps
 {
 zSetProps(
@@ -16187,7 +14518,6 @@ begin
 	self.myClient := client;
 end;
 }
-
 	)
 	ItemDetails (
 	jadeMethodSources
@@ -16240,7 +14570,6 @@ begin
 	self.mySaleItemCategory := saleItemCategory;
 end;
 }
-
 getCodeNumber
 {
 getCodeNumber() : Integer;
@@ -16257,9 +14586,7 @@ getCodeNumber() : Integer;
 begin
 	return self.codeNumber;
 end;
-
 }
-
 getCodePrefix
 {
 getCodePrefix() : String;
@@ -16277,9 +14604,7 @@ getCodePrefix() : String;
 begin
 	return self.codePrefix;
 end;
-
 }
-
 	)
 	OrderProxy (
 	jadeMethodSources
@@ -16287,7 +14612,6 @@ action
 {
 action() updating, abstract, number = 1001;
 }
-
 create
 {
 create(	
@@ -16314,7 +14638,6 @@ begin
 	self.mySaleItem := saleItem;
 end;
 }
-
 	)
 	RetailOrderProxy (
 	jadeMethodSources
@@ -16423,7 +14746,6 @@ begin
 	unloadForm;
 end;
 }
-
 btnExample_click
 {
 btnExample_click(btn: Button input) updating;
@@ -16432,7 +14754,6 @@ begin
 	self.zShowExample(not self.zExampleShowing);
 end;
 }
-
 btnOK_click
 {
 btnOK_click(btn: Button input) updating;
@@ -16443,7 +14764,6 @@ begin
 	unloadForm;
 end;
 }
-
 getParameterObject
 {
 getParameterObject(paramNumber : Integer) : Object;
@@ -16485,7 +14805,6 @@ begin
 	return paramStringValue.asOid;
 end;
 }
-
 getParameterValue
 {
 getParameterValue(paramNumber : Integer) : Any;
@@ -16551,7 +14870,6 @@ epilog
 	delete file; // Does nothing if file is null
 end;
 }
-
 initialize
 {
 initialize(mth : Method) updating;
@@ -16568,7 +14886,6 @@ begin
 	self.txbExample.text := self.zBuildExampleString;
 end;
 }
-
 load
 {
 load() updating;
@@ -16578,7 +14895,6 @@ begin
 	self.zShowExample(false);
 end;
 }
-
 zBuildExampleString
 {
 zBuildExampleString() : String protected;
@@ -16630,7 +14946,6 @@ begin
 	return example;
 end;
 }
-
 zGetTypeByName
 {
 zGetTypeByName(typeName : String) : Type protected;
@@ -16659,7 +14974,6 @@ begin
 	return null;
 end;
 }
-
 zLoadParamValues
 {
 zLoadParamValues() protected;
@@ -16707,7 +15021,6 @@ begin
 	endforeach;
 end;
 }
-
 zLoadParameters
 {
 zLoadParameters() protected;
@@ -16848,7 +15161,6 @@ begin
 	endforeach;
 end;
 }
-
 zLoadTable
 {
 zLoadTable() protected;
@@ -16961,7 +15273,6 @@ begin
 	endif;
 end;
 }
-
 zShowExample
 {
 zShowExample(showIt : Boolean) updating, protected;
@@ -16989,7 +15300,6 @@ begin
 	endif;	
 end;
 }
-
 	)
 	String (
 	jadeMethodSources
@@ -17031,7 +15341,6 @@ begin
 	endforeach;
 end;
 }
-
 	)
 	ICartable (
 	jadeMethodSources
@@ -17039,22 +15348,18 @@ getCode
 {
 getCode() : String;
 }
-
 getPrice
 {
 getPrice() : Decimal;
 }
-
 getShortDescription
 {
 getShortDescription() : String;
 }
-
 getTypeString
 {
 getTypeString() : String;
 }
-
 	)
 	ICodeable (
 	jadeMethodSources
@@ -17062,12 +15367,10 @@ getCodeNumber
 {
 getCodeNumber() : Integer;
 }
-
 getCodePrefix
 {
 getCodePrefix() : String;
 }
-
 	)
 	IDebuggable (
 	jadeMethodSources
@@ -17075,7 +15378,6 @@ getDebugString
 {
 getDebugString() : String;
 }
-
 	)
 	ISearchable (
 	jadeMethodSources
@@ -17083,7 +15385,6 @@ getAllSales
 {
 getAllSales(saleSet : SaleSet input);
 }
-
 	)
 	ISellable (
 	jadeMethodSources
@@ -17091,5 +15392,4 @@ getSale
 {
 getSale() : Sale;
 }
-
 	)
