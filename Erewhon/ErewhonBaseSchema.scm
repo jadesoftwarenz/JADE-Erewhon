@@ -373,8 +373,6 @@ commonExceptionHandler(exObj : Exception) : Integer;
 // Parameters:	Exception object
 // Returns:		Ex_Pass_Back or Ex_Abort_Action
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	28/06/2023	EDS-80		Turn all remaining string literals into translatable strings
 
 constants
 	CONNECTION_ERROR_MIN	: Integer = 30000;
@@ -389,7 +387,7 @@ begin
 
 	errItem := exObj.errorItem.trimBlanks;
 	if errItem = null then
-		errItem := $BaseNotAvailable;	// EDS-80
+		errItem := $BaseNotAvailable;	
 	endif;
 	
 	if app.applicationType = app.ApplicationType_Non_GUI then
@@ -480,12 +478,9 @@ confirmDelete(itemToDelete : String) : Boolean;
 // Parameters:	itemToDelete - A description of the item to delete
 // Returns:		True if the user confirms the request, otherwise false
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	28/06/2023	EDS-79		Translatable strings: Remove concatenation
-// Dan T	04/07/2023	EDS-79.v2	Removed WithParam suffix for Translatable Strings
 
 begin
-	return (app.msgBox( $BaseConfirmDelete( itemToDelete ), $BaseDelete,	// EDS-79	// EDS-79.v2
+	return (app.msgBox( $BaseConfirmDelete( itemToDelete ), $BaseDelete,	
 			MsgBox_Question_Mark_Icon + MsgBox_Yes_No) = MsgBox_Return_Yes);
 end;
 }

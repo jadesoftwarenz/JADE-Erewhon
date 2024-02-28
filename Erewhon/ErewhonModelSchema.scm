@@ -5559,8 +5559,6 @@ createShoppingCartTA() updating;
 //
 // Returns:		Nothing
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	29/05/2023	EDS-56		Refactor TestViewRetailSaleItem unit tests
 //									Created this method for unit testing purposes
 
 begin
@@ -5581,8 +5579,6 @@ dataLoaderApp(args : StringArray);
 //              jadclient schema=ErewhonModelSchema app=DataLoader
 //                                              endJade examples/erewhon/DataFiles
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	28/06/2023	EDS-80		Turn all remaining string literals into translatable strings
 
 constants
 	NumberOfArgs 	= 1;
@@ -5595,7 +5591,7 @@ vars
 begin
 	// Check the command line has arguments
 	if args = null or args.size <> NumberOfArgs then
-		write $ExampleCommandLine;	// EDS-80
+		write $ExampleCommandLine;	
 		return;
 	endif;
 	
@@ -5642,8 +5638,6 @@ end;
 exception_handler_abort_on_4_with_message
 {
 exception_handler_abort_on_4_with_message( pException : Exception; pTitle : String; pMessage : String ) : Integer;
-// Who		When		Ticket		Details
-// Dan T	26/06/2023	EDS-31.v2	Shop forms not handling a deleted sale item
 
 begin 
 	if pException.errorCode = Ex_4_Object_deleted then
@@ -5672,8 +5666,6 @@ exception_handler_abort_on_50002_with_message_box( pException : Exception ) : In
 //			be called to ensure the application does not remain in a potential 
 //			transaction state. 
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	25/07/2023	EDS-97.v2	Use one ErewhonException class
 
 begin 
 	if pException.errorCode = Ex_500002_Min_higher_than_max then
@@ -5704,8 +5696,6 @@ exception_handler_abort_on_50006_with_message_box( pException : Exception ) : In
 //			be called to ensure the application does not remain in a potential 
 //			transaction state. 
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	26/07/2023	EDS-92		Improve Logon Form
 
 begin 
 	if pException.errorCode = Ex_500006_User_not_provided then
@@ -5722,8 +5712,6 @@ end;
 exception_handler_abort_with_message
 {
 exception_handler_abort_with_message( pException : Exception; pTitle : String; pMessage : String ) : Integer;
-// Who		When		Ticket		Details
-// Dan T	12/07/2023	EDS-83.v2 	Optimise Item Search (Notify invalid price range)
 
 begin 
 	app.erewhonAbortTransaction();
@@ -5804,9 +5792,6 @@ finalize() updating;
 // Purpose:		Finalization code for the application.
 //              Delete the application's transaction agent.
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	26/04/2023	EDS-24		Deimplement TransactionAgentClass
-// Dan T	22/06/2023	EDS-74		SaleItemSearch - remove parameterized constructor
 
 begin
 	// delete does nothing if a reference is null
@@ -5860,11 +5845,9 @@ getErrorString(errorNo : Integer) : String;
 //
 // Returns:		An error string, or null if no string for the error number exists
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	28/06/2023	EDS-80		Turn all remaining string literals into translatable strings
 
 begin
-	return self.currentLocale.getStringValue( $ErrMdl & errorNo.String );	// EDS-80
+	return self.currentLocale.getStringValue( $ErrMdl & errorNo.String );	
 end;
 }
 getShoppingCartTA
@@ -5881,8 +5864,6 @@ getShoppingCartTA() : ShoppingCartTA;
 //
 // Returns:		A collection of transient Shopping Cart (SaleTA) items
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	18/04/2023	EDS-30		Reimplement the Shop Client Form
 
 begin
 	if currentSession = null then
@@ -5903,8 +5884,6 @@ initialize() updating;
 //
 // Purpose:		Initialization code for the application
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	26/04/2023	EDS-24		Deimplement TransactionAgentClass
 
 begin
 	// Create the application's document hub (documentation facilities provided by imported package)
@@ -5936,9 +5915,7 @@ initializeUnitTest
 {
 initializeUnitTest( pCompany : Company ) updating;
 
-begin
-	// BeeJay says safer to pass in the company to guarantee we get the correct
-	// instance even when two people are trying to run unit tests concurrently.
+begin	
 	self.myCompany := pCompany;
 end;
 }
@@ -5977,8 +5954,6 @@ raiseErewhonException( pErrorCode : Integer );
 //
 // Returns:		N/A
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	27/06/2023	EDS-77		Improve logic for getting next code number
 
 vars
 	erewhonException : ErewhonException;
@@ -6067,17 +6042,15 @@ onCreate( pTA : ModelTA ) updating;
 //
 // Parameters: 	pTA = The Transaction Agent
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	05/07/2023	EDS-84	Add GUID to PersistentModels
 
 
 begin
 	// Create a GUID if not provided. 
 	// The DataLoader will provide a GUID so we do not want to overwrite this value
 	if pTA.guid = null then
-		self.guid := Utilities@generateGUID();	// EDS-84
+		self.guid := Utilities@generateGUID();	
 	else
-		self.guid := pTA.guid;					// EDS-84
+		self.guid := pTA.guid;					
 	endif;
 	
 	self.setCommonProperties( pTA );
@@ -6174,12 +6147,9 @@ getDebugString() : String;
 // Purpose:		Returns a string representing the object for use by developers.
 //				Not used to display anything to a user.
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	29/03/2023	EDS-4		Implement AddressTA class
-// Dan T	28/06/2023	EDS-80		Turn all remaining string literals into translatable strings
 
 begin
-	return self.getOidString & Space & self.class.name & Colon & Space & self.getFormattedAddress();	// EDS-4	// EDS-80
+	return self.getOidString & Space & self.class.name & Colon & Space & self.getFormattedAddress();	
 end;
 }
 getFormattedAddress
@@ -6195,19 +6165,14 @@ getFormattedAddress() : String;
 // Returns:		String with address fields separated by a comma
 // --------------------------------------------------------------------------------
 
-// Who		When		Ticket		Details
-// Dan T	29/03/2023	EDS-4		Implement AddressTA class
-// Dan T	28/06/2023	EDS-80		Turn all remaining string literals into translatable strings
 
 begin
-	return self.street & Comma & Space & self.city & Comma & Space & self.country;	// EDS-4	// EDS-80
+	return self.street & Comma & Space & self.city & Comma & Space & self.country;	
 end;
 }
 getTAClass
 {
 getTAClass() : Class;
-// Who		When		Ticket		Details
-// Dan T	14/04/2023	EDS-27		Reimplement PersistentModel::getTAClass method
 
 begin
 	return AddressTA;
@@ -6225,8 +6190,6 @@ onCreate( pAddressTA : AddressTA ) updating;
 //
 // Parameters: 	pAddressTA = The Address Transaction Agent
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	29/03/2023	EDS-4		Implement AddressTA class
 
 begin
 	inheritMethod( pAddressTA );
@@ -6244,8 +6207,6 @@ setCommonProperties( addressTA : AddressTA ) updating, protected;
 // Purpose:		Set the Address attributes using the Transaction Agent attributes
 // 
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	29/03/2023	EDS-4		Implement AddressTA class
 
 begin
 	inheritMethod( addressTA );
@@ -6386,21 +6347,17 @@ getDebugString() : String;
 //
 // Returns:		The Agent's object ID and the name of the class (Agent)
 // ---------------------------------------------------------------------------------
-// Dan T	28/06/2023	EDS-80		Turn all remaining string literals into translatable strings
 
 begin
-	return self.getOidString & Space & self.class.name;	// EDS-80
+	return self.getOidString & Space & self.class.name;	
 end;
 }
 getNameAndAddress
 {
 getNameAndAddress() : String;
-// Who		When		Ticket		Details
-// Dan T	29/03/2023	EDS-5		Implement AgentTA class
-// Dan T	28/06/2023	EDS-80		Turn all remaining string literals into translatable strings
 
 begin
-	return self.name & Comma & Space & self.myAddress.getFormattedAddress();	// EDS-80
+	return self.name & Comma & Space & self.myAddress.getFormattedAddress();	
 end;	
 }
 getNameString
@@ -6425,8 +6382,6 @@ end;
 getTAClass
 {
 getTAClass() : Class;
-// Who		When		Ticket		Details
-// Dan T	14/04/2023	EDS-27		Reimplement PersistentModel::getTAClass method
 
 begin
 	return AgentTA;
@@ -6441,8 +6396,6 @@ onCreate( pAgentTA : AgentTA ) updating;
 // Purpose:		Set any properties that are only set on object creation
 // 
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	29/03/2023	EDS-5		Implement AgentTA class
 
 begin
 	inheritMethod( pAgentTA );
@@ -6469,9 +6422,6 @@ end;
 onModify_AddCommissionRate
 {
 onModify_AddCommissionRate( pAgentTA : AgentTA ) protected;
-// Who		When		Ticket		Details
-// Dan T	24/04/2023	EDS-17		Implement CommissionRateTA class
-// Dan T	01/05/2023	EDS-36		Refactor TestAgent unit tests
 //									Added null check for existing commission rate
 
 vars
@@ -6495,8 +6445,6 @@ end;
 onModify_RemoveCommissionRate
 {
 onModify_RemoveCommissionRate( pAgentTA : AgentTA ) protected;
-// Who		When		Ticket		Details
-// Dan T	24/04/2023	EDS-17		Implement CommissionRateTA class
 
 vars
 	existingCommissionRate : CommissionRate;
@@ -6517,8 +6465,6 @@ setCommonProperties( pAgentTA : AgentTA ) updating, protected;
 // Purpose:		Set the Agent attributes using the Transaction Agent attributes
 // 
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	29/03/2023	EDS-5		Implement AgentTA class
 
 begin
 	inheritMethod( pAgentTA );
@@ -6561,29 +6507,22 @@ getDebugString() : String;
 // Purpose:		Returns a string representing the object for use by developers.
 //				Not used to display anything to a user.
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	28/06/2023	EDS-80		Turn all remaining string literals into translatable strings
 
 begin
-	return self.getOidString & Space & self.class.name;	// EDS-80
+	return self.getOidString & Space & self.class.name;	
 end;
 }
 getNameAndAddress
 {
 getNameAndAddress() : String;
-// Who		When		Ticket		Details
-// Dan T	29/03/2023	EDS-3		Implement ClientTA class
-// Dan T	28/06/2023	EDS-80		Turn all remaining string literals into translatable strings
 
 begin
-	return self.name & Comma & Space & self.myAddress.getFormattedAddress();	// EDS-80
+	return self.name & Comma & Space & self.myAddress.getFormattedAddress();	
 end;
 }
 getTAClass
 {
 getTAClass() : Class;
-// Who		When		Ticket		Details
-// Dan T	14/04/2023	EDS-27		Reimplement PersistentModel::getTAClass method
 
 begin
 	return ClientTA;
@@ -6598,8 +6537,6 @@ onCreate( pClientTA : ClientTA ) updating;
 // Purpose:		Set any properties that are only set on object creation
 // 
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	29/03/2023	EDS-3		Implement ClientTA class
 
 begin
 	inheritMethod( pClientTA );
@@ -6622,8 +6559,6 @@ setCommonProperties( pClientTA : ClientTA ) updating, protected;
 // Purpose:		Set the Client attributes using the Transaction Agent attributes
 // 
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	29/03/2023	EDS-3		Implement ClientTA class
 
 begin
 	inheritMethod( pClientTA );
@@ -6638,8 +6573,6 @@ addOrRemoveAgents
 {
 addOrRemoveAgents( pCommissionRateTA : CommissionRateTA ) protected;
 // add or remove agents for the commission rate
-// Who		When		Ticket		Details
-// Dan T	24/04/2023	EDS-17		Implement CommissionRateTA class
 
 vars
 	agent : Agent;
@@ -6682,18 +6615,14 @@ getDebugString() : String;
 //
 // Purpose:		Returns a debug string for a CommissionRate
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	28/06/2023	EDS-80		Turn all remaining string literals into translatable strings
 
 begin
-	return self.getOidString & Space & self.class.name & Colon & Space & self.percentage.String & Percent;	// EDS-80
+	return self.getOidString & Space & self.class.name & Colon & Space & self.percentage.String & Percent;	
 end;
 }
 getTAClass
 {
 getTAClass() : Class;
-// Who		When		Ticket		Details
-// Dan T	14/04/2023	EDS-27		Reimplement PersistentModel::getTAClass method
 
 begin
 	return CommissionRateTA;
@@ -6708,8 +6637,6 @@ setCommonProperties( pCommissionRateTA : CommissionRateTA ) updating, protected;
 // Purpose:		Set the CommissionRate attributes using the Transaction Agent attributes
 // 
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	20/04/2023	EDS-17		Implement CommissionRateTA class
 
 begin
 	inheritMethod( pCommissionRateTA );
@@ -6750,12 +6677,7 @@ closeTendersAtDate( date : Date; numClosed : Integer output ) serverExecution;
 // Parameters:	date		: The date before which all tenders will be closed
 //				numClosed 	: The number of tenders that were closed during the operation. 
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	14/04/2023	EDS-18		Implement TenderTA Class
-// BeeJay	24/05/2023	EDS-40		Refactor TestCompany unit tests
-//									Added unlock to tender sale if tender not accepted			
-// Dan T	10/07/2023	EDS-88	 	Rename SaleItem classes to improve clarity
-// Dan T	10/08/2023	EDS-91		Integrate Close Tenders App into Admin App (Removed Unnecessary Lock)
+
 
 vars
 	tenderItem : TenderItem;
@@ -6771,7 +6693,7 @@ begin
  
 		// check if a sale has already happened or if the closure date is after the close tenders date
 		if tenderItem.mySale <> null or tenderItem.closureDate > date then
-			unlock( tenderItem );														// EDS-40
+			unlock( tenderItem );														
 			return;
 		endif;
 
@@ -6779,7 +6701,7 @@ begin
 			numClosed := numClosed + 1;
 		endif;
 		
-		unlock( tenderItem );															// EDS-40
+		unlock( tenderItem );															
 	endforeach;
 
 end;
@@ -6815,11 +6737,9 @@ getDebugString() : String;
 //
 // Returns:		The Company's object ID and the name of the class (Company)
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	28/06/2023	EDS-80		Turn all remaining string literals into translatable strings
 
 begin
-	return self.getOidString & Space & self.class.name;	// EDS-80
+	return self.getOidString & Space & self.class.name;	
 end;
 }
 getItem
@@ -6842,12 +6762,9 @@ end;
 getNameAndAddress
 {
 getNameAndAddress() : String;
-// Who		When		Ticket		Details
-// Dan T	29/03/2023	EDS-3		Implement ClientTA class
-// Dan T	28/06/2023	EDS-80		Turn all remaining string literals into translatable strings
 
 begin
-	return self.name & Comma & Space & self.myAddress.getFormattedAddress();	// EDS-80
+	return self.name & Comma & Space & self.myAddress.getFormattedAddress();	
 end;
 }
 getNumberOfLocations
@@ -6899,8 +6816,6 @@ end;
 getTAClass
 {
 getTAClass() : Class;
-// Who		When		Ticket		Details
-// Dan T	14/04/2023	EDS-27		Reimplement PersistentModel::getTAClass method
 
 begin
 	return CompanyTA;
@@ -6909,8 +6824,6 @@ end;
 hasAgentWithThisName
 {
 hasAgentWithThisName( pName : String ) : Boolean;
-// Who		When		Ticket		Details
-// Dan T	04/04/2023	EDS-5		Implement AgentTA class
 
 begin
 	return self.allAgents[ pName ] <> null;
@@ -6919,8 +6832,6 @@ end;
 hasAnotherAgentWithThisName
 {
 hasAnotherAgentWithThisName( pName : String; pAgent : Agent ) : Boolean;
-// Who		When		Ticket		Details
-// Dan T	04/04/2023	EDS-5		Implement AgentTA class
 
 vars
 	agent : Agent;
@@ -6947,8 +6858,6 @@ end;
 hasAnotherCountryWithThisName
 {
 hasAnotherCountryWithThisName( pName : String; pCountry : Country ) : Boolean;
-// Who		When		Ticket		Details
-// Dan T	04/04/2023	EDS-7		Implement CountryTA class
 
 vars
 	country : Country;
@@ -6970,8 +6879,6 @@ end;
 hasCountryWithThisName
 {
 hasCountryWithThisName( pName : String ) : Boolean;
-// Who		When		Ticket		Details
-// Dan T	04/04/2023	EDS-7		Implement CompanyTA class
 
 begin
 	return self.allCountries[ pName ] <> null;
@@ -6986,8 +6893,6 @@ setCommonProperties( pCompanyTA : CompanyTA ) updating, protected;
 // Purpose:		Set the Company attributes using the Transaction Agent attributes
 // 
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	30/03/2023	EDS-13		Implement CompanyTA class
 
 begin
 	inheritMethod( pCompanyTA );
@@ -7006,9 +6911,6 @@ getCode() : String;
 //
 // Returns:		Return a string representing the item's code
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	19/06/2023	EDS-72		Remove code number limit for Sale Items
-// Dan T	19/06/2023	EDS-72		Remove code number limit for Sale Items
 
 begin
 	// Return null string if no category provided
@@ -7051,8 +6953,6 @@ getCodePrefix() : String;
 // Returns:     The four-character string prefix of a code that describes what sort
 //				of item is is codifying.
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	19/06/2023	EDS-72		Remove code number limit for Sale Items
 
 begin
 	if self.myItemCategory = null then
@@ -7071,11 +6971,9 @@ getDebugString() : String;
 // Purpose:		Returns a debug string for an Item. For developer use only,
 //				users should never see these.
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	28/06/2023	EDS-80		Turn all remaining string literals into translatable strings
 
 begin
-	return self.getOidString & Space & self.class.name & Colon & Space & self.getCode() & Comma & Space & self.name & Comma & Space & DollarSign & self.price.String;	// EDS-80
+	return self.getOidString & Space & self.class.name & Colon & Space & self.getCode() & Comma & Space & self.name & Comma & Space & DollarSign & self.price.String;	
 end;
 }
 getName
@@ -7110,8 +7008,6 @@ end;
 getTAClass
 {
 getTAClass() : Class;
-// Who		When		Ticket		Details
-// Dan T	14/04/2023	EDS-27		Reimplement PersistentModel::getTAClass method
 
 begin
 	return ItemTA;
@@ -7138,10 +7034,6 @@ onCreate( pItemTA : ItemTA ) updating;
 // Purpose:		Set any properties that are only set on object creation
 // 
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	05/04/2023	EDS-14		Implement SaleItemTA class
-// Dan T	19/06/2023	EDS-71		Add Date Offset to Data Loader (removed listed date assignment)
-// Dan T	10/07/2023	EDS-88	 	Rename SaleItem classes to improve clarity
 
 begin
 	inheritMethod( pItemTA );
@@ -7159,15 +7051,6 @@ setCommonProperties( pItemTA : ItemTA ) updating, protected;
 // Purpose:		Set the Agent attributes using the Transaction Agent attributes
 // 
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	06/04/2023	EDS-14		Implement SaleItemTA class
-// Dan T	02/06/2023	EDS-65		SaleTA not saving forSaleDate
-// Dan T	14/06/2023	EDS-68		Implement doPreValidate method (Removed Unnecessary Code)
-// Dan T	19/06/2023	EDS-71		Add Date Offset to Data Loader
-// Dan T	19/06/2023	EDS-72		Remove code number limit for Sale Items
-// Dan T	30/06/2023	EDS-81		Change SaleItems to use GUIDs
-// Dan T	05/07/2023	EDS-84		Add GUID to PersistentModels
-// Dan T	10/08/2023	EDS-94		Grant Admin Users Full Functionality
 
 begin
 	inheritMethod( pItemTA );
@@ -7179,8 +7062,8 @@ begin
 	self.photo := pItemTA.photo;
 	self.price := pItemTA.price;
 	self.name := pItemTA.name;
-	self.listedDate := pItemTA.listedDate;						// EDS-71
-	self.myAgent := pItemTA.myAgent;							// EDS-94
+	self.listedDate := pItemTA.listedDate;						
+	self.myAgent := pItemTA.myAgent;							
 end;
 }
 	)
@@ -7215,8 +7098,6 @@ end;
 getTAClass
 {
 getTAClass() : Class;
-// Who		When		Ticket		Details
-// Dan T	14/04/2023	EDS-27		Reimplement PersistentModel::getTAClass method
 
 begin
 	return RetailItemTA;
@@ -7249,12 +7130,10 @@ acceptHighestTender() : Tender;
 //
 // Returns:		The winning tender; or null if there are no tenders
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	05/04/2023	EDS-11		Implement TenderSaleTA class
 
 vars
 	highestTender : Tender;
-	tenderSaleTA : TenderSaleTA;	// EDS-11
+	tenderSaleTA : TenderSaleTA;	
 	
 begin
 	// allTendersByOfferTime is sorted first by the offer in descending order, and
@@ -7265,18 +7144,18 @@ begin
 	
 	if highestTender <> null then
 		// We've found a winning tender, so create a tender sale
-		create tenderSaleTA transient;						// EDS-11
-		tenderSaleTA.myTender := highestTender;				// EDS-11
-		tenderSaleTA.myItem := self;					// EDS-11
-		tenderSaleTA.myClient := highestTender.myClient;	// EDS-11
+		create tenderSaleTA transient;						
+		tenderSaleTA.myTender := highestTender;				
+		tenderSaleTA.myItem := self;					
+		tenderSaleTA.myClient := highestTender.myClient;	
 		
-		tenderSaleTA.persistEntity( TransactionType_Persist );			// EDS-11
+		tenderSaleTA.persistEntity( TransactionType_Persist );			
 	endif;
 
 	return highestTender;
 	
 epilog
-	delete tenderSaleTA;	// EDS-11
+	delete tenderSaleTA;	
 end;
 }
 getDebugString
@@ -7288,11 +7167,9 @@ getDebugString() : String;
 // Purpose:		Returns a debug string for a TenderItem. For developer use only,
 //				users should never see these.
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	28/06/2023	EDS-80		Turn all remaining string literals into translatable strings
 
 begin
-	return inheritMethod & Comma & Space & self.closureDate.String;	// EDS-80
+	return inheritMethod & Comma & Space & self.closureDate.String;	
 end;
 }
 getPrice
@@ -7310,8 +7187,6 @@ end;
 getTAClass
 {
 getTAClass() : Class;
-// Who		When		Ticket		Details
-// Dan T	14/04/2023	EDS-27		Reimplement PersistentModel::getTAClass method
 
 begin
 	return TenderItemTA;
@@ -7341,8 +7216,6 @@ isClosed() : Boolean;
 //
 // Returns:		True if the tender item is closed, otherwise returns False
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	19/06/2023	EDS-64		Tenders Still Available After Closure Date
 
 begin
 	return self.closureDate < app.actualTimeServer().date();
@@ -7351,8 +7224,6 @@ end;
 setCommonProperties
 {
 setCommonProperties( pTenderItemTA : TenderItemTA ) updating, protected;
-// Who		When		Ticket		Details
-// Dan T	10/07/2023	EDS-88	 	Rename SaleItem classes to improve clarity
 
 begin
 	inheritMethod( pTenderItemTA );
@@ -7372,11 +7243,9 @@ getDebugString() : String;
 // Purpose:		Returns a debug string for an Item Category. This is for
 //				developer use only. Users should not see this.
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	28/06/2023	EDS-80		Turn all remaining string literals into translatable strings
 
 begin
-	return self.getOidString & Space & self.class.name & Colon & Space & self.name & Comma & Space & self.description;	// EDS-80
+	return self.getOidString & Space & self.class.name & Colon & Space & self.name & Comma & Space & self.description;	
 end;
 }
 getNextCodeNumber
@@ -7391,10 +7260,6 @@ getNextCodeNumber() : Integer;
 //
 // Returns:		An Integer with the current highest item number plus 1 
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	27/06/2023	EDS-77		Improve logic for getting next code number
-// Dan T	29/06/2023	EDS-77.v2	Improve logic for getting next code number
-// Dan T	25/07/2023	EDS-97 		Use one ErewhonException class
 
 
 constants
@@ -7413,12 +7278,12 @@ begin
 		attempts += 1;
 		
 		if attempts >= MaxAttempts then
-			app.raiseErewhonException( Ex_500001_Lock_not_obtained );	// EDS-97
+			app.raiseErewhonException( Ex_500001_Lock_not_obtained );	
 		endif;
 		
 		// Wait for 100ms before attempting to lock again so other processes 
 		// have an opportunity to complete their work and release their locks
-		process.sleep( 100 );	// EDS-77.v2
+		process.sleep( 100 );	
 	endwhile;
 
 	lockObtained := true;
@@ -7438,8 +7303,6 @@ end;
 getTAClass
 {
 getTAClass() : Class;
-// Who		When		Ticket		Details
-// Dan T	14/04/2023	EDS-12		Implement SaleItemCategoryTA class
 
 begin
 	return ItemCategoryTA;
@@ -7454,9 +7317,6 @@ onCreate( pItemCategoryTA : ItemCategoryTA ) updating;
 // Purpose:		Set any properties that are only set on object creation
 // 
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	13/04/2023	EDS-12		Implement SaleItemCategoryTA class
-// Dan T	10/07/2023	EDS-88	 	Rename SaleItem classes to improve clarity
 
 begin
 	inheritMethod( pItemCategoryTA );
@@ -7473,9 +7333,6 @@ setCommonProperties( pItemCategoryTA : ItemCategoryTA ) updating, protected;
 // Purpose:		Set the attributes using the Transaction Agent attributes
 // 
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	13/04/2023	EDS-12		Implement SaleItemCategoryTA class
-// Dan T	10/07/2023	EDS-88	 	Rename SaleItem classes to improve clarity
 
 begin
 	inheritMethod( pItemCategoryTA );
@@ -7491,8 +7348,6 @@ end;
 getTAClass
 {
 getTAClass() : Class;
-// Who		When		Ticket		Details
-// Dan T	14/04/2023	EDS-27		Reimplement PersistentModel::getTAClass method
 
 begin
 	return LocationTA;
@@ -7507,8 +7362,6 @@ setCommonProperties( pLocationTA : LocationTA ) updating, protected;
 // Purpose:		Set the Location name attribute using the Transaction Agent attributes
 // 
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	31/03/2023	EDS-6		Implement LocationTA class
 
 begin
 	inheritMethod( pLocationTA );
@@ -7527,18 +7380,14 @@ getDebugString() : String;
 //
 // Purpose:		Returns a debug string for a Country
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	28/06/2023	EDS-80		Turn all remaining string literals into translatable strings
 
 begin
-	return self.getOidString & Space & self.class.name & Colon & Space & self.name;	// EDS-80
+	return self.getOidString & Space & self.class.name & Colon & Space & self.name;	
 end;
 }
 getTAClass
 {
 getTAClass() : Class;
-// Who		When		Ticket		Details
-// Dan T	14/04/2023	EDS-27		Reimplement PersistentModel::getTAClass method
 
 begin
 	return CountryTA;
@@ -7547,8 +7396,6 @@ end;
 hasAnotherRegionWithThisName
 {
 hasAnotherRegionWithThisName( pName : String; pRegion : Region ) : Boolean;
-// Who		When		Ticket		Details
-// Dan T	04/04/2023	EDS-8		Implement RegionTA class
 
 vars
 	region : Region;
@@ -7562,8 +7409,6 @@ end;
 hasRegionWithThisName
 {
 hasRegionWithThisName( pName : String ) : Boolean;
-// Who		When		Ticket		Details
-// Dan T	04/04/2023	EDS-8		Implement RegionTA class
 
 begin
 	return self.allRegions[ pName ] <> null;
@@ -7578,8 +7423,6 @@ onCreate( pCountryTA : CountryTA ) updating;
 // Purpose:		Set any properties that are only set on object creation
 // 
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	31/03/2023	EDS-7		Implement CountryTA class
 
 begin
 	inheritMethod( pCountryTA );
@@ -7617,11 +7460,9 @@ getCountryAndRegionNames() : String;
 // Purpose:		Gets the names of the region and the country it belongs to for
 //				use by the DocumentInterface.
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	28/06/2023	EDS-80		Turn all remaining string literals into translatable strings
 
 begin
-	return self.myCountry.name & Space & self.name;	// EDS-80
+	return self.myCountry.name & Space & self.name;	
 end;
 }
 getDebugString
@@ -7638,18 +7479,14 @@ getDebugString() : String;
 //
 // Purpose:		Returns a debug string for a Region, used in the DocumentInterface.
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	28/06/2023	EDS-80		Turn all remaining string literals into translatable strings
 
 begin
-	return self.getOidString & Space & self.class.name & Colon & Space & self.name & Space & $Of & Space & self.myCountry.name;	// EDS-80
+	return self.getOidString & Space & self.class.name & Colon & Space & self.name & Space & $Of & Space & self.myCountry.name;	
 end;
 }
 getTAClass
 {
 getTAClass() : Class;
-// Who		When		Ticket		Details
-// Dan T	14/04/2023	EDS-27		Reimplement PersistentModel::getTAClass method
 
 begin
 	return RegionTA;
@@ -7667,8 +7504,6 @@ onCreate( pRegionTA : RegionTA ) updating;
 //
 // Parameters: 	pRegionTA = The Region Transaction Agent
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	31/03/2023	EDS-8		Implement RegionTA class
 
 begin
 	inheritMethod( pRegionTA );
@@ -7679,8 +7514,6 @@ end;
 setCommonProperties
 {
 setCommonProperties( pRegionTA : RegionTA ) updating, protected;
-// Who		When		Ticket		Details
-// Dan T	14/06/2023	EDS-37		Country Not Updated When Updating Region
 
 begin
 	inheritMethod( pRegionTA );
@@ -7702,8 +7535,6 @@ calculateAgentCommission( salePrice : Decimal ) updating, protected;
 //              be called only when a sale is created, as sales should not be
 //              updated after having been created.
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	11/04/2023	EDS-9		Implement SaleTA class
 
 vars
 	rate : CommissionRate;
@@ -7735,8 +7566,6 @@ end;
 getTAClass
 {
 getTAClass() : Class;
-// Who		When		Ticket		Details
-// Dan T	14/04/2023	EDS-27		Reimplement PersistentModel::getTAClass method
 
 begin
 	return SaleTA;
@@ -7751,8 +7580,6 @@ onCreate( pSaleTA : SaleTA ) updating;
 // Purpose:		Set any properties that are only set on object creation
 // 
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	04/04/2023	EDS-9		Implement SaleTA class
 
 
 begin
@@ -7772,8 +7599,6 @@ setCommonProperties( pSaleTA : SaleTA ) updating, protected;
 // Purpose:		Set the RetailSale attributes using the Transaction Agent attributes
 // 
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	04/04/2023	EDS-9		Implement SaleTA class
 
 begin
 	inheritMethod( pSaleTA );
@@ -7808,15 +7633,13 @@ getDebugString() : String;
 // Purpose:		Returns a debug string for a RetailSale. For developer use only, 
 //				users should never see this.
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	28/06/2023	EDS-80		Turn all remaining string literals into translatable strings
 
 vars
 	str : String;
 	
 begin
-	str := self.getOidString & Space & self.class.name & Colon & Space & DollarSign & self.salePrice.String & Comma & Space & self.dateSold.String & Comma & Space;	// EDS-80
-	str := str & self.myItem.getCode() & Space & OpenParenthesis & self.myItem.name & ClosedParenthesis & Comma & Space;	// EDS-80
+	str := self.getOidString & Space & self.class.name & Colon & Space & DollarSign & self.salePrice.String & Comma & Space & self.dateSold.String & Comma & Space;	
+	str := str & self.myItem.getCode() & Space & OpenParenthesis & self.myItem.name & ClosedParenthesis & Comma & Space;	
 	str := str & self.myClient.name;
 	
 	return str;
@@ -7825,8 +7648,6 @@ end;
 getTAClass
 {
 getTAClass() : Class;
-// Who		When		Ticket		Details
-// Dan T	14/04/2023	EDS-27		Reimplement PersistentModel::getTAClass method
 
 begin
 	return RetailSaleTA;
@@ -7841,8 +7662,6 @@ onCreate( pRetailSaleTA : RetailSaleTA ) updating;
 // Purpose:		Set any properties that are only set on object creation
 // 
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	11/04/2023	EDS-10		Implement RetailSaleTA class
 
 
 begin
@@ -7860,8 +7679,6 @@ setCommonProperties( pRetailSaleTA : RetailSaleTA ) updating, protected;
 // Purpose:		Set the RetailSale attributes using the Transaction Agent attributes
 // 
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	04/04/2023	EDS-10		Implement RetailSaleTA class
 
 begin
 	inheritMethod( pRetailSaleTA );
@@ -7881,8 +7698,6 @@ getDate() : Date;
 //
 // Returns:     The date of the tender sale from our winning tender
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	05/04/2023	EDS-11		Added self variable as requied
 
 begin
 	return self.myTender.getDate();
@@ -7897,15 +7712,13 @@ getDebugString() : String;
 // Purpose:		Returns a debug string for a TenderSale. For developer use only,
 //				users should never see these.
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	28/06/2023	EDS-80		Turn all remaining string literals into translatable strings
 
 vars
 	str : String;
 
 begin
-	str := self.getOidString & Space & self.class.name & Colon & Space & DollarSign & self.myTender.offer.String & Comma & Space & self.getDate.String & Comma & Space & self.getTime.String & Comma & Space;	// EDS-80
-	str := str & self.myItem.getCode() & Space & OpenParenthesis & self.myItem.name & ClosedParenthesis & Comma & Space;	// EDS-80
+	str := self.getOidString & Space & self.class.name & Colon & Space & DollarSign & self.myTender.offer.String & Comma & Space & self.getDate.String & Comma & Space & self.getTime.String & Comma & Space;	
+	str := str & self.myItem.getCode() & Space & OpenParenthesis & self.myItem.name & ClosedParenthesis & Comma & Space;	
 	str := str & self.myClient.name;
 
 	return str;
@@ -7914,8 +7727,6 @@ end;
 getTAClass
 {
 getTAClass() : Class;
-// Who		When		Ticket		Details
-// Dan T	14/04/2023	EDS-27		Reimplement PersistentModel::getTAClass method
 
 begin
 	return TenderSaleTA;
@@ -7929,8 +7740,6 @@ getTime() : Time;
 //
 // Returns:     The time of the tender sale from our winning tender
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	05/04/2023	EDS-11		Added self variable as requied
 
 begin
 	return self.myTender.getTime();
@@ -7948,8 +7757,6 @@ onCreate( pTenderSaleTA : TenderSaleTA ) updating;
 //
 // Parameters: 	pTenderSaleTA = The TenderSaleTA Transaction Agent
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	05/04/2023	EDS-11		Implement TenderSaleTA class
 
 begin
 	inheritMethod( pTenderSaleTA );
@@ -7984,14 +7791,12 @@ getDebugString() : String;
 // Purpose:		Returns a debug string for a Tender. For developer use only,
 //				users should never see these.
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	28/06/2023	EDS-80		Turn all remaining string literals into translatable strings
 
 vars
 	str : String;
 
 begin
-	str := self.getOidString & Space & self.class.name & Colon & Space & DollarSign & self.offer.String & Comma & Space & self.dateTendered.String & Comma & Space;	// EDS-80
+	str := self.getOidString & Space & self.class.name & Colon & Space & DollarSign & self.offer.String & Comma & Space & self.dateTendered.String & Comma & Space;	
 	
 	return str & self.myClient.name;
 end;
@@ -8014,8 +7819,6 @@ getStatus() : String;
 //				Closed		The tender item has closed or another tender won
 //				Successful	This tender won the item
 //--------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	11/07/2023	EDS-90 		Create Tenders View Form
 
 begin
 	if self.myTenderSale <> null then
@@ -8030,8 +7833,6 @@ end;
 getTAClass
 {
 getTAClass() : Class;
-// Who		When		Ticket		Details
-// Dan T	14/04/2023	EDS-27		Reimplement PersistentModel::getTAClass method
 
 begin
 	return TenderTA;
@@ -8058,16 +7859,13 @@ onCreate( pTenderTA : TenderTA ) updating;
 // Purpose:		Set the Tender attributes using the Transaction Agent attributes
 // 
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// BeeJay	20/04/2023	EDS-18		Implement TenderTA class
-// Dan T	11/07/2023	EDS-90 		Create Tenders View Form
 
 begin
 	inheritMethod( pTenderTA );
 
 	self.myClient := pTenderTA.myClient;
 	self.myTenderItem := pTenderTA.myTenderItem;
-	self.myCompany := app.myCompany;				// EDS-90
+	self.myCompany := app.myCompany;				
 end;
 }
 setCommonProperties
@@ -8079,8 +7877,6 @@ setCommonProperties( pTenderTA : TenderTA ) updating, protected;
 // Purpose:		Set the Tender attributes using the Transaction Agent attributes
 // 
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	05/04/2023	EDS-18		Implement TenderTA class
 
 begin
 	inheritMethod( pTenderTA );
@@ -8116,9 +7912,6 @@ end;
 createCompany
 {
 createCompany() updating, protected;
-// Who		When		Ticket		Details
-// Dan T	28/06/2023	EDS-80		Turn all remaining string literals into translatable strings
-// Dan T	25/07/2023	EDS-97 		Use one ErewhonException class
 
 vars
 	addressTA : AddressTA;
@@ -8128,7 +7921,7 @@ begin
 	// Enforce singleton persistent Company.
 	// If a company already exists, raise an exception
 	if Company.firstInstance() <> null then
-		app.raiseErewhonException( Ex_500003_Company_already_exists );	// EDS-97
+		app.raiseErewhonException( Ex_500003_Company_already_exists );	
 	endif;
 
 	create addressTA transient;
@@ -8155,7 +7948,7 @@ begin
 	app.setCompany( self.myCompany );
 	
 	write $Created & Space & companyTA.name & Comma & Space & addressTA.street & Comma & Space & addressTA.city & Comma & Space &
-	addressTA.country & Comma & Space & addressTA.email & Comma & Space & addressTA.phone & Comma & Space & addressTA.fax & Comma & Space & addressTA.webSite;	// EDS-80
+	addressTA.country & Comma & Space & addressTA.email & Comma & Space & addressTA.phone & Comma & Space & addressTA.fax & Comma & Space & addressTA.webSite;	
 	
 epilog
 	delete addressTA;
@@ -8171,7 +7964,6 @@ getElapsedTimeString( startClock : Integer ) : String protected;
 // Purpose:		Given a starting clock value, this method returns a string
 //              representing the elapsed time in seconds
 // --------------------------------------------------------------------------------
-// Dan T	28/06/2023	EDS-80		Turn all remaining string literals into translatable strings
 
 vars
 	elapsedTime : Integer;
@@ -8183,7 +7975,7 @@ begin
 		return $LessThanOneSecond;
 	endif;
 	
-	return elapsedTime.String & Space & $Seconds;	// EDS-80
+	return elapsedTime.String & Space & $Seconds;	
 end;
 }
 getNextToken
@@ -8203,8 +7995,6 @@ getNextToken( str : String; pos : Integer io ) : String protected;
 //                    after the end of the token returned (ie: the starting
 //                    position when searching for the next token).
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	28/06/2023	EDS-80		Turn all remaining string literals into translatable strings
 
 vars
 	len : Integer;   // the length of the string
@@ -8222,7 +8012,7 @@ begin
 
 	// Scan for first non-blank token.
 	idx := pos;
-	while str[ idx ] = Tab or str[ idx ] = Space do	// EDS-80
+	while str[ idx ] = Tab or str[ idx ] = Space do	
 		idx := idx + 1;
 		if idx > len then
 			// If not found, return null
@@ -8252,7 +8042,7 @@ begin
 		pos := idx + 1;
 	endif;
 
-	if token = $Null then	// EDS-80
+	if token = $Null then	
 		return null;
 	endif;
 
@@ -8272,9 +8062,6 @@ initializeData() : Boolean updating;
 //              "Browse For Folder" dialog and click OK. The database will then
 //              be initialized.
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	26/05/2023	EDS-34		Prompt to load data if not initialized
-// Dan T	28/06/2023	EDS-80		Turn all remaining string literals into translatable strings
 
 vars
 	fileFolder : FileFolder;
@@ -8284,7 +8071,7 @@ begin
 	// Ask for the directory containing the initial data files
 	create fileFolder transient;
 	
-	directoryPath := fileFolder.browseForFolder( $SelectDataDirectory, app.dbPath() ); 	// EDS-80
+	directoryPath := fileFolder.browseForFolder( $SelectDataDirectory, app.dbPath() ); 	
 	
 	if directoryPath <> null then
 		self.loadData( directoryPath );
@@ -8304,14 +8091,10 @@ loadAgentRates() protected;
 //
 // Purpose:		Loads commission rates for agents from a text file
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	28/06/2023	EDS-80		Turn all remaining string literals into translatable strings
-// Dan T	28/06/2023	EDS-79		Translatable strings: Remove concatenation
-// Dan T	04/07/2023	EDS-79.v2	Removed WithParam suffix for Translatable Strings
 
 
 constants
-	AgentRateFileName : String = AgentRatesDataFile;	// EDS-80
+	AgentRateFileName : String = AgentRatesDataFile;	
 
 vars
 	inputFile : File;
@@ -8334,11 +8117,11 @@ begin
 	create inputFile transient;
 	inputFile.allowCreate := false;
 	inputFile.allowReplace := false;
-	inputFile.endOfLine := null;	// EDS-80
+	inputFile.endOfLine := null;	
 	inputFile.kind := File.Kind_ANSI;	//if loading in a unicode system, will be automatically converted
 	inputFile.openInput( self.dirPath & AgentRateFileName );
 
-	write $Loading( inputFile.fileName );	// EDS-79	// EDS-79.v2
+	write $Loading( inputFile.fileName );	
 	
 	create commissionRateTA transient;
 	create commissionRate transient;
@@ -8365,7 +8148,7 @@ begin
 			commissionRateTA.allAgents.add( agent );
 			commissionRateTA.persistEntityInTransState( TransactionType_Persist );			
 			
-			write $LoadedObject( agentName & Comma & Space & categoryName & Comma & Space & ratePercent.String );	// EDS-79	// EDS-79.v2
+			write $LoadedObject( agentName & Comma & Space & categoryName & Comma & Space & ratePercent.String );	
 			count := count + 1;
 		endif;
 	endwhile;
@@ -8373,7 +8156,7 @@ begin
 epilog
 	delete inputFile;
 	delete commissionRateTA;
-	write count.String & Space & $AgentRatesLoadedInMS( self.getElapsedTimeString( startClock ) );	// EDS-79	// EDS-79.v2
+	write count.String & Space & $AgentRatesLoadedInMS( self.getElapsedTimeString( startClock ) );	
 end;
 }
 loadAgents
@@ -8384,14 +8167,9 @@ loadAgents() protected;
 //
 // Purpose:		Loads agents from a text file
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	29/03/2023	EDS-5		Implement AgentTA class
-// Dan T	28/06/2023	EDS-80		Turn all remaining string literals into translatable strings
-// Dan T	28/06/2023	EDS-79		Translatable strings: Remove concatenation
-// Dan T	04/07/2023	EDS-79.v2	Removed WithParam suffix for Translatable Strings
 
 constants
-	AgentFileName : String = AgentDataFile;	// EDS-80
+	AgentFileName : String = AgentDataFile;	
 	
 vars
 	inputFile : File;
@@ -8399,8 +8177,8 @@ vars
 	pos : Integer;
 	startClock : Integer;
 
-	agentTA : AgentTA;		// EDS-5
-	addressTA : AddressTA;	// EDS-5
+	agentTA : AgentTA;		
+	addressTA : AddressTA;	
 	
 begin
 	startClock := app.clock;
@@ -8408,14 +8186,14 @@ begin
 	create inputFile transient;
 	inputFile.allowCreate := false;
 	inputFile.allowReplace := false;
-	inputFile.endOfLine := null;	// EDS-80
+	inputFile.endOfLine := null;	
 	inputFile.kind := File.Kind_ANSI;	//if loading in a unicode system, will be automatically converted
-	inputFile.openInput( self.dirPath & AgentFileName );	// EDS-80
+	inputFile.openInput( self.dirPath & AgentFileName );	
 
-	write $Loading( inputFile.fileName );	// EDS-79	// EDS-79.v2
+	write $Loading( inputFile.fileName );	
 
-	create agentTA transient;		// EDS-5
-	create addressTA transient;		// EDS-5
+	create agentTA transient;		
+	create addressTA transient;		
 	
 	while not inputFile.endOfFile() do
 		line := inputFile.readLine.trimBlanks();
@@ -8424,32 +8202,32 @@ begin
 		if line <> null and line[ FirstIndexInLine ] <> LineSkipDelimiter then
 			pos := FirstIndexInLine;
 
-			agentTA.initialize();								// EDS-5
-			agentTA.name := self.getNextToken( line, pos );		// EDS-5
+			agentTA.initialize();								
+			agentTA.name := self.getNextToken( line, pos );		
 			
-			addressTA.initialize();								// EDS-5
-			addressTA.myModelTA := agentTA;						// EDS-5
+			addressTA.initialize();								
+			addressTA.myModelTA := agentTA;						
 			
-			addressTA.street := self.getNextToken( line, pos );			// EDS-5
-			addressTA.city := self.getNextToken( line, pos );			// EDS-5
-			addressTA.country := self.getNextToken( line, pos );		// EDS-5
-			addressTA.email := self.getNextToken( line, pos );			// EDS-5
-			addressTA.fax := self.getNextToken( line, pos );			// EDS-5
-			addressTA.phone := self.getNextToken( line, pos );			// EDS-5
-			addressTA.webSite := self.getNextToken( line, pos );		// EDS-5	
+			addressTA.street := self.getNextToken( line, pos );			
+			addressTA.city := self.getNextToken( line, pos );			
+			addressTA.country := self.getNextToken( line, pos );		
+			addressTA.email := self.getNextToken( line, pos );			
+			addressTA.fax := self.getNextToken( line, pos );			
+			addressTA.phone := self.getNextToken( line, pos );			
+			addressTA.webSite := self.getNextToken( line, pos );		
 			
-			agentTA.persistEntityInTransState( TransactionType_Persist );	// EDS-5
+			agentTA.persistEntityInTransState( TransactionType_Persist );	
 
 			write $Loading( agentTA.name & Comma & Space & addressTA.street & Comma & Space & addressTA.city & Comma & Space & addressTA.country &
-				Comma & Space & addressTA.email & Comma & Space & addressTA.phone & Comma & Space & addressTA.fax & Comma & Space & addressTA.webSite );	// EDS-79	// EDS-79.v2
+				Comma & Space & addressTA.email & Comma & Space & addressTA.phone & Comma & Space & addressTA.fax & Comma & Space & addressTA.webSite );	
 			
 		endif;
 	endwhile;
 
 epilog
 	delete inputFile;
-	delete agentTA;		// EDS-5
-	write $AgentsNumberLoadedInMS( self.myCompany.allAgents.size.String, self.getElapsedTimeString( startClock ) );	// EDS-79	// EDS-79.v2
+	delete agentTA;		
+	write $AgentsNumberLoadedInMS( self.myCompany.allAgents.size.String, self.getElapsedTimeString( startClock ) );	
 end;
 }
 loadCategories
@@ -8460,23 +8238,17 @@ loadCategories() protected;
 //
 // Purpose:		Loads item categories from a text file
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	14/04/2023	EDS-12		Implement SaleItemCategoryTA class
-// Dan T	19/06/2023	EDS-72		Remove code number limit for Sale Items
 //									Added prefix to Data File. Category loads with new prefix.
-// Dan T	28/06/2023	EDS-80		Turn all remaining string literals into translatable strings
-// Dan T	28/06/2023	EDS-79		Translatable strings: Remove concatenation
-// Dan T	04/07/2023	EDS-79.v2	Removed WithParam suffix for Translatable Strings
 
 constants
-	CategoryFileName : String = CategoriesDataFile;	// EDS-80
+	CategoryFileName : String = CategoriesDataFile;	
 
 vars
 	inputFile : File;
 	line : String;
 	pos : Integer;
 	startClock : Integer;
-	itemCategoryTA : ItemCategoryTA;	// EDS-12
+	itemCategoryTA : ItemCategoryTA;	
 
 begin
 	startClock := app.clock;
@@ -8484,36 +8256,36 @@ begin
 	create inputFile transient;
 	inputFile.allowCreate := false;
 	inputFile.allowReplace := false;
-	inputFile.endOfLine := null;	// EDS-80
+	inputFile.endOfLine := null;	
 	inputFile.kind := File.Kind_ANSI;	//if loading in a unicode system, will be automatically converted
 	inputFile.openInput( self.dirPath & CategoryFileName );
 
-	write $Loading( inputFile.fileName );	// EDS-79	// EDS-79.v2
+	write $Loading( inputFile.fileName );	
 	
-	create itemCategoryTA transient;						// EDS-12
+	create itemCategoryTA transient;						
 
 	while not inputFile.endOfFile() do
 		line := inputFile.readLine.trimBlanks();
 
 		// Empty lines and lines beginning with # are skipped
-		if line <> null and line[ FirstIndexInLine ] <> LineSkipDelimiter then	// EDS-80
+		if line <> null and line[ FirstIndexInLine ] <> LineSkipDelimiter then	
 			pos := FirstIndexInLine;
 
-			itemCategoryTA.initialize();					// EDS-12
-			itemCategoryTA.prefix := self.getNextToken( line, pos );	// EDS-72
+			itemCategoryTA.initialize();					
+			itemCategoryTA.prefix := self.getNextToken( line, pos );	
 			itemCategoryTA.name := self.getNextToken( line, pos );
 			itemCategoryTA.description := self.getNextToken( line, pos );
 			
-			itemCategoryTA.persistEntityInTransState( TransactionType_Persist );	// EDS-12
+			itemCategoryTA.persistEntityInTransState( TransactionType_Persist );	
 			
-			write $LoadedObject( itemCategoryTA.name & Comma & Space & itemCategoryTA.description );	// EDS-79	// EDS-79.v2
+			write $LoadedObject( itemCategoryTA.name & Comma & Space & itemCategoryTA.description );	
 
 		endif;
 	endwhile;
 
 epilog
 	delete inputFile;
-	write $CategoriesLoadedInMS( self.myCompany.allAgents.size.String, self.getElapsedTimeString( startClock ) );	// EDS-80	// EDS-79.v2
+	write $CategoriesLoadedInMS( self.myCompany.allAgents.size.String, self.getElapsedTimeString( startClock ) );	
 end;
 }
 loadCategoryRates
@@ -8524,14 +8296,9 @@ loadCategoryRates() protected;
 //
 // Purpose:		Loads item category commission rates from a text file
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	26/04/2023	EDS-17		Implement CommissionRateTA class
-// Dan T	28/06/2023	EDS-80		Turn all remaining string literals into translatable strings
-// Dan T	28/06/2023	EDS-79		Translatable strings: Remove concatenation
-// Dan T	04/07/2023	EDS-79.v2	Removed WithParam suffix for Translatable Strings
 
 constants
-	CategoryRateFileName : String = CategoryRatesDataFile;	// EDS-80
+	CategoryRateFileName : String = CategoryRatesDataFile;	
 
 vars
 	inputFile : File;
@@ -8549,39 +8316,39 @@ begin
 	create inputFile transient;
 	inputFile.allowCreate := false;
 	inputFile.allowReplace := false;
-	inputFile.endOfLine := null;	// EDS-80
+	inputFile.endOfLine := null;	
 	inputFile.kind := File.Kind_ANSI;	//if loading in a unicode system, will be automatically converted
 	inputFile.openInput( self.dirPath & CategoryRateFileName );
 
-	write $Loading( inputFile.fileName );	// EDS-79.v2
+	write $Loading( inputFile.fileName );	
 
-	create commissionRateTA transient;		// EDS-17
+	create commissionRateTA transient;		
 	
 	while not inputFile.endOfFile() do
 		line := inputFile.readLine.trimBlanks();
 
 		// Empty lines and lines beginning with # are skipped
-		if line <> null and line[ FirstIndexInLine ] <> LineSkipDelimiter then	// EDS-80
+		if line <> null and line[ FirstIndexInLine ] <> LineSkipDelimiter then	
 			pos := FirstIndexInLine;
 
 			categoryName := self.getNextToken( line, pos );
 			percentage  := self.getNextToken( line, pos ).Decimal;
 
-			commissionRateTA.initialize();																	// EDS-17
-			commissionRateTA.myItemCategory := app.myCompany.allItemCategoriesByName[ categoryName ];		// EDS-17
-			commissionRateTA.percentage := percentage;														// EDS-17
+			commissionRateTA.initialize();																	
+			commissionRateTA.myItemCategory := app.myCompany.allItemCategoriesByName[ categoryName ];		
+			commissionRateTA.percentage := percentage;														
 			
-			commissionRateTA.persistEntityInTransState( TransactionType_Persist );							// EDS-17
+			commissionRateTA.persistEntityInTransState( TransactionType_Persist );							
 
-			write $LoadedObject( categoryName & Comma & Space & percentage.String );		// EDS-79	// EDS-79.v2
+			write $LoadedObject( categoryName & Comma & Space & percentage.String );		
 			count := count + 1;
 		endif;
 	endwhile;
 
 epilog
 	delete inputFile;
-	delete commissionRateTA;																				// EDS-17
-	write $CategoryRatesLoadedInMS( count.String, self.getElapsedTimeString( startClock ) );		// EDS-79	// EDS-79.v2
+	delete commissionRateTA;																				
+	write $CategoryRatesLoadedInMS( count.String, self.getElapsedTimeString( startClock ) );		
 end;
 }
 loadClients
@@ -8592,17 +8359,9 @@ loadClients() protected;
 //
 // Purpose:		Loads clients from a text file
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	29/03/2023	EDS-3		Implement ClientTA class
-// Dan T	29/03/2023	EDS-4		Implement AddressTA class
-// Dan T	28/06/2023	EDS-80		Turn all remaining string literals into translatable strings
-// Dan T	28/06/2023	EDS-79		Translatable strings: Remove concatenation
-// Dan T	28/06/2023	EDS-80		Turn all remaining string literals into translatable strings
-// Dan T	28/06/2023	EDS-79		Translatable strings: Remove concatenation
-// Dan T	04/07/2023	EDS-79.v2	Removed WithParam suffix for Translatable Strings
 
 constants
-	ClientFileName : String = ClientsDataFile;	// EDS-80
+	ClientFileName : String = ClientsDataFile;	
 
 vars
 	inputFile : File;
@@ -8619,49 +8378,49 @@ begin
 	create inputFile transient;
 	inputFile.allowCreate := false;
 	inputFile.allowReplace := false;
-	inputFile.endOfLine := null;	// EDS-80
+	inputFile.endOfLine := null;	
 	inputFile.kind := File.Kind_ANSI;	//if loading in a unicode system, will be automatically converted
 	inputFile.openInput( self.dirPath & ClientFileName );
 
-	write $Loading( inputFile.fileName );	// EDS-79	// EDS-79.v2
+	write $Loading( inputFile.fileName );	
 
-	create clientTA transient;		// EDS-3
-	create addressTA transient;		// EDS-4
+	create clientTA transient;		
+	create addressTA transient;		
 	
 	while not inputFile.endOfFile() do
 		line := inputFile.readLine.trimBlanks();
 
 		// Empty lines and lines beginning with # are skipped
-		if line <> null and line[ FirstIndexInLine ] <> LineSkipDelimiter then	// EDS-80
+		if line <> null and line[ FirstIndexInLine ] <> LineSkipDelimiter then	
 			pos := FirstIndexInLine;
 
-			clientTA.initialize();									// EDS-3
-			clientTA.name := self.getNextToken( line, pos );		// EDS-3
+			clientTA.initialize();									
+			clientTA.name := self.getNextToken( line, pos );		
 			
-			addressTA.initialize();									// EDS-4
-			addressTA.myModelTA := clientTA;						// EDS-4
+			addressTA.initialize();									
+			addressTA.myModelTA := clientTA;						
 			
-			addressTA.street := self.getNextToken( line, pos );	// EDS-4
-			addressTA.city := self.getNextToken( line, pos );		// EDS-4
-			addressTA.country := self.getNextToken( line, pos );	// EDS-4
-			addressTA.email := self.getNextToken( line, pos );		// EDS-4
-			addressTA.fax := self.getNextToken( line, pos );		// EDS-4
-			addressTA.phone := self.getNextToken( line, pos );		// EDS-4
-			addressTA.webSite := self.getNextToken( line, pos );	// EDS-4		
+			addressTA.street := self.getNextToken( line, pos );	
+			addressTA.city := self.getNextToken( line, pos );		
+			addressTA.country := self.getNextToken( line, pos );	
+			addressTA.email := self.getNextToken( line, pos );		
+			addressTA.fax := self.getNextToken( line, pos );		
+			addressTA.phone := self.getNextToken( line, pos );		
+			addressTA.webSite := self.getNextToken( line, pos );	
 			
-			clientTA.persistEntityInTransState( TransactionType_Persist );	// EDS-3
+			clientTA.persistEntityInTransState( TransactionType_Persist );	
 			
 			write $LoadedObject( clientTA.name & Comma & Space & addressTA.street & Comma & Space  & addressTA.city & Comma & Space  &
-				addressTA.country & Comma & Space  & addressTA.email & Comma & Space  & addressTA.phone & Comma & Space  & addressTA.fax & Comma & Space  & addressTA.webSite );	// EDS-79	// EDS-79.v2
+				addressTA.country & Comma & Space  & addressTA.email & Comma & Space  & addressTA.phone & Comma & Space  & addressTA.fax & Comma & Space  & addressTA.webSite );	
 
 		endif;
 	endwhile;
 
 epilog
 	delete inputFile;
-	delete clientTA;	// EDS-3
+	delete clientTA;	
 	
-	write $ClientNumberLoadedInMS( self.myCompany.allClients.size.String, self.getElapsedTimeString( startClock ) );	// EDS-79	// EDS-79.v2
+	write $ClientNumberLoadedInMS( self.myCompany.allClients.size.String, self.getElapsedTimeString( startClock ) );	
 end;
 }
 loadData
@@ -8674,18 +8433,13 @@ loadData( directoryPath : String ) updating;
 //
 // Parameters:	The path name of the directory containing the initial data files
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	30/03/2023	EDS-13		Implement CompanyTA class
-// Dan T	19/06/2023	EDS-71		Add Date Offset to Data Loader
-// Dan T	28/06/2023	EDS-79		Translatable strings: Remove concatenation
-// Dan T	04/07/2023	EDS-79.v2	Removed WithParam suffix for Translatable Strings
 
 vars
 	startTime : Integer;
 	closeTendersStartTime : Integer;
 	total : Integer;
 	currentDate : Date; 		// Initialized to the current date
-	offsetStartDate : Date;			// EDS-71
+	offsetStartDate : Date;			
 	
 begin
 	// Get the initial time
@@ -8706,14 +8460,14 @@ begin
 	beginTransaction;
 
 	// Create our singleton persistent Company.
-	self.createCompany();						// EDS-13
+	self.createCompany();						
 
 	// Create the date offset
 	// The number of days from 1st January 2000 until today. 
-	if self.dateOffset = null then							// EDS-71
-		offsetStartDate.setDate( 01, 01, 2000 );			// EDS-71
-		self.dateOffset := currentDate - offsetStartDate;	// EDS-71
-	endif;													// EDS-71
+	if self.dateOffset = null then							
+		offsetStartDate.setDate( 01, 01, 2000 );			
+		self.dateOffset := currentDate - offsetStartDate;	
+	endif;													
 	
 	// Load the rest of the data
 	self.loadLocations();
@@ -8744,13 +8498,13 @@ begin
 	self.closeTendersAtCurrentDate( total );
 
 	if total > 0 then
-		write $TenderSalesBuilt( total.String, self.getElapsedTimeString( closeTendersStartTime ) );	// EDS-79	// EDS-79.v2
+		write $TenderSalesBuilt( total.String, self.getElapsedTimeString( closeTendersStartTime ) );	
 	else
-		write $NoTendersToCloseAsAt( currentDate.String );	// EDS-79	// EDS-79.v2
+		write $NoTendersToCloseAsAt( currentDate.String );	
 	endif;
 
 epilog
-	write $DatabaseInitialized( ( ( app.clock - startTime ) div MillisecondsPerSecond ).String );	// EDS-79	// EDS-79.v2
+	write $DatabaseInitialized( ( ( app.clock - startTime ) div MillisecondsPerSecond ).String );	
 end;
 }
 loadLocations
@@ -8761,16 +8515,9 @@ loadLocations() protected;
 //
 // Purpose:		Loads countries and regions from a text file
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	31/03/2023	EDS-6		Implement LocationTA class
-// Dan T	31/03/2023	EDS-7		Implement CountryTA class
-// Dan T	31/03/2023	EDS-8		Implement RegionTA class
-// Dan T	28/06/2023	EDS-80		Turn all remaining string literals into translatable strings
-// Dan T	28/06/2023	EDS-79		Translatable strings: Remove concatenation
-// Dan T	04/07/2023	EDS-79.v2	Removed WithParam suffix for Translatable Strings
 
 constants
-	LocationFileName : String = LocationsDataFile;	// EDS-80
+	LocationFileName : String = LocationsDataFile;	
 
 vars
 	inputFile : File;
@@ -8779,8 +8526,8 @@ vars
 	startClock : Integer;
 	
 	country : Country;
-	countryTA : CountryTA;	// EDS-7
-	regionTA : RegionTA;	// EDS-8
+	countryTA : CountryTA;	
+	regionTA : RegionTA;	
 	
 begin
 	startClock := app.clock;
@@ -8788,52 +8535,52 @@ begin
 	create inputFile transient;
 	inputFile.allowCreate := false;
 	inputFile.allowReplace := false;
-	inputFile.endOfLine := null;	// EDS-80
+	inputFile.endOfLine := null;	
 	inputFile.kind := File.Kind_ANSI;	//if loading in a unicode system, will be automatically converted
 	inputFile.openInput( self.dirPath & LocationFileName );
 
-	write $Loading( inputFile.fileName );	// EDS-79	// EDS-79.v2
+	write $Loading( inputFile.fileName );	
 
-	create countryTA transient;		// EDS-7
-	create regionTA transient;		// EDS-8
+	create countryTA transient;		
+	create regionTA transient;		
 	
 	while not inputFile.endOfFile() do
 		line := inputFile.readLine.trimBlanks();
 
 		// Empty lines and lines beginning with # are skipped
-		if line <> null and line[ FirstIndexInLine ] <> LineSkipDelimiter then	// EDS-80
+		if line <> null and line[ FirstIndexInLine ] <> LineSkipDelimiter then	
 			pos := FirstIndexInLine;
 
-			countryTA.initialize();									// EDS-7
+			countryTA.initialize();									
 			countryTA.name := self.getNextToken( line, pos );		// EDS_7
 			
-			regionTA.initialize();									// EDS-8
-			regionTA.name := self.getNextToken( line, pos );		// EDS-8
+			regionTA.initialize();									
+			regionTA.name := self.getNextToken( line, pos );		
 			
 			// get existing country or create new country
 			country := self.myCompany.allCountries[ countryTA.name ];
 			if country = null then
 				// country does not exist, create it
 				countryTA.persistEntityInTransState( TransactionType_Persist );
-				country := countryTA.getModelObject();								// EDS-7
+				country := countryTA.getModelObject();								
 			endif;
 			
-			regionTA.myCountry := country;		// EDS-8
+			regionTA.myCountry := country;		
 			
 			// create the region for the country
 			regionTA.persistEntityInTransState( TransactionType_Persist );
 			
-			write $LoadedObject( countryTA.name & Comma & Space & regionTA.name );	// EDS-79	// EDS-79.v2
+			write $LoadedObject( countryTA.name & Comma & Space & regionTA.name );	
 			
 		endif;
 	endwhile;
 
 epilog
 	delete inputFile;
-	delete countryTA; 	// EDS-7
-	delete regionTA;	// EDS-8
+	delete countryTA; 	
+	delete regionTA;	
 	
-	write $LocationsLoaded( self.myCompany.getNumberOfLocations.String, self.getElapsedTimeString( startClock ) );	// EDS-79	// EDS-79.v2
+	write $LocationsLoaded( self.myCompany.getNumberOfLocations.String, self.getElapsedTimeString( startClock ) );	
 end;
 }
 loadRetailItems
@@ -8844,25 +8591,15 @@ loadRetailItems() updating, protected;
 //
 // Purpose:		Loads retail sale items from a text file
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	11/04/2023	EDS-15		Implement RetailSaleItemTA class
-// Dan T	19/06/2023	EDS-71		Add Date Offset to Data Loader
-// Dan T	19/06/2023	EDS-72		Remove code number limit for Sale Items
-// Dan T	28/06/2023	EDS-80		Turn all remaining string literals into translatable strings
-// Dan T	28/06/2023	EDS-79		Translatable strings: Remove concatenation
-// Dan T	30/06/2023	EDS-81		Change SaleItems to use GUIDs
-// Dan T	04/07/2023	EDS-79.v2	Removed WithParam suffix for Translatable Strings
-// Dan T	05/07/2023	EDS-84		Add GUID to PersistentModels
-// Dan T	10/07/2023	EDS-88	 	Rename SaleItem classes to improve clarity
 
 
 constants
-	RetailItemFileName : String = RetailItemsDataFile;	// EDS-80
+	RetailItemFileName : String = RetailItemsDataFile;	
 
 vars
 	inputFile : File;
 	line : String;
-	guid : String;	// EDS-81
+	guid : String;	
 	shortDesc : String;
 	fullDesc : String;
 	photoFileName : String;
@@ -8876,7 +8613,7 @@ vars
 	startClock : Integer;
 	totalItems : Integer;
 	
-	retailItemTA : RetailItemTA;	// EDS-15
+	retailItemTA : RetailItemTA;	
 	
 begin
 	startClock := app.clock();
@@ -8885,21 +8622,21 @@ begin
 	inputFile.allowCreate := false;
 	inputFile.allowReplace := false;
 	inputFile.kind := File.Kind_ANSI;	//if loading in a unicode system, will be automatically converted
-	inputFile.endOfLine := null;	// EDS-80
+	inputFile.endOfLine := null;	
 	inputFile.openInput( self.dirPath & RetailItemFileName );
 
-	write $Loading( inputFile.fileName );	// EDS-79	// EDS-79.v2
+	write $Loading( inputFile.fileName );	
 
-	create retailItemTA transient;	// EDS-15
+	create retailItemTA transient;	
 	
 	while not inputFile.endOfFile() do
 		line := inputFile.readLine.trimBlanks();
 
 		// Empty lines and lines beginning with # are ignored
-		if line <> null and line[ FirstIndexInLine ] <> LineSkipDelimiter then	// EDS-80
+		if line <> null and line[ FirstIndexInLine ] <> LineSkipDelimiter then	
 			pos := FirstIndexInLine;
 
-			guid := self.getNextToken( line, pos );		// EDS-81
+			guid := self.getNextToken( line, pos );		
 			shortDesc := self.getNextToken( line, pos );
 			fullDesc := self.getNextToken( line, pos );
 			photoFileName := self.dirPath & self.getNextToken( line, pos );
@@ -8910,35 +8647,35 @@ begin
 			regionName := self.getNextToken( line, pos );
 			categoryName := self.getNextToken( line, pos );
 	
-			retailItemTA.initialize();																	// EDS-15
-			retailItemTA.guid := guid;											// EDS-84
-			retailItemTA.codeNumber := retailItemTA.getNextCodeNumber();	// EDS-81				// EDS-15
-			retailItemTA.description := fullDesc;													// EDS-15
-			retailItemTA.myAgent := app.myCompany.allAgents[ agentName ];								// EDS-15
-			retailItemTA.myRegion := app.myCompany.getRegion(countryName, regionName);					// EDS-15
-			retailItemTA.myItemCategory := app.myCompany.allItemCategoriesByName[ categoryName ];		// EDS-15
-			retailItemTA.photo := app.loadPicture( photoFileName );										// EDS-15
-			retailItemTA.price := price;																// EDS-15
-			retailItemTA.name := shortDesc;													// EDS-15
+			retailItemTA.initialize();																	
+			retailItemTA.guid := guid;											
+			retailItemTA.codeNumber := retailItemTA.getNextCodeNumber();	
+			retailItemTA.description := fullDesc;													
+			retailItemTA.myAgent := app.myCompany.allAgents[ agentName ];								
+			retailItemTA.myRegion := app.myCompany.getRegion(countryName, regionName);					
+			retailItemTA.myItemCategory := app.myCompany.allItemCategoriesByName[ categoryName ];		
+			retailItemTA.photo := app.loadPicture( photoFileName );										
+			retailItemTA.price := price;																
+			retailItemTA.name := shortDesc;													
 			
-			retailItemTA.listedDate := listedDate + self.dateOffset;									// EDS-71
+			retailItemTA.listedDate := listedDate + self.dateOffset;									
 			
-			retailItemTA.persistEntityInTransState( TransactionType_Persist );							// EDS-15
+			retailItemTA.persistEntityInTransState( TransactionType_Persist );							
 			
 			totalItems := totalItems + 1;
 
 			write $LoadedObject( guid & Comma & Space & shortDesc & Comma & Space & fullDesc & Comma & Space & photoFileName &
 			    Comma & Space & price.String & Comma & Space & listedDate.String & Comma & Space & agentName & Comma & Space &
-			    countryName & Comma & Space & regionName & Comma & Space & categoryName );	// EDS-79	// EDS-79.v2
+			    countryName & Comma & Space & regionName & Comma & Space & categoryName );	
 					
 		endif;
 	endwhile;
 
 epilog
 	delete inputFile;
-	delete retailItemTA;	// EDS-15
+	delete retailItemTA;	
 	
-	write $RetailItemsLoaded( totalItems.String, self.getElapsedTimeString( startClock ) );	// EDS-79	// EDS-79.v2
+	write $RetailItemsLoaded( totalItems.String, self.getElapsedTimeString( startClock ) );	
 end;
 }
 loadRetailSales
@@ -8949,16 +8686,9 @@ loadRetailSales() protected;
 //
 // Purpose:		Loads retail sales from a text file
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	04/04/2023	EDS-10		Implement RetailSaleTA class
-// Dan T	19/06/2023	EDS-71		Add Date Offset to Data Loader
-// Dan T	28/06/2023	EDS-80		Turn all remaining string literals into translatable strings
-// Dan T	28/06/2023	EDS-79		Translatable strings: Remove concatenation
-// Dan T	30/06/2023	EDS-81		Change SaleItems to use GUIDs
-// Dan T	04/07/2023	EDS-79.v2	Removed WithParam suffix for Translatable Strings
 
 constants
-	RetailSaleFileName : String = RetailSalesDataFile;	// EDS-80
+	RetailSaleFileName : String = RetailSalesDataFile;	
 
 vars
 	inputFile : File;
@@ -8966,12 +8696,12 @@ vars
 	price : Decimal[ DecimalPrecision, DecimalScaleFactor ];
 	saleTime : Time;
 	clientName : String;
-	guid : String;	// EDS-81
+	guid : String;	
 	pos : Integer;
 	startClock : Integer;
 	totalSales : Integer;
 	timeStamp : TimeStamp;
-	retailSaleTA : RetailSaleTA;												// EDS-10
+	retailSaleTA : RetailSaleTA;												
 	
 begin
 	startClock := app.clock;
@@ -8979,47 +8709,47 @@ begin
 	create inputFile transient;
 	inputFile.allowCreate := false;
 	inputFile.allowReplace := false;
-	inputFile.endOfLine := null;	// EDS-80
+	inputFile.endOfLine := null;	
 	inputFile.kind := File.Kind_ANSI;	//if loading in a unicode system, will be automatically converted
 	inputFile.openInput( self.dirPath & RetailSaleFileName );
 
-	write $Loading( inputFile.fileName );	// EDS-79	// EDS-79.v2
+	write $Loading( inputFile.fileName );	
 
-	create retailSaleTA transient;												// EDS-10
+	create retailSaleTA transient;												
 	
 	while not inputFile.endOfFile() do
 		line := inputFile.readLine.trimBlanks();
 
 		// Empty lines and lines beginning with # are ignored
-		if line <> null and line[ FirstIndexInLine ] <> LineSkipDelimiter then	// EDS-80
+		if line <> null and line[ FirstIndexInLine ] <> LineSkipDelimiter then	
 			pos := FirstIndexInLine;
 
-			retailSaleTA.initialize();											// EDS-10
+			retailSaleTA.initialize();											
 			
-			timeStamp.setDate( self.getNextToken( line, pos ).Date + self.dateOffset );			// EDS-71
+			timeStamp.setDate( self.getNextToken( line, pos ).Date + self.dateOffset );			
 			timeStamp.setTime( self.getNextToken( line, pos ).Time );
 			price := self.getNextToken( line, pos ).Decimal;
 			clientName := self.getNextToken( line, pos );
 			guid := self.getNextToken( line, pos );
 			
-			retailSaleTA.dateSold := timeStamp;								// EDS-10
-			retailSaleTA.salePrice := price;										// EDS-10
-			retailSaleTA.myClient := app.myCompany.allClients[ clientName ];	// EDS-10
-			retailSaleTA.myItem := app.myCompany.allRetailItems[ guid ];	// EDS-81
+			retailSaleTA.dateSold := timeStamp;								
+			retailSaleTA.salePrice := price;										
+			retailSaleTA.myClient := app.myCompany.allClients[ clientName ];	
+			retailSaleTA.myItem := app.myCompany.allRetailItems[ guid ];	
 
-			retailSaleTA.persistEntityInTransState( TransactionType_Persist );				// EDS-10
+			retailSaleTA.persistEntityInTransState( TransactionType_Persist );				
 			totalSales := totalSales + 1;
 			
 			write $LoadedObject( timeStamp.String & Comma & Space & saleTime.String & Comma & Space &
-				price.String & Comma & Space & clientName & Comma & Space & guid );		// EDS-79	// EDS-79.v2
+				price.String & Comma & Space & clientName & Comma & Space & guid );		
 		endif;
 	endwhile;
 
 epilog
 	delete inputFile;
-	delete retailSaleTA; 	// EDS-10
+	delete retailSaleTA; 	
 	
-	write $RetailSalesLoaded( totalSales.String, self.getElapsedTimeString( startClock ) );	// EDS-79	// EDS-79.v2
+	write $RetailSalesLoaded( totalSales.String, self.getElapsedTimeString( startClock ) );	
 end;
 }
 loadTenderItems
@@ -9030,24 +8760,14 @@ loadTenderItems() protected;
 //
 // Purpose:		Loads tender sale items from a text file
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	11/04/2023	EDS-16		Implement TenderSaleItemTA class
-// Dan T	19/06/2023	EDS-71		Add Date Offset to Data Loader
-// Dan T	19/06/2023	EDS-72		Remove code number limit for Sale Items
-// Dan T	28/06/2023	EDS-80		Turn all remaining string literals into translatable strings
-// Dan T	28/06/2023	EDS-79		Translatable strings: Remove concatenation
-// Dan T	30/06/2023	EDS-81		Change SaleItems to use GUIDs
-// Dan T	04/07/2023	EDS-79.v2	Removed WithParam suffix for Translatable Strings
-// Dan T	05/07/2023	EDS-84		Add GUID to PersistentModels
-// Dan T	10/07/2023	EDS-88	 	Rename SaleItem classes to improve clarity
 
 constants
-	TenderItemFileName : String = TenderItemsDataFile;	// EDS-80
+	TenderItemFileName : String = TenderItemsDataFile;	
 
 vars
 	inputFile : File;
 	line : String;
-	guid : String;		// EDS-81
+	guid : String;		
 	shortDesc : String;
 	fullDesc : String;
 	photoFileName : String;
@@ -9062,7 +8782,7 @@ vars
 	startClock : Integer;
 	totalItems : Integer;
 	
-	tenderItemTA : TenderItemTA;	// EDS-16
+	tenderItemTA : TenderItemTA;	
 	
 begin
 	startClock := app.clock;
@@ -9070,22 +8790,22 @@ begin
 	create inputFile transient;
 	inputFile.allowCreate := false;
 	inputFile.allowReplace := false;
-	inputFile.endOfLine := null;	// EDS-80
+	inputFile.endOfLine := null;	
 	inputFile.kind := File.Kind_ANSI;	//if loading in a unicode system, will be automatically converted
 	inputFile.openInput( self.dirPath & TenderItemFileName );
 
-	write $Loading( inputFile.fileName );	// EDS-79.v2
+	write $Loading( inputFile.fileName );	
 	
-	create tenderItemTA transient;	// EDS-16
+	create tenderItemTA transient;	
 	
 	while not inputFile.endOfFile() do
 		line := inputFile.readLine.trimBlanks();
 
 		// Empty lines and lines beginning with # are skipped
-		if line <> null and line[ FirstIndexInLine ] <> LineSkipDelimiter then	// EDS-80
+		if line <> null and line[ FirstIndexInLine ] <> LineSkipDelimiter then	
 			pos := FirstIndexInLine;
 
-			guid := self.getNextToken( line, pos );		// EDS-81
+			guid := self.getNextToken( line, pos );		
 			shortDesc := self.getNextToken( line, pos );
 			fullDesc := self.getNextToken( line, pos );
 			photoFileName := self.dirPath & self.getNextToken( line, pos );
@@ -9097,27 +8817,27 @@ begin
 			regionName := self.getNextToken( line, pos );
 			categoryName := self.getNextToken( line, pos );
 			
-			tenderItemTA.initialize();																	// EDS-16
-			tenderItemTA.guid := guid;											// EDS-84
-			tenderItemTA.codeNumber := tenderItemTA.getNextCodeNumber();	// EDS-81				// EDS-16
-			tenderItemTA.description := fullDesc;													// EDS-16
-			tenderItemTA.myAgent := app.myCompany.allAgents[ agentName ];								// EDS-16
-			tenderItemTA.myRegion := app.myCompany.getRegion(countryName, regionName);					// EDS-16
-			tenderItemTA.myItemCategory := app.myCompany.allItemCategoriesByName[ categoryName ];		// EDS-16
-			tenderItemTA.photo := app.loadPicture( photoFileName );										// EDS-16
-			tenderItemTA.price := reservePrice;															// EDS-16
-			tenderItemTA.name := shortDesc;													// EDS-16
+			tenderItemTA.initialize();																	
+			tenderItemTA.guid := guid;											
+			tenderItemTA.codeNumber := tenderItemTA.getNextCodeNumber();	
+			tenderItemTA.description := fullDesc;													
+			tenderItemTA.myAgent := app.myCompany.allAgents[ agentName ];								
+			tenderItemTA.myRegion := app.myCompany.getRegion(countryName, regionName);					
+			tenderItemTA.myItemCategory := app.myCompany.allItemCategoriesByName[ categoryName ];		
+			tenderItemTA.photo := app.loadPicture( photoFileName );										
+			tenderItemTA.price := reservePrice;															
+			tenderItemTA.name := shortDesc;													
 			
-			tenderItemTA.listedDate := listedDate + self.dateOffset;			// EDS-71								
-			tenderItemTA.closureDate := closureDate + self.dateOffset;			// EDS-71				// EDS-16
+			tenderItemTA.listedDate := listedDate + self.dateOffset;			
+			tenderItemTA.closureDate := closureDate + self.dateOffset;			
 			
-			tenderItemTA.persistEntityInTransState( TransactionType_Persist );							// EDS-16
+			tenderItemTA.persistEntityInTransState( TransactionType_Persist );							
 			
 			totalItems := totalItems + 1;
 
 			write $LoadedObject( guid & Comma & Space & shortDesc & Comma & Space & fullDesc & Comma & Space & photoFileName &
 			    Comma & Space & reservePrice.String & Comma & Space & listedDate.String & Comma & Space & closureDate.String &
-				Comma & Space & agentName & Comma & Space & countryName & Comma & Space & regionName & Comma & Space & categoryName  );	// EDS-79	// EDS-79.v2
+				Comma & Space & agentName & Comma & Space & countryName & Comma & Space & regionName & Comma & Space & categoryName  );	
 				
 		endif;
 	endwhile;
@@ -9126,7 +8846,7 @@ epilog
 	delete inputFile;
 	delete tenderItemTA;
 	
-	write $TenderItemsLoaded( totalItems.String, self.getElapsedTimeString( startClock ) );	// EDS-79	// EDS-79.v2
+	write $TenderItemsLoaded( totalItems.String, self.getElapsedTimeString( startClock ) );	
 end;
 }
 loadTenders
@@ -9137,15 +8857,9 @@ loadTenders() protected;
 //
 // Purpose:		Loads tenders from a text file
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	05/04/2023	EDS-18		Implement TenderTA class
-// Dan T	19/06/2023	EDS-71		Add Date Offset to Data Loader
-// Dan T	28/06/2023	EDS-80		Turn all remaining string literals into translatable strings
-// Dan T	28/06/2023	EDS-79		Translatable strings: Remove concatenation
-// Dan T	04/07/2023	EDS-79.v2	Removed WithParam suffix for Translatable Strings
 
 constants
-	TenderFileName : String = TendersDataFile;	// EDS-80
+	TenderFileName : String = TendersDataFile;	
 
 vars
 	inputFile : File;
@@ -9153,13 +8867,13 @@ vars
 	offerPrice : Decimal[ DecimalPrecision, DecimalScaleFactor ];
 	offerTime : Time;
 	clientName : String;
-	guid : String;	// EDS-81
+	guid : String;	
 	pos : Integer;
 	startClock : Integer;
 	totalTenders : Integer;
 	timeStamp : TimeStamp;
 
-	tenderTA : TenderTA;	// EDS-18
+	tenderTA : TenderTA;	
 
 begin
 	startClock := app.clock();
@@ -9167,48 +8881,48 @@ begin
 	create inputFile transient;
 	inputFile.allowCreate := false;
 	inputFile.allowReplace := false;
-	inputFile.endOfLine := null;	// EDS-80
+	inputFile.endOfLine := null;	
 	inputFile.kind := File.Kind_ANSI;	//if loading in a unicode system, will be automatically converted
 	inputFile.openInput( self.dirPath & TenderFileName );
 
-	write $Loading( inputFile.fileName );	// EDS-79	// EDS-79.v2
+	write $Loading( inputFile.fileName );	
 
-	create tenderTA transient;	// EDS-18
+	create tenderTA transient;	
 	
 	while not inputFile.endOfFile() do
 		line := inputFile.readLine.trimBlanks();
 
 		// Empty lines and lines beginning with # are ignored
-		if line <> null and line[ FirstIndexInLine ] <> LineSkipDelimiter then	// EDS-80
+		if line <> null and line[ FirstIndexInLine ] <> LineSkipDelimiter then	
 			pos := FirstIndexInLine;
 
 			offerPrice := self.getNextToken( line, pos ).Decimal;
-			timeStamp.setDate( self.getNextToken( line, pos ).Date + self.dateOffset );	// EDS-71
+			timeStamp.setDate( self.getNextToken( line, pos ).Date + self.dateOffset );	
 			timeStamp.setTime( self.getNextToken( line, pos ).Time );
 			clientName := self.getNextToken( line, pos );
-			guid := self.getNextToken( line, pos );	// EDS-81
+			guid := self.getNextToken( line, pos );	
 						
-			tenderTA.initialize();											// EDS-18
-			tenderTA.offer := offerPrice;									// EDS-18
-			tenderTA.dateTendered := timeStamp;								// EDS-18
-			tenderTA.myClient := app.myCompany.allClients[ clientName ];	// EDS-18
-			tenderTA.myTenderItem := app.myCompany.allTenderItems[ guid ];		// EDS-81
+			tenderTA.initialize();											
+			tenderTA.offer := offerPrice;									
+			tenderTA.dateTendered := timeStamp;								
+			tenderTA.myClient := app.myCompany.allClients[ clientName ];	
+			tenderTA.myTenderItem := app.myCompany.allTenderItems[ guid ];		
 			
-			tenderTA.persistEntityInTransState( TransactionType_Persist );	// EDS-18
+			tenderTA.persistEntityInTransState( TransactionType_Persist );	
 
 			totalTenders := totalTenders + 1;
 			
 			write $LoadedObject( offerPrice.String & Comma & Space & timeStamp.date().String & Comma & Space &
-			    offerTime.String & Comma & Space & clientName & Comma & Space & guid );	// EDS-80	// EDS-79.v2
+			    offerTime.String & Comma & Space & clientName & Comma & Space & guid );	
 				
 		endif;
 	endwhile;
 
 epilog
 	delete inputFile;
-	delete tenderTA;	// EDS-18
+	delete tenderTA;	
 	
-	write $TendersLoaded( totalTenders.String, self.getElapsedTimeString( startClock ) );	// EDS-79	// EDS-79.v2
+	write $TendersLoaded( totalTenders.String, self.getElapsedTimeString( startClock ) );	
 end;
 }
 validateDirectoryPath
@@ -9222,9 +8936,6 @@ validateDirectoryPath( directoryPath : String ) : String protected;
 //
 // Returns:     The directory path with a "/" suffix
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	28/06/2023	EDS-80		Turn all remaining string literals into translatable strings
-// Dan T	25/07/2023	EDS-97 		Use one ErewhonException class
 
 vars
 	returnDirPath : String;
@@ -9234,12 +8945,12 @@ begin
 	returnDirPath := directoryPath.trimBlanks();
 
 	if returnDirPath.length <= 0 then
-		app.raiseErewhonException( Ex_500004_Invalid_directory_path );	// EDS-97
+		app.raiseErewhonException( Ex_500004_Invalid_directory_path );	
 		return null;
 	endif;
 
-	if returnDirPath[ returnDirPath.length() ] <> ForwardSlash and returnDirPath[ returnDirPath.length() ] <> BackSlash then	// EDS-80
-		returnDirPath := returnDirPath & ForwardSlash;	// EDS-80
+	if returnDirPath[ returnDirPath.length() ] <> ForwardSlash and returnDirPath[ returnDirPath.length() ] <> BackSlash then	
+		returnDirPath := returnDirPath & ForwardSlash;	
 	endif;
 
 	create dir transient;
@@ -9412,9 +9123,6 @@ createEntityWithTransactionImplementor
 createEntityWithTransactionImplementor(
 		pTransactionImplementor : TransactionImplementor		// refer to text on class TransactionImplementor for assistance on how to use
 		) : Boolean updating, protected, final;
-// Who		When		Ticket		Details
-// Dan T	14/06/2023	EDS-68		Implement doPreValidate method
-// Dan T	28/06/2023	EDS-80		Turn all remaining string literals into translatable strings
 
 vars
 	validateRtn				: Boolean;
@@ -9429,7 +9137,7 @@ begin
 	self.clearWarnings();
 	
 	// Perform Pre-Validation login
-	self.doPreValidate();	// EDS-68
+	self.doPreValidate();	
 	
 	validateRtn := self.doValidate( ValidationType_Create );
 
@@ -9447,7 +9155,7 @@ begin
 		else
 			//	the abort releases any lock gained in lockEntityCreate
 			pTransactionImplementor.doAbortTransaction();		
-			self.addError( $CreateConflictedWithAnotherUser, null );	// EDS-80
+			self.addError( $CreateConflictedWithAnotherUser, null );	
 			// The following is an example of how to discard instrumentation recording for this transaction as it has been aborted
 			//self.cnDiscardTransaction( cnId );
 			return false;
@@ -9516,9 +9224,6 @@ deleteEntityWithTransactionImplementor
 deleteEntityWithTransactionImplementor(
 		pTransactionImplementor : TransactionImplementor		// refer to text on class TransactionImplementor for assistance on how to use
 		) : Boolean updating, final, protected;
-// Who		When		Ticket		Details
-// Dan T	14/06/2023	EDS-68		Implement doPreValidate method
-// Dan T	28/06/2023	EDS-80		Turn all remaining string literals into translatable strings
 		
 vars
 	transactionCompleted	: Boolean;
@@ -9528,7 +9233,7 @@ begin
 	self.clearWarnings();
 	
 	// Perform Pre-Validation login
-	self.doPreValidate();	// EDS-68
+	self.doPreValidate();	
 		
 	if self.doValidate( ValidationType_Delete ) then
 		if self.lockForDelete() then
@@ -9541,7 +9246,7 @@ begin
 			endif;
 		else
 			pTransactionImplementor.doAbortTransaction();		// Force any locks to be released before failing
-			self.addError( $DeleteConflictedWithAnotherUser, null );	// EDS-80
+			self.addError( $DeleteConflictedWithAnotherUser, null );	
 			return false;
 		endif;
 	else
@@ -9653,8 +9358,6 @@ doPreValidate() updating;
 //
 // Parameters: 	N/A
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	14/06/2023	EDS-68		Implement doPreValidate method
 
 begin
 
@@ -9775,8 +9478,6 @@ end;
 lockForCreate
 {
 lockForCreate() : Boolean protected;
-// Who		When		Ticket		Details
-// Dan T	09/08/2023	EDS-69		Update Developer Documentation
 
 begin
 	return true;
@@ -9785,8 +9486,6 @@ end;
 lockForDelete
 {
 lockForDelete() : Boolean protected;
-// Who		When		Ticket		Details
-// Dan T	09/08/2023	EDS-69		Update Developer Documentation
 
 begin
 	return true;
@@ -9795,8 +9494,6 @@ end;
 lockForModify
 {
 lockForModify() : Boolean protected;
-// Who		When		Ticket		Details
-// Dan T	09/08/2023	EDS-69		Update Developer Documentation
 
 begin
 	return true;
@@ -9805,8 +9502,6 @@ end;
 lockForUpdate
 {
 lockForUpdate() : Boolean protected;
-// Who		When		Ticket		Details
-// Dan T	09/08/2023	EDS-69		Update Developer Documentation
 
 begin
 	return true;
@@ -9850,10 +9545,6 @@ modifyEntityWithTransactionImplementor(
 		pTransactionImplementor : TransactionImplementor;		// refer to text on class TransactionImplementor for assistance on how to use
 		pModification			: Integer
 		) : Boolean updating, final, protected;
-// Who		When		Ticket		Details
-// Dan T	14/06/2023	EDS-68		Implement doPreValidate method
-// Dan T	28/06/2023	EDS-80		Turn all remaining string literals into translatable strings
-// Dan T	28/06/2023	EDS-80		Turn all remaining string literals into translatable strings
 
 		
 vars
@@ -9866,7 +9557,7 @@ begin
 	modificationCode := pModification;
 	
 	// Perform Pre-Validation login
-	self.doPreValidate();	// EDS-68
+	self.doPreValidate();	
 	
 	if self.doValidate( ValidationType_Modify ) then
 		if self.lockForModify() then
@@ -9879,7 +9570,7 @@ begin
 			endif;
 		else
 			pTransactionImplementor.doAbortTransaction();
-			self.addError( $UpdateConflictedWithAnotherUser, null );	// EDS-80
+			self.addError( $UpdateConflictedWithAnotherUser, null );	
 			return false;
 		endif;
 	else
@@ -10034,9 +9725,6 @@ updateEntityWithTransactionImplementor
 updateEntityWithTransactionImplementor(
 		pTransactionImplementor : TransactionImplementor		// refer to text on class TransactionImplementor for assistance on how to use
 		) : Boolean updating, final, protected;
-// Who		When		Ticket		Details
-// Dan T	14/06/2023	EDS-68		Implement doPreValidate method
-// Dan T	28/06/2023	EDS-80		Turn all remaining string literals into translatable strings
 
 
 vars
@@ -10053,14 +9741,14 @@ begin
 	self.clearWarnings();
 
 	// Perform Pre-Validation logic
-	self.doPreValidate();	// EDS-68
+	self.doPreValidate();	
 	
 	validateRtn := self.doValidate( ValidationType_Update );
 
 	if validateRtn then
 		if self.lockForUpdate() then
 			if not self.checkEdition( self.expectedEdition ) then
-				self.addError( $AnotherUserUpdatedThisEntity, null );	// EDS-80
+				self.addError( $AnotherUserUpdatedThisEntity, null );	
 				return false;
 			endif;
 			pTransactionImplementor.doBeginTransaction();
@@ -10073,7 +9761,7 @@ begin
 			endif;
 		else
 			pTransactionImplementor.doAbortTransaction();
-			self.addError( $UpdateConflictedWithAnotherUser, null );	// EDS-80
+			self.addError( $UpdateConflictedWithAnotherUser, null );	
 			//self.cnDiscardTransaction( cnId );
 			return false;
 		endif;
@@ -10118,8 +9806,6 @@ doPreValidate() updating;
 //
 // Parameters: 	N/A
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	14/06/2023	EDS-68		Implement doPreValidate method
 
 begin
 	// Sanitize Properties
@@ -10150,10 +9836,6 @@ doValidate( pValidationType : Integer ) : Boolean updating;
 // Parameters:	pValidationType		The type of validation being performed 
 //									e.g. Create, Update, Delete
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	29/03/2023	EDS-4		Implement AddressTA class
-// Dan T	14/06/2023	EDS-68		Implement doPreValidate method (Removed Unnecessary Code)
-// Dan T	21/06/2023	EDS-75		Update Translatable Strings
 
 begin
 	inheritMethod( pValidationType );
@@ -10166,34 +9848,34 @@ begin
 	// validate street
 	if self.street = null then
 		// street required
-		self.addError( $AddressStreetRequired, Focus_Street );	// EDS-75
+		self.addError( $AddressStreetRequired, Focus_Street );	
 	endif;
 	
 	// validate the city 
 	if self.city = null then
 		// city required
-		self.addError( $AddressCityRequired, Focus_City );	// EDS-75
+		self.addError( $AddressCityRequired, Focus_City );	
 	endif;
 	
 	// validate the country 
 	if self.country = null then
 		// country required
-		self.addError( $AddressCountryRequired, Focus_Country );	// EDS-75
+		self.addError( $AddressCountryRequired, Focus_Country );	
 	endif;
 	
 	// validate the phone
 	if self.phone = null then
 		// phone required
-		self.addError( $AddressPhoneRequired, Focus_Phone );	// EDS-75
+		self.addError( $AddressPhoneRequired, Focus_Phone );	
 	endif;
 	
 	// validate the email
 	if self.email = null then
 		// email required
-		self.addError( $AddressEmailRequired, Focus_Email );	// EDS-75
+		self.addError( $AddressEmailRequired, Focus_Email );	
 	elseif not JadeRegex@isMatch( self.email, EmailRegEx, true ) then
 		// invlalid email format
-		self.addError( $AddressEmailInvalidFormat, Focus_Email );	// EDS-75
+		self.addError( $AddressEmailInvalidFormat, Focus_Email );	
 	endif;
 	
 	// Check for errors
@@ -10212,8 +9894,6 @@ getModelObject() : Address;
 //
 // Parameters:	None
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	29/03/2023	EDS-4		Implement AddressTA class
 
 begin
 	return inheritMethod().Address;
@@ -10231,8 +9911,6 @@ getModelObjectClass() : Class protected;
 //
 // Parameters:	None
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	29/03/2023	EDS-4		Implement AddressTA class
 
 begin
 	return Address;
@@ -10251,8 +9929,6 @@ initialize() updating;
 //
 // Parameters:	None
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	29/03/2023	EDS-4		Implement AddressTA class
 
 begin
 	inheritMethod();
@@ -10280,8 +9956,6 @@ lockForCreate() : Boolean protected;
 //
 // Parameters:	None
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	29/03/2023	EDS-4		Implement AddressTA class
 
 begin
 	return true;
@@ -10300,8 +9974,6 @@ lockForDelete() : Boolean protected;
 //
 // Parameters:	None
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	29/03/2023	EDS-4		Implement AddressTA class
 
 begin
 	return true;
@@ -10320,8 +9992,6 @@ lockForModify() : Boolean protected;
 //
 // Parameters:	None
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	29/03/2023	EDS-4		Implement AddressTA class
 
 begin
 	return true;
@@ -10340,8 +10010,6 @@ lockForUpdate() : Boolean protected;
 //
 // Parameters:	None
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	29/03/2023	EDS-4		Implement AddressTA class
 
 begin
 	return true;
@@ -10360,8 +10028,6 @@ populateFromObject( pAddress : Address ) updating;
 //
 // Parameters:	pAddress - The Address Model to copy the attributes from
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	29/03/2023	EDS-4		Implement AddressTA class
 
 begin
 	inheritMethod( pAddress );
@@ -10390,8 +10056,6 @@ clearErrorsOnSubordinateTAs() updating, protected;
 //
 // Parameters: 	None
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	29/03/2023	EDS-5		Implement AgentTA class
 
 begin
 	inheritMethod();
@@ -10413,8 +10077,6 @@ clearWarningsOnSubordinateTAs() updating, protected;
 //
 // Parameters: 	None
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	30/03/2023	EDS-5		Implement AgentTA class
 
 begin
 	inheritMethod();
@@ -10439,8 +10101,6 @@ createSubordinateObjects() : Boolean updating, protected;
 //
 // Parameters: 	None
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	29/03/2023	EDS-5		Implement AgentTA class
 
 begin
 	inheritMethod();
@@ -10483,8 +10143,6 @@ doPreValidate() updating;
 //
 // Parameters: 	N/A
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	14/06/2023	EDS-68		Implement doPreValidate method
 
 begin
 	// Sanitize Data
@@ -10509,10 +10167,6 @@ doValidate( pValidationType : Integer ) : Boolean updating;
 // Parameters:	pValidationType 	- 	The type of operation being performed 
 //										e.g. Create, Update, Delete
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	29/03/2023	EDS-5		Implement AgentTA class
-// Dan T	14/06/2023	EDS-68		Implement doPreValidate method (Removed Unnecessary Code)
-// Dan T	21/06/2023	EDS-75		Update Translatable Strings
 
 begin
 	inheritMethod( pValidationType );
@@ -10526,17 +10180,17 @@ begin
 		// validate name
 		if self.name = null then
 			// name cannot be null
-			self.addError( $AgentNameRequired, Focus_Name ); // EDS-75
+			self.addError( $AgentNameRequired, Focus_Name ); 
 		endif;
 		
 		// validate agent does not exist (validates on create only)
 		if pValidationType = ValidationType_Create and app.myCompany.hasAgentWithThisName( self.name ) then
-			self.addError( $AgentAlreadyExists, Focus_Name );	// EDS-75
+			self.addError( $AgentAlreadyExists, Focus_Name );	
 		endif;
 		
 		// validate another agent does not have the same name (validates on update only)
 		if pValidationType = ValidationType_Update and app.myCompany.hasAnotherAgentWithThisName( self.name, self.getModelObject() ) then
-			self.addError( $AgentWithSameNameExists, Focus_Name );	// EDS-75
+			self.addError( $AgentWithSameNameExists, Focus_Name );	
 		endif;
 		
 		// validate address, if not modifying the agent commissionrate
@@ -10560,8 +10214,6 @@ getModelObject() : Agent;
 //
 // Parameters:	None
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	29/03/2023	EDS-5		Implement AgentTA class
 
 begin
 	return inheritMethod().Agent;
@@ -10579,8 +10231,6 @@ getModelObjectClass() : Class protected;
 //
 // Parameters:	None
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	29/03/2023	EDS-5		Implement AgentTA class
 
 begin
 	return Agent;
@@ -10599,8 +10249,6 @@ initialize() updating;
 //
 // Parameters:	None
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	29/03/2023	EDS-5		Implement AgentTA class
 
 begin
 	inheritMethod();
@@ -10621,8 +10269,6 @@ lockForCreate() : Boolean protected;
 //
 // Parameters:	None
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	29/03/2023	EDS-5		Implement AgentTA class
 
 begin
 	if not self.tryLockingObject( app.myCompany.allAgents ) then
@@ -10645,8 +10291,6 @@ lockForDelete() : Boolean protected;
 //
 // Parameters:	None
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	29/03/2023	EDS-5		Implement AgentTA class
 
 begin
 	if not self.tryLockingObject( app.myCompany.allAgents ) then
@@ -10669,8 +10313,6 @@ lockForModify() : Boolean protected;
 //
 // Parameters:	None
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	29/03/2023	EDS-5		Implement AgentTA class
 
 begin
 	return true;
@@ -10689,8 +10331,6 @@ lockForUpdate() : Boolean protected;
 //
 // Parameters:	None
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	29/03/2023	EDS-5		Implement AgentTA class
 
 begin
 	// Is the key value on the object changing.  If it is, then we need to lock the collection
@@ -10718,8 +10358,6 @@ modifySubordinateObjects( pModification : Integer ): Boolean updating, protected
 //
 // Parameters: 	pModification = The type of modication to perform
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	30/03/2023	EDS-5		Implement AgentTA class
 
 begin
 	inheritMethod( pModification );
@@ -10747,8 +10385,6 @@ populateFromObject( pAgent : Agent ) updating;
 //
 // Parameters:	pAgent - The Agent Model to copy the attributes from
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	29/03/2023	EDS-5		Implement AgentTA class
 
 begin
 	inheritMethod( pAgent );
@@ -10788,12 +10424,9 @@ updateSubordinateObjects() : Boolean updating, protected;
 //
 // Parameters: 	None
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	29/03/2023	EDS-5		Implement AgentTA class
-// Dan T	04/04/2023	EDS-5		Fixed issue identified during testing  [EDS-5.v2]
 
 begin
-	inheritMethod();	// EDS-5.v2
+	inheritMethod();	
 	
 	// Update the Address object
 	if self.myAddressTA <> null and not self.myAddressTA.persistEntityInTransState( TransactionType_Persist ) then
@@ -10820,8 +10453,6 @@ clearErrorsOnSubordinateTAs() updating, protected;
 //
 // Parameters: 	None
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	29/03/2023	EDS-3		Implement ClientTA class
 
 begin
 	inheritMethod();
@@ -10843,8 +10474,6 @@ clearWarningsOnSubordinateTAs() updating, protected;
 //
 // Parameters: 	None
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	29/03/2023	EDS-3		Implement ClientTA class
 
 begin
 	inheritMethod();
@@ -10869,8 +10498,6 @@ createSubordinateObjects() : Boolean updating, protected;
 //
 // Parameters: 	None
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	29/03/2023	EDS-3		Implement ClientTA class
 
 begin
 	inheritMethod();
@@ -10913,8 +10540,6 @@ doPreValidate() updating;
 //
 // Parameters: 	N/A
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	14/06/2023	EDS-68		Implement doPreValidate method
 
 begin
 	self.name := self.name.trimWhiteSpace();
@@ -10938,10 +10563,6 @@ doValidate( pValidationType : Integer ) : Boolean updating;
 // Parameters:	pValidationType 	- 	The type of operation being performed 
 //									e.g. Create, Update, Delete
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	29/03/2023	EDS-3		Implement ClientTA class
-// Dan T	14/06/2023	EDS-68		Implement doPreValidate method (Removed Unnecessary Code)
-// Dan T	21/06/2023	EDS-75		Update Translatable Strings
 
 begin
 	inheritMethod( pValidationType );
@@ -10954,17 +10575,17 @@ begin
 	// validate name
 	if self.name = null then
 		// name cannot be null
-		self.addError( $ClientNameRequired, Focus_Name ); 	// EDS-75
+		self.addError( $ClientNameRequired, Focus_Name ); 	
 	endif;
 	
 	// validate client does not exist (validates on create only)
 	if pValidationType = ValidationType_Create and app.myCompany.hasClientWithThisName( self.name ) then
-		self.addError( $ClientAlreadyExists, Focus_Name);	// EDS-75
+		self.addError( $ClientAlreadyExists, Focus_Name);	
 	endif;
 	
 	// validate another client does not have the same name (validates on update only)
 	if pValidationType = ValidationType_Update and app.myCompany.hasAnotherClientWithThisName( self.name, self.getModelObject() ) then
-		self.addError( $ClientWithSameNameExists, Focus_Name);	// EDS-75
+		self.addError( $ClientWithSameNameExists, Focus_Name);	
 	endif;
 	
 	// validate address
@@ -10987,8 +10608,6 @@ getModelObject() : Client;
 //
 // Parameters:	None
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	29/03/2023	EDS-3		Implement ClientTA class
 
 begin
 	return inheritMethod().Client;
@@ -11006,8 +10625,6 @@ getModelObjectClass() : Class protected;
 //
 // Parameters:	None
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	29/03/2023	EDS-3		Implement ClientTA class
 
 begin
 	return Client;
@@ -11026,8 +10643,6 @@ initialize() updating;
 //
 // Parameters:	None
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	29/03/2023	EDS-3		Implement ClientTA class
 
 begin
 	inheritMethod();
@@ -11048,8 +10663,6 @@ lockForCreate() : Boolean protected;
 //
 // Parameters:	None
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	29/03/2023	EDS-3		Implement ClientTA class
 
 begin
 	if not self.tryLockingObject( app.myCompany.allClients ) then
@@ -11072,8 +10685,6 @@ lockForDelete() : Boolean protected;
 //
 // Parameters:	None
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	29/03/2023	EDS-3		Implement ClientTA class
 
 begin
 	if not self.tryLockingObject( app.myCompany.allClients ) then
@@ -11096,8 +10707,6 @@ lockForModify() : Boolean protected;
 //
 // Parameters:	None
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	29/03/2023	EDS-3		Implement ClientTA class
 
 begin
 	return true;
@@ -11116,8 +10725,6 @@ lockForUpdate() : Boolean protected;
 //
 // Parameters:	None
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	29/03/2023	EDS-3		Implement ClientTA class
 
 begin
 	// Is the key value on the object changing.  If it is, then we need to lock the collection
@@ -11145,8 +10752,6 @@ modifySubordinateObjects( pModification : Integer ): Boolean updating, protected
 //
 // Parameters: 	pModification = The type of modication to perform
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	30/03/2023	EDS-3		Implement ClientTA class
 
 begin
 	inheritMethod( pModification );
@@ -11174,8 +10779,6 @@ populateFromObject( pClient : Client ) updating;
 //
 // Parameters:	pClient - The Client Model to copy the attributes from
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	29/03/2023	EDS-3		Implement ClientTA class
 
 begin
 	inheritMethod( pClient );
@@ -11215,8 +10818,6 @@ updateSubordinateObjects() : Boolean updating, protected;
 //
 // Parameters: 	None
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	29/03/2023	EDS-3		Implement ClientTA class
 
 begin
 	inheritMethod();
@@ -11250,11 +10851,6 @@ doValidate( pValidationType : Integer ) : Boolean updating;
 // Parameters:	pValidationType 	- 	The type of operation being performed 
 //										e.g. Create, Update, Delete
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	20/04/2023	EDS-17		Implement CommissionRateTA class
-// Dan T	26/05/2023	EDS-51		Refactor TestComissionRate unit tests
-//									Added Check for duplicate commission rate
-// Dan T	21/06/2023	EDS-75		Update Translatable Strings
 
 
 begin
@@ -11267,20 +10863,20 @@ begin
 	
 	//validate Item Category
 	if self.myItemCategory = null then
-		self.addError( $ItemCategoryRequired, Focus_ItemCategory ); // EDS-75
+		self.addError( $ItemCategoryRequired, Focus_ItemCategory ); 
 	endif;
 	
 	// validate percentage
 	if self.percentage <= 0 or self.percentage > 100 then
-		self.addError( $CommissionRatePercentageInvalid, Focus_Percentage );	// EDS-75
+		self.addError( $CommissionRatePercentageInvalid, Focus_Percentage );	
 	endif;
 	
 	// check for duplicate commission rate
-	if self.myItemCategory <> null 																	// EDS-51
-	and self.myItemCategory.allCommissionRates[ self.percentage ] <> null 							// EDS-51
-	and self.myItemCategory.allCommissionRates[ self.percentage ] <> self.getModelObject() then		// EDS-51
-		self.addError( $ItemCategoryHasCommissionRate, Focus_Percentage ); 							// EDS-51	// EDS-75
-	endif;																								// EDS-51
+	if self.myItemCategory <> null 																	
+	and self.myItemCategory.allCommissionRates[ self.percentage ] <> null 							
+	and self.myItemCategory.allCommissionRates[ self.percentage ] <> self.getModelObject() then		
+		self.addError( $ItemCategoryHasCommissionRate, Focus_Percentage ); 							
+	endif;																								
 	
 	return self.hasNoErrors();
 end;
@@ -11297,8 +10893,6 @@ getModelObject() : CommissionRate;
 //
 // Parameters:	None
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	20/04/2023	EDS-17		Implement CommissionRateTA class
 
 begin
 	return inheritMethod().CommissionRate;
@@ -11316,8 +10910,6 @@ getModelObjectClass() : Class protected;
 //
 // Parameters:	None
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	20/04/2023	EDS-17		Implement CommissionRateTA class
 
 begin
 	return CommissionRate;
@@ -11336,8 +10928,6 @@ initialize() updating;
 //
 // Parameters:	None
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	20/04/2023	EDS-17		Implement CommissionRateTA class
 
 begin
 	inheritMethod();
@@ -11360,14 +10950,11 @@ lockForCreate() : Boolean protected;
 //
 // Parameters:	None
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	20/04/2023	EDS-17		Implement CommissionRateTA class
-// Dan T	27/04/2023	EDS-17.v2	Implement the lockForXXXX
 
 begin
-	if not self.tryLockingObject( self.myItemCategory.allCommissionRates ) then		// EDS-17.v2
-		return false;																	// EDS-17.v2
-	endif;																				// EDS-17.v2
+	if not self.tryLockingObject( self.myItemCategory.allCommissionRates ) then		
+		return false;																	
+	endif;																				
 	
 	return true;
 end;
@@ -11385,14 +10972,11 @@ lockForDelete() : Boolean protected;
 //
 // Parameters:	None
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	20/04/2023	EDS-17		Implement CommissionRateTA class
-// Dan T	27/04/2023	EDS-17.v2	Implement the lockForXXXX
 
 begin
-	if not self.tryLockingObject( self.myItemCategory.allCommissionRates ) then		// EDS-17.v2
-		return false;																	// EDS-17.v2
-	endif;																				// EDS-17.v2
+	if not self.tryLockingObject( self.myItemCategory.allCommissionRates ) then		
+		return false;																	
+	endif;																				
 	
 	return true;
 end;
@@ -11410,8 +10994,6 @@ lockForModify() : Boolean protected;
 //
 // Parameters:	None
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	20/04/2023	EDS-17		Implement CommissionRateTA class
 
 begin
 	return true;
@@ -11430,22 +11012,16 @@ lockForUpdate() : Boolean protected;
 //
 // Parameters:	None
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	20/04/2023	EDS-17		Implement CommissionRateTA class
-// Dan T	27/04/2023	EDS-17.v2	Implement the lockForXXXX
-// Dan T	27/06/2023	EDS-73.v2	Added lock to collections
-// Dan T	30/06/2023	EDS-81		Change SaleItems to use GUIDs 
 //									Changed Collection to allItemsByNumber
-// Dan T	04/07/2023	EDS-81.v2	Removed unnecessary locking behaviour
 
 begin
-	if self.myItemCategory <> self.getModelObject().myItemCategory 						// EDS-17.v2
-	or self.percentage <> self.getModelObject().percentage then									// EDS-17.v2
-		if not self.tryLockingObject( self.myItemCategory.allCommissionRates ) then			// EDS-17.v2
-			return false;																		// EDS-17.v2
-		endif;																					// EDS-17.v2
+	if self.myItemCategory <> self.getModelObject().myItemCategory 						
+	or self.percentage <> self.getModelObject().percentage then									
+		if not self.tryLockingObject( self.myItemCategory.allCommissionRates ) then			
+			return false;																		
+		endif;																					
 		
-	endif;																						// EDS-17.v2
+	endif;																						
 	
 	return true;
 end;
@@ -11463,8 +11039,6 @@ populateFromObject( pCommissionRate : CommissionRate ) updating;
 //
 // Parameters:	pCommissionRate - The CommissionRate Model to copy the attributes from
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	20/04/2023	EDS-17		Implement CommissionRateTA class
 
 begin
 	inheritMethod( pCommissionRate );
@@ -11491,8 +11065,6 @@ clearErrorsOnSubordinateTAs() updating, protected;
 //
 // Parameters: 	None
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	30/03/2023	EDS-13		Implement CompanyTA class
 
 begin
 	inheritMethod();
@@ -11514,8 +11086,6 @@ clearWarningsOnSubordinateTAs() updating, protected;
 //
 // Parameters: 	None
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	30/03/2023	EDS-13		Implement CompanyTA class
 
 begin
 	inheritMethod();
@@ -11540,8 +11110,6 @@ createSubordinateObjects(): Boolean updating, protected;
 //
 // Parameters: 	None
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	30/03/2023	EDS-13		Implement CompanyTA class
 
 begin
 	inheritMethod();
@@ -11584,8 +11152,6 @@ doPreValidate() updating;
 //
 // Parameters: 	N/A
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	14/06/2023	EDS-68		Implement doPreValidate method
 
 begin
 	// Sanitize Data
@@ -11610,10 +11176,6 @@ doValidate( pValidationType : Integer ) : Boolean updating;
 // Parameters:	pOperation 	- 	The type of operation being performed 
 //								e.g. Create, Update, Delete
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	30/03/2023	EDS-13		Implement CompanyTA class
-// Dan T	14/06/2023	EDS-68		Implement doPreValidate method (Removed Unnecessary Code)
-// Dan T	21/06/2023	EDS-75		Update Translatable Strings
 
 begin
 	inheritMethod( pValidationType );
@@ -11626,7 +11188,7 @@ begin
 	// validate name
 	if self.name = null then
 		// name cannot be null
-		self.addError( $CompanyNameRequired, Focus_Name );	// EDS-75
+		self.addError( $CompanyNameRequired, Focus_Name );	
 	endif;
 	
 	// validate address
@@ -11640,8 +11202,6 @@ end;
 getModelObject
 {
 getModelObject() : Company;
-// Who		When		Ticket		Details
-// Dan T	30/03/2023	EDS-13		Implement CompanyTA class
 
 begin
 	return inheritMethod().Company;
@@ -11659,8 +11219,6 @@ getModelObjectClass() : Class protected;
 //
 // Parameters:	None
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	30/03/2023	EDS-13		Implement CompanyTA class
 
 begin
 	return Company;
@@ -11679,8 +11237,6 @@ initialize() updating;
 //
 // Parameters:	None
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	30/03/2023	EDS-13		Implement CompanyTA class
 
 begin
 	inheritMethod();
@@ -11701,8 +11257,6 @@ lockForCreate() : Boolean protected;
 //
 // Parameters:	None
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	30/03/2023	EDS-13		Implement CompanyTA class
 
 begin
 	return true;
@@ -11721,8 +11275,6 @@ lockForDelete() : Boolean protected;
 //
 // Parameters:	None
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	30/03/2023	EDS-13		Implement CompanyTA class
 
 begin
 	return true;
@@ -11741,8 +11293,6 @@ lockForModify() : Boolean protected;
 //
 // Parameters:	None
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	30/03/2023	EDS-13		Implement CompanyTA class
 
 begin
 	return true;
@@ -11761,8 +11311,6 @@ lockForUpdate() : Boolean protected;
 //
 // Parameters:	None
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	30/03/2023	EDS-13		Implement CompanyTA class
 
 begin
 	return true;
@@ -11783,8 +11331,6 @@ modifySubordinateObjects( pModification : Integer ): Boolean updating, protected
 //
 // Parameters: 	pModification = The type of modication to perform
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	30/03/2023	EDS-13		Implement CompanyTA class
 
 begin
 	inheritMethod( pModification );
@@ -11812,8 +11358,6 @@ populateFromObject( pCompany : Company ) updating;
 //
 // Parameters:	pCompany - The Company Model to copy the attributes from
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	30/03/2023	EDS-13		Implement CompanyTA class
 
 begin
 	inheritMethod( pCompany );
@@ -11853,8 +11397,6 @@ updateSubordinateObjects(): Boolean updating, protected;
 //
 // Parameters: 	None
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	30/03/2023	EDS-13		Implement CompanyTA class
 
 begin
 	inheritMethod();
@@ -11885,18 +11427,15 @@ doPreValidate() updating;
 //
 // Parameters: 	N/A
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	14/06/2023	EDS-68		Implement doPreValidate method
-// Dan T	19/06/2023	EDS-72		Remove code number limit for Sale Items
 
 begin
 	// Sanitize Date
 	self.name := self.name.trimBlanks();
 	self.description := self.description.trimBlanks();
-	self.prefix := self.prefix.trimBlanks();				// EDS-72
+	self.prefix := self.prefix.trimBlanks();				
 	
 	// Format the Data
-	self.prefix := self.prefix.toUpper();					// EDS-72
+	self.prefix := self.prefix.toUpper();					
 	
 	inheritMethod();
 end;
@@ -11917,11 +11456,6 @@ doValidate( pValidationType: Integer ) : Boolean updating;
 // Parameters:	pValidationType 	The type of operation being performed 
 //									e.g. Create, Update, Delete
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	13/04/2023	EDS-12		Implement SaleItemCategoryTA class
-// Dan T	14/06/2023	EDS-68		Implement doPreValidate method (Removed Unnecessary Code)
-// Dan T	19/06/2023	EDS-72		Remove code number limit for Sale Items
-// Dan T	21/06/2023	EDS-75		Update Translatable Strings
 
 vars
 	itemCategory : ItemCategory;
@@ -11935,34 +11469,34 @@ begin
 	endif;
 	
 	// Validate Prefix
-	if self.prefix = null then													// EDS-72
-		self.addError( $ItemCategoryPrefixRequired, Focus_CodePrefix );		// EDS-72	// EDS-75
-	elseif self.prefix.length() < 4 then										// EDS-72
-		self.addError( $ItemCategoryPrefixInvalid, Focus_CodePrefix );		// EDS-72	// EDS-75
+	if self.prefix = null then													
+		self.addError( $ItemCategoryPrefixRequired, Focus_CodePrefix );		
+	elseif self.prefix.length() < 4 then										
+		self.addError( $ItemCategoryPrefixInvalid, Focus_CodePrefix );		
 	else
 		// validate prefix not already in use
-		itemCategory := app.myCompany.allItemCategoriesByPrefix[ self.prefix ];				// EDS-72
-		if itemCategory <> null and itemCategory <> self.getModelObject() then			// EDS-72
-			self.addError( $ItemCategoryPrefixExists, Focus_Name );			// EDS-72 	// EDS-75
+		itemCategory := app.myCompany.allItemCategoriesByPrefix[ self.prefix ];				
+		if itemCategory <> null and itemCategory <> self.getModelObject() then			
+			self.addError( $ItemCategoryPrefixExists, Focus_Name );			
 		endif;
-	endif;																		// EDS-72
+	endif;																		
 	
 	// validate name
 	if self.name = null then
 		// name required
-		self.addError( $ItemCategoryNameRequired, Focus_Name );				// EDS-75
+		self.addError( $ItemCategoryNameRequired, Focus_Name );				
 	else
 		// check for duplicate name
-		itemCategory := app.myCompany.allItemCategoriesByName[ self.name ]; 			// EDS-72
-		if itemCategory <> null and itemCategory <> self.getModelObject() then			// EDS-72
-			self.addError( $ItemCategoryNameExists, Focus_Name );			// EDS-72 // EDS-75
+		itemCategory := app.myCompany.allItemCategoriesByName[ self.name ]; 			
+		if itemCategory <> null and itemCategory <> self.getModelObject() then			
+			self.addError( $ItemCategoryNameExists, Focus_Name );			
 		endif;
 	endif;
 	
 	// validate description
 	if self.description = null then
 		// description required
-		self.addError( $ItemCategoryDescriptionRequired, Focus_Description );	// EDS-75
+		self.addError( $ItemCategoryDescriptionRequired, Focus_Description );	
 	endif;
 	
 	return self.hasNoErrors();
@@ -11980,8 +11514,6 @@ getModelObject() : ItemCategory;
 //
 // Parameters:	None
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	13/04/2023	EDS-12		Implement SaleItemCategoryTA class
 
 begin
 	return inheritMethod().ItemCategory;
@@ -11999,8 +11531,6 @@ getModelObjectClass() : Class protected;
 //
 // Parameters:	None
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	13/04/2023	EDS-12		Implement SaleItemCategoryTA class
 
 begin
 	return ItemCategory;
@@ -12019,14 +11549,11 @@ initialize() updating;
 //
 // Parameters:	None
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	13/04/2023	EDS-12		Implement SaleItemCategoryTA class
-// Dan T	19/06/2023	EDS-72		Remove code number limit for Sale Items
 
 begin
 	inheritMethod();
 	
-	self.prefix := null;		// EDS-72
+	self.prefix := null;		
 	self.description := null;
 	self.name := null;
 end;
@@ -12044,12 +11571,7 @@ lockForCreate() : Boolean protected;
 //
 // Parameters:	None
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	14/04/2023	EDS-12		Implement SaleItemCategoryTA class
-// Dan T	27/06/2023	EDS-73.v2	Added lock to collections
-// Dan T	30/06/2023	EDS-81		Change SaleItems to use GUIDs 
 //									Changed Collection to allItemsByNumber
-// Dan T	04/07/2023	EDS-81.v2	Removed unnecessary locking behaviour
 
 
 begin
@@ -12057,11 +11579,11 @@ begin
 		return false;
 	endif;
 	
-	if not self.tryLockingObject( app.myCompany.allSalesByItem ) then		// EDS-73.v2
+	if not self.tryLockingObject( app.myCompany.allSalesByItem ) then		
 		return false;
 	endif;
 
-	if not self.tryLockingObject( app.myCompany.allTenderItemsBySaleDate ) then	// EDS-73.v2
+	if not self.tryLockingObject( app.myCompany.allTenderItemsBySaleDate ) then	
 		return false;
 	endif;
 
@@ -12081,12 +11603,7 @@ lockForDelete() : Boolean protected;
 //
 // Parameters:	None
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	14/04/2023	EDS-12		Implement SaleItemCategoryTA class
-// Dan T	27/06/2023	EDS-73.v2	Added lock to collections
-// Dan T	30/06/2023	EDS-81		Change SaleItems to use GUIDs 
 //									Changed Collection to allItemsByNumber
-// Dan T	04/07/2023	EDS-81.v2	Removed unnecessary locking behaviour
 
 
 begin
@@ -12094,11 +11611,11 @@ begin
 		return false;
 	endif;
 	
-	if not self.tryLockingObject( app.myCompany.allSalesByItem ) then		// EDS-73.v2
+	if not self.tryLockingObject( app.myCompany.allSalesByItem ) then		
 		return false;
 	endif;
 
-	if not self.tryLockingObject( app.myCompany.allTenderItemsBySaleDate ) then	// EDS-73.v2
+	if not self.tryLockingObject( app.myCompany.allTenderItemsBySaleDate ) then	
 		return false;
 	endif;
 	
@@ -12118,8 +11635,6 @@ lockForModify() : Boolean protected;
 //
 // Parameters:	None
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	14/04/2023	EDS-12		Implement SaleItemCategoryTA class
 
 begin
 	return true;
@@ -12138,10 +11653,6 @@ lockForUpdate() : Boolean protected;
 //
 // Parameters:	None
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	14/04/2023	EDS-12		Implement SaleItemCategoryTA class
-// Dan T	19/06/2023	EDS-72		Remove code number limit for Sale Items
-// Dan T	07/07/2023	EDS-81.v3	Add additional lock on collections (With BeeJay)
 
 vars
 	itemCategory : ItemCategory; 
@@ -12158,11 +11669,11 @@ begin
 	
 	// Is the keypath value on the object changing and do we have some items using it.  If so, then we need to lock the collection
 	if self.prefix <> itemCategory.prefix and itemCategory.allItems.isNotEmpty() then
-		if not self.tryLockingObject( app.myCompany.allSalesByItem ) then		// EDS-81.v3
+		if not self.tryLockingObject( app.myCompany.allSalesByItem ) then		
 			return false;
 		endif;
 
-		if not self.tryLockingObject( app.myCompany.allTenderItemsBySaleDate ) then	// EDS-81.v3
+		if not self.tryLockingObject( app.myCompany.allTenderItemsBySaleDate ) then	
 			return false;
 		endif;
 	endif;
@@ -12183,15 +11694,11 @@ populateFromObject( pItemCategory : ItemCategory ) updating;
 //
 // Parameters:	pItemCategory - The ItemCategory to copy the attributes from
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	13/04/2023	EDS-12		Implement SaleItemCategoryTA class
-// Dan T	19/06/2023	EDS-72		Remove code number limit for Sale Items
-// Dan T	10/07/2023	EDS-88	 	Rename SaleItem classes to improve clarity
 
 begin
 	inheritMethod( pItemCategory );
 	
-	self.prefix := pItemCategory.prefix;				// EDS-72
+	self.prefix := pItemCategory.prefix;				
 	self.description := pItemCategory.description;
 	self.name := pItemCategory.name;
 end;
@@ -12211,13 +11718,6 @@ doPreValidate() updating;
 //
 // Parameters: 	N/A
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	14/06/2023	EDS-68		Implement doPreValidate method
-// Dan T	19/06/2023	EDS-72		Remove code number limit for Sale Items
-// Dan T	27/06/2023	EDS-77		Improve logic for getting next code number
-// Dan T	29/06/2023	EDS-78.v2	Improve logic for change of category for sale item
-// Dan T	30/06/2023	EDS-81		Change SaleItems to use GUIDs
-// Dan T	05/07/2023	EDS-84		Add GUID to PersistentModels
 
 
 begin
@@ -12256,14 +11756,6 @@ doValidate( pValidationType : Integer ) : Boolean updating;
 // Parameters:	pValidationType - 	The type of operation being performed 
 //									e.g. Create, Update, Delete
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	05/04/2023	EDS-14		Implement SaleItemTA class
-// Dan T	02/06/2023	EDS-65		SaleTA not saving forSaleDate
-// Dan T	12/06/2023	EDS-29		Sale Item Code Prefix Number Not Recalculated
-// Dan T	19/06/2023	EDS-72		Remove code number limit for Sale Items
-// Dan T	21/06/2023	EDS-75		Update Translatable Strings
-// Dan T	05/07/2023	EDS-84		Add GUID to PersistentModels
-// Dan T	10/08/2023	EDS-94		Grant Admin Users Full Functionality
 
 begin
 	inheritMethod( pValidationType );
@@ -12280,37 +11772,37 @@ begin
 	
 	// Validate Agent
 	if self.myAgent = null then
-		self.addError( $AgentRequired, Focus_Agent );	// EDS-94
+		self.addError( $AgentRequired, Focus_Agent );	
 	endif;
 	
 	// validate myItemCategory
 	if self.myItemCategory = null then
-		self.addError( $ItemCategoryRequired, Focus_ItemCategory );	// EDS-75	// EDS-72
+		self.addError( $ItemCategoryRequired, Focus_ItemCategory );	
 	endif;
 	
 	// validate myRegion
 	if self.myRegion = null then
-		self.addError( $RegionRequired, Focus_Region );		// EDS-75
+		self.addError( $RegionRequired, Focus_Region );		
 	endif;	
 	
 	// validate name
 	if self.name = null then
-		self.addError( $ItemNameRequired, Focus_ItemName );		// EDS-75
+		self.addError( $ItemNameRequired, Focus_ItemName );		
 	endif;
 	
 	// validate description
 	if self.description = null then
-		self.addError( $ItemDescriptionRequired, Focus_ItemDescription );		// EDS-75
+		self.addError( $ItemDescriptionRequired, Focus_ItemDescription );		
 	endif;
 	
 	// validate photo only if photo has been supplied
 	if self.photo <> null and not self.photo.ebsIsValidPicture() then
-		self.addError( $ImageNotValid, Focus_Photo );							// EDS-75
+		self.addError( $ImageNotValid, Focus_Photo );							
 	endif;
 	
 	// validate price
 	if self.price = null or self.price < 0 then	
-		self.addError( $ItemPriceNotValid, Focus_Price );							// EDS-75
+		self.addError( $ItemPriceNotValid, Focus_Price );							
 	endif;
 	
 	return self.hasNoErrors();
@@ -12328,8 +11820,6 @@ getModelObject() : Item;
 //
 // Parameters:	None
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	05/04/2023	EDS-14		Implement SaleItemTA class
 
 begin
 	return inheritMethod().Item;
@@ -12347,8 +11837,6 @@ getModelObjectClass() : Class protected;
 //
 // Parameters:	None
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	05/04/2023	EDS-14		Implement SaleItemTA class
 
 begin
 	return Item;
@@ -12366,9 +11854,6 @@ getNextCodeNumber() : Integer updating;
 //
 // Returns:		An Integer with the current highest item number plus 1 
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	30/06/2023	EDS-81		Change SaleItems to use GUIDs
-// Dan T	25/07/2023	EDS-97 		Use one ErewhonException class
 
 
 constants
@@ -12388,7 +11873,7 @@ begin
 		attempts += 1;
 		
 		if attempts >= MaxAttempts then
-			app.raiseErewhonException( Ex_500001_Lock_not_obtained );	// EDS-97
+			app.raiseErewhonException( Ex_500001_Lock_not_obtained );	
 		endif;
 		
 		// Wait for 100ms before attempting to lock again so other processes 
@@ -12423,12 +11908,6 @@ initialize() updating;
 //
 // Parameters:	None
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	05/04/2023	EDS-14		Implement SaleItemTA class
-// Dan T	02/06/2023	EDS-65		SaleTA not saving forSaleDate
-// Dan T	19/06/2023	EDS-72		Remove code number limit for Sale Items
-// Dan T	30/06/2023	EDS-81		Change SaleItems to use GUIDs
-// Dan T	05/07/2023	EDS-84		Add GUID to PersistentModels
 
 
 begin
@@ -12459,13 +11938,10 @@ lockForCreate() : Boolean protected;
 //
 // Parameters:	None
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	11/04/2023	EDS-14		Implement SaleItemTA class
-// Dan T	30/06/2023	EDS-81		Change SaleItems to use GUIDs 
 //									Changed Collection to allItemsByNumber
 
 begin
-	if not self.tryLockingObject( app.myCompany.allItems ) then	// EDS-81
+	if not self.tryLockingObject( app.myCompany.allItems ) then	
 		return false;
 	endif;
 	
@@ -12501,13 +11977,10 @@ lockForDelete() : Boolean protected;
 //
 // Parameters:	None
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	11/04/2023	EDS-14		Implement SaleItemTA class
-// Dan T	30/06/2023	EDS-81		Change SaleItems to use GUIDs 
 //									Changed Collection to allItemsByNumber
 
 begin
-	if not self.tryLockingObject( app.myCompany.allItems ) then	// EDS-81
+	if not self.tryLockingObject( app.myCompany.allItems ) then	
 		return false;
 	endif;
 	
@@ -12543,8 +12016,6 @@ lockForModify() : Boolean protected;
 //
 // Parameters:	None
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	11/04/2023	EDS-14		Implement SaleItemTA class
 
 begin
 	return true;
@@ -12563,13 +12034,10 @@ lockForUpdate(): Boolean protected;
 //
 // Parameters:	None
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	11/04/2023	EDS-14		Implement SaleItemTA class
-// Dan T	30/06/2023	EDS-81		Change SaleItems to use GUIDs 
 //									Changed Collection to allItemsByNumber
 
 begin
-	if not self.tryLockingObject( app.myCompany.allItems ) then	// EDS-81
+	if not self.tryLockingObject( app.myCompany.allItems ) then	
 		return false;
 	endif;
 	
@@ -12605,13 +12073,6 @@ populateFromObject( pItem : Item ) updating;
 //
 // Parameters:	pItem - The Item object to copy the attributes from
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	06/04/2023	EDS-14		Implement SaleItemTA class
-// Dan T	02/06/2023	EDS-65		SaleTA not saving forSaleDate
-// Dan T	19/06/2023	EDS-72		Remove code number limit for Sale Items
-// Dan T	30/06/2023	EDS-81		Change SaleItems to use GUIDs
-// Dan T	05/07/2023	EDS-84		Add GUID to PersistentModels
-// Dan T	10/07/2023	EDS-88	 	Rename SaleItem classes to improve clarity
 
 begin
 	inheritMethod( pItem );
@@ -12651,8 +12112,6 @@ getModelObjectClass() : Class protected;
 //
 // Parameters:	None
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	11/04/2023	EDS-15		Implement RetailSaleItemTA class
 
 begin
 	return RetailItem;
@@ -12677,8 +12136,6 @@ doValidate( pValidationType : Integer ) : Boolean updating;
 // Parameters:	pValidationType 	The type of operation being performed 
 //									e.g. Create, Update, Delete
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	21/06/2023	EDS-75		Update Translatable Strings
 
 
 begin
@@ -12690,7 +12147,7 @@ begin
 	endif;
 	
 	if self.closureDate = null or not self.closureDate.isValid() then
-		self.addError( $TenderItemClosureDateNotValid, Focus_Date );	// EDS-75
+		self.addError( $TenderItemClosureDateNotValid, Focus_Date );	
 	endif;
 	
 	return self.hasNoErrors();
@@ -12708,8 +12165,6 @@ getModelObject() : TenderItem;
 //
 // Parameters:	None
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	11/04/2023	EDS-16		Implement TenderSaleItemTA class
 
 begin
 	return inheritMethod().TenderItem;
@@ -12727,8 +12182,6 @@ getModelObjectClass() : Class protected;
 //
 // Parameters:	None
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	11/04/2023	EDS-16		Implement TenderSaleItemTA class
 
 begin
 	return TenderItem;
@@ -12747,8 +12200,6 @@ initialize() updating;
 //
 // Parameters:	None
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	12/04/2023	EDS-16		Implement TenderSaleItemTA class
 
 begin
 	inheritMethod();
@@ -12769,8 +12220,6 @@ lockForCreate() : Boolean protected;
 //
 // Parameters:	None
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	11/04/2023	EDS-16		Implement TenderSaleItemTA class
 
 begin
 	if not inheritMethod() then
@@ -12797,8 +12246,6 @@ lockForDelete() : Boolean protected;
 //
 // Parameters:	None
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	11/04/2023	EDS-16		Implement TenderSaleItemTA class
 
 begin
 	if not inheritMethod() then
@@ -12825,8 +12272,6 @@ lockForUpdate(): Boolean protected;
 //
 // Parameters:	None
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	11/04/2023	EDS-16		Implement TenderSaleItemTA class
 
 begin
 	if not inheritMethod() then
@@ -12853,8 +12298,6 @@ populateFromObject( pTenderItem : TenderItem ) updating;
 //
 // Parameters:	pTenderItem		The TenderItem object to copy the attributes from
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	11/04/2023	EDS-16		Implement TenderSaleItemTA class
 
 begin
 	inheritMethod( pTenderItem );
@@ -12878,8 +12321,6 @@ doPreValidate() updating;
 //
 // Parameters: 	N/A
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	14/06/2023	EDS-68		Implement doPreValidate method
 
 begin
 	// Sanitize Data
@@ -12904,9 +12345,6 @@ doValidate( pValidationType : Integer ): Boolean updating;
 // Parameters:	pOperation 	- 	The type of operation being performed 
 //								e.g. Create, Update, Delete
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	31/03/2023	EDS-6		Implement LocationTA class
-// Dan T	14/06/2023	EDS-68		Implement doPreValidate method (Removed Unnecessary Code)
 
 begin
 	inheritMethod( pValidationType );
@@ -12931,8 +12369,6 @@ getModelObject() : Location;
 //
 // Parameters:	None
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	31/03/2023	EDS-6		Implement LocationTA class
 
 begin
 	return inheritMethod().Location;
@@ -12950,8 +12386,6 @@ getModelObjectClass() : Class protected;
 //
 // Parameters:	None
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	31/03/2023	EDS-6		Implement LocationTA class
 
 begin
 	return Location;
@@ -12970,8 +12404,6 @@ initialize() updating;
 //
 // Parameters:	None
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	31/03/2023	EDS-6		Implement LocationTA class
 
 begin
 	inheritMethod();
@@ -12992,8 +12424,6 @@ lockForModify() : Boolean protected;
 //
 // Parameters:	None
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	31/03/2023	EDS-7		Implement CountryTA class
 
 begin
 	return true;
@@ -13012,8 +12442,6 @@ populateFromObject( pLocation : Location ) updating;
 //
 // Parameters:	pClient - The Location Model to copy the attributes from
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	31/03/2023	EDS-6		Implement LocationTA class
 
 begin
 	inheritMethod( pLocation );
@@ -13027,9 +12455,6 @@ end;
 doValidate
 {
 doValidate( pValidationType : Integer ) : Boolean updating;
-// Who		When		Ticket		Details
-// Dan T	03/04/2023	EDS-7		Implement CountryTA class
-// Dan T	21/06/2023	EDS-75		Update Translatable Strings
 
 begin
 	inheritMethod( pValidationType );
@@ -13037,17 +12462,17 @@ begin
 	// validate name
 	if self.name = null then
 		// name cannot be null
-		self.addError( $CountryNameRequired, Focus_Name );	// EDS-75
+		self.addError( $CountryNameRequired, Focus_Name );	
 	endif;
 	
 	// validate country does not exist (validates on create only)
 	if pValidationType = ValidationType_Create and app.myCompany.hasCountryWithThisName( self.name ) then
-		addError( $CountryAlreadyExists, Focus_Name );	// EDS-75
+		addError( $CountryAlreadyExists, Focus_Name );	
 	endif;
 	
 	// validate another country does not have the same name (validates on update only)
 	if pValidationType = ValidationType_Update and app.myCompany.hasAnotherCountryWithThisName( self.name, self.getModelObject() ) then
-		self.addError( $CountryWithSameNameExists, Focus_Name);	// EDS-75
+		self.addError( $CountryWithSameNameExists, Focus_Name);	
 	endif;
 	
 	return self.hasNoErrors();
@@ -13065,8 +12490,6 @@ getModelObject() : Country;
 //
 // Parameters:	None
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	31/03/2023	EDS-7		Implement CountryTA class
 
 begin
 	return inheritMethod().Country;
@@ -13084,8 +12507,6 @@ getModelObjectClass() : Class protected;
 //
 // Parameters:	None
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	31/03/2023	EDS-7		Implement CountryTA class
 
 begin
 	return Country;
@@ -13104,8 +12525,6 @@ lockForCreate() : Boolean protected;
 //
 // Parameters:	None
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	31/03/2023	EDS-7		Implement CountryTA class
 
 begin
 	if not self.tryLockingObject( app.myCompany.allCountries ) then
@@ -13128,8 +12547,6 @@ lockForDelete() : Boolean protected;
 //
 // Parameters:	None
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	31/03/2023	EDS-7		Implement CountryTA class
 
 begin
 	if not self.tryLockingObject( app.myCompany.allCountries ) then
@@ -13152,8 +12569,6 @@ lockForUpdate() : Boolean protected;
 //
 // Parameters:	None
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	31/03/2023	EDS-7		Implement CountryTA class
 
 begin
 	// Is the key value on the object changing.  If it is, then we need to lock the collection
@@ -13186,9 +12601,6 @@ doValidate( pValidationType : Integer ) : Boolean updating;
 // Parameters:	pOperation 	- 	The type of operation being performed 
 //								e.g. Create, Update, Delete
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	04/04/2023	EDS-8		Implement RegionTA class
-// Dan T	21/06/2023	EDS-75		Update Translatable Strings
 
 begin
 	inheritMethod( pValidationType );
@@ -13196,21 +12608,21 @@ begin
 	// validate name
 	if self.name = null then
 		// name cannot be null
-		self.addError( $RegionNameRequired, Focus_Name );	// EDS-75
+		self.addError( $RegionNameRequired, Focus_Name );	
 	endif;
 	
 	// country cannot be null
 	if self.myCountry = null then
-		self.addError( $CountryRequired, Focus_Country );	// EDS-75
+		self.addError( $CountryRequired, Focus_Country );	
 	else
 		// validate region does not already exist for the specified country (validates on create only)
 		if pValidationType = ValidationType_Create and self.myCountry.hasRegionWithThisName( self.name ) then
-			self.addError( $RegionExists, Focus_Name );		// EDS-75
+			self.addError( $RegionExists, Focus_Name );		
 		endif;
 		
 		// validate the region does not already exist for the country during an update
 		if pValidationType = ValidationType_Update and self.myCountry.hasAnotherRegionWithThisName( self.name, self.getModelObject() ) then
-			self.addError( $RegionExists, Focus_Name );		// EDS-75
+			self.addError( $RegionExists, Focus_Name );		
 		endif;
 	endif;
 	
@@ -13229,8 +12641,6 @@ getModelObject() : Region;
 //
 // Parameters:	None
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	04/04/2023	EDS-8		Implement RegionTA class
 
 vars
 
@@ -13250,8 +12660,6 @@ getModelObjectClass() : Class protected;
 //
 // Parameters:	None
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	04/04/2023	EDS-8		Implement RegionTA class
 
 begin
 	return Region;
@@ -13270,8 +12678,6 @@ initialize() updating;
 //
 // Parameters:	None
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	04/04/2023	EDS-8		Implement RegionTA class
 
 begin
 	inheritMethod();
@@ -13292,8 +12698,6 @@ lockForCreate() : Boolean protected;
 //
 // Parameters:	None
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	04/04/2023	EDS-8		Implement RegionTA class
 
 begin
 	if not self.tryLockingObject( self.myCountry.allRegions ) then
@@ -13316,8 +12720,6 @@ lockForDelete() : Boolean protected;
 //
 // Parameters:	None
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	04/04/2023	EDS-8		Implement RegionTA class
 
 begin
 	if not self.tryLockingObject( self.myCountry.allRegions ) then
@@ -13340,8 +12742,6 @@ lockForUpdate() : Boolean protected;
 //
 // Parameters:	None
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	04/04/2023	EDS-8		Implement RegionTA class
 
 begin
 	// Is the key value on the object changing.  If it is, then we need to lock the collection
@@ -13366,8 +12766,6 @@ populateFromObject( pRegion : Region ) updating;
 //
 // Parameters:	pRegion - The Region Model to copy the attributes from
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	04/04/2023	EDS-8		Implement RegionTA class
 
 begin
 	inheritMethod( pRegion );
@@ -13381,12 +12779,8 @@ end;
 doValidate
 {
 doValidate( pValidationType : Integer ) : Boolean updating;
-// Who		When		Ticket		Details
-// Dan T	04/04/2023	EDS-9		Implement SaleTA class
-// Dan T	07/06/2023	EDS-66		Refactor REST services to use the TAF
 //									Added validation check to ensure a sale cannot
 //									be created for an item that has already been sold
-// Dan T	21/06/2023	EDS-75		Update Translatable Strings
 
 begin
 	inheritMethod( pValidationType );
@@ -13398,26 +12792,26 @@ begin
 	
 	// validate myClient
 	if self.myClient = null then
-		self.addError( $ClientRequired, Focus_Client );		// EDS-75
+		self.addError( $ClientRequired, Focus_Client );		
 	endif;	
 	
 	// validate myItem
 	if self.myItem = null then
-		self.addError( $ItemRequired, Focus_Item );	// EDS-75
+		self.addError( $ItemRequired, Focus_Item );	
 	endif;
 	
 	// validate agentCommission
 	if self.agentCommission < 0 then
 		// commission cannot be negative number
-		self.addError( $SaleAgentCommissionInvalid, Focus_AgentCommission );	// EDS-75
+		self.addError( $SaleAgentCommissionInvalid, Focus_AgentCommission );	
 	endif;
 	
-	// If creating a sale, make sure the item has not already been sold.		// EDS-66
-	if pValidationType = ValidationType_Create 										// EDS-66			
-	and self.myItem <> null 													// EDS-66
-	and self.myItem.mySale <> null then											// EDS-66
-		// commission cannot be negative number										// EDS-66
-		self.addError( $ItemSold, Focus_Item );								// EDS-66	// EDS-75
+	// If creating a sale, make sure the item has not already been sold.		
+	if pValidationType = ValidationType_Create 										
+	and self.myItem <> null 													
+	and self.myItem.mySale <> null then											
+		// commission cannot be negative number										
+		self.addError( $ItemSold, Focus_Item );								
 	endif;
 	
 	
@@ -13427,8 +12821,6 @@ end;
 getModelObject
 {
 getModelObject() : Sale;
-// Who		When		Ticket		Details
-// Dan T	04/04/2023	EDS-9		Implement SaleTA class
 
 begin
 	return inheritMethod().Sale;
@@ -13437,8 +12829,6 @@ end;
 getModelObjectClass
 {
 getModelObjectClass() : Class protected;
-// Who		When		Ticket		Details
-// Dan T	04/04/2023	EDS-9		Implement SaleTA class
 
 begin
 	return Sale;
@@ -13447,8 +12837,6 @@ end;
 initialize
 {
 initialize() updating;
-// Who		When		Ticket		Details
-// Dan T	04/04/2023	EDS-9		Implement SaleTA class
 
 begin
 	inheritMethod();
@@ -13471,8 +12859,6 @@ lockForCreate() : Boolean protected;
 //
 // Parameters:	None
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	04/04/2023	EDS-10		Implement RetailSaleTA class
 
 begin
 	if not self.tryLockingObject( app.myCompany.allSalesByItem ) then
@@ -13495,8 +12881,6 @@ lockForDelete() : Boolean protected;
 //
 // Parameters:	None
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	04/04/2023	EDS-10		Implement RetailSaleTA class
 
 begin
 	if not self.tryLockingObject( app.myCompany.allSalesByItem ) then
@@ -13519,8 +12903,6 @@ lockForModify() : Boolean protected;
 //
 // Parameters:	None
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	04/04/2023	EDS-10		Implement RetailSaleTA class
 
 begin
 	return true;
@@ -13539,8 +12921,6 @@ lockForUpdate(): Boolean protected;
 //
 // Parameters:	None
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	04/04/2023	EDS-10		Implement RetailSaleTA class
 
 begin
 	// Is the key value on the object changing.  If it is, then we need to lock the collection
@@ -13556,8 +12936,6 @@ end;
 populateFromObject
 {
 populateFromObject( pSale : Sale ) updating;
-// Who		When		Ticket		Details
-// Dan T	04/04/2023	EDS-9		Implement SaleTA class
 
 begin
 	inheritMethod( pSale );
@@ -13573,8 +12951,6 @@ end;
 doPreValidate
 {
 doPreValidate() updating;
-// Who		When		Ticket		Details
-// Dan T	26/06/2023	EDS-31.v2	Shop forms not handling a deleted sale item
 
 begin
 	inheritMethod();
@@ -13601,9 +12977,6 @@ doValidate( pValidationType : Integer ) : Boolean updating;
 // Parameters:	pValidationType 	- 	The type of operation being performed 
 //										e.g. Create, Update, Delete
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	04/04/2023	EDS-9		Implement SaleTA class
-// Dan T	21/06/2023	EDS-75		Update Translatable Strings
 
 begin
 	inheritMethod( pValidationType );
@@ -13616,15 +12989,15 @@ begin
 	// validate price
 	if self.salePrice = null then
 		// price cannot be null
-		self.addError( $RetailSalePriceRequired, Focus_Price );		// EDS-75
+		self.addError( $RetailSalePriceRequired, Focus_Price );		
 	elseif self.salePrice < 0 then
 		// price annot be less than 0
-		self.addError( $RetailPriceInvalid, Focus_Price );		// EDS-75
+		self.addError( $RetailPriceInvalid, Focus_Price );		
 	endif;
 	
 	// validate timestamp is valid
 	if self.dateSold = null or not self.dateSold.isValid() then
-		self.addError( $SoldDateNotValid, Focus_Timestamp );		// EDS-75
+		self.addError( $SoldDateNotValid, Focus_Timestamp );		
 	endif;
 	
 	return self.hasNoErrors();
@@ -13642,8 +13015,6 @@ getModelObject() : RetailSale;
 //
 // Parameters:	None
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	04/04/2023	EDS-10		Implement RetailSaleTA class
 
 begin
 	return inheritMethod().RetailSale;
@@ -13661,8 +13032,6 @@ getModelObjectClass() : Class protected;
 //
 // Parameters:	None
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	04/04/2023	EDS-10		Implement RetailSaleTA class
 
 begin
 	return RetailSale;
@@ -13681,9 +13050,6 @@ initialize() updating;
 //
 // Parameters:	None
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	04/04/2023	EDS-10		Implement RetailSaleTA class
-// Dan T	20/04/2023	EDS-30		Set a default timestamp value
 
 vars
 	timestamp : TimeStamp;
@@ -13708,8 +13074,6 @@ lockForCreate() : Boolean protected;
 //
 // Parameters:	None
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	04/04/2023	EDS-10		Implement RetailSaleTA class
 
 begin
 	if not inheritMethod() then
@@ -13736,8 +13100,6 @@ lockForDelete() : Boolean protected;
 //
 // Parameters:	None
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	04/04/2023	EDS-10		Implement RetailSaleTA class
 
 begin
 	if not inheritMethod() then
@@ -13764,8 +13126,6 @@ lockForUpdate() : Boolean protected;
 //
 // Parameters:	None
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	04/04/2023	EDS-10		Implement RetailSaleTA class
 
 begin
 	if not inheritMethod() then
@@ -13795,8 +13155,6 @@ populateFromObject( pRetailSale : RetailSale ) updating;
 //
 // Parameters:	pRetailSale - The RetailSale Model to copy the attributes from
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	04/04/2023	EDS-10		Implement RetailSaleTA class
 
 begin
 	inheritMethod( pRetailSale );
@@ -13824,8 +13182,6 @@ doValidate( pValidationType : Integer ) : Boolean updating;
 // Parameters:	pValidationType 	- 	The type of operation being performed 
 //										e.g. Create, Update, Delete
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	04/04/2023	EDS-11		Implement TenderSaleTA class
 
 begin
 	inheritMethod( pValidationType );
@@ -13855,8 +13211,6 @@ getModelObject() : TenderSale;
 //
 // Parameters:	None
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	04/04/2023	EDS-11		Implement TenderSaleTA class
 
 begin
 	return inheritMethod().TenderSale;
@@ -13874,8 +13228,6 @@ getModelObjectClass() : Class protected;
 //
 // Parameters:	None
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	04/04/2023	EDS-11		Implement TenderSaleTA class
 
 begin
 	return TenderSale;
@@ -13894,8 +13246,6 @@ initialize() updating;
 //
 // Parameters:	None
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	04/04/2023	EDS-11		Implement TenderSaleTA class
 
 begin
 	inheritMethod();
@@ -13916,8 +13266,6 @@ lockForCreate(): Boolean protected;
 //
 // Parameters:	None
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	04/04/2023	EDS-11		Implement TenderSaleTA class
 
 begin
 	if not inheritMethod() then
@@ -13944,8 +13292,6 @@ lockForDelete() : Boolean protected;
 //
 // Parameters:	None
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	04/04/2023	EDS-11		Implement TenderSaleTA class
 
 begin
 	if not inheritMethod() then
@@ -13972,8 +13318,6 @@ lockForUpdate() : Boolean protected;
 //
 // Parameters:	None
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	04/04/2023	EDS-11		Implement TenderSaleTA class
 
 begin
 	if not inheritMethod() then
@@ -14003,8 +13347,6 @@ populateFromObject( pTenderSale : TenderSale ) updating;
 //
 // Parameters:	pTenderSale - The TenderSale Model to copy the attributes from
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	04/04/2023	EDS-11		Implement TenderSaleTA class
 
 begin
 	inheritMethod( pTenderSale );
@@ -14028,8 +13370,6 @@ addItem( pItem : Item; pOffer : Decimal ) : Boolean updating;
 //
 // Returns:		True if the item was added to the cart, otherwise returns False
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	21/07/2023	EDS-99		Change ShoppingCartTA to use proxy class
 
 vars
 	cartItem : CartItem;
@@ -14106,9 +13446,6 @@ clearErrorsOnSubordinateTAs() updating, protected;
 //
 // Parameters: 	None
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	27/04/2023	EDS-30.v2	ShoppingCartTA::checkoutCart to use persisting framework
-// Dan T	21/07/2023	EDS-99		Change ShoppingCartTA to use proxy class
 
 vars
 	cartItem : CartItem;
@@ -14116,11 +13453,11 @@ vars
 begin
 	inheritMethod();
 	
-	foreach cartItem in self.allCartItems do			// EDS-99
-		if cartItem.myItem.isKindOf(RetailItem) then	// EDS-99
-			cartItem.myRetailSaleTA.clearErrors();		// EDS-99
+	foreach cartItem in self.allCartItems do			
+		if cartItem.myItem.isKindOf(RetailItem) then	
+			cartItem.myRetailSaleTA.clearErrors();		
 		else
-			cartItem.myTenderTA.clearErrors();			// EDS-99
+			cartItem.myTenderTA.clearErrors();			
 		endif;
 	endforeach;
 end;
@@ -14137,8 +13474,6 @@ clearWarningsOnSubordinateTAs() updating, protected;
 //
 // Parameters: 	None
 // ---------------------------------------------------------------------------------
-// Dan T	27/04/2023	EDS-30.v2	ShoppingCartTA::checkoutCart to use persisting framework
-// Dan T	21/07/2023	EDS-99		Change ShoppingCartTA to use proxy class
 
 vars
 	cartItem : CartItem;
@@ -14146,11 +13481,11 @@ vars
 begin
 	inheritMethod();
 	
-	foreach cartItem in self.allCartItems do			// EDS-99
-		if cartItem.myItem.isKindOf( RetailItem ) then	// EDS-99
-			cartItem.myRetailSaleTA.clearWarnings();	// EDS-99
+	foreach cartItem in self.allCartItems do			
+		if cartItem.myItem.isKindOf( RetailItem ) then	
+			cartItem.myRetailSaleTA.clearWarnings();	
 		else
-			cartItem.myTenderTA.clearWarnings();		// EDS-99
+			cartItem.myTenderTA.clearWarnings();		
 		endif;
 	endforeach;
 end;
@@ -14169,14 +13504,9 @@ contains( pItem : Item ) : Boolean;
 //
 // Returns:		True if the item was found, otherwise returns False
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	16/06/2023	EDS-31		Shop forms not handling a deleted sale item
-// Dan T	10/07/2023	EDS-88	 	Rename SaleItem classes to improve clarity
-// Dan T	10/07/2023	EDS-87	 	Erewhon System Housekeeping (Renamed Method)
-// Dan T	21/07/2023	EDS-99		Change ShoppingCartTA to use proxy class
 	
 begin
-	return allCartItems[ pItem ] <> null;	// EDS-99
+	return allCartItems[ pItem ] <> null;	
 end;
 }
 createSubordinateObjects
@@ -14194,9 +13524,6 @@ createSubordinateObjects() : Boolean updating, protected;
 //
 // Parameters: 	None
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	27/04/2023	EDS-30.v2	ShoppingCartTA::checkoutCart to use persisting framework
-// Dan T	21/07/2023	EDS-99		Change ShoppingCartTA to use proxy class
 
 vars
 	cartItem : CartItem;
@@ -14224,8 +13551,6 @@ end;
 delete
 {
 delete() updating;
-// Who		When		Ticket		Details
-// Dan T	26/06/2023	EDS-31.v2	Shop forms not handling a deleted sale item
 
 begin
 	self.endNotificationForSubscriber( self );
@@ -14234,8 +13559,6 @@ end;
 doAbortTransactionCleanupForSubordinateObjects
 {
 doAbortTransactionCleanupForSubordinateObjects() protected;
-// Who		When		Ticket		Details
-// Dan T	21/07/2023	EDS-99		Change ShoppingCartTA to use proxy class
 
 vars
 	cartItem : CartItem;
@@ -14244,10 +13567,10 @@ begin
 	inheritMethod();
 	
 	foreach cartItem in self.allCartItems do
-		if cartItem.myItem.isKindOf( RetailItem ) then				// EDS-99
-			cartItem.myRetailSaleTA.doAbortTransactionCleanup();	// EDS-99
+		if cartItem.myItem.isKindOf( RetailItem ) then				
+			cartItem.myRetailSaleTA.doAbortTransactionCleanup();	
 		else
-			cartItem.myTenderTA.doAbortTransactionCleanup();		// EDS-99
+			cartItem.myTenderTA.doAbortTransactionCleanup();		
 		endif;
 	endforeach;
 end;
@@ -14264,9 +13587,6 @@ doPreValidate() updating;
 //
 // Returns:		N/A
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	19/07/2023	EDS-98		Create DotNetExposures and C# App
-// Dan T	21/07/2023	EDS-99		Change ShoppingCartTA to use proxy class
 
 vars
 	cartItem : CartItem;
@@ -14275,10 +13595,10 @@ begin
 	inheritMethod();
 	
 	foreach cartItem in self.allCartItems do
-		if cartItem.myItem.isKindOf( RetailItem ) then	// EDS-99
-			cartItem.myRetailSaleTA.doPreValidate();	// EDS-99
+		if cartItem.myItem.isKindOf( RetailItem ) then	
+			cartItem.myRetailSaleTA.doPreValidate();	
 		else
-			cartItem.myTenderTA.doPreValidate();		// EDS-99
+			cartItem.myTenderTA.doPreValidate();		
 		endif;
 	endforeach;
 end;
@@ -14286,8 +13606,6 @@ end;
 doValidate
 {
 doValidate( pValidationType : Integer ): Boolean updating;
-// Dan T	27/04/2023	EDS-30.v2	ShoppingCartTA::checkoutCart to use persisting framework
-// Dan T	21/07/2023	EDS-99		Change ShoppingCartTA to use proxy class
 
 vars
 	cartItem : CartItem;
@@ -14306,14 +13624,14 @@ begin
 	
 	foreach cartItem in self.allCartItems do
 		if cartItem.myItem.isKindOf( RetailItem )
-		and not cartItem.myRetailSaleTA.doValidate( pValidationType ) then	// EDS-99
-			self.copyErrors( cartItem.myRetailSaleTA );						// EDS-99
-			continue;														// EDS-99
+		and not cartItem.myRetailSaleTA.doValidate( pValidationType ) then	
+			self.copyErrors( cartItem.myRetailSaleTA );						
+			continue;														
 		endif;
 		
 		if cartItem.myItem.isKindOf( TenderItem )
-		and not cartItem.myTenderTA.doValidate( pValidationType ) then		// EDS-99
-			self.copyErrors( cartItem.myTenderTA );							// EDS-99
+		and not cartItem.myTenderTA.doValidate( pValidationType ) then		
+			self.copyErrors( cartItem.myTenderTA );							
 		endif;
 	endforeach;
 	
@@ -14333,8 +13651,6 @@ getCartTotal() : Decimal;
 //
 // Returns:		A decimal of the total cart value
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	21/07/2023	EDS-99		Change ShoppingCartTA to use proxy class
 
 vars
 	cartItem : CartItem;
@@ -14380,15 +13696,11 @@ end;
 initialize
 {
 initialize() updating;
-// Who		When		Ticket		Details
-// Dan T	18/04/2023	EDS-30		Reimplement the Shop Client Form
-// Dan T	27/04/2023	EDS-30.v2	ShoppingCartTA::clearCart method removed
-// Dan T	21/07/2023	EDS-99		Change ShoppingCartTA to use proxy class
 
 begin
 	inheritMethod();
 	
-	self.allCartItems.purge();			// EDS-99
+	self.allCartItems.purge();			
 end;
 }
 isEmpty
@@ -14404,21 +13716,14 @@ isEmpty() : Boolean;
 // Returns:		True is the shopping cart has no items
 //				False if the shopping cart contains items
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	20/04/2023	EDS-30		Reimplement the Shop Client Form
-// Dan T	10/07/2023	EDS-87	 	Erewhon System Housekeeping (Renamed Method)
-// Dan T	21/07/2023	EDS-99		Change ShoppingCartTA to use proxy class
 
 begin
-	return self.allCartItems.isEmpty();	// EDS-99
+	return self.allCartItems.isEmpty();	
 end;
 }
 lockForCreate
 {
 lockForCreate(): Boolean protected;
-// Who		When		Ticket		Details
-// Dan T	18/04/2023	EDS-30		Reimplement the Shop Client Form
-// Dan T	27/04/2023	EDS-30.v2	ShoppingCartTA::lockForXXXXX getMtModelObject deleted
 
 
 begin
@@ -14426,11 +13731,11 @@ begin
 		return false;
 	endif;
 	
-	if not self.tryLockingObject( app.getClient().allRetailSales ) then		// EDS-30.v2
+	if not self.tryLockingObject( app.getClient().allRetailSales ) then		
 		return false;
 	endif;
 	
-	if not self.tryLockingObject( app.getClient().allTenderSales ) then		// EDS-30.v2
+	if not self.tryLockingObject( app.getClient().allTenderSales ) then		
 		return false;
 	endif;
 	
@@ -14440,9 +13745,6 @@ end;
 lockForDelete
 {
 lockForDelete(): Boolean protected;
-// Who		When		Ticket		Details
-// Dan T	18/04/2023	EDS-30		Reimplement the Shop Client Form
-// Dan T	27/04/2023	EDS-30.v2	ShoppingCartTA::lockForXXXXX getMtModelObject deleted
 
 
 begin
@@ -14450,11 +13752,11 @@ begin
 		return false;
 	endif;
 	
-	if not self.tryLockingObject( app.getClient().allRetailSales ) then		// EDS-30.v2
+	if not self.tryLockingObject( app.getClient().allRetailSales ) then		
 		return false;
 	endif;
 	
-	if not self.tryLockingObject( app.getClient().allTenderSales ) then		// EDS-30.v2
+	if not self.tryLockingObject( app.getClient().allTenderSales ) then		
 		return false;
 	endif;
 	
@@ -14464,8 +13766,6 @@ end;
 lockForModify
 {
 lockForModify(): Boolean protected;
-// Who		When		Ticket		Details
-// Dan T	18/04/2023	EDS-30		Reimplement the Shop Client Form
 
 begin
 	return true;
@@ -14474,20 +13774,17 @@ end;
 lockForUpdate
 {
 lockForUpdate(): Boolean protected;
-// Who		When		Ticket		Details
-// Dan T	18/04/2023	EDS-30		Reimplement the Shop Client Form
-// Dan T	27/04/2023	EDS-30.v2	ShoppingCartTA::lockForXXXXX getMtModelObject deleted
 
 begin
 	if not self.tryLockingObject( app.myCompany.allSalesByItem ) then
 		return false;
 	endif;
 	
-	if not self.tryLockingObject( app.getClient().allRetailSales ) then		// EDS-30.v2
+	if not self.tryLockingObject( app.getClient().allRetailSales ) then		
 		return false;
 	endif;
 	
-	if not self.tryLockingObject( app.getClient().allTenderSales ) then		// EDS-30.v2
+	if not self.tryLockingObject( app.getClient().allTenderSales ) then		
 		return false;
 	endif;
 	
@@ -14506,11 +13803,9 @@ removeItem( pItem : Item ) : Boolean updating;
 //
 // Returns:		True if the item was removed, otherwise returns False
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	21/07/2023	EDS-99		Change ShoppingCartTA to use proxy class
 
 vars
-	cartItem : CartItem;		// EDS-99
+	cartItem : CartItem;		
 	
 begin
 	self.clearErrors();
@@ -14520,8 +13815,8 @@ begin
 		return false;
 	endif;
 	
-	cartItem := self.allCartItems[ pItem ];		// EDS-99
-	delete cartItem;							// EDS-99
+	cartItem := self.allCartItems[ pItem ];		
+	delete cartItem;							
 
 	return self.hasNoErrors();
 end;
@@ -14536,27 +13831,20 @@ size() : Integer;
 //
 // Returns:     An integer representing the size (total items) of the cart items
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	30/05/2023	EDS-58		Refactor FormWebClientSaleItems to use the TAF
-// Dan T	10/07/2023	EDS-87	 	Erewhon System Housekeeping (Renamed Method)
-// Dan T	21/07/2023	EDS-99		Change ShoppingCartTA to use proxy class
 
 begin
-	return self.allCartItems.size();	// EDS-99
+	return self.allCartItems.size();	
 end;
 }
 sysNotification
 {
 sysNotification(eventType: Integer; pItem : Item; eventTag: Integer) updating;
-// Who		When		Ticket		Details
-// Dan T	26/06/2023	EDS-31.v2	Shop forms not handling a deleted sale item
-// Dan T	21/07/2023	EDS-99		Change ShoppingCartTA to use proxy class
 
 begin
 	// Delete the TA if the item gets deleted
 	if eventType = Object_Delete_Event then
 		if self.contains( pItem ) then
-			self.removeItem( pItem );	// EDS-99
+			self.removeItem( pItem );	
 		endif;
 	endif;
 end;
@@ -14567,8 +13855,6 @@ end;
 doPreValidate
 {
 doPreValidate() updating;
-// Who		When		Ticket		Details
-// Dan T	26/06/2023	EDS-31.v2	Shop forms not handling a deleted sale item
 
 begin
 	inheritMethod();
@@ -14596,14 +13882,8 @@ doValidate( pValidationType : Integer ) : Boolean updating;
 // Parameters:	pValidationType - 	The type of operation being performed 
 //									e.g. Create, Update, Delete
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	05/04/2023	EDS-18		Implement TenderTA class
-// Dan T	26/05/2023	EDS-50		Refactor TestTender unit tests
 //									Added check for same client placing a lower tender offer
-// Dan T	19/06/2023	EDS-64		Tenders Still Available After Closure Date
-// Dan T	20/06/2023	EDS-50.v2	Refactor TestTender unit tests
 //									Changed Validation Order
-// Dan T	21/06/2023	EDS-75		Update Translatable Strings
 
 vars
 	tender : Tender;
@@ -14618,50 +13898,50 @@ begin
 	
 	// validate myTenderItem
 	if self.myTenderItem = null then
-		addError( $TenderItemRequired, Focus_TenderItem );		// EDS-75
+		addError( $TenderItemRequired, Focus_TenderItem );		
 		
 	else
 		// Check that the Tender Item has not already been sold
 		if self.myTenderItem.mySale <> null then
-			addError( $TenderItemAlreadySold, Focus_TenderItem );	// EDS-75
-			return false; // No need to continue validating							// EDS-64
+			addError( $TenderItemAlreadySold, Focus_TenderItem );	
+			return false; // No need to continue validating							
 		endif;
 		
 		// Check that the tender item has not already closed
-		if self.myTenderItem.isClosed() then									// EDS-64
-			addError( $TenderItemAlreadyClosed, Focus_TenderItem );	// EDS-75	// EDS-64
-			return false; // No need to continue validating							// EDS-64
+		if self.myTenderItem.isClosed() then									
+			addError( $TenderItemAlreadyClosed, Focus_TenderItem );	
+			return false; // No need to continue validating							
 		endif;
 		
 		// validate offer
 		if self.offer <= 0 then
 			// cannot be null or less than 0
-			addError( $TenderOfferLessThanZero, Focus_TenderItem );	// EDS-75
+			addError( $TenderOfferLessThanZero, Focus_TenderItem );	
 			
 		elseif self.offer < self.myTenderItem.price then
 			// offer price cannot be less than reserve prive
-			addError( $TenderOfferLessThanReserve, Focus_TenderItem );	// EDS-75
+			addError( $TenderOfferLessThanReserve, Focus_TenderItem );	
 		endif;
 		
 		// validate that the tender was not already placed
-		if self.myClient <> null and self.offer <> null then				// EDS-50
-			foreach tender in self.myTenderItem.allTendersByOfferTime do 								// EDS-50
-				if tender.myClient = self.myClient and self.offer = tender.offer then						// EDS-50
-					addError( $TenderAlreadyPlaced, Focus_Offer );	// EDS-75								// EDS-50
-				endif;																						// EDS-50
-			endforeach;																						// EDS-50
-		endif;																								// EDS-50
+		if self.myClient <> null and self.offer <> null then				
+			foreach tender in self.myTenderItem.allTendersByOfferTime do 								
+				if tender.myClient = self.myClient and self.offer = tender.offer then						
+					addError( $TenderAlreadyPlaced, Focus_Offer );	
+				endif;																						
+			endforeach;																						
+		endif;																								
 		
 	endif;
 	
 	// validate myClient
 	if self.myClient = null then
-		addError( $ClientRequired, Focus_Client );	// EDS-75
+		addError( $ClientRequired, Focus_Client );	
 	endif;
 	
 	// validate timeStamp
 	if self.dateTendered = null or not self.dateTendered.isValid() then
-		addError( $TimeStampInvalid, Focus_Timestamp );	// EDS-75
+		addError( $TimeStampInvalid, Focus_Timestamp );	
 	endif;
 	
 	return self.hasNoErrors();
@@ -14679,8 +13959,6 @@ getModelObject() : Tender;
 //
 // Parameters:	None
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	05/04/2023	EDS-18		Implement TenderTA class
 
 begin
 	return inheritMethod().Tender;
@@ -14698,8 +13976,6 @@ getModelObjectClass() : Class protected;
 //
 // Parameters:	None
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	05/04/2023	EDS-18		Implement TenderTA class
 
 begin
 	return Tender;
@@ -14718,10 +13994,6 @@ initialize() updating;
 //
 // Parameters:	None
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	05/04/2023	EDS-18		Implement TenderTA class
-// Dan T	20/04/2023	EDS-30		Set default timestamp value
-// Dan T	27/04/2023	EDS-30.v2	TenderTA::initialize remove default timestamp value
 
 begin
 	inheritMethod();
@@ -14730,7 +14002,7 @@ begin
 	self.myTenderSale := null;
 	self.myTenderItem := null;
 	self.offer := null;
-	self.dateTendered := null;				// EDS-30.v2
+	self.dateTendered := null;				
 end;
 }
 lockForCreate
@@ -14746,8 +14018,6 @@ lockForCreate() : Boolean protected;
 //
 // Parameters:	None
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	05/04/2023	EDS-18		Implement TenderTA class
 
 begin
 	if not self.tryLockingObject( self.myClient.allTenders ) then
@@ -14778,8 +14048,6 @@ lockForDelete() : Boolean protected;
 //
 // Parameters:	None
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	05/04/2023	EDS-18		Implement TenderTA class
 
 begin
 	if not self.tryLockingObject( self.myClient.allTenders ) then
@@ -14810,8 +14078,6 @@ lockForModify() : Boolean protected;
 //
 // Parameters:	None
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	05/04/2023	EDS-18		Implement TenderTA class
 
 begin
 	return true;
@@ -14830,8 +14096,6 @@ lockForUpdate() : Boolean protected;
 //
 // Parameters:	None
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	05/04/2023	EDS-18		Implement TenderTA class
 
 begin
 	if not self.tryLockingObject( self.myClient.allTenders ) then
@@ -14868,8 +14132,6 @@ populateFromObject( pTender : Tender ) updating;
 //
 // Parameters:	pTender - The Tender Model to copy the attributes from
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	05/04/2023	EDS-18		Implement TenderTA class
 
 begin
 	inheritMethod( pTender );
@@ -15061,8 +14323,6 @@ create() updating;
 //
 // Returns:		N/A
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	22/06/2023	EDS-74		SaleItemSearch - remove parameterized constructor
 
 begin
 	self.initialize();
@@ -15081,28 +14341,22 @@ doSearch() updating;
 //
 // Returns:		N/A
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	22/06/2023	EDS-74		SaleItemSearch - remove parameterized constructor
-// Dan T	07/07/2023	EDS-83	 	Optimize Item Search
-// Dan T	10/07/2023	EDS-88	 	Rename SaleItem classes to improve clarity
-// Dan T	12/07/2023	EDS-83.v2 	Optimise Item Search (Notify invalid price range)
-// Dan T	25/07/2023	EDS-97 		Use one ErewhonException class
 
 vars
 	item : Item;
 	
 begin
-	// EDS-83.v2 Check that the price range is valid
+	
 	if self.priceLow <> null and self.priceHigh <> null
 	and self.priceLow > self.priceHigh then
-		app.raiseErewhonException( Ex_500002_Min_higher_than_max );	// EDS-97
+		app.raiseErewhonException( Ex_500002_Min_higher_than_max );	
 	endif;
 
 	// Clear any previous results and get most recent sale items 
 	self.allItems.clear();
 	
-	foreach item in app.myCompany.allItems where self.itemMatchesSearch( item ) do	// EDS-83
-		self.allItems.add( item );													// EDS-83
+	foreach item in app.myCompany.allItems where self.itemMatchesSearch( item ) do	
+		self.allItems.add( item );													
 	endforeach;
 end;
 }
@@ -15118,8 +14372,6 @@ initialize() updating;
 //
 // Returns:		N/A
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	22/06/2023	EDS-74		SaleItemSearch - remove parameterized constructor
 
 begin
 	// Setup Initial Search State
@@ -15148,10 +14400,6 @@ itemMatchesSearch( pItem : Item ) : Boolean protected;
 //
 // Returns:		A boolean representing whether an Item matches the search
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	07/07/2023	EDS-83	 	Optimize Item Search
-// Dan T	10/07/2023	EDS-88	 	Rename SaleItem classes to improve clarity
-// Dan T	11/08/2023	EDS-102		Create View Tender Form
 
 begin
 	// Check if closed tenders should be included
@@ -15174,18 +14422,18 @@ begin
 	endif;
 	
 	// Check if item matches the agent
-	if self.myAgent <> null 						// EDS-102
-	and pItem.myAgent <> self.myAgent then			// EDS-102
-		return false;								// EDS-102
+	if self.myAgent <> null 						
+	and pItem.myAgent <> self.myAgent then			
+		return false;								
 	endif;
 	
 	// Check if item matches the client
-	if self.myClient <> null 								// EDS-102
-	and pItem.mySale = null then							// EDS-102
-		return false;										// EDS-102
+	if self.myClient <> null 								
+	and pItem.mySale = null then							
+		return false;										
 	elseif self.myClient <> null and pItem.mySale <> null then
-		if pItem.mySale.myClient <> self.myClient then		// EDS-102
-			return false;									// EDS-102
+		if pItem.mySale.myClient <> self.myClient then		
+			return false;									
 		endif;
 	endif;
 	
@@ -15249,8 +14497,6 @@ doSearch() updating;
 //
 // Returns:		N/A
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	11/07/2023	EDS-90 		Create Tenders View Form
 
 vars
 	tender : Tender;
@@ -15276,8 +14522,6 @@ tenderMatchesSearch( pTender : Tender ) : Boolean protected;
 //
 // Returns:		N/A
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	11/07/2023	EDS-90 		Create Tenders View Form
 
 begin
 	// Filter Agent
@@ -15483,8 +14727,6 @@ generateGUID() : String typeMethod;
 //
 // Returns:		A UUID String
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	30/06/2023	EDS-81		Change SaleItems to use GUIDs
 
 begin
 	return app.generateUuid( VariantDce ).uuidAsString();
@@ -15502,8 +14744,6 @@ getServerDate() : Date typeMethod;
 //
 // Returns:		The current date of the server node
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	30/06/2023	EDS-81		Change SaleItems to use GUIDs
 
 begin
 	return app.actualTimeServer().date();
@@ -15521,8 +14761,6 @@ getServerTimeStamp() : TimeStamp typeMethod;
 //
 // Returns:		The current timestamp of the server node
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	30/06/2023	EDS-81		Change SaleItems to use GUIDs
 
 begin
 	return app.actualTimeServer();
@@ -15557,11 +14795,9 @@ toDo( pDescription : String );
 //
 // Returns:		N/A
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	28/06/2023	EDS-80		Turn all remaining string literals into translatable strings
 
 begin
-	write( $ToDo & pDescription );	// EDS-80
+	write( $ToDo & pDescription );	
 end;
 }
 unitTestsToFix
@@ -15594,13 +14830,11 @@ end;
 canAccessConfiguration
 {
 canAccessConfiguration(userName: String): Integer updating;
-// Who		When		Ticket		Details
-// Dan T	28/06/2023	EDS-80		Turn all remaining string literals into translatable strings
 
 begin
-	if userName = Admin then	// EDS-80
+	if userName = Admin then	
 		return FULL_ACCESS;
-	elseif userName = User then	// EDS-80
+	elseif userName = User then	
 		return READ_ONLY_ACCESS;
 	else
 		return NO_ACCESS;
@@ -15610,8 +14844,6 @@ end;
 canAccessDesigner
 {
 canAccessDesigner(userName: String): Integer updating;
-// Who		When		Ticket		Details
-// Dan T	28/06/2023	EDS-80		Turn all remaining string literals into translatable strings
 
 begin
 	if userName = Admin then
@@ -15634,8 +14866,6 @@ deleteAllData();
 //
 // Purpose:		Purges the company and all related objects
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	28/06/2023	EDS-80		Turn all remaining string literals into translatable strings
 
 vars
 	company : Company;
@@ -15679,7 +14909,7 @@ begin
 
 	commitTransaction;
 	
-	app.msgBox( $DataDeletedSuccessfully, $Success, MsgBox_OK_Only );	// EDS-80
+	app.msgBox( $DataDeletedSuccessfully, $Success, MsgBox_OK_Only );	
 	
 end;
 }
@@ -15731,8 +14961,6 @@ initializeData();
 //              "Browse For Folder" dialog and click OK. The database will then
 //              be initialized.
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	28/06/2023	EDS-80		Turn all remaining string literals into translatable strings
 
 vars
 	dataLoader : InitialDataLoader;
@@ -15743,7 +14971,7 @@ begin
 	// Ask for the directory containing the initial data files
 	create fileFolder transient;
 	
-	dirPath := fileFolder.browseForFolder( $SelectDataDirectory, app.dbPath() ); 	// EDS-80
+	dirPath := fileFolder.browseForFolder( $SelectDataDirectory, app.dbPath() ); 	
 	
 	if dirPath <> null then
 		// Create our data loader and initialize the database
@@ -15768,10 +14996,6 @@ buildCompany();
  Parameters: 	None
  Returns: 		N/A
  ------------------------------------------------------------------------------------------------*/
-// Who		When		Ticket		Details
-// Dan T	28/04/2023	EDS-36		Refactor TestAgent unit tests
-// Dan T	19/06/2023	EDS-72		Remove code number limit for Sale Items
-// Dan T	10/07/2023	EDS-88	 	Rename SaleItem classes to improve clarity
 
 vars
 	date : Date;
@@ -15986,8 +15210,6 @@ end;
 createAgent
 {
 createAgent() : Agent protected;
-// Who		When		Ticket		Details
-// Dan T	28/04/2023	EDS-36		Refactor TestAgent unit tests
 
 vars
 	agentTA : AgentTA;
@@ -16016,8 +15238,6 @@ end;
 createClient
 {
 createClient() : Client protected;
-// Who		When		Ticket		Details
-// Dan T	28/04/2023	EDS-36		Refactor TestAgent unit tests
 
 vars
 	clientTA : ClientTA;
@@ -16045,9 +15265,6 @@ end;
 createCommissionRate
 {
 createCommissionRate( pItemCategory : ItemCategory; pRate : Decimal; pAgent : Agent ) : CommissionRate protected, clientExecution;
-// Who		When		Ticket		Details
-// Dan T	28/04/2023	EDS-36		Refactor TestAgent unit tests
-// Dan T	10/07/2023	EDS-88	 	Rename SaleItem classes to improve clarity
 
 vars
 	commissionRateTA : CommissionRateTA;
@@ -16067,9 +15284,6 @@ end;
 createCompany
 {
 createCompany() : Company protected;
-// Who		When		Ticket		Details
-// Dan T	01/05/2023	EDS-36		Refactor TestAgent unit tests - not directly related to ticket but Agent UTs use this method
-// Dan T	04/07/2023	EDS-82		Fix Unit Tests
 
 vars
 	companyTA : CompanyTA;
@@ -16079,7 +15293,7 @@ begin
 	create companyTA transient;
 	create addressTA transient;
 	
-	companyTA.name := "Jade Software Corporation";	// EDS-82
+	companyTA.name := "Jade Software Corporation";	
 	
 	addressTA.street := "5 Sir Gill Simpson Drive";
 	addressTA.city := "Christchurch";
@@ -16098,8 +15312,6 @@ end;
 createCountry
 {
 createCountry() : Country protected;
-// Who		When		Ticket		Details
-// Dan T	28/04/2023	EDS-36		Refactor TestAgent unit tests
 
 vars
 	countryTA: CountryTA;
@@ -16121,9 +15333,6 @@ createItemCategory(
 		pPrefix : String;
 		pDescription : String
 		) : ItemCategory protected;
-// Who		When		Ticket		Details
-// Dan T	28/04/2023	EDS-36		Refactor TestAgent unit tests
-// Dan T	10/07/2023	EDS-88	 	Rename SaleItem classes to improve clarity
 
 vars
 	itemCategoryTA : ItemCategoryTA;
@@ -16143,8 +15352,6 @@ end;
 createRegion
 {
 createRegion( pCountry : Country ) : Region protected;
-// Who		When		Ticket		Details
-// Dan T	28/04/2023	EDS-36		Refactor TestAgent unit tests
 
 vars
 	regionTA: RegionTA;
@@ -16166,11 +15373,6 @@ createRetailItem( 	pRegion : Region;
 						pItemCategory : ItemCategory; 
 						pAgent : Agent 
 					) : RetailItem protected;
-// Who		When		Ticket		Details
-// Dan T	28/04/2023	EDS-36		Refactor TestAgent unit tests
-// Dan T	19/06/2023	EDS-72		Remove code number limit for Sale Items
-// Dan T	04/07/2023	EDS-82		Fix Unit Tests, removed code number
-// Dan T	10/07/2023	EDS-88	 	Rename SaleItem classes to improve clarity
 
 vars
 	retailItemTA : RetailItemTA;
@@ -16195,9 +15397,6 @@ end;
 createRetailSale
 {
 createRetailSale( pRetailItem : RetailItem; pClient : Client ) : RetailSale protected;
-// Who		When		Ticket		Details
-// Dan T	28/04/2023	EDS-36		Refactor TestAgent unit tests
-// Dan T	10/07/2023	EDS-88	 	Rename SaleItem classes to improve clarity
 
 vars
 	retailSaleTA : RetailSaleTA;
@@ -16219,9 +15418,6 @@ end;
 createTender
 {
 createTender( pClient : Client; pTenderItem : TenderItem; pOffer : Decimal ) : Tender protected;
-// Who		When		Ticket		Details
-// Dan T	28/04/2023	EDS-36		Refactor TestAgent unit tests
-// Dan T	10/07/2023	EDS-88	 	Rename SaleItem classes to improve clarity
 
 vars
 	tenderTA : TenderTA;
@@ -16246,11 +15442,6 @@ createTenderItem(	pRegion : Region;
 						pItemCategory : ItemCategory;
 						pAgent : Agent
 					) : TenderItem protected;
-// Who		When		Ticket		Details
-// Dan T	28/04/2023	EDS-36		Refactor TestAgent unit tests
-// Dan T	19/06/2023	EDS-72		Remove code number limit for Sale Items
-// Dan T	04/07/2023	EDS-82		Fix Unit Tests, removed code number
-// Dan T	10/07/2023	EDS-88	 	Rename SaleItem classes to improve clarity
 
 vars
 	tenderItemTA : TenderItemTA;
@@ -16277,9 +15468,6 @@ end;
 createTenderSale
 {
 createTenderSale( pTenderItem : TenderItem; pTender : Tender; pClient : Client ) : TenderSale protected;
-// Who		When		Ticket		Details
-// Dan T	28/04/2023	EDS-36		Refactor TestAgent unit tests
-// Dan T	10/07/2023	EDS-88	 	Rename SaleItem classes to improve clarity
 
 vars
 	tenderSaleTA : TenderSaleTA;
@@ -16302,8 +15490,6 @@ end;
 setUp
 {
 setUp() unitTestBefore, updating;
-// Who		When		Ticket		Details
-// Dan T	23/05/2023	EDS-39		Refactor TestAddress unit tests
 
 vars
 	addressTA	: AddressTA;
@@ -16334,8 +15520,6 @@ end;
 tearDown
 {
 tearDown() unitTestAfter, updating;
-// Who		When		Ticket		Details
-// Dan T	23/05/2023	EDS-39		Refactor TestAddress unit tests
 
 begin
 	// Delete the instance of the address and company
@@ -16348,8 +15532,6 @@ end;
 testGetDebugString
 {
 testGetDebugString() unitTest, updating;
-// Who		When		Ticket		Details
-// Dan T	23/05/2023	EDS-39		Refactor TestAddress unit tests
 
 vars
 	oid : String;
@@ -16362,8 +15544,6 @@ end;
 testGetFormattedAddress
 {
 testGetFormattedAddress() unitTest;
-// Who		When		Ticket		Details
-// Dan T	23/05/2023	EDS-39		Refactor TestAddress unit tests
 
 begin
 	self.assertEquals( "314 Nohwere Lane, Christchurch, New Zealand", self.myAddress.getFormattedAddress() );
@@ -16372,8 +15552,6 @@ end;
 testProperties
 {
 testProperties() unitTest;
-// Who		When		Ticket		Details
-// Dan T	23/05/2023	EDS-39		Refactor TestAddress unit tests
 
 begin
 	self.assertEquals( "314 Nohwere Lane", self.myAddress.street );
@@ -16388,8 +15566,6 @@ end;
 testUpdate
 {
 testUpdate() unitTest, updating;
-// Who		When		Ticket		Details
-// Dan T	23/05/2023	EDS-39		Refactor TestAddress unit tests
 
 vars
 	addressTA : AddressTA;
@@ -16424,8 +15600,6 @@ end;
 testUpdateInTransStateException
 {
 testUpdateInTransStateException() unitTest, updating;
-// Who		When		Ticket		Details
-// Dan T	23/05/2023	EDS-39		Refactor TestAddress unit tests
 constants
 	UPDATE_OUTSIDE_TRANSACTION : Integer = 1048;
 	
@@ -16455,8 +15629,6 @@ end;
 testValidateEmailRegex
 {
 testValidateEmailRegex() unitTest;
-// Who		When		Ticket		Details
-// Dan T	21/06/2023	EDS-75		Update Translatable Strings
 
 constants
 	Valid_Email_01 		: String = "valid@email.com";
@@ -16489,28 +15661,28 @@ begin
 	addressTA.email := Invalid_Email_01;
 	self.assertFalse( addressTA.doValidate( ValidationType_Create ) );
 	self.assertEquals( 1, addressTA.allErrors.size() );
-	self.assertEquals( $AddressEmailInvalidFormat, addressTA.allErrors[ 1 ] );	// EDS-75
+	self.assertEquals( $AddressEmailInvalidFormat, addressTA.allErrors[ 1 ] );	
 	
 	// Test Invalid Email # 2
 	addressTA.allErrors.clear();
 	addressTA.email := Invalid_Email_02;
 	self.assertFalse( addressTA.doValidate( ValidationType_Create ) );
 	self.assertEquals( 1, addressTA.allErrors.size() );
-	self.assertEquals( $AddressEmailInvalidFormat, addressTA.allErrors[ 1 ] );	// EDS-75
+	self.assertEquals( $AddressEmailInvalidFormat, addressTA.allErrors[ 1 ] );	
 	
 	// Test Invalid Email # 3
 	addressTA.allErrors.clear();
 	addressTA.email := Invalid_Email_03;
 	self.assertFalse( addressTA.doValidate( ValidationType_Create ) );
 	self.assertEquals( 1, addressTA.allErrors.size() );
-	self.assertEquals( $AddressEmailInvalidFormat, addressTA.allErrors[ 1 ] );	// EDS-75
+	self.assertEquals( $AddressEmailInvalidFormat, addressTA.allErrors[ 1 ] );	
 	
 	// Test Invalid Email # 4
 	addressTA.allErrors.clear();
 	addressTA.email := Invalid_Email_04;
 	self.assertFalse( addressTA.doValidate( ValidationType_Create ) );
 	self.assertEquals( 1, addressTA.allErrors.size() );
-	self.assertEquals( $AddressEmailInvalidFormat, addressTA.allErrors[ 1 ] );	// EDS-75
+	self.assertEquals( $AddressEmailInvalidFormat, addressTA.allErrors[ 1 ] );	
 	
 epilog
 	delete addressTA;
@@ -16519,9 +15691,6 @@ end;
 testValidationFail
 {
 testValidationFail() unitTest;
-// Who		When		Ticket		Details
-// Dan T	23/05/2023	EDS-39		Refactor TestAddress unit tests
-// Dan T	21/06/2023	EDS-75		Update Translatable Strings
 
 vars
 	addressTA : AddressTA;
@@ -16533,11 +15702,11 @@ begin
 	* ARRANGE *
 	***********/	
 	create expectedErrors transient;
-	expectedErrors.add( $AddressStreetRequired );	// EDS-75
-	expectedErrors.add( $AddressCityRequired );		// EDS-75
-	expectedErrors.add( $AddressCountryRequired );	// EDS-75
-	expectedErrors.add( $AddressPhoneRequired );	// EDS-75
-	expectedErrors.add( $AddressEmailRequired );	// EDS-75
+	expectedErrors.add( $AddressStreetRequired );	
+	expectedErrors.add( $AddressCityRequired );		
+	expectedErrors.add( $AddressCountryRequired );	
+	expectedErrors.add( $AddressPhoneRequired );	
+	expectedErrors.add( $AddressEmailRequired );	
 	
 	addressTA := create AddressTA transient;
 	
@@ -16564,8 +15733,6 @@ end;
 testValidationSuccess
 {
 testValidationSuccess() unitTest;
-// Who		When		Ticket		Details
-// Dan T	23/05/2023	EDS-39		Refactor TestAddress unit tests
 
 vars
 	addressTA : AddressTA;
@@ -16602,8 +15769,6 @@ end;
 setUp
 {
 setUp() unitTestBefore, updating;
-// Who		When		Ticket		Details
-// Dan T	01/05/2023	EDS-36		Refactor TestAgent unit tests
 
 begin
 	// Create a Company
@@ -16619,8 +15784,6 @@ end;
 tearDown
 {
 tearDown() unitTestAfter, updating;
-// Who		When		Ticket		Details
-// Dan T	01/05/2023	EDS-36		Refactor TestAgent unit tests
 
 begin
 	// Delete the instance of the company
@@ -16638,8 +15801,6 @@ testAddCommissionRate() unitTest;
  Parameters: 	None
  Returns: 		N/A
  ------------------------------------------------------------------------------------------------*/
-// Who		When		Ticket		Details
-// Dan T	28/04/2023	EDS-36		Refactor TestAgent unit tests
 
 vars
 	percentage : Decimal[ 5, 2 ];
@@ -16689,9 +15850,6 @@ end;
 testAddCommissionRateInTransStateException
 {
 testAddCommissionRateInTransStateException() unitTest;
-// Who		When		Ticket		Details
-// Dan T	01/05/2023	EDS-36		Refactor TestAgent unit tests
-// Dan T	10/07/2023	EDS-88	 	Rename SaleItem classes to improve clarity
 
 constants
 	UpdateOutsideTransaction : Integer = 1048;
@@ -16727,9 +15885,6 @@ end;
 testAddCommissionRateWithExistingRate
 {
 testAddCommissionRateWithExistingRate() unitTest, updating;
-// Who		When		Ticket		Details
-// Dan T	01/05/2023	EDS-36		Refactor TestAgent unit tests
-// Dan T	10/07/2023	EDS-88	 	Rename SaleItem classes to improve clarity
 
 vars
 	commissionRate1 : CommissionRate;
@@ -16763,10 +15918,6 @@ end;
 testAddDuplicateCommissionRate
 {
 testAddDuplicateCommissionRate() unitTest;
-// Who		When		Ticket		Details
-// Dan T	01/05/2023	EDS-36		Refactor TestAgent unit tests
-// Dan T	21/06/2023	EDS-75		Update Translatable Strings
-// Dan T	10/07/2023	EDS-88	 	Rename SaleItem classes to improve clarity
 
 vars
 	itemCategory : ItemCategory;
@@ -16800,7 +15951,7 @@ begin
 	// Duplicate rate should not be saved
 	self.assertFalse( isPersisted );
 	self.assertEquals( 1, commissionRateTA.allErrors.size() );
-	self.assertEquals( $ItemCategoryHasCommissionRate, commissionRateTA.allErrors[ 1 ]);	// EDS-75
+	self.assertEquals( $ItemCategoryHasCommissionRate, commissionRateTA.allErrors[ 1 ]);	
 	
 epilog
 	delete commissionRateTA;
@@ -16809,10 +15960,6 @@ end;
 testAddNullCommissionRate
 {
 testAddNullCommissionRate() unitTest;
-// Who		When		Ticket		Details
-// Dan T	01/05/2023	EDS-36		Refactor TestAgent unit tests
-// Dan T	21/06/2023	EDS-75		Update Translatable Strings
-// Dan T	10/07/2023	EDS-88	 	Rename SaleItem classes to improve clarity
 
 vars
 	itemCategory : ItemCategory;
@@ -16838,7 +15985,7 @@ begin
 	* ASSERT *
 	**********/
 	self.assertTrue( commissionRateTA.allErrors.size() = 1 );
-	self.assertTrue( commissionRateTA.allErrors.includes( $CommissionRatePercentageInvalid ) );	// EDS-75
+	self.assertTrue( commissionRateTA.allErrors.includes( $CommissionRatePercentageInvalid ) );	
 	
 epilog
 	delete commissionRateTA;
@@ -16847,9 +15994,6 @@ end;
 testCommissionRateForCategory
 {
 testCommissionRateForCategory() unitTest;
-// Who		When		Ticket		Details
-// Dan T	01/05/2023	EDS-36		Refactor TestAgent unit tests
-// Dan T	10/07/2023	EDS-88	 	Rename SaleItem classes to improve clarity
 
 vars
 	commissionRate1 : CommissionRate;
@@ -16894,9 +16038,6 @@ end;
 testGetAllSales
 {
 testGetAllSales() unitTest;
-// Who		When		Ticket		Details
-// Dan T	01/05/2023	EDS-36		Refactor TestAgent unit tests
-// Dan T	10/07/2023	EDS-88	 	Rename SaleItem classes to improve clarity
 
 vars
 	client : Client;
@@ -16950,8 +16091,6 @@ end;
 testGetAllSalesEmptyAgent
 {
 testGetAllSalesEmptyAgent() unitTest;
-// Who		When		Ticket		Details
-// Dan T	01/05/2023	EDS-36		Refactor TestAgent unit tests
 
 begin
 	self.assertEquals( 0, self.myAgent.allSoldItems.size() );	
@@ -16960,9 +16099,6 @@ end;
 testGetCommissionRateForCategory
 {
 testGetCommissionRateForCategory() unitTest;
-// Who		When		Ticket		Details
-// Dan T	02/05/2023	EDS-36		Refactor TestAgent unit tests
-// Dan T	10/07/2023	EDS-88	 	Rename SaleItem classes to improve clarity
 
 vars
 	commissionRate1 : CommissionRate;
@@ -16993,24 +16129,19 @@ end;
 testGetDebugString
 {
 testGetDebugString() unitTest;
-// Who		When		Ticket		Details
-// Dan T	01/05/2023	EDS-36		Refactor TestAgent unit tests
 //									No change required
-// Dan T	28/06/2023	EDS-80		Turn all remaining string literals into translatable strings
 
 vars
 	oid : String;
 	
 begin
 	oid := self.myAgent.getOidString();
-	self.assertEquals( oid & Space & $Agent, self.myAgent.getDebugString() );	// EDS-80
+	self.assertEquals( oid & Space & $Agent, self.myAgent.getDebugString() );	
 end;
 }
 testGetNameString
 {
 testGetNameString() unitTest;
-// Who		When		Ticket		Details
-// Dan T	01/05/2023	EDS-36		Refactor TestAgent unit tests
 
 begin
 	/*********
@@ -17022,8 +16153,6 @@ end;
 testInitialProperties
 {
 testInitialProperties() unitTest;
-// Who		When		Ticket		Details
-// Dan T	01/05/2023	EDS-36		Refactor TestAgent unit tests
 
 begin
 	/*********
@@ -17053,9 +16182,6 @@ end;
 testNullCommissionRateForCategory
 {
 testNullCommissionRateForCategory() unitTest;
-// Who		When		Ticket		Details
-// Dan T	01/05/2023	EDS-36		Refactor TestAgent unit tests
-// Dan T	10/07/2023	EDS-88	 	Rename SaleItem classes to improve clarity
 
 vars
 	commissionRate1 : CommissionRate;
@@ -17085,8 +16211,6 @@ end;
 testUpdateAgentAndSubordinate
 {
 testUpdateAgentAndSubordinate() unitTest, updating;
-// Who		When		Ticket		Details
-// Dan T	01/05/2023	EDS-36		Refactor TestAgent unit tests
 
 vars
 	agentTA : AgentTA;
@@ -17146,8 +16270,6 @@ end;
 testUpdateInTransStateException
 {
 testUpdateInTransStateException() unitTest;
-// Who		When		Ticket		Details
-// Dan T	02/05/2023	EDS-36		Refactor TestAgent unit tests
 
 constants
 	UpdateOutsideTransaction : Integer = 1048;
@@ -17190,8 +16312,6 @@ end;
 setUp
 {
 setUp() unitTestBefore, updating;
-// Who		When		Ticket		Details
-// Dan T	23/05/2023	EDS-38		Refactor TestClient unit tests
 
 begin
 	// Create a Company
@@ -17208,8 +16328,6 @@ end;
 tearDown
 {
 tearDown() unitTestAfter, updating;
-// Who		When		Ticket		Details
-// Dan T	23/05/2023	EDS-38		Refactor TestClient unit tests
 
 begin
 	// Delete the instance of the company
@@ -17221,9 +16339,6 @@ end;
 testCreateTender
 {
 testCreateTender() unitTest;
-// Who		When		Ticket		Details
-// Dan T	23/05/2023	EDS-38		Refactor TestClient unit tests
-// Dan T	10/07/2023	EDS-88	 	Rename SaleItem classes to improve clarity
 
 vars
 	tender : Tender;
@@ -17280,10 +16395,6 @@ end;
 testGetAllSales
 {
 testGetAllSales() unitTest;
-// Who		When		Ticket		Details
-// Dan T	23/05/2023	EDS-38		Refactor TestClient unit tests
-// Dan T	19/06/2023	EDS-72		Remove code number limit for Sale Items
-// Dan T	30/06/2023	EDS-81		Change SaleItems to use GUIDs 
 //									Changed Collection to allItemsByNumber
 
 vars
@@ -17374,13 +16485,13 @@ begin
 	* ASSERT & ACT *
 	****************/
 
-	self.assertEquals( 2, app.myCompany.allItems.size() );	// EDS-81
+	self.assertEquals( 2, app.myCompany.allItems.size() );	
 	
-	firstSale := app.myCompany.allItems.first();	// EDS-81
+	firstSale := app.myCompany.allItems.first();	
 	self.assertTrue( firstSale.mySale.isKindOf( RetailSale ) );
 	self.assertEquals( retailSaleDescription, firstSale.mySale.myItem.description );
 	
-	lastSale := app.myCompany.allItems.last();	// EDS-81
+	lastSale := app.myCompany.allItems.last();	
 	self.assertTrue( lastSale.mySale.isKindOf( TenderSale ) );
 	self.assertEquals( tenderSaleDescription, lastSale.mySale.myItem.description );
 
@@ -17393,19 +16504,14 @@ end;
 testGetDebugString
 {
 testGetDebugString() unitTest;
-// Who		When		Ticket		Details
-// Dan T	23/05/2023	EDS-38		Refactor TestClient unit tests
-// Dan T	28/06/2023	EDS-80		Turn all remaining string literals into translatable strings
 
 begin
-	self.assertEquals( self.myClient.getOidString() & Space & $Client, myClient.getDebugString() );	// EDS-80
+	self.assertEquals( self.myClient.getOidString() & Space & $Client, myClient.getDebugString() );	
 end;
 }
 testUpdate
 {
 testUpdate() unitTest;
-// Who		When		Ticket		Details
-// Dan T	23/05/2023	EDS-38		Refactor TestClient unit tests
 
 vars
 	clientTA : ClientTA;
@@ -17470,8 +16576,6 @@ end;
 testUpdateInTransStateException
 {
 testUpdateInTransStateException() unitTest;
-// Who		When		Ticket		Details
-// Dan T	23/05/2023	EDS-38		Refactor TestClient unit tests
 
 constants
 	UPDATE_OUTSIDE_TRANSACTION : Integer = 1048;
@@ -17532,8 +16636,6 @@ end;
 setUp
 {
 setUp() unitTestBefore, updating;
-// Who		When		Ticket		Details
-// Dan T	26/05/2023	EDS-51		Refactor TestComissionRate unit tests
 
 vars
 	commissionRateTA : CommissionRateTA;
@@ -17568,8 +16670,6 @@ end;
 tearDown
 {
 tearDown() unitTestAfter, updating;
-// Who		When		Ticket		Details
-// Dan T	26/05/2023	EDS-51		Refactor TestComissionRate unit tests
 
 begin
 	// Delete the instance of the company
@@ -17581,8 +16681,6 @@ end;
 testClearAllAgents
 {
 testClearAllAgents() updating, unitTest;
-// Who		When		Ticket		Details
-// Dan T	26/05/2023	EDS-51		Refactor TestComissionRate unit tests
 
 vars
 	commissionRateTA : CommissionRateTA;
@@ -17627,9 +16725,6 @@ end;
 testDuplicateRateError
 {
 testDuplicateRateError() unitTest;
-// Who		When		Ticket		Details
-// Dan T	26/05/2023	EDS-51		Refactor TestComissionRate unit tests
-// Dan T	21/06/2023	EDS-75		Update Translatable Strings
 
 vars
 	comissionRateTA : CommissionRateTA;
@@ -17660,7 +16755,7 @@ begin
 	// Duplicate rate should not be saved
 	self.assertFalse( isPersisted );
 	self.assertEquals( 1, comissionRateTA.allErrors.size() );
-	self.assertEquals( $ItemCategoryHasCommissionRate, comissionRateTA.allErrors[ 1 ]);	// EDS-75
+	self.assertEquals( $ItemCategoryHasCommissionRate, comissionRateTA.allErrors[ 1 ]);	
 
 epilog
 	delete comissionRateTA;
@@ -17669,8 +16764,6 @@ end;
 testGetDebugString
 {
 testGetDebugString() unitTest;
-// Who		When		Ticket		Details
-// Dan T	26/05/2023	EDS-51		Refactor TestComissionRate unit tests
 
 begin
 	self.assertEquals( self.myCommissionRate.getOidString() & " CommissionRate: 11.00%", self.myCommissionRate.getDebugString() );
@@ -17679,8 +16772,6 @@ end;
 testNullCategory
 {
 testNullCategory() unitTest, updating;
-// Who		When		Ticket		Details
-// Dan T	26/05/2023	EDS-51		Refactor TestComissionRate unit tests
 
 vars
 	comissionRateTA : CommissionRateTA;
@@ -17719,9 +16810,6 @@ end;
 testPercentageHigh
 {
 testPercentageHigh() unitTest;
-// Who		When		Ticket		Details
-// Dan T	26/05/2023	EDS-51		Refactor TestComissionRate unit tests
-// Dan T	21/06/2023	EDS-75		Update Translatable Strings
 
 vars
 	comissionRateTA : CommissionRateTA;
@@ -17752,7 +16840,7 @@ begin
 	// Duplicate rate should not be saved
 	self.assertFalse( isPersisted );
 	self.assertEquals( 1, comissionRateTA.allErrors.size() );
-	self.assertEquals( $CommissionRatePercentageInvalid, comissionRateTA.allErrors[ 1 ]);	// EDS-75
+	self.assertEquals( $CommissionRatePercentageInvalid, comissionRateTA.allErrors[ 1 ]);	
 
 epilog
 	delete comissionRateTA;
@@ -17761,9 +16849,6 @@ end;
 testPercentageLow
 {
 testPercentageLow() unitTest;
-// Who		When		Ticket		Details
-// Dan T	26/05/2023	EDS-51		Refactor TestComissionRate unit tests
-// Dan T	21/06/2023	EDS-75		Update Translatable Strings
 
 vars
 	comissionRateTA : CommissionRateTA;
@@ -17794,7 +16879,7 @@ begin
 	// Duplicate rate should not be saved
 	self.assertFalse( isPersisted );
 	self.assertEquals( 1, comissionRateTA.allErrors.size() );
-	self.assertEquals( $CommissionRatePercentageInvalid, comissionRateTA.allErrors[ 1 ]);	// EDS-75
+	self.assertEquals( $CommissionRatePercentageInvalid, comissionRateTA.allErrors[ 1 ]);	
 
 epilog
 	delete comissionRateTA;
@@ -17803,8 +16888,6 @@ end;
 testUpdate
 {
 testUpdate() unitTest;
-// Who		When		Ticket		Details
-// Dan T	26/05/2023	EDS-51		Refactor TestComissionRate unit tests
 
 vars
 	comissionRateTA : CommissionRateTA;
@@ -17847,8 +16930,6 @@ end;
 testUpdateOutsideTransStateException
 {
 testUpdateOutsideTransStateException() unitTest;
-// Who		When		Ticket		Details
-// Dan T	26/05/2023	EDS-51		Refactor TestComissionRate unit tests
 
 constants
 	UPDATE_OUTSIDE_TRANSACTION : Integer = 1048;
@@ -17891,8 +16972,6 @@ end;
 setUp
 {
 setUp() unitTestBefore, updating;
-// Who		When		Ticket		Details
-// Dan T	23/05/2023	EDS-40		Refactor TestCompany unit tests
 
 begin
 	// Create a Company
@@ -17921,8 +17000,6 @@ end;
 tearDown
 {
 tearDown() unitTestAfter, updating;
-// Who		When		Ticket		Details
-// Dan T	23/05/2023	EDS-40		Refactor TestCompany unit tests
 
 begin
 	// Delete the instance of the company
@@ -17934,8 +17011,6 @@ end;
 testAgentAlreadyExists
 {
 testAgentAlreadyExists() unitTest;
-// Who		When		Ticket		Details
-// Dan T	23/05/2023	EDS-40		Refactor TestCompany unit tests
 
 begin
 	self.assertTrue( self.myCompany.agentExists( "John Smith" ) );
@@ -17948,8 +17023,6 @@ end;
 testClientAlreadyExists
 {
 testClientAlreadyExists() unitTest;
-// Who		When		Ticket		Details
-// Dan T	23/05/2023	EDS-40		Refactor TestCompany unit tests
 
 begin
 	self.assertTrue( self.myCompany.hasClientWithThisName( "Clive Entworth" ) );
@@ -17962,8 +17035,6 @@ end;
 testCloseTenders
 {
 testCloseTenders() unitTest;
-// Who		When		Ticket		Details
-// Dan T	23/05/2023	EDS-40		Refactor TestCompany unit tests
 
 vars
 	date : Date;
@@ -18006,8 +17077,6 @@ end;
 testCompanyHasClient
 {
 testCompanyHasClient() unitTest;
-// Who		When		Ticket		Details
-// Dan T	23/05/2023	EDS-40		Refactor TestCompany unit tests
 
 begin
 	self.assertTrue( self.myCompany.hasClientWithThisName( self.myClient.name ) );
@@ -18016,8 +17085,6 @@ end;
 testCreateAddress
 {
 testCreateAddress() unitTest;
-// Who		When		Ticket		Details
-// Dan T	24/05/2023	EDS-40		Refactor TestCompany unit tests
 
 vars
 	addressTA : AddressTA;
@@ -18081,8 +17148,6 @@ end;
 testCreateAgent
 {
 testCreateAgent() unitTest;
-// Who		When		Ticket		Details
-// Dan T	24/05/2023	EDS-40		Refactor TestCompany unit tests
 
 vars
 	agent : Agent;
@@ -18159,9 +17224,6 @@ end;
 testCreateCategory
 {
 testCreateCategory() unitTest;
-// Who		When		Ticket		Details
-// Dan T	24/05/2023	EDS-40		Refactor TestCompany unit tests
-// Dan T	10/07/2023	EDS-88	 	Rename SaleItem classes to improve clarity
 
 vars
 	itemCategoryTA : ItemCategoryTA;
@@ -18204,8 +17266,6 @@ end;
 testCreateClient
 {
 testCreateClient() unitTest;
-// Who		When		Ticket		Details
-// Dan T	24/05/2023	EDS-40		Refactor TestCompany unit tests
 
 vars
 	client 	: Client;
@@ -18276,8 +17336,6 @@ end;
 testCreateCompany
 {
 testCreateCompany() unitTest, updating;
-// Who		When		Ticket		Details
-// Dan T	24/05/2023	EDS-40		Refactor TestCompany unit tests
 
 vars
 	company : Company;
@@ -18331,8 +17389,6 @@ end;
 testCreateCountry
 {
 testCreateCountry() unitTest;
-// Who		When		Ticket		Details
-// Dan T	24/05/2023	EDS-40		Refactor TestCompany unit tests
 
 vars
 	country : Country;
@@ -18369,10 +17425,6 @@ end;
 testCreateRetailItem
 {
 testCreateRetailItem() unitTest;
-// Who		When		Ticket		Details
-// Dan T	24/05/2023	EDS-40		Refactor TestCompany unit tests
-// Dan T	19/06/2023	EDS-72		Remove code number limit for Sale Items
-// Dan T	10/07/2023	EDS-88	 	Rename SaleItem classes to improve clarity
 
 vars
 	retailItem : RetailItem;
@@ -18434,8 +17486,6 @@ end;
 testCreateRetailSale
 {
 testCreateRetailSale() unitTest;
-// Who		When		Ticket		Details
-// Dan T	24/05/2023	EDS-40		Refactor TestCompany unit tests
 
 vars
 	retailSale : RetailSale;
@@ -18475,10 +17525,6 @@ end;
 testCreateTenderItem
 {
 testCreateTenderItem() unitTest;
-// Who		When		Ticket		Details
-// Dan T	24/05/2023	EDS-40		Refactor TestCompany unit tests
-// Dan T	19/06/2023	EDS-72		Remove code number limit for Sale Items
-// Dan T	10/07/2023	EDS-88	 	Rename SaleItem classes to improve clarity
 
 vars
 	tenderItem : TenderItem;
@@ -18541,8 +17587,6 @@ end;
 testCreateTenderSale
 {
 testCreateTenderSale() unitTest;
-// Who		When		Ticket		Details
-// Dan T	24/05/2023	EDS-40		Refactor TestCompany unit tests
 
 vars
 	tenderSale : TenderSale;
@@ -18584,8 +17628,6 @@ end;
 testGetAllSales
 {
 testGetAllSales() unitTest;
-// Who		When		Ticket		Details
-// Dan T	24/05/2023	EDS-40		Refactor TestCompany unit tests
 
 vars
 	retailSale : RetailSale;
@@ -18613,8 +17655,6 @@ end;
 testGetDebugString
 {
 testGetDebugString() unitTest;
-// Who		When		Ticket		Details
-// Dan T	24/05/2023	EDS-40		Refactor TestCompany unit tests
 
 begin
 	self.assertEquals( self.myCompany.getOidString() & " Company", self.myCompany.getDebugString() );
@@ -18623,14 +17663,6 @@ end;
 testGetNextCode
 {
 testGetNextCode() unitTest, updating;
-// Who		When		Ticket		Details
-// Dan T	24/05/2023	EDS-40		Refactor TestCompany unit tests
-// Dan T	19/06/2023	EDS-72		Remove code number limit for Sale Items
-// Dan T	20/06/2023	EDS-40.v2	Fixed Failing Test
-// Dan T	27/06/2023	EDS-77		Improve logic for getting next code number
-// Dan T	30/06/2023	EDS-81		Change SaleItems to use GUIDs 
-// Dan T	04/07/2023	EDS-82		Fix Unit Tests
-// Dan T	10/07/2023	EDS-88	 	Rename SaleItem classes to improve clarity
 
 vars
 	prefix : String;
@@ -18649,7 +17681,7 @@ begin
 	* ARRANGE *
 	***********/
 
-	exisitngRetailItem := self.createRetailItem( self.myRegion, self.myItemCategory, self.myAgent );		// EDS-40.v2
+	exisitngRetailItem := self.createRetailItem( self.myRegion, self.myItemCategory, self.myAgent );		
 	
 	// get the existing prefix and number 
 	prefix := exisitngRetailItem.myItemCategory.prefix;
@@ -18662,7 +17694,7 @@ begin
 	create retailItemTA transient;
 	
 	// Get next code with existing items
-	newCode := retailItemTA.getNextCodeNumber();		// EDS-77	// EDS-81
+	newCode := retailItemTA.getNextCodeNumber();		
 	
 	// Create a new item with new prefix 
 	
@@ -18682,7 +17714,7 @@ begin
 	* ASSERT *
 	**********/
 	self.assertEquals( code + 1, newCode );
-	self.assertEquals( code + 1, retailItem.codeNumber );	// EDS-40.v2
+	self.assertEquals( code + 1, retailItem.codeNumber );	
 	
 epilog 
 	delete retailItemTA;
@@ -18691,8 +17723,6 @@ end;
 testGetNumOfLocations
 {
 testGetNumOfLocations() unitTest;
-// Who		When		Ticket		Details
-// Dan T	24/05/2023	EDS-40		Refactor TestCompany unit tests
 
 vars
 	count	: Integer;
@@ -18706,8 +17736,6 @@ end;
 testGetRegion
 {
 testGetRegion() unitTest;
-// Who		When		Ticket		Details
-// Dan T	24/05/2023	EDS-40		Refactor TestCompany unit tests
 
 vars
 	region1 : Region;
@@ -18730,8 +17758,6 @@ end;
 testInitialProperties
 {
 testInitialProperties() unitTest;
-// Who		When		Ticket		Details
-// Dan T	24/05/2023	EDS-40		Refactor TestCompany unit tests
 
 begin
 	self.assertEquals( "Jade Software Corporation", self.myCompany.name );
@@ -18743,8 +17769,6 @@ end;
 setUp
 {
 setUp() unitTestBefore, updating;
-// Who		When		Ticket		Details
-// Dan T	24/05/2023	EDS-41		Refactor TestCountry unit tests
 
 begin
 	// Create a Company
@@ -18761,8 +17785,6 @@ end;
 tearDown
 {
 tearDown() unitTestAfter, updating;
-// Who		When		Ticket		Details
-// Dan T	24/05/2023	EDS-41		Refactor TestCountry unit tests
 
 begin
 	// Delete the instance of the company
@@ -18774,8 +17796,6 @@ end;
 testCreateRegion
 {
 testCreateRegion() unitTest;
-// Who		When		Ticket		Details
-// Dan T	24/05/2023	EDS-41		Refactor TestCountry unit tests
 
 vars
 	regionTA : RegionTA;
@@ -18825,9 +17845,6 @@ end;
 testDuplicateCountry
 {
 testDuplicateCountry() updating, unitTest;
-// Who		When		Ticket		Details
-// Dan T	24/05/2023	EDS-41		Refactor TestCountry unit tests
-// Dan T	21/06/2023	EDS-75		Update Translatable Strings
 
 vars
 	countryTA : CountryTA;
@@ -18840,7 +17857,7 @@ begin
 	isPersisted := countryTA.persistEntity( TransactionType_Persist );
 	
 	self.assertEquals( 1, countryTA.allErrors.size() );
-	self.assertEquals( $CountryAlreadyExists, countryTA.allErrors[ 1 ] );	// EDS-75
+	self.assertEquals( $CountryAlreadyExists, countryTA.allErrors[ 1 ] );	
 	self.assertFalse( isPersisted );
 	
 epilog
@@ -18850,8 +17867,6 @@ end;
 testGetDebugString
 {
 testGetDebugString() unitTest;
-// Who		When		Ticket		Details
-// Dan T	24/05/2023	EDS-41		Refactor TestCountry unit tests
 
 begin
 	self.assertEquals( self.myCountry.getOidString() & " Country: France", self.myCountry.getDebugString() );
@@ -18860,9 +17875,6 @@ end;
 testInvalidName
 {
 testInvalidName() unitTest;
-// Who		When		Ticket		Details
-// Dan T	24/05/2023	EDS-41		Refactor TestCountry unit tests
-// Dan T	21/06/2023	EDS-75		Update Translatable Strings
 
 vars
 	countryTA : CountryTA;
@@ -18875,7 +17887,7 @@ begin
 	isPersisted := countryTA.persistEntity( TransactionType_Persist );
 	
 	self.assertEquals( 1, countryTA.allErrors.size() );
-	self.assertEquals( $CountryNameRequired, countryTA.allErrors[ 1 ] );	// EDS-75
+	self.assertEquals( $CountryNameRequired, countryTA.allErrors[ 1 ] );	
 	self.assertFalse( isPersisted );
 	
 epilog
@@ -18885,8 +17897,6 @@ end;
 testUpdate
 {
 testUpdate() unitTest;
-// Who		When		Ticket		Details
-// Dan T	24/05/2023	EDS-41		Refactor TestCountry unit tests
 
 vars
 	countryTA : CountryTA;
@@ -18918,8 +17928,6 @@ end;
 testUpdateCountryToSameName
 {
 testUpdateCountryToSameName() unitTest, updating;
-// Who		When		Ticket		Details
-// Dan T	24/05/2023	EDS-41		Refactor TestCountry unit tests
 
 vars
 	countryTA : CountryTA;
@@ -18951,8 +17959,6 @@ end;
 testUpdateOutsideTransactionStateException
 {
 testUpdateOutsideTransactionStateException() unitTest;
-// Who		When		Ticket		Details
-// Dan T	24/05/2023	EDS-41		Refactor TestCountry unit tests
 
 constants
 	UPDATE_OUTSIDE_TRANSACTION : Integer = 1048;
@@ -18987,8 +17993,6 @@ end;
 setUp
 {
 setUp() updating, unitTestBefore;
-// Who		When		Ticket		Details
-// Dan T	25/05/2023	EDS-47		Refactor TestSaleItem unit tests
 
 begin
 	// Create a Company
@@ -19019,8 +18023,6 @@ end;
 tearDown
 {
 tearDown() updating, unitTestAfter;
-// Who		When		Ticket		Details
-// Dan T	25/05/2023	EDS-47		Refactor TestSaleItem unit tests
 
 begin
 	// Delete the instance of the company
@@ -19032,11 +18034,7 @@ end;
 testGetPrice
 {
 testGetPrice() unitTest;
-// Who		When		Ticket		Details
-// Dan T	25/05/2023	EDS-47		Refactor TestSaleItem unit tests
-// Dan T	30/06/2023	EDS-81		Change SaleItems to use GUIDs 
 //									Changed Collection to allItemsByNumber
-// Dan T	10/07/2023	EDS-88	 	Rename SaleItem classes to improve clarity
 
 vars
 	item : Item;
@@ -19045,9 +18043,9 @@ begin
 	/*********
 	* ASSERT *
 	**********/
-	self.assertEquals( 2, self.myCompany.allItems.size() );	// EDS-81
+	self.assertEquals( 2, self.myCompany.allItems.size() );	
 	
-	foreach item in self.myCompany.allItems do		// EDS-81
+	foreach item in self.myCompany.allItems do		
 		self.assertEquals( item.price, item.getPrice() );
 	endforeach;
 end;
@@ -19055,11 +18053,7 @@ end;
 testGetTypeString
 {
 testGetTypeString() unitTest;
-// Who		When		Ticket		Details
-// Dan T	25/05/2023	EDS-47		Refactor TestSaleItem unit tests
-// Dan T	30/06/2023	EDS-81		Change SaleItems to use GUIDs 
 //									Changed Collection to allItemsByNumber
-// Dan T	10/07/2023	EDS-88	 	Rename SaleItem classes to improve clarity
 
 vars
 	firstItem : Item;
@@ -19069,14 +18063,14 @@ begin
 	/*******************
 	* ARRANGE / ASSERT *
 	********************/
-	firstItem := self.myCompany.allItems.first();	// EDS-81
-	lastItem := self.myCompany.allItems.last();		// EDS-81
+	firstItem := self.myCompany.allItems.first();	
+	lastItem := self.myCompany.allItems.last();		
 
 	
 	/*********
 	* ASSERT *
 	**********/
-	assertEquals( 2, self.myCompany.allItems.size() );	// EDS-81
+	assertEquals( 2, self.myCompany.allItems.size() );	
 	assertTrue( firstItem.isKindOf( RetailItem ) );
 	assertTrue( lastItem.isKindOf( TenderItem ) );
 end;
@@ -19087,8 +18081,6 @@ end;
 setUp
 {
 setUp() updating, unitTestBefore;
-// Who		When		Ticket		Details
-// Dan T	25/05/2023	EDS-48		Refactor TestRetailSaleItem unit tests
 
 begin
 	inheritMethod();
@@ -19097,8 +18089,6 @@ end;
 tearDown
 {
 tearDown() updating, unitTestAfter;
-// Who		When		Ticket		Details
-// Dan T	25/05/2023	EDS-48		Refactor TestRetailSaleItem unit tests
 
 begin
 	inheritMethod();
@@ -19107,13 +18097,6 @@ end;
 testCreateUsingNextCodeNumber
 {
 testCreateUsingNextCodeNumber() unitTest;
-// Who		When		Ticket		Details
-// Dan T	25/05/2023	EDS-48		Refactor TestRetailSaleItem unit tests
-// Dan T	19/06/2023	EDS-72		Remove code number limit for Sale Items
-// Dan T	20/06/2023	EDS-48.v2	Fixed Failing Test
-// Dan T	27/06/2023	EDS-77		Improve logic for getting next code number
-// Dan T	30/06/2023	EDS-81		Change SaleItems to use GUIDs 
-// Dan T	10/07/2023	EDS-88	 	Rename SaleItem classes to improve clarity
 
 vars
 	retailItem : RetailItem;
@@ -19133,14 +18116,14 @@ begin
 	// Get existing code prefix & number
 	codePrefix := self.myRetailItem.myItemCategory.prefix;
 	codeNumber := self.myRetailItem.codeNumber;
-	nextCodeNumber := retailItemTA.getNextCodeNumber();	// EDS-77	// EDS-81
+	nextCodeNumber := retailItemTA.getNextCodeNumber();	
 	
 	/******
 	* ACT *
 	*******/
 	// create new retail item with same code and number
-	retailItemTA.name := "Retail Item";									// EDS-48.v2
-	retailItemTA.description := "This is a description for a retail item";		// EDS-48.v2
+	retailItemTA.name := "Retail Item";									
+	retailItemTA.description := "This is a description for a retail item";		
 	retailItemTA.photo := photo;
 	retailItemTA.myRegion := self.myRegion;
 	retailItemTA.myItemCategory := self.myItemCategory;
@@ -19167,9 +18150,6 @@ end;
 testGetCode
 {
 testGetCode() unitTest;
-// Who		When		Ticket		Details
-// Dan T	25/05/2023	EDS-48		Refactor TestRetailSaleItem unit tests
-// Dan T	19/06/2023	EDS-72		Remove code number limit for Sale Items
 
 vars
 	expected : String;
@@ -19195,8 +18175,6 @@ end;
 testGetCodeNumber
 {
 testGetCodeNumber() unitTest;
-// Who		When		Ticket		Details
-// Dan T	25/05/2023	EDS-48		Refactor TestRetailSaleItem unit tests
 
 vars
 	expected : Integer;
@@ -19218,9 +18196,6 @@ end;
 testGetCodePrefix
 {
 testGetCodePrefix() unitTest;
-// Who		When		Ticket		Details
-// Dan T	25/05/2023	EDS-48		Refactor TestRetailSaleItem unit tests
-// Dan T	19/06/2023	EDS-72		Remove code number limit for Sale Items
 
 vars
 	expected : String;
@@ -19242,8 +18217,6 @@ end;
 testGetDebugString
 {
 testGetDebugString() unitTest;
-// Who		When		Ticket		Details
-// Dan T	25/05/2023	EDS-48		Refactor TestRetailSaleItem unit tests
 
 vars
 	oid : String;
@@ -19271,8 +18244,6 @@ end;
 testGetName
 {
 testGetName() unitTest;
-// Who		When		Ticket		Details
-// Dan T	25/05/2023	EDS-48		Refactor TestRetailSaleItem unit tests
 
 vars
 	description : String;
@@ -19292,8 +18263,6 @@ end;
 testGetPrice
 {
 testGetPrice() unitTest;
-// Who		When		Ticket		Details
-// Dan T	25/05/2023	EDS-48		Refactor TestRetailSaleItem unit tests
 
 vars
 	expected : Decimal[ 12, 2 ];
@@ -19319,12 +18288,7 @@ end;
 testGetSale
 {
 testGetSale() unitTest;
-// Who		When		Ticket		Details
-// Dan T	25/05/2023	EDS-48		Refactor TestRetailSaleItem unit tests
-// Dan T	19/06/2023	EDS-72		Remove code number limit for Sale Items
-// Dan T	30/06/2023	EDS-81		Change SaleItems to use GUIDs 
 //									Changed Collection to allItemsByNumber
-// Dan T	10/07/2023	EDS-88	 	Rename SaleItem classes to improve clarity
 
 vars
 	retailSale : RetailSale;
@@ -19337,7 +18301,7 @@ vars
 begin
 
 	//Pre-Condition
-	self.assertEquals( 2, self.myCompany.allItems.size() );	// EDS-81
+	self.assertEquals( 2, self.myCompany.allItems.size() );	
 	
 	/**********
 	* ARRANGE *
@@ -19397,8 +18361,6 @@ end;
 testGetTypeString
 {
 testGetTypeString() unitTest;
-// Who		When		Ticket		Details
-// Dan T	25/05/2023	EDS-48		Refactor TestRetailSaleItem unit tests
 
 begin
 	/*********
@@ -19410,10 +18372,6 @@ end;
 testUpdate
 {
 testUpdate() updating, unitTest;
-// Who		When		Ticket		Details
-// Dan T	25/05/2023	EDS-48		Refactor TestRetailSaleItem unit tests
-// Dan T	19/06/2023	EDS-72		Remove code number limit for Sale Items
-// Dan T	10/07/2023	EDS-88	 	Rename SaleItem classes to improve clarity
 
 vars
 	retailItemTA : RetailItemTA;
@@ -19486,10 +18444,6 @@ end;
 testUpdateOutsideTransStateException
 {
 testUpdateOutsideTransStateException() unitTest;
-// Who		When		Ticket		Details
-// Dan T	25/05/2023	EDS-48		Refactor TestRetailSaleItem unit tests
-// Dan T	19/06/2023	EDS-72		Remove code number limit for Sale Items
-// Dan T	10/07/2023	EDS-88	 	Rename SaleItem classes to improve clarity
 
 constants
 	UPDATE_OUTSIDE_TRANSACTION : Integer = 1048;
@@ -19560,8 +18514,6 @@ end;
 setUp
 {
 setUp() updating, unitTestBefore;
-// Who		When		Ticket		Details
-// Dan T	25/05/2023	EDS-49		Refactor TestTenderSaleItem unit tests
 
 begin
 	inheritMethod();
@@ -19570,8 +18522,6 @@ end;
 tearDown
 {
 tearDown() unitTestAfter, updating;
-// Who		When		Ticket		Details
-// Dan T	25/05/2023	EDS-49		Refactor TestTenderSaleItem unit tests
 
 begin
 	inheritMethod();
@@ -19580,14 +18530,6 @@ end;
 testCreateUsingNextCodeNumber
 {
 testCreateUsingNextCodeNumber() unitTest;
-// Who		When		Ticket		Details
-// Dan T	25/05/2023	EDS-49		Refactor TestTenderSaleItem unit tests
-// Dan T	19/06/2023	EDS-72		Remove code number limit for Sale Items
-// Dan T	20/06/2023	EDS-49.v2	Fixed Failing Test
-// Dan T	27/06/2023	EDS-77		Improve logic for getting next code number
-// Dan T	30/06/2023	EDS-81		Change SaleItems to use GUIDs 
-// Dan T	04/07/2023	EDS-82		Fix Unit Tests
-// Dan T	10/07/2023	EDS-88	 	Rename SaleItem classes to improve clarity
 
 vars
 	tenderItem : TenderItem;
@@ -19607,7 +18549,7 @@ begin
 	
 	codePrefix := self.myTenderItem.myItemCategory.prefix;
 	codeNumber := self.myTenderItem.codeNumber;
-	nextCodeNumber := tenderItemTA.getNextCodeNumber();	// EDS-77	// EDS-81
+	nextCodeNumber := tenderItemTA.getNextCodeNumber();	
 	
 	/******
 	* ACT *
@@ -19641,9 +18583,6 @@ end;
 testGetDebugString
 {
 testGetDebugString() unitTest;
-// Who		When		Ticket		Details
-// Dan T	25/05/2023	EDS-49		Refactor TestTenderSaleItem unit tests
-// Dan T	10/07/2023	EDS-88	 	Rename SaleItem classes to improve clarity
 
 vars
 	oid	: String;
@@ -19681,8 +18620,6 @@ end;
 testGetPrice
 {
 testGetPrice() unitTest;
-// Who		When		Ticket		Details
-// Dan T	25/05/2023	EDS-49		Refactor TestTenderSaleItem unit tests
 
 vars
 	price : Decimal[ 12, 2 ];
@@ -19702,8 +18639,6 @@ end;
 testGetTypeString
 {
 testGetTypeString() unitTest;
-// Who		When		Ticket		Details
-// Dan T	25/05/2023	EDS-49		Refactor TestTenderSaleItem unit tests
 
 begin
 	/*********
@@ -19715,10 +18650,6 @@ end;
 testUpdate
 {
 testUpdate() unitTest;
-// Who		When		Ticket		Details
-// Dan T	25/05/2023	EDS-49		Refactor TestTenderSaleItem unit tests
-// Dan T	19/06/2023	EDS-72		Remove code number limit for Sale Items
-// Dan T	10/07/2023	EDS-88	 	Rename SaleItem classes to improve clarity
 
 vars
 	tenderItemTA : TenderItemTA;
@@ -19787,10 +18718,6 @@ end;
 testUpdateOutsideTransStateException
 {
 testUpdateOutsideTransStateException() unitTest;
-// Who		When		Ticket		Details
-// Dan T	25/05/2023	EDS-49		Refactor TestTenderSaleItem unit tests
-// Dan T	19/06/2023	EDS-72		Remove code number limit for Sale Items
-// Dan T	10/07/2023	EDS-88	 	Rename SaleItem classes to improve clarity
 
 constants
 	UPDATE_OUTSIDE_TRANSACTION : Integer = 1048;
@@ -19858,8 +18785,6 @@ end;
 setUp
 {
 setUp() unitTestBefore, updating;
-// Who		When		Ticket		Details
-// Dan T	26/05/2023	EDS-46		Refactor TestSaleItemCategory unit tests
 
 begin
 	// Create a Company
@@ -19881,8 +18806,6 @@ end;
 tearDown
 {
 tearDown() unitTestAfter, updating;
-// Who		When		Ticket		Details
-// Dan T	26/05/2023	EDS-46		Refactor TestSaleItemCategory unit tests
 
 begin
 	// Delete the instance of the company
@@ -19894,10 +18817,6 @@ end;
 testAlreadyExists
 {
 testAlreadyExists() unitTest;
-// Who		When		Ticket		Details
-// Dan T	26/05/2023	EDS-46		Refactor TestSaleItemCategory unit tests
-// Dan T	21/06/2023	EDS-75		Update Translatable Strings
-// Dan T	10/07/2023	EDS-88	 	Rename SaleItem classes to improve clarity
 
 vars
 	itemCategoryTA : ItemCategoryTA;
@@ -19933,9 +18852,9 @@ begin
 	**********/
 	self.assertNull( itemCategoryTA.getModelObject() );
 	self.assertFalse( isPersisted );
-	self.assertEquals( 2, itemCategoryTA.allErrors.size() );	// EDS-75
-	self.assertEquals( $ItemCategoryPrefixExists, itemCategoryTA.allErrors[ 1 ] );	// EDS-75
-	self.assertEquals( $ItemCategoryNameExists, itemCategoryTA.allErrors[ 2 ] );	// EDS-75
+	self.assertEquals( 2, itemCategoryTA.allErrors.size() );	
+	self.assertEquals( $ItemCategoryPrefixExists, itemCategoryTA.allErrors[ 1 ] );	
+	self.assertEquals( $ItemCategoryNameExists, itemCategoryTA.allErrors[ 2 ] );	
 	
 epilog
 	delete itemCategoryTA;
@@ -19944,8 +18863,6 @@ end;
 testCreateCommissionRate
 {
 testCreateCommissionRate() unitTest;
-// Who		When		Ticket		Details
-// Dan T	26/05/2023	EDS-46		Refactor TestSaleItemCategory unit tests
 
 vars
  	commissionRate : CommissionRate;
@@ -19986,9 +18903,6 @@ end;
 testGetDebugString
 {
 testGetDebugString() unitTest;
-// Who		When		Ticket		Details
-// Dan T	26/05/2023	EDS-46		Refactor TestSaleItemCategory unit tests
-// Dan T	10/07/2023	EDS-88	 	Rename SaleItem classes to improve clarity
 
 vars
 	oid : String;
@@ -20020,9 +18934,6 @@ end;
 testInvalidDescription
 {
 testInvalidDescription() unitTest;
-// Who		When		Ticket		Details
-// Dan T	26/05/2023	EDS-46		Refactor TestSaleItemCategory unit tests
-// Dan T	21/06/2023	EDS-75		Update Translatable Strings
 
 vars
 	itemCategoryTA : ItemCategoryTA;
@@ -20055,9 +18966,9 @@ begin
 	**********/
 	self.assertNull( itemCategoryTA.getModelObject() );
 	self.assertFalse( isPersisted );
-	self.assertEquals( 2, itemCategoryTA.allErrors.size() );	// EDS-75
-	self.assertEquals( $ItemCategoryPrefixExists, itemCategoryTA.allErrors[ 1 ] );	// EDS-75
-	self.assertEquals( $ItemCategoryDescriptionRequired, itemCategoryTA.allErrors[ 2 ] );	// EDS-75
+	self.assertEquals( 2, itemCategoryTA.allErrors.size() );	
+	self.assertEquals( $ItemCategoryPrefixExists, itemCategoryTA.allErrors[ 1 ] );	
+	self.assertEquals( $ItemCategoryDescriptionRequired, itemCategoryTA.allErrors[ 2 ] );	
 	
 epilog
 	delete itemCategoryTA;
@@ -20066,10 +18977,6 @@ end;
 testInvalidName
 {
 testInvalidName() unitTest;
-// Who		When		Ticket		Details
-// Dan T	26/05/2023	EDS-46		Refactor TestSaleItemCategory unit tests
-// Dan T	21/06/2023	EDS-75		Update Translatable Strings
-// Dan T	10/07/2023	EDS-88	 	Rename SaleItem classes to improve clarity
 
 vars
 	itemCategoryTA : ItemCategoryTA;
@@ -20102,9 +19009,9 @@ begin
 	**********/
 	self.assertNull( itemCategoryTA.getModelObject() );
 	self.assertFalse( isPersisted );
-	self.assertEquals( 2, itemCategoryTA.allErrors.size() );	// EDS-75
-	self.assertEquals( $ItemCategoryPrefixExists, itemCategoryTA.allErrors[ 1 ] );	// EDS-75
-	self.assertEquals( $ItemCategoryNameRequired, itemCategoryTA.allErrors[ 2 ] );	// EDS-75
+	self.assertEquals( 2, itemCategoryTA.allErrors.size() );	
+	self.assertEquals( $ItemCategoryPrefixExists, itemCategoryTA.allErrors[ 1 ] );	
+	self.assertEquals( $ItemCategoryNameRequired, itemCategoryTA.allErrors[ 2 ] );	
 	
 epilog
 	delete itemCategoryTA;
@@ -20113,10 +19020,6 @@ end;
 testInvalidPrefix
 {
 testInvalidPrefix() unitTest;
-// Who		When		Ticket		Details
-// Dan T	26/05/2023	EDS-46		Refactor TestSaleItemCategory unit tests
-// Dan T	21/06/2023	EDS-75		Update Translatable Strings
-// Dan T	10/07/2023	EDS-88	 	Rename SaleItem classes to improve clarity
 
 vars
 	itemCategoryTA : ItemCategoryTA;
@@ -20150,7 +19053,7 @@ begin
 	self.assertNull( itemCategoryTA.getModelObject() );
 	self.assertFalse( isPersisted );
 	self.assertEquals( 1, itemCategoryTA.allErrors.size() );
-	self.assertEquals( $ItemCategoryPrefixInvalid, itemCategoryTA.allErrors[ 1 ] );		// EDS-75
+	self.assertEquals( $ItemCategoryPrefixInvalid, itemCategoryTA.allErrors[ 1 ] );		
 	
 epilog
 	delete itemCategoryTA;
@@ -20159,9 +19062,6 @@ end;
 testNullPrefix
 {
 testNullPrefix() unitTest;
-// Who		When		Ticket		Details
-// Dan T	21/06/2023	EDS-75		Update Translatable Strings
-// Dan T	10/07/2023	EDS-88	 	Rename SaleItem classes to improve clarity
 
 vars
 	itemCategoryTA : ItemCategoryTA;
@@ -20195,7 +19095,7 @@ begin
 	self.assertNull( itemCategoryTA.getModelObject() );
 	self.assertFalse( isPersisted );
 	self.assertEquals( 1, itemCategoryTA.allErrors.size() );
-	self.assertEquals( $ItemCategoryPrefixRequired, itemCategoryTA.allErrors[ 1 ] );	// EDS-75
+	self.assertEquals( $ItemCategoryPrefixRequired, itemCategoryTA.allErrors[ 1 ] );	
 	
 epilog
 	delete itemCategoryTA;
@@ -20204,9 +19104,6 @@ end;
 testUpdate
 {
 testUpdate() unitTest;
-// Who		When		Ticket		Details
-// Dan T	26/05/2023	EDS-46		Refactor TestSaleItemCategory unit tests
-// Dan T	10/07/2023	EDS-88	 	Rename SaleItem classes to improve clarity
 
 vars
 	itemCategoryTA : ItemCategoryTA;
@@ -20250,9 +19147,6 @@ end;
 testUpdateOutsideTransStateException
 {
 testUpdateOutsideTransStateException() unitTest;
-// Who		When		Ticket		Details
-// Dan T	26/05/2023	EDS-46		Refactor TestSaleItemCategory unit tests
-// Dan T	10/07/2023	EDS-88	 	Rename SaleItem classes to improve clarity
 
 constants
 	UPDATE_OUTSIDE_TRANSACTION : Integer = 1048;
@@ -20298,8 +19192,6 @@ end;
 setUp
 {
 setUp() unitTestBefore, updating;
-// Who		When		Ticket		Details
-// Dan T	24/05/2023	EDS-42		Refactor TestRegion unit tests
 
 vars
 	countryTA : CountryTA;
@@ -20341,8 +19233,6 @@ end;
 tearDown
 {
 tearDown() unitTestAfter, updating;
-// Who		When		Ticket		Details
-// Dan T	24/05/2023	EDS-42		Refactor TestRegion unit tests
 
 begin
 	// Delete the instance of the company
@@ -20354,8 +19244,6 @@ end;
 testDocumentSelfRTF
 {
 testDocumentSelfRTF() unitTest;
-// Who		When		Ticket		Details
-// Dan T	24/05/2023	EDS-42		Refactor TestRegion unit tests
 
 vars
 	actual 		: String;
@@ -20387,8 +19275,6 @@ end;
 testGetDebugString
 {
 testGetDebugString() unitTest;
-// Who		When		Ticket		Details
-// Dan T	24/05/2023	EDS-42		Refactor TestRegion unit tests
 
 begin
 	self.assertEquals(
@@ -20400,8 +19286,6 @@ end;
 testGetNames
 {
 testGetNames() unitTest;
-// Who		When		Ticket		Details
-// Dan T	24/05/2023	EDS-42		Refactor TestRegion unit tests
 
 begin
 	self.assertEquals( "New Zealand Christchurch", self.myRegion.getCountryAndRegionNames() );
@@ -20410,9 +19294,6 @@ end;
 testInvalidCountry
 {
 testInvalidCountry() updating, unitTest;
-// Who		When		Ticket		Details
-// Dan T	24/05/2023	EDS-42		Refactor TestRegion unit tests
-// Dan T	21/06/2023	EDS-75		Update Translatable Strings
 
 vars
 	regionTA : RegionTA;
@@ -20435,7 +19316,7 @@ begin
 	self.assertFalse( isPersisted );
 	self.assertNull( regionTA.getModelObject() );
 	self.assertEquals( 1, regionTA.allErrors.size() );
-	self.assertEquals( $CountryRequired, regionTA.allErrors[ 1 ] );	// EDS-75
+	self.assertEquals( $CountryRequired, regionTA.allErrors[ 1 ] );	
 	
 epilog
 	delete regionTA;
@@ -20444,9 +19325,6 @@ end;
 testInvalidName
 {
 testInvalidName() unitTest;
-// Who		When		Ticket		Details
-// Dan T	24/05/2023	EDS-42		Refactor TestRegion unit tests
-// Dan T	21/06/2023	EDS-75		Update Translatable Strings
 
 vars
 	regionTA : RegionTA;
@@ -20470,7 +19348,7 @@ begin
 	self.assertFalse( isPersisted );
 	self.assertNull( regionTA.getModelObject() );
 	self.assertEquals( 1, regionTA.allErrors.size() );
-	self.assertEquals( $RegionNameRequired, regionTA.allErrors[ 1 ] );	// EDS-75
+	self.assertEquals( $RegionNameRequired, regionTA.allErrors[ 1 ] );	
 	
 epilog
 	delete regionTA;
@@ -20479,9 +19357,6 @@ end;
 testUniqueRegion
 {
 testUniqueRegion() unitTest;
-// Who		When		Ticket		Details
-// Dan T	24/05/2023	EDS-42		Refactor TestRegion unit tests
-// Dan T	21/06/2023	EDS-75		Update Translatable Strings
 
 vars
 	regionTA : RegionTA;
@@ -20519,7 +19394,7 @@ begin
 	self.assertFalse( isPersisted );
 	self.assertNull( regionTA.getModelObject() );
 	self.assertEquals( 1, regionTA.allErrors.size() );
-	self.assertEquals( $RegionExists, regionTA.allErrors[ 1 ] );	// EDS-75
+	self.assertEquals( $RegionExists, regionTA.allErrors[ 1 ] );	
 	
 epilog
 	delete regionTA;
@@ -20528,8 +19403,6 @@ end;
 testUpdate
 {
 testUpdate() unitTest;
-// Who		When		Ticket		Details
-// Dan T	24/05/2023	EDS-42		Refactor TestRegion unit tests
 
 vars
 	regionTA : RegionTA;
@@ -20563,8 +19436,6 @@ end;
 testUpdateOutsideTransStateException
 {
 testUpdateOutsideTransStateException() unitTest;
-// Who		When		Ticket		Details
-// Dan T	24/05/2023	EDS-42		Refactor TestRegion unit tests
 
 constants
 	UPDATE_OUTSIDE_TRANSACTION : Integer = 1048;
@@ -20608,8 +19479,6 @@ end;
 setUp
 {
 setUp() updating, unitTestBefore;
-// Who		When		Ticket		Details
-// Dan T	24/05/2023	EDS-43		Refactor TestSale unit tests
 
 vars
 	date : Date;
@@ -20647,8 +19516,6 @@ end;
 tearDown
 {
 tearDown() updating, unitTestAfter;
-// Who		When		Ticket		Details
-// Dan T	24/05/2023	EDS-43		Refactor TestSale unit tests
 
 begin
 	// Delete the instance of the company
@@ -20660,8 +19527,6 @@ end;
 testGetDate
 {
 testGetDate() unitTest;
-// Who		When		Ticket		Details
-// Dan T	24/05/2023	EDS-43		Refactor TestSale unit tests
 
 vars
 	firstSale : Sale;
@@ -20691,8 +19556,6 @@ end;
 setUp
 {
 setUp() unitTestBefore, updating;
-// Who		When		Ticket		Details
-// Dan T	25/05/2023	EDS-44		Refactor TestRetailSale unit tests
 
 begin
 	inheritMethod();
@@ -20701,8 +19564,6 @@ end;
 tearDown
 {
 tearDown() unitTestAfter, updating;
-// Who		When		Ticket		Details
-// Dan T	25/05/2023	EDS-44		Refactor TestRetailSale unit tests
 
 begin
 	inheritMethod();
@@ -20711,10 +19572,6 @@ end;
 testAgentCommission
 {
 testAgentCommission() unitTest;
-// Who		When		Ticket		Details
-// Dan T	25/05/2023	EDS-44		Refactor TestRetailSale unit tests
-// Dan T	19/06/2023	EDS-72		Remove code number limit for Sale Items
-// Dan T	10/07/2023	EDS-88	 	Rename SaleItem classes to improve clarity
 
 vars
 	retailItemTA : RetailItemTA;
@@ -20780,10 +19637,6 @@ end;
 testAgentCommissionOutsideTransStateException
 {
 testAgentCommissionOutsideTransStateException() unitTest;
-// Who		When		Ticket		Details
-// Dan T	25/05/2023	EDS-44		Refactor TestRetailSale unit tests
-// Dan T	19/06/2023	EDS-72		Remove code number limit for Sale Items
-// Dan T	10/07/2023	EDS-88	 	Rename SaleItem classes to improve clarity
 
 constants
 	UPDATE_OUTSIDE_TRANSACTION : Integer = 1048;
@@ -20840,9 +19693,6 @@ end;
 testAlreadySoldException
 {
 testAlreadySoldException() unitTest;
-// Who		When		Ticket		Details
-// Dan T	25/05/2023	EDS-44		Refactor TestRetailSale unit tests
-// Dan T	21/06/2023	EDS-75		Update Translatable Strings
 
 vars
 	retailSaleTA : RetailSaleTA;
@@ -20869,17 +19719,13 @@ begin
 	**********/
 	self.assertFalse( isPersisted );
 	self.assertEquals( 1, retailSaleTA.allErrors.size() );
-	self.assertEquals( $ItemSold, retailSaleTA.allErrors[1] );	// EDS-75
+	self.assertEquals( $ItemSold, retailSaleTA.allErrors[1] );	
 	
 end;
 }
 testCreateOutsideTransStateException
 {
 testCreateOutsideTransStateException() unitTest;
-// Who		When		Ticket		Details
-// Dan T	25/05/2023	EDS-44		Refactor TestRetailSale unit tests
-// Dan T	19/06/2023	EDS-72		Remove code number limit for Sale Items
-// Dan T	10/07/2023	EDS-88	 	Rename SaleItem classes to improve clarity
 
 constants
 	UPDATE_OUTSIDE_TRANSACTION : Integer = 1048;
@@ -20925,8 +19771,6 @@ end;
 testGetDate
 {
 testGetDate() unitTest;
-// Who		When		Ticket		Details
-// Dan T	25/05/2023	EDS-44		Refactor TestRetailSale unit tests
 
 vars
 	date : Date;
@@ -20941,8 +19785,6 @@ end;
 testGetDebugString
 {
 testGetDebugString() unitTest;
-// Who		When		Ticket		Details
-// Dan T	25/05/2023	EDS-44		Refactor TestRetailSale unit tests
 
 vars
 	oid : String;
@@ -20977,9 +19819,6 @@ end;
 testInvalidClient
 {
 testInvalidClient() unitTest;
-// Who		When		Ticket		Details
-// Dan T	25/05/2023	EDS-44		Refactor TestRetailSale unit tests
-// Dan T	21/06/2023	EDS-75		Update Translatable Strings
 
 vars
 	retailSaleTA : RetailSaleTA;
@@ -21008,8 +19847,8 @@ begin
 	self.assertNull( retailSaleTA.getModelObject() );
 	self.assertFalse( isPersisted );
 	self.assertEquals( 2, retailSaleTA.allErrors.size() );
-	self.assertEquals( $ClientRequired , retailSaleTA.allErrors[1] );	// EDS-75
-	self.assertEquals( $ItemSold , retailSaleTA.allErrors[2] );		// EDS-75
+	self.assertEquals( $ClientRequired , retailSaleTA.allErrors[1] );	
+	self.assertEquals( $ItemSold , retailSaleTA.allErrors[2] );		
 epilog
 	delete retailSaleTA;
 end;
@@ -21017,9 +19856,6 @@ end;
 testInvalidItem
 {
 testInvalidItem() unitTest;
-// Who		When		Ticket		Details
-// Dan T	25/05/2023	EDS-44		Refactor TestRetailSale unit tests
-// Dan T	21/06/2023	EDS-75		Update Translatable Strings
 
 vars
 	retailSaleTA : RetailSaleTA;
@@ -21047,7 +19883,7 @@ begin
 	self.assertNull( retailSaleTA.getModelObject() );
 	self.assertFalse( isPersisted );
 	self.assertEquals( 1, retailSaleTA.allErrors.size() );
-	self.assertEquals( $ItemRequired , retailSaleTA.allErrors[1] );	// EDS-75
+	self.assertEquals( $ItemRequired , retailSaleTA.allErrors[1] );	
 	
 epilog
 	delete retailSaleTA;
@@ -21056,11 +19892,6 @@ end;
 testInvalidPrice
 {
 testInvalidPrice() unitTest;
-// Who		When		Ticket		Details
-// Dan T	25/05/2023	EDS-44		Refactor TestRetailSale unit tests
-// Dan T	19/06/2023	EDS-72		Remove code number limit for Sale Items
-// Dan T	21/06/2023	EDS-75		Update Translatable Strings
-// Dan T	10/07/2023	EDS-88	 	Rename SaleItem classes to improve clarity
 
 vars
 	retailSaleTA : RetailSaleTA;
@@ -21104,7 +19935,7 @@ begin
 	self.assertNull( retailSaleTA.getModelObject() );
 	self.assertFalse( isPersisted );
 	self.assertEquals( 1, retailSaleTA.allErrors.size() );
-	self.assertEquals( $RetailSalePriceRequired , retailSaleTA.allErrors[1] );	// EDS-75
+	self.assertEquals( $RetailSalePriceRequired , retailSaleTA.allErrors[1] );	
 	
 epilog
 	delete retailSaleTA;
@@ -21116,8 +19947,6 @@ end;
 setUp
 {
 setUp() unitTestBefore, updating;
-// Who		When		Ticket		Details
-// Dan T	25/05/2023	EDS-45		Refactor TestTenderSale unit tests
 
 begin
 	inheritMethod();
@@ -21126,8 +19955,6 @@ end;
 tearDown
 {
 tearDown() unitTestAfter, updating;
-// Who		When		Ticket		Details
-// Dan T	25/05/2023	EDS-45		Refactor TestTenderSale unit tests
 
 begin
 	inheritMethod();
@@ -21136,10 +19963,6 @@ end;
 testCreateOutsideTransStateException
 {
 testCreateOutsideTransStateException() unitTest;
-// Who		When		Ticket		Details
-// Dan T	25/05/2023	EDS-44		Refactor TestRetailSale unit tests
-// Dan T	19/06/2023	EDS-72		Remove code number limit for Sale Items
-// Dan T	10/07/2023	EDS-88	 	Rename SaleItem classes to improve clarity
 
 constants
 	UPDATE_OUTSIDE_TRANSACTION : Integer = 1048;
@@ -21183,8 +20006,6 @@ end;
 testGetDate
 {
 testGetDate() unitTest;
-// Who		When		Ticket		Details
-// Dan T	25/05/2023	EDS-45		Refactor TestTenderSale unit tests
 
 vars
 	date : Date;
@@ -21199,8 +20020,6 @@ end;
 testGetDebugString
 {
 testGetDebugString() unitTest;
-// Who		When		Ticket		Details
-// Dan T	25/05/2023	EDS-45		Refactor TestTenderSale unit tests
 
 vars
 	oid : String;
@@ -21233,8 +20052,6 @@ end;
 testGetTime
 {
 testGetTime() unitTest;
-// Who		When		Ticket		Details
-// Dan T	25/05/2023	EDS-45		Refactor TestTenderSale unit tests
 
 vars
 	time : Time;
@@ -21254,9 +20071,6 @@ end;
 testInvalidItem
 {
 testInvalidItem() unitTest;
-// Who		When		Ticket		Details
-// Dan T	25/05/2023	EDS-45		Refactor TestTenderSale unit tests
-// Dan T	21/06/2023	EDS-75		Update Translatable Strings
 
 vars
 	tenderSaleTA : TenderSaleTA;
@@ -21283,7 +20097,7 @@ begin
 	self.assertNull( tenderSaleTA.getModelObject() );
 	self.assertFalse( isPersisted );
 	self.assertEquals( 1, tenderSaleTA.allErrors.size() );
-	self.assertEquals( $ItemRequired, tenderSaleTA.allErrors[1] );	// EDS-75
+	self.assertEquals( $ItemRequired, tenderSaleTA.allErrors[1] );	
 	
 epilog
 	delete tenderSaleTA;
@@ -21292,11 +20106,6 @@ end;
 testInvalidTender
 {
 testInvalidTender() unitTest;
-// Who		When		Ticket		Details
-// Dan T	25/05/2023	EDS-45		Refactor TestTenderSale unit tests
-// Dan T	19/06/2023	EDS-72		Remove code number limit for Sale Items
-// Dan T	21/06/2023	EDS-75		Update Translatable Strings
-// Dan T	10/07/2023	EDS-88	 	Rename SaleItem classes to improve clarity
 
 vars
 	tenderSaleTA : TenderSaleTA;
@@ -21339,7 +20148,7 @@ begin
 	self.assertNull( tenderSaleTA.getModelObject() );
 	self.assertFalse( isPersisted );
 	self.assertEquals( 1, tenderSaleTA.allErrors.size() );
-	self.assertEquals( $TenderRequired , tenderSaleTA.allErrors[1] );	// EDS-75
+	self.assertEquals( $TenderRequired , tenderSaleTA.allErrors[1] );	
 	
 epilog
 	delete tenderSaleTA;
@@ -21351,8 +20160,6 @@ end;
 setUp
 {
 setUp() unitTestBefore, updating;
-// Who		When		Ticket		Details
-// Dan T	26/05/2023	EDS-50		Refactor TestTender unit tests
 
 vars
 	date : Date;
@@ -21385,8 +20192,6 @@ end;
 tearDown
 {
 tearDown() unitTestAfter, updating;
-// Who		When		Ticket		Details
-// Dan T	26/05/2023	EDS-50		Refactor TestTender unit tests
 
 begin
 	// Delete the instance of the company
@@ -21398,10 +20203,6 @@ end;
 testDuplicateTender
 {
 testDuplicateTender() unitTest;
-// Who		When		Ticket		Details
-// Dan T	26/05/2023	EDS-50		Refactor TestTender unit tests
-// Dan T	21/06/2023	EDS-75		Update Translatable Strings
-// Dan T	10/07/2023	EDS-88	 	Rename SaleItem classes to improve clarity
 
 vars
 	tenderTA : TenderTA;
@@ -21446,7 +20247,7 @@ begin
 	self.assertFalse( isPersisted );
 	self.assertEquals( 1, self.myTenderItem.allTendersByOfferTime.size() );
 	self.assertEquals( 1, tenderTA.allErrors.size() );
-	self.assertEquals( $TenderAlreadyPlaced, tenderTA.allErrors[ 1 ] );	// EDS-75
+	self.assertEquals( $TenderAlreadyPlaced, tenderTA.allErrors[ 1 ] );	
 
 epilog
 	delete tenderTA;
@@ -21455,8 +20256,6 @@ end;
 testGetDate
 {
 testGetDate() unitTest;
-// Who		When		Ticket		Details
-// Dan T	26/05/2023	EDS-50		Refactor TestTender unit tests
 
 vars
 	date : Date;
@@ -21467,8 +20266,6 @@ end;
 testGetDebugString
 {
 testGetDebugString() unitTest;
-// Who		When		Ticket		Details
-// Dan T	26/05/2023	EDS-50		Refactor TestTender unit tests
 
 vars
 	oid : String;
@@ -21501,8 +20298,6 @@ end;
 testGetTime
 {
 testGetTime() unitTest;
-// Who		When		Ticket		Details
-// Dan T	26/05/2023	EDS-50		Refactor TestTender unit tests
 
 begin
 	/*********
@@ -21514,9 +20309,6 @@ end;
 testInvalidClient
 {
 testInvalidClient() unitTest;
-// Who		When		Ticket		Details
-// Dan T	26/05/2023	EDS-50		Refactor TestTender unit tests
-// Dan T	21/06/2023	EDS-75		Update Translatable Strings
 
 vars
 	tenderTA : TenderTA;
@@ -21540,7 +20332,7 @@ begin
 	**********/
 	self.assertNull( tenderTA.getModelObject() );
 	self.assertEquals( 1, tenderTA.allErrors.size() );
-	self.assertEquals( $ClientRequired, tenderTA.allErrors[ 1 ] );	// EDS-75
+	self.assertEquals( $ClientRequired, tenderTA.allErrors[ 1 ] );	
 
 epilog
 	delete tenderTA;
@@ -21549,9 +20341,6 @@ end;
 testInvalidOffer
 {
 testInvalidOffer() unitTest;
-// Who		When		Ticket		Details
-// Dan T	26/05/2023	EDS-50		Refactor TestTender unit tests
-// Dan T	21/06/2023	EDS-75		Update Translatable Strings
 
 vars
 	tenderTA : TenderTA;
@@ -21575,7 +20364,7 @@ begin
 	**********/
 	self.assertNull( tenderTA.getModelObject() );
 	self.assertEquals( 1, tenderTA.allErrors.size() );
-	self.assertEquals( $TenderOfferLessThanZero, tenderTA.allErrors[ 1 ] );	// EDS-75
+	self.assertEquals( $TenderOfferLessThanZero, tenderTA.allErrors[ 1 ] );	
 
 epilog
 	delete tenderTA;
@@ -21584,11 +20373,6 @@ end;
 testInvalidTenderItem
 {
 testInvalidTenderItem() unitTest;
-// Who		When		Ticket		Details
-// Dan T	26/05/2023	EDS-50		Refactor TestTender unit tests
-// Dan T	19/06/2023	EDS-72		Remove code number limit for Sale Items
-// Dan T	21/06/2023	EDS-75		Update Translatable Strings
-// Dan T	10/07/2023	EDS-88	 	Rename SaleItem classes to improve clarity
 
 vars
 	tenderTA : TenderTA;
@@ -21642,7 +20426,7 @@ begin
 	**********/
 	self.assertNull( tenderTA.getModelObject() );
 	self.assertEquals( 1, tenderTA.allErrors.size() );
-	self.assertEquals( $TenderItemRequired, tenderTA.allErrors[ 1 ] );	// EDS-75
+	self.assertEquals( $TenderItemRequired, tenderTA.allErrors[ 1 ] );	
 
 epilog
 	delete tenderTA;
@@ -21654,9 +20438,6 @@ end;
 testInvalidTimestamp
 {
 testInvalidTimestamp() unitTest;
-// Who		When		Ticket		Details
-// Dan T	26/05/2023	EDS-50		Refactor TestTender unit tests
-// Dan T	21/06/2023	EDS-75		Update Translatable Strings
 
 vars
 	tenderTA : TenderTA;
@@ -21682,7 +20463,7 @@ begin
 	**********/
 	self.assertNotNull( tenderTA.getModelObject() );
 	self.assertEquals( 0, tenderTA.allErrors.size() );
-	self.assertTrue( isPersisted );	// EDS-75
+	self.assertTrue( isPersisted );	
 
 epilog
 	delete tenderTA;
@@ -21691,9 +20472,6 @@ end;
 testOfferTooLow
 {
 testOfferTooLow() unitTest;
-// Who		When		Ticket		Details
-// Dan T	26/05/2023	EDS-50		Refactor TestTender unit tests
-// Dan T	21/06/2023	EDS-75		Update Translatable Strings
 
 vars
 	tenderTA : TenderTA;
@@ -21737,7 +20515,7 @@ begin
 	**********/
 	self.assertNull( tenderTA.getModelObject() );
 	self.assertEquals( 1, tenderTA.allErrors.size() );
-	self.assertEquals( $TenderOfferLessThanReserve, tenderTA.allErrors[ 1 ] );	// EDS-75
+	self.assertEquals( $TenderOfferLessThanReserve, tenderTA.allErrors[ 1 ] );	
 
 epilog
 	delete tenderTA;
@@ -21747,8 +20525,6 @@ end;
 testUpdate
 {
 testUpdate() unitTest;
-// Who		When		Ticket		Details
-// Dan T	26/05/2023	EDS-50		Refactor TestTender unit tests
 
 vars
 	tenderTA : TenderTA;
@@ -21786,8 +20562,6 @@ end;
 testUpdateOutsideTransStateException
 {
 testUpdateOutsideTransStateException() unitTest;
-// Who		When		Ticket		Details
-// Dan T	26/05/2023	EDS-50		Refactor TestTender unit tests
 
 constants
 	UPDATE_OUTSIDE_TRANSACTION : Integer = 1048;
@@ -21863,8 +20637,6 @@ delete() updating;
 	*******************************************************
 */
 
-// Who		When		Ticket		Details
-// Dan T	20/04/2023	EDS-30		Reimplement the Shop Client Form
 
 begin
 	delete self.myShoppingCartTA;
@@ -21881,8 +20653,6 @@ end;
 getShoppingCartTA
 {
 getShoppingCartTA() : ShoppingCartTA;
-// Who		When		Ticket		Details
-// Dan T	18/04/2023	EDS-30		Reimplement the Shop Client Form
 
 begin
 	return self.myShoppingCartTA;
@@ -21902,8 +20672,6 @@ end;
 isNotEmpty
 {
 isNotEmpty() : Boolean;
-// Who		When		Ticket		Details
-// BeeJay	07/07/2023	EDS-81.v3	Add additional lock on collections
 
 begin
 	return not self.isEmpty();
@@ -21916,8 +20684,7 @@ shortDate
 {
 shortDate() : String;
 
-/*
-	01/02/2007	BeeJay
+/*	
 	We can't use the Jade shortDate method as this results in loss of any leading
 	zeros for most locales.  This method does a locale aware Date.format with a 
 	pattern that ensures the correct order and separators are used for the date,
@@ -22068,8 +20835,6 @@ setColorFromRGB( pRed : Integer; pGreen : Integer; pBlue : Integer ) updating;
 //
 // Returns:		An integer between 0 - 16,777,215 (#FFFFFF) representing an RGB color
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	27/06/2023	EDS-74		SaleItemSearch - remove parameterized constructor
 
 vars
 	red 	: Integer;
@@ -22133,14 +20898,12 @@ getCodePrefixAndNumber(prefix : String output; number : Integer output);
 //              prefix - the prefix is returned in this output parameter
 //              number - the code number is returned in this output parameter
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	28/06/2023	EDS-80		Turn all remaining string literals into translatable strings
 
 vars
 	len, i : Integer;
 
 begin
-	prefix := null;	// EDS-80
+	prefix := null;	
 	number := 0;
 
 	len := self.length;
@@ -22182,8 +20945,6 @@ end;
 replaceCrLfWithSpaces
 {
 replaceCrLfWithSpaces() : String;
-// Who		When		Ticket		Details
-// Dan T	28/06/2023	EDS-80		Turn all remaining string literals into translatable strings
 
 vars
 	workingString	: String;
@@ -22191,7 +20952,7 @@ vars
 begin
 	workingString	:= self;
 	
-	workingString.replaceString( CrLf, ThreeSpaces );	// EDS-80
+	workingString.replaceString( CrLf, ThreeSpaces );	
 	
 	return workingString;
 end;
@@ -22231,15 +20992,13 @@ end;
 replaceTabWithSpaces
 {
 replaceTabWithSpaces() : String;
-// Who		When		Ticket		Details
-// Dan T	28/06/2023	EDS-80		Turn all remaining string literals into translatable strings
 
 vars
 	workingString	: String;
 begin
 	workingString	:= self;
 	
-	workingString.replaceString( Tab, ThreeSpaces );	// EDS-80
+	workingString.replaceString( Tab, ThreeSpaces );	
 	
 	return workingString;
 end;
@@ -22286,11 +21045,9 @@ end;
 trimWhiteSpace
 {
 trimWhiteSpace() : String;
-// Who		When		Ticket		Details
-// Dan T	28/06/2023	EDS-80		Turn all remaining string literals into translatable strings
 
 constants
-	WhiteSpaceCharacters : String = Cr & Lf & Tab & Space & #'00';	// EDS-80
+	WhiteSpaceCharacters : String = Cr & Lf & Tab & Space & #'00';	
 
 vars
 	startPos : Integer;
@@ -22325,12 +21082,10 @@ end;
 turnNullStringIntoSpace
 {
 turnNullStringIntoSpace() : String;
-// Who		When		Ticket		Details
-// Dan T	28/06/2023	EDS-80		Turn all remaining string literals into translatable strings
 
 begin
 	if self = null then
-		return Space;	// EDS-80
+		return Space;	
 	else
 		return self;
 	endif;
@@ -22342,15 +21097,13 @@ end;
 shortTime
 {
 shortTime():String;
-// Who		When		Ticket		Details
-// Dan T	28/06/2023	EDS-80		Turn all remaining string literals into translatable strings
 
 begin
 	if self.isValid then
 		if self = null then
-			return StartTime;	// EDS-80
+			return StartTime;	
 		else
-			return self.format( TimeFormatHHmm );	// let Jade use the locale	// EDS-80
+			return self.format( TimeFormatHHmm );	// let Jade use the locale	
 		endif;
 	else
 		return null;

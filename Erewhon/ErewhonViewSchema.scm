@@ -4363,9 +4363,6 @@ finalize() updating;
 //
 // Returns:		Nothing
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	19/04/2023	EDS-30		Reimplement the Shop Client Form
-// Dan T	27/04/2023	EDS-30.v2	ShoppingCartTA::clearCart method removed
 //									Removed unnecessary clearing of shopping cart prior to delete
 
 begin
@@ -4378,11 +4375,9 @@ end;
 getErewhonSkin
 {
 getErewhonSkin() : JadeSkinApplication;
-// Who		When		Ticket		Details
-// Dan T	28/06/2023	EDS-80		Turn all remaining string literals into translatable strings
 
 begin
-	return JadeSkinRoot.firstInstance().allApplicationSkins[ Erewhon ];	// EDS-80
+	return JadeSkinRoot.firstInstance().allApplicationSkins[ Erewhon ];	
 end;
 }
 initialize
@@ -4431,9 +4426,6 @@ end;
 showDeveloperDetails
 {
 showDeveloperDetails( pForm : ErewhonBaseForm );
-// Who		When		Ticket		Details
-// Dan T	28/06/2023	EDS-80		Turn all remaining string literals into translatable strings
-// Dan T	28/06/2023	EDS-79		Translatable strings: Remove concatenation
 
 vars
 	control			: Control;
@@ -4450,11 +4442,11 @@ begin
 	
 	control := app.activeControl;
 	if control <> null and control.name <> null then
-		devDetailsForm.txtControlName.text := control.name & Space & OpenParenthesis & control.class.name & ClosedParenthesis;	// EDS-80
+		devDetailsForm.txtControlName.text := control.name & Space & OpenParenthesis & control.class.name & ClosedParenthesis;	
 		devDetailsForm.txtControlName.userObject	:= control;
 		devDetailsForm.btnInspectCtl.enabled	:= true;
 	else
-		devDetailsForm.txtControlName.text := $NoAppActiveControl;	// EDS-80
+		devDetailsForm.txtControlName.text := $NoAppActiveControl;	
 	endif;
 
 	// look for an object at greatest level of detail first
@@ -4489,7 +4481,7 @@ begin
 	formTA 		:= pForm.getTA();
 
 	if controlObject <> null then
-		devDetailsForm.txtControlObject.text := '"' & self.getObjectStringForObject( controlObject ) & '".asObject.' & controlObject.class.name;	// EDS-79
+		devDetailsForm.txtControlObject.text := '"' & self.getObjectStringForObject( controlObject ) & '".asObject.' & controlObject.class.name;	
 		devDetailsForm.txtControlObject.userObject := controlObject;
 		devDetailsForm.btnInspectCO.enabled := true;
 	endif;
@@ -4544,11 +4536,9 @@ display() : String;
 //
 // Returns:		The string to display
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	28/06/2023	EDS-80		Turn all remaining string literals into translatable strings
 
 begin
-	return self.myItemCategory.name & Space & At & Space & self.percentage.display;	// EDS-80
+	return self.myItemCategory.name & Space & At & Space & self.percentage.display;	
 end;
 }
 	)
@@ -4603,17 +4593,15 @@ display() : String;
 //
 // Returns:		The string to display
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	28/06/2023	EDS-80		Turn all remaining string literals into translatable strings
 
 vars
 	itemDisplay	: String;
 
 begin
-	itemDisplay := self.getCode & Space & self.name & Colon & Space;	// EDS-80
+	itemDisplay := self.getCode & Space & self.name & Colon & Space;	
 
 	if self.mySale = null then
-		itemDisplay := itemDisplay & self.price.currencyFormat & Space & Hyphen & Space & $Unsold;	// EDS-80
+		itemDisplay := itemDisplay & self.price.currencyFormat & Space & Hyphen & Space & $Unsold;	
 	else
 		itemDisplay := itemDisplay & self.mySale.display;
 	endif;
@@ -4641,12 +4629,9 @@ getExistingOrder(): RetailSaleTA;
 //
 // Returns:     The found OrderProxy, or null if doesn't exist in the shopping cart.
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	21/07/2023	EDS-99		Change ShoppingCartTA to use proxy class
-// Dan T	21/07/2023	EDS-99		Change ShoppingCartTA to use proxy class
 
 begin
-	return app.getShoppingCartTA().allCartItems[ self ].myRetailSaleTA;	// EDS-99
+	return app.getShoppingCartTA().allCartItems[ self ].myRetailSaleTA;	
 end;
 }
 getHeader
@@ -4692,12 +4677,10 @@ getSearchResultString() : String;
 //
 // Returns:		The string representing a row in a table conrol
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	14/08/2023	EDS-95		Add Item Code to Search Results Table
 
 begin
 	return $Buy & Tab &
-			self.getCode() & Tab &	// EDS-95
+			self.getCode() & Tab &	
 			self.name & Tab &
 			self.listedDate.shortFormat & Tab &
 			self.price.currencyFormat;
@@ -4706,8 +4689,6 @@ end;
 verifyHeader
 {
 verifyHeader( header : String ) : Boolean;
-// Who		When		Ticket		Details
-// Dan T	14/04/2023	EDS-18		Implement TenderTA Class
 
 begin
 	return header = $ItemsForSale;
@@ -4746,26 +4727,24 @@ display() : String;
 //
 // Returns:		The string to display
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	28/06/2023	EDS-80		Turn all remaining string literals into translatable strings
 
 vars
 	itemDisplay	: String;
 
 begin
-	itemDisplay := self.getCode & Space & self.name & Colon & Space;	// EDS-80
+	itemDisplay := self.getCode & Space & self.name & Colon & Space;	
 
 	if self.mySale = null then
 		if self.allTendersByOfferTime.isEmpty then
 			itemDisplay := itemDisplay &
-					self.price.currencyFormat & Space & Hyphen & Space & $Untendered;	// EDS-80
+					self.price.currencyFormat & Space & Hyphen & Space & $Untendered;	
 		else
 			itemDisplay := itemDisplay &
-					self.price.currencyFormat & Space & Hyphen & Space & $Tendered;	// EDS-80
+					self.price.currencyFormat & Space & Hyphen & Space & $Tendered;	
 		endif;
 	else
 		itemDisplay := itemDisplay &
-				self.price.currencyFormat & Space & Hyphen & Space & mySale.display;	// EDS-80
+				self.price.currencyFormat & Space & Hyphen & Space & mySale.display;	
 	endif;
 
 epilog
@@ -4823,8 +4802,6 @@ getSearchResultString() : String;
 //
 // Returns:		The string representing a row in a table conrol
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	14/08/2023	EDS-95		Add Item Code to Search Results Table
 
 begin
 	return $Bid & Tab &
@@ -4837,8 +4814,6 @@ end;
 verifyHeader
 {
 verifyHeader( header : String ) : Boolean;
-// Who		When		Ticket		Details
-// Dan T	14/04/2023	EDS-18		Implement TenderTA Class
 
 begin
 	return header = $ItemsForTender;
@@ -4866,13 +4841,10 @@ display() : String;
 // 
 // Returns:		The string to display
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	28/06/2023	EDS-79		Translatable strings: Remove concatenation
-// Dan T	04/07/2023	EDS-79.v2	Removed WithParam suffix for Translatable Strings
 
 
 begin 
-	return $SoldToClient( self.myClient.name, self.salePrice.currencyFormat() );	// EDS-79	// EDS-79.v2
+	return $SoldToClient( self.myClient.name, self.salePrice.currencyFormat() );	
 end;
 }
 makeRow
@@ -4909,13 +4881,10 @@ display() : String;
 //
 // Returns:		The string to display
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	28/06/2023	EDS-79		Translatable strings: Remove concatenation
-// Dan T	04/07/2023	EDS-79.v2	Removed WithParam suffix for Translatable Strings
 
 
 begin
-	return $SoldToClientFor( self.myClient.name, self.myTender.offer.currencyFormat() );	// EDS-79	// EDS-79.v2
+	return $SoldToClientFor( self.myClient.name, self.myTender.offer.currencyFormat() );	
 end;	
 }
 makeRow
@@ -4950,13 +4919,10 @@ display() : String;
 //
 // Parameters:	None
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	28/06/2023	EDS-79		Translatable strings: Remove concatenation
-// Dan T	04/07/2023	EDS-79.v2	Removed WithParam suffix for Translatable Strings
 
 
 begin
-	return $TenderedByClient( self.myClient.name, self.offer.currencyFormat() ); // EDS-79	// EDS-79.v2
+	return $TenderedByClient( self.myClient.name, self.offer.currencyFormat() ); 
 end;
 }
 	)
@@ -5153,10 +5119,6 @@ end;
 checkFileAvailability
 {
 checkFileAvailability( pFileName : String ) : Boolean protected;
-// Who		When		Ticket		Details
-// Dan T	28/06/2023	EDS-80		Turn all remaining string literals into translatable strings
-// Dan T	28/06/2023	EDS-79		Translatable strings: Remove concatenation
-// Dan T	04/07/2023	EDS-79.v2	Removed WithParam suffix for Translatable Strings
 
 vars
 	file	: File;
@@ -5170,13 +5132,13 @@ begin
 		file.shareMode		:= File.Share_ReadWrite;
 		file.allowReplace	:= true;
 		if not file.tryOpen then
-			app.msgBox( $FileAppearsToBeInUse, $ErrorAccessingFile, MsgBox_Stop_Icon + MsgBox_OK_Only );	// EDS-80
+			app.msgBox( $FileAppearsToBeInUse, $ErrorAccessingFile, MsgBox_Stop_Icon + MsgBox_OK_Only );	
 			return false;
 		endif;
 		
 		file.close();
 		
-		if app.msgBox( 	$FileAlreadyExistsOverwrite( pFileName ), $FileAlreadyExists,	// EDS-79	// EDS-79.v2
+		if app.msgBox( 	$FileAlreadyExistsOverwrite( pFileName ), $FileAlreadyExists,	
 						MsgBox_Question_Mark_Icon + MsgBox_Yes_No
 						) <> MsgBox_Return_Yes then
 			return false;
@@ -5409,8 +5371,6 @@ formatColumnHeading
 {
 formatColumnHeading( pColHdg : String ) : String protected;
 // return column heading with any CrLfs replaced by blanks
-// Who		When		Ticket		Details
-// Dan T	28/06/2023	EDS-80		Turn all remaining string literals into translatable strings
 
 vars
 	colHdg	: String;
@@ -5418,7 +5378,7 @@ vars
 begin
 	colHdg := pColHdg;
 	
-	colHdg.replaceString( CrLf, Space );	// EDS-80
+	colHdg.replaceString( CrLf, Space );	
 	
 	return colHdg.trimWhiteSpace();
 end;
@@ -5460,8 +5420,6 @@ getDataForRow(
 	pIsBold		: Boolean output
 	) : String protected;
 // Get data for row based on users column ordering
-// Who		When		Ticket		Details
-// Dan T	28/06/2023	EDS-80		Turn all remaining string literals into translatable strings
 
 
 vars
@@ -5486,14 +5444,14 @@ begin
 		endif;
 		
 		if pDataMode.isDataModePrint() then
-			if columnData.startsWithOneOf( Hyphen, Plus, Equals, At ) then	// EDS-80
+			if columnData.startsWithOneOf( Hyphen, Plus, Equals, At ) then	
 				// Prevent excel trying to do 'calculations' with text values
 				//columnData	:= ' ' & columnData;
 			endif;
 			if columnData.containsCrOrLfCharacters() then							// ITC-7620
 				// Prevent issues with Excel when text is 'wrapped' with CrLf		// ITC-7620
-				columnData.replaceString( DoubleQuotation, DoubleQuotation & DoubleQuotation );		// ITC-7620		// EDS-80
-				columnData	:= DoubleQuotation & columnData & DoubleQuotation;						// ITC-7620		// EDS-80
+				columnData.replaceString( DoubleQuotation, DoubleQuotation & DoubleQuotation );		// ITC-7620		
+				columnData	:= DoubleQuotation & columnData & DoubleQuotation;						// ITC-7620		
 			endif;																	// ITC-7620
 		endif;																		// ITC-7620
 		
@@ -5608,7 +5566,7 @@ end;
 getRowDetails
 {
 getRowDetails( pObject: Object; pRow : Integer; pDataMode : Integer; pContinue : Boolean io ) : String;
-// ITC-7597 BeeJay May 2017   Implement table controller classes to facilitate sorting by clicking on table headings
+// Implement table controller classes to facilitate sorting by clicking on table headings
 
 vars
 	foreColor		: Integer;
@@ -5898,8 +5856,6 @@ setSortColumn_QuickSet(
 		pColumnNumber	: Integer;
 		pShift			: Integer		// So we can check shift/ctrl/alt key usage
 		) updating;
-// Who		When		Ticket		Details
-// Dan T	28/06/2023	EDS-80		Turn all remaining string literals into translatable strings
 
 
 vars
@@ -5917,7 +5873,7 @@ begin
 			if self.allColumnsSorted.includes( sortColumn ) then
 				sortColumn.setSortDescending( not sortColumn.isSortDescending );
 			elseif self.allColumnsSorted.size >= 5 then
-				app.msgBox( $YouAlreadyHaveFiveSortColumns, $MaximumNumberOfSortColumns,		// EDS-80
+				app.msgBox( $YouAlreadyHaveFiveSortColumns, $MaximumNumberOfSortColumns,		
 						MsgBox_OK_Only + MsgBox_Stop_Icon
 						);
 				return;
@@ -6044,8 +6000,6 @@ setupTableColumn(
 		pHidden			: Boolean;		
 		pTableHeading	: String io
 		) updating, protected;
-// Who		When		Ticket		Details
-// Dan T	28/06/2023	EDS-80		Turn all remaining string literals into translatable strings
 
 vars
 	tableColumn	: ErewhonTableColumn;
@@ -6062,7 +6016,7 @@ begin
 	
 	desc := self.formatColumnHeading( pColumnHeader );
 	
-	columnWidth	:= self.myTable.getTextExtent( desc & Space ) + TC_LeftMarginWidth * 2 + 2;	// + 2 for gridlines	// EDS-80
+	columnWidth	:= self.myTable.getTextExtent( desc & Space ) + TC_LeftMarginWidth * 2 + 2;	// + 2 for gridlines	
 	
 	if self.myTable.accessCell( 1, pColumnNumber ).picture <> null then
 		columnWidth	:= columnWidth + 16 + 2;	// Allow for sorting icons...
@@ -6175,10 +6129,6 @@ getAndValidateUser(usercode : String output; password : String output) : Boolean
 	* your application starts), it cannot be debugged.                           *
 	******************************************************************************
 */
-// Who		When		Ticket		Details
-// Dan T	26/05/2023	EDS-34		Prompt to load data if not initialized
-// Dan T	28/06/2023	EDS-80		Turn all remaining string literals into translatable strings
-// Dan T	26/07/2023	EDS-92		Improve Logon Form
 
 vars
 	logonForm : LogonForm;
@@ -6188,7 +6138,7 @@ begin
 	// Unit tests need to skip all validation. 
 	// For testing, remove Test later TJA 28.9.2018
 	if app.name = JadeUnitTest  
-	or app.name = Test	// EDS-80
+	or app.name = Test	
 	then
 		return true;
 	endif;
@@ -6196,10 +6146,10 @@ begin
 	app.setApplicationSkin( app.getErewhonSkin() );
 	
 	if Company.firstInstance = null then
-		app.msgBox( $DataHasNotBeenLoaded, $PleaseLoadDataFiles, MsgBox_Information_Icon + MsgBox_OK_Only);	// EDS-80
+		app.msgBox( $DataHasNotBeenLoaded, $PleaseLoadDataFiles, MsgBox_Information_Icon + MsgBox_OK_Only);	
 		
-		create initialDataLoader transient;				// EDS-34
-		if not initialDataLoader.initializeData() then	// EDS-92
+		create initialDataLoader transient;				
+		if not initialDataLoader.initializeData() then	
 			return false;
 		endif;
 	endif;
@@ -6238,12 +6188,12 @@ begin
 		// do so) as forms are automatically deleted by JADE once they've been unloaded.
 		create logonForm;
 		logonForm.showModal;
-		usercode := logonForm.usercode;												// EDS-92
+		usercode := logonForm.usercode;												
 		return (logonForm.modalResult = ModalOK);
 	endif;
 	
 epilog
-	delete initialDataLoader;		// EDS-34
+	delete initialDataLoader;		
 end;
 }
 getErrorString
@@ -6258,14 +6208,12 @@ getErrorString(errorNo: Integer): String;
 //
 // Returns:		The message corresponding to the error number
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	28/06/2023	EDS-80		Turn all remaining string literals into translatable strings
 
 vars
 	out: String;
 begin
 	// Check for a View schema error number.
-	out := app.currentLocale.getStringValue( ErrVw & errorNo.String );	// EDS-80
+	out := app.currentLocale.getStringValue( ErrVw & errorNo.String );	
 	if out <> null then
 		return out;
 	else
@@ -6293,8 +6241,6 @@ isUserValid(usercode : String; password : String) : Boolean;
 	* your application starts), it cannot be debugged.                           *
 	******************************************************************************
 */
-// Who		When		Ticket		Details
-// Dan T	28/06/2023	EDS-80		Turn all remaining string literals into translatable strings
 
 vars
 	company		: Company;
@@ -6305,7 +6251,7 @@ vars
 begin
 	// Unit tests need to skip all validation.
 	if app.name = JadeUnitTest  
-	or app.name = Test	// EDS-80
+	or app.name = Test	
 	then
 		isValid := true;
 		return true;
@@ -6362,8 +6308,6 @@ end;
 getAgent
 {
 getAgent( name : String ) : Agent;
-// Who		When		Ticket		Details
-// Dan T	02/06/2023	EDS-66		Refactor REST services to use the TAF
 
 vars
 	agent : Agent;
@@ -6380,8 +6324,6 @@ end;
 getAllAgents
 {
 getAllAgents() : AgentsByNameDict;
-// Who		When		Ticket		Details
-// Dan T	02/06/2023	EDS-66		Refactor REST services to use the TAF
 
 vars
 	agents : AgentsByNameDict;
@@ -6404,8 +6346,6 @@ end;
 getAllClients
 {
 getAllClients() : ClientsByNameDict;
-// Who		When		Ticket		Details
-// Dan T	02/06/2023	EDS-66		Refactor REST services to use the TAF
 
 vars
 	clients : ClientsByNameDict;
@@ -6428,8 +6368,6 @@ end;
 getAllSales
 {
 getAllSales() : SaleSet;
-// Who		When		Ticket		Details
-// Dan T	02/06/2023	EDS-66		Refactor REST services to use the TAF
 
 vars
 	foundSales	: SaleSet;
@@ -6455,8 +6393,6 @@ end;
 getClient
 {
 getClient( name : String ) : Client;
-// Who		When		Ticket		Details
-// Dan T	02/06/2023	EDS-66		Refactor REST services to use the TAF
 
 vars
 	client : Client;
@@ -6474,8 +6410,6 @@ end;
 getCompany
 {
 getCompany() : Company;
-// Who		When		Ticket		Details
-// Dan T	02/06/2023	EDS-66		Refactor REST services to use the TAF
 
 begin
 	return app.myCompany.cloneSelf( true );
@@ -6484,9 +6418,6 @@ end;
 getItemByCode
 {
 getItemByCode( pCodeNumber : Integer ) : Item;
-// Who		When		Ticket		Details
-// Dan T	02/06/2023	EDS-66		Refactor REST services to use the TAF
-// Dan T	10/07/2023	EDS-88	 	Rename SaleItem classes to improve clarity
 
 vars
 	item : Item;
@@ -6504,17 +6435,15 @@ end;
 getItemsByPrice
 {
 getItemsByPrice( minPrice, maxPrice : Integer ) : ItemsByPrefixByNumberDict;
-// Who		When		Ticket		Details
-// Dan T	30/06/2023	EDS-81		Change SaleItems to use GUIDs 
 //									Changed Collection to allItemsByNumber
 
 vars
-	allItems : ItemsByNumberDict;	// EDS-81
+	allItems : ItemsByNumberDict;	
 	item  : Item;
 	foundItems : ItemsByPrefixByNumberDict;
 	
 begin
-	allItems := app.myCompany.allItems;	// EDS-81
+	allItems := app.myCompany.allItems;	
 	
 	create foundItems transient;
 	
@@ -6530,8 +6459,6 @@ end;
 getSale
 {
 getSale( codePrefix : String; codeNumber : Integer ) : Sale;
-// Who		When		Ticket		Details
-// Dan T	02/06/2023	EDS-66		Refactor REST services to use the TAF
 
 vars
 	company	: Company;
@@ -6600,9 +6527,6 @@ end;
 postRetailSale
 {
 postRetailSale( pClientName : String; pCodeNumber : Integer; offer : Decimal );
-// Who		When		Ticket		Details
-// Dan T	02/06/2023	EDS-66		Refactor REST services to use the TAF
-// Dan T	10/07/2023	EDS-88	 	Rename SaleItem classes to improve clarity
 
 vars
 	client	: Client;
@@ -6664,14 +6588,12 @@ end;
 startConfiguration
 {
 startConfiguration();
-// Who		When		Ticket		Details
-// Dan T	28/06/2023	EDS-80		Turn all remaining string literals into translatable strings
 
 vars
     rwManager : JadeReportWriterManager;
 begin
     create rwManager transient;
-    rwManager.startReportWriterConfiguration($Test, ReportSecurity);	// EDS-80
+    rwManager.startReportWriterConfiguration($Test, ReportSecurity);	
 epilog
     delete rwManager;
 end;
@@ -6679,14 +6601,12 @@ end;
 startDesigner
 {
 startDesigner();
-// Who		When		Ticket		Details
-// Dan T	28/06/2023	EDS-80		Turn all remaining string literals into translatable strings
 
 vars
     rwManager : JadeReportWriterManager;
 begin
     create rwManager transient;
-    rwManager.startReportWriterDesigner( User, ReportSecurity );	// EDS-80
+    rwManager.startReportWriterDesigner( User, ReportSecurity );	
 epilog
     delete rwManager;
 end;
@@ -6694,10 +6614,6 @@ end;
 testItemCollectionSearch
 {
 testItemCollectionSearch();
-// Who		When		Ticket		Details
-// Dan T	28/06/2023	EDS-80		Turn all remaining string literals into translatable strings
-// Dan T	28/06/2023	EDS-79		Translatable strings: Remove concatenation
-// Dan T	04/07/2023	EDS-79.v2	Removed WithParam suffix for Translatable Strings
 
 vars
 	itemSearch : ItemSearch;
@@ -6718,7 +6634,7 @@ begin
 	//itemSearch.priceLow := 1000;
 	itemSearch.priceHigh := 10000;
 	
-	write $PerformingSearch;	// EDS-80
+	write $PerformingSearch;	
 	
 	itemSearch.doSearch();
 	
@@ -6726,7 +6642,7 @@ begin
 		write item.getDebugString();
 	endforeach;
 	
-	write $TotalItemsHeading( itemSearch.allItems.size().String );	// EDS-79	// EDS-79.v2
+	write $TotalItemsHeading( itemSearch.allItems.size().String );	
 	
 epilog 
 	delete itemSearch;
@@ -6738,8 +6654,6 @@ end;
 setUp
 {
 setUp() updating, unitTestBeforeClass;
-// Who		When		Ticket		Details
-// Dan T	29/05/2023	EDS-53		Refactor TestViewApp unit tests
 
 vars
 // Variables commented out when commenting out method so it would compile cleanly until method can be fixed properly
@@ -6777,8 +6691,6 @@ end;
 tearDown
 {
 tearDown() unitTestAfterClass, updating;
-// Who		When		Ticket		Details
-// Dan T	29/05/2023	EDS-53		Refactor TestViewApp unit tests
 
 begin
 	// Delete the company instance
@@ -6790,8 +6702,6 @@ end;
 testGetClient
 {
 testGetClient() unitTest;
-// Who		When		Ticket		Details
-// Dan T	29/05/2023	EDS-53		Refactor TestViewApp unit tests
 
 vars
 	expectedClient : Client;
@@ -6817,8 +6727,6 @@ testIsCompanyUser() unitTest;
 // A company user is determined based on the app myAgent and myClient 
 // references being null.  (self.myAgent = null and self.getClient = null)
 // -------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	29/05/2023	EDS-53		Refactor TestViewApp unit tests
 
 begin
 	self.assertFalse( app.isCompanyUser() );
@@ -6838,8 +6746,6 @@ end;
 testIsWebShopApp
 {
 testIsWebShopApp() unitTest;
-// Who		When		Ticket		Details
-// Dan T	29/05/2023	EDS-53		Refactor TestViewApp unit tests
 
 begin
 	/*********
@@ -6851,8 +6757,6 @@ end;
 testSetAgent
 {
 testSetAgent() unitTest;
-// Who		When		Ticket		Details
-// Dan T	29/05/2023	EDS-53		Refactor TestViewApp unit tests
 
 vars
 	agent : Agent;
@@ -6899,8 +6803,6 @@ end;
 testSetClient
 {
 testSetClient() unitTest;
-// Who		When		Ticket		Details
-// Dan T	29/05/2023	EDS-53		Refactor TestViewApp unit tests
 
 vars
 	client : Client;
@@ -6945,9 +6847,6 @@ end;
 testShoppingCart
 {
 testShoppingCart() unitTest;
-// Who		When		Ticket		Details
-// Dan T	29/05/2023	EDS-53		Refactor TestViewApp unit tests
-// Dan T	21/07/2023	EDS-99		Change ShoppingCartTA to use proxy class
 
 vars
 	shoppingCartTA : ShoppingCartTA;
@@ -6961,16 +6860,16 @@ begin
 	self.assertTrue( shoppingCartTA.isEmpty() );
 	
 	// add item to shopping cart
-	shoppingCartTA.addItem( self.myRetailItem, null );	// EDS-99
+	shoppingCartTA.addItem( self.myRetailItem, null );	
 	
-	cartItem := shoppingCartTA.allCartItems.first();	// EDS-99
+	cartItem := shoppingCartTA.allCartItems.first();	
 	
 	// Check that the order went into the cart
 	self.assertFalse( shoppingCartTA.isEmpty() );
-	self.assertEquals( 1, shoppingCartTA.allCartItems.size() );	// EDS-99
+	self.assertEquals( 1, shoppingCartTA.allCartItems.size() );	
 	
 	// check that we can remove an item from the cart
-	shoppingCartTA.removeItem( self.myRetailItem );			// EDS-99
+	shoppingCartTA.removeItem( self.myRetailItem );			
 	
 	self.assertTrue( shoppingCartTA.isEmpty() );
 	self.assertEquals( 0, shoppingCartTA.allCartItems.size() );
@@ -6985,9 +6884,6 @@ end;
 setUp
 {
 setUp() updating, unitTestBeforeClass;
-// Who		When		Ticket		Details
-// Dan T	29/05/2023	EDS-54		Refactor TestViewSale unit tests
-// Dan T	10/07/2023	EDS-88	 	Rename SaleItem classes to improve clarity
 
 vars
 	region : Region;
@@ -7028,8 +6924,6 @@ end;
 tearDown
 {
 tearDown() unitTestAfterClass, updating;
-// Who		When		Ticket		Details
-// Dan T	29/05/2023	EDS-54		Refactor TestViewSale unit tests
 
 begin
 	// Delete the instance of the company
@@ -7041,9 +6935,6 @@ end;
 testDisplayRetail
 {
 testDisplayRetail() unitTest;
-// Who		When		Ticket		Details
-// Dan T	29/05/2023	EDS-54		Refactor TestViewSale unit tests
-// Dan T	04/07/2023	EDS-82		Fix Unit Tests
 
 vars
 	expected 	: String;
@@ -7053,7 +6944,7 @@ begin
 	* ARRANGE/ACT *
 	***************/
 	actual := self.myRetailSale.display();
-	expected := $SoldToClient( self.myRetailSale.myClient.name, self.myRetailSale.salePrice.currencyFormat() );	// EDS-82
+	expected := $SoldToClient( self.myRetailSale.myClient.name, self.myRetailSale.salePrice.currencyFormat() );	
 	
 	/*********
 	* ASSERT *
@@ -7064,9 +6955,6 @@ end;
 testDisplayTender
 {
 testDisplayTender() unitTest;
-// Who		When		Ticket		Details
-// Dan T	29/05/2023	EDS-54		Refactor TestViewSale unit tests
-// Dan T	04/07/2023	EDS-82		Fix Unit Tests
 
 vars
 	expected 	: String;
@@ -7077,7 +6965,7 @@ begin
 	* ARRANGE/ACT *
 	***************/
 	actual := self.myTenderSale.display();
-	expected := $SoldToClient( self.myRetailSale.myClient.name, self.myTenderSale.myTender.offer.currencyFormat() );	// EDS-82
+	expected := $SoldToClient( self.myRetailSale.myClient.name, self.myTenderSale.myTender.offer.currencyFormat() );	
 	
 	/*********
 	* ASSERT *
@@ -7088,8 +6976,6 @@ end;
 testMakeRow
 {
 testMakeRow() unitTest;
-// Who		When		Ticket		Details
-// Dan T	29/05/2023	EDS-54		Refactor TestViewSale unit tests
 
 vars
 	rowString	: String;
@@ -7147,8 +7033,6 @@ end;
 setUp
 {
 setUp() updating, unitTestBeforeClass;
-// Who		When		Ticket		Details
-// Dan T	29/05/2023	EDS-55		Refactor TestViewSaleItem unit tests
 
 
 begin
@@ -7178,8 +7062,6 @@ end;
 tearDown
 {
 tearDown() unitTestAfterClass, updating;
-// Who		When		Ticket		Details
-// Dan T	29/05/2023	EDS-55		Refactor TestViewSaleItem unit tests
 
 begin
 	// Delete the instance of the company
@@ -7196,8 +7078,6 @@ end;
 setUp
 {
 setUp() updating, unitTestBeforeClass;
-// Who		When		Ticket		Details
-// Dan T	29/05/2023	EDS-56		Refactor TestViewRetailSaleItem unit tests
 
 begin
 	inheritMethod();
@@ -7206,8 +7086,6 @@ end;
 tearDown
 {
 tearDown() updating, unitTestAfterClass;
-// Who		When		Ticket		Details
-// Dan T	29/05/2023	EDS-56		Refactor TestViewRetailSaleItem unit tests
 
 begin
 	inheritMethod();
@@ -7216,8 +7094,6 @@ end;
 testCheckOffer
 {
 testCheckOffer() unitTest;
-// Who		When		Ticket		Details
-// Dan T	29/05/2023	EDS-56		Refactor TestViewRetailSaleItem unit tests
 
 begin
 	/*********
@@ -7233,8 +7109,6 @@ end;
 testDisplay
 {
 testDisplay() unitTest;
-// Who		When		Ticket		Details
-// Dan T	29/05/2023	EDS-56		Refactor TestViewRetailSaleItem unit tests
 
 vars
 	expected : String;
@@ -7264,10 +7138,6 @@ end;
 testDisplayUnsold
 {
 testDisplayUnsold() unitTest;
-// Who		When		Ticket		Details
-// Dan T	29/05/2023	EDS-56		Refactor TestViewRetailSaleItem unit tests
-// Dan T	19/06/2023	EDS-72		Remove code number limit for Sale Items
-// Dan T	10/07/2023	EDS-88	 	Rename SaleItem classes to improve clarity
 
 vars
 	expected : String;
@@ -7309,8 +7179,6 @@ end;
 testGetHeader
 {
 testGetHeader() unitTest;
-// Who		When		Ticket		Details
-// Dan T	29/05/2023	EDS-56		Refactor TestViewRetailSaleItem unit tests
 
 begin
 	self.assertEquals( $ItemsForSale, self.myRetailItem.getHeader() );
@@ -7319,8 +7187,6 @@ end;
 testGetItem
 {
 testGetItem() unitTest;
-// Who		When		Ticket		Details
-// Dan T	29/05/2023	EDS-56		Refactor TestViewRetailSaleItem unit tests
 
 begin
 	self.assertNotNull( self.myRetailItem.getItem() );
@@ -7330,8 +7196,6 @@ end;
 testGetSearchResultString
 {
 testGetSearchResultString() unitTest;
-// Who		When		Ticket		Details
-// Dan T	29/05/2023	EDS-56		Refactor TestViewRetailSaleItem unit tests
 
 vars
 	expected 	: String;
@@ -7360,9 +7224,6 @@ end;
 testVerifyHeader
 {
 testVerifyHeader() unitTest;
-// Who		When		Ticket		Details
-// Dan T	29/05/2023	EDS-56		Refactor TestViewRetailSaleItem unit tests
-// Dan T	04/07/2023	EDS-82		Fix Unit Tests (Reverted back to previous logic)
 
 begin
 	/*********
@@ -7370,7 +7231,7 @@ begin
 	**********/
 	self.assertTrue( self.myRetailItem.verifyHeader( $ItemsForSale ) );
 	self.assertFalse( self.myRetailItem.verifyHeader( null ) );				
-	self.assertFalse( self.myRetailItem.verifyHeader( "Items For Sale" ) );	// EDS-82 Captial 'F' in For
+	self.assertFalse( self.myRetailItem.verifyHeader( "Items For Sale" ) );	
 end;
 }
 	)
@@ -7379,8 +7240,6 @@ end;
 setUp
 {
 setUp() updating, unitTestBeforeClass;
-// Who		When		Ticket		Details
-// Dan T	29/05/2023	EDS-57		Refactor TestViewTenderSaleItem unit tests
 
 begin
 	inheritMethod();
@@ -7389,8 +7248,6 @@ end;
 tearDown
 {
 tearDown() updating, unitTestAfterClass;
-// Who		When		Ticket		Details
-// Dan T	29/05/2023	EDS-57		Refactor TestViewTenderSaleItem unit tests
 
 begin
 	inheritMethod();
@@ -7399,8 +7256,6 @@ end;
 testCheckOffer
 {
 testCheckOffer() unitTest;
-// Who		When		Ticket		Details
-// Dan T	29/05/2023	EDS-57		Refactor TestViewTenderSaleItem unit tests
 
 vars
 	price : Decimal[ 12, 2 ];
@@ -7429,8 +7284,6 @@ end;
 testDisplay
 {
 testDisplay() unitTest, updating;
-// Who		When		Ticket		Details
-// Dan T	29/05/2023	EDS-57		Refactor TestViewTenderSaleItem unit tests
 
 vars
 	expected : String;
@@ -7462,10 +7315,6 @@ end;
 testDisplayUnsold
 {
 testDisplayUnsold() unitTest;
-// Who		When		Ticket		Details
-// Dan T	29/05/2023	EDS-57		Refactor TestViewTenderSaleItem unit tests
-// Dan T	19/06/2023	EDS-72		Remove code number limit for Sale Items
-// Dan T	10/07/2023	EDS-88	 	Rename SaleItem classes to improve clarity
 
 vars
 	expected : String;
@@ -7511,9 +7360,6 @@ end;
 testDisplayUntendered
 {
 testDisplayUntendered() unitTest;
-// Who		When		Ticket		Details
-// Dan T	29/05/2023	EDS-57		Refactor TestViewTenderSaleItem unit tests
-// Dan T	10/07/2023	EDS-88	 	Rename SaleItem classes to improve clarity
 
 vars
 	expected 	: String;
@@ -7560,8 +7406,6 @@ end;
 testGetHeader
 {
 testGetHeader() unitTest;
-// Who		When		Ticket		Details
-// Dan T	29/05/2023	EDS-57		Refactor TestViewTenderSaleItem unit tests
 
 begin
 	self.assertEquals( $ItemsForTender, self.myTenderItem.getHeader() );
@@ -7570,8 +7414,6 @@ end;
 testGetItem
 {
 testGetItem() unitTest;
-// Who		When		Ticket		Details
-// Dan T	29/05/2023	EDS-57		Refactor TestViewTenderSaleItem unit tests
 
 begin
 	/*********
@@ -7584,8 +7426,6 @@ end;
 testGetSearchResultString
 {
 testGetSearchResultString() unitTest;
-// Who		When		Ticket		Details
-// Dan T	29/05/2023	EDS-57		Refactor TestViewTenderSaleItem unit tests
 
 vars
 	expected 	: String;
@@ -7613,10 +7453,6 @@ end;
 testVerifyHeader
 {
 testVerifyHeader() unitTest;
-// Who		When		Ticket		Details
-// Dan T	29/05/2023	EDS-57		Refactor TestViewTenderSaleItem unit tests
-// Dan T	28/06/2023	EDS-80		Turn all remaining string literals into translatable strings
-// Dan T	04/07/2023	EDS-82		Fix Unit Tests (Reverted back to original logic)
 
 
 begin
@@ -7625,7 +7461,7 @@ begin
 	**********/
 	self.assertTrue( self.myTenderItem.verifyHeader( $ItemsForTender ) );
 	self.assertFalse( self.myTenderItem.verifyHeader( null ) );
-	self.assertFalse( self.myTenderItem.verifyHeader( "Items For Tender" ) );	// EDS-80	// EDS-82 Captial 'F' in For
+	self.assertFalse( self.myTenderItem.verifyHeader( "Items For Tender" ) );	
 end;
 }
 	)
@@ -8829,8 +8665,6 @@ end;
 checkOutstandingChanges
 {
 checkOutstandingChanges() : Boolean updating, protected;
-// Who		When		Ticket		Details
-// Dan T	28/06/2023	EDS-80		Turn all remaining string literals into translatable strings
 
 vars
 	msgBoxReturn : Integer;
@@ -8842,7 +8676,7 @@ begin
 	
 	msgBoxReturn := app.msgBox($ChangesSinceOpeningForm, $OutstandingChanges,
 							MsgBox_Question_Mark_Icon + MsgBox_Yes_No_Cancel
-							);	// EDS-80
+							);	
 	
 	if msgBoxReturn = MsgBox_Return_Cancel then
 		return false;
@@ -8862,8 +8696,6 @@ end;
 displayErrors
 {
 displayErrors( pTA : ModelTA; pTitle : String ) updating, protected;
-// Who		When		Ticket		Details
-// Dan T	28/06/2023	EDS-80		Turn all remaining string literals into translatable strings
 
 vars
 	msg  	: String;
@@ -8879,7 +8711,7 @@ begin
 	
 	title := pTitle;
 	if title = null then
-		title := $ErrorDuringSave;	// EDS-80
+		title := $ErrorDuringSave;	
 	endif;
 	
 	//set focus field when encountered an error
@@ -8891,18 +8723,15 @@ end;
 displayObject
 {
 displayObject( pObject : PersistentModel ) updating, protected;
-// Who		When		Ticket		Details
-// Dan T	28/06/2023	EDS-80		Turn all remaining string literals into translatable strings
-// Dan T	04/07/2023	EDS-79.v2	Removed WithParam suffix for Translatable Strings
 
 vars
 	msgReturn	: Integer;
 
 begin
 	if pObject <> null and pObject.lockedByProcessId <> null then
-		msgReturn := app.msgBox( $ThingCurrentlyEdited( self.thing() ), 		// EDS-79.v2
-								 $ThingAlreadyBeingEdited( self.thing() ), 		// EDS-79.v2
-								 MsgBox_Question_Mark_Icon + MsgBox_Yes_No );	// EDS-80
+		msgReturn := app.msgBox( $ThingCurrentlyEdited( self.thing() ), 		
+								 $ThingAlreadyBeingEdited( self.thing() ), 		
+								 MsgBox_Question_Mark_Icon + MsgBox_Yes_No );	
 								 
 		if msgReturn = MsgBox_Return_Yes then
 			pObject.causeEvent( Erewhon_Event_SaveOutstandingChanges, true, Erewhon_Event_SaveOutstandingChanges );
@@ -9132,11 +8961,9 @@ handleInvalidDateException(
 		pException	: UserInterfaceException;
 		pControl	: Control
 		) : Integer protected;
-// Who		When		Ticket		Details
-// Dan T	28/06/2023	EDS-80		Turn all remaining string literals into translatable strings
 
 begin
-	app.msgBox( $DateEnteredIsInvalid, $InvalidDateEntered, MsgBox_Stop_Icon + MsgBox_OK_Only );	// EDS-80
+	app.msgBox( $DateEnteredIsInvalid, $InvalidDateEntered, MsgBox_Stop_Icon + MsgBox_OK_Only );	
 	
 	pControl.setFocus();
 	
@@ -9308,11 +9135,9 @@ end;
 thing
 {
 thing() : String protected;
-// Who		When		Ticket		Details
-// Dan T	28/06/2023	EDS-80		Turn all remaining string literals into translatable strings
 
 begin
-	return $Thing;	// EDS-80
+	return $Thing;	
 end;
 }
 timerEvent
@@ -9383,8 +9208,6 @@ end;
 calculateChildFormScrollRange
 {
 calculateChildFormScrollRange() protected;
-// Who		When		Ticket		Details
-// Dan T	28/04/2023	EDS-35		Finalize Erewhon App
 
 vars
 	lowestControl	: Control;
@@ -9411,8 +9234,6 @@ end;
 formLoad
 {
 formLoad() updating, protected;
-// Who		When		Ticket		Details
-// Dan T	28/04/2023	EDS-35		Finalize Erewhon App
 
 vars
 	fromLeft : Real;
@@ -9463,13 +9284,10 @@ end;
 getTabCaption
 {
 getTabCaption() : String protected;
-// Who		When		Ticket		Details
-// Dan T	28/06/2023	EDS-80		Turn all remaining string literals into translatable strings
-// Dan T	04/07/2023	EDS-79.v2	Removed WithParam suffix for Translatable Strings
 
 
 begin
-	return $TabCaptionNotReimplemented( self.name, method.name );	// EDS-80	// EDS-79.v2
+	return $TabCaptionNotReimplemented( self.name, method.name );	
 end;
 }
 getTabDetails
@@ -9478,8 +9296,6 @@ getTabDetails(
 	pTabIcon : Binary output;
 	pTabLine1 : String output
 	);
-// Who		When		Ticket		Details
-// Dan T	28/04/2023	EDS-35		Finalize Erewhon App
 
 begin
 	pTabIcon := self.getTabIcon();
@@ -9604,15 +9420,12 @@ end;
 btnSave_click
 {
 btnSave_click( btn : ErewhonButton input ) updating;
-// Who		When		Ticket		Details
-// Dan T	24/04/2023	EDS-17		Implement CommissionRateTA class
-// Dan T	27/04/2023	EDS-17.v2	Removed null listObject check as not required
 //									Changed if condition to include a not to limit indentations
 
 begin
 	app.mousePointer := Busy;
 
-	if not self.doSave() then			// EDS-17.v2
+	if not self.doSave() then			
 		return;
 	endif;
 	
@@ -9635,8 +9448,6 @@ btnUndo_click( btn : ErewhonButton input ) updating;
 // Parameters:	btn
 // Returns:		Nothing
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	21/04/2023	EDS-17		Implement CommissionRateTA class
 
 begin
 	if self.lstRates.listObject = null then
@@ -9653,9 +9464,6 @@ end;
 cmbCategory_click
 {
 cmbCategory_click( combobox : ErewhonComboBox input ) updating;
-// Who		When		Ticket		Details
-// Dan T	26/04/2023	EDS-17		Implement CommissionRateTA class
-// Dan T	27/04/2023	EDS-17.v2	Removed listRates paint method
 	
 begin
 	if combobox.listObject = null then
@@ -9665,12 +9473,12 @@ begin
 		self.lstRates.listCollection( combobox.listObject.ItemCategory.allCommissionRates, true, 0 );
 			
 		// Assign the myItemCategory to the TA
-		self.myTA.CommissionRateTA.myItemCategory := combobox.listObject.ItemCategory;		// EDS-17
+		self.myTA.CommissionRateTA.myItemCategory := combobox.listObject.ItemCategory;		
 
 	endif;
 	
-	self.lstAgentsUsing.clear();		// EDS-17.v2
-	self.lstAgentsNotUsing.clear();		// EDS-17.v2
+	self.lstAgentsUsing.clear();		
+	self.lstAgentsNotUsing.clear();		
 	self.toggleAddRemoveButtons();		// EDS 17.v2
 	self.btnUndo.enabled := false;
 end;
@@ -9686,9 +9494,6 @@ end;
 formLoad
 {
 formLoad() updating, protected;
-// Who		When		Ticket		Details
-// Dan T	21/04/2023	EDS-17		Implement CommissionRateTA class
-// Dan T	27/04/2023	EDS-17.v2	Removed listRates paint method
 
 begin
 	inheritMethod();
@@ -9697,7 +9502,7 @@ begin
 	self.btnUndo.enabled := false;
 	self.btnSave.enabled := false;
 	
-	self.toggleAddRemoveButtons();			// EDS-17.v2
+	self.toggleAddRemoveButtons();			
 	
 	// This will be deleted by the form unload
 	create self.myTA as CommissionRateTA;
@@ -9706,8 +9511,6 @@ end;
 getCurrentObject
 {
 getCurrentObject() : CommissionRate;
-// Who		When		Ticket		Details
-// Dan T	24/04/2023	EDS-17		Implement CommissionRateTA class
 
 begin
 	return inheritMethod().CommissionRate;
@@ -9716,8 +9519,6 @@ end;
 getTA
 {
 getTA() : CommissionRateTA;
-// Who		When		Ticket		Details
-// Dan T	21/04/2023	EDS-17		Implement CommissionRateTA class
 
 begin
 	return inheritMethod().CommissionRateTA;
@@ -9726,8 +9527,6 @@ end;
 getTAClass
 {
 getTAClass() : Class protected;
-// Who		When		Ticket		Details
-// Dan T	21/04/2023	EDS-17		Implement CommissionRateTA class
 
 begin
 	return CommissionRateTA;
@@ -9736,12 +9535,9 @@ end;
 getTabCaption
 {
 getTabCaption() : String protected;
-// Who		When		Ticket		Details
-// Dan T	21/04/2023	EDS-17		Implement CommissionRateTA class
-// Dan T	28/06/2023	EDS-80		Turn all remaining string literals into translatable strings
 
 begin
-	return $AgentCommissionRates;	// EDS-80
+	return $AgentCommissionRates;	
 end;
 }
 getTabIcon
@@ -9765,9 +9561,6 @@ loadAgents( commissionRate : CommissionRate ) updating, protected;
 //
 // Returns:		Nothing
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	21/04/2023	EDS-17		Implement CommissionRateTA class
-// Dan T	28/04/2023	EDS-35		Finalize Erewhon App
 
 vars
 	agent : Agent;
@@ -9788,7 +9581,7 @@ begin
 			usingList.itemObject[ usingList.addItem( agent.getNameAndAddress() ) ] := agent;
 			
 			// Add the current agent to the CommissionRateTA all agents list
-			self.getTA().allAgents.add( agent );								// EDS-17
+			self.getTA().allAgents.add( agent );								
 		else
 			notUsingList.itemObject[ notUsingList.addItem( agent.getNameAndAddress() ) ] := agent;
 		endif;
@@ -9799,13 +9592,10 @@ end;
 lstAgentsNotUsing_click
 {
 lstAgentsNotUsing_click(listbox: ErewhonListBox input) updating;
-// Who		When		Ticket		Details
-// Dan T	27/04/2023	EDS-17		Implement CommissionRateTA class
-// Dan T	27/04/2023	EDS-17v2	Removed button enable logic from the paint control event
 //									to the click control event
 
 begin
-	self.toggleAddRemoveButtons();		// EDS-17.v2
+	self.toggleAddRemoveButtons();		
 end;
 }
 lstAgentsNotUsing_dblClick
@@ -9819,11 +9609,9 @@ end;
 lstAgentsUsing_click
 {
 lstAgentsUsing_click( listbox : ErewhonListBox input ) updating;
-// Who		When		Ticket		Details
-// Dan T	27/04/2023	EDS-17.v2	Removed listRates paint method
 
 begin
-	self.toggleAddRemoveButtons();	// EDS-17.v2
+	self.toggleAddRemoveButtons();	
 end;
 }
 lstAgentsUsing_dblClick
@@ -9837,9 +9625,6 @@ end;
 lstRates_click
 {
 lstRates_click( listbox : ErewhonListBox input ) updating;
-// Who		When		Ticket		Details
-// Dan T	21/04/2023	EDS-17		Implement CommissionRateTA class
-// Dan T	27/04/2023	EDS-17.v2	Removed listRates paint method
 
 vars
 	commissionRate : CommissionRate;
@@ -9858,7 +9643,7 @@ begin
 		self.setContextObject( commissionRate );
 	endif;
 
-	self.toggleAddRemoveButtons();		// EDS-17.v2
+	self.toggleAddRemoveButtons();		
 	self.btnUndo.enabled := false;
 end;
 }
@@ -9884,10 +9669,6 @@ moveAgent( agent : Agent; addToUsingList : Boolean ) protected;
 //
 // Returns:		Nothing
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	24/04/2023	EDS-17		Implement CommissionRateTA class
-// Dan T	27/04/2023	EDS-17.v2	Removed listRates paint method
-// Dan T	28/04/2023	EDS-35		Finalize Erewhon App
 
 vars
 	index : Integer;
@@ -9898,13 +9679,13 @@ begin
 
 		if index <> NullIndex then
 			// Add agent to the Is Using List
-			self.lstAgentsUsing.itemObject[ self.lstAgentsUsing.addItem( agent.getNameAndAddress() ) ] := agent; 	// EDS-35
+			self.lstAgentsUsing.itemObject[ self.lstAgentsUsing.addItem( agent.getNameAndAddress() ) ] := agent; 	
 
 			self.lstAgentsNotUsing.removeItem( index );
 			
 			// Add the Agent to the all Agents collection in the TA
-			self.getTA().allAgents.tryAdd( agent );								// EDS-17
-			self.btnSave.enabled := true;										// EDS-17
+			self.getTA().allAgents.tryAdd( agent );								
+			self.btnSave.enabled := true;										
 		endif;
 	else
 		// Remove the agent out of the Is Using list
@@ -9916,12 +9697,12 @@ begin
 			self.lstAgentsUsing.removeItem( index );
 			
 			// Remove the Agent to the all Agents collection in the TA
-			self.getTA().allAgents.tryRemove( agent );							// EDS-17
-			self.btnSave.enabled := true;										// EDS-17
+			self.getTA().allAgents.tryRemove( agent );							
+			self.btnSave.enabled := true;										
 		endif;
 	endif;
 	
-	self.toggleAddRemoveButtons();												// EDS-17.v2
+	self.toggleAddRemoveButtons();												
 end;
 }
 toggleAddRemoveButtons
@@ -9934,8 +9715,6 @@ toggleAddRemoveButtons() protected;
 //				depending on the list items selected and if 
 //				there items in the list.
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	27/04/2023	EDS-17.v2	Removed listRates paint method
 
 begin
 	self.btnAdd.enabled := self.lstAgentsNotUsing.listObject <> null;
@@ -9976,8 +9755,6 @@ end;
 btnEdit_click
 {
 btnEdit_click(btn: ErewhonButton input) updating;
-// Who		When		Ticket		Details
-// Dan T	30/03/2023	EDS-5		Implement AgentTA class
 
 vars
 	agentForm	: EditAgentForm;
@@ -9988,7 +9765,7 @@ begin
 	if lstAgents.listObject <> null then
 		create agentForm;
 		agentForm.setAddressableEntity(lstAgents.listObject.Agent.myAddress);
-		agentForm.setContextObject( lstAgents.listObject.Agent );				// EDS-5
+		agentForm.setContextObject( lstAgents.listObject.Agent );				
 		agentForm.showModal;
 	endif;
 
@@ -9999,11 +9776,9 @@ end;
 btnRemove_click
 {
 btnRemove_click(btn: ErewhonButton input) updating;
-// Who		When		Ticket		Details
-// Dan T	30/03/2023	EDS-5		Implement AgentTA class
 
 vars
-	agentTA : AgentTA;	// EDS-5
+	agentTA : AgentTA;	
 	
 begin
 	app.mousePointer := Busy;
@@ -10015,7 +9790,7 @@ begin
 	
 epilog
 	app.mousePointer := Idle;
-	delete agentTA;		// EDS-5
+	delete agentTA;		
 end;
 }
 formLoad
@@ -10031,8 +9806,6 @@ formLoad() updating, protected;
 //
 // Returns:		Nothing
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	28/04/2023	EDS-35		Finalize Erewhon App
 
 begin
 	inheritMethod();
@@ -10062,8 +9835,6 @@ end;
 getTAClass
 {
 getTAClass() : Class protected;
-// Who		When		Ticket		Details
-// Dan T	29/03/2023	EDS-5		Implement AgentTA class
 
 begin
 	return AgentTA;
@@ -10072,12 +9843,9 @@ end;
 getTabCaption
 {
 getTabCaption() : String protected;
-// Who		When		Ticket		Details
-// Dan T	29/03/2023	EDS-3		Implement ClientTA class
-// Dan T	28/06/2023	EDS-80		Turn all remaining string literals into translatable strings
 
 begin
-	return $Agents;	// EDS-80
+	return $Agents;	
 end;
 }
 getTabIcon
@@ -10153,11 +9921,9 @@ end;
 lstCommissnRate_displayEntry
 {
 lstCommissnRate_displayEntry(listbox: ErewhonListBox input; obj: Any; lstIndex: Integer):String updating;
-// Who		When		Ticket		Details
-// Dan T	28/06/2023	EDS-80		Turn all remaining string literals into translatable strings
 
 begin
-	return obj.CommissionRate.percentage.display & Percent & Space & OpenParenthesis & obj.CommissionRate.myItemCategory.name & ClosedParenthesis;	// EDS-80
+	return obj.CommissionRate.percentage.display & Percent & Space & OpenParenthesis & obj.CommissionRate.myItemCategory.name & ClosedParenthesis;	
 end;
 }
 lstItems_displayEntry
@@ -10171,8 +9937,6 @@ end;
 processAfterDelete
 {
 processAfterDelete( pAgentTA : AgentTA input ) protected;
-// Who		When		Ticket		Details
-// Dan T	30/03/2023	EDS-5		Implement AgentTA class
 
 begin
 	inheritMethod( pAgentTA );
@@ -10181,8 +9945,6 @@ end;
 processAfterSave
 {
 processAfterSave( pAgentTA : AgentTA) updating, protected;
-// Who		When		Ticket		Details
-// Dan T	30/03/2023	EDS-5		Implement AgentTA class
 
 begin
 	inheritMethod( pAgentTA );
@@ -10219,8 +9981,6 @@ end;
 btnEdit_click
 {
 btnEdit_click( btn : ErewhonButton input ) updating;
-// Who		When		Ticket		Details
-// Dan T	29/03/2023	EDS-3		Implement ClientTA class
 
 vars
 	clientForm : EditClientForm;	
@@ -10231,7 +9991,7 @@ begin
 	if lstClients.listObject <> null then
 		create clientForm;
 		clientForm.setAddressableEntity( lstClients.listObject.Client.myAddress );
-		clientForm.setContextObject( lstClients.listObject.Client );					// EDS-3
+		clientForm.setContextObject( lstClients.listObject.Client );					
 		clientForm.showModal;
 	endif;
 epilog
@@ -10241,8 +10001,6 @@ end;
 btnRemove_click
 {
 btnRemove_click( btn : ErewhonButton input ) updating;
-// Who		When		Ticket		Details
-// Dan T	29/03/2023	EDS-3		Implement ClientTA class
 
 begin
 	app.mousePointer := Busy;
@@ -10269,8 +10027,6 @@ formLoad() updating, protected;
 //
 // Returns:		Nothing
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	28/04/2023	EDS-35		Finalize Erewhon App			
 
 begin
 	inheritMethod();
@@ -10300,8 +10056,6 @@ end;
 getTAClass
 {
 getTAClass() : Class protected;
-// Who		When		Ticket		Details
-// Dan T	30/03/2023	EDS-3		Implement ClientTA class
 
 begin
 	return ClientTA;
@@ -10310,12 +10064,9 @@ end;
 getTabCaption
 {
 getTabCaption() : String protected;
-// Who		When		Ticket		Details
-// Dan T	29/03/2023	EDS-3		Implement ClientTA class
-// Dan T	28/06/2023	EDS-80		Turn all remaining string literals into translatable strings
 
 begin
-	return $Clients;	// EDS-80
+	return $Clients;	
 end;
 }
 getTabIcon
@@ -10388,22 +10139,18 @@ end;
 lstRetailSales_displayEntry
 {
 lstRetailSales_displayEntry(listbox: ErewhonListBox input; obj: Any; lstIndex: Integer):String updating;
-// Who		When		Ticket		Details
-// Dan T	28/06/2023	EDS-80		Turn all remaining string literals into translatable strings
 
 begin
-	return obj.RetailSale.myItem.name & Colon & Space & obj.RetailSale.salePrice.currencyFormat;	// EDS-80
+	return obj.RetailSale.myItem.name & Colon & Space & obj.RetailSale.salePrice.currencyFormat;	
 end;
 }
 lstTenderSales_displayEntry
 {
 lstTenderSales_displayEntry(listbox: ErewhonListBox input; obj: Any; lstIndex: Integer):String updating;
-// Who		When		Ticket		Details
-// Dan T	28/06/2023	EDS-80		Turn all remaining string literals into translatable strings
 
 begin
-	return	obj.TenderSale.myItem.name & Colon & Space &			// EDS-80
-			obj.TenderSale.myTender.offer.currencyFormat & Space & At & Space &		// EDS-80
+	return	obj.TenderSale.myItem.name & Colon & Space &			
+			obj.TenderSale.myTender.offer.currencyFormat & Space & At & Space &		
 			obj.TenderSale.myTender.dateTendered.date.shortFormat &
 			obj.TenderSale.myTender.dateTendered.time.display;
 end;
@@ -10411,8 +10158,6 @@ end;
 processAfterDelete
 {
 processAfterDelete( pClientTA : ClientTA input ) protected;
-// Who		When		Ticket		Details
-// Dan T	29/03/2023	EDS-3		Implement ClientTA class
 
 begin
 	inheritMethod( pClientTA );
@@ -10421,8 +10166,6 @@ end;
 processAfterSave
 {
 processAfterSave( pClientTA : ClientTA ) updating, protected;
-// Who		When		Ticket		Details
-// Dan T	30/03/2023	EDS-3		Implement ClientTA class
 
 begin
 	inheritMethod( pClientTA );
@@ -10434,8 +10177,6 @@ end;
 btnAdd_click
 {
 btnAdd_click( btn : ErewhonButton input ) updating;
-// Who		When		Ticket		Details
-// Dan T	20/04/2023	EDS-17		Implement CommissionRateTA class
 
 vars
 	editCommissionRateForm	: EditCommissionRateForm;
@@ -10462,8 +10203,6 @@ end;
 btnEdit_click
 {
 btnEdit_click( btn : ErewhonButton input ) updating;
-// Who		When		Ticket		Details
-// Dan T	20/04/2023	EDS-17		Implement CommissionRateTA class
 
 vars
 	editCommissionRateForm	: EditCommissionRateForm;
@@ -10486,19 +10225,16 @@ end;
 btnRemove_click
 {
 btnRemove_click( btn : ErewhonButton input ) updating;
-// Who		When		Ticket		Details
-// Dan T	21/04/2023	EDS-17		Implement CommissionRateTA class
-// Dan T	28/06/2023	EDS-80		Turn all remaining string literals into translatable strings
 
 begin
 	app.mousePointer := Busy;
 
 	if lstRates.listObject <> null then
-		self.myCurrentObject := lstRates.listObject.CommissionRate;			// EDS-17
+		self.myCurrentObject := lstRates.listObject.CommissionRate;			
 		
-		if not self.doDelete() then											// EDS-17
-			self.displayErrors(self.getTA(), $UnableToDelete );				// EDS-17	// EDS-80
-		endif;																// EDS-17
+		if not self.doDelete() then											
+			self.displayErrors(self.getTA(), $UnableToDelete );				
+		endif;																
 	endif;
 
 epilog
@@ -10528,8 +10264,6 @@ end;
 formLoad
 {
 formLoad() updating, protected;
-// Who		When		Ticket		Details
-// Dan T	20/04/2023	EDS-17		Implement CommissionRateTA class
 
 begin
 	inheritMethod();
@@ -10544,8 +10278,6 @@ end;
 getCurrentObject
 {
 getCurrentObject() : CommissionRate;
-// Who		When		Ticket		Details
-// Dan T	20/04/2023	EDS-17		Implement CommissionRateTA class
 
 begin
 	return inheritMethod().CommissionRate;
@@ -10554,8 +10286,6 @@ end;
 getTA
 {
 getTA() : CommissionRateTA;
-// Who		When		Ticket		Details
-// Dan T	20/04/2023	EDS-17		Implement CommissionRateTA class
 
 begin
 	return inheritMethod().CommissionRateTA;
@@ -10564,8 +10294,6 @@ end;
 getTAClass
 {
 getTAClass() : Class protected;
-// Who		When		Ticket		Details
-// Dan T	20/04/2023	EDS-17		Implement CommissionRateTA class
 
 begin
 	return CommissionRateTA;
@@ -10574,12 +10302,9 @@ end;
 getTabCaption
 {
 getTabCaption() : String protected;
-// Who		When		Ticket		Details
-// Dan T	20/04/2023	EDS-17		Implement CommissionRateTA class
-// Dan T	28/06/2023	EDS-80		Turn all remaining string literals into translatable strings
 
 begin
-	return $CommissionRates;	// EDS-80
+	return $CommissionRates;	
 end;
 }
 getTabIcon
@@ -10649,8 +10374,6 @@ end;
 btnAdd_click
 {
 btnAdd_click( btn : ErewhonButton  ) updating;
-// Who		When		Ticket		Details
-// Dan T	31/03/2023	EDS-7		Implement CountryTA class
 
 vars
 	countryForm	: EditCountryForm;
@@ -10659,7 +10382,7 @@ begin
 	app.mousePointer := Busy;
 	
 	create countryForm;
-	countryForm.setContextObject( null );	// EDS-7
+	countryForm.setContextObject( null );	
 	countryForm.showModal;
 
 epilog
@@ -10669,18 +10392,14 @@ end;
 btnClose_click
 {
 btnClose_click( btn : ErewhonButton input ) updating;
-// Who		When		Ticket		Details
-// Dan T	31/03/2023	EDS-6		Implement CountryTA class
 
 begin
-	self.unloadForm();	// EDS-6
+	self.unloadForm();	
 end;
 }
 btnEdit_click
 {
 btnEdit_click( btn : ErewhonButton input ) updating;
-// Who		When		Ticket		Details
-// Dan T	31/03/2023	EDS-7		Implement CountryTA class
 
 vars
 	countryForm	: EditCountryForm;
@@ -10690,7 +10409,7 @@ begin
 
 	if lstCountries.listObject <> null then
 		create countryForm;
-		countryForm.setContextObject(lstCountries.listObject.Country);	// EDS-7
+		countryForm.setContextObject(lstCountries.listObject.Country);	
 		countryForm.showModal;
 	endif;
 
@@ -10701,15 +10420,13 @@ end;
 btnRemove_click
 {
 btnRemove_click( btn : ErewhonButton input ) updating;
-// Who		When		Ticket		Details
-// Dan T	31/03/2023	EDS-7		Implement CountryTA class
 
 begin
 	app.mousePointer := Busy;
 
 	if lstCountries.listObject <> null then
-		self.myCurrentObject := lstCountries.listObject.Country;	// EDS-7
-		self.doDelete();											// EDS-7
+		self.myCurrentObject := lstCountries.listObject.Country;	
+		self.doDelete();											
 	endif;
 
 epilog
@@ -10719,9 +10436,6 @@ end;
 formLoad
 {
 formLoad() updating, protected;
-// Who		When		Ticket		Details
-// Dan T	31/03/2023	EDS-7		Implement CountryTA class
-// Dan T	28/04/2023	EDS-35		Finalize Erewhon App
 
 begin
 	inheritMethod();
@@ -10735,8 +10449,6 @@ end;
 getCurrentObject
 {
 getCurrentObject() : Country;
-// Who		When		Ticket		Details
-// Dan T	31/03/2023	EDS-7		Implement CountryTA class
 
 begin
 	return inheritMethod().Country;
@@ -10745,8 +10457,6 @@ end;
 getTA
 {
 getTA() : CountryTA;
-// Who		When		Ticket		Details
-// Dan T	31/03/2023	EDS-7		Implement CountryTA class
 
 begin
 	return inheritMethod().CountryTA;
@@ -10755,8 +10465,6 @@ end;
 getTAClass
 {
 getTAClass() : Class protected;
-// Who		When		Ticket		Details
-// Dan T	31/03/2023	EDS-7		Implement CountryTA class
 
 begin
 	return CountryTA;
@@ -10765,12 +10473,9 @@ end;
 getTabCaption
 {
 getTabCaption(): String protected;
-// Who		When		Ticket		Details
-// Dan T	31/03/2023	EDS-7		Implement CountryTA class
-// Dan T	28/06/2023	EDS-80		Turn all remaining string literals into translatable strings
 
 begin
-	return $Countries;	// EDS-80
+	return $Countries;	
 end;
 }
 getTabIcon
@@ -10849,8 +10554,6 @@ end;
 processAfterDelete
 {
 processAfterDelete( pCountryTA : CountryTA input ) protected;
-// Who		When		Ticket		Details
-// Dan T	31/03/2023	EDS-7		Implement CountryTA class
 
 begin
 	inheritMethod( pCountryTA );
@@ -10885,8 +10588,6 @@ end;
 btnShow_click
 {
 btnShow_click( btn : ErewhonButton input ) updating;
-// Who		When		Ticket		Details
-// Dan T	26/04/2023	EDS-33		Move FormDocumentorSetup to ErewhonMainChildForm
 
 vars
 	selected : Boolean;
@@ -10925,10 +10626,6 @@ formLoad() updating, protected;
 // Purpose:		Populate the documentator with Agents and Regions for documentation
 //				interfaces to retrieve and display.
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	26/04/2023	EDS-33		Move FormDocumentorSetup to ErewhonMainChildForm
-// Dan T	28/04/2023	EDS-35		Finalize Erewhon App
-// Dan T	28/06/2023	EDS-80		Turn all remaining string literals into translatable strings
 
 
 constants
@@ -10946,14 +10643,14 @@ begin
 	
 	self.lstCandidates.clear();
 	
-	self.addItemToList( self.lstCandidates, null, Hyphen & Hyphen & Space & $Agents & Space & Hyphen & Hyphen, FirstLevel );	// EDS-80
+	self.addItemToList( self.lstCandidates, null, Hyphen & Hyphen & Space & $Agents & Space & Hyphen & Hyphen, FirstLevel );	
 	foreach docitem in app.myCompany.allAgents do
 		//the end point of the listEntryDescription is different name in 
 		//each implementing class, prefer to use docitem...
 		self.addItemToList( self.lstCandidates, docitem.Object, docitem.listEntryDescription(), SecondLevel );
 	endforeach;
 
-	self.addItemToList( self.lstCandidates, null, Hyphen & Hyphen & Space  & $Regions & Space & Hyphen & Hyphen, FirstLevel );	// EDS-80
+	self.addItemToList( self.lstCandidates, null, Hyphen & Hyphen & Space  & $Regions & Space & Hyphen & Hyphen, FirstLevel );	
 	foreach country in app.myCompany.allCountries do
 		foreach docitem in country.allRegions do
 			//the end point of the listEntryDescription is different name in 
@@ -10966,12 +10663,9 @@ end;
 getTabCaption
 {
 getTabCaption() : String protected;
-// Who		When		Ticket		Details
-// Dan T	26/04/2023	EDS-33		Move FormDocumentorSetup to ErewhonMainChildForm
-// Dan T	28/06/2023	EDS-80		Turn all remaining string literals into translatable strings
 
 begin
-	return $DocumentorSetup;	// EDS-80
+	return $DocumentorSetup;	
 end;
 }
 lstCandidates_dblClick
@@ -10996,9 +10690,6 @@ end;
 btnAdd_click
 {
 btnAdd_click( btn : ErewhonButton input ) updating;
-// Who		When		Ticket		Details
-// Dan T	14/04/2023	EDS-12		Implement SaleItemCategoryTA class
-// Dan T	10/07/2023	EDS-88	 	Rename SaleItem classes to improve clarity
 
 vars
 	editItemCategoryForm : EditItemCategoryForm;
@@ -11017,19 +10708,14 @@ end;
 btnClose_click
 {
 btnClose_click( btn: ErewhonButton input ) updating;
-// Who		When		Ticket		Details
-// Dan T	14/04/2023	EDS-12		Added self and parentheses to method 	
 
 begin
-	self.unloadForm();	// EDS-12
+	self.unloadForm();	
 end;
 }
 btnEdit_click
 {
 btnEdit_click(btn: ErewhonButton input) updating;
-// Who		When		Ticket		Details
-// Dan T	14/04/2023	EDS-12		Implement SaleItemCategoryTA class
-// Dan T	10/07/2023	EDS-88	 	Rename SaleItem classes to improve clarity
 
 vars
 	editItemCategoryForm	: EditItemCategoryForm;
@@ -11039,7 +10725,7 @@ begin
 	
 	create editItemCategoryForm;
 	
-	editItemCategoryForm.setContextObject( self.lstCategories.listObject.ItemCategory );	// EDS-12
+	editItemCategoryForm.setContextObject( self.lstCategories.listObject.ItemCategory );	
 	
 	editItemCategoryForm.showModal();
 
@@ -11050,15 +10736,13 @@ end;
 btnRemove_click
 {
 btnRemove_click( btn : ErewhonButton input ) updating;
-// Who		When		Ticket		Details
-// Dan T	14/04/2023	EDS-12		Implement SaleItemCategoryTA class
 
 begin
 	app.mousePointer := Busy;
 	
-	if lstCategories.listObject <> null then									// EDS-12
-		self.setContextObject( lstCategories.listObject.ItemCategory );		// EDS-12
-		self.doDelete();														// EDS-12
+	if lstCategories.listObject <> null then									
+		self.setContextObject( lstCategories.listObject.ItemCategory );		
+		self.doDelete();														
 	endif;
 
 epilog
@@ -11068,8 +10752,6 @@ end;
 formLoad
 {
 formLoad() updating, protected;
-// Who		When		Ticket		Details
-// Dan T	13/04/2023	EDS-12		Implement SaleItemCategoryTA class
 
 begin
 	inheritMethod();
@@ -11083,9 +10765,6 @@ end;
 getCurrentObject
 {
 getCurrentObject() : ItemCategory;
-// Who		When		Ticket		Details
-// Dan T	13/04/2023	EDS-12		Implement SaleItemCategoryTA class
-// Dan T	10/07/2023	EDS-88	 	Rename SaleItem classes to improve clarity
 
 begin
 	return inheritMethod().ItemCategory;
@@ -11094,8 +10773,6 @@ end;
 getTA
 {
 getTA() : ItemCategoryTA;
-// Who		When		Ticket		Details
-// Dan T	13/04/2023	EDS-12		Implement SaleItemCategoryTA class
 
 begin
 	return inheritMethod().ItemCategoryTA;
@@ -11104,8 +10781,6 @@ end;
 getTAClass
 {
 getTAClass() : Class protected;
-// Who		When		Ticket		Details
-// Dan T	13/04/2023	EDS-12		Implement SaleItemCategoryTA class
 
 begin
 	return ItemCategoryTA;
@@ -11114,12 +10789,9 @@ end;
 getTabCaption
 {
 getTabCaption() : String protected;
-// Who		When		Ticket		Details
-// Dan T	13/04/2023	EDS-12		Implement SaleItemCategoryTA class
-// Dan T	28/06/2023	EDS-80		Turn all remaining string literals into translatable strings
 
 begin
-	return $ItemCategories;	// EDS-80
+	return $ItemCategories;	
 end;
 }
 getTabIcon
@@ -11225,8 +10897,6 @@ end;
 btnClose_click
 {
 btnClose_click( btn : ErewhonButton input ) updating;
-// Who		When		Ticket		Details
-// Dan T	06/04/2023	EDS-14		Implement SaleItemTA class
 
 begin
 	self.unloadForm;
@@ -11268,9 +10938,6 @@ btnRemove_click(btn: ErewhonButton input) updating;
 //
 // Returns:		Nothing
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	06/04/2023	EDS-14		Implement SaleItemTA class
-// Dan T	10/07/2023	EDS-88	 	Rename SaleItem classes to improve clarity
 
 vars
 	item	: Item;
@@ -11298,10 +10965,10 @@ begin
 		item := item.TenderItem;
 	endif;
 	
-	if item <> null then					// EDS-14
-		self.myCurrentObject := item;		// EDS-14
-		self.doDelete();						// EDS-14
-	endif;										// EDS-14
+	if item <> null then					
+		self.myCurrentObject := item;		
+		self.doDelete();						
+	endif;										
 	
 	// We need to close-and-reopen unless that was the last item, in which case just reopen.
 	self.doOpenCloseItemFolder(lstItems, parentIndex);
@@ -11325,10 +10992,6 @@ doAdd() updating, protected;
 //
 // Returns:		Nothing
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	12/04/2023	EDS-14		Implement SaleItemTA class
-// Dan T	28/04/2023	EDS-35		Finalize Erewhon App
-// Dan T	10/07/2023	EDS-88	 	Rename SaleItem classes to improve clarity
 
 vars
 	listbox : ListBox;
@@ -11395,10 +11058,6 @@ doEdit() updating, protected;
 //
 // Returns:		Nothing
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	06/04/2023	EDS-14		Implement SaleItemTA class
-// Dan T	15/06/2023	EDS-28		Updated SaleItem category not moving in Sale Items List Form
-// Dan T	10/07/2023	EDS-88	 	Rename SaleItem classes to improve clarity
 
 vars
 	editItemForm : EditItemForm;
@@ -11442,7 +11101,7 @@ begin
 		
 		if editItemForm.showModal() = ModalOK then
 			// Close and re-open the parent branch to refresh it with the added item
-			self.doRefreshList();	// EDS-28
+			self.doRefreshList();	
 			
 			// Disable Add/Edit/Remove buttons
 			self.btnAdd.enabled := false;
@@ -11466,11 +11125,6 @@ doFindItem() protected;
 //
 // Returns:		Nothing
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	12/04/2023	EDS-14		Implement SaleItemTA class
-// Dan T	28/04/2023	EDS-35		Finalize Erewhon App
-// Dan T	28/06/2023	EDS-80		Turn all remaining string literals into translatable strings
-// Dan T	10/07/2023	EDS-88	 	Rename SaleItem classes to improve clarity
 
 vars
 	errorCode	: Integer;
@@ -11501,7 +11155,7 @@ begin
 	
 	if item = null or notMyItem then
 		// Failed to find the item - Abort!
-		app.msgBox( $ItemNotFound, $NotFound, MsgBox_Stop_Icon + MsgBox_OK_Only );			// EDS-14	// EDS-80
+		app.msgBox( $ItemNotFound, $NotFound, MsgBox_Stop_Icon + MsgBox_OK_Only );			
 		return;
 	endif;
 
@@ -11555,8 +11209,6 @@ doOpenCloseItemFolder( listbox : ErewhonListBox; picIndex : Integer ) protected;
 //
 // Returns:		Nothing
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	28/04/2023	EDS-35		Finalize Erewhon App
 
 vars
 	theText : String;
@@ -11589,8 +11241,6 @@ doRefreshList() protected;
 //
 // Parameters: 	N/A
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	15/06/2023	EDS-28		Updated SaleItem category not moving in Sale Items List Form
 
 vars
 	listIndex : Integer;
@@ -11627,9 +11277,6 @@ doSelectListItem( listbox : ErewhonListBox ) updating, protected;
 //
 // Returns:		Nothing
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	28/04/2023	EDS-35		Finalize Erewhon App
-// Dan T	10/08/2023	EDS-94		Grant Admin Users Full Functionality
 
 vars
 	theObject : Object;
@@ -11654,7 +11301,7 @@ begin
 	folderSelected := selectIndex <> NullIndex and theObject = null;
 	folderIsSubFolder := folderSelected and ( theText = $ItemsForSale or theText = $ItemsForTender );
 	itemSelected := theObject <> null and theObject.isKindOf(Item);
-	addEnabled := ( folderIsSubFolder or itemSelected );	// EDS-94 (Removed 'and not app.isCompanyUser' condition)
+	addEnabled := ( folderIsSubFolder or itemSelected );	
 	
 	btnAdd.enabled := addEnabled;
 	btnEdit.enabled := itemSelected;
@@ -11674,14 +11321,11 @@ formLoad() updating, protected;
 //
 // Returns:		Nothing
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	06/04/2023	EDS-14		Implement SaleItemTA class
-// Dan T	28/06/2023	EDS-70.v2	SaleItemsListForm Should Automatically Refresh if Item Sold
 
 begin
 	inheritMethod();
 	
-	self.beginClassNotification( Item, false, Object_Create_Event, Response_Continuous, Object_Create_Event );	// EDS-70.v2
+	self.beginClassNotification( Item, false, Object_Create_Event, Response_Continuous, Object_Create_Event );	
 	self.beginClassNotification( Item, false, Object_Update_Event, Response_Continuous, Object_Update_Event );
 	self.beginClassNotification( Item, false, Object_Delete_Event, Response_Continuous, Object_Delete_Event );
 	self.beginClassNotification( ItemCategory, false, Object_Delete_Event, Response_Continuous, Object_Delete_Event );
@@ -11697,8 +11341,6 @@ end;
 formSysNotify
 {
 formSysNotify( eventType : Integer; theObject : Object; eventTag : Integer ) updating;
-// Who		When		Ticket		Details
-// Dan T	12/04/2023	EDS-14		Implement SaleItemTA class
 
 begin
 	self.synchronizeForm( eventType, theObject, eventTag, null );
@@ -11716,7 +11358,6 @@ formUnload() updating, protected;
 //
 // Returns:		N/A
 // --------------------------------------------------------------------------------
-// Dan T	28/06/2023	EDS-70.v2	SaleItemsListForm Should Automatically Refresh if Item Sold
 
 begin
 	inheritMethod();
@@ -11728,8 +11369,6 @@ end;
 getCurrentObject
 {
 getCurrentObject() : PersistentModel;
-// Who		When		Ticket		Details
-// Dan T	06/04/2023	EDS-14		Implement SaleItemTA class
 
 begin
 	return inheritMethod().Item;
@@ -11738,8 +11377,6 @@ end;
 getTA
 {
 getTA() : ItemTA;
-// Who		When		Ticket		Details
-// Dan T	06/04/2023	EDS-14		Implement SaleItemTA class
 
 begin
 	return inheritMethod().ItemTA;
@@ -11748,8 +11385,6 @@ end;
 getTAClass
 {
 getTAClass() : Class protected;
-// Who		When		Ticket		Details
-// Dan T	06/04/2023	EDS-14		Implement SaleItemTA class
 
 begin
 	return ItemTA;
@@ -11758,19 +11393,14 @@ end;
 getTabCaption
 {
 getTabCaption() : String protected;
-// Who		When		Ticket		Details
-// Dan T	06/04/2023	EDS-14		Implement SaleItemTA class
-// Dan T	28/06/2023	EDS-80		Turn all remaining string literals into translatable strings
 
 begin
-	return $ItemsByCategory;	// EDS-80
+	return $ItemsByCategory;	
 end;
 }
 getTabIcon
 {
 getTabIcon() : Binary protected;
-// Who		When		Ticket		Details
-// Dan T	12/04/2023	EDS-14		Implement SaleItemTA class
 
 begin
 	return TabStripIcon_Item;
@@ -11789,9 +11419,6 @@ loadCategoriesInList() protected;
 //
 // Returns:		Nothing
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	28/04/2023	EDS-35		Finalize Erewhon App
-// Dan T	10/07/2023	EDS-88	 	Rename SaleItem classes to improve clarity
 
 constants
 	CategoryLevel : Integer = 1;
@@ -11850,10 +11477,6 @@ loadItemsInList( targetIndex : Integer ) protected;
 	+ Item Category 2				ItemLevel = 1
 	...etc
 */
-// Who		When		Ticket		Details
-// Dan T	14/04/2023	EDS-14		Implement SaleItemTA class
-// Dan T	28/04/2023	EDS-35		Finalize Erewhon App
-// Dan T	10/07/2023	EDS-88	 	Rename SaleItem classes to improve clarity
 
 constants
 	ItemLevel : Integer = 3;
@@ -11894,12 +11517,12 @@ begin
 
 	// Populate Items list.
 	foreach item in itemCategory.allItems do
-		validAgent := app.myAgent <> null and app.myAgent = item.myAgent;	// EDS-14
+		validAgent := app.myAgent <> null and app.myAgent = item.myAgent;	
 		itemOK := item.verifyHeader( listbox.itemText[ targetIndex ] );
-		userOK := app.isCompanyUser or validAgent;								// EDS-14
+		userOK := app.isCompanyUser or validAgent;								
 
 		if userOK and itemOK then
-			listbox.addItemAt( item.display(), itemIndex );					// EDS-14
+			listbox.addItemAt( item.display(), itemIndex );					
 			listbox.itemObject[ itemIndex ]	:= item;
 			listbox.itemLevel[ itemIndex ] := ItemLevel;
 			itemIndex := itemIndex + 1;
@@ -11961,8 +11584,6 @@ removeItemsFromList( itemIndex : Integer ) protected;
 //
 // Returns:		Nothing
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	28/04/2023	EDS-35		Finalize Erewhon App
 
 vars
 	listbox : ListBox;
@@ -12012,10 +11633,6 @@ synchronizeForm( eventType: Integer; theObject : Object; eventTag : Integer; use
 	If more unique processing is required for this purpose, then reimplement this
 	method on the form where this is required.
 */
-// Who		When		Ticket		Details
-// Dan T	28/04/2023	EDS-35		Finalize Erewhon App
-// Dan T	28/06/2023	EDS-70.v2	SaleItemsListForm Should Automatically Refresh if Item Sold
-// Dan T	10/08/2023	EDS-94		Grant Admin Users Full Functionality
 
 vars
 	listbox	: ListBox;
@@ -12024,7 +11641,7 @@ vars
 begin
 	listbox := self.lstItems;
 
-	if eventType = Object_Create_Event then		// EDS-70.v2
+	if eventType = Object_Create_Event then		
 		self.doRefreshList();
 		
 	elseif eventType = Object_Update_Event then
@@ -12034,7 +11651,7 @@ begin
 			listbox.itemText[ index ] := theObject.Item.display();
 		endif;
 		
-		self.doRefreshList();	// EDS-94
+		self.doRefreshList();	
 		
 	elseif eventType = Object_Delete_Event then
 		index := listbox.findObject( theObject );
@@ -12051,8 +11668,6 @@ end;
 btnAddRetailItem_click
 {
 btnAddRetailItem_click(btn: Button input) updating;
-// Who		When		Ticket		Details
-// Dan T	15/08/2023	EDS-93		Create View Items Form
 
 vars
 	editRetailItemForm : EditRetailItemForm;
@@ -12066,8 +11681,6 @@ end;
 btnAddTenderItem_click
 {
 btnAddTenderItem_click(btn: Button input) updating;
-// Who		When		Ticket		Details
-// Dan T	15/08/2023	EDS-93		Create View Items Form
 
 vars
 	editTenderItemForm : EditTenderItemForm;
@@ -12081,8 +11694,6 @@ end;
 btnClearFilters_click
 {
 btnClearFilters_click(btn: Button input) updating;
-// Who		When		Ticket		Details
-// Dan T	15/08/2023	EDS-93		Create View Items Form
 
 begin
 	self.doClearFilters();
@@ -12091,8 +11702,6 @@ end;
 btnClose_click
 {
 btnClose_click(btn: Button input) updating;
-// Who		When		Ticket		Details
-// Dan T	15/08/2023	EDS-93		Create View Items Form
 
 begin
 	self.doClose();
@@ -12101,8 +11710,6 @@ end;
 btnDelete_click
 {
 btnDelete_click(btn: Button input) updating;
-// Who		When		Ticket		Details
-// Dan T	15/08/2023	EDS-93		Create View Items Form
 
 begin
 	if self.myCurrentObject <> null then
@@ -12113,8 +11720,6 @@ end;
 btnEdit_click
 {
 btnEdit_click(btn: Button input) updating;
-// Who		When		Ticket		Details
-// Dan T	14/08/2023	EDS-93		Create View Items Form
 
 begin
 	self.doEdit();
@@ -12123,8 +11728,6 @@ end;
 btnFilter_click
 {
 btnFilter_click(btn: Button input) updating;
-// Who		When		Ticket		Details
-// Dan T	15/08/2023	EDS-93		Create View Items Form
 
 begin
 	self.doApplyFilter();
@@ -12133,8 +11736,6 @@ end;
 cmbAgent_displayRow
 {
 cmbAgent_displayRow(combobox: ComboBox input; pAgent: Agent; lstIndex: Integer; bcontinue: Boolean io):String updating;
-// Who		When		Ticket		Details
-// Dan T	15/08/2023	EDS-93		Create View Items Form
 
 begin
 	return pAgent.name;
@@ -12143,8 +11744,6 @@ end;
 cmbClient_displayRow
 {
 cmbClient_displayRow(combobox: ComboBox input; pClient: Client; lstIndex: Integer; bcontinue: Boolean io):String updating;
-// Who		When		Ticket		Details
-// Dan T	15/08/2023	EDS-93		Create View Items Form
 
 begin
 	return pClient.name;
@@ -12153,8 +11752,6 @@ end;
 cmbCountry_click
 {
 cmbCountry_click(combobox: ComboBox input) updating;
-// Who		When		Ticket		Details
-// Dan T	15/08/2023	EDS-93		Create View Items Form
 
 begin
 	if self.cmbCountry.listObject <> null then
@@ -12170,8 +11767,6 @@ end;
 cmbCountry_displayRow
 {
 cmbCountry_displayRow(combobox: ComboBox input; pCountry: Country; lstIndex: Integer; bcontinue: Boolean io):String updating;
-// Who		When		Ticket		Details
-// Dan T	15/08/2023	EDS-93		Create View Items Form
 
 begin
 	return pCountry.name;
@@ -12180,8 +11775,6 @@ end;
 cmbRegion_displayRow
 {
 cmbRegion_displayRow(combobox: ComboBox input; pRegion: Region; lstIndex: Integer; bcontinue: Boolean io):String updating;
-// Who		When		Ticket		Details
-// Dan T	15/08/2023	EDS-93		Create View Items Form
 
 begin
 	return pRegion.name;
@@ -12190,8 +11783,6 @@ end;
 doApplyFilter
 {
 doApplyFilter() updating, protected;
-// Who		When		Ticket		Details
-// Dan T	15/08/2023	EDS-93		Create View Items Form
 
 begin
 	on ErewhonException do app.exception_handler_abort_on_50002_with_message_box( exception );
@@ -12222,8 +11813,6 @@ doClearFilters() updating, protected;
 //
 // Returns:		N/A
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	15/08/2023	EDS-93		Create View Items Form
 
 begin
 	self.optAllItems.value := true;
@@ -12246,8 +11835,6 @@ end;
 doClose
 {
 doClose() updating, protected;
-// Who		When		Ticket		Details
-// Dan T	15/08/2023	EDS-93		Create View Items Form
 
 begin
 	self.unloadForm();
@@ -12256,8 +11843,6 @@ end;
 doEdit
 {
 doEdit() updating, protected;
-// Who		When		Ticket		Details
-// Dan T	14/08/2023	EDS-93		Create View Items Form
 
 vars
 	editRetailItemForm : EditRetailItemForm;
@@ -12285,8 +11870,6 @@ end;
 formLoad
 {
 formLoad() updating, protected;
-// Who		When		Ticket		Details
-// Dan T	15/08/2023	EDS-93		Create View Items Form
 
 begin
 	inheritMethod();
@@ -12360,8 +11943,6 @@ end;
 formSysNotify
 {
 formSysNotify(eventType: Integer; theObject: Object; eventTag: Integer) updating;
-// Who		When		Ticket		Details
-// Dan T	15/08/2023	EDS-93		Create View Items Form
 
 begin
 	inheritMethod( eventType, theObject, eventTag );
@@ -12380,8 +11961,6 @@ end;
 formUnload
 {
 formUnload() updating, protected;
-// Who		When		Ticket		Details
-// Dan T	15/08/2023	EDS-93		Create View Items Form
 
 begin
 	inheritMethod();
@@ -12394,8 +11973,6 @@ end;
 getTAClass
 {
 getTAClass(): Class protected;
-// Who		When		Ticket		Details
-// Dan T	15/08/2023	EDS-93		Create View Items Form
 
 begin
 	if self.myCurrentObject.isKindOf( RetailItem ) then
@@ -12412,8 +11989,6 @@ end;
 getTabCaption
 {
 getTabCaption(): String protected;
-// Who		When		Ticket		Details
-// Dan T	14/08/2023	EDS-93		Create View Items Form
 
 begin
 	return $ViewItems;
@@ -12422,8 +11997,6 @@ end;
 getTabIcon
 {
 getTabIcon(): Binary protected;
-// Who		When		Ticket		Details
-// Dan T	15/08/2023	EDS-93		Create View Items Form
 
 begin
 	return TabStripIcon_Item;
@@ -12441,8 +12014,6 @@ populateItemSearch() updating, protected;
 //
 // Returns:		N/A
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	15/08/2023	EDS-93		Create View Items Form
 
 begin
 	if app.myAgent <> null then 
@@ -12488,8 +12059,6 @@ end;
 tblItems_dblClick
 {
 tblItems_dblClick(table: Table input) updating;
-// Who		When		Ticket		Details
-// Dan T	15/08/2023	EDS-93		Create View Items Form
 
 begin
 	self.doEdit();
@@ -12498,8 +12067,6 @@ end;
 tblItems_displayRow
 {
 tblItems_displayRow(pTable: Table input; theSheet: Integer; pItem: Item; theRow: Integer; bcontinue: Boolean io):String updating;
-// Who		When		Ticket		Details
-// Dan T	14/08/2023	EDS-93		Create View Items Form
 
 vars
 	status : String;
@@ -12554,8 +12121,6 @@ end;
 tblItems_rowColumnChg
 {
 tblItems_rowColumnChg( pTable: Table input ) updating;
-// Who		When		Ticket		Details
-// Dan T	15/08/2023	EDS-93		Create View Items Form
 
 vars
 	item : Item;
@@ -12595,9 +12160,6 @@ end;
 btnAdd_click
 {
 btnAdd_click(btn: ErewhonButton input) updating;
-// Who		When		Ticket		Details
-// Dan T	03/04/2023	EDS-8		Implement RegionTA class
-// Dan T	14/06/2023	EDS-37		Country Not Updated When Updating Region
 
 vars
 	editRegionForm	: EditRegionForm;
@@ -12607,9 +12169,9 @@ begin
 
 	create editRegionForm;
 	
-	editRegionForm.setContextObject( null );	// EDS-8
+	editRegionForm.setContextObject( null );	
 	
-	editRegionForm.myCountry := self.cmbCountries.listObject.Country;	// EDS-37
+	editRegionForm.myCountry := self.cmbCountries.listObject.Country;	
 	
 	editRegionForm.showModal();
 
@@ -12628,8 +12190,6 @@ end;
 btnEdit_click
 {
 btnEdit_click(btn: ErewhonButton input) updating;
-// Who		When		Ticket		Details
-// Dan T	03/04/2023	EDS-8		Implement RegionTA class
 
 vars
 	regionForm	: EditRegionForm;
@@ -12639,7 +12199,7 @@ begin
 
 	if lstRegions.listObject <> null then
 		create regionForm;
-		regionForm.setContextObject(lstRegions.listObject.Region);	// EDS-8
+		regionForm.setContextObject(lstRegions.listObject.Region);	
 		regionForm.showModal();
 	endif;
 
@@ -12650,15 +12210,13 @@ end;
 btnRemove_click
 {
 btnRemove_click(btn: ErewhonButton input) updating;
-// Who		When		Ticket		Details
-// Dan T	03/04/2023	EDS-8		Implement RegionTA class
 
 begin
 	app.mousePointer := Busy;
 
 	if lstRegions.listObject <> null then
-		self.myCurrentObject := lstRegions.listObject.Region;	// EDS-8
-		self.doDelete();										// EDS-8
+		self.myCurrentObject := lstRegions.listObject.Region;	
+		self.doDelete();										
 	endif;
 
 epilog
@@ -12668,8 +12226,6 @@ end;
 cmbCountries_click
 {
 cmbCountries_click( combobox : ErewhonComboBox input ) updating;
-// Who		When		Ticket		Details
-// Dan T	14/06/2023	EDS-37		Country Not Updated When Updating Region
 
 begin
 	app.mousePointer := Busy;
@@ -12680,7 +12236,7 @@ begin
 		self.lstRegions.listCollection( combobox.listObject.Country.allRegions, true, 0 );
 	endif;
 
-	self.lstItems.clear();			// EDS-37 (Clear previous sale Items)
+	self.lstItems.clear();			
 	self.btnEdit.enabled := false;			
 	self.btnRemove.enabled := false;
 	
@@ -12699,9 +12255,6 @@ end;
 formLoad
 {
 formLoad() updating, protected;
-// Who		When		Ticket		Details
-// Dan T	03/04/2023	EDS-8		Implement RegionTA class
-// Dan T	28/04/2023	EDS-35		Finalize Erewhon App
 
 begin
 	inheritMethod();
@@ -12715,8 +12268,6 @@ end;
 getCurrentObject
 {
 getCurrentObject() : Region;
-// Who		When		Ticket		Details
-// Dan T	03/04/2023	EDS-8		Implement RegionTA class
 
 begin
 	return inheritMethod().Region;
@@ -12725,8 +12276,6 @@ end;
 getTA
 {
 getTA() : RegionTA;
-// Who		When		Ticket		Details
-// Dan T	03/04/2023	EDS-8		Implement RegionTA class
 
 begin
 	return inheritMethod().RegionTA;
@@ -12735,8 +12284,6 @@ end;
 getTAClass
 {
 getTAClass() : Class protected;
-// Who		When		Ticket		Details
-// Dan T	03/04/2023	EDS-8		Implement RegionTA class
 
 begin
 	return RegionTA;
@@ -12745,12 +12292,9 @@ end;
 getTabCaption
 {
 getTabCaption() : String protected;
-// Who		When		Ticket		Details
-// Dan T	03/04/2023	EDS-8		Implement RegionTA class
-// Dan T	28/06/2023	EDS-80		Turn all remaining string literals into translatable strings
 
 begin
-	return $Regions;	// EDS-80
+	return $Regions;	
 end;
 }
 getTabIcon
@@ -12829,8 +12373,6 @@ end;
 processAfterDelete
 {
 processAfterDelete( pRegionTA : RegionTA input ) protected;
-// Who		When		Ticket		Details
-// Dan T	03/04/2023	EDS-8		Implement RegionTA class
 
 begin
 	inheritMethod( pRegionTA );
@@ -12842,11 +12384,9 @@ end;
 btnClose_click
 {
 btnClose_click(btn: ErewhonButton input) updating;
-// Who		When		Ticket		Details
-// Dan T	04/04/2023	EDS-9		Implement SaleTA class
 
 begin
-	self.unloadForm;	// EDS-9
+	self.unloadForm;	
 end;
 }
 buildSalesTable
@@ -12861,10 +12401,6 @@ buildSalesTable() protected;
 //
 // Returns:		Nothing
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	28/04/2023	EDS-35		Finalize Erewhon App
-// Dan T	28/06/2023	EDS-80		Turn all remaining string literals into translatable strings
-// Dan T	10/07/2023	EDS-88	 	Rename SaleItem classes to improve clarity
 
 constants
 	ExtraPrecision = 4;
@@ -12918,7 +12454,7 @@ begin
 
 		if canAccess then
 			rowString := sale.myClient.name &
-					Tab & item.getCode() & Space & Hyphen & Space & item.name &	// EDS-80
+					Tab & item.getCode() & Space & Hyphen & Space & item.name &	
 					Tab & item.price.String &
 					Tab & sale.getDate.shortFormat();
 					
@@ -12994,11 +12530,9 @@ cmbClient_displayEntry(
 		pClient : Client;
 		listIndex : Integer
 		) : String updating;
-// Who		When		Ticket		Details
-// Dan T	29/03/2023	EDS-3		Implement ClientTA class
 
 begin
-	return pClient.getNameAndAddress();	// EDS-3
+	return pClient.getNameAndAddress();	
 end;
 }
 formLoad
@@ -13014,9 +12548,6 @@ formLoad() updating, protected;
 //
 // Returns:		Nothing
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	04/04/2023	EDS-9		Implement SaleTA class
-// Dan T	28/06/2023	EDS-80		Turn all remaining string literals into translatable strings
 
 
 begin
@@ -13027,7 +12558,7 @@ begin
 	self.cmbClient.listCollection( app.myCompany.allClients, true, CollectionOrderForwards );
 	
 	// include company name in company option
-	self.optCompany.caption := self.optCompany.caption & Space & OpenParenthesis & app.myCompany.name & ClosedParenthesis;	// EDS-80
+	self.optCompany.caption := self.optCompany.caption & Space & OpenParenthesis & app.myCompany.name & ClosedParenthesis;	
 	
 	if app.myAgent <> null then
 		self.cmbAgent.enabled := false;
@@ -13046,8 +12577,6 @@ end;
 getCurrentObject
 {
 getCurrentObject() : Sale;
-// Who		When		Ticket		Details
-// Dan T	04/04/2023	EDS-9		Implement SaleTA class
 
 begin
 	return inheritMethod().Sale;
@@ -13056,8 +12585,6 @@ end;
 getTA
 {
 getTA() : SaleTA;
-// Who		When		Ticket		Details
-// Dan T	04/04/2023	EDS-9		Implement SaleTA class
 
 begin
 	return inheritMethod().SaleTA;
@@ -13066,8 +12593,6 @@ end;
 getTAClass
 {
 getTAClass() : Class protected;
-// Who		When		Ticket		Details
-// Dan T	04/04/2023	EDS-9		Implement SaleTA class
 
 begin
 	return SaleTA;
@@ -13076,12 +12601,9 @@ end;
 getTabCaption
 {
 getTabCaption() : String protected;
-// Who		When		Ticket		Details
-// Dan T	04/04/2023	EDS-9		Implement SaleTA class
-// Dan T	28/06/2023	EDS-80		Turn all remaining string literals into translatable strings
 
 begin
-	return $Sales;	// EDS-80
+	return $Sales;	
 end;
 }
 getTabIcon
@@ -13104,8 +12626,6 @@ initializeSalesTable() updating, protected;
 //
 // Returns:		Nothing
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	28/04/2023	EDS-35		Finalize Erewhon App
 
 constants
 	NumOfSalesTableColumns : Integer	= 6;
@@ -13280,8 +12800,6 @@ end;
 btnApplyFilter_click
 {
 btnApplyFilter_click(btn: ErewhonButton input) updating;
-// Who		When		Ticket		Details
-// Dan T	25/07/2023	EDS-90 		Create Tenders View Form
 
 begin
 	self.doApplyFilter();
@@ -13290,8 +12808,6 @@ end;
 btnCloseForm_click
 {
 btnCloseForm_click(btn: ErewhonButton input) updating;
-// Who		When		Ticket		Details
-// Dan T	25/07/2023	EDS-90 		Create Tenders View Form
 
 begin
 	self.unloadForm();
@@ -13300,8 +12816,6 @@ end;
 btnDelete_click
 {
 btnDelete_click(btn: ErewhonButton input) updating;
-// Who		When		Ticket		Details
-// Dan T	11/08/2023	EDS-103		Add Delete Tender Functionality
 
 begin
 	self.doDeleteTender();
@@ -13310,8 +12824,6 @@ end;
 btnResetFilters_click
 {
 btnResetFilters_click(btn: ErewhonButton input) updating;
-// Who		When		Ticket		Details
-// Dan T	25/07/2023	EDS-90 		Create Tenders View Form
 
 begin
 	self.doResetFilters();
@@ -13320,8 +12832,6 @@ end;
 btnViewTender_click
 {
 btnViewTender_click(btn: Button input) updating;
-// Who		When		Ticket		Details
-// Dan T	11/08/2023	EDS-102		Create View Tender Form
 
 begin
 	self.doViewTender();
@@ -13330,8 +12840,6 @@ end;
 cmbAgent_displayRow
 {
 cmbAgent_displayRow(combobox: ErewhonComboBox input; pAgent: Agent; lstIndex: Integer; bcontinue: Boolean io):String updating;
-// Who		When		Ticket		Details
-// Dan T	25/07/2023	EDS-90 		Create Tenders View Form
 
 begin
 	return pAgent.name;
@@ -13340,8 +12848,6 @@ end;
 cmbClient_displayRow
 {
 cmbClient_displayRow(combobox: ErewhonComboBox input; pClient: Client; lstIndex: Integer; bcontinue: Boolean io):String updating;
-// Who		When		Ticket		Details
-// Dan T	25/07/2023	EDS-90 		Create Tenders View Form
 
 begin
 	return pClient.name;
@@ -13350,8 +12856,6 @@ end;
 cmbItem_displayRow
 {
 cmbItem_displayRow(combobox: ErewhonComboBox input; pItem: Item; lstIndex: Integer; bcontinue: Boolean io):String updating;
-// Who		When		Ticket		Details
-// Dan T	25/07/2023	EDS-90 		Create Tenders View Form
 
 begin
 	return pItem.getCode() & Space & pItem.name;
@@ -13369,8 +12873,6 @@ doApplyFilter() updating, protected;
 //
 // Returns:		N/A
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	11/07/2023	EDS-90 		Create Tenders View Form
 
 begin
 	self.setFilters();
@@ -13381,8 +12883,6 @@ end;
 doDeleteTender
 {
 doDeleteTender() updating, protected;
-// Who		When		Ticket		Details
-// Dan T	11/08/2023	EDS-103		Add Delete Tender Functionality
 
 vars
 	tender : Tender;
@@ -13426,8 +12926,6 @@ doResetFilters() updating, protected;
 // Returns:		N/A
 // --------------------------------------------------------------------------------
 
-// Who		When		Ticket		Details
-// Dan T	11/07/2023	EDS-90 		Create Tenders View Form
 
 begin
 	self.initializeFilters();
@@ -13436,8 +12934,6 @@ end;
 doViewTender
 {
 doViewTender() updating, protected;
-// Who		When		Ticket		Details
-// Dan T	11/08/2023	EDS-102		Create View Tender Form
 
 vars
 	tender : Tender;
@@ -13461,10 +12957,6 @@ end;
 formLoad
 {
 formLoad() updating, protected;
-// Who		When		Ticket		Details
-// Dan T	11/07/2023	EDS-90 		Create Tenders View Form
-// Dan T	11/08/2023	EDS-103		Add Delete Tender Functionality
-// Dan T	11/08/2023	EDS-102		Create View Tender Form
 
 begin
 	inheritMethod();
@@ -13475,19 +12967,17 @@ begin
 	self.initializeFilters();
 	self.doApplyFilter();
 	
-	// EDS-103
+	
 	// Listen for Tender Create/Update/Delete events
 	self.beginClassNotification( Tender, false, Any_System_Event, Response_Continuous, null );
 
-	self.btnDelete.enabled := false;		// EDS-102
-	self.btnViewTender.enabled := false;	// EDS-102
+	self.btnDelete.enabled := false;		
+	self.btnViewTender.enabled := false;	
 end;
 }
 formSysNotify
 {
 formSysNotify(eventType: Integer; pTender: Tender; eventTag: Integer) updating;
-// Who		When		Ticket		Details
-// Dan T	11/08/2023	EDS-103		Add Delete Tender Functionality
 
 begin
 	inheritMethod( eventType, pTender, eventTag );
@@ -13499,9 +12989,6 @@ end;
 formUnload
 {
 formUnload() updating, protected;
-// Who		When		Ticket		Details
-// Dan T	11/07/2023	EDS-90 		Create Tenders View Form
-// Dan T	11/08/2023	EDS-103		Add Delete Tender Functionality
 
 begin
 	inheritMethod();
@@ -13509,14 +12996,12 @@ begin
 	delete self.myTendersSearch;
 	
 	// Unsubscribe form from all Class notifications
-	self.endNotificationForSubscriber( self );				// EDS-103
+	self.endNotificationForSubscriber( self );				
 end;
 }
 getTabCaption
 {
 getTabCaption(): String protected;
-// Who		When		Ticket		Details
-// Dan T	11/07/2023	EDS-90 		Create Tenders View Form
 
 begin
 	return $TendersListFormCaption;
@@ -13542,9 +13027,6 @@ initializeFilters() updating, protected;
 //
 // Returns:		N/A
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	11/07/2023	EDS-90 		Create Tenders View Form
-// Dan T	11/08/2023	EDS-101		Add defaultRowHeight to Combo Boxes
 
 begin
 	self.myTendersSearch.includeOpenTenders := true;
@@ -13562,7 +13044,7 @@ begin
 	self.cmbAgent.displayCollection( app.myCompany.allAgents, true, null, null, Space );
 	self.cmbItem.displayCollection( app.myCompany.allTenderItems, true, null, null, Space );
 	
-	// EDS-101
+	
 	// Refreshing ComboBox entries due to Jade Bug reported in Parsys ticket 69598
 	// Without this workaround, the items are not initially displayed correctly when specifying a defaultRowHeight
 	self.cmbClient.refreshEntries( null );
@@ -13584,8 +13066,6 @@ initializeTable() updating, protected;
 //
 // Returns:		N/A
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	11/07/2023	EDS-90 		Create Tenders View Form
 
 constants
 	TotalColumns		: Integer	= 8;
@@ -13632,8 +13112,6 @@ populateTendersTable() updating, protected;
 //
 // Returns:		N/A
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	11/07/2023	EDS-90 		Create Tenders View Form
 	
 begin
 	self.tblTenders.displayCollection( self.myTendersSearch.allTenders, false, null, null );
@@ -13652,8 +13130,6 @@ setFilters() updating, protected;
 //
 // Returns:		N/A
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	11/07/2023	EDS-90 		Create Tenders View Form
 
 begin
 	self.myTendersSearch.myClient := self.cmbClient.listObject.Client;
@@ -13668,9 +13144,6 @@ end;
 tblTenders_click
 {
 tblTenders_click( pTable: ErewhonTable input ) updating;
-// Who		When		Ticket		Details
-// Dan T	11/08/2023	EDS-103		Add Delete Tender Functionality
-// Dan T	11/08/2023	EDS-102		Create View Tender Form
 
 begin
 	if pTable.row > HeaderRowIndex and pTable.row <= pTable.rows then
@@ -13678,18 +13151,16 @@ begin
 		if app.myAgent = null then
 			self.btnDelete.enabled := true;
 		endif;
-		self.btnViewTender.enabled := true;		// EDS-102
+		self.btnViewTender.enabled := true;		
 	else
 		self.btnDelete.enabled := false;
-		self.btnViewTender.enabled := false;	// EDS-102
+		self.btnViewTender.enabled := false;	
 	endif;
 end;
 }
 tblTenders_dblClick
 {
 tblTenders_dblClick( pTable : Table input ) updating;
-// Who		When		Ticket		Details
-// Dan T	11/08/2023	EDS-102		Create View Tender Form
 
 begin
 	if pTable.row > HeaderRowIndex and pTable.row <= pTable.rows then
@@ -13700,8 +13171,6 @@ end;
 tblTenders_displayRow
 {
 tblTenders_displayRow(table: ErewhonTable input; theSheet: Integer; pTender: Tender; theRow: Integer; bcontinue: Boolean io):String updating;
-// Who		When		Ticket		Details
-// Dan T	11/07/2023	EDS-90 		Create Tenders View Form
 
 begin
 	// Color closed tenders red
@@ -13753,14 +13222,11 @@ end;
 formLoad
 {
 formLoad() updating, protected;
-// Who		When		Ticket		Details
-// Dan T	27/04/2023	EDS-35		Finalize Erewhon App
-// Dan T	28/06/2023	EDS-80		Turn all remaining string literals into translatable strings
 
 begin
 	inheritMethod();
 	
-	self.lblVersion.caption := $BaseVersion & Space & app.getVersionString;	// EDS-80
+	self.lblVersion.caption := $BaseVersion & Space & app.getVersionString;	
 end;
 }
 	)
@@ -13769,8 +13235,6 @@ end;
 btnCloseNow_click
 {
 btnCloseNow_click( btn : ErewhonButton input ) updating;
-// Who		When		Ticket		Details
-// Dan T	14/04/2023	EDS-18		Implement TenderTA Class
 
 vars
 	numTendersClosed : Integer;
@@ -13780,7 +13244,7 @@ begin
 
 	self.stopTimer();
 
-	app.myCompany.closeTendersAtDate( self.txtCloseDate.getTextAsDate(), numTendersClosed ) ;	// EDS-18
+	app.myCompany.closeTendersAtDate( self.txtCloseDate.getTextAsDate(), numTendersClosed ) ;	
 
 	self.lblNumClosedNow.caption := numTendersClosed.String;
 epilog
@@ -13816,9 +13280,6 @@ end;
 formLoad
 {
 formLoad() updating, protected;
-// Who		When		Ticket		Details
-// Dan T	14/04/2023	EDS-18		Implement TenderTA Class
-// Dan T	28/06/2023	EDS-80		Turn all remaining string literals into translatable strings
 
 vars
 	today : Date;
@@ -13830,8 +13291,8 @@ begin
 	
 	self.txtCloseDate.setTextFromDate( today );
 	self.lblCloseDate.caption := $None;
-	self.lblNumClosedNow.caption := 0.String;	// EDS-80
-	self.lblNumClosedSched.caption := 0.String;	// EDS-80
+	self.lblNumClosedNow.caption := 0.String;	
+	self.lblNumClosedSched.caption := 0.String;	
 	self.lblSecondsToGo.caption := null;
 	
 	self.stopTimer();
@@ -13849,9 +13310,6 @@ startTimer( continuing : Boolean ) updating, protected;
 //
 // Returns:		nothing.
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	28/04/2023	EDS-35		Finalize Erewhon App
-// Dan T	28/06/2023	EDS-80		Turn all remaining string literals into translatable strings
 
 begin
 	// The form should ensure that this can only be run when timer is not going, this
@@ -13866,7 +13324,7 @@ begin
 		beginTimer( TimerSeconds * MillisecondsPerSecond, Timer_OneShot, ClosureTimer );
 		self.btnStart.enabled := false;
 		self.btnStop.enabled := true;
-		self.lblSecondsToGo.caption := self.secondsToGo.String & Space & $SecsToGo;	// EDS-80
+		self.lblSecondsToGo.caption := self.secondsToGo.String & Space & $SecsToGo;	
 	else
 		self.btnStart.enabled := true;
 		self.btnStop.enabled := false;
@@ -13888,8 +13346,6 @@ stopTimer() protected;
 //
 // Returns:		Nothing
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	28/04/2023	EDS-35		Finalize Erewhon App
 
 begin
 	endTimer( ClosureTimer );
@@ -13912,9 +13368,6 @@ timerEvent( eventTag : Integer ) updating;
 //
 // Returns:		Nothing.
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	14/04/2023	EDS-18		Implement TenderTA Class
-// Dan T	28/04/2023	EDS-35		Finalize Erewhon App
 
 vars
 	numTendersClosed 	: Integer;
@@ -14081,14 +13534,12 @@ end;
 btnOk_click
 {
 btnOk_click( btn : ErewhonButton input ) updating;
-// Who		When		Ticket		Details
-// Dan T	29/03/2023	EDS-3		Implement ClientTA class
 
 begin
 	app.mousePointer := Busy;
 	
-	if not self.doSave() then	// EDS-3
-		return;					// EDS-3
+	if not self.doSave() then	
+		return;					
 	endif;
 
 	self.modalResult := ModalOK;
@@ -14117,8 +13568,6 @@ end;
 setFocusField
 {
 setFocusField( pField : String ) updating, protected;
-// Who		When		Ticket		Details
-// Dan T	29/03/2023	EDS-3		Implement ClientTA class
 
 begin
 	if pField = Focus_Name then
@@ -14148,9 +13597,6 @@ end;
 displayObject
 {
 displayObject( pAgent : Agent ) updating, protected;
-// Who		When		Ticket		Details
-// Dan T	30/03/2023	EDS-5		Implement AgentTA class
-// Dan T	28/06/2023	EDS-80		Turn all remaining string literals into translatable strings
 
 vars
 	address : Address;
@@ -14158,10 +13604,10 @@ begin
 	inheritMethod( pAgent );
 	
 	if pAgent = null then
-		self.caption := $Add & Space & self.caption;	// EDS-80
+		self.caption := $Add & Space & self.caption;	
 	
 	else
-		self.caption := $Edit & Space & self.caption;	// EDS-80
+		self.caption := $Edit & Space & self.caption;	
 		self.txtName.text := pAgent.name;
 		
 		address := pAgent.myAddress;
@@ -14179,8 +13625,6 @@ end;
 getCurrentObject
 {
 getCurrentObject() : Agent;
-// Who		When		Ticket		Details
-// Dan T	30/03/2023	EDS-5		Implement AgentTA class
 
 begin
 	return inheritMethod().Agent;
@@ -14189,8 +13633,6 @@ end;
 getTA
 {
 getTA() : AgentTA;
-// Who		When		Ticket		Details
-// Dan T	30/03/2023	EDS-5		Implement AgentTA class
 
 begin
 	return inheritMethod().AgentTA;
@@ -14199,8 +13641,6 @@ end;
 getTAClass
 {
 getTAClass() : Class protected;
-// Who		When		Ticket		Details
-// Dan T	30/03/2023	EDS-5		Implement AgentTA class
 
 begin
 	return AgentTA;
@@ -14209,8 +13649,6 @@ end;
 populateTAFromForm
 {
 populateTAFromForm( pAgentTA : AgentTA input ) : Boolean protected;
-// Who		When		Ticket		Details
-// Dan T	30/03/2023	EDS-5		Implement AgentTA class
 
 vars
 	addressTA : AddressTA;
@@ -14243,8 +13681,6 @@ end;
 processAfterDelete
 {
 processAfterDelete( pAgentTA : AgentTA input ) protected;
-// Who		When		Ticket		Details
-// Dan T	30/03/2023	EDS-5		Implement AgentTA class
 
 begin
 	inheritMethod( pAgentTA );
@@ -14253,8 +13689,6 @@ end;
 processAfterSave
 {
 processAfterSave( pAgentTA : AgentTA ) updating, protected;
-// Who		When		Ticket		Details
-// Dan T	30/03/2023	EDS-5		Implement AgentTA class
 
 begin
 	inheritMethod( pAgentTA );
@@ -14266,9 +13700,6 @@ end;
 displayObject
 {
 displayObject( pClient : Client ) updating, protected;
-// Who		When		Ticket		Details
-// Dan T	29/03/2023	EDS-3		Implement ClientTA class
-// Dan T	28/06/2023	EDS-80		Turn all remaining string literals into translatable strings
 
 vars
 	address : Address;
@@ -14277,9 +13708,9 @@ begin
 	inheritMethod( pClient );
 	
 	if pClient = null then
-		self.caption := $Add & Space & self.caption;	// EDS-80
+		self.caption := $Add & Space & self.caption;	
 	else
-		self.caption := $Edit & Space & self.caption;	// EDS-80
+		self.caption := $Edit & Space & self.caption;	
 		self.txtName.text := pClient.name;
 		
 		address := pClient.myAddress;
@@ -14297,8 +13728,6 @@ end;
 getCurrentObject
 {
 getCurrentObject() : Client;
-// Who		When		Ticket		Details
-// Dan T	29/03/2023	EDS-3		Implement ClientTA class
 
 begin
 	return inheritMethod().Client;
@@ -14307,8 +13736,6 @@ end;
 getTA
 {
 getTA() : ClientTA;
-// Who		When		Ticket		Details
-// Dan T	29/03/2023	EDS-3		Implement ClientTA class
 
 begin
 	return inheritMethod().ClientTA;
@@ -14317,8 +13744,6 @@ end;
 getTAClass
 {
 getTAClass() : Class protected;
-// Who		When		Ticket		Details
-// Dan T	29/03/2023	EDS-3		Implement ClientTA class
 
 begin
 	return ClientTA;
@@ -14327,8 +13752,6 @@ end;
 populateTAFromForm
 {
 populateTAFromForm( pClientTA : ClientTA input ) : Boolean protected;
-// Who		When		Ticket		Details
-// Dan T	29/03/2023	EDS-3		Implement ClientTA class
 
 vars
 	addressTA : AddressTA;
@@ -14362,8 +13785,6 @@ end;
 processAfterDelete
 {
 processAfterDelete( pClientTA : ClientTA input ) protected;
-// Who		When		Ticket		Details
-// Dan T	29/03/2023	EDS-3		Implement ClientTA class
 
 begin
 	inheritMethod( pClientTA );
@@ -14372,8 +13793,6 @@ end;
 processAfterSave
 {
 processAfterSave( pClientTA : ClientTA ) updating, protected;
-// Who		When		Ticket		Details
-// Dan T	29/03/2023	EDS-3		Implement ClientTA class
 
 begin
 	inheritMethod( pClientTA );
@@ -14385,9 +13804,6 @@ end;
 displayObject
 {
 displayObject( pCompany : Company ) updating, protected;
-// Who		When		Ticket		Details
-// Dan T	30/03/2023	EDS-13		Implement CompanyTA class
-// Dan T	28/06/2023	EDS-80		Turn all remaining string literals into translatable strings
 
 vars
 	address : Address;
@@ -14396,10 +13812,10 @@ begin
 	inheritMethod( pCompany );
 	
 	if pCompany = null then
-		self.caption := $Add & Space & self.caption;	// EDS-80
+		self.caption := $Add & Space & self.caption;	
 		
 	else
-		self.caption := $Edit & Space & self.caption;	// EDS-80
+		self.caption := $Edit & Space & self.caption;	
 		self.txtName.text := pCompany.name;
 		
 		address := pCompany.myAddress;
@@ -14417,8 +13833,6 @@ end;
 getCurrentObject
 {
 getCurrentObject() : Company;
-// Who		When		Ticket		Details
-// Dan T	30/03/2023	EDS-13		Implement CompanyTA class
 
 begin
 	return inheritMethod().Company;
@@ -14427,8 +13841,6 @@ end;
 getTA
 {
 getTA() : CompanyTA;
-// Who		When		Ticket		Details
-// Dan T	30/03/2023	EDS-13		Implement CompanyTA class
 
 begin
 	return inheritMethod().CompanyTA;
@@ -14437,8 +13849,6 @@ end;
 getTAClass
 {
 getTAClass() : Class protected;
-// Who		When		Ticket		Details
-// Dan T	30/03/2023	EDS-13		Implement CompanyTA class
 
 begin
 	return CompanyTA;
@@ -14447,8 +13857,6 @@ end;
 populateTAFromForm
 {
 populateTAFromForm( pCompanyTA : CompanyTA input ) : Boolean protected;
-// Who		When		Ticket		Details
-// Dan T	30/03/2023	EDS-13		Implement CompanyTA class
 
 vars
 	addressTA : AddressTA;
@@ -14482,8 +13890,6 @@ end;
 processAfterDelete
 {
 processAfterDelete( pCompanyTA : CompanyTA input ) protected;
-// Who		When		Ticket		Details
-// Dan T	30/03/2023	EDS-13		Implement CompanyTA class
 
 begin
 	inheritMethod( pCompanyTA );
@@ -14492,8 +13898,6 @@ end;
 processAfterSave
 {
 processAfterSave( pCompanyTA : CompanyTA ) updating, protected;
-// Who		When		Ticket		Details
-// Dan T	30/03/2023	EDS-13		Implement CompanyTA class
 
 begin
 	inheritMethod( pCompanyTA );
@@ -14513,15 +13917,12 @@ end;
 btnOk_click
 {
 btnOk_click( btn : ErewhonButton input ) updating;
-// Who		When		Ticket		Details
-// Dan T	20/04/2023	EDS-17		Implement CommissionRateTA class
-// Dan T	27/04/2023	EDS-17.v2	Changed if condition to limit indenting code
 
 begin
 	app.mousePointer := Busy;
 
-	if not self.doSave() then				// EDS-17.v2
-		return;								// EDS-17.v2
+	if not self.doSave() then				
+		return;								
 	endif;
 	
 	self.modalResult := ModalOK;
@@ -14542,8 +13943,6 @@ end;
 displayObject
 {
 displayObject( pCommissionRate : CommissionRate ) updating, protected;
-// Who		When		Ticket		Details
-// Dan T	20/04/2023	EDS-17		Implement CommissionRateTA class
 
 begin
 	inheritMethod( pCommissionRate );
@@ -14560,17 +13959,14 @@ end;
 formLoad
 {
 formLoad() updating, protected;
-// Who		When		Ticket		Details
-// Dan T	20/04/2023	EDS-17		Implement CommissionRateTA class
-// Dan T	28/06/2023	EDS-80		Turn all remaining string literals into translatable strings
 
 begin
 	inheritMethod();
 	
 	if self.getCurrentObject() = null then
-		self.caption := $Add & Space & self.caption;	// EDS-80
+		self.caption := $Add & Space & self.caption;	
 	else
-		self.caption := $Edit & Space & self.caption;	// EDS-80
+		self.caption := $Edit & Space & self.caption;	
 	endif;
 	
 end;
@@ -14578,8 +13974,6 @@ end;
 getCurrentObject
 {
 getCurrentObject() : CommissionRate;
-// Who		When		Ticket		Details
-// Dan T	21/04/2023	EDS-17		Implement CommissionRateTA class
 
 begin
 	return inheritMethod().CommissionRate;
@@ -14588,8 +13982,6 @@ end;
 getTA
 {
 getTA() : CommissionRateTA;
-// Who		When		Ticket		Details
-// Dan T	21/04/2023	EDS-17		Implement CommissionRateTA class
 
 begin
 	return inheritMethod().CommissionRateTA;
@@ -14598,8 +13990,6 @@ end;
 getTAClass
 {
 getTAClass() : Class protected;
-// Who		When		Ticket		Details
-// Dan T	21/04/2023	EDS-17		Implement CommissionRateTA class
 
 begin
 	return CommissionRateTA;
@@ -14608,8 +13998,6 @@ end;
 populateTAFromForm
 {
 populateTAFromForm( pCommissionRateTA : CommissionRateTA input ) : Boolean protected;
-// Who		When		Ticket		Details
-// Dan T	21/04/2023	EDS-17		Implement CommissionRateTA class
 
 begin
 	if not inheritMethod( pCommissionRateTA ) then
@@ -14625,8 +14013,6 @@ end;
 setFocusField
 {
 setFocusField( pField : String ) updating, protected;
-// Who		When		Ticket		Details
-// Dan T	21/04/2023	EDS-17		Implement CommissionRateTA class
 
 begin
 	if pField = Focus_ItemCategory then
@@ -14654,14 +14040,12 @@ end;
 btnOk_click
 {
 btnOk_click(btn: ErewhonButton input) updating;
-// Who		When		Ticket		Details
-// Dan T	31/03/2023	EDS-7		Implement CountryTA class
 
 begin
 	app.mousePointer := Busy;
 
-	if not self.doSave() then	// EDS-7
-		return;					// EDS-7
+	if not self.doSave() then	
+		return;					
 	endif;
 
 	self.modalResult := ModalOK;
@@ -14674,17 +14058,14 @@ end;
 displayObject
 {
 displayObject( pCountry : Country ) updating, protected;
-// Who		When		Ticket		Details
-// Dan T	31/03/2023	EDS-7		Implement CountryTA class
-// Dan T	28/06/2023	EDS-80		Turn all remaining string literals into translatable strings
 
 begin
 	inheritMethod( pCountry );
 	
 	if pCountry = null then
-		self.caption := $Add & Space & self.caption;	// EDS-80
+		self.caption := $Add & Space & self.caption;	
 	else
-		self.caption := $Edit & Space & self.caption;	// EDS-80
+		self.caption := $Edit & Space & self.caption;	
 		self.txtName.text := pCountry.name;
 	endif;
 end;
@@ -14692,8 +14073,6 @@ end;
 getCurrentObject
 {
 getCurrentObject() : Country;
-// Who		When		Ticket		Details
-// Dan T	31/03/2023	EDS-7		Implement CountryTA class
 
 begin
 	return inheritMethod().Country;
@@ -14702,8 +14081,6 @@ end;
 getTA
 {
 getTA() : CountryTA;
-// Who		When		Ticket		Details
-// Dan T	31/03/2023	EDS-7		Implement CountryTA class
 
 begin
 	return inheritMethod().CountryTA;
@@ -14712,8 +14089,6 @@ end;
 getTAClass
 {
 getTAClass() : Class protected;
-// Who		When		Ticket		Details
-// Dan T	31/03/2023	EDS-7		Implement CountryTA class
 
 begin
 	return CountryTA;
@@ -14722,8 +14097,6 @@ end;
 populateTAFromForm
 {
 populateTAFromForm( pCountryTA : CountryTA input ) : Boolean protected;
-// Who		When		Ticket		Details
-// Dan T	31/03/2023	EDS-7		Implement CountryTA class
 
 begin
 	if not inheritMethod( pCountryTA ) then
@@ -14738,8 +14111,6 @@ end;
 processAfterSave
 {
 processAfterSave( pCountryTA : CountryTA ) updating, protected;
-// Who		When		Ticket		Details
-// Dan T	31/03/2023	EDS-7		Implement CountryTA class
 
 begin
 	inheritMethod( pCountryTA );
@@ -14748,8 +14119,6 @@ end;
 setFocusField
 {
 setFocusField( pField : String ) updating, protected;
-// Who		When		Ticket		Details
-// Dan T	31/03/2023	EDS-7		Implement CountryTA class
 
 begin
 	if pField = Focus_Name then
@@ -14773,13 +14142,11 @@ end;
 btnOk_click
 {
 btnOk_click(btn: ErewhonButton input) updating;
-// Who		When		Ticket		Details
-// Dan T	13/04/2023	EDS-12		Implement SaleItemCategoryTA class
 
 begin
 	app.mousePointer := Busy;
 
-	if self.doSave() then				// EDS-12
+	if self.doSave() then				
 		self.modalResult	:= ModalOK;
 		self.unloadForm();
 	endif;
@@ -14791,16 +14158,12 @@ end;
 displayObject
 {
 displayObject( pItemCategory : ItemCategory ) updating, protected;
-// Who		When		Ticket		Details
-// Dan T	13/04/2023	EDS-12		Implement SaleItemCategoryTA class
-// Dan T	19/06/2023	EDS-72		Remove code number limit for Sale Items
-// Dan T	10/07/2023	EDS-88	 	Rename SaleItem classes to improve clarity
 
 begin
 	inheritMethod( pItemCategory );
 	
 	if pItemCategory <> null then
-		self.txtPrefix.text := pItemCategory.prefix;	// EDS-72
+		self.txtPrefix.text := pItemCategory.prefix;	
 		self.txtName.text := pItemCategory.name;
 		self.txtDescription.text := pItemCategory.description;
 	endif;
@@ -14810,26 +14173,20 @@ end;
 formLoad
 {
 formLoad() updating, protected;
-// Who		When		Ticket		Details
-// Dan T	13/04/2023	EDS-12		Implement SaleItemCategoryTA class
-// Dan T	28/06/2023	EDS-80		Turn all remaining string literals into translatable strings
 
 begin
 	inheritMethod();
 
 	if self.getCurrentObject() = null then
-		self.caption := $Add & Space & caption;	// EDS-80
+		self.caption := $Add & Space & caption;	
 	else
-		self.caption := $Edit & Space & self.caption;	// EDS-80
+		self.caption := $Edit & Space & self.caption;	
 	endif;
 end;
 }
 getCurrentObject
 {
 getCurrentObject() : ItemCategory;
-// Who		When		Ticket		Details
-// Dan T	13/04/2023	EDS-12		Implement ItemCategoryTA class
-// Dan T	10/07/2023	EDS-88	 	Rename SaleItem classes to improve clarity
 
 begin
 	return inheritMethod().ItemCategory;
@@ -14838,8 +14195,6 @@ end;
 getTA
 {
 getTA() : ItemCategoryTA;
-// Who		When		Ticket		Details
-// Dan T	13/04/2023	EDS-12		Implement SaleItemCategoryTA class
 
 begin
 	return inheritMethod().ItemCategoryTA;
@@ -14848,8 +14203,6 @@ end;
 getTAClass
 {
 getTAClass() : Class protected;
-// Who		When		Ticket		Details
-// Dan T	13/04/2023	EDS-12		Implement SaleItemCategoryTA class
 
 begin
 	return ItemCategoryTA;
@@ -14858,17 +14211,13 @@ end;
 populateTAFromForm
 {
 populateTAFromForm( pItemCategoryTA : ItemCategoryTA input ) : Boolean protected;
-// Who		When		Ticket		Details
-// Dan T	13/04/2023	EDS-12		Implement SaleItemCategoryTA class
-// Dan T	19/06/2023	EDS-72		Remove code number limit for Sale Items
-// Dan T	10/07/2023	EDS-88	 	Rename SaleItem classes to improve clarity
 
 begin
 	if not inheritMethod( pItemCategoryTA ) then
 		return false;
 	endif;
 	
-	pItemCategoryTA.prefix := self.txtPrefix.text.trimWhiteSpace();	// EDS-72
+	pItemCategoryTA.prefix := self.txtPrefix.text.trimWhiteSpace();	
 	pItemCategoryTA.name := self.txtName.text.trimWhiteSpace();
 	pItemCategoryTA.description := self.txtDescription.text.trimWhiteSpace();
 	
@@ -14878,13 +14227,10 @@ end;
 setFocusField
 {
 setFocusField( pField : String ) updating, protected;
-// Who		When		Ticket		Details
-// Dan T	14/04/2023	EDS-12		Implement SaleItemCategoryTA class
-// Dan T	19/06/2023	EDS-72		Remove code number limit for Sale Items
 
 begin
-	if pField = Focus_CodePrefix then		// EDS-72
-		self.txtPrefix.setFocus();			// EDS-72
+	if pField = Focus_CodePrefix then		
+		self.txtPrefix.setFocus();			
 	elseif pField = Focus_Name then
 		self.txtName.setFocus();
 	elseif pField = Focus_Description then
@@ -14924,8 +14270,6 @@ end;
 cmbAgent_displayEntry
 {
 cmbAgent_displayEntry(combobox: ComboBox input; pAgent: Agent; lstIndex: Integer):String updating;
-// Who		When		Ticket		Details
-// Dan T	10/08/2023	EDS-94		Grant Admin Users Full Functionality
 
 begin
 	return pAgent.name;
@@ -14934,8 +14278,6 @@ end;
 cmbCategory_click
 {
 cmbCategory_click(combobox: ComboBox input) updating;
-// Who		When		Ticket		Details
-// Dan T	19/06/2023	EDS-73		Changing category selection should automatically change item prefix
 
 begin
 	// Update Prefix When Category Changes
@@ -15008,14 +14350,6 @@ end;
 displayObject
 {
 displayObject( pItem : Item ) updating, protected;
-// Who		When		Ticket		Details
-// Dan T	06/04/2023	EDS-14		Implement SaleItemTA class
-// Dan T	20/06/2023	EDS-73		Changing category selection should automatically change item prefix
-// Dan T	19/06/2023	EDS-72		Remove code number limit for Sale Items
-// Dan T	28/06/2023	EDS-80		Turn all remaining string literals into translatable strings
-// Dan T	10/07/2023	EDS-88	 	Rename SaleItem classes to improve clarity
-// Dan T	10/07/2023	EDS-89 		Update Menu Bar
-// Dan T	10/08/2023	EDS-94		Grant Admin Users Full Functionality
 
 vars
 	tender : Tender;
@@ -15024,23 +14358,23 @@ begin
 	inheritMethod( pItem );
 	
 	if pItem = null then
-		if app.myAgent <> null then																						// EDS-94
-			self.lblAgent.caption := app.myAgent.name & Comma & Space & app.myAgent.myAddress.getFormattedAddress();	// EDS-80
+		if app.myAgent <> null then																						
+			self.lblAgent.caption := app.myAgent.name & Comma & Space & app.myAgent.myAddress.getFormattedAddress();	
 		endif;
 		
-		self.lblDateSold.caption := null;																				// EDS-80
+		self.lblDateSold.caption := null;																				
 		
 		// select the category and populate the prefix, if category provided
-		if self.myItemCategory <> null then																				// EDS-89
+		if self.myItemCategory <> null then																				
 			self.cmbCategory.listIndex := self.cmbCategory.findObject( self.myItemCategory );
-			self.txtCodePrefix.text := self.cmbCategory.listObject.ItemCategory.prefix;									// EDS-72
-		endif;																											// EDS-89
+			self.txtCodePrefix.text := self.cmbCategory.listObject.ItemCategory.prefix;									
+		endif;																											
 	else
 		// Display Agent 
 		if app.myAgent = null and pItem.myAgent <> null then
-			self.cmbAgent.listIndex := self.cmbAgent.findObject( pItem.myAgent );										// EDS-94
+			self.cmbAgent.listIndex := self.cmbAgent.findObject( pItem.myAgent );										
 		else
-			self.lblAgent.caption := pItem.myAgent.name & Comma & Space & pItem.myAgent.myAddress.getFormattedAddress();	// EDS-80
+			self.lblAgent.caption := pItem.myAgent.name & Comma & Space & pItem.myAgent.myAddress.getFormattedAddress();	
 		endif;
 		
 		self.txtCodeNumber.text := pItem.codeNumber.String;
@@ -15050,7 +14384,7 @@ begin
 		// set category to item category
 		if pItem.myItemCategory <> null then
 			self.cmbCategory.listIndex := self.cmbCategory.findObject( pItem.myItemCategory );
-			self.txtCodePrefix.text := pItem.myItemCategory.prefix;														// EDS-73
+			self.txtCodePrefix.text := pItem.myItemCategory.prefix;														
 		endif;
 		
 		// set country item
@@ -15075,12 +14409,12 @@ begin
 				tender := pItem.TenderItem.allTendersByOfferTime.first();
 
 				if tender <> null then
-					self.lblDateSold.caption := self.lblDateSold.caption & Period & Space & $HighestBid( tender.display() );	// EDS-80
+					self.lblDateSold.caption := self.lblDateSold.caption & Period & Space & $HighestBid( tender.display() );	
 				endif;
 			endif;
 		else
 			// Item has been sold
-			self.cmbAgent.enabled := false;		// EDS-94
+			self.cmbAgent.enabled := false;		
 			
 			// Check if item has been tendered and display the higest tender
 			if pItem.isKindOf(TenderItem) then
@@ -15088,10 +14422,10 @@ begin
 				
 				// check a tender has been found 
 				if tender <> null then
-					self.lblDateSold.caption := $SoldTo & Space & pItem.mySale.myClient.name & Space & $For & Space & tender.offer.currencyFormat();	// EDS-80
+					self.lblDateSold.caption := $SoldTo & Space & pItem.mySale.myClient.name & Space & $For & Space & tender.offer.currencyFormat();	
 				endif;
 			else
-				self.lblDateSold.caption := $SoldTo & Space & pItem.mySale.myClient.name & Space & $For & Space & pItem.price.currencyFormat();	// EDS-80
+				self.lblDateSold.caption := $SoldTo & Space & pItem.mySale.myClient.name & Space & $For & Space & pItem.price.currencyFormat();	
 			endif;
 		
 			self.lblDateSold.caption.firstCharToUpper();
@@ -15108,18 +14442,13 @@ end;
 formLoad
 {
 formLoad() updating, protected;
-// Who		When		Ticket		Details
-// Dan T	11/04/2023	EDS-14		Implement SaleItemTA class
-// Dan T	19/06/2023	EDS-72		Remove code number limit for Sale Items
-// Dan T	28/06/2023	EDS-80		Turn all remaining string literals into translatable strings
-// Dan T	10/08/2023	EDS-94		Grant Admin Users Full Functionality
 
 begin
 	// populate combo boxes, before inheriting
 	self.cmbCategory.listCollection( app.myCompany.allItemCategoriesByName, true, 0 );
 	self.cmbCountry.listCollection( app.myCompany.allCountries, true, 0 );
 	
-	// EDS-94
+	
 	// Toggle the Agent View depending on the type of user
 	if app.myAgent = null then
 		self.grpAgentAdminView.visible := true;
@@ -15133,9 +14462,9 @@ begin
 	
 	// Set form Caption
 	if self.getCurrentObject() = null then
-		self.caption := $Add & Space & self.caption;	// EDS-80
+		self.caption := $Add & Space & self.caption;	
 	else
-		self.caption := $Edit & Space & self.caption;	// EDS-80
+		self.caption := $Edit & Space & self.caption;	
 		
 		// Disable Form is item is sold
 		if self.getCurrentObject().mySale <> null then
@@ -15156,9 +14485,6 @@ end;
 getCurrentObject
 {
 getCurrentObject() : Item;
-// Who		When		Ticket		Details
-// Dan T	06/04/2023	EDS-14		Implement ItemTA class
-// Dan T	10/07/2023	EDS-88	 	Rename SaleItem classes to improve clarity
 
 begin
 	return inheritMethod().Item;
@@ -15167,8 +14493,6 @@ end;
 getTA
 {
 getTA() : ItemTA;
-// Who		When		Ticket		Details
-// Dan T	06/04/2023	EDS-14		Implement SaleItemTA class
 
 begin
 	return inheritMethod().ItemTA;
@@ -15177,8 +14501,6 @@ end;
 getTAClass
 {
 getTAClass() : Class protected;
-// Who		When		Ticket		Details
-// Dan T	06/04/2023	EDS-14		Implement SaleItemTA class
 
 begin
 	return ItemTA;
@@ -15196,8 +14518,6 @@ loadPicture(pict : Picture input) protected;
 //
 // Returns:		Nothing
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	28/04/2023	EDS-35		Finalize Erewhon App
 
 vars
 	fileName : String;
@@ -15259,13 +14579,6 @@ end;
 populateTAFromForm
 {
 populateTAFromForm( pItemTA : ItemTA input ) : Boolean protected;
-// Who		When		Ticket		Details
-// Dan T	06/04/2023	EDS-14		Implement SaleItemTA class
-// Dan T	13/06/2023	EDS-29		Sale Item Prefix number not recalculated
-// Dan T	14/06/2023	EDS-68		Implement doPreValidate method (Removed Unnecessary Code)
-// Dan T	19/06/2023	EDS-72		Remove code number limit for Sale Items
-// Dan T	10/07/2023	EDS-88	 	Rename SaleItem classes to improve clarity
-// Dan T	10/08/2023	EDS-94		Grant Admin Users Full Functionality
 
 begin
 	if not inheritMethod( pItemTA ) then
@@ -15281,13 +14594,13 @@ begin
 	
 	// If logged in as an Agent, assign the item to the current agent
 	if self.getCurrentObject() = null
-	and app.myAgent <> null then								// EDS-94
+	and app.myAgent <> null then								
 		pItemTA.myAgent := app.myAgent;
 	endif;
 	
 	// If logged in as an Admin user, set Agent to selected Agent
 	if app.myAgent = null then
-		pItemTA.myAgent := self.cmbAgent.listObject.Agent;		// EDS-94
+		pItemTA.myAgent := self.cmbAgent.listObject.Agent;		
 	endif;
 	
 	return true;
@@ -15296,15 +14609,11 @@ end;
 setFocusField
 {
 setFocusField( pField : String ) updating, protected;
-// Who		When		Ticket		Details
-// Dan T	06/04/2023	EDS-14		Implement SaleItemTA class
-// Dan T	19/06/2023	EDS-72		Remove code number limit for Sale Items
-// Dan T	10/08/2023	EDS-94		Grant Admin Users Full Functionality
 
 begin
-	if pField = Focus_CodePrefix			// EDS-72
-	or pField = Focus_CodeNumber 			// EDS-72
-	or pField = Focus_ItemCategory then		// EDS-72
+	if pField = Focus_CodePrefix			
+	or pField = Focus_CodeNumber 			
+	or pField = Focus_ItemCategory then		
 		self.cmbCategory.setFocus();
 	elseif pField = Focus_Region then
 		self.cmbRegion.setFocus();
@@ -15313,7 +14622,7 @@ begin
 	elseif pField = Focus_ItemDescription then
 		self.txtFullDesc.setFocus();
 	elseif pField = Focus_Agent then
-		self.cmbAgent.setFocus();			// EDS-94
+		self.cmbAgent.setFocus();			
 	else
 		inheritMethod( pField );
 	endif;
@@ -15333,9 +14642,6 @@ end;
 displayObject
 {
 displayObject( pRetailItem : RetailItem ) updating, protected;
-// Who		When		Ticket		Details
-// Dan T	06/04/2023	EDS-15		Implement RetailSaleItemTA class
-// Dan T	10/07/2023	EDS-88	 	Rename SaleItem classes to improve clarity
 
 begin
 	inheritMethod( pRetailItem );
@@ -15348,24 +14654,18 @@ end;
 formLoad
 {
 formLoad() updating, protected;
-// Who		When		Ticket		Details
-// Dan T	06/04/2023	EDS-15		Implement RetailSaleItemTA class
-// Dan T	10/08/2023	EDS-94		Grant Admin Users Full Functionality
 
 begin
 	inheritMethod();
 	
 	if self.myCurrentObject <> null then
-		self.txtRetailPrice.enabled := self.getCurrentObject().mySale = null;	// EDS-94
+		self.txtRetailPrice.enabled := self.getCurrentObject().mySale = null;	
 	endif;
 end;
 }
 getCurrentObject
 {
 getCurrentObject() : RetailItem;
-// Who		When		Ticket		Details
-// Dan T	06/04/2023	EDS-15		Implement RetailItemTA class
-// Dan T	10/07/2023	EDS-88	 	Rename SaleItem classes to improve clarity
 
 begin
 	return inheritMethod().RetailItem;
@@ -15374,8 +14674,6 @@ end;
 getTA
 {
 getTA() : RetailItemTA;
-// Who		When		Ticket		Details
-// Dan T	06/04/2023	EDS-15		Implement RetailSaleItemTA class
 
 begin
 	return inheritMethod().RetailItemTA;
@@ -15384,8 +14682,6 @@ end;
 getTAClass
 {
 getTAClass() : Class protected;
-// Who		When		Ticket		Details
-// Dan T	06/04/2023	EDS-15		Implement RetailSaleItemTA class
 
 begin
 	return RetailItemTA;
@@ -15404,9 +14700,6 @@ end;
 populateTAFromForm
 {
 populateTAFromForm( pRetailItemTA : RetailItemTA input ) : Boolean protected;
-// Who		When		Ticket		Details
-// Dan T	06/04/2023	EDS-15		Implement RetailSaleItemTA class
-// Dan T	10/07/2023	EDS-88	 	Rename SaleItem classes to improve clarity
 
 begin
 	if not inheritMethod( pRetailItemTA ) then
@@ -15424,9 +14717,6 @@ end;
 displayObject
 {
 displayObject( pTenderItem : TenderItem ) updating, protected;
-// Who		When		Ticket		Details
-// Dan T	12/04/2023	EDS-16		Implement TenderSaleItemTA class
-// Dan T	10/07/2023	EDS-88	 	Rename SaleItem classes to improve clarity
 
 begin
 	inheritMethod( pTenderItem );
@@ -15440,11 +14730,6 @@ end;
 formLoad
 {
 formLoad() updating, protected;
-// Who		When		Ticket		Details
-// Dan T	12/04/2023	EDS-16		Implement TenderSaleItemTA class
-// Dan T	20/06/2023	EDS-73		Changing category selection should automatically change item prefix
-// Dan T	10/07/2023	EDS-88	 	Rename SaleItem classes to improve clarity
-// Dan T	10/08/2023	EDS-94		Grant Admin Users Full Functionality
 
 vars
 	tenderItem : TenderItem;
@@ -15456,19 +14741,17 @@ begin
 	
 	if tenderItem <> null then
 		// Disable fields if item has been sold
-		self.txtReservePrice.enabled := tenderItem.mySale = null;	// EDS-94 (Removed 'not app.isCompanyUser' condition)
-		self.txtClosureDate.enabled	:= tenderItem.mySale = null;  	// EDS-94 (Removed 'not app.isCompanyUser' condition)
+		self.txtReservePrice.enabled := tenderItem.mySale = null;	
+		self.txtClosureDate.enabled	:= tenderItem.mySale = null;  	
 	else
 		// Set Closure Date to Today + 7 days as a default time
-		self.txtClosureDate.setTextFromDate( app.actualTimeServer().date() + 7 );		// EDS-73
+		self.txtClosureDate.setTextFromDate( app.actualTimeServer().date() + 7 );		
 	endif;
 end;
 }
 getCurrentObject
 {
 getCurrentObject() : TenderItem;
-// Who		When		Ticket		Details
-// Dan T	12/04/2023	EDS-16		Implement TenderSaleItemTA class
 
 begin
 	return inheritMethod().TenderItem;
@@ -15477,8 +14760,6 @@ end;
 getTA
 {
 getTA() : TenderItemTA;
-// Who		When		Ticket		Details
-// Dan T	12/04/2023	EDS-16		Implement TenderSaleItemTA class
 
 begin
 	return inheritMethod().TenderItemTA;
@@ -15487,8 +14768,6 @@ end;
 getTAClass
 {
 getTAClass() : Class protected;
-// Who		When		Ticket		Details
-// Dan T	12/04/2023	EDS-16		Implement TenderSaleItemTA class
 
 begin
 	return TenderItemTA;
@@ -15497,9 +14776,6 @@ end;
 populateTAFromForm
 {
 populateTAFromForm( pTenderItemTA : TenderItemTA input ) : Boolean protected;
-// Who		When		Ticket		Details
-// Dan T	12/04/2023	EDS-16		Implement TenderSaleItemTA class
-// Dan T	10/07/2023	EDS-88	 	Rename SaleItem classes to improve clarity
 
 begin
 	if not inheritMethod( pTenderItemTA ) then
@@ -15515,15 +14791,12 @@ end;
 setFocusField
 {
 setFocusField( pField : String ) updating, protected;
-// Who		When		Ticket		Details
-// Dan T	12/04/2023	EDS-16		Implement TenderSaleItemTA class
-// Dan T	10/08/2023	EDS-94		Grant Admin Users Full Functionality
 
 begin
 	if pField = Focus_Date then
 		self.txtClosureDate.setFocus();
 	elseif pField = Focus_Price then
-		self.txtReservePrice.setFocus();	// EDS-94
+		self.txtReservePrice.setFocus();	
 	else
 		inheritMethod( pField );
 	endif;
@@ -15543,14 +14816,12 @@ end;
 btnOk_click
 {
 btnOk_click( btn : ErewhonButton input ) updating;
-// Who		When		Ticket		Details
-// Dan T	03/04/2023	EDS-8		Implement RegionTA class
 
 begin
 	app.mousePointer := Busy;
 	
-	if not self.doSave() then	// EDS-8
-		return;					// EDS-8
+	if not self.doSave() then	
+		return;					
 	endif;
 	
 	self.modalResult := ModalOK;
@@ -15571,8 +14842,6 @@ end;
 displayObject
 {
 displayObject( pRegion : Region ) updating, protected;
-// Who		When		Ticket		Details
-// Dan T	03/04/2023	EDS-8		Implement RegionTA class
 
 begin
 	inheritMethod( pRegion );
@@ -15585,10 +14854,6 @@ end;
 formLoad
 {
 formLoad() updating, protected;
-// Who		When		Ticket		Details
-// Dan T	13/04/2023	EDS-8		Implement RegionTA class
-// Dan T	14/06/2023	EDS-37		Country Not Updated When Updating Region
-// Dan T	28/06/2023	EDS-80		Turn all remaining string literals into translatable strings
 
 begin
 	inheritMethod();
@@ -15597,17 +14862,17 @@ begin
 	self.cmbCountry.listCollection( app.myCompany.allCountries, true, 0 );
 	
 	if self.getCurrentObject() = null then
-		self.caption := $Add & Space & self.caption;	// EDS-80
+		self.caption := $Add & Space & self.caption;	
 		
 		// If myCountry set prior to showing the form, display as selected option
 		// and move focus directly to the region text box
-		if self.myCountry <> null then														// EDS-37
-			self.cmbCountry.listIndex := self.cmbCountry.findObject( self.myCountry );		// EDS-37
-			self.txtName.setFocus();														// EDS-37
-		endif;																				// EDS-37
+		if self.myCountry <> null then														
+			self.cmbCountry.listIndex := self.cmbCountry.findObject( self.myCountry );		
+			self.txtName.setFocus();														
+		endif;																				
 		
 	else
-		self.caption := $Edit & Space & self.caption;	// EDS-80
+		self.caption := $Edit & Space & self.caption;	
 		
 		// set the country to the specified region
 		self.cmbCountry.listIndex := self.cmbCountry.findObject( self.getCurrentObject().myCountry );
@@ -15617,8 +14882,6 @@ end;
 getCurrentObject
 {
 getCurrentObject() : Region;
-// Who		When		Ticket		Details
-// Dan T	03/04/2023	EDS-8		Implement RegionTA class
 
 begin
 	return inheritMethod().Region;
@@ -15627,8 +14890,6 @@ end;
 getTA
 {
 getTA() : RegionTA;
-// Who		When		Ticket		Details
-// Dan T	03/04/2023	EDS-8		Implement RegionTA class
 
 begin
 	return inheritMethod().RegionTA;
@@ -15637,8 +14898,6 @@ end;
 getTAClass
 {
 getTAClass() : Class protected;
-// Who		When		Ticket		Details
-// Dan T	03/04/2023	EDS-8		Implement RegionTA class
 
 begin
 	return RegionTA;
@@ -15647,8 +14906,6 @@ end;
 populateTAFromForm
 {
 populateTAFromForm( pRegionTA : RegionTA input ) : Boolean protected;
-// Who		When		Ticket		Details
-// Dan T	03/04/2023	EDS-8		Implement RegionTA class
 
 begin
 	if not inheritMethod( pRegionTA ) then
@@ -15663,8 +14920,6 @@ end;
 processAfterSave
 {
 processAfterSave( pRegionTA : RegionTA ) updating, protected;
-// Who		When		Ticket		Details
-// Dan T	03/04/2023	EDS-8		Implement RegionTA class
 
 begin
 	inheritMethod( pRegionTA );
@@ -15673,8 +14928,6 @@ end;
 setFocusField
 {
 setFocusField( pField : String ) updating, protected;
-// Who		When		Ticket		Details
-// Dan T	03/04/2023	EDS-8		Implement RegionTA class
 
 begin
 	if pField = Focus_Name then
@@ -15692,9 +14945,6 @@ end;
 formLoad
 {
 formLoad() updating, protected;
-// Who		When		Ticket		Details
-// Dan T	18/04/2023	EDS-30		Reimplement the Shop Client Form
-// Dan T	28/06/2023	EDS-80		Turn all remaining string literals into translatable strings
 
 begin
 	inheritMethod();
@@ -15702,7 +14952,7 @@ begin
 	if app.getClient = null then
 		self.lblClient.caption := null;
 	else
-		self.lblClient.caption := $Welcome & Comma & Space & app.getClient().name;	// EDS-80
+		self.lblClient.caption := $Welcome & Comma & Space & app.getClient().name;	
 	endif;
 	
 	self.centreWindow();
@@ -15712,8 +14962,6 @@ end;
 getTA
 {
 getTA() : ShoppingCartTA;
-// Who		When		Ticket		Details
-// Dan T	18/04/2023	EDS-30		Reimplement the Shop Client Form
 
 begin
 	return inheritMethod().ShoppingCartTA;
@@ -15722,8 +14970,6 @@ end;
 getTAClass
 {
 getTAClass() : Class protected;
-// Who		When		Ticket		Details
-// Dan T	18/04/2023	EDS-30		Reimplement the Shop Client Form
 
 begin
 	return ShoppingCartTA;
@@ -15741,8 +14987,6 @@ setFormInstructions( message : String ) protected;
 //
 // Returns:		N/A
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	18/04/2023	EDS-30		Reimplement the Shop Client Form
 
 begin
 	if message = null then
@@ -15775,9 +15019,6 @@ end;
 btnEmpty_click
 {
 btnEmpty_click(btn: ErewhonButton input) updating;
-// Who		When		Ticket		Details
-// Dan T	16/06/2023	EDS-31		Shop forms not handling a deleted sale item
-// Dan T	26/06/2023	EDS-31.v2	Removed the armed excpetion handler
 
 begin
 	app.mousePointer := Busy;
@@ -15791,13 +15032,6 @@ end;
 btnProceed_click
 {
 btnProceed_click( btn: ErewhonButton input ) updating;
-// Who		When		Ticket		Details
-// Dan T	20/04/2023	EDS-30		Reimplement the Shop Client Form
-// Dan T	27/04/2023	EDS-30.v2	ShoppingCartTA::clearCart method removed
-// Dan T	27/04/2023	EDS-30.v2	ShopCheckoutForm::btnProceed_click should call persist
-// Dan T	16/06/2023	EDS-31		Shop forms not handling a deleted sale item
-// Dan T	26/06/2023	EDS-31.v2	Shop forms not handling a deleted sale item
-// Dan T	28/06/2023	EDS-80		Turn all remaining string literals into translatable strings
 
 vars
 	confirmationForm : ShopConfirmationForm;
@@ -15805,15 +15039,15 @@ vars
 begin
 	app.mousePointer := Busy;
 	
-	if not app.getShoppingCartTA().persistEntity( TransactionType_Persist ) then												// EDS-30.v2
-		app.msgBox( app.getShoppingCartTA().getFullErrorDetails(), $CheckoutUnsuccessful, MsgBox_OK_Only + MsgBox_Stop_Icon );	// EDS-30.v2	// EDS-80
-		return;																													// EDS-30.v2
+	if not app.getShoppingCartTA().persistEntity( TransactionType_Persist ) then												
+		app.msgBox( app.getShoppingCartTA().getFullErrorDetails(), $CheckoutUnsuccessful, MsgBox_OK_Only + MsgBox_Stop_Icon );	
+		return;																													
 	endif;
 	
 	create confirmationForm;
 	confirmationForm.show();
 	
-	app.getShoppingCartTA().initialize();		// EDS-30.v2
+	app.getShoppingCartTA().initialize();		
 	self.unloadForm;
 	
 epilog
@@ -15823,8 +15057,6 @@ end;
 btnRemove_click
 {
 btnRemove_click( btn: ErewhonButton input ) updating;
-// Who		When		Ticket		Details
-// Dan T	16/06/2023	EDS-31		Shop forms not handling a deleted sale item
 
 begin
 	app.mousePointer := Busy;
@@ -15845,17 +15077,12 @@ clearCart() updating, protected;
 //
 // Returns:		Nothing
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	20/04/2023	EDS-30		Reimplement the Shop Client Form
-// Dan T	27/04/2023	EDS-30.v2	ShoppingCartTA::clearCart method removed
-// Dan T	16/06/2023	EDS-31		Shop forms not handling a deleted sale item
-// Dan T	26/06/2023	EDS-31.v2	Removed the armed exception handler
 
 vars
 	clientForm : ShopItemsForm;
 
 begin
-	app.getShoppingCartTA().initialize();	// EDS-30.v2
+	app.getShoppingCartTA().initialize();	
 	
 	create clientForm;
 	clientForm.show();
@@ -15866,12 +15093,6 @@ end;
 formLoad
 {
 formLoad() updating, protected;
-// Who		When		Ticket		Details
-// Dan T	19/04/2023	EDS-30		Reimplement the Shop Client Form
-// Dan T	27/04/2023	EDS-30.v2	ShopCheckoutForm::formLoad disable buttons
-// Dan T	16/06/2023	EDS-31		Shop forms not handling a deleted sale item
-// Dan T	26/06/2023	EDS-31.v2	Shop forms not handling a deleted sale item
-// Dan T	21/07/2023	EDS-99		Change ShoppingCartTA to use proxy class
 
 begin
 	inheritMethod();
@@ -15895,25 +15116,19 @@ begin
 
 	self.tblItems.accessRow( self.tblItems.fixedRows ).backColor := TableHeaderColor;
 	self.tblItems.selectMode := Table.SelectMode_CurrentRow;
-	self.tblItems.displayCollection( app.getShoppingCartTA().allCartItems, false, null, null );	// EDS-99
+	self.tblItems.displayCollection( app.getShoppingCartTA().allCartItems, false, null, null );	
 	
 	self.btnRemove.enabled := false;
 
 	if app.getShoppingCartTA().isEmpty() then
-		self.btnProceed.enabled	:= false;	// EDS-30.v2
-		self.btnEmpty.enabled := false;		// EDS-30.v2
+		self.btnProceed.enabled	:= false;	
+		self.btnEmpty.enabled := false;		
 	endif;
 end;
 }
 formSysNotify
 {
 formSysNotify(eventType: Integer; pItem: Item; eventTag: Integer) updating;
-// Who		When		Ticket		Details
-// Dan T	16/06/2023	EDS-31		Shop forms not handling a deleted sale item
-// Dan T	28/06/2023	EDS-80		Turn all remaining string literals into translatable strings
-// Dan T	10/07/2023	EDS-88	 	Rename SaleItem classes to improve clarity
-// Dan T	21/07/2023	EDS-99		Change ShoppingCartTA to use proxy class
-// Dan T	24/07/2023	EDS-99.v2	Use RefreshEntries method and refactor WebForms to not use displayCollection
 
 vars
 	clientForm : ShopItemsForm;
@@ -15926,11 +15141,11 @@ begin
 		// If deleted item is in the shopping cart then notify the user, otherwise just refresh the list.
 		if app.getShoppingCartTA().contains( pItem ) then
 		
-			app.msgBox( $AnItemInYourCartWasDeletedByAnotherUser, $DeletedItem, MsgBox_OK_Only );	// EDS-80
-			app.getShoppingCartTA.removeItem( pItem );												// EDS-99
+			app.msgBox( $AnItemInYourCartWasDeletedByAnotherUser, $DeletedItem, MsgBox_OK_Only );	
+			app.getShoppingCartTA.removeItem( pItem );												
 			
 			// Refresh Lists
-			self.tblItems.refreshEntries( null );	// EDS-99.v2
+			self.tblItems.refreshEntries( null );	
 			
 			// Check if shopping cart still has items, if no items then close the form
 			if app.getShoppingCartTA().size() = 0 then
@@ -15946,8 +15161,6 @@ end;
 formUnload
 {
 formUnload() updating, protected;
-// Who		When		Ticket		Details
-// Dan T	16/06/2023	EDS-31		Shop forms not handling a deleted sale item
 
 begin
 	inheritMethod();
@@ -15973,9 +15186,6 @@ handleExceptions( exObj : Exception ) : Integer updating, protected;
 //				3	Ex_Resume_Method_Epilog		Execution resumes at the start of the method epilog or at the end of the method if there is no epilog section
 //				-1	Ex_Pass_Back				Passes control back to the prior local exception handler for this type of exception
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	16/06/2023	EDS-31		Shop forms not handling a deleted sale item
-// Dan T	28/06/2023	EDS-80		Turn all remaining string literals into translatable strings
 
 constants
 	Object_Not_Found 	: Integer = 4;
@@ -15983,7 +15193,7 @@ constants
 	
 begin
 	if exObj.errorCode = Object_Not_Found or exObj.errorCode = Object_Deleted then
-		app.msgBox( $ItemNotFoundUnexpected, $UnexpectedException, null );	// EDS-80
+		app.msgBox( $ItemNotFoundUnexpected, $UnexpectedException, null );	
 					
 		self.clearCart();
 		return Ex_Abort_Action;
@@ -16004,25 +15214,19 @@ removeCartItem() updating, protected;
 //
 // Returns:		Nothing
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	20/04/2023	EDS-30		Reimplement the Shop Client Form
-// Dan T	29/05/2023	EDS-53		Refactor TestViewApp unit tests
 //									Changed Type Cast to be SaleTA
-// Dan T	28/06/2023	EDS-80		Turn all remaining string literals into translatable strings
-// Dan T	21/07/2023	EDS-99		Change ShoppingCartTA to use proxy class
-// Dan T	24/07/2023	EDS-99.v2	Use RefreshEntries method and refactor WebForms to not use displayCollection
 
 vars
-	cartItem : CartItem; 	// EDS-99
+	cartItem : CartItem; 	
 	
 begin
-	cartItem := self.tblItems.accessRow( self.tblItems.row ).itemObject.CartItem;	// EDS-99
+	cartItem := self.tblItems.accessRow( self.tblItems.row ).itemObject.CartItem;	
 	
 	if cartItem = null then
-		app.msgBox ( $SelectItemToDelete, $UnableToRemoveItemFromCart , MsgBox_Information_Icon + MsgBox_OK_Only );	// EDS-80
+		app.msgBox ( $SelectItemToDelete, $UnableToRemoveItemFromCart , MsgBox_Information_Icon + MsgBox_OK_Only );	
 	else
 		app.getShoppingCartTA().removeItem( cartItem.myItem );
-		self.tblItems.refreshEntries( null );	// EDS-99.v2
+		self.tblItems.refreshEntries( null );	
 	endif;	
 end;
 }
@@ -16060,8 +15264,6 @@ end;
 tblItems_displayRow
 {
 tblItems_displayRow(table: ErewhonTable input; theSheet: Integer; pCartItem : CartItem; theRow: Integer; bcontinue: Boolean io):String updating;
-// Who		When		Ticket		Details
-// Dan T	21/07/2023	EDS-99		Change ShoppingCartTA to use proxy class
 
 begin
 	return pCartItem.transaction & Tab & pCartItem.code & Tab & pCartItem.myItem.name & Tab & pCartItem.myItem.price.currencyFormat() & Tab & pCartItem.offer.currencyFormat();
@@ -16086,15 +15288,12 @@ end;
 formLoad
 {
 formLoad() updating, protected;
-// Who		When		Ticket		Details
-// Dan T	20/04/2023	EDS-30		Reimplement the Shop Client Form
-// Dan T	21/07/2023	EDS-99		Change ShoppingCartTA to use proxy class
 
 begin
 	inheritMethod();
 	
 	self.initializeConfirmationTable();
-	self.tblSales.displayCollection( app.getShoppingCartTA().allCartItems, false, null, null );	// EDS-99
+	self.tblSales.displayCollection( app.getShoppingCartTA().allCartItems, false, null, null );	
 end;
 }
 initializeConfirmationTable
@@ -16161,8 +15360,6 @@ end;
 tblSales_displayRow
 {
 tblSales_displayRow(table: ErewhonTable input; theSheet: Integer; pCartItem: CartItem; theRow: Integer; bcontinue: Boolean io):String updating;
-// Who		When		Ticket		Details
-// Dan T	21/07/2023	EDS-99		Change ShoppingCartTA to use proxy class
 
 begin
 	return pCartItem.transaction & Tab & pCartItem.code & Tab & pCartItem.myItem.name & Tab & pCartItem.myItem.price.currencyFormat() & Tab & pCartItem.offer.currencyFormat();
@@ -16174,22 +15371,15 @@ end;
 btnCartCheckout_click
 {
 btnCartCheckout_click( btn : ErewhonButton input ) updating;
-// Who		When		Ticket		Details
-// Dan T	20/04/2023	EDS-30		Reimplement the Shop Client Form
 //									Added check to ensure checkout form only displays if there are cart items
-// Dan T	16/06/2023	EDS-31		Shop forms not handling a deleted sale item
-// Dan T	22/06/2023	EDS-74		SaleItemSearch - remove parameterized constructor
 
 begin
-	self.doCheckout();	// EDS-74
+	self.doCheckout();	
 end;
 }
 btnCartEmpty_click
 {
 btnCartEmpty_click( btn : ErewhonButton input ) updating;
-// Who		When		Ticket		Details
-// Dan T	16/06/2023	EDS-31		Shop forms not handling a deleted sale item
-// Dan T	26/06/2023	EDS-31.v2	Shop forms not handling a deleted sale item
 
 begin
 	self.doClearCart();
@@ -16204,9 +15394,6 @@ btnResultsBuyBid_click( btn : ErewhonButton input ) updating;
 // Purpose:		Initiates the adding of an item to the shopping cart when the 
 //				buy/bid button is clicked.
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	19/04/2023	EDS-30		Reimplement the Shop Client Form
-// Dan T	16/06/2023	EDS-31		Shop forms not handling a deleted sale item
 
 begin
 	app.mousePointer := Busy;
@@ -16218,9 +15405,6 @@ end;
 btnResultsClear_click
 {
 btnResultsClear_click( btn : ErewhonButton input ) updating;
-// Who		When		Ticket		Details
-// Dan T	16/06/2023	EDS-31		Shop forms not handling a deleted sale item
-// Dan T	26/06/2023	EDS-31.v2	Shop forms not handling a deleted sale item
 
 begin
 	self.doClearSearchTable;
@@ -16239,9 +15423,6 @@ btnResultsDetails_click( btn : ErewhonButton input ) updating;
 //
 // Returns:		Nothing
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	16/06/2023	EDS-31		Shop forms not handling a deleted sale item
-// Dan T	26/06/2023	EDS-31.v2	Shop forms not handling a deleted sale item
 
 begin
 	self.doResultsDetails( btn );
@@ -16256,27 +15437,17 @@ btnSearchReset_click( btn : ErewhonButton input ) updating;
 // Purpose:		Initiates the reset of the search parameters when the reset button
 //				is clicked. 
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	18/04/2023	EDS-30		Reimplement the Shop Client Form
-// Dan T	22/06/2023	EDS-74		SaleItemSearch - remove parameterized constructor
 
 begin
-	self.doResetSearchBox();	// EDS-74
+	self.doResetSearchBox();	
 end;
 }
 btnSearch_click
 {
 btnSearch_click( btn : ErewhonButton input ) updating;
-// Who		When		Ticket		Details
-// Dan T	18/04/2023	EDS-30		Reimplement the Shop Client Form
-// Dan T	16/06/2023	EDS-31		Shop forms not handling a deleted sale item
-// Dan T	26/06/2023	EDS-31.v2	Shop forms not handling a deleted sale item
-// Dan T	12/07/2023	EDS-83.v2 	Optimise Item Search (Notify invalid price range)
-// Dan T	25/07/2023	EDS-97 		Use one ErewhonException class
-// Dan T	25/07/2023	EDS-97.v2	Use one ErewhonException class
 
 begin
-	on ErewhonException do app.exception_handler_abort_on_50002_with_message_box( exception );	// EDS-97.2
+	on ErewhonException do app.exception_handler_abort_on_50002_with_message_box( exception );	
 	
 	self.doSearch();
 end;
@@ -16284,9 +15455,6 @@ end;
 cmbCategory_displayRow
 {
 cmbCategory_displayRow(combobox: ErewhonComboBox input; pItemCategory: ItemCategory; lstIndex: Integer; bcontinue: Boolean io):String updating;
-// Who		When		Ticket		Details
-// Dan T	22/06/2023	EDS-74		SaleItemSearch - remove parameterized constructor
-// Dan T	10/07/2023	EDS-88	 	Rename SaleItem classes to improve clarity
 
 begin
 	return pItemCategory.name;
@@ -16295,12 +15463,10 @@ end;
 cmbCountry_click
 {
 cmbCountry_click( combobox : ErewhonComboBox input ) updating;
-// Who		When		Ticket		Details
-// Dan T	18/04/2023	EDS-30		Reimplement the Shop Client Form
 
 begin
 	app.mousePointer := Busy;
-	self.doCountrySelect(); // EDS-30
+	self.doCountrySelect(); 
 epilog
 	app.mousePointer := Idle;
 end;
@@ -16308,8 +15474,6 @@ end;
 cmbCountry_displayRow
 {
 cmbCountry_displayRow(combobox: ErewhonComboBox input; pCountry: Country; lstIndex: Integer; bcontinue: Boolean io):String updating;
-// Who		When		Ticket		Details
-// Dan T	22/06/2023	EDS-74		SaleItemSearch - remove parameterized constructor
 
 begin
 	return pCountry.name;
@@ -16318,8 +15482,6 @@ end;
 cmbRegion_displayRow
 {
 cmbRegion_displayRow(combobox: ErewhonComboBox input; pRegion: Region; lstIndex: Integer; bcontinue: Boolean io):String updating;
-// Who		When		Ticket		Details
-// Dan T	12/06/2023	EDS-61.v2	Updated combobox to be more scaleable using displayCollection
 
 begin
 	return pRegion.name;
@@ -16337,38 +15499,32 @@ doAddToCart() updating, protected;
 //
 // Returns:		N/A
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	22/06/2023	EDS-74		SaleItemSearch - remove parameterized constructor
-// Dan T	28/06/2023	EDS-80		Turn all remaining string literals into translatable strings
-// Dan T	10/07/2023	EDS-88	 	Rename SaleItem classes to improve clarity
-// Dan T	21/07/2023	EDS-99		Change ShoppingCartTA to use proxy class
-// Dan T	24/07/2023	EDS-99.v2	Use RefreshEntries method and refactor WebForms to not use displayCollection
 
 vars
 	item : Item;
 	
 begin
-	on Exception do self.handleExceptions( exception ); // EDS-31
+	on Exception do self.handleExceptions( exception ); 
 	
 	item := self.getItem();
 	
 	if item = null then
-		app.msgBox( $PleaseSelectAnItem, $Error, MsgBox_OK_Only + MsgBox_Stop_Icon );	// EDS-80
+		app.msgBox( $PleaseSelectAnItem, $Error, MsgBox_OK_Only + MsgBox_Stop_Icon );	
 		return;
 	endif;
 	
-	if not app.getShoppingCartTA().addItem( item, self.txtTender.text.Decimal ) then	// EDS-99
-		self.displayErrors( app.getShoppingCartTA(), $CannotAddItemToCart );	// EDS-80
+	if not app.getShoppingCartTA().addItem( item, self.txtTender.text.Decimal ) then	
+		self.displayErrors( app.getShoppingCartTA(), $CannotAddItemToCart );	
 		return;
 	endif;
 	
 	// refresh the cart and the items
-	self.tblCart.refreshEntries( null );														// EDS-99.v2
-	self.lblCartTotal.caption := app.getShoppingCartTA().getCartTotal().currencyFormat();		// EDS-99
+	self.tblCart.refreshEntries( null );														
+	self.lblCartTotal.caption := app.getShoppingCartTA().getCartTotal().currencyFormat();		
 	
 	// Refresh the Items Table
 	app.myShopItemSearch.doSearch();	// Repeat the search so the just purchased item isn't in the search results...
-	self.tblSearchResults.refreshEntries( null );	// EDS-74
+	self.tblSearchResults.refreshEntries( null );	
 	self.tblSearchResults.visible := true;
 	self.tblSearchResults.refreshNow();
 	
@@ -16391,18 +15547,15 @@ doCheckout() updating, protected;
 //
 // Returns:		Nothing
 // --------------------------------------------------------------------------------
-// Dan T	22/06/2023	EDS-74		SaleItemSearch - remove parameterized constructor
-// Dan T	26/06/2023	EDS-31.v2	Shop forms not handling a deleted sale item
-// Dan T	28/06/2023	EDS-80		Turn all remaining string literals into translatable strings
 
 begin
 	app.mousePointer := Busy;
 	
 	if app.getShoppingCartTA().isEmpty() then
-		app.msgBox( $ShoppingCartEmptyPleaseBuyBid, $CartEmpty, MsgBox_OK_Only + MsgBox_Information_Icon );	// EDS-80
+		app.msgBox( $ShoppingCartEmptyPleaseBuyBid, $CartEmpty, MsgBox_OK_Only + MsgBox_Information_Icon );	
 	else
 		// Unsubscribe from Notifications
-		self.endNotificationForSubscriber( self ); 	// EDS-31
+		self.endNotificationForSubscriber( self ); 	
 
 		self.showCheckoutForm();
 	endif;
@@ -16423,15 +15576,11 @@ doClearCart() updating, protected;
 //
 // Returns:		Nothing
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	27/04/2023	EDS-30.v2	ShoppingCartTA::clearCart method removed
-// Dan T	21/07/2023	EDS-99		Change ShoppingCartTA to use proxy class
-// Dan T	24/07/2023	EDS-99.v2	Use RefreshEntries method and refactor WebForms to not use displayCollection
 
 begin
-	app.getShoppingCartTA().initialize();	// EDS-30.v2
-	self.tblCart.refreshEntries( null );	// EDS-99.v2
-	self.lblCartTotal.caption := app.getShoppingCartTA().getCartTotal().currencyFormat();		// EDS-99
+	app.getShoppingCartTA().initialize();	
+	self.tblCart.refreshEntries( null );	
+	self.lblCartTotal.caption := app.getShoppingCartTA().getCartTotal().currencyFormat();		
 	self.doSearch();
 end;
 }
@@ -16443,8 +15592,6 @@ doClearSearchTable() updating, protected;
 //
 // Purpose:		Clears the list of Items
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	19/04/2023	EDS-30		Reimplement the Shop Client Form
 
 begin
 	app.myShopItemSearch.clear();
@@ -16466,12 +15613,6 @@ doCountrySelect() updating, protected;
 //
 // Returns:		N/A
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	18/04/2023	EDS-30		Reimplement the Shop Client Form
-// Dan T	12/06/2023	EDS-61		Shop Form Region Combo Box does not show --- Select -- Option
-// Dan T	21/06/2023	EDS-61.v2	Updated combobox to be more scaleable using displayCollection
-// Dan T	26/06/2023	EDS-31.v2	Shop forms not handling a deleted sale item
-// Dan T	27/06/2023	EDS-76		Shop form:  Region combo should be disabled when no country is selected
 
 vars
 	countryIsDeleted: Boolean;
@@ -16483,20 +15624,20 @@ begin
 	country := self.cmbCountry.listObject.Country;
 	
 	if country = null then
-		self.cmbRegion.enabled := false;	// EDS-76
+		self.cmbRegion.enabled := false;	
 		self.cmbRegion.clear();
 		
 	else
-		self.cmbRegion.enabled := true;		// EDS-76
+		self.cmbRegion.enabled := true;		
 		self.cmbRegion.clear();
-		self.cmbRegion.displayCollection( country.allRegions, true, null, null, $Select );	// EDS-61.v2
-		// EDS-101
+		self.cmbRegion.displayCollection( country.allRegions, true, null, null, $Select );	
+		
 		// Refreshing ComboBox entries due to Jade Bug reported in Parsys ticket 69598
 		// Without this workaround, the items are not initially displayed correctly when specifying a defaultRowHeight
 		self.cmbRegion.refreshEntries( null );
 		
 		if not countryIsDeleted then
-			self.cmbRegion.listIndex := 1;	// EDS-61
+			self.cmbRegion.listIndex := 1;	
 		endif;
 	endif;
 end;
@@ -16513,12 +15654,11 @@ doResetSearchBox() updating, protected;
 //
 // Returns:		N/A
 // --------------------------------------------------------------------------------
-// Dan T	22/06/2023	EDS-74		SaleItemSearch - remove parameterized constructor
 
 begin
 	// Reset ItemCollectionSearch and Table
-	app.myShopItemSearch.initialize();	// EDS-74
-	self.populateSearchBox();						// EDS-74
+	app.myShopItemSearch.initialize();	
+	self.populateSearchBox();						
 end;
 }
 doResultsDetails
@@ -16534,18 +15674,13 @@ doResultsDetails( btn : ErewhonButton input ) updating, protected;
 //
 // Returns:		Nothing
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	18/04/2023	EDS-30		Reimplement the Shop Client Form
-// Dan T	22/06/2023	EDS-74		SaleItemSearch - remove parameterized constructor
-// Dan T	28/06/2023	EDS-80		Turn all remaining string literals into translatable strings
-// Dan T	10/07/2023	EDS-88	 	Rename SaleItem classes to improve clarity
 
 vars
 	item : Item;
 
 begin
-	self.txtTender.text := null;	// EDS-80
-	item := self.tblSearchResults.accessRow( self.tblSearchResults.row ).itemObject.Item;	// EDS-74
+	self.txtTender.text := null;	
+	item := self.tblSearchResults.accessRow( self.tblSearchResults.row ).itemObject.Item;	
 
 	if 	not btn.value 
 		and self.tblSearchResults.visible
@@ -16584,16 +15719,12 @@ doSearch() updating, protected;
 //
 // Returns:		Nothing
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	19/04/2023	EDS-30		Reimplement the Shop Client Form
-// Dan T	19/06/2023	EDS-64		Tenders Still Available After Closure Date
-// Dan T	22/06/2023	EDS-74		SaleItemSearch - remove parameterized constructor
 
 begin
 	self.populateItemCollectionSearch();
 	app.myShopItemSearch.doSearch();
 	
-	self.tblSearchResults.refreshEntries( null );	// EDS-74
+	self.tblSearchResults.refreshEntries( null );	
 	self.fraItem.visible := false;
 	self.tblSearchResults.visible := true;
 	self.tblSearchResults.refreshNow();
@@ -16606,11 +15737,6 @@ end;
 formLoad
 {
 formLoad() updating, protected;
-// Who		When		Ticket		Details
-// Dan T	18/04/2023	EDS-30		Reimplement the Shop Client Form
-// Dan T	19/06/2023	EDS-64		Tenders Still Available After Closure Date
-// Dan T	22/06/2023	EDS-74		SaleItemSearch - remove parameterized constructor
-// Dan T	21/07/2023	EDS-99		Change ShoppingCartTA to use proxy class
 
 begin
 	inheritMethod();
@@ -16622,18 +15748,18 @@ begin
 	
 	self.tblSearchResults.displayCollection( app.myShopItemSearch.allItems, false, null, null );
 	
-	self.populateSearchBox();		// EDS-74
+	self.populateSearchBox();		
 	self.doSearch();
 	
-	// Setup the Cart Table Headers	// EDS-99
+	// Setup the Cart Table Headers	
 	self.tblCart.columns := 2;
 	self.tblCart.columnWidth[ 1 ] := 100;
 	self.tblCart.columnWidth[ 2 ] := 100;
 	self.tblCart.setCellText( 1, 1, $Product );
 	self.tblCart.setCellText( 1, 2, $Price );
 
-	self.tblCart.displayCollection( app.getShoppingCartTA().allCartItems, false, null, null );	// EDS-99
-	self.lblCartTotal.caption := app.getShoppingCartTA().getCartTotal().currencyFormat();		// EDS-99
+	self.tblCart.displayCollection( app.getShoppingCartTA().allCartItems, false, null, null );	
+	self.lblCartTotal.caption := app.getShoppingCartTA().getCartTotal().currencyFormat();		
 
 	self.fraItem.visible := false;
 	self.tblSearchResults.visible := true;
@@ -16646,12 +15772,6 @@ end;
 formSysNotify
 {
 formSysNotify(eventType: Integer; pItem: Item; eventTag: Integer) updating;
-// Who		When		Ticket		Details
-// Dan T	16/06/2023	EDS-31		Shop forms not handling a deleted sale item
-// Dan T	28/06/2023	EDS-80		Turn all remaining string literals into translatable strings
-// Dan T	10/07/2023	EDS-88	 	Rename SaleItem classes to improve clarity
-// Dan T	21/07/2023	EDS-99		Change ShoppingCartTA to use proxy class
-// Dan T	24/07/2023	EDS-99.v2	Use RefreshEntries method and refactor WebForms to not use displayCollection
 
 begin
 	inheritMethod( eventType, pItem, eventTag );
@@ -16660,12 +15780,12 @@ begin
 	
 		// If deleted item is in the shopping cart then notify the user, otherwise just refresh the list.
 		if app.getShoppingCartTA().contains( pItem ) then
-			app.msgBox( $ItemDeletedByAnotherUserRemoveFromCart, $DeletedItem, MsgBox_OK_Only );	// EDS-80
-			app.getShoppingCartTA.removeItem( pItem );												// EDS-99
+			app.msgBox( $ItemDeletedByAnotherUserRemoveFromCart, $DeletedItem, MsgBox_OK_Only );	
+			app.getShoppingCartTA.removeItem( pItem );												
 		endif;
 
 		// Refresh Lists
-		self.tblCart.refreshEntries( null );	// EDS-99.v2
+		self.tblCart.refreshEntries( null );	
 		self.doSearch();
 	endif;
 end;
@@ -16673,8 +15793,6 @@ end;
 formUnload
 {
 formUnload() updating, protected;
-// Who		When		Ticket		Details
-// Dan T	16/06/2023	EDS-31		Shop forms not handling a deleted sale item
 
 begin
 	inheritMethod();
@@ -16682,7 +15800,7 @@ begin
 	app.mousePointer := Busy;
 	
 	// Unsubscribe from Notifications
-	self.endNotificationForSubscriber( self ); 	// EDS-31
+	self.endNotificationForSubscriber( self ); 	
 	
 epilog
 	app.mousePointer := Idle;
@@ -16700,10 +15818,6 @@ getItem() : Item updating, protected;
 //
 // Returns:     The current Item
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	19/04/2023	EDS-30		Reimplement the Shop Client Form
-// Dan T	22/06/2023	EDS-74		SaleItemSearch - remove parameterized constructor
-// Dan T	10/07/2023	EDS-88	 	Rename SaleItem classes to improve clarity
 
 vars
 	item : Item;
@@ -16717,7 +15831,7 @@ begin
 	if self.fraItem.visible then
 		item := self.fraItem.userObject.Item;
 	elseif rowIsNotFixed and rowIsInTable then
-		item := self.tblSearchResults.accessRow( self.tblSearchResults.row ).itemObject.Item;	// EDS-74
+		item := self.tblSearchResults.accessRow( self.tblSearchResults.row ).itemObject.Item;	
 	endif;
 	
 epilog
@@ -16741,11 +15855,6 @@ handleExceptions( exObj : Exception ) : Integer updating, protected;
 //				3	Ex_Resume_Method_Epilog		Execution resumes at the start of the method epilog or at the end of the method if there is no epilog section
 //				-1	Ex_Pass_Back				Passes control back to the prior local exception handler for this type of exception
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	16/06/2023	EDS-31		Shop forms not handling a deleted sale item
-// Dan T	28/06/2023	EDS-80		Turn all remaining string literals into translatable strings
-// Dan T	21/07/2023	EDS-99		Change ShoppingCartTA to use proxy class
-// Dan T	24/07/2023	EDS-99.v2	Use RefreshEntries method and refactor WebForms to not use displayCollection
 
 constants
 	Object_Not_Found 	: Integer = 4;
@@ -16753,11 +15862,11 @@ constants
 	
 begin
 	if exObj.errorCode = Object_Not_Found or exObj.errorCode = Object_Deleted then
-		app.msgBox( $ItemNotFoundUnexpected, $UnexpectedException, null );	// EDS-80
+		app.msgBox( $ItemNotFoundUnexpected, $UnexpectedException, null );	
 					
 		self.doSearch();
 		app.getShoppingCartTA().initialize();
-		self.tblCart.refreshEntries( null );	// EDS-99.v2
+		self.tblCart.refreshEntries( null );	
 		return Ex_Abort_Action;
 	endif;
 
@@ -16790,26 +15899,21 @@ initializeSearchResultsTable( table : ErewhonTable input ) protected;
 //
 // Returns:		Nothing
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	18/04/2023	EDS-30		Reimplement the Shop Client Form
-// Dan T	22/06/2023	EDS-74		SaleItemSearch - remove parameterized constructor
-// Dan T	28/06/2023	EDS-80		Turn all remaining string literals into translatable strings
-// Dan T	14/08/2023	EDS-95		Add Item Code to Search Results Table
 
 constants
 	MaximumCols	: Integer = 5;
 	
 	// Column Index Constants
-	CodeColumnIndex : Integer = 2;			// EDS-95
+	CodeColumnIndex : Integer = 2;			
 	ProductColumnIndex : Integer = 3;
 	DateColumnIndex	 : Integer = 4;
 	PriceColumnIndex : Integer = 5;
 	
 	// Column Width Constants
-	CodeColumnWidth : Integer = 50;			// EDS-95
-	ProductColumnWidth : Integer = 150;		// EDS-95
-	DateColumnWidth : Integer = 100;		// EDS-95
-	PriceColumnWidth : Integer = 100;		// EDS-95
+	CodeColumnWidth : Integer = 50;			
+	ProductColumnWidth : Integer = 150;		
+	DateColumnWidth : Integer = 100;		
+	PriceColumnWidth : Integer = 100;		
 
 vars
 	rowIndex : Integer;
@@ -16824,16 +15928,16 @@ begin
 	table.rows := 0;
 	table.columns := MaximumCols;
 	
-	fromLabel := $Listed;			// EDS-65	// EDS-80
+	fromLabel := $Listed;			
 	fromLabel.firstCharToUpper();
 	untilLabel := $Until;
 	untilLabel.firstCharToUpper();
-	rowIndex := table.addItem( Tab & $Code & Tab & $Product & Tab & fromLabel & Tab & $Price );		// EDS-95
+	rowIndex := table.addItem( Tab & $Code & Tab & $Product & Tab & fromLabel & Tab & $Price );		
 	
 	table.fixedRows := 1;
 	
 	// Set up the column widths.
-	table.columnWidth[ CodeColumnIndex ] := CodeColumnWidth;			// EDS-95
+	table.columnWidth[ CodeColumnIndex ] := CodeColumnWidth;			
 	table.columnWidth[ ProductColumnIndex ] := ProductColumnWidth;
 	table.columnWidth[ DateColumnIndex ] := DateColumnWidth;
 	table.columnWidth[ PriceColumnIndex ] := PriceColumnWidth;
@@ -16841,7 +15945,7 @@ begin
 	table.columnVisible[ 1 ] :=	false;		// Don't want to see the Buy/Bid column here.
 	
 	// Selecting any column selects the entire row
-	table.selectMode := table.SelectMode_CurrentRow;	// EDS-74
+	table.selectMode := table.SelectMode_CurrentRow;	
 	
 	table.accessRow( table.fixedRows ).backColor := TableHeaderColor;
 end;
@@ -16858,7 +15962,6 @@ populateItemCollectionSearch() protected;
 //
 // Returns:		N/A
 // --------------------------------------------------------------------------------
-// Dan T	22/06/2023	EDS-74		SaleItemSearch - remove parameterized constructor
 
 begin
 	app.myShopItemSearch.myCountry := self.cmbCountry.listObject.Country;
@@ -16884,38 +15987,33 @@ populateSearchBox() updating, protected;
 //
 // Returns:		N/A
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	22/06/2023	EDS-74		SaleItemSearch - remove parameterized constructor
 //									Created method
-// Dan T	27/06/2023	EDS-76		Shop form:  Region combo should be disabled when no country is selected
 //									Refactored method to use local variables to improve readability
-// Dan T	11/08/2023	EDS-101		Add defaultRowHeight to Combo Boxes
-// Dan T	11/08/2023	EDS-104		Check findObject method used with a displayCollection is refreshing the entries
 
 vars
-	country 		: Country;			// EDS-76
-	region 			: Region;			// EDS-76
-	category 		: ItemCategory;	// EDS-76
-	onlyRetail		: Boolean;			// EDS-76
-	onlyTenders		: Boolean;			// EDS-76
-	priceHigh		: Decimal[ 12, 2 ];	// EDS-76
-	priceLow		: Decimal[ 12, 2 ];	// EDS-76
-	closedTenders	: Boolean;			// EDS-76
+	country 		: Country;			
+	region 			: Region;			
+	category 		: ItemCategory;	
+	onlyRetail		: Boolean;			
+	onlyTenders		: Boolean;			
+	priceHigh		: Decimal[ 12, 2 ];	
+	priceLow		: Decimal[ 12, 2 ];	
+	closedTenders	: Boolean;			
 	
 begin
 	// Get the ItemCollectionSearch property values
-	country 		:= app.myShopItemSearch.myCountry;			// EDS-76
-	region 			:= app.myShopItemSearch.myRegion;				// EDS-76
-	category		:= app.myShopItemSearch.myItemCategory;	// EDS-76
-	onlyRetail		:= app.myShopItemSearch.onlyRetailItems;		// EDS-76
-	onlyTenders		:= app.myShopItemSearch.onlyTenderItems;		// EDS-76
-	priceHigh		:= app.myShopItemSearch.priceHigh;			// EDS-76
-	priceLow		:= app.myShopItemSearch.priceLow;				// EDS-76
-	closedTenders	:= app.myShopItemSearch.includeClosedTenders;	// EDS-76
+	country 		:= app.myShopItemSearch.myCountry;			
+	region 			:= app.myShopItemSearch.myRegion;				
+	category		:= app.myShopItemSearch.myItemCategory;	
+	onlyRetail		:= app.myShopItemSearch.onlyRetailItems;		
+	onlyTenders		:= app.myShopItemSearch.onlyTenderItems;		
+	priceHigh		:= app.myShopItemSearch.priceHigh;			
+	priceLow		:= app.myShopItemSearch.priceLow;				
+	closedTenders	:= app.myShopItemSearch.includeClosedTenders;	
 
 	// Populate the Country Combo Box
 	self.cmbCountry.displayCollection( app.myCompany.allCountries, true, null, null, $Select );
-	// EDS-101
+	
 	// Refreshing ComboBox entries due to Jade Bug reported in Parsys ticket 69598
 	// Without this workaround, the items are not initially displayed correctly when specifying a defaultRowHeight
 	self.cmbCountry.refreshEntries( null );
@@ -16926,25 +16024,25 @@ begin
 		// When the findObject method is called, it only looks at the entries that are loaded.  
 		// Because displayCollection does not load the entire collection the refreshEntries method should be called prior to the findObject method.
 		
-		self.cmbCountry.refreshEntries( country );							// EDS-104
+		self.cmbCountry.refreshEntries( country );							
 		self.cmbCountry.listIndex := self.cmbCountry.findObject( country );
 		
 		// Populate and enable Region Combo Box
-		self.cmbRegion.enabled := true;		// EDS-76
+		self.cmbRegion.enabled := true;		
 		self.cmbRegion.displayCollection( country.allRegions, true, null, null, $Select );
-		// EDS-101
+		
 		// Refreshing ComboBox entries due to Jade Bug reported in Parsys ticket 69598
 		// Without this workaround, the items are not initially displayed correctly when specifying a defaultRowHeight
 		self.cmbRegion.refreshEntries( null );
 		
 		if app.myShopItemSearch.myRegion <> null then
-			self.cmbRegion.enabled := true;		// EDS-76
+			self.cmbRegion.enabled := true;		
 			
 			// displayCollection only loads the required number of entries for the visible area of a table/listbox/combo box.  
 			// This is done for performance benefits to avoid loading the entire collection. 
 			// When the findObject method is called, it only looks at the entries that are loaded.  
 			// Because displayCollection does not load the entire collection the refreshEntries method should be called prior to the findObject method.
-			self.cmbRegion.refreshEntries( region );							// EDS-104
+			self.cmbRegion.refreshEntries( region );							
 			self.cmbRegion.listIndex := self.cmbRegion.findObject( region );
 			
 		else
@@ -16953,13 +16051,13 @@ begin
 		
 	else
 		self.cmbCountry.listIndex := 1;
-		self.cmbRegion.clear();				// EDS-76
-		self.cmbRegion.enabled := false;	// EDS-76
+		self.cmbRegion.clear();				
+		self.cmbRegion.enabled := false;	
 	endif;
 	
 	// Populate the Category Combo Box
 	self.cmbCategory.displayCollection( app.myCompany.allItemCategoriesByName, true, null, null, $Select );
-	// EDS-101
+	
 	// Refreshing ComboBox entries due to Jade Bug reported in Parsys ticket 69598
 	// Without this workaround, the items are not initially displayed correctly when specifying a defaultRowHeight
 	self.cmbCategory.refreshEntries( null );
@@ -16969,7 +16067,7 @@ begin
 		// This is done for performance benefits to avoid loading the entire collection. 
 		// When the findObject method is called, it only looks at the entries that are loaded.  
 		// Because displayCollection does not load the entire collection the refreshEntries method should be called prior to the findObject method.
-		self.cmbCategory.refreshEntries( category );							// 	EDS-104
+		self.cmbCategory.refreshEntries( category );							
 		self.cmbCategory.listIndex := self.cmbCategory.findObject( category );
 	else
 		self.cmbCategory.listIndex := 1;
@@ -17014,9 +16112,6 @@ selectTableRow( table : ErewhonTable input ) updating, protected;
 //
 // Returns:		Nothing
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	22/06/2023	EDS-74		SaleItemSearch - remove parameterized constructor
-// Dan T	10/07/2023	EDS-88	 	Rename SaleItem classes to improve clarity
 
 vars
 	item : Item;
@@ -17028,8 +16123,8 @@ begin
 	if table.row > table.fixedRows and table.row <= table.rows then
 	
 		// Get the item from the selected row
-		item := table.accessRow( table.row ).itemObject.Item;	// EDS-74
-		self.beginNotification( item, Object_Delete_Event, Response_Continuous, null );	// EDS-74
+		item := table.accessRow( table.row ).itemObject.Item;	
+		self.beginNotification( item, Object_Delete_Event, Response_Continuous, null );	
 		
 		self.fraItem.userObject := item;
 		self.btnResultsDetails.enabled := true;
@@ -17098,15 +16193,10 @@ showItemDetails( pItem : Item ) : Integer updating, protected;
 //
 // Returns:		A non-zero value if there is an error
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	18/04/2023	EDS-30		Reimplement the Shop Client Form
-// Dan T	19/06/2023	EDS-64		Tenders Still Available After Closure Date
-// Dan T	26/06/2023	EDS-31.v2	Shop forms not handling a deleted sale item
-// Dan T	28/06/2023	EDS-80		Turn all remaining string literals into translatable strings
 
 
 begin
-	on Exception do app.exception_handler_abort_on_4_with_message( exception, $DeletedItem, $ItemHasBeenDeleted );	// EDS-80
+	on Exception do app.exception_handler_abort_on_4_with_message( exception, $DeletedItem, $ItemHasBeenDeleted );	
 	
 	self.lblCode.caption := pItem.getCode();
 	self.txtDescription.text := pItem.description;
@@ -17115,7 +16205,7 @@ begin
 	self.picPhoto.picture := pItem.photo;
 
 	if pItem.myAgent = null then
-		self.lblAgent.caption := null;	// EDS-80		
+		self.lblAgent.caption := null;	
 	else
 		self.lblAgent.caption := pItem.myAgent.name;
 	endif;
@@ -17125,23 +16215,23 @@ begin
 		self.lblCloseDate.caption := pItem.TenderItem.closureDate.shortFormat();
 		
 		// Change Tender Closure Date
-		if pItem.TenderItem.isClosed() then			// EDS-64
-			self.lblCloseDate.foreColor := Red;				// EDS-64
-			self.lblCloseDate.fontBold := true;				// EDS-64
-			self.txtTender.enabled := false;				// EDS-64
-			self.btnResultsBuyBid.enabled := false;			// EDS-64
-		else 												// EDS-64
-			self.lblCloseDate.foreColor := Black;			// EDS-64
-			self.lblCloseDate.fontBold := false;			// EDS-64
-			self.txtTender.enabled := true;					// EDS-64
-			self.btnResultsBuyBid.enabled := true;			// EDS-64
+		if pItem.TenderItem.isClosed() then			
+			self.lblCloseDate.foreColor := Red;				
+			self.lblCloseDate.fontBold := true;				
+			self.txtTender.enabled := false;				
+			self.btnResultsBuyBid.enabled := false;			
+		else 												
+			self.lblCloseDate.foreColor := Black;			
+			self.lblCloseDate.fontBold := false;			
+			self.txtTender.enabled := true;					
+			self.btnResultsBuyBid.enabled := true;			
 		endif;
 		
 		self.lblTenderPrice.visible := true;
 		self.txtTender.visible := true;
 	else
 		self.lblCloseDateLabel.visible := false;
-		self.lblCloseDate.caption := null;	// EDS-80
+		self.lblCloseDate.caption := null;	
 		self.lblTenderPrice.visible := false;
 		self.txtTender.visible := false;
 	endif;
@@ -17159,8 +16249,6 @@ end;
 tblCart_displayRow
 {
 tblCart_displayRow(table: ErewhonTable input; theSheet: Integer; pCartItem: CartItem; theRow: Integer; bcontinue: Boolean io):String updating;
-// Who		When		Ticket		Details
-// Dan T	21/07/2023	EDS-99		Change ShoppingCartTA to use proxy class
 
 vars
 	price : Decimal[ 12, 2 ];
@@ -17178,7 +16266,6 @@ end;
 tblSearchResults_click
 {
 tblSearchResults_click(table: ErewhonTable input) updating;
-// Dan T	22/06/2023	EDS-74		SaleItemSearch - remove parameterized constructor
 
 begin
 	app.mousePointer := Busy;
@@ -17192,9 +16279,6 @@ end;
 tblSearchResults_dblClick
 {
 tblSearchResults_dblClick( table : ErewhonTable input ) updating;
-// Who		When		Ticket		Details
-// Dan T	18/04/2023	EDS-30		Reimplement the Shop Client Form
-// Dan T	22/06/2023	EDS-74		SaleItemSearch - remove parameterized constructor
 
 
 begin
@@ -17218,9 +16302,6 @@ tblSearchResults_displayRow(table: ErewhonTable input; theSheet: Integer; pItem:
 //
 // Returns:		N/A
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	22/06/2023	EDS-74		SaleItemSearch - remove parameterized constructor
-// Dan T	10/07/2023	EDS-88	 	Rename SaleItem classes to improve clarity
 
 begin
 	if pItem.isKindOf( TenderItem ) and pItem.TenderItem.isClosed() then
@@ -17248,8 +16329,6 @@ end;
 txtPriceLower_lostFocus
 {
 txtPriceLower_lostFocus(textbox: ErewhonTextBox input) updating;
-// Who		When		Ticket		Details
-// Dan T	22/06/2023	EDS-74		SaleItemSearch - remove parameterized constructor
 
 begin
 	app.myShopItemSearch.priceLow := textbox.text.Decimal;
@@ -17258,8 +16337,6 @@ end;
 txtPriceUpper_lostFocus
 {
 txtPriceUpper_lostFocus(textbox: ErewhonTextBox input) updating;
-// Who		When		Ticket		Details
-// Dan T	22/06/2023	EDS-74		SaleItemSearch - remove parameterized constructor
 
 begin
 	app.myShopItemSearch.priceHigh := textbox.text.Decimal;
@@ -17302,11 +16379,6 @@ doAction() : Boolean updating, protected;
 // Returns:		True if the action was successful, otherwise False and displays
 //				the appropriate error message.
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	13/04/2023	EDS-14		Implement SaleItemTA class
-// Dan T	28/04/2023	EDS-35		Finalize Erewhon App
-// Dan T	28/06/2023	EDS-80		Turn all remaining string literals into translatable strings
-// Dan T	10/07/2023	EDS-88	 	Rename SaleItem classes to improve clarity
 
 vars
 	itemCode : String;
@@ -17316,12 +16388,12 @@ begin
 
 	if itemCode <> null then
 		itemCode.getCodePrefixAndNumber( self.codePrefix, self.codeNumber );
-		return true; // EDS-14
+		return true; 
 	endif;
 	
-	app.msgBox( $ItemNumberRequired, $InvalidCode, MsgBox_Stop_Icon + MsgBox_OK_Only );			// EDS-14	// EDS-80
+	app.msgBox( $ItemNumberRequired, $InvalidCode, MsgBox_Stop_Icon + MsgBox_OK_Only );			
 	
-	return false; // EDS-14
+	return false; 
 end;
 }
 getItemCode
@@ -17338,8 +16410,6 @@ getItemCode( pCategoryPrefix : String output; pItemNumber : Integer output );
 // Returns:		pCategoryPrefix	The Item Category prefix
 //				pItemNumber		The Item Number
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	10/07/2023	EDS-87	 	Erewhon System Housekeeping
 
 begin
 	pCategoryPrefix := self.codePrefix;
@@ -17360,13 +16430,11 @@ end;
 btnOk_click
 {
 btnOk_click( btn : ErewhonButton input ) updating;
-// Who		When		Ticket		Details
-// Dan T	26/04/2023	EDS-32		Move LogonForm to ErewhonBaseForm
 
 begin
 	app.mousePointer := Busy;
 
-	if self.doValidate() then				// EDS-32
+	if self.doValidate() then				
 		self.modalResult :=	ModalOK;
 		self.unloadForm;
 	endif;
@@ -17378,8 +16446,6 @@ end;
 cmbUser_displayRow
 {
 cmbUser_displayRow(combobox: ErewhonComboBox input; obj: Object; lstIndex: Integer; bcontinue: Boolean io):String updating;
-// Who		When		Ticket		Details
-// Dan T	26/07/2023	EDS-92		Improve Logon Form
 
 begin
 	if obj.isKindOf(Client) then
@@ -17401,20 +16467,18 @@ doValidate() : Boolean updating, protected;
 //
 // Returns:		True if the User nameis valid
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	26/07/2023	EDS-92		Improve Logon Form
 
 begin
 	on ErewhonException do app.exception_handler_abort_on_50006_with_message_box( exception );
 
 	if self.optAdmin.value = true then
-		self.usercode := Company.firstInstance().name;	// EDS-92
+		self.usercode := Company.firstInstance().name;	
 	else
-		self.usercode := self.cmbUser.text.trimBlanks;	// EDS-92
+		self.usercode := self.cmbUser.text.trimBlanks;	
 	endif;
 
 	if self.usercode = null then
-		app.raiseErewhonException( Ex_500006_User_not_provided );	// EDS-92
+		app.raiseErewhonException( Ex_500006_User_not_provided );	
 		return false;
 	endif;
 
@@ -17424,10 +16488,6 @@ end;
 formLoad
 {
 formLoad() updating, protected;
-// Who		When		Ticket		Details
-// Dan T	26/04/2023	EDS-32		Move LogonForm to ErewhonBaseForm
-// Dan T	28/06/2023	EDS-80		Turn all remaining string literals into translatable strings
-// Dan T	26/07/2023	EDS-92		Improve Logon Form
 
 vars
 	company : Company;
@@ -17450,7 +16510,7 @@ begin
 		self.cmbUser.setFocus();
 	endif;
 
-	self.lblVersion.caption := $BaseVersion & Space & app.getVersionString;	// EDS-80
+	self.lblVersion.caption := $BaseVersion & Space & app.getVersionString;	
 end;
 }
 load
@@ -17466,8 +16526,6 @@ end;
 optAdmin_click
 {
 optAdmin_click(optionbutton: ErewhonOptionButton input) updating;
-// Who		When		Ticket		Details
-// Dan T	26/07/2023	EDS-92		Improve Logon Form
 
 begin
 	self.cmbUser.enabled := false;
@@ -17476,8 +16534,6 @@ end;
 optUser_click
 {
 optUser_click(optionbutton: ErewhonOptionButton input) updating;
-// Who		When		Ticket		Details
-// Dan T	26/07/2023	EDS-92		Improve Logon Form
 
 begin
 	self.cmbUser.enabled := true;
@@ -17489,8 +16545,6 @@ end;
 btnClose_click
 {
 btnClose_click(btn: Button input) updating;
-// Who		When		Ticket		Details
-// Dan T	14/08/2023	EDS-102		Create View Tender Form
 
 begin
 	self.doClose();
@@ -17499,8 +16553,6 @@ end;
 btnDelete_click
 {
 btnDelete_click(btn: Button input) updating;
-// Who		When		Ticket		Details
-// Dan T	14/08/2023	EDS-102		Create View Tender Form
 
 begin
 	if app.msgBox( $ConfirmDeleteTender, $DeleteTender, MsgBox_Yes_No + MsgBox_Question_Mark_Icon ) = MsgBox_Return_Yes then
@@ -17513,8 +16565,6 @@ end;
 displayObject
 {
 displayObject( pTender : Tender ) updating, protected;
-// Who		When		Ticket		Details
-// Dan T	11/08/2023	EDS-102		Create View Tender Form
 
 begin
 	inheritMethod( pTender );
@@ -17541,8 +16591,6 @@ end;
 doClose
 {
 doClose() updating, protected;
-// Who		When		Ticket		Details
-// Dan T	14/08/2023	EDS-102		Create View Tender Form
 
 begin
 	self.unloadForm();
@@ -17551,8 +16599,6 @@ end;
 formLoad
 {
 formLoad() updating, protected;
-// Who		When		Ticket		Details
-// Dan T	11/08/2023	EDS-102		Create View Tender Form
 
 vars
 	tender : Tender;
@@ -17585,8 +16631,6 @@ end;
 getCurrentObject
 {
 getCurrentObject(): Tender;
-// Who		When		Ticket		Details
-// Dan T	11/08/2023	EDS-102		Create View Tender Form
 
 begin
 	return inheritMethod().Tender;
@@ -17595,8 +16639,6 @@ end;
 getTA
 {
 getTA(): TenderTA;
-// Who		When		Ticket		Details
-// Dan T	11/08/2023	EDS-102		Create View Tender Form
 
 begin
 	return inheritMethod().TenderTA;
@@ -17605,8 +16647,6 @@ end;
 getTAClass
 {
 getTAClass(): Class protected;
-// Who		When		Ticket		Details
-// Dan T	11/08/2023	EDS-102		Create View Tender Form
 
 begin
 	return TenderTA;
@@ -17762,8 +16802,6 @@ end;
 doCloseTab
 {
 doCloseTab( ctl : Control ) protected;
-// Who		When		Ticket		Details
-// Dan T	28/04/2023	EDS-35		Finalize Erewhon App
 
 vars
 	tabContainer : ErewhonTabContainer;
@@ -17776,8 +16814,6 @@ end;
 doResizeCalculations
 {
 doResizeCalculations() protected;
-// Who		When		Ticket		Details
-// Dan T	28/04/2023	EDS-35		Finalize Erewhon App
 
 vars
 	fromLeft : Real;
@@ -17858,11 +16894,9 @@ end;
 formQueryUnload
 {
 formQueryUnload( cancel : Integer io ) updating;
-// Who		When		Ticket		Details
-// Dan T	28/06/2023	EDS-80		Turn all remaining string literals into translatable strings
 
 begin
-	if not self.isInSilentShutdown and app.msgBox( $AreYouSureYouWantToExit, $ConfirmExit, MsgBox_Yes_No + MsgBox_Question_Mark_Icon ) <> MsgBox_Return_Yes then	// EDS-80
+	if not self.isInSilentShutdown and app.msgBox( $AreYouSureYouWantToExit, $ConfirmExit, MsgBox_Yes_No + MsgBox_Question_Mark_Icon ) <> MsgBox_Return_Yes then	
 		cancel := 1;
 		return;
 	endif;
@@ -18330,15 +17364,7 @@ formLoad() updating, protected;
 //
 // Returns:		Nothing
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	28/06/2023	EDS-80		Turn all remaining string literals into translatable strings
-// Dan T	10/07/2023	EDS-89 		Update Menu Bar
-// Dan T	11/07/2023	EDS-90 		Create Tenders View Form
-// Dan T	10/08/2023	EDS-91		Integrate Close Tenders App into Admin App
-// Dan T	10/08/2023	EDS-94		Grant Admin Users Full Functionality 
-//									EDS-94 - Removed hidden Add Retail/Tender Item menu items for admin user
-// Dan T	14/08/2023	EDS-93		Create View Items Form
-//									EDS-93 - Removed hidden 'View Items' menu item
+
 
 vars
 	tendersClosed : Integer;
@@ -18346,13 +17372,12 @@ vars
 begin
 	inheritMethod();
 	
-	// Hide Menu Items for functionality yet to be developed
-	// Refer to ticket EDS-89
+	// Hide Menu Items for functionality yet to be developed	
 	self.mnuHelpErewhonDoc.visible := false;
 	self.mnuHelpJade.visible := false;
 	self.mnuHelpSeparator.visible := false;
 	
-	app.myCompany.closeTendersAtDate( Utilities@getServerDate(), tendersClosed );	// EDS-91
+	app.myCompany.closeTendersAtDate( Utilities@getServerDate(), tendersClosed );	
 	
 	if app.myAgent <> null then
 		self.caption := $Administration & Space & Hyphen & Space & app.myAgent.name;
@@ -18363,7 +17388,7 @@ begin
 		self.mnuAgentsCommissionRates.visible := false;
 		self.mnuAgentsSeparator.visible := false;
 		self.mnuClients.visible := false;
-		self.mnuTendersClose.visible := false;										// EDS-91
+		self.mnuTendersClose.visible := false;										
 		self.mnuCompanyDetails.visible := false;
 		self.mnuCompanyItemCategories.visible := false;
 		self.mnuCompanyCountries.visible := false;
@@ -18380,8 +17405,6 @@ end;
 mnuAgentsAdd_click
 {
 mnuAgentsAdd_click(menuItem: MenuItem input) updating;
-// Who		When		Ticket		Details
-// Dan T	10/07/2023	EDS-89 		Update Menu Bar
 
 vars
 	editAgentForm : EditAgentForm;
@@ -18394,8 +17417,6 @@ end;
 mnuAgentsCommissionRates_click
 {
 mnuAgentsCommissionRates_click(menuItem: MenuItem input) updating;
-// Who		When		Ticket		Details
-// Dan T	10/07/2023	EDS-89 		Update Menu Bar
 
 vars
 	agentCommissionRatesForm	: AgentCommissionRatesForm;
@@ -18408,8 +17429,6 @@ end;
 mnuAgentsDetails_click
 {
 mnuAgentsDetails_click(menuItem: MenuItem input) updating;
-// Who		When		Ticket		Details
-// Dan T	10/07/2023	EDS-89 		Update Menu Bar
 
 vars
 	editAgentForm : EditAgentForm;
@@ -18426,8 +17445,6 @@ end;
 mnuAgentsView_click
 {
 mnuAgentsView_click(menuItem: MenuItem input) updating;
-// Who		When		Ticket		Details
-// Dan T	10/07/2023	EDS-89 		Update Menu Bar
 
 vars
 	agentsListForm : AgentsListForm;
@@ -18440,8 +17457,6 @@ end;
 mnuClientsAdd_click
 {
 mnuClientsAdd_click(menuItem: MenuItem input) updating;
-// Who		When		Ticket		Details
-// Dan T	10/07/2023	EDS-89 		Update Menu Bar
 
 vars
 	editClientForm : EditClientForm;
@@ -18454,8 +17469,6 @@ end;
 mnuClientsView_click
 {
 mnuClientsView_click(menuItem: MenuItem input) updating;
-// Who		When		Ticket		Details
-// Dan T	10/07/2023	EDS-89 		Update Menu Bar
 
 vars
 	clientsListForm : ClientsListForm;
@@ -18468,8 +17481,6 @@ end;
 mnuCompanyCommissionRates_click
 {
 mnuCompanyCommissionRates_click(menuItem: MenuItem input) updating;
-// Who		When		Ticket		Details
-// Dan T	10/07/2023	EDS-89 		Update Menu Bar
 
 vars
 	commissionRatesListForm : CommissionRatesListForm;
@@ -18488,8 +17499,6 @@ end;
 mnuCompanyCountries_click
 {
 mnuCompanyCountries_click(menuItem: MenuItem input) updating;
-// Who		When		Ticket		Details
-// Dan T	10/07/2023	EDS-89 		Update Menu Bar
 
 vars
 	countriesListForm : CountriesListForm;
@@ -18502,8 +17511,6 @@ end;
 mnuCompanyDetailsViaInterface_click
 {
 mnuCompanyDetailsViaInterface_click(menuItem: MenuItem input) updating;
-// Who		When		Ticket		Details
-// Dan T	10/07/2023	EDS-89 		Update Menu Bar
 
 vars
 	documentorSetupForm : DocumentorSetupForm;
@@ -18516,8 +17523,6 @@ end;
 mnuCompanyDetails_click
 {
 mnuCompanyDetails_click(menuItem: MenuItem input) updating;
-// Who		When		Ticket		Details
-// Dan T	10/07/2023	EDS-89 		Update Menu Bar
 
 vars
 	editCompanyForm	: EditCompanyForm;
@@ -18532,8 +17537,6 @@ end;
 mnuCompanyItemCategories_click
 {
 mnuCompanyItemCategories_click(menuItem: MenuItem input) updating;
-// Who		When		Ticket		Details
-// Dan T	10/07/2023	EDS-89 		Update Menu Bar
 
 vars
 	itemCategoryListForm : ItemCategoryListForm;
@@ -18546,8 +17549,6 @@ end;
 mnuCompanyRegions_click
 {
 mnuCompanyRegions_click(menuItem: MenuItem input) updating;
-// Who		When		Ticket		Details
-// Dan T	10/07/2023	EDS-89 		Update Menu Bar
 
 vars
 	regionsListForm : RegionsListForm;
@@ -18581,9 +17582,6 @@ mnuFileLogout_click(menuItem: MenuItem input) updating;
 //
 // Returns:		N/A
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	10/07/2023	EDS-89 		Update Menu Bar
-// Dan T	10/08/2023	EDS-100		Create Logout Menu Item
 
 begin
 	// Confirm that the user wants to exit the form
@@ -18600,8 +17598,6 @@ end;
 mnuHelpAbout_click
 {
 mnuHelpAbout_click(menuItem: MenuItem input) updating;
-// Who		When		Ticket		Details
-// Dan T	10/07/2023	EDS-89 		Update Menu Bar
 
 vars
 	aboutForm : AboutForm;
@@ -18614,8 +17610,6 @@ end;
 mnuHelpErewhonDoc_click
 {
 mnuHelpErewhonDoc_click(menuItem: MenuItem input) updating;
-// Who		When		Ticket		Details
-// Dan T	10/07/2023	EDS-89 		Update Menu Bar
 
 begin
 	app.msgBox( "This action has not yet been implemented", "Not Yet Implemented", null );
@@ -18624,8 +17618,6 @@ end;
 mnuHelpJade_click
 {
 mnuHelpJade_click(menuItem: MenuItem input) updating;
-// Who		When		Ticket		Details
-// Dan T	10/07/2023	EDS-89 		Update Menu Bar
 
 begin
 	app.msgBox( "This action has not yet been implemented", "Not Yet Implemented", null );
@@ -18634,8 +17626,6 @@ end;
 mnuItemsAddRetailItem_click
 {
 mnuItemsAddRetailItem_click(menuItem: MenuItem input) updating;
-// Who		When		Ticket		Details
-// Dan T	10/07/2023	EDS-89 		Update Menu Bar
 
 vars
 	editRetailItemForm : EditRetailItemForm;
@@ -18648,8 +17638,6 @@ end;
 mnuItemsAddTenderItem_click
 {
 mnuItemsAddTenderItem_click(menuItem: MenuItem input) updating;
-// Who		When		Ticket		Details
-// Dan T	10/07/2023	EDS-89 		Update Menu Bar
 
 vars
 	editTenderItemForm : EditTenderItemForm;
@@ -18662,8 +17650,6 @@ end;
 mnuItemsViewByCategory_click
 {
 mnuItemsViewByCategory_click(menuItem: MenuItem input) updating;
-// Who		When		Ticket		Details
-// Dan T	10/07/2023	EDS-89 		Update Menu Bar
 
 vars
 	itemsListByCategoryForm : ItemsListByCategoryForm;
@@ -18676,8 +17662,6 @@ end;
 mnuItemsView_click
 {
 mnuItemsView_click(menuItem: MenuItem input) updating;
-// Who		When		Ticket		Details
-// Dan T	14/08/2023	EDS-93		Create View Items Form
 
 vars
 	itemsListForm : ItemsListForm;
@@ -18691,8 +17675,6 @@ end;
 mnuSalesView_click
 {
 mnuSalesView_click(menuItem: MenuItem input) updating;
-// Who		When		Ticket		Details
-// Dan T	10/07/2023	EDS-89 		Update Menu Bar
 
 vars
 	salesListForm : SalesListForm;
@@ -18714,9 +17696,6 @@ mnuTendersClose_click(menuItem: MenuItem input) updating;
 //
 // Returns:		N/A
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	10/07/2023	EDS-89 		Update Menu Bar
-// Dan T	10/08/2023	EDS-91		Integrate Close Tenders App into Admin App
 
 vars
 	closeTendersForm : ErewhonCloseTendersForm;
@@ -18729,8 +17708,6 @@ end;
 mnuTendersView_click
 {
 mnuTendersView_click(menuItem: MenuItem input) updating;
-// Who		When		Ticket		Details
-// Dan T	10/07/2023	EDS-89 		Update Menu Bar
 
 vars
 	tendersListForm : TendersListForm;
@@ -18756,9 +17733,6 @@ displayError( errorCode : Integer ) protected;
 //
 // Returns:		Nothing
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	01/06/2023	EDS-62		Refactor Webshop FormClientApp to use the TAF
-// Dan T	12/06/2023	EDS-62.v2	Added missing return
 
 
 vars
@@ -18773,7 +17747,7 @@ begin
 		endif;
 		
 		self.setMessage( msgString );
-		return;			// EDS-62.v2
+		return;			
 	endif;
 	
 	self.setMessage( null );
@@ -18792,8 +17766,6 @@ formLoad() updating, protected;
 //
 // Returns:		Nothing
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	01/06/2023	EDS-62		Refactor Webshop FormClientApp to use the TAF
 
 begin
 	self.setClientNameLabel();
@@ -18812,8 +17784,6 @@ invalidObjectExHandler( exObj: Exception ): Integer updating, protected;
 //
 // Returns:		The exception return code
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	01/06/2023	EDS-62		Refactor Webshop FormClientApp to use the TAF
 
 constants
 	ObjectNotFound : Integer = 4;
@@ -18822,8 +17792,8 @@ constants
 begin
 	if exObj.errorCode = ObjectNotFound or exObj.errorCode = ObjectDeleted then
 		abortTransaction;
-		app.getShoppingCartTA().initialize();	// EDS-30.v2
-		self.setClientNameLabel(); 	// EDS-74
+		app.getShoppingCartTA().initialize();	
+		self.setClientNameLabel(); 	
 		self.formLoad();
 		self.displayError( ClientFormDataInvalid );
 		
@@ -18849,8 +17819,6 @@ invalidPictureExHandler( exObj : Exception ) : Integer protected;
 //
 // Returns:		The exception return code
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	30/05/2023	EDS-58		Refactor FormWebClientSaleItems to use the TAF
 
 constants
 	InvalidPicture : Integer = 14015;
@@ -18871,8 +17839,6 @@ end;
 load
 {
 load() updating;
-// Who		When		Ticket		Details
-// Dan T	01/06/2023	EDS-62		Refactor Webshop FormClientApp to use the TAF
 
 begin
 	self.formLoad();
@@ -18891,17 +17857,13 @@ setClientNameLabel() updating, protected;
 //
 // Returns:		Nothing
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	30/05/2023	EDS-59		Refactor FormWebLogon to use the TAF
-// Dan T	28/06/2023	EDS-79		Translatable strings: Remove concatenation
-// Dan T	04/07/2023	EDS-79.v2	Removed WithParam suffix for Translatable Strings
 
 vars
 	clientName	: String;
 
 begin
 	if app.getClient <> null then
-		clientName := $WelcomeClientItemsInCart( app.getClient().name, app.getShoppingCartTA().size().String ); 	// EDS-79	// EDS-79.v2
+		clientName := $WelcomeClientItemsInCart( app.getClient().name, app.getShoppingCartTA().size().String ); 	
 
 		// If they have put some items into their shopping cart, make it more obvious
 		if app.getShoppingCartTA().size() > 0 then
@@ -18933,8 +17895,6 @@ setMessage( message: String ) protected;
 //
 // Returns:		Nothing
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	30/05/2023	EDS-58		Refactor FormWebClientSaleItems to use the TAF
 
 begin
 	if message = null then
@@ -18990,8 +17950,6 @@ synchronizeForm( eventType : Integer; theObject : Object; eventTag : Integer; us
 	If more unique processing is required for this purpose, then reimplement this
 	method on the form where this is required.
 */
-// Who		When		Ticket		Details
-// Dan T	01/06/2023	EDS-62		Refactor Webshop FormClientApp to use the TAF
 
 begin
 	if eventType = Object_Delete_Event then
@@ -19006,8 +17964,6 @@ end;
 sysNotify
 {
 sysNotify( eventType : Integer; theObject : Object; eventTag : Integer ) updating;
-// Who		When		Ticket		Details
-// Dan T	01/06/2023	EDS-62		Refactor Webshop FormClientApp to use the TAF
 
 begin
 	app.mousePointer := Busy;
@@ -19020,8 +17976,6 @@ end;
 unload
 {
 unload() updating;
-// Who		When		Ticket		Details
-// Dan T	01/06/2023	EDS-62		Refactor Webshop FormClientApp to use the TAF
 
 begin
 	// End all notification subscriptions for this form
@@ -19031,8 +17985,6 @@ end;
 userNotify
 {
 userNotify( eventType : Integer; theObject : Object; eventTag : Integer; userInfo : Any ) updating;
-// Who		When		Ticket		Details
-// Dan T	01/06/2023	EDS-62		Refactor Webshop FormClientApp to use the TAF
 
 begin
 	app.mousePointer := Busy;
@@ -19073,8 +18025,6 @@ end;
 btnBack_click
 {
 btnBack_click( btn : ErewhonButton input ) updating;
-// Who		When		Ticket		Details
-// Dan T	30/05/2023	EDS-59		Refactor FormWebLogon to use the TAF
 
 vars
 	clientForm	: WebItemsForm;
@@ -19088,8 +18038,6 @@ end;
 btnEmpty_click
 {
 btnEmpty_click( btn : ErewhonButton input ) updating;
-// Who		When		Ticket		Details
-// Dan T	30/05/2023	EDS-59		Refactor FormWebLogon to use the TAF
 
 begin
 	on Exception do self.invalidObjectExHandler( exception );
@@ -19101,8 +18049,6 @@ end;
 btnProceed_click
 {
 btnProceed_click( btn : ErewhonButton input ) updating;
-// Who		When		Ticket		Details
-// Dan T	30/05/2023	EDS-59		Refactor FormWebLogon to use the TAF
 
 begin
 	on Exception do self.invalidObjectExHandler( exception );
@@ -19128,15 +18074,9 @@ buildCheckoutTable() protected;
 // entries shown will be limited to the first screen.  Therefore, web forms will 
 // need to manually load the table entries.
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	30/05/2023	EDS-59		Refactor FormWebLogon to use the TAF
-// Dan T	26/06/2023	EDS-31.v2	Shop forms not handling a deleted sale item
-// Dan T	10/07/2023	EDS-88	 	Rename SaleItem classes to improve clarity
-// Dan T	21/07/2023	EDS-99		Change ShoppingCartTA to use proxy class
-// Dan T	24/07/2023	EDS-99.v2	Use RefreshEntries method and refactor WebForms to not use displayCollection
 
 vars
-	objectNotExist : Boolean;	// EDS-31.v2
+	objectNotExist : Boolean;	
 	cartItem : CartItem;
 	rowString : String;
 	table			: Table;
@@ -19184,8 +18124,6 @@ doCheckoutItems() : Boolean updating, protected;
 // Returns:		True if the action was successful, otherwise False and displays the
 //				error as a msgBox.
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	30/05/2023	EDS-59		Refactor FormWebLogon to use the TAF
 
 vars
 	errorCode : Integer;
@@ -19212,9 +18150,6 @@ doEmpty() updating, protected;
 //
 // Returns:		Nothing
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	30/05/2023	EDS-59		Refactor FormWebLogon to use the TAF
-// Dan T	10/07/2023	EDS-88	 	Rename SaleItem classes to improve clarity
 
 vars
 	formWebClientItems : WebItemsForm;
@@ -19241,9 +18176,6 @@ doProceed() updating, protected;
 //
 // Returns:		Nothing
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	30/05/2023	EDS-59		Refactor FormWebLogon to use the TAF
-// Dan T	28/06/2023	EDS-80		Turn all remaining string literals into translatable strings
 
 vars
 	confirmationForm	: WebConfirmationForm;
@@ -19256,7 +18188,7 @@ begin
 		confirmationForm.show();
 		self.unloadForm();
 	else
-		app.msgBox( app.getShoppingCartTA().getFullErrorDetails(), $UnableToCheckoutItems, MsgBox_OK_Only + MsgBox_Stop_Icon );	// EDS-80
+		app.msgBox( app.getShoppingCartTA().getFullErrorDetails(), $UnableToCheckoutItems, MsgBox_OK_Only + MsgBox_Stop_Icon );	
 	endif;
 end;
 }
@@ -19272,11 +18204,6 @@ doRemoveCartItem( table : ErewhonTable input ) updating, protected;
 //
 // Returns:		Nothing
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	30/05/2023	EDS-59		Refactor FormWebLogon to use the TAF
-// Dan T	10/07/2023	EDS-88	 	Rename SaleItem classes to improve clarity
-// Dan T	21/07/2023	EDS-99		Change ShoppingCartTA to use proxy class
-// Dan T	24/07/2023	EDS-99.v2	Use RefreshEntries method and refactor WebForms to not use displayCollection
 
 vars
 	item : Item;
@@ -19290,7 +18217,7 @@ begin
 			return;
 		endif;
 		
-		app.getShoppingCartTA().removeItem( item );						// EDS-99
+		app.getShoppingCartTA().removeItem( item );						
 	
 		self.formLoad();
 
@@ -19317,18 +18244,14 @@ formLoad() updating, protected;
 //
 // Returns:		Nothing
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	30/05/2023	EDS-59		Refactor FormWebLogon to use the TAF
-// Dan T	22/06/2023	EDS-74		SaleItemSearch - remove parameterized constructor
-// Dan T	24/07/2023	EDS-99.v2	Use RefreshEntries method and refactor WebForms to not use displayCollection
 
 begin
 	inheritMethod();
 	
 	self.initializeCheckoutTable();
-	self.buildCheckoutTable();	// EDS-99.v2
+	self.buildCheckoutTable();	
 	self.setMessage( $RemoveCartItemInstructions );
-	self.setClientNameLabel();	// EDS-74
+	self.setClientNameLabel();	
 
 	if app.getShoppingCartTA().isEmpty() then
 		self.btnProceed.visible := false;
@@ -19339,8 +18262,6 @@ end;
 handleExceptions
 {
 handleExceptions( exObj: Exception ) : Integer updating, protected;
-// Who		When		Ticket		Details
-// Dan T	22/06/2023	EDS-74		SaleItemSearch - remove parameterized constructor
 
 constants
 	ObjectNotFound : Integer = 4;
@@ -19349,8 +18270,8 @@ constants
 begin
 	if exObj.errorCode = ObjectNotFound or exObj.errorCode = ObjectDeleted then
 		abortTransaction;
-		app.getShoppingCartTA().initialize();	// EDS-30.v2
-		self.setClientNameLabel(); 	// EDS-74
+		app.getShoppingCartTA().initialize();	
+		self.setClientNameLabel(); 	
 		self.formLoad();
 		self.displayError( ClientFormDataInvalid );
 		
@@ -19372,8 +18293,6 @@ initializeCheckoutTable() protected;
 //
 // Returns:		Nothing
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	30/05/2023	EDS-59		Refactor FormWebLogon to use the TAF
 
 constants
 	MaximumCols : Integer = 6;
@@ -19431,8 +18350,6 @@ tblCheckout_rowColumnChg( table : ErewhonTable input ) updating;
 //
 // Returns:		Nothing
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	30/05/2023	EDS-59		Refactor FormWebLogon to use the TAF
 
 begin
 	on Exception do self.invalidObjectExHandler( exception );
@@ -19447,9 +18364,6 @@ end;
 btnContinue_click
 {
 btnContinue_click(btn: ErewhonButton input) updating;
-// Who		When		Ticket		Details
-// Dan T	31/05/2023	EDS-63		Refactor FormWebConfirmation to use the TAF
-// Dan T	10/07/2023	EDS-88	 	Rename SaleItem classes to improve clarity
 
 vars
 	webClientItemsForm : WebItemsForm;
@@ -19474,10 +18388,6 @@ formLoad() updating, protected;
 //
 // Returns:		Nothing
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	31/05/2023	EDS-63		Refactor FormWebConfirmation to use the TAF
-// Dan T	21/07/2023	EDS-99		Change ShoppingCartTA to use proxy class
-// Dan T	24/07/2023	EDS-99.v2	Use RefreshEntries method and refactor WebForms to not use displayCollection
 
 begin
 	self.initializeCheckoutTable();
@@ -19505,9 +18415,6 @@ initializeCheckoutTable() protected;
 // entries shown will be limited to the first screen.  Therefore, web forms will 
 // need to manually load the table entries.
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	31/05/2023	EDS-63		Refactor FormWebConfirmation to use the TAF
-// Dan T	24/07/2023	EDS-99.v2	Use RefreshEntries method and refactor WebForms to not use displayCollection
 
 constants
 	MaximumCols : Integer = 5;
@@ -19570,8 +18477,6 @@ end;
 btnBack_click
 {
 btnBack_click( btn : ErewhonButton input ) updating;
-// Who		When		Ticket		Details
-// Dan T	30/05/2023	EDS-58		Refactor FormWebClientSaleItems to use the TAF
 
 begin
 	on Exception do self.invalidObjectExHandler( exception );
@@ -19588,8 +18493,6 @@ btnBuy_click( btn : ErewhonButton input ) updating;
 //
 // Purpose:		Initiates a buy action when the buy button is clicked on the web form.
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	30/05/2023	EDS-58		Refactor FormWebClientSaleItems to use the TAF
 
 vars
 	previousCartCount	: Integer;
@@ -19613,22 +18516,18 @@ end;
 btnCheckout_click
 {
 btnCheckout_click(btn: ErewhonButton input) updating;
-// Who		When		Ticket		Details
-// Dan T	30/05/2023	EDS-58		Refactor FormWebClientSaleItems to use the TAF
 
 begin
 	self.openCheckoutForm();
-	self.setMessage( null );	// EDS-58
+	self.setMessage( null );	
 end;
 }
 btnClear_click
 {
 btnClear_click( btn : ErewhonButton input ) updating;
-// Who		When		Ticket		Details
-// Dan T	30/05/2023	EDS-58		Refactor FormWebClientSaleItems to use the TAF
 
 begin
-	on Exception do self.invalidObjectExHandler( exception );	// EDS-58
+	on Exception do self.invalidObjectExHandler( exception );	
 	self.doClearSearchResults();
 	// Any invalid object exceptions during event processing will be caught by the
 	// exception handler which will resume to here
@@ -19637,12 +18536,9 @@ end;
 btnList_click
 {
 btnList_click( btn : ErewhonButton input ) updating;
-// Who		When		Ticket		Details
-// Dan T	30/05/2023	EDS-58		Refactor FormWebClientSaleItems to use the TAF
-// Dan T	28/06/2023	EDS-80		Turn all remaining string literals into translatable strings
 
 begin
-	self.txtTender.text := null;	// EDS-80
+	self.txtTender.text := null;	
 	self.fraItem.visible := false;
 	self.fraSearchResults.visible := true;
 	self.unselectAllTableCells();	// Some screen/browser combinations did not handle selected table cells elegantly
@@ -19652,8 +18548,6 @@ end;
 btnNext_click
 {
 btnNext_click( btn : ErewhonButton input ) updating;
-// Who		When		Ticket		Details
-// Dan T	30/05/2023	EDS-58		Refactor FormWebClientSaleItems to use the TAF
 
 begin
 	on Exception do self.invalidObjectExHandler( exception );
@@ -19666,28 +18560,20 @@ end;
 btnSearchReset_click
 {
 btnSearchReset_click( btn : ErewhonButton input ) updating;
-// Who		When		Ticket		Details
-// Dan T	30/05/2023	EDS-58		Refactor FormWebClientSaleItems to use the TAF
-// Dan T	22/06/2023	EDS-74		SaleItemSearch - remove parameterized constructor
 
 begin
-	self.doResetSearchBox();	// EDS-74
+	self.doResetSearchBox();	
 end;
 }
 btnSearch_click
 {
 btnSearch_click( btn : ErewhonButton input ) updating;
-// Who		When		Ticket		Details
-// Dan T	30/05/2023	EDS-58		Refactor FormWebClientSaleItems to use the TAF
-// Dan T	12/07/2023	EDS-83.v2 	Optimise Item Search (Notify invalid price range)
-// Dan T	25/07/2023	EDS-97 		Use one ErewhonException class
-// Dan T	25/07/2023	EDS-97.v2	Use one ErewhonException class
 
 begin
-	on ErewhonException do app.exception_handler_abort_on_50002_with_message_box( exception );	// EDS-97.2
+	on ErewhonException do app.exception_handler_abort_on_50002_with_message_box( exception );	
 	on Exception do self.invalidObjectExHandler( exception );
 	
-	app.myItemSearch := null;	// EDS-74
+	app.myItemSearch := null;	
 	self.doSearch();
 	// Any invalid object exceptions during event processing will be caught by the
 	// exception handler which will resume to here
@@ -19719,11 +18605,6 @@ doBuyFromDetails() updating, protected;
 //
 // Purpose:		Processes the User's request to buy/bid for an Item
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	30/05/2023	EDS-58		Refactor FormWebClientSaleItems to use the TAF
-// Dan T	28/06/2023	EDS-80		Turn all remaining string literals into translatable strings
-// Dan T	10/07/2023	EDS-88	 	Rename SaleItem classes to improve clarity
-// Dan T	21/07/2023	EDS-99		Change ShoppingCartTA to use proxy class
 
 vars
 	item : Item;
@@ -19735,7 +18616,7 @@ begin
 	item := self.getItem();
 	
 	if item = null then
-		app.msgBox( $PleaseSelectAnItem, $Error, MsgBox_OK_Only + MsgBox_Stop_Icon );	// EDS-80
+		app.msgBox( $PleaseSelectAnItem, $Error, MsgBox_OK_Only + MsgBox_Stop_Icon );	
 		return;
 	endif;
 	
@@ -19744,18 +18625,18 @@ begin
 		// Loop through the tenders for the item
 		foreach tender in item.TenderItem.allTendersByOfferTime 
 		where tender.myClient = app.getClient() and self.txtTender.text.Decimal <= tender.offer do 	
-			app.msgBox($AlreadyTenderedAHigherOrSameOffer, $AlreadyTendered, MsgBox_OK_Only + MsgBox_Stop_Icon );	// EDS-80
+			app.msgBox($AlreadyTenderedAHigherOrSameOffer, $AlreadyTendered, MsgBox_OK_Only + MsgBox_Stop_Icon );	
 			isTendered := true;
 		endforeach;
 	endif;
 	
 	if not isTendered 
-	and not app.getShoppingCartTA().addItem( item, self.txtTender.text.Decimal ) then											// EDS-99
-		app.msgBox( app.getShoppingCartTA().getFullErrorDetails(), $UnableToAddItemToCart, MsgBox_OK_Only + MsgBox_Stop_Icon );	// EDS-80
+	and not app.getShoppingCartTA().addItem( item, self.txtTender.text.Decimal ) then											
+		app.msgBox( app.getShoppingCartTA().getFullErrorDetails(), $UnableToAddItemToCart, MsgBox_OK_Only + MsgBox_Stop_Icon );	
 		return;
 	endif;
 	
-	self.txtTender.text := null;	// EDS-80
+	self.txtTender.text := null;	
 	self.setMessage( null );
 	self.btnCheckout.visible := not app.getShoppingCartTA().isEmpty();
 	self.setClientNameLabel();
@@ -19773,10 +18654,6 @@ doClearSearchResults() updating, protected;
 //
 // Returns:		Nothing
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	30/05/2023	EDS-58		Refactor FormWebClientSaleItems to use the TAF
-// Dan T	12/06/2023	EDS-58.v2	Removed unnecessary method call
-// Dan T	22/06/2023	EDS-74		SaleItemSearch - remove parameterized constructor
 
 begin
 	
@@ -19799,10 +18676,6 @@ doClickHyperlink( table : ErewhonTable input ) updating, protected;
 //
 // Parameters:	table - The table housing the hyperlink.
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	30/05/2023	EDS-58		Refactor FormWebClientSaleItems to use the TAF
-// Dan T	22/06/2023	EDS-74		SaleItemSearch - remove parameterized constructor
-// Dan T	21/07/2023	EDS-99		Change ShoppingCartTA to use proxy class
 
 vars
 	errorCode : Integer;
@@ -19813,7 +18686,7 @@ vars
 	nameHyperlinkClicked : Boolean;
 	
 begin
-	app.myItemSearch := null;	// EDS-74
+	app.myItemSearch := null;	
 	
 	selectedRowInsideTable := table.row >= FirstDataRow and table.row <= table.rows;
 	
@@ -19836,15 +18709,15 @@ begin
 	// Get a item from the table to maintain the search results
 	if table.row = FirstDataRow then
 		// Get the next item in the row as the top item was selected
-		app.myItemSearch := self.tblSearchResults.accessRow( FirstDataRow + 1 ).itemObject.Item;	// EDS-74
+		app.myItemSearch := self.tblSearchResults.accessRow( FirstDataRow + 1 ).itemObject.Item;	
 	else
 		// Get the first item in the row
-		app.myItemSearch := self.tblSearchResults.accessRow( FirstDataRow ).itemObject.Item;		// EDS-74
+		app.myItemSearch := self.tblSearchResults.accessRow( FirstDataRow ).itemObject.Item;		
 	endif;
 		
 	// Then, process the action based on what kind of hyperlink
 	if buyHyperlinkClicked then
-		app.getShoppingCartTA().addItem( selectedItem, self.txtTender.text.Decimal );					// EDS-99
+		app.getShoppingCartTA().addItem( selectedItem, self.txtTender.text.Decimal );					
 		self.btnCheckout.visible := not app.getShoppingCartTA().isEmpty();
 		self.setClientNameLabel();
 		self.doSearch();
@@ -19871,7 +18744,6 @@ doResetSearchBox() updating, protected;
 //
 // Returns:		Nothing
 // --------------------------------------------------------------------------------
-// Dan T	22/06/2023	EDS-74		SaleItemSearch - remove parameterized constructor
 
 begin
 	app.myShopItemSearch.initialize();
@@ -19892,16 +18764,12 @@ doScrollBack() updating, protected;
 //
 // Returns:		Nothing
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	30/05/2023	EDS-58		Refactor FormWebClientSaleItems to use the TAF
-// Dan T	22/06/2023	EDS-74		SaleItemSearch - remove parameterized constructor
-// Dan T	10/07/2023	EDS-88	 	Rename SaleItem classes to improve clarity
 
 vars
 	item : Item;
 
 begin
-	app.myItemSearch := null;	// EDS-74
+	app.myItemSearch := null;	
 	
 	// Get the first item in the search table
 	item := self.tblSearchResults.accessRow( FirstDataRow ).itemObject.Item;
@@ -19927,16 +18795,12 @@ doScrollNext() updating, protected;
 //
 // Returns:		Nothing
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	30/05/2023	EDS-58		Refactor FormWebClientSaleItems to use the TAF
-// Dan T	22/06/2023	EDS-74		SaleItemSearch - remove parameterized constructor
-// Dan T	10/07/2023	EDS-88	 	Rename SaleItem classes to improve clarity
 
 vars
 	item : Item;
 
 begin
-	app.myItemSearch := null;	// EDS-74
+	app.myItemSearch := null;	
 
 	// Get the last item in the row
 	item := self.tblSearchResults.accessRow( self.tblSearchResults.rows ).itemObject.Item;
@@ -19961,9 +18825,6 @@ doSearch() updating, protected;
 //
 // Returns:		Nothing
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	30/05/2023	EDS-58		Refactor FormWebClientSaleItems to use the TAF
-// Dan T	22/06/2023	EDS-74		SaleItemSearch - remove parameterized constructor
 
 begin
 	app.myShopItemSearch.initialize();
@@ -19972,7 +18833,7 @@ begin
 	self.populateItemCollectionSearch();
 	
 	// Perform the search
-	app.myShopItemSearch.doSearch();	// EDS-74
+	app.myShopItemSearch.doSearch();	
 	
 	// Display the results
 	self.populateSearchResults( app.myItemSearch, false );	
@@ -19991,10 +18852,6 @@ formLoad() updating, protected;
 //
 // Returns:		Nothing
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	30/05/2023	EDS-58		Refactor FormWebClientSaleItems to use the TAF
-// Dan T	22/06/2023	EDS-74		SaleItemSearch - remove parameterized constructor
-// Dan T	28/06/2023	EDS-80		Turn all remaining string literals into translatable strings
 
 
 begin
@@ -20010,13 +18867,13 @@ begin
 	self.fraSearchResults.visible := true;
 	self.lblTenderPrice.visible := false;
 	self.txtTender.visible := false;
-	self.txtTender.text	:= null;	// EDS-80
+	self.txtTender.text	:= null;	
 	
 	// Reload the previous search results
 	// This is called when switching from the Checkout back to this form.
 	if app.myItemSearch <> null or 
 	app.getShoppingCartTA().size() = 0 then
-		app.myShopItemSearch.doSearch();			// EDS-31.v2
+		app.myShopItemSearch.doSearch();			
 		self.populateSearchResults( app.myItemSearch, false );
 	endif;
 	
@@ -20027,14 +18884,12 @@ end;
 formUnload
 {
 formUnload() updating, protected;
-// Who		When		Ticket		Details
-// Dan T	22/06/2023	EDS-74		SaleItemSearch - remove parameterized constructor
 
 begin
 	delete self.myIterator;
 	
 	// Unsubscribe from Notifications
-	self.endNotificationForSubscriber( self ); 	// EDS-31
+	self.endNotificationForSubscriber( self ); 	
 end;
 }
 getItem
@@ -20049,9 +18904,6 @@ getItem() : Item protected;
 //
 // Returns:     The current Item.
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	30/05/2023	EDS-58		Refactor FormWebClientSaleItems to use the TAF
-// Dan T	10/07/2023	EDS-88	 	Rename SaleItem classes to improve clarity
 
 vars
 	item : Item;
@@ -20155,22 +19007,16 @@ initializeSearchResultsTable( table : ErewhonTable input ) protected;
 //
 // Returns:		Nothing
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	30/05/2023	EDS-58		Refactor FormWebClientSaleItems to use the TAF
-// Dan T	02/06/2023	EDS-65		SaleTA not saving forSaleDate
-// Dan T	22/06/2023	EDS-74		SaleItemSearch - remove parameterized constructor
-// Dan T	28/06/2023	EDS-80		Turn all remaining string literals into translatable strings
-// Dan T	14/08/2023	EDS-95		Add Item Code to Search Results Table
 
 constants
 	MaximumCols	 : Integer = 5;
 	
-	CodeColumnIndex : Integer = 2;			// EDS-95
+	CodeColumnIndex : Integer = 2;			
 	ProductColumnIndex : Integer = 3;
 	DateColumnIndex	 : Integer = 4;
 	PriceColumnIndex : Integer = 5;
 	
-	CodeColumnWidth : Integer = 50;			// EDS-95
+	CodeColumnWidth : Integer = 50;			
 	ProductColumnWidth : Integer = 150;
 	DateColumnWidth : Integer = 100;
 	PriceColumnWidth : Integer = 100;
@@ -20189,16 +19035,16 @@ begin
 	table.rows := 0;
 	table.columns := MaximumCols;
 	
-	fromLabel := $Listed;				// EDS-65	// EDS-80
+	fromLabel := $Listed;				
 	fromLabel.firstCharToUpper();
 	untilLabel := $Until;
 	untilLabel.firstCharToUpper();
-	rowIndex := table.addItem( Tab & $Code & Tab & $Product & Tab & fromLabel & Tab & $Price );		// EDS-95
+	rowIndex := table.addItem( Tab & $Code & Tab & $Product & Tab & fromLabel & Tab & $Price );		
 
 	table.fixedRows := 1;
 
 	// Set up the column widths.
-	table.columnWidth[ CodeColumnIndex ] := CodeColumnWidth;			// EDS-95
+	table.columnWidth[ CodeColumnIndex ] := CodeColumnWidth;			
 	table.columnWidth[ ProductColumnIndex ] := ProductColumnWidth;
 	table.columnWidth[ DateColumnIndex ] := DateColumnWidth;
 	table.columnWidth[ PriceColumnIndex ] := PriceColumnWidth;
@@ -20206,7 +19052,7 @@ begin
 
 	
 	// Clear all HyperText links that were set using the setHyperlinkCell method.
-	self.tblSearchResults.resetAllHyperlinks();	// EDS-74
+	self.tblSearchResults.resetAllHyperlinks();	
 	
 	self.lblTenderPrice.visible := false;
 	self.txtTender.visible := false;
@@ -20227,21 +19073,16 @@ openCheckoutForm() updating, protected;
 //
 // Returns:		Nothing
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	30/05/2023	EDS-58		Refactor FormWebClientSaleItems to use the TAF
-// Dan T	22/06/2023	EDS-74		SaleItemSearch - remove parameterized constructor
-// Dan T	26/06/2023	EDS-31.v2	Shop forms not handling a deleted sale item
-// Dan T	28/06/2023	EDS-80		Turn all remaining string literals into translatable strings
 
 vars
 	formWebCheckoutForm	: WebCheckoutForm;
 
 begin
 	// Get the first item from the table to maintain the search results
-	app.myItemSearch := self.tblSearchResults.accessRow( FirstDataRow ).itemObject.Item;	// EDS-74
+	app.myItemSearch := self.tblSearchResults.accessRow( FirstDataRow ).itemObject.Item;	
 
 	// Only open the checkout form if the cart items have changed
-	if app.getShoppingCartTA().size() > 0 then						// EDS-31.v2
+	if app.getShoppingCartTA().size() > 0 then						
 		create formWebCheckoutForm;							
 		formWebCheckoutForm.show();
 		self.unloadForm();
@@ -20250,9 +19091,9 @@ begin
 		// between the time it was added into the cart and the time
 		// the user clicked checkout.  If there are no items in the
 		// shopping cart (due to the delete) then reset
-		self.btnCheckout.visible := false;										// EDS-31.v2
-		self.setClientNameLabel();	// EDS-31.v2
-		app.msgBox( $ItemNotFoundUnableToOpenCheckOut, $ItemNotFound,  null );	// EDS-31.v2	// EDS-80
+		self.btnCheckout.visible := false;										
+		self.setClientNameLabel();	
+		app.msgBox( $ItemNotFoundUnableToOpenCheckOut, $ItemNotFound,  null );	
 	endif;
 end;
 }
@@ -20269,36 +19110,33 @@ populateItemCollectionSearch() updating, protected;
 //
 // Returns:		Nothing
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	22/06/2023	EDS-74		SaleItemSearch - remove parameterized constructor
-// Dan T	10/07/2023	EDS-88	 	Rename SaleItem classes to improve clarity
 
 vars
 	cbx : ComboBox;
 begin
 	// Assign Search Properties to Item Search
-	app.myShopItemSearch.includeItemsInCart := false; 	// Default Behaviour is false		// EDS-74
-	app.myShopItemSearch.includeSoldItems := false;		// Default Behaviour is false		// EDS-74
+	app.myShopItemSearch.includeItemsInCart := false; 	// Default Behaviour is false		
+	app.myShopItemSearch.includeSoldItems := false;		// Default Behaviour is false		
 	
 	cbx := self.cmbRegion;
 	
 	if self.cmbRegion.listObject.isKindOf( Country )then
-		app.myShopItemSearch.myCountry := self.cmbRegion.listObject.Country;					// EDS-74
-		app.myShopItemSearch.myRegion := null;												// EDS-74
+		app.myShopItemSearch.myCountry := self.cmbRegion.listObject.Country;					
+		app.myShopItemSearch.myRegion := null;												
 	elseif self.cmbRegion.listObject.isKindOf( Region )then
-		app.myShopItemSearch.myCountry := self.cmbRegion.listObject.Region.myCountry;			// EDS-74
-		app.myShopItemSearch.myRegion := self.cmbRegion.listObject.Region;					// EDS-74
+		app.myShopItemSearch.myCountry := self.cmbRegion.listObject.Region.myCountry;			
+		app.myShopItemSearch.myRegion := self.cmbRegion.listObject.Region;					
 	else
-		app.myShopItemSearch.myCountry := null;												// EDS-74
-		app.myShopItemSearch.myRegion := null;												// EDS-74
+		app.myShopItemSearch.myCountry := null;												
+		app.myShopItemSearch.myRegion := null;												
 	endif;
 	
-	app.myShopItemSearch.myItemCategory := self.cmbCategory.listObject.ItemCategory;	// EDS-74
-	app.myShopItemSearch.onlyRetailItems := self.optRetailItems.value;						// EDS-74
-	app.myShopItemSearch.onlyTenderItems := self.optTenderItems.value;						// EDS-74
-	app.myShopItemSearch.priceLow := self.txtPriceLower.text.trimBlanks.Integer;				// EDS-74
-	app.myShopItemSearch.priceHigh := self.txtPriceUpper.text.trimBlanks.Integer;				// EDS-74
-	app.myShopItemSearch.includeClosedTenders := self.chkClosedTenders.value;					// EDS-74
+	app.myShopItemSearch.myItemCategory := self.cmbCategory.listObject.ItemCategory;	
+	app.myShopItemSearch.onlyRetailItems := self.optRetailItems.value;						
+	app.myShopItemSearch.onlyTenderItems := self.optTenderItems.value;						
+	app.myShopItemSearch.priceLow := self.txtPriceLower.text.trimBlanks.Integer;				
+	app.myShopItemSearch.priceHigh := self.txtPriceUpper.text.trimBlanks.Integer;				
+	app.myShopItemSearch.includeClosedTenders := self.chkClosedTenders.value;					
 end;
 }
 populateSearchBox
@@ -20313,9 +19151,6 @@ populateSearchBox() updating, protected;
 //
 // Returns:		Nothing
 // --------------------------------------------------------------------------------
-// Dan T	22/06/2023	EDS-74		SaleItemSearch - remove parameterized constructor
-// Dan T	28/06/2023	EDS-80		Turn all remaining string literals into translatable strings
-// Dan T	10/07/2023	EDS-88	 	Rename SaleItem classes to improve clarity
 
 vars
 	country			: Country;
@@ -20329,12 +19164,12 @@ begin
 	
 	// Populate Countries
 	foreach country in app.myCompany.allCountries do
-		self.cmbRegion.addItem( country.name & Space & Hyphen & Space & $AllCountries );	// EDS-80
+		self.cmbRegion.addItem( country.name & Space & Hyphen & Space & $AllCountries );	
 		self.cmbRegion.itemObject[ self.cmbRegion.newIndex() ] := country;
 		
 		// Populate Regions
 		foreach region in country.allRegions do
-			self.cmbRegion.addItem( country.name & Space & Hyphen & Space & region.name );	// EDS-80
+			self.cmbRegion.addItem( country.name & Space & Hyphen & Space & region.name );	
 			self.cmbRegion.itemObject[ cmbRegion.newIndex() ] := region;
 		endforeach;
 	endforeach;
@@ -20378,8 +19213,6 @@ populateSearchResults( pStartItem : Item; pIterateBackwards : Boolean ) updating
 //
 // Returns:		Nothing
 // --------------------------------------------------------------------------------
-// Dan T	22/06/2023	EDS-74		SaleItemSearch - remove parameterized constructor
-// Dan T	10/07/2023	EDS-88	 	Rename SaleItem classes to improve clarity
 
 constants
 	MaxRows 		: Integer = 15;
@@ -20488,8 +19321,6 @@ setMessage( message : String ) protected;
 //
 // Returns:		Nothing
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	30/05/2023	EDS-58		Refactor FormWebClientSaleItems to use the TAF
 
 begin
 	if message = null then
@@ -20511,25 +19342,21 @@ showItemDetails( pItem : Item ) : Integer updating, protected;
 //
 // Returns:		A non-zero value if there is an error
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	30/05/2023	EDS-58		Refactor FormWebClientSaleItems to use the TAF
-// Dan T	22/06/2023	EDS-74		SaleItemSearch - remove parameterized constructor
-// Dan T	28/06/2023	EDS-80		Turn all remaining string literals into translatable strings
 
 constants
-	ClosedTenderBG	: Integer = 255 + ( 204 * 256 ) + ( 204 * 256 * 256 );	// EDS-74
-	DetailsFrameBG	: Integer = 224 + ( 224 * 256 ) + ( 224 * 256 * 256 );	// EDS-74
+	ClosedTenderBG	: Integer = 255 + ( 204 * 256 ) + ( 204 * 256 * 256 );	
+	DetailsFrameBG	: Integer = 224 + ( 224 * 256 ) + ( 224 * 256 * 256 );	
 	
 begin
 	on Exception do self.invalidPictureExHandler( exception );
 
 	if pItem = null then
-		self.lblCode.caption := null;			// EDS-80
-		self.lblDescription.caption := null;	// EDS-80
-		self.lblAgent.caption := null;			// EDS-80
-		self.lblAvailableFrom.caption := null;	// EDS-80
-		self.lblCloseDate.caption := null;		// EDS-80
-		self.lblPrice.caption := null;			// EDS-80
+		self.lblCode.caption := null;			
+		self.lblDescription.caption := null;	
+		self.lblAgent.caption := null;			
+		self.lblAvailableFrom.caption := null;	
+		self.lblCloseDate.caption := null;		
+		self.lblPrice.caption := null;			
 		self.picPhoto.picture := null;
 
 		self.fraSearchResults.visible := true;
@@ -20550,11 +19377,11 @@ begin
 			self.lblCloseDate.caption := pItem.TenderItem.closureDate.shortFormat();
 			self.lblTenderPrice.visible := true;
 			self.txtTender.visible := true;
-			self.lblBuyNow.caption := $PlaceBid;	// EDS-80
+			self.lblBuyNow.caption := $PlaceBid;	
 			self.lblBuyNow.visible := false;
 		else
 			self.lblCloseDateLabel.visible := false;
-			self.lblCloseDate.caption := null;		// EDS-80
+			self.lblCloseDate.caption := null;		
 			self.lblTenderPrice.visible := false;
 			self.txtTender.visible := false;
 			self.lblBuyNow.visible := true;
@@ -20584,9 +19411,6 @@ end;
 tblSearchResults_displayRow
 {
 tblSearchResults_displayRow(table: ErewhonTable input; theSheet: Integer; pItem: Item; theRow: Integer; bcontinue: Boolean io):String updating;
-// Who		When		Ticket		Details
-// Dan T	22/06/2023	EDS-74		SaleItemSearch - remove parameterized constructor
-// Dan T	10/07/2023	EDS-88	 	Rename SaleItem classes to improve clarity
 
 begin
 	return pItem.getSearchResultString();
@@ -20605,8 +19429,6 @@ tblSearchResults_rowColumnChg( table : ErewhonTable input ) updating;
 //
 // Returns:		Nothing
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	30/05/2023	EDS-58		Refactor FormWebClientSaleItems to use the TAF
 
 begin
 	on Exception do self.invalidObjectExHandler( exception );
@@ -20618,11 +19440,9 @@ end;
 unload
 {
 unload() updating;
-// Who		When		Ticket		Details
-// Dan T	22/06/2023	EDS-74		SaleItemSearch - remove parameterized constructor
 
 begin
-	self.formUnload();	// EDS-74
+	self.formUnload();	
 	inheritMethod();
 end;
 }
@@ -20640,8 +19460,6 @@ unselectAllTableCells() updating, protected;
 //
 // Returns:		Nothing
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	30/05/2023	EDS-58		Refactor FormWebClientSaleItems to use the TAF
 
 vars
 	col : Integer;
@@ -20681,8 +19499,6 @@ doEnter() updating, protected;
 //
 // Returns:		Nothing
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	30/05/2023	EDS-59		Refactor FormWebLogon to use the TAF
 
 vars
 	clientForm	: WebItemsForm;
@@ -20711,8 +19527,6 @@ formLoad() updating, protected;
 //
 // Returns:		Nothing
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	30/05/2023	EDS-59		Refactor FormWebLogon to use the TAF
 
 vars
 	client : Client;
@@ -20742,8 +19556,6 @@ setMessage( message : String ) protected;
 //
 // Returns:		Nothing
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	30/05/2023	EDS-59		Refactor FormWebLogon to use the TAF
 
 begin
 	if message = null then

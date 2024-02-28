@@ -2076,8 +2076,6 @@ typeSources
 initialize
 {
 initialize() updating;
-// Who		When		Ticket		Details
-// Dan T	06/06/2023	EDS-66		Refactor REST services to use the TAF
 
 begin
 	inheritMethod();
@@ -2100,12 +2098,9 @@ end;
 populateFromObject
 {
 populateFromObject( pAgent : Agent ) updating;
-// Who		When		Ticket		Details
-// Dan T	07/06/2023	EDS-66		Refactor REST services to use the TAF
-// Dan T	05/07/2023	EDS-66.v2	REST Services Improvements
 
 begin
-	inheritMethod( pAgent );	// EDS-66.v2
+	inheritMethod( pAgent );	
 	
 	self.name := pAgent.name;
 	self.street := pAgent.myAddress.street;
@@ -2123,12 +2118,9 @@ end;
 populateFromObject
 {
 populateFromObject( pClient : Client ) updating;
-// Who		When		Ticket		Details
-// Dan T	07/06/2023	EDS-66		Refactor REST services to use the TAF
-// Dan T	05/07/2023	EDS-66.v2	REST Services Improvements
 
 begin
-	inheritMethod( pClient );	// EDS-66.v2
+	inheritMethod( pClient );	
 	
 	self.name := pClient.name;
 	self.street := pClient.myAddress.street;
@@ -2146,12 +2138,9 @@ end;
 populateFromObject
 {
 populateFromObject( pCompany : Company ) updating;
-// Who		When		Ticket		Details
-// Dan T	07/06/2023	EDS-66		Refactor REST services to use the TAF
-// Dan T	05/07/2023	EDS-66.v2	REST Services Improvements
 
 begin
-	inheritMethod( pCompany );	// EDS-66.v2
+	inheritMethod( pCompany );	
 
 	self.name := pCompany.name;
 	self.street := pCompany.myAddress.street;
@@ -2169,18 +2158,13 @@ end;
 populateFromObject
 {
 populateFromObject( pItem : Item ) updating;
-// Who		When		Ticket		Details
-// Dan T	07/06/2023	EDS-66		Refactor REST services to use the TAF
-// Dan T	19/06/2023	EDS-72		Remove code number limit for Sale Items
-// Dan T	05/07/2023	EDS-66.v2	REST Services Improvements
-// Dan T	10/07/2023	EDS-88	 	Rename SaleItem classes to improve clarity
 
 
 begin
-	inheritMethod( pItem );	// EDS-66.v2
+	inheritMethod( pItem );	
 	
-	create self.agent transient;							// EDS-66.v2
-	self.agent.populateFromObject( pItem.myAgent );		// EDS-66.v2
+	create self.agent transient;							
+	self.agent.populateFromObject( pItem.myAgent );		
 	
 	self.number := pItem.codeNumber;
 	self.description := pItem.description;
@@ -2197,18 +2181,14 @@ end;
 populateFromObject
 {
 populateFromObject( pRetailItem : RetailItem ) updating;
-// Who		When		Ticket		Details
-// Dan T	07/06/2023	EDS-66		Refactor REST services to use the TAF
-// Dan T	04/07/2023	EDS-66.v2	Improvements to REST services
-// Dan T	10/07/2023	EDS-88	 	Rename SaleItem classes to improve clarity
 
 begin
 	inheritMethod( pRetailItem );
 	
 	// Populate Sale Details if sale exists
 	if pRetailItem.mySale <> null then
-		create self.sale as DTORetailSaleDetail transient;					// EDS-66.v2
-		self.sale.populateFromObject( pRetailItem.mySale.RetailSale );	// EDS-66.v2
+		create self.sale as DTORetailSaleDetail transient;					
+		self.sale.populateFromObject( pRetailItem.mySale.RetailSale );	
 	endif;
 end;
 }
@@ -2218,10 +2198,6 @@ end;
 populateFromObject
 {
 populateFromObject( pTenderItem: TenderItem ) updating;
-// Who		When		Ticket		Details
-// Dan T	07/06/2023	EDS-66		Refactor REST services to use the TAF
-// Dan T	04/07/2023	EDS-66.v2	Improvements to REST services
-// Dan T	10/07/2023	EDS-88	 	Rename SaleItem classes to improve clarity
 
 begin
 	inheritMethod( pTenderItem );
@@ -2230,8 +2206,8 @@ begin
 	
 	// Populate Sale Details if sale exists
 	if pTenderItem.mySale <> null then
-		create self.sale transient;												// EDS-66.v2
-		self.sale.populateFromObject( pTenderItem.mySale.TenderSale );		// EDS-66.v2
+		create self.sale transient;												
+		self.sale.populateFromObject( pTenderItem.mySale.TenderSale );		
 	endif;
 end;
 }
@@ -2241,20 +2217,17 @@ end;
 populateFromObject
 {
 populateFromObject( pSale : Sale ) updating;
-// Who		When		Ticket		Details
-// Dan T	07/06/2023	EDS-66		Refactor REST services to use the TAF
-// Dan T	05/07/2023	EDS-66.v2	REST Services Improvements
 
 begin
-	inheritMethod( pSale );	// EDS-66.v2
+	inheritMethod( pSale );	
 
 	self.agentCommission := pSale.agentCommission;
 	
-	create self.client transient;						// EDS-66.v2
-	self.client.populateFromObject( pSale.myClient );	// EDS-66.v2
+	create self.client transient;						
+	self.client.populateFromObject( pSale.myClient );	
 	
-	create self.item transient;							// EDS-66.v2
-	self.item.populateFromObject( pSale.myItem );	// EDS-66.v2
+	create self.item transient;							
+	self.item.populateFromObject( pSale.myItem );	
 end;
 }
 	)
@@ -2263,8 +2236,6 @@ end;
 populateFromObject
 {
 populateFromObject( pRetailSale : RetailSale ) updating;
-// Who		When		Ticket		Details
-// Dan T	07/06/2023	EDS-66		Refactor REST services to use the TAF
 
 begin
 	inheritMethod( pRetailSale );
@@ -2278,15 +2249,12 @@ end;
 populateFromObject
 {
 populateFromObject( pTenderSale : TenderSale ) updating;
-// Who		When		Ticket		Details
-// Dan T	07/06/2023	EDS-66		Refactor REST services to use the TAF
-// Dan T	04/07/2023	EDS-66.v2	Improvements to REST services
 
 begin
 	inheritMethod( pTenderSale );
 	
-	create self.tender transient;								// EDS-66.v22
-	self.tender.populateFromObject( pTenderSale.myTender );		// EDS-66.v2
+	create self.tender transient;								
+	self.tender.populateFromObject( pTenderSale.myTender );		
 end;
 }
 	)
@@ -2295,16 +2263,12 @@ end;
 populateFromObject
 {
 populateFromObject( pSale : Sale ) updating;
-// Who		When		Ticket		Details
-// Dan T	07/06/2023	EDS-66		Refactor REST services to use the TAF
-// Dan T	04/07/2023	EDS-66.v2	Improvements to REST services
-// Dan T	05/07/2023	EDS-66.v2	REST Services Improvements
 
 begin
 	inheritMethod( pSale );
 	
-	create self.client transient;						// EDS-66.v2
-	self.client.populateFromObject( pSale.myClient );	// EDS-66.v2
+	create self.client transient;						
+	self.client.populateFromObject( pSale.myClient );	
 	
 	self.agentCommission := pSale.agentCommission;
 end;
@@ -2315,8 +2279,6 @@ end;
 populateFromObject
 {
 populateFromObject( pRetailSale : RetailSale ) updating;
-// Who		When		Ticket		Details
-// Dan T	07/06/2023	EDS-66		Refactor REST services to use the TAF
 
 begin
 	inheritMethod( pRetailSale );
@@ -2331,8 +2293,6 @@ end;
 populateFromObject
 {
 populateFromObject( pTenderSale : TenderSale ) updating;
-// Who		When		Ticket		Details
-// Dan T	07/06/2023	EDS-66		Refactor REST services to use the TAF
 
 begin
 	inheritMethod( pTenderSale );
@@ -2347,20 +2307,17 @@ end;
 populateFromObject
 {
 populateFromObject( pTender : Tender ) updating;
-// Who		When		Ticket		Details
-// Dan T	07/06/2023	EDS-66		Refactor REST services to use the TAF
-// Dan T	05/07/2023	EDS-66.v2	REST Services Improvements
 
 begin
-	inheritMethod( pTender );	// EDS-66.v2
+	inheritMethod( pTender );	
 
-	create self.client transient;							// EDS-66.v2
-	self.client.populateFromObject( pTender.myClient );		// EDS-66.v2
+	create self.client transient;							
+	self.client.populateFromObject( pTender.myClient );		
 	
 	self.offer := pTender.offer;
 	
-	create self.tenderItem transient;									// EDS-66.v2
-	self.tenderItem.populateFromObject( pTender.myTenderItem );		// EDS-66.v2
+	create self.tenderItem transient;									
+	self.tenderItem.populateFromObject( pTender.myTenderItem );		
 	
 	self.timestamp := pTender.dateTendered;
 end;
@@ -2371,11 +2328,6 @@ end;
 getAgent
 {
 getAgent( pName : String ) : DTOAgent updating;
-// Who		When		Ticket		Details
-// Dan T	06/06/2023	EDS-66		Refactor REST services to use the TAF
-// Dan T	28/06/2023	EDS-79		Translatable strings: Remove concatenation
-// Dan T	04/07/2023	EDS-79.v2	Removed WithParam suffix for Translatable Strings
-// Dan T	05/07/2023	EDS-66.v2	REST Services Improvements
 
 vars
 	dtoAgent : DTOAgent;
@@ -2390,22 +2342,20 @@ begin
 	// Check if the agent was found, if not return a 404 (Not Found) status code
 	if agent = null then
 		self.httpStatusCode := HTTP_Not_Found;
-		return null;							// EDS-66.v2
+		return null;							
 	endif;
 	
 	self.httpStatusCode := HTTP_Success;
 	
-	create dtoAgent transient;				// EDS-66.v2
-	dtoAgent.populateFromObject( agent );	// EDS-66.v2
+	create dtoAgent transient;				
+	dtoAgent.populateFromObject( agent );	
 	
-	return dtoAgent;						// EDS-66.v2
+	return dtoAgent;						
 end;
 }
 getAllAgents
 {
 getAllAgents() : DTOAgentArray updating;
-// Who		When		Ticket		Details
-// Dan T	06/06/2023	EDS-66		Refactor REST services to use the TAF
 
 vars
 	agent : Agent;
@@ -2428,8 +2378,6 @@ end;
 getAllClients
 {
 getAllClients() : DTOClientArray updating;
-// Who		When		Ticket		Details
-// Dan T	06/06/2023	EDS-66		Refactor REST services to use the TAF
 
 vars
 	client : Client;
@@ -2452,8 +2400,6 @@ end;
 getAllSales
 {
 getAllSales() : DTOSaleArray updating;
-// Who		When		Ticket		Details
-// Dan T	06/06/2023	EDS-66		Refactor REST services to use the TAF
 
 vars
 	sale : Sale;
@@ -2489,11 +2435,6 @@ end;
 getClient
 {
 getClient( pName : String ) : DTOClient updating;
-// Who		When		Ticket		Details
-// Dan T	06/06/2023	EDS-66		Refactor REST services to use the TAF
-// Dan T	28/06/2023	EDS-79		Translatable strings: Remove concatenation
-// Dan T	04/07/2023	EDS-79.v2	Removed WithParam suffix for Translatable Strings
-// Dan T	04/07/2023	EDS-66.v2	Improvements to REST services
 
 vars
 	dtoClient : DTOClient;
@@ -2505,7 +2446,7 @@ begin
 	// Check if the client was found, if not return a 404 (Not Found) status code
 	if client = null then
 		self.httpStatusCode := HTTP_Not_Found;
-		return null;	// EDS-66.v2
+		return null;	
 	endif;
 	
 	create dtoClient transient;
@@ -2518,10 +2459,6 @@ end;
 getCompany
 {
 getCompany() : DTOCompany updating;
-// Who		When		Ticket		Details
-// Dan T	06/06/2023	EDS-66		Refactor REST services to use the TAF
-// Dan T	28/06/2023	EDS-80		Turn all remaining string literals into translatable strings
-// Dan T	04/07/2023	EDS-66.v2	Improvements to REST services
 
 vars
 	dtoCompany : DTOCompany;
@@ -2532,7 +2469,7 @@ begin
 	
 	if company = null then 
 		self.httpStatusCode := HTTP_Server_Error;
-		return null;	// EDS-66.v2
+		return null;	
 	endif;
 
 	create dtoCompany transient;
@@ -2546,13 +2483,6 @@ end;
 getItemByCode
 {
 getItemByCode( pCodePrefix : String; pCodeNumber : Integer) : DTOItem updating;
-// Who		When		Ticket		Details
-// Dan T	06/06/2023	EDS-66		Refactor REST services to use the TAF
-// Dan T	28/06/2023	EDS-80		Turn all remaining string literals into translatable strings
-// Dan T	28/06/2023	EDS-79		Translatable strings: Remove concatenation
-// Dan T	04/07/2023	EDS-66.v2	Improvements to REST services
-// Dan T	05/07/2023	EDS-85		Create Unit Tests for REST services
-// Dan T	10/07/2023	EDS-88	 	Rename SaleItem classes to improve clarity
 
 vars
 	dtoRetailItem : DTORetailItem;
@@ -2566,13 +2496,13 @@ begin
 	// Validate Code Prefix
 	if codePrefix = null or codePrefix.length() > 4 then
 		self.httpStatusCode := HTTP_Bad_Request;
-		return null;	// EDS-66.v2
+		return null;	
 	endif;
 	
 	// Validate Code Number
-	if pCodeNumber = null then										// EDS-80
+	if pCodeNumber = null then										
 		self.httpStatusCode := HTTP_Bad_Request;
-		return null;	// EDS-66.v2
+		return null;	
 	endif;
 
 	item := app.myCompany.getItem( pCodeNumber );
@@ -2580,12 +2510,12 @@ begin
 	// Check if a Sale was found
 	if item = null then
 		self.httpStatusCode := HTTP_Not_Found;
-		return null;	// EDS-66.v2
+		return null;	
 	endif;
 	
 	// Handle Retail Sale
 	if item.isKindOf( RetailItem ) then
-		self.httpStatusCode := HTTP_Success;	// EDS-85
+		self.httpStatusCode := HTTP_Success;	
 		create dtoRetailItem transient;
 		dtoRetailItem.populateFromObject( item.RetailItem );
 		return dtoRetailItem;
@@ -2593,30 +2523,24 @@ begin
 	
 	// Handle Tender Sale
 	if item.isKindOf( TenderItem ) then	
-		self.httpStatusCode := HTTP_Success;	// EDS-85
+		self.httpStatusCode := HTTP_Success;	
 		create dtoTenderItem transient;
 		dtoTenderItem.populateFromObject( item.TenderItem );
 		return dtoTenderItem;
 	endif;
 
 	self.httpStatusCode := HTTP_Server_Error;
-	return null;	// EDS-66.v2
+	return null;	
 end;
 }
 getItemsByPrice
 {
 getItemsByPrice( pMinPrice : Integer; pMaxPrice : Integer ) : DTOItemsArray updating;
-// Who		When		Ticket		Details
-// Dan T	07/06/2023	EDS-66		Refactor REST services to use the TAF
-// Dan T	28/06/2023	EDS-80		Turn all remaining string literals into translatable strings
-// Dan T	30/06/2023	EDS-81		Change SaleItems to use GUIDs 
 //									Changed Collection to allItemsByNumber
-// Dan T	04/07/2023	EDS-66.v2	Improvements to REST services
-// Dan T	10/07/2023	EDS-88	 	Rename SaleItem classes to improve clarity
 
 vars
 	item : Item;
-	itemsByNumberDict : ItemsByNumberDict;	// EDS-81
+	itemsByNumberDict : ItemsByNumberDict;	
 	dtoItemsArray : DTOItemsArray;
 	dtoRetailItem : DTORetailItem;
 	dtoTenderItem : DTOTenderItem;
@@ -2627,22 +2551,22 @@ begin
 	// Validate Min Price
 	if pMinPrice < 0 then
 		self.httpStatusCode := HTTP_Bad_Request;
-		return null;	// EDS-66.v2
+		return null;	
 	endif;
 	
 	// Validate Max Price (Positive Number)
 	if pMaxPrice < 0 then
 		self.httpStatusCode := HTTP_Bad_Request;
-		return null;	// EDS-66.v2
+		return null;	
 	endif;
 	
 	// Validate Max Price (Higher than Min Price)
 	if pMaxPrice < pMinPrice then
 		self.httpStatusCode := HTTP_Bad_Request;
-		return null;	// EDS-66.v2
+		return null;	
 	endif;
 
-	itemsByNumberDict := app.myCompany.allItems;	// EDS-81
+	itemsByNumberDict := app.myCompany.allItems;	
 	
 	// If no items exist, no need to process further
 	if itemsByNumberDict = null or itemsByNumberDict.size() = 0 then
@@ -2674,12 +2598,6 @@ end;
 getSale
 {
 getSale( pCodePrefix : String; pCodeNumber : Integer ) : DTOSale updating;
-// Who		When		Ticket		Details
-// Dan T	06/06/2023	EDS-66		Refactor REST services to use the TAF
-// Dan T	28/06/2023	EDS-80		Turn all remaining string literals into translatable strings
-// Dan T	28/06/2023	EDS-79		Translatable strings: Remove concatenation
-// Dan T	04/07/2023	EDS-66.v2	Improvements to REST services
-// Dan T	05/07/2023	EDS-85		Create Unit Tests for REST services
 
 
 vars
@@ -2694,13 +2612,13 @@ begin
 	// Validate Code Prefix
 	if codePrefix = null or codePrefix.length() > 4 then
 		self.httpStatusCode := HTTP_Bad_Request;
-		return null;	// EDS-66.v2
+		return null;	
 	endif;
 	
 	// Validate Code Number
-	if pCodeNumber = null then							// EDS-80
+	if pCodeNumber = null then							
 		self.httpStatusCode := HTTP_Bad_Request;
-		return null;	// EDS-66.v2
+		return null;	
 	endif;
 
 	sale := app.myCompany.allSalesByItem[ pCodePrefix, pCodeNumber ];
@@ -2708,12 +2626,12 @@ begin
 	// Check if a Sale was found
 	if sale = null then
 		self.httpStatusCode := HTTP_Not_Found;
-		return null;	// EDS-66.v2
+		return null;	
 	endif;
 	
 	// Handle Retail Sale
 	if sale.isKindOf( RetailSale ) then
-		self.httpStatusCode := HTTP_Success;	// EDS-85
+		self.httpStatusCode := HTTP_Success;	
 		create dtoRetailSale transient;
 		dtoRetailSale.populateFromObject( sale.RetailSale );
 		return dtoRetailSale;
@@ -2721,30 +2639,27 @@ begin
 	
 	// Handle Tender Sale
 	if sale.isKindOf( TenderSale ) then
-		self.httpStatusCode := HTTP_Success;	// EDS-85
+		self.httpStatusCode := HTTP_Success;	
 		create dtoTenderSale transient;
 		dtoTenderSale.populateFromObject( sale.TenderSale );
 		return dtoTenderSale;
 	endif;
 
 	self.httpStatusCode := HTTP_Server_Error;
-	return null;	// EDS-66.v2
+	return null;	
 end;
 }
 postCreateAgent
 {
 postCreateAgent( pAgent : DTOAgent ) : DTOResult updating;
-// Who		When		Ticket		Details
-// Dan T	06/06/2023	EDS-66		Refactor REST services to use the TAF
-// Dan T	04/07/2023	EDS-66.v2	Improvements to REST services
 
 vars
-	dtoResult : DTOResult;		// EDS-66.v2
+	dtoResult : DTOResult;		
 	agentTA : AgentTA;
 	addressTA : AddressTA;
 	
 begin
-	create dtoResult transient;	// EDS-66.v2
+	create dtoResult transient;	
 	create agentTA transient;
 	create addressTA transient;
 	
@@ -2761,33 +2676,30 @@ begin
 	// Attempt to save the agent
 	if not agentTA.persistEntity( TransactionType_Persist ) then
 		self.httpStatusCode := HTTP_Bad_Request;
-		agentTA.allErrors.copy( dtoResult.allErrors );	// EDS-66.v2
-		dtoResult.statusCode := self.httpStatusCode;	// EDS-66.v2
-		return dtoResult;								// EDS-66.v2
+		agentTA.allErrors.copy( dtoResult.allErrors );	
+		dtoResult.statusCode := self.httpStatusCode;	
+		return dtoResult;								
 	endif;
 
 	self.httpStatusCode := HTTP_Created;
 	
-	dtoResult.guid := agentTA.getModelObject().guid;	// EDS-66.v2
-	dtoResult.statusCode := self.httpStatusCode;		// EDS-66.v2
+	dtoResult.guid := agentTA.getModelObject().guid;	
+	dtoResult.statusCode := self.httpStatusCode;		
 	
-	return dtoResult;	// EDS-66.v2
+	return dtoResult;	
 end;
 }
 postCreateClient
 {
 postCreateClient( pClient : DTOClient ) : DTOResult updating;
-// Who		When		Ticket		Details
-// Dan T	07/06/2023	EDS-66		Refactor REST services to use the TAF
-// Dan T	04/07/2023	EDS-66.v2	Improvements to REST services
 
 vars
-	dtoResult : DTOResult;	// EDS-66.v2
+	dtoResult : DTOResult;	
 	clientTA : ClientTA;
 	addressTA : AddressTA;
 	
 begin
-	create dtoResult transient;		// EDS-66.v2
+	create dtoResult transient;		
 	create clientTA transient;
 	create addressTA transient;
 	
@@ -2804,47 +2716,42 @@ begin
 	// Attempt to save the client
 	if not clientTA.persistEntity( TransactionType_Persist ) then
 		self.httpStatusCode := HTTP_Bad_Request;
-		clientTA.allErrors.copy( dtoResult.allErrors );	// EDS-66.v2
-		dtoResult.statusCode := self.httpStatusCode;		// EDS-66.v2
-		return dtoResult;									// EDS-66.v2
+		clientTA.allErrors.copy( dtoResult.allErrors );	
+		dtoResult.statusCode := self.httpStatusCode;		
+		return dtoResult;									
 	endif;
 	
 	self.httpStatusCode := HTTP_Created;
 
-	dtoResult.guid := clientTA.getModelObject().guid;	// EDS-66.v2
-	dtoResult.statusCode := self.httpStatusCode;		// EDS-66.v2
+	dtoResult.guid := clientTA.getModelObject().guid;	
+	dtoResult.statusCode := self.httpStatusCode;		
 
-	return dtoResult;									// EDS-66.v2
+	return dtoResult;									
 end;
 }
 postCreateRetailSale
 {
 postCreateRetailSale( pClient : String; pCodePrefix : String; pCodeNumber : Integer ) : DTOResult updating;
-// Who		When		Ticket		Details
-// Dan T	07/06/2023	EDS-66		Refactor REST services to use the TAF
-// Dan T	28/06/2023	EDS-80		Turn all remaining string literals into translatable strings
-// Dan T	04/07/2023	EDS-66.v2	Improvements to REST services
-// Dan T	10/07/2023	EDS-88	 	Rename SaleItem classes to improve clarity
 
 
 vars
-	dtoResult : DTOResult;	// EDS-66.v2
+	dtoResult : DTOResult;	
 	retailSaleTA : RetailSaleTA;
 	item : Item;
 	client : Client;
 	timestamp : TimeStamp;
 	
 begin
-	create dtoResult transient;	// EDS-66.v2
+	create dtoResult transient;	
 	
 	client := app.myCompany.allClients[ pClient ];
 	
 	// Validate Client Exists
 	if client = null then
 		self.httpStatusCode := HTTP_Not_Found;
-		dtoResult.statusCode := self.httpStatusCode;	// EDS-66.v2
-		dtoResult.allErrors.add( $ClientNotFound );	// EDS-66.v2	// EDS-80
-		return dtoResult;								// EDS-66.v2
+		dtoResult.statusCode := self.httpStatusCode;	
+		dtoResult.allErrors.add( $ClientNotFound );	
+		return dtoResult;								
 	endif;
 	
 	item := app.myCompany.getItem( pCodeNumber );
@@ -2852,17 +2759,17 @@ begin
 	// Validate Item (Item Not Found)
 	if item = null then
 		self.httpStatusCode := HTTP_Not_Found;
-		dtoResult.statusCode := self.httpStatusCode;		// EDS-66.v2
-		dtoResult.allErrors.add( $ItemNotFound );		// EDS-66.v2	// EDS-80
-		return dtoResult;									// EDS-66.v2
+		dtoResult.statusCode := self.httpStatusCode;		
+		dtoResult.allErrors.add( $ItemNotFound );		
+		return dtoResult;									
 	endif;
 	
 	// Validate Item (Item Not Retail Sale)
 	if not item.isKindOf( RetailItem ) then
 		self.httpStatusCode := HTTP_Bad_Request;
-		dtoResult.statusCode := self.httpStatusCode;			// EDS-66.v2
-		dtoResult.allErrors.add( $ItemNotRetailItem );		// EDS-66.v2	// EDS-80
-		return dtoResult;										// EDS-66.v2
+		dtoResult.statusCode := self.httpStatusCode;			
+		dtoResult.allErrors.add( $ItemNotRetailItem );		
+		return dtoResult;										
 	endif;
 	
 	create retailSaleTA transient;
@@ -2874,47 +2781,42 @@ begin
 	
 	if not retailSaleTA.persistEntity( TransactionType_Persist ) then 
 		self.httpStatusCode := HTTP_Bad_Request;
-		dtoResult.statusCode := self.httpStatusCode;			// EDS-66.v2
-		retailSaleTA.allErrors.copy( dtoResult.allErrors );	// EDS-66.v2	// Copy TA Errors
-		return dtoResult;										// EDS-66.v2
+		dtoResult.statusCode := self.httpStatusCode;			
+		retailSaleTA.allErrors.copy( dtoResult.allErrors );	
+		return dtoResult;										
 	endif;
 	
 	self.httpStatusCode := HTTP_Created;
 	
-	dtoResult.guid := retailSaleTA.getModelObject().guid;	// EDS-66.v2
-	dtoResult.statusCode := self.httpStatusCode;			// EDS-66.v2
+	dtoResult.guid := retailSaleTA.getModelObject().guid;	
+	dtoResult.statusCode := self.httpStatusCode;			
 	
-	return dtoResult;					// EDS-66.v2
+	return dtoResult;					
 end;
 }
 postCreateTender
 {
 postCreateTender( pClient : String; pCodePrefix : String; pCodeNumber : Integer; pOffer : Decimal ) : DTOResult updating;
-// Who		When		Ticket		Details
-// Dan T	07/06/2023	EDS-66		Refactor REST services to use the TAF
-// Dan T	28/06/2023	EDS-80		Turn all remaining string literals into translatable strings
-// Dan T	04/07/2023	EDS-66.v2	Improvements to REST services
-// Dan T	10/07/2023	EDS-88	 	Rename SaleItem classes to improve clarity
 
 
 vars
-	dtoResult : DTOResult;	// EDS-66.v2
+	dtoResult : DTOResult;	
 	tenderTA : TenderTA;
 	timestamp : TimeStamp;
 	client : Client;
 	item : Item;
 	
 begin
-	create dtoResult transient;	// EDS-66.v2
+	create dtoResult transient;	
 	
 	client := app.myCompany.allClients[ pClient ];
 	
 	// Validate Client Exists
 	if client = null then
 		self.httpStatusCode := HTTP_Not_Found;
-		dtoResult.statusCode := self.httpStatusCode;	// EDS-66.v2
-		dtoResult.allErrors.add( $ClientNotFound );	// EDS-66.v2	// EDS-80
-		return dtoResult;								// EDS-66.v2
+		dtoResult.statusCode := self.httpStatusCode;	
+		dtoResult.allErrors.add( $ClientNotFound );	
+		return dtoResult;								
 	endif;
 	
 	item := app.myCompany.getItem( pCodeNumber );
@@ -2922,17 +2824,17 @@ begin
 	// Validate Item (Item Not Found)
 	if item = null then
 		self.httpStatusCode := HTTP_Not_Found;
-		dtoResult.statusCode := self.httpStatusCode;	// EDS-66.v2
-		dtoResult.allErrors.add( $ItemNotFound );	// EDS-66.v2	// EDS-80
-		return dtoResult;								// EDS-66.v2
+		dtoResult.statusCode := self.httpStatusCode;	
+		dtoResult.allErrors.add( $ItemNotFound );	
+		return dtoResult;								
 	endif;
 	
 	// Validate Item (Item Not Tender Item)
 	if not item.isKindOf( TenderItem ) then
 		self.httpStatusCode := HTTP_Bad_Request;
-		dtoResult.statusCode := self.httpStatusCode;			// EDS-66.v2
-		dtoResult.allErrors.add( $ItemNotTenderItem );	// EDS-66.v2	// EDS-80
-		return dtoResult;										// EDS-66.v2
+		dtoResult.statusCode := self.httpStatusCode;			
+		dtoResult.allErrors.add( $ItemNotTenderItem );	
+		return dtoResult;										
 	endif;
 
 	create tenderTA transient;
@@ -2943,17 +2845,17 @@ begin
 	
 	if not tenderTA.persistEntity( TransactionType_Persist ) then
 		self.httpStatusCode := HTTP_Bad_Request;
-		dtoResult.statusCode := self.httpStatusCode;		// EDS-66.v2
-		tenderTA.allErrors.copy( dtoResult.allErrors );	// EDS-66.v2
-		return dtoResult;									// EDS-66.v2
+		dtoResult.statusCode := self.httpStatusCode;		
+		tenderTA.allErrors.copy( dtoResult.allErrors );	
+		return dtoResult;									
 	endif;
 	
-	self.httpStatusCode := HTTP_Created;	// EDS-85
+	self.httpStatusCode := HTTP_Created;	
 	
-	dtoResult.guid := tenderTA.getModelObject().guid;	// EDS-66.v2
-	dtoResult.statusCode := self.httpStatusCode;		// EDS-66.v2
+	dtoResult.guid := tenderTA.getModelObject().guid;	
+	dtoResult.statusCode := self.httpStatusCode;		
 	
-	return dtoResult;					// EDS-66.v2
+	return dtoResult;					
 end;
 }
 processRequest
@@ -2976,8 +2878,6 @@ addTestAgentToCommissionRate( pAgent : Agent; pCommissionRate : CommissionRate )
 // Purpose:		Adds an Agent to a commission rate for testing purposes
 //
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	06/07/2023	EDS-86		Move repeated code to superclass method
 
 vars
 	commissionRateTA : CommissionRateTA;
@@ -3001,8 +2901,6 @@ createTestAddress( pStreet, pCity, pCountry, pPhone, pFax, pEmail, pWebsite : St
 // Purpose:		Creates an Address for testing purposes
 //
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	06/07/2023	EDS-86		Move repeated code to superclass method
 
 vars
 	addressTA : AddressTA;
@@ -3034,8 +2932,6 @@ createTestAgent( pName : String; pAddress : Address ) : Agent protected;
 // Purpose:		Creates an Agent for testing purposes
 //
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	06/07/2023	EDS-86		Move repeated code to superclass method
 
 vars
 	agentTA : AgentTA;
@@ -3072,8 +2968,6 @@ createTestClient( pName : String; pAddress : Address ): Client protected;
 // Purpose:		Creates a client for testing purposes
 //
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	06/07/2023	EDS-86		Move repeated code to superclass method
 
 vars
 	clientTA : ClientTA;
@@ -3110,9 +3004,6 @@ createTestCommissionRate( pItemCategory : ItemCategory; pRate : Decimal ) : Comm
 // Purpose:		Creates a CommissionRate for testing purposes
 //
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	06/07/2023	EDS-86		Move repeated code to superclass method
-// Dan T	10/07/2023	EDS-88	 	Rename SaleItem classes to improve clarity
 
 vars
 	commissionRateTA : CommissionRateTA;
@@ -3139,8 +3030,6 @@ createTestCountry( pName : String ) : Country protected;
 // Purpose:		Creates a Country for testing purposes
 //
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	06/07/2023	EDS-86		Move repeated code to superclass method
 
 vars
 	countryTA : CountryTA;
@@ -3168,8 +3057,6 @@ createTestData() updating;
 //
 // Parameters: 	N/A
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	06/07/2023	EDS-86		Move repeated code to superclass method
 
 vars
 	companyTA : CompanyTA;
@@ -3220,9 +3107,6 @@ createTestItemCategory( pName, pPrefix, pDescription : String ) : ItemCategory p
 // Purpose:		Creates an Item Category for testing purposes
 //
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	06/07/2023	EDS-86		Move repeated code to superclass method
-// Dan T	10/07/2023	EDS-88	 	Rename SaleItem classes to improve clarity
 
 vars
 	itemCategoryTA : ItemCategoryTA;
@@ -3248,8 +3132,6 @@ createTestRegion( pName : String; pCountry : Country ) : Region protected;
 // Purpose:		Creates a Region for testing purposes
 //
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	06/07/2023	EDS-86		Move repeated code to superclass method
 
 vars
 	regionTA : RegionTA;
@@ -3274,9 +3156,6 @@ createTestRetailItem( pName, pDescription : String; pPhoto : Binary; pRegion : R
 // Purpose:		Creates a Retail Item for testing purposes
 //
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	06/07/2023	EDS-86		Move repeated code to superclass method
-// Dan T	10/07/2023	EDS-88	 	Rename SaleItem classes to improve clarity
 
 vars
 	retailItemTA : RetailItemTA;
@@ -3306,9 +3185,6 @@ createTestRetailSale( pRetailItem : RetailItem; pClient : Client; pDateSold : Ti
 // Purpose:		Creates a Retail Sale for testing purposes
 //
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	06/07/2023	EDS-86		Move repeated code to superclass method
-// Dan T	10/07/2023	EDS-88	 	Rename SaleItem classes to improve clarity
 
 vars
 	retailSaleTA : RetailSaleTA;
@@ -3334,9 +3210,6 @@ createTestTender( pOffer : Decimal; pDateTendered : TimeStamp; pClient : Client;
 // Purpose:		Creates a Tender for testing purposes
 //
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	06/07/2023	EDS-86		Move repeated code to superclass method
-// Dan T	10/07/2023	EDS-88	 	Rename SaleItem classes to improve clarity
 
 vars
 	tenderTA : TenderTA;
@@ -3363,8 +3236,6 @@ createTestTenderItem( pName, pDescription : String; pPhoto : Binary; pRegion : R
 // Purpose:		Creates a Tender Item for testing purposes
 //
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	06/07/2023	EDS-86		Move repeated code to superclass method
 
 vars
 	tenderItemTA : TenderItemTA;
@@ -3395,8 +3266,6 @@ createTestTenderSale( pTenderItem : TenderItem; pTender : Tender; pClient : Clie
 // Purpose:		Creates a Tender Sale for testing purposes
 //
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	06/07/2023	EDS-86		Move repeated code to superclass method
 
 vars
 	tenderSaleTA : TenderSaleTA;
@@ -3428,8 +3297,6 @@ afterTest() updating, unitTestAfter;
 //
 // Parameters: 	N/A
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	05/07/2023	EDS-85		Create Unit Tests for REST services
 
 begin
 	beginTransaction;
@@ -3456,13 +3323,10 @@ beforeTest() updating, unitTestBefore;
 //
 // Parameters: 	N/A
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	05/07/2023	EDS-85		Create Unit Tests for REST services
-// Dan T	06/07/2023	EDS-86		Move repeated code to superclass method
 
 begin
 	create self.erewhonRestService as ErewhonRestService;
-	self.createTestData();	// EDS-86
+	self.createTestData();	
 end;
 }
 	)
@@ -3471,8 +3335,6 @@ end;
 afterTest
 {
 afterTest() updating, unitTestAfter;
-// Who		When		Ticket		Details
-// Dan T	05/07/2023	EDS-85		Create Unit Tests for REST services
 
 begin
 	inheritMethod();
@@ -3481,8 +3343,6 @@ end;
 beforeTest
 {
 beforeTest() updating, unitTestBefore;
-// Who		When		Ticket		Details
-// Dan T	05/07/2023	EDS-85		Create Unit Tests for REST services
 
 begin
 	inheritMethod();
@@ -3491,8 +3351,6 @@ end;
 testInvalidAgent
 {
 testInvalidAgent() unitTest;
-// Who		When		Ticket		Details
-// Dan T	05/07/2023	EDS-85		Create Unit Tests for REST services
 
 constants
 	Agent_Name				: String	= "Some Agent That Does Not Exist";
@@ -3523,8 +3381,6 @@ end;
 testValidAgent
 {
 testValidAgent() unitTest;
-// Who		When		Ticket		Details
-// Dan T	05/07/2023	EDS-85		Create Unit Tests for REST services
 
 constants
 	Agent_Name		: String	= "Hank Williams";
@@ -3595,8 +3451,6 @@ end;
 afterTest
 {
 afterTest() updating, unitTestAfter;
-// Who		When		Ticket		Details
-// Dan T	05/07/2023	EDS-85		Create Unit Tests for REST services
 
 begin
 	inheritMethod();
@@ -3605,16 +3459,13 @@ end;
 beforeTest
 {
 beforeTest() updating, unitTestBefore;
-// Who		When		Ticket		Details
-// Dan T	05/07/2023	EDS-85		Create Unit Tests for REST services
-// Dan T	06/07/2023	EDS-86		Move repeated code to superclass method
 
 constants
 	Total_Agents : Integer = 4;
 	
 vars
 	agentCount : Integer;
-	address : Address;	// EDS-86
+	address : Address;	
 
 begin
 	inheritMethod();
@@ -3624,16 +3475,14 @@ begin
 	while agentCount < Total_Agents do
 		agentCount += 1;
 		
-		address := self.createTestAddress( "Street", "City", "Country", "Phone", "Fax", "agent@email.com", "www.agent.com" );	// EDS-86
-		self.createTestAgent( "Test Agent " & agentCount.String, address );														// EDS-86
+		address := self.createTestAddress( "Street", "City", "Country", "Phone", "Fax", "agent@email.com", "www.agent.com" );	
+		self.createTestAgent( "Test Agent " & agentCount.String, address );														
 	endwhile;
 end;
 }
 testGetAllAgents
 {
 testGetAllAgents() unitTest;
-// Who		When		Ticket		Details
-// Dan T	05/07/2023	EDS-85		Create Unit Tests for REST services
 
 vars
 	dtoAgentArray : DTOAgentArray;
@@ -3663,8 +3512,6 @@ end;
 afterTest
 {
 afterTest() updating, unitTestAfter;
-// Who		When		Ticket		Details
-// Dan T	05/07/2023	EDS-85		Create Unit Tests for REST services
 
 begin
 	inheritMethod();
@@ -3673,9 +3520,6 @@ end;
 beforeTest
 {
 beforeTest() updating, unitTestBefore;
-// Who		When		Ticket		Details
-// Dan T	05/07/2023	EDS-85		Create Unit Tests for REST services
-// Dan T	06/07/2023	EDS-86		Move repeated code to superclass method
 
 constants
 	Total_Clients : Integer = 9;
@@ -3692,16 +3536,14 @@ begin
 	while clientCount < Total_Clients do
 		clientCount += 1;
 		
-		address := self.createTestAddress( "Street", "City", "Country", "Phone", "Fax", "agent@email.com", "www.agent.com" );	// EDS-86
-		self.createTestClient( "Test Client " & clientCount.String, address );													// EDS-86
+		address := self.createTestAddress( "Street", "City", "Country", "Phone", "Fax", "agent@email.com", "www.agent.com" );	
+		self.createTestClient( "Test Client " & clientCount.String, address );													
 	endwhile;
 end;
 }
 testGetAllClients
 {
 testGetAllClients() unitTest;
-// Who		When		Ticket		Details
-// Dan T	05/07/2023	EDS-85		Create Unit Tests for REST services
 
 vars
 	dtoClientArray : DTOClientArray;
@@ -3731,8 +3573,6 @@ end;
 afterTest
 {
 afterTest() updating, unitTestAfter;
-// Who		When		Ticket		Details
-// Dan T	05/07/2023	EDS-85		Create Unit Tests for REST services
 
 begin
 	inheritMethod();
@@ -3741,9 +3581,6 @@ end;
 beforeTest
 {
 beforeTest() updating, unitTestBefore;
-// Who		When		Ticket		Details
-// Dan T	05/07/2023	EDS-85		Create Unit Tests for REST services
-// Dan T	06/07/2023	EDS-86		Move repeated code to superclass method
 	
 begin
 	inheritMethod();
@@ -3752,8 +3589,6 @@ end;
 testGetAllSales
 {
 testGetAllSales() unitTest;
-// Who		When		Ticket		Details
-// Dan T	05/07/2023	EDS-85		Create Unit Tests for REST services
 
 vars
 	dtoSaleArray : DTOSaleArray;
@@ -3786,8 +3621,6 @@ end;
 afterTest
 {
 afterTest() updating, unitTestAfter;
-// Who		When		Ticket		Details
-// Dan T	05/07/2023	EDS-85		Create Unit Tests for REST services
 
 begin
 	inheritMethod();
@@ -3796,9 +3629,6 @@ end;
 beforeTest
 {
 beforeTest() updating, unitTestBefore;
-// Who		When		Ticket		Details
-// Dan T	05/07/2023	EDS-85		Create Unit Tests for REST services
-// Dan T	06/07/2023	EDS-86		Move repeated code to superclass method
 
 begin
 	inheritMethod();
@@ -3807,8 +3637,6 @@ end;
 testInvalidClient
 {
 testInvalidClient() unitTest;
-// Who		When		Ticket		Details
-// Dan T	05/07/2023	EDS-85		Create Unit Tests for REST services
 
 constants
 	Client_Name		: String	= "Some Client That Does Not Exist";
@@ -3838,8 +3666,6 @@ end;
 testValidClient
 {
 testValidClient() unitTest;
-// Who		When		Ticket		Details
-// Dan T	05/07/2023	EDS-85		Create Unit Tests for REST services
 
 constants
 	Client_Name		: String	= "Hank Williams";
@@ -3910,8 +3736,6 @@ end;
 afterTest
 {
 afterTest() updating, unitTestAfter;
-// Who		When		Ticket		Details
-// Dan T	05/07/2023	EDS-85		Create Unit Tests for REST services
 
 begin
 	inheritMethod();
@@ -3920,8 +3744,6 @@ end;
 beforeTest
 {
 beforeTest() updating, unitTestBefore;
-// Who		When		Ticket		Details
-// Dan T	05/07/2023	EDS-85		Create Unit Tests for REST services
 
 begin
 	inheritMethod();
@@ -3930,8 +3752,6 @@ end;
 testInvalidCompany
 {
 testInvalidCompany() unitTest;
-// Who		When		Ticket		Details
-// Dan T	05/07/2023	EDS-85		Create Unit Tests for REST services
 
 vars
 	dtoCompany : DTOCompany;
@@ -3957,9 +3777,6 @@ end;
 testValidCompany
 {
 testValidCompany() unitTest;
-// Who		When		Ticket		Details
-// Dan T	05/07/2023	EDS-85		Create Unit Tests for REST services
-// Dan T	06/07/2023	EDS-86		Move repeated code to superclass method
 
 vars
 	dtoCompany : DTOCompany;
@@ -3990,8 +3807,6 @@ end;
 afterTest
 {
 afterTest() updating, unitTestAfter;
-// Who		When		Ticket		Details
-// Dan T	05/07/2023	EDS-85		Create Unit Tests for REST services
 
 begin
 	inheritMethod();
@@ -4000,9 +3815,6 @@ end;
 beforeTest
 {
 beforeTest() updating, unitTestBefore;
-// Who		When		Ticket		Details
-// Dan T	05/07/2023	EDS-85		Create Unit Tests for REST services
-// Dan T	06/07/2023	EDS-86		Move repeated code to superclass method
 
 begin
 	inheritMethod();
@@ -4011,8 +3823,6 @@ end;
 testGetRetailItem
 {
 testGetRetailItem() unitTest;
-// Who		When		Ticket		Details
-// Dan T	05/07/2023	EDS-85		Create Unit Tests for REST services
 
 vars
 	dtoItem : DTOItem;
@@ -4034,9 +3844,6 @@ end;
 testGetTenderItem
 {
 testGetTenderItem() unitTest;
-// Who		When		Ticket		Details
-// Dan T	05/07/2023	EDS-85		Create Unit Tests for REST services
-// Dan T	10/07/2023	EDS-88	 	Rename SaleItem classes to improve clarity
 
 vars
 	dtoItem : DTOItem;
@@ -4058,9 +3865,6 @@ end;
 testInvalidCodeNumber
 {
 testInvalidCodeNumber() unitTest;
-// Who		When		Ticket		Details
-// Dan T	05/07/2023	EDS-85		Create Unit Tests for REST services
-// Dan T	10/07/2023	EDS-88	 	Rename SaleItem classes to improve clarity
 
 vars
 	dtoItem : DTOItem;
@@ -4081,9 +3885,6 @@ end;
 testInvalidPrefix
 {
 testInvalidPrefix() unitTest;
-// Who		When		Ticket		Details
-// Dan T	05/07/2023	EDS-85		Create Unit Tests for REST services
-// Dan T	10/07/2023	EDS-88	 	Rename SaleItem classes to improve clarity
 
 vars
 	dtoItem : DTOItem;
@@ -4104,9 +3905,6 @@ end;
 testItemNotFound
 {
 testItemNotFound() unitTest;
-// Who		When		Ticket		Details
-// Dan T	05/07/2023	EDS-85		Create Unit Tests for REST services
-// Dan T	10/07/2023	EDS-88	 	Rename SaleItem classes to improve clarity
 
 vars
 	dtoItem : DTOItem;
@@ -4130,8 +3928,6 @@ end;
 afterTest
 {
 afterTest() updating, unitTestAfter;
-// Who		When		Ticket		Details
-// Dan T	05/07/2023	EDS-85		Create Unit Tests for REST services
 
 begin
 	inheritMethod();
@@ -4140,9 +3936,6 @@ end;
 beforeTest
 {
 beforeTest() updating, unitTestBefore;
-// Who		When		Ticket		Details
-// Dan T	05/07/2023	EDS-85		Create Unit Tests for REST services
-// Dan T	06/07/2023	EDS-86		Move repeated code to superclass method
 
 begin
 	inheritMethod();
@@ -4151,9 +3944,6 @@ end;
 testInvalidMaxPrice
 {
 testInvalidMaxPrice() unitTest;
-// Who		When		Ticket		Details
-// Dan T	05/07/2023	EDS-85		Create Unit Tests for REST services
-// Dan T	10/07/2023	EDS-88	 	Rename SaleItem classes to improve clarity
 
 vars
 	dtoItemsArray : DTOItemsArray;
@@ -4174,9 +3964,6 @@ end;
 testInvalidMinPrice
 {
 testInvalidMinPrice() unitTest;
-// Who		When		Ticket		Details
-// Dan T	05/07/2023	EDS-85		Create Unit Tests for REST services
-// Dan T	10/07/2023	EDS-88	 	Rename SaleItem classes to improve clarity
 
 vars
 	dtoItemsArray : DTOItemsArray;
@@ -4197,9 +3984,6 @@ end;
 testMaxPriceHigherThanMinPrice
 {
 testMaxPriceHigherThanMinPrice() unitTest;
-// Who		When		Ticket		Details
-// Dan T	05/07/2023	EDS-85		Create Unit Tests for REST services
-// Dan T	10/07/2023	EDS-88	 	Rename SaleItem classes to improve clarity
 
 vars
 	dtoItemsArray : DTOItemsArray;
@@ -4220,10 +4004,6 @@ end;
 testNoItems
 {
 testNoItems() unitTest;
-// Who		When		Ticket		Details
-// Dan T	05/07/2023	EDS-85		Create Unit Tests for REST services
-// Dan T	10/07/2023	EDS-88	 	Rename SaleItem classes to improve clarity
-// Dan T	10/07/2023	EDS-88	 	Rename SaleItem classes to improve clarity
 
 vars
 	dtoItemsArray : DTOItemsArray;
@@ -4253,9 +4033,6 @@ end;
 testPriceBetween800And900
 {
 testPriceBetween800And900() unitTest;
-// Who		When		Ticket		Details
-// Dan T	05/07/2023	EDS-85		Create Unit Tests for REST services
-// Dan T	10/07/2023	EDS-88	 	Rename SaleItem classes to improve clarity
 
 vars
 	dtoItemsArray : DTOItemsArray;
@@ -4278,9 +4055,6 @@ end;
 testPriceBetween900And1000
 {
 testPriceBetween900And1000() unitTest;
-// Who		When		Ticket		Details
-// Dan T	05/07/2023	EDS-85		Create Unit Tests for REST services
-// Dan T	10/07/2023	EDS-88	 	Rename SaleItem classes to improve clarity
 
 vars
 	dtoItemsArray : DTOItemsArray;
@@ -4306,8 +4080,6 @@ end;
 afterTest
 {
 afterTest() updating, unitTestAfter;
-// Who		When		Ticket		Details
-// Dan T	05/07/2023	EDS-85		Create Unit Tests for REST services
 
 begin
 	inheritMethod();
@@ -4316,9 +4088,6 @@ end;
 beforeTest
 {
 beforeTest() updating, unitTestBefore;
-// Who		When		Ticket		Details
-// Dan T	05/07/2023	EDS-85		Create Unit Tests for REST services
-// Dan T	06/07/2023	EDS-86		Move repeated code to superclass method
 
 begin
 	inheritMethod();
@@ -4327,8 +4096,6 @@ end;
 testGetRetailSale
 {
 testGetRetailSale() unitTest;
-// Who		When		Ticket		Details
-// Dan T	05/07/2023	EDS-85		Create Unit Tests for REST services
 
 vars
 	dtoSale : DTOSale;
@@ -4350,8 +4117,6 @@ end;
 testGetTenderSale
 {
 testGetTenderSale() unitTest;
-// Who		When		Ticket		Details
-// Dan T	05/07/2023	EDS-85		Create Unit Tests for REST services
 
 vars
 	dtoSale : DTOSale;
@@ -4373,8 +4138,6 @@ end;
 testInvalidCodeNumber
 {
 testInvalidCodeNumber() unitTest;
-// Who		When		Ticket		Details
-// Dan T	05/07/2023	EDS-85		Create Unit Tests for REST services
 
 vars
 	dtoSale : DTOSale;
@@ -4395,8 +4158,6 @@ end;
 testInvalidPrefix
 {
 testInvalidPrefix() unitTest;
-// Who		When		Ticket		Details
-// Dan T	05/07/2023	EDS-85		Create Unit Tests for REST services
 
 vars
 	dtoSale : DTOSale;
@@ -4417,8 +4178,6 @@ end;
 testSaleNotFound
 {
 testSaleNotFound() unitTest;
-// Who		When		Ticket		Details
-// Dan T	05/07/2023	EDS-85		Create Unit Tests for REST services
 
 vars
 	dtoSale : DTOSale;
@@ -4442,8 +4201,6 @@ end;
 afterTest
 {
 afterTest() updating, unitTestAfter;
-// Who		When		Ticket		Details
-// Dan T	05/07/2023	EDS-85		Create Unit Tests for REST services
 
 begin
 	inheritMethod();
@@ -4452,8 +4209,6 @@ end;
 beforeTest
 {
 beforeTest() updating, unitTestBefore;
-// Who		When		Ticket		Details
-// Dan T	05/07/2023	EDS-85		Create Unit Tests for REST services
 
 begin
 	inheritMethod();
@@ -4462,9 +4217,6 @@ end;
 testInvalidAgent
 {
 testInvalidAgent() unitTest;
-// Who		When		Ticket		Details
-// Dan T	05/07/2023	EDS-85		Create Unit Tests for REST services
-// Dan T	06/07/2023	EDS-86		Move repeated code to superclass method
 
 vars
 	dtoResults : DTOResult;
@@ -4495,16 +4247,13 @@ begin
 	self.assertNotNull( dtoResults );
 	self.assertTrue( dtoResults.allErrors.size() > 0 );
 	self.assertEquals( 400, self.erewhonRestService.httpStatusCode );
-	self.assertTrue( app.myCompany.allAgents.size() = 1 );	// EDS-86
+	self.assertTrue( app.myCompany.allAgents.size() = 1 );	
 	self.assertEquals( $AgentNameRequired, dtoResults.allErrors[ 1 ] );
 end;
 }
 testValidAgent
 {
 testValidAgent() unitTest;
-// Who		When		Ticket		Details
-// Dan T	05/07/2023	EDS-85		Create Unit Tests for REST services
-// Dan T	06/07/2023	EDS-86		Move repeated code to superclass method
 
 vars
 	dtoResults : DTOResult;
@@ -4516,7 +4265,7 @@ begin
 	* ARRANGE *
 	***********/
 	create dtoAgent transient;
-	dtoAgent.name := "Test Agent Name";	// EDS-86
+	dtoAgent.name := "Test Agent Name";	
 	dtoAgent.street := "Street";
 	dtoAgent.city := "City";
 	dtoAgent.country := "Country";
@@ -4537,7 +4286,7 @@ begin
 	self.assertNotNull( dtoResults );
 	self.assertTrue( dtoResults.allErrors.size() = 0 );
 	self.assertEquals( 201, self.erewhonRestService.httpStatusCode );
-	self.assertTrue( app.myCompany.allAgents.size() = 2 );	// EDS-86
+	self.assertTrue( app.myCompany.allAgents.size() = 2 );	
 	self.assertEquals( dtoAgent.name, agent.name );
 	self.assertEquals( dtoAgent.street, agent.myAddress.street );
 	self.assertEquals( dtoAgent.city, agent.myAddress.city );
@@ -4554,8 +4303,6 @@ end;
 afterTest
 {
 afterTest() updating, unitTestAfter;
-// Who		When		Ticket		Details
-// Dan T	05/07/2023	EDS-85		Create Unit Tests for REST services
 
 begin
 	inheritMethod();
@@ -4564,8 +4311,6 @@ end;
 beforeTest
 {
 beforeTest() updating, unitTestBefore;
-// Who		When		Ticket		Details
-// Dan T	05/07/2023	EDS-85		Create Unit Tests for REST services
 
 begin
 	inheritMethod();
@@ -4574,9 +4319,6 @@ end;
 testInvalidClient
 {
 testInvalidClient() unitTest;
-// Who		When		Ticket		Details
-// Dan T	05/07/2023	EDS-85		Create Unit Tests for REST services
-// Dan T	06/07/2023	EDS-86		Move repeated code to superclass method
 
 vars
 	dtoResults : DTOResult;
@@ -4607,16 +4349,13 @@ begin
 	self.assertNotNull( dtoResults );
 	self.assertTrue( dtoResults.allErrors.size() > 0 );
 	self.assertEquals( 400, self.erewhonRestService.httpStatusCode );
-	self.assertTrue( app.myCompany.allClients.size() = 1 );	// EDS-86
+	self.assertTrue( app.myCompany.allClients.size() = 1 );	
 	self.assertEquals( $ClientNameRequired, dtoResults.allErrors[ 1 ] );
 end;
 }
 testValidClient
 {
 testValidClient() unitTest;
-// Who		When		Ticket		Details
-// Dan T	05/07/2023	EDS-85		Create Unit Tests for REST services
-// Dan T	06/07/2023	EDS-86		Move repeated code to superclass method
 
 vars
 	dtoResults : DTOResult;
@@ -4628,7 +4367,7 @@ begin
 	* ARRANGE *
 	***********/
 	create dtoClient transient;
-	dtoClient.name := "Test Client Name";	// EDS-86
+	dtoClient.name := "Test Client Name";	
 	dtoClient.street := "Street";
 	dtoClient.city := "City";
 	dtoClient.country := "Country";
@@ -4649,7 +4388,7 @@ begin
 	self.assertNotNull( dtoResults );
 	self.assertTrue( dtoResults.allErrors.size() = 0 );
 	self.assertEquals( 201, self.erewhonRestService.httpStatusCode );
-	self.assertTrue( app.myCompany.allClients.size() = 2 );	// EDS-86
+	self.assertTrue( app.myCompany.allClients.size() = 2 );	
 	self.assertEquals( dtoClient.name, client.name );
 	self.assertEquals( dtoClient.street, client.myAddress.street );
 	self.assertEquals( dtoClient.city, client.myAddress.city );
@@ -4666,8 +4405,6 @@ end;
 afterTest
 {
 afterTest() updating, unitTestAfter;
-// Who		When		Ticket		Details
-// Dan T	05/07/2023	EDS-85		Create Unit Tests for REST services
 
 begin
 	inheritMethod();
@@ -4676,9 +4413,6 @@ end;
 beforeTest
 {
 beforeTest() updating, unitTestBefore;
-// Who		When		Ticket		Details
-// Dan T	05/07/2023	EDS-85		Create Unit Tests for REST services
-// Dan T	06/07/2023	EDS-86		Move repeated code to superclass method
 
 begin
 	inheritMethod();
@@ -4687,9 +4421,6 @@ end;
 testClientNotValid
 {
 testClientNotValid() unitTest;
-// Who		When		Ticket		Details
-// Dan T	05/07/2023	EDS-85		Create Unit Tests for REST services
-// Dan T	06/07/2023	EDS-86		Move repeated code to superclass method
 
 vars
 	dtoResults : DTOResult;
@@ -4706,17 +4437,13 @@ begin
 	self.assertNotNull( dtoResults );
 	self.assertTrue( dtoResults.allErrors.size() > 0 );
 	self.assertEquals( 404, self.erewhonRestService.httpStatusCode );
-	self.assertTrue( app.myCompany.allSalesByItem.size() = 2 );	// EDS-86
+	self.assertTrue( app.myCompany.allSalesByItem.size() = 2 );	
 	self.assertEquals( $ClientNotFound, dtoResults.allErrors[ 1 ] );
 end;
 }
 testCreateRetailSale
 {
 testCreateRetailSale() unitTest;
-// Who		When		Ticket		Details
-// Dan T	05/07/2023	EDS-85		Create Unit Tests for REST services
-// Dan T	06/07/2023	EDS-86		Move repeated code to superclass method
-// Dan T	10/07/2023	EDS-88	 	Rename SaleItem classes to improve clarity
 
 vars
 	dtoResults : DTOResult;
@@ -4739,16 +4466,12 @@ begin
 	self.assertNotNull( dtoResults );
 	self.assertTrue( dtoResults.allErrors.size() = 0 );
 	self.assertEquals( 201, self.erewhonRestService.httpStatusCode );
-	self.assertTrue( app.myCompany.allSalesByItem.size() = 3 );	// EDS-86
+	self.assertTrue( app.myCompany.allSalesByItem.size() = 3 );	
 end;
 }
 testItemNotFound
 {
 testItemNotFound() unitTest;
-// Who		When		Ticket		Details
-// Dan T	05/07/2023	EDS-85		Create Unit Tests for REST services
-// Dan T	06/07/2023	EDS-86		Move repeated code to superclass method
-// Dan T	10/07/2023	EDS-88	 	Rename SaleItem classes to improve clarity
 
 vars
 	dtoResults : DTOResult;
@@ -4765,17 +4488,13 @@ begin
 	self.assertNotNull( dtoResults );
 	self.assertTrue( dtoResults.allErrors.size() > 0 );
 	self.assertEquals( 404, self.erewhonRestService.httpStatusCode );
-	self.assertTrue( app.myCompany.allSalesByItem.size() = 2 );	// EDS-86
+	self.assertTrue( app.myCompany.allSalesByItem.size() = 2 );	
 	self.assertEquals( $ItemNotFound, dtoResults.allErrors[ 1 ] );
 end;
 }
 testItemNotRetailSale
 {
 testItemNotRetailSale() unitTest;
-// Who		When		Ticket		Details
-// Dan T	05/07/2023	EDS-85		Create Unit Tests for REST services
-// Dan T	06/07/2023	EDS-86		Move repeated code to superclass method
-// Dan T	10/07/2023	EDS-88	 	Rename SaleItem classes to improve clarity
 
 vars
 	dtoResults : DTOResult;
@@ -4792,7 +4511,7 @@ begin
 	self.assertNotNull( dtoResults );
 	self.assertTrue( dtoResults.allErrors.size() > 0 );
 	self.assertEquals( 400, self.erewhonRestService.httpStatusCode );
-	self.assertTrue( app.myCompany.allSalesByItem.size() = 2 );	// EDS-86
+	self.assertTrue( app.myCompany.allSalesByItem.size() = 2 );	
 	self.assertEquals( $ItemNotRetailItem, dtoResults.allErrors[ 1 ] );
 end;
 }
@@ -4802,8 +4521,6 @@ end;
 afterTest
 {
 afterTest() updating, unitTestAfter;
-// Who		When		Ticket		Details
-// Dan T	05/07/2023	EDS-85		Create Unit Tests for REST services
 
 begin
 	inheritMethod();
@@ -4812,9 +4529,6 @@ end;
 beforeTest
 {
 beforeTest() updating, unitTestBefore;
-// Who		When		Ticket		Details
-// Dan T	05/07/2023	EDS-85		Create Unit Tests for REST services
-// Dan T	06/07/2023	EDS-86		Move repeated code to superclass method
 
 begin
 	inheritMethod();
@@ -4823,9 +4537,6 @@ end;
 testClientNotValid
 {
 testClientNotValid() unitTest;
-// Who		When		Ticket		Details
-// Dan T	05/07/2023	EDS-85		Create Unit Tests for REST services
-// Dan T	06/07/2023	EDS-86		Move repeated code to superclass method
 
 vars
 	dtoResults : DTOResult;
@@ -4845,16 +4556,13 @@ begin
 	self.assertNotNull( dtoResults );
 	self.assertTrue( dtoResults.allErrors.size() > 0 );
 	self.assertEquals( 404, self.erewhonRestService.httpStatusCode );
-	self.assertTrue( app.myCompany.allSalesByItem.size() = 2 );	// EDS-86
+	self.assertTrue( app.myCompany.allSalesByItem.size() = 2 );	
 	self.assertEquals( $ClientNotFound, dtoResults.allErrors[ 1 ] );
 end;
 }
 testCreateTender
 {
 testCreateTender() unitTest;
-// Who		When		Ticket		Details
-// Dan T	05/07/2023	EDS-85		Create Unit Tests for REST services
-// Dan T	10/07/2023	EDS-88	 	Rename SaleItem classes to improve clarity
 
 vars
 	dtoResults : DTOResult;
@@ -4885,10 +4593,6 @@ end;
 testItemNotFound
 {
 testItemNotFound() unitTest;
-// Who		When		Ticket		Details
-// Dan T	05/07/2023	EDS-85		Create Unit Tests for REST services
-// Dan T	06/07/2023	EDS-86		Move repeated code to superclass method
-// Dan T	10/07/2023	EDS-88	 	Rename SaleItem classes to improve clarity
 
 vars
 	dtoResults : DTOResult;
@@ -4908,17 +4612,13 @@ begin
 	self.assertNotNull( dtoResults );
 	self.assertTrue( dtoResults.allErrors.size() > 0 );
 	self.assertEquals( 404, self.erewhonRestService.httpStatusCode );
-	self.assertTrue( app.myCompany.allSalesByItem.size() = 2 );	// EDS-86
+	self.assertTrue( app.myCompany.allSalesByItem.size() = 2 );	
 	self.assertEquals( $ItemNotFound, dtoResults.allErrors[ 1 ] );
 end;
 }
 testItemNotTenderItem
 {
 testItemNotTenderItem() unitTest;
-// Who		When		Ticket		Details
-// Dan T	05/07/2023	EDS-85		Create Unit Tests for REST services
-// Dan T	06/07/2023	EDS-86		Move repeated code to superclass method
-// Dan T	10/07/2023	EDS-88	 	Rename SaleItem classes to improve clarity
 
 vars
 	dtoResults : DTOResult;
@@ -4938,17 +4638,13 @@ begin
 	self.assertNotNull( dtoResults );
 	self.assertTrue( dtoResults.allErrors.size() > 0 );
 	self.assertEquals( 400, self.erewhonRestService.httpStatusCode );
-	self.assertTrue( app.myCompany.allSalesByItem.size() = 2 );	// EDS-86
+	self.assertTrue( app.myCompany.allSalesByItem.size() = 2 );	
 	self.assertEquals( $ItemNotTenderItem, dtoResults.allErrors[ 1 ] );
 end;
 }
 testOfferLowerThanReserve
 {
 testOfferLowerThanReserve() unitTest;
-// Who		When		Ticket		Details
-// Dan T	05/07/2023	EDS-85		Create Unit Tests for REST services
-// Dan T	06/07/2023	EDS-86		Move repeated code to superclass method
-// Dan T	10/07/2023	EDS-88	 	Rename SaleItem classes to improve clarity
 
 vars
 	dtoResults : DTOResult;
@@ -4974,7 +4670,7 @@ begin
 	self.assertNotNull( dtoResults );
 	self.assertTrue( dtoResults.allErrors.size() > 0 );
 	self.assertEquals( 400, self.erewhonRestService.httpStatusCode );
-	self.assertTrue( app.myCompany.allSalesByItem.size() = 2 );	// EDS-86
+	self.assertTrue( app.myCompany.allSalesByItem.size() = 2 );	
 	self.assertEquals( $TenderOfferLessThanReserve, dtoResults.allErrors[ 1 ] );
 end;
 }
@@ -4984,8 +4680,6 @@ end;
 afterClass
 {
 afterClass() updating, unitTestAfterClass;
-// Who		When		Ticket		Details
-// Dan T	12/06/2023	EDS-67		Refactor web services to use the TAF
 
 begin
 	delete self.myWebService;
@@ -5005,22 +4699,16 @@ afterTest() updating, unitTestAfter;
 //
 // Parameters: 	N/A
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	12/06/2023	EDS-67		Refactor web services to use the TAF
-// Dan T	04/07/2023	EDS-82		Fix Unit Tests
-// Dan T	04/07/2023	EDS-82.v2	Fixed Company reference
 
 begin
 	beginTransaction;
-	delete self.myCompany;	// EDS-82	// EDS-82.v2
+	delete self.myCompany;	
 	commitTransaction;
 end;
 }
 beforeClass
 {
 beforeClass() updating, unitTestBeforeClass;
-// Who		When		Ticket		Details
-// Dan T	12/06/2023	EDS-67		Refactor web services to use the TAF
 
 vars
 	erewhonWebService : ErewhonWebService;
@@ -5044,13 +4732,9 @@ beforeTest() updating, unitTestBefore;
 //
 // Parameters: 	N/A
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	12/06/2023	EDS-67		Refactor web services to use the TAF
-// Dan T	04/07/2023	EDS-82.v2	Fixed Company reference
-// Dan T	06/07/2023	EDS-86		Move repeated code to superclass method
 
 begin
-	self.createTestData();	// EDS-86
+	self.createTestData();	
 end;
 }
 	)
@@ -5070,8 +4754,6 @@ afterClass() unitTestAfterClass, updating;
 //
 // Parameters: 	N/A
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	12/06/2023	EDS-67		Refactor web services to use the TAF
 
 begin
 	delete self.myWebServiceAdmin;
@@ -5080,8 +4762,6 @@ end;
 afterTest
 {
 afterTest() updating, unitTestAfter;
-// Who		When		Ticket		Details
-// Dan T	12/06/2023	EDS-67		Refactor web services to use the TAF
 
 begin
 	inheritMethod();
@@ -5101,8 +4781,6 @@ beforeClass() unitTestBeforeClass, updating;
 //
 // Parameters: 	N/A
 // ---------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	12/06/2023	EDS-67		Refactor web services to use the TAF
 
 vars
 	erewhonWebServiceAdmin : ErewhonWebServiceAdmin;
@@ -5115,8 +4793,6 @@ end;
 beforeTest
 {
 beforeTest() updating, unitTestBefore;
-// Who		When		Ticket		Details
-// Dan T	12/06/2023	EDS-67		Refactor web services to use the TAF
 
 begin
 	inheritMethod();
@@ -5128,8 +4804,6 @@ end;
 afterClass
 {
 afterClass() updating, unitTestAfterClass;
-// Who		When		Ticket		Details
-// Dan T	12/06/2023	EDS-67		Refactor web services to use the TAF
 
 begin
 	inheritMethod();
@@ -5138,8 +4812,6 @@ end;
 afterTest
 {
 afterTest() updating, unitTestAfter;
-// Who		When		Ticket		Details
-// Dan T	12/06/2023	EDS-67		Refactor web services to use the TAF
 
 begin
 	inheritMethod();
@@ -5148,8 +4820,6 @@ end;
 beforeClass
 {
 beforeClass() updating, unitTestBeforeClass;
-// Who		When		Ticket		Details
-// Dan T	12/06/2023	EDS-67		Refactor web services to use the TAF
 
 begin
 	inheritMethod();
@@ -5158,8 +4828,6 @@ end;
 beforeTest
 {
 beforeTest() updating, unitTestBefore;
-// Who		When		Ticket		Details
-// Dan T	12/06/2023	EDS-67		Refactor web services to use the TAF
 
 begin
 	inheritMethod();
@@ -5168,11 +4836,6 @@ end;
 testInvalidAgent
 {
 testInvalidAgent() unitTest;
-// Who		When		Ticket		Details
-// Dan T	12/06/2023	EDS-67		Refactor web services to use the TAF
-// Dan T	28/06/2023	EDS-79		Translatable strings: Remove concatenation
-// Dan T	04/07/2023	EDS-79.v2	Removed WithParam suffix for Translatable Strings
-// Dan T	06/07/2023	EDS-67.v2	Web Services Improvements
 
 constants
 	Agent_Name				: String	= "Peter Smallsmith";
@@ -5188,7 +4851,7 @@ constants
 	Expected_Error_Count 	: Integer	= 1;
 	
 vars
-	dtoResult : DTOResult;	// EDS-67.v2
+	dtoResult : DTOResult;	
 	agentTA : AgentTA;
 	addressTA : AddressTA;
 	
@@ -5219,14 +4882,14 @@ begin
 	* ACT *
 	*******/
 	// Attempt to create the same agent using the webservice
-	dtoResult := self.myWebServiceAdmin.createAgent( Agent_Name, Agent_Street, Agent_City, Agent_Country, Agent_Phone, Agent_Fax, Agent_Email, Agent_Website );	// EDS-67.v2
+	dtoResult := self.myWebServiceAdmin.createAgent( Agent_Name, Agent_Street, Agent_City, Agent_Country, Agent_Phone, Agent_Fax, Agent_Email, Agent_Website );	
 	
 	/*********
 	* ASSERT *
 	**********/
 	self.assertEquals( Expected_Error, dtoResult.statusCode );
 	self.assertEquals( Expected_Error_Count, dtoResult.allErrors.size() );
-	self.assertEquals( $AgentNameAlreadyExists( agentTA.name ), dtoResult.allErrors[ 1 ] );	// EDS-79	// EDS-79.v2
+	self.assertEquals( $AgentNameAlreadyExists( agentTA.name ), dtoResult.allErrors[ 1 ] );	
 	
 epilog
 	delete dtoResult;
@@ -5236,9 +4899,6 @@ end;
 testValidAgent
 {
 testValidAgent() updating, unitTest;
-// Who		When		Ticket		Details
-// Dan T	09/06/2023	EDS-67		Refactor web services to use the TAF
-// Dan T	06/07/2023	EDS-67.v2	Web Services Improvements
 
 constants
 	Agent_Name		: String	= "Rowan Stracke";
@@ -5251,7 +4911,7 @@ constants
 	Agent_Website 	: String 	= "www.funchal.pt";
 	Expected_Status	: Integer	= 201;
 vars
-	dtoResult : DTOResult;	// EDS-67.v2
+	dtoResult : DTOResult;	
 	
 begin
 	/**********
@@ -5262,15 +4922,15 @@ begin
 	/******
 	* ACT *
 	*******/
-	dtoResult := self.myWebServiceAdmin.createAgent( Agent_Name, Agent_Street, Agent_City, Agent_Country, Agent_Phone, Agent_Fax, Agent_Email, Agent_Website );	// EDS-67.v2
+	dtoResult := self.myWebServiceAdmin.createAgent( Agent_Name, Agent_Street, Agent_City, Agent_Country, Agent_Phone, Agent_Fax, Agent_Email, Agent_Website );	
 
 	/*********
 	* ASSERT *
 	**********/
-	self.assertNotNull( dtoResult );								// EDS-67.v2
-	self.assertTrue( dtoResult.guid <> null );						// EDS-67.v2
-	self.assertEquals( 0, dtoResult.allErrors.size() );				// EDS-67.v2
-	self.assertEquals( Expected_Status, dtoResult.statusCode );		// EDS-67.v2
+	self.assertNotNull( dtoResult );								
+	self.assertTrue( dtoResult.guid <> null );						
+	self.assertEquals( 0, dtoResult.allErrors.size() );				
+	self.assertEquals( Expected_Status, dtoResult.statusCode );		
 
 epilog
 	delete dtoResult;
@@ -5282,8 +4942,6 @@ end;
 afterClass
 {
 afterClass() updating, unitTestAfterClass;
-// Who		When		Ticket		Details
-// Dan T	12/06/2023	EDS-67		Refactor web services to use the TAF
 
 begin
 	inheritMethod();
@@ -5292,8 +4950,6 @@ end;
 afterTest
 {
 afterTest() updating, unitTestAfter;
-// Who		When		Ticket		Details
-// Dan T	12/06/2023	EDS-67		Refactor web services to use the TAF
 
 begin
 	inheritMethod();
@@ -5302,8 +4958,6 @@ end;
 beforeClass
 {
 beforeClass() updating, unitTestBeforeClass;
-// Who		When		Ticket		Details
-// Dan T	12/06/2023	EDS-67		Refactor web services to use the TAF
 
 begin
 	inheritMethod();
@@ -5312,8 +4966,6 @@ end;
 beforeTest
 {
 beforeTest() updating, unitTestBefore;
-// Who		When		Ticket		Details
-// Dan T	12/06/2023	EDS-67		Refactor web services to use the TAF
 
 begin
 	inheritMethod();
@@ -5322,11 +4974,6 @@ end;
 testInvalidClient
 {
 testInvalidClient() unitTest;
-// Who		When		Ticket		Details
-// Dan T	12/06/2023	EDS-67		Refactor web services to use the TAF
-// Dan T	28/06/2023	EDS-79		Translatable strings: Remove concatenation
-// Dan T	04/07/2023	EDS-79.v2	Removed WithParam suffix for Translatable Strings
-// Dan T	06/07/2023	EDS-67.v2	Web Services Improvements
 
 constants
 	Client_Name		: String	= "Dariush Kamran";
@@ -5351,7 +4998,7 @@ begin
 	* ARRANGE *
 	***********/
 	
-	create dtoResult transient;	// EDS-67.v2
+	create dtoResult transient;	
 	create clientTA transient;
 	create addressTA transient;
 	
@@ -5371,14 +5018,14 @@ begin
 	/******
 	* ACT *
 	*******/
-	dtoResult := self.myWebServiceAdmin.createClient( Client_Name, Client_Street, Client_City, Client_Country, Client_Phone, Client_Fax, Client_Email, Client_Website ); // EDS-67.v2
+	dtoResult := self.myWebServiceAdmin.createClient( Client_Name, Client_Street, Client_City, Client_Country, Client_Phone, Client_Fax, Client_Email, Client_Website ); 
 	
 	/*********
 	* ASSERT *
 	**********/
 	self.assertEquals( Expected_Error, dtoResult.statusCode );
 	self.assertEquals( Expected_Error_Count, dtoResult.allErrors.size() );
-	self.assertEquals( $ClientNameAlreadyExists( Client_Name ), dtoResult.allErrors[ 1 ] );	// EDS-79	// EDS-79.v2
+	self.assertEquals( $ClientNameAlreadyExists( Client_Name ), dtoResult.allErrors[ 1 ] );	
 	
 epilog
 	delete dtoResult;
@@ -5388,9 +5035,6 @@ end;
 testValidClient
 {
 testValidClient() unitTest;
-// Who		When		Ticket		Details
-// Dan T	12/06/2023	EDS-67		Refactor web services to use the TAF
-// Dan T	06/07/2023	EDS-67.v2	Web Services Improvements
 
 constants
 	Client_Name		: String	= "Dariush Kamran";
@@ -5403,7 +5047,7 @@ constants
 	Client_Website	: String 	= "www.iran.ir";
 	Expected_Status	: Integer	= 201;
 vars
-	dtoResult : DTOResult;	// EDS-67.v2
+	dtoResult : DTOResult;	
 	
 begin
 	/**********
@@ -5414,15 +5058,15 @@ begin
 	/******
 	* ACT *
 	*******/
-	dtoResult := self.myWebServiceAdmin.createClient( Client_Name, Client_Street, Client_City, Client_Country, Client_Phone, Client_Fax, Client_Email, Client_Website ); // EDS-67.v2
+	dtoResult := self.myWebServiceAdmin.createClient( Client_Name, Client_Street, Client_City, Client_Country, Client_Phone, Client_Fax, Client_Email, Client_Website ); 
 	
 	/*********
 	* ASSERT *
 	**********/
-	self.assertNotNull( dtoResult );							// EDS-67.v2
-	self.assertTrue( dtoResult.guid <> null );					// EDS-67.v2
-	self.assertEquals( Expected_Status, dtoResult.statusCode );	// EDS-67.v2
-	self.assertFalse( dtoResult.allErrors.size() > 0 );			// EDS-67.v2
+	self.assertNotNull( dtoResult );							
+	self.assertTrue( dtoResult.guid <> null );					
+	self.assertEquals( Expected_Status, dtoResult.statusCode );	
+	self.assertFalse( dtoResult.allErrors.size() > 0 );			
 	
 end;
 }
@@ -5432,8 +5076,6 @@ end;
 afterClass
 {
 afterClass() updating, unitTestAfterClass;
-// Who		When		Ticket		Details
-// Dan T	12/06/2023	EDS-67		Refactor web services to use the TAF
 
 begin
 	inheritMethod();
@@ -5442,8 +5084,6 @@ end;
 afterTest
 {
 afterTest() updating, unitTestAfter;
-// Who		When		Ticket		Details
-// Dan T	12/06/2023	EDS-67		Refactor web services to use the TAF
 
 begin
 	inheritMethod();
@@ -5452,8 +5092,6 @@ end;
 beforeClass
 {
 beforeClass() updating, unitTestBeforeClass;
-// Who		When		Ticket		Details
-// Dan T	12/06/2023	EDS-67		Refactor web services to use the TAF
 
 begin
 	inheritMethod();
@@ -5462,8 +5100,6 @@ end;
 beforeTest
 {
 beforeTest() updating, unitTestBefore;
-// Who		When		Ticket		Details
-// Dan T	12/06/2023	EDS-67		Refactor web services to use the TAF
 
 begin
 	inheritMethod();
@@ -5472,11 +5108,6 @@ end;
 testInvalidAgent
 {
 testInvalidAgent() unitTest;
-// Who		When		Ticket		Details
-// Dan T	09/06/2023	EDS-67		Refactor web services to use the TAF
-// Dan T	28/06/2023	EDS-79		Translatable strings: Remove concatenation
-// Dan T	04/07/2023	EDS-79.v2	Removed WithParam suffix for Translatable Strings
-// Dan T	06/07/2023	EDS-67.v2	Web Services Improvements
 
 
 constants
@@ -5484,7 +5115,7 @@ constants
 	Expected_Error			: Integer 	= 404;
 	Expected_Error_Count 	: Integer	= 1;
 vars
-	dtoResult : DTOResult;	// EDS-67.v2
+	dtoResult : DTOResult;	
 	
 begin
 	/**********
@@ -5498,14 +5129,14 @@ begin
 	/******
 	* ACT *
 	*******/
-	dtoResult := self.myWebServiceAdmin.deleteAgent( Agent_Name );	// EDS-67.v2
+	dtoResult := self.myWebServiceAdmin.deleteAgent( Agent_Name );	
 
 	/*********
 	* ASSERT *
 	**********/
 	self.assertEquals( Expected_Error, dtoResult.statusCode );
 	self.assertEquals( Expected_Error_Count, dtoResult.allErrors.size() );
-	self.assertEquals( $AgentNameNotFound( Agent_Name ), dtoResult.allErrors[ 1 ] );	// EDS-79	// EDS-79.v2
+	self.assertEquals( $AgentNameNotFound( Agent_Name ), dtoResult.allErrors[ 1 ] );	
 	
 epilog 
 	delete dtoResult;
@@ -5514,9 +5145,6 @@ end;
 testValidAgent
 {
 testValidAgent() unitTest;
-// Who		When		Ticket		Details
-// Dan T	09/06/2023	EDS-67		Refactor web services to use the TAF
-// Dan T	06/07/2023	EDS-67.v2	Web Services Improvements
 
 constants
 	Agent_Name		: String	= "Rowan Stracke";
@@ -5530,7 +5158,7 @@ constants
 	Expected_Status	: Integer 	= 200;
 	
 vars
-	dtoResult : DTOResult;	// EDS-67.v2
+	dtoResult : DTOResult;	
 	agentTA : AgentTA;
 	addressTA : AddressTA;
 	
@@ -5563,15 +5191,15 @@ begin
 	/******
 	* ACT *
 	*******/
-	dtoResult := self.myWebServiceAdmin.deleteAgent( agentTA.name );	// EDS-67.v2
+	dtoResult := self.myWebServiceAdmin.deleteAgent( agentTA.name );	
 
 	/*********
 	* ASSERT *
 	**********/
-	self.assertNotNull( dtoResult );								// EDS-67.v2
-	self.assertEquals( Expected_Status, dtoResult.statusCode );		// EDS-67.v2
-	self.assertTrue( dtoResult.guid = null );						// EDS-67.v2
-	self.assertTrue( dtoResult.allErrors.size() = 0 );				// EDS-67.v2
+	self.assertNotNull( dtoResult );								
+	self.assertEquals( Expected_Status, dtoResult.statusCode );		
+	self.assertTrue( dtoResult.guid = null );						
+	self.assertTrue( dtoResult.allErrors.size() = 0 );				
 	self.assertNull( app.myCompany.allAgents[ agentTA.name ] );
 
 epilog 
@@ -5585,8 +5213,6 @@ end;
 afterClass
 {
 afterClass() updating, unitTestAfterClass;
-// Who		When		Ticket		Details
-// Dan T	12/06/2023	EDS-67		Refactor web services to use the TAF
 
 begin
 	inheritMethod();
@@ -5595,8 +5221,6 @@ end;
 afterTest
 {
 afterTest() updating, unitTestAfter;
-// Who		When		Ticket		Details
-// Dan T	12/06/2023	EDS-67		Refactor web services to use the TAF
 
 begin
 	inheritMethod();
@@ -5605,8 +5229,6 @@ end;
 beforeClass
 {
 beforeClass() updating, unitTestBeforeClass;
-// Who		When		Ticket		Details
-// Dan T	12/06/2023	EDS-67		Refactor web services to use the TAF
 
 begin
 	inheritMethod();
@@ -5615,8 +5237,6 @@ end;
 beforeTest
 {
 beforeTest() updating, unitTestBefore;
-// Who		When		Ticket		Details
-// Dan T	12/06/2023	EDS-67		Refactor web services to use the TAF
 
 begin
 	inheritMethod();
@@ -5625,11 +5245,6 @@ end;
 testInvalidClient
 {
 testInvalidClient() unitTest;
-// Who		When		Ticket		Details
-// Dan T	09/06/2023	EDS-67		Refactor web services to use the TAF
-// Dan T	28/06/2023	EDS-79		Translatable strings: Remove concatenation
-// Dan T	04/07/2023	EDS-79.v2	Removed WithParam suffix for Translatable Strings
-// Dan T	06/07/2023	EDS-67.v2	Web Services Improvements
 
 
 constants
@@ -5638,7 +5253,7 @@ constants
 	Expected_Error_Count 	: Integer	= 1;
 	
 vars
-	dtoResult : DTOResult;	// EDS-67.v2
+	dtoResult : DTOResult;	
 	
 begin
 	/**********
@@ -5652,14 +5267,14 @@ begin
 	/******
 	* ACT *
 	*******/
-	dtoResult := self.myWebServiceAdmin.deleteClient( Client_Name );	// EDS-67.v2
+	dtoResult := self.myWebServiceAdmin.deleteClient( Client_Name );	
 
 	/*********
 	* ASSERT *
 	**********/
 	self.assertEquals( Expected_Error, dtoResult.statusCode );
 	self.assertEquals( Expected_Error_Count, dtoResult.allErrors.size() );
-	self.assertEquals( $ClientNameNotFound( Client_Name ), dtoResult.allErrors[ 1 ] );	// EDS-79	// EDS-79.v2
+	self.assertEquals( $ClientNameNotFound( Client_Name ), dtoResult.allErrors[ 1 ] );	
 
 epilog 
 	delete dtoResult;
@@ -5668,9 +5283,6 @@ end;
 testValidClient
 {
 testValidClient() unitTest;
-// Who		When		Ticket		Details
-// Dan T	09/06/2023	EDS-67		Refactor web services to use the TAF
-// Dan T	06/07/2023	EDS-67.v2	Web Services Improvements
 
 constants
 	Client_Name		: String	= "Rowan Stracke";
@@ -5684,7 +5296,7 @@ constants
 	Expected_Status	: Integer	= 200;
 	
 vars
-	dtoResult : DTOResult;	// EDS-67.v2
+	dtoResult : DTOResult;	
 	clientTA : ClientTA;
 	addressTA : AddressTA;
 	
@@ -5717,14 +5329,14 @@ begin
 	/******
 	* ACT *
 	*******/
-	dtoResult := self.myWebServiceAdmin.deleteClient( clientTA.name );	// EDS-67.v2
+	dtoResult := self.myWebServiceAdmin.deleteClient( clientTA.name );	
 
 	/*********
 	* ASSERT *
 	**********/
-	self.assertNotNull( dtoResult );							// EDS-67.v2
-	self.assertTrue( dtoResult.allErrors.size() = 0 );			// EDS-67.v2
-	self.assertEquals( Expected_Status, dtoResult.statusCode );	// EDS-67.v2
+	self.assertNotNull( dtoResult );							
+	self.assertTrue( dtoResult.allErrors.size() = 0 );			
+	self.assertEquals( Expected_Status, dtoResult.statusCode );	
 	self.assertNull( app.myCompany.allClients[ clientTA.name ] );
 
 epilog 
@@ -5738,8 +5350,6 @@ end;
 afterClass
 {
 afterClass() updating, unitTestAfterClass;
-// Who		When		Ticket		Details
-// Dan T	12/06/2023	EDS-67		Refactor web services to use the TAF
 
 begin
 	inheritMethod();
@@ -5748,8 +5358,6 @@ end;
 afterTest
 {
 afterTest() updating, unitTestAfter;
-// Who		When		Ticket		Details
-// Dan T	12/06/2023	EDS-67		Refactor web services to use the TAF
 
 begin
 	inheritMethod();
@@ -5758,8 +5366,6 @@ end;
 beforeClass
 {
 beforeClass() updating, unitTestBeforeClass;
-// Who		When		Ticket		Details
-// Dan T	12/06/2023	EDS-67		Refactor web services to use the TAF
 
 begin
 	inheritMethod();
@@ -5768,8 +5374,6 @@ end;
 beforeTest
 {
 beforeTest() updating, unitTestBefore;
-// Who		When		Ticket		Details
-// Dan T	12/06/2023	EDS-67		Refactor web services to use the TAF
 
 begin
 	inheritMethod();
@@ -5778,17 +5382,12 @@ end;
 testInvalidAgent
 {
 testInvalidAgent() unitTest;
-// Who		When		Ticket		Details
-// Dan T	09/06/2023	EDS-67		Refactor web services to use the TAF
-// Dan T	28/06/2023	EDS-79		Translatable strings: Remove concatenation
-// Dan T	04/07/2023	EDS-79.v2	Removed WithParam suffix for Translatable Strings
-// Dan T	06/07/2023	EDS-67.v2	Web Services Improvements
 
 constants
 	Agent_Name				: String	= "Some Agent That Does Not Exist";
 	
 vars
-	dtoAgent : DTOAgent;	// EDS-67.v2
+	dtoAgent : DTOAgent;	
 	
 begin
 	/**********
@@ -5813,9 +5412,6 @@ end;
 testValidAgent
 {
 testValidAgent() unitTest;
-// Who		When		Ticket		Details
-// Dan T	12/06/2023	EDS-67		Refactor web services to use the TAF
-// Dan T	06/07/2023	EDS-67.v2	Web Services Improvements
 
 constants
 	Agent_Name		: String	= "Hank Williams";
@@ -5861,7 +5457,7 @@ begin
 	/******
 	* ACT *
 	*******/
-	dtoAgent := self.myWebService.getAgent( Agent_Name );	// EDS-67.v2
+	dtoAgent := self.myWebService.getAgent( Agent_Name );	
 	
 	/*********
 	* ASSERT *
@@ -5886,8 +5482,6 @@ end;
 afterClass
 {
 afterClass() updating, unitTestAfterClass;
-// Who		When		Ticket		Details
-// Dan T	12/06/2023	EDS-67		Refactor web services to use the TAF
 
 begin
 	inheritMethod();
@@ -5896,8 +5490,6 @@ end;
 afterTest
 {
 afterTest() updating, unitTestAfter;
-// Who		When		Ticket		Details
-// Dan T	12/06/2023	EDS-67		Refactor web services to use the TAF
 
 begin
 	inheritMethod();
@@ -5906,8 +5498,6 @@ end;
 beforeClass
 {
 beforeClass() updating, unitTestBeforeClass;
-// Who		When		Ticket		Details
-// Dan T	12/06/2023	EDS-67		Refactor web services to use the TAF
 
 begin
 	inheritMethod();
@@ -5916,8 +5506,6 @@ end;
 beforeTest
 {
 beforeTest() updating, unitTestBefore;
-// Who		When		Ticket		Details
-// Dan T	12/06/2023	EDS-67		Refactor web services to use the TAF
 
 begin
 	inheritMethod();
@@ -5926,8 +5514,6 @@ end;
 testGetAgentNames
 {
 testGetAgentNames() unitTest;
-// Who		When		Ticket		Details
-// Dan T	09/06/2023	EDS-67		Refactor web services to use the TAF
 
 constants
 	Agent_Name		: String	= "Peter Smallsmith";
@@ -5991,8 +5577,6 @@ end;
 afterClass
 {
 afterClass() updating, unitTestAfterClass;
-// Who		When		Ticket		Details
-// Dan T	12/06/2023	EDS-67		Refactor web services to use the TAF
 
 begin
 	inheritMethod();
@@ -6001,8 +5585,6 @@ end;
 afterTest
 {
 afterTest() updating, unitTestAfter;
-// Who		When		Ticket		Details
-// Dan T	12/06/2023	EDS-67		Refactor web services to use the TAF
 
 begin
 	inheritMethod();
@@ -6011,8 +5593,6 @@ end;
 beforeClass
 {
 beforeClass() updating, unitTestBeforeClass;
-// Who		When		Ticket		Details
-// Dan T	12/06/2023	EDS-67		Refactor web services to use the TAF
 
 begin
 	inheritMethod();
@@ -6021,8 +5601,6 @@ end;
 beforeTest
 {
 beforeTest() updating, unitTestBefore;
-// Who		When		Ticket		Details
-// Dan T	12/06/2023	EDS-67		Refactor web services to use the TAF
 
 begin
 	inheritMethod();
@@ -6031,17 +5609,12 @@ end;
 testInvalidClient
 {
 testInvalidClient() unitTest;
-// Who		When		Ticket		Details
-// Dan T	09/06/2023	EDS-67		Refactor web services to use the TAF
-// Dan T	28/06/2023	EDS-79		Translatable strings: Remove concatenation
-// Dan T	04/07/2023	EDS-79.v2	Removed WithParam suffix for Translatable Strings
-// Dan T	06/07/2023	EDS-67.v2	Web Services Improvements
 
 constants
 	Client_Name				: String	= "Some Client That Does Not Exist";
 	
 vars
-	dtoClient : DTOClient;	// EDS-67.v2
+	dtoClient : DTOClient;	
 	
 begin
 	/**********
@@ -6052,12 +5625,12 @@ begin
 	/******
 	* ACT *
 	*******/
-	dtoClient := self.myWebService.getClient( Client_Name );	// EDS-67.v2
+	dtoClient := self.myWebService.getClient( Client_Name );	
 	
 	/*********
 	* ASSERT *
 	**********/
-	self.assertNull( dtoClient );	// EDS-67.v2
+	self.assertNull( dtoClient );	
 
 epilog
 	delete dtoClient;
@@ -6066,9 +5639,6 @@ end;
 testValidClient
 {
 testValidClient() unitTest;
-// Who		When		Ticket		Details
-// Dan T	09/06/2023	EDS-67		Refactor web services to use the TAF
-// Dan T	06/07/2023	EDS-67.v2	Web Services Improvements
 
 constants
 	Client_Name		: String	= "Sarah Bailey";
@@ -6113,7 +5683,7 @@ begin
 	/******
 	* ACT *
 	*******/
-	dtoClient := self.myWebService.getClient( Client_Name );	// EDS-67.v2
+	dtoClient := self.myWebService.getClient( Client_Name );	
 	
 	/*********
 	* ASSERT *
@@ -6137,8 +5707,6 @@ end;
 afterClass
 {
 afterClass() updating, unitTestAfterClass;
-// Who		When		Ticket		Details
-// Dan T	12/06/2023	EDS-67		Refactor web services to use the TAF
 
 begin
 	inheritMethod();
@@ -6147,8 +5715,6 @@ end;
 afterTest
 {
 afterTest() updating, unitTestAfter;
-// Who		When		Ticket		Details
-// Dan T	12/06/2023	EDS-67		Refactor web services to use the TAF
 
 begin
 	inheritMethod();
@@ -6157,8 +5723,6 @@ end;
 beforeClass
 {
 beforeClass() updating, unitTestBeforeClass;
-// Who		When		Ticket		Details
-// Dan T	12/06/2023	EDS-67		Refactor web services to use the TAF
 
 begin
 	inheritMethod();
@@ -6167,8 +5731,6 @@ end;
 beforeTest
 {
 beforeTest() updating, unitTestBefore;
-// Who		When		Ticket		Details
-// Dan T	12/06/2023	EDS-67		Refactor web services to use the TAF
 
 begin
 	inheritMethod();
@@ -6177,8 +5739,6 @@ end;
 testGetClientNames
 {
 testGetClientNames() unitTest;
-// Who		When		Ticket		Details
-// Dan T	12/06/2023	EDS-67		Refactor web services to use the TAF
 
 constants
 	Client_Name		: String	= "Dariush Kamran";
@@ -6243,8 +5803,6 @@ end;
 afterClass
 {
 afterClass() updating, unitTestAfterClass;
-// Who		When		Ticket		Details
-// Dan T	12/06/2023	EDS-67		Refactor web services to use the TAF
 
 begin
 	inheritMethod();
@@ -6253,8 +5811,6 @@ end;
 afterTest
 {
 afterTest() updating, unitTestAfter;
-// Who		When		Ticket		Details
-// Dan T	12/06/2023	EDS-67		Refactor web services to use the TAF
 
 begin
 	inheritMethod();
@@ -6263,8 +5819,6 @@ end;
 beforeClass
 {
 beforeClass() updating, unitTestBeforeClass;
-// Who		When		Ticket		Details
-// Dan T	12/06/2023	EDS-67		Refactor web services to use the TAF
 
 begin
 	inheritMethod();
@@ -6273,10 +5827,6 @@ end;
 beforeTest
 {
 beforeTest() updating, unitTestBefore;
-// Who		When		Ticket		Details
-// Dan T	12/06/2023	EDS-67		Refactor web services to use the TAF
-// Dan T	30/06/2023	EDS-81		Change SaleItems to use GUIDs
-// Dan T	04/07/2023	EDS-82		Fix Unit Tests
 
 begin
 	inheritMethod();
@@ -6285,9 +5835,6 @@ end;
 testClientWithNoPhoto
 {
 testClientWithNoPhoto() unitTest;
-// Who		When		Ticket		Details
-// Dan T	12/06/2023	EDS-67		Refactor web services to use the TAF
-// Dan T	06/07/2023	EDS-67.v2	Web Services Improvements
 
 constants
 	Client_Name		: String	= "Dariush Kamran";
@@ -6333,7 +5880,7 @@ begin
 	/******
 	* ACT *
 	*******/
-	dtoPhoto := self.myWebService.getPhoto( Client_Name );	// EDS-67.v2
+	dtoPhoto := self.myWebService.getPhoto( Client_Name );	
 	
 	/*********
 	* ASSERT *
@@ -6347,10 +5894,6 @@ end;
 testClientWithPhoto
 {
 testClientWithPhoto() updating, unitTest;
-// Who		When		Ticket		Details
-// Dan T	09/06/2023	EDS-67		Refactor web services to use the TAF
-// Dan T	06/07/2023	EDS-67.v2	Web Services Improvements
-// Dan T	06/07/2023	EDS-86		Move repeated code to superclass method
 
 vars
 	dtoPhoto : DTOPhoto;
@@ -6363,7 +5906,7 @@ begin
 	/******
 	* ACT *
 	*******/
-	dtoPhoto := self.myWebService.getPhoto( self.myClient.name );	// EDS-67.v2
+	dtoPhoto := self.myWebService.getPhoto( self.myClient.name );	
 	
 	/*********
 	* ASSERT *
@@ -6377,17 +5920,12 @@ end;
 testInvalidClientName
 {
 testInvalidClientName() unitTest;
-// Who		When		Ticket		Details
-// Dan T	09/06/2023	EDS-67		Refactor web services to use the TAF
-// Dan T	28/06/2023	EDS-79		Translatable strings: Remove concatenation
-// Dan T	04/07/2023	EDS-79.v2	Removed WithParam suffix for Translatable Strings
-// Dan T	06/07/2023	EDS-67.v2	Web Services Improvements
 
 constants
 	Client_Name : String = "Invalid Client";
 	
 vars
-	dtoPhoto : DTOPhoto;	// EDS-67.v2
+	dtoPhoto : DTOPhoto;	
 	
 begin
 	/**********
@@ -6398,12 +5936,12 @@ begin
 	/******
 	* ACT *
 	*******/
-	dtoPhoto := self.myWebService.getPhoto( Client_Name );	// EDS-67.v2
+	dtoPhoto := self.myWebService.getPhoto( Client_Name );	
 	
 	/*********
 	* ASSERT *
 	**********/
-	self.assertNull( dtoPhoto );	// EDS-67.v2
+	self.assertNull( dtoPhoto );	
 
 epilog
 	delete dtoPhoto;
@@ -6415,8 +5953,6 @@ end;
 afterClass
 {
 afterClass() updating, unitTestAfterClass;
-// Who		When		Ticket		Details
-// Dan T	12/06/2023	EDS-67		Refactor web services to use the TAF
 
 begin
 	inheritMethod();
@@ -6425,8 +5961,6 @@ end;
 afterTest
 {
 afterTest() updating, unitTestAfter;
-// Who		When		Ticket		Details
-// Dan T	12/06/2023	EDS-67		Refactor web services to use the TAF
 
 begin
 	inheritMethod();
@@ -6435,8 +5969,6 @@ end;
 beforeClass
 {
 beforeClass() updating, unitTestBeforeClass;
-// Who		When		Ticket		Details
-// Dan T	12/06/2023	EDS-67		Refactor web services to use the TAF
 
 begin
 	inheritMethod();
@@ -6445,8 +5977,6 @@ end;
 beforeTest
 {
 beforeTest() updating, unitTestBefore;
-// Who		When		Ticket		Details
-// Dan T	12/06/2023	EDS-67		Refactor web services to use the TAF
 
 begin
 	inheritMethod();
@@ -6455,11 +5985,6 @@ end;
 testInvalidAgent
 {
 testInvalidAgent() unitTest;
-// Who		When		Ticket		Details
-// Dan T	09/06/2023	EDS-67		Refactor web services to use the TAF
-// Dan T	28/06/2023	EDS-79		Translatable strings: Remove concatenation
-// Dan T	04/07/2023	EDS-79.v2	Removed WithParam suffix for Translatable Strings
-// Dan T	06/07/2023	EDS-67.v2	Web Services Improvements
 
 constants
 	Agent_Name				: String	= "Some Agent That Does Not Exist";
@@ -6473,7 +5998,7 @@ constants
 	Expected_Error			: Integer	= 404;
 	
 vars
-	dtoResult : DTOResult;	// EDS-67.v2
+	dtoResult : DTOResult;	
 	
 begin
 	/**********
@@ -6484,14 +6009,14 @@ begin
 	/******
 	* ACT *
 	*******/
-	dtoResult := self.myWebService.updateAgent( Agent_Name, New_Street, New_City, New_Country, New_Phone, New_Fax, New_Email, New_Website );	// EDS-67.v2
+	dtoResult := self.myWebService.updateAgent( Agent_Name, New_Street, New_City, New_Country, New_Phone, New_Fax, New_Email, New_Website );	
 	
 	/*********
 	* ASSERT *
 	**********/
-	self.assertNotNull( dtoResult );	// EDS-67.v2
+	self.assertNotNull( dtoResult );	
 	self.assertEquals( Expected_Error, dtoResult.statusCode );
-	self.assertTrue( dtoResult.guid = null );	// EDS-67.v2
+	self.assertTrue( dtoResult.guid = null );	
 
 epilog
 	delete dtoResult;
@@ -6500,8 +6025,6 @@ end;
 testValidAgent
 {
 testValidAgent() unitTest;
-// Who		When		Ticket		Details
-// Dan T	09/06/2023	EDS-67		Refactor web services to use the TAF
 
 constants
 	Agent_Name		: String	= "Tabai Tanivula";
@@ -6549,14 +6072,14 @@ begin
 	* ACT *
 	*******/
 	// Update the Agent
-	dtoResult := self.myWebService.updateAgent( Agent_Name, New_Street, New_City, New_Country, New_Phone, New_Fax, New_Email, New_Website );	// EDS-67.v2
+	dtoResult := self.myWebService.updateAgent( Agent_Name, New_Street, New_City, New_Country, New_Phone, New_Fax, New_Email, New_Website );	
 	
 	/*********
 	* ASSERT *
 	**********/
-	self.assertNotNull( dtoResult );								// EDS-67.v2
-	self.assertEquals( Expected_Status, dtoResult.statusCode );		// EDS-67.v2
-	self.assertTrue( dtoResult.guid <> null );						// EDS-67.v2
+	self.assertNotNull( dtoResult );								
+	self.assertEquals( Expected_Status, dtoResult.statusCode );		
+	self.assertTrue( dtoResult.guid <> null );						
 
 epilog
 	delete dtoResult;
@@ -6568,8 +6091,6 @@ end;
 afterClass
 {
 afterClass() updating, unitTestAfterClass;
-// Who		When		Ticket		Details
-// Dan T	12/06/2023	EDS-67		Refactor web services to use the TAF
 
 begin
 	inheritMethod();
@@ -6578,8 +6099,6 @@ end;
 afterTest
 {
 afterTest() updating, unitTestAfter;
-// Who		When		Ticket		Details
-// Dan T	12/06/2023	EDS-67		Refactor web services to use the TAF
 
 begin
 	inheritMethod();
@@ -6588,8 +6107,6 @@ end;
 beforeClass
 {
 beforeClass() updating, unitTestBeforeClass;
-// Who		When		Ticket		Details
-// Dan T	12/06/2023	EDS-67		Refactor web services to use the TAF
 
 begin
 	inheritMethod();
@@ -6598,9 +6115,6 @@ end;
 beforeTest
 {
 beforeTest() updating, unitTestBefore;
-// Who		When		Ticket		Details
-// Dan T	12/06/2023	EDS-67		Refactor web services to use the TAF
-// Dan T	06/07/2023	EDS-86		Move repeated code to superclass method
 
 begin
 	inheritMethod();
@@ -6609,11 +6123,6 @@ end;
 testInvalidAgent
 {
 testInvalidAgent() unitTest;
-// Who		When		Ticket		Details
-// Dan T	09/06/2023	EDS-67		Refactor web services to use the TAF
-// Dan T	28/06/2023	EDS-79		Translatable strings: Remove concatenation
-// Dan T	04/07/2023	EDS-79.v2	Removed WithParam suffix for Translatable Strings
-// Dan T	06/07/2023	EDS-67.v2	Web Services Improvements
 
 constants
 	New_Agent_Name			: String	= "Some Agent That Does Not Exist";
@@ -6629,7 +6138,7 @@ constants
 	Expected_Error_Count 	: Integer	= 1;
 	
 vars
-	dtoResult : DTOResult;	// EDS-67.v2
+	dtoResult : DTOResult;	
 	dtoAgent : DTOAgent;
 	
 begin
@@ -6650,14 +6159,14 @@ begin
 	/******
 	* ACT *
 	*******/
-	dtoResult := self.myWebService.updateAgentWithDTO( dtoAgent );	// EDS-67.v2
+	dtoResult := self.myWebService.updateAgentWithDTO( dtoAgent );	
 	
 	/*********
 	* ASSERT *
 	**********/
 	self.assertEquals( Expected_Error, dtoResult.statusCode );
 	self.assertEquals( Expected_Error_Count, dtoResult.allErrors.size() );
-	self.assertEquals( $AgentNameNotFound( New_Agent_Name ), dtoResult.allErrors[ 1 ] );	// EDS-79	// EDS-79.v2
+	self.assertEquals( $AgentNameNotFound( New_Agent_Name ), dtoResult.allErrors[ 1 ] );	
 
 epilog 
 	delete dtoAgent;
@@ -6667,10 +6176,6 @@ end;
 testValidAgent
 {
 testValidAgent() unitTest;
-// Who		When		Ticket		Details
-// Dan T	09/06/2023	EDS-67		Refactor web services to use the TAF
-// Dan T	06/07/2023	EDS-67.v2	Web Services Improvements
-// Dan T	06/07/2023	EDS-86		Move repeated code to superclass method
 
 constants
 	New_Street 		: String 	= "238 Ness Drive";
@@ -6680,18 +6185,18 @@ constants
 	New_Fax 		: String 	= "01626 476764";
 	New_Email 		: String 	= "tabai@shaldon.uk";
 	New_Website 	: String 	= "www.shaldon.uk";
-	Expected_Status : Integer 	= 200;	// EDS-67.v2
+	Expected_Status : Integer 	= 200;	
 	
 vars
 	dtoAgent : DTOAgent;
-	dtoResult : DTOResult;	// EDS-67.v2
+	dtoResult : DTOResult;	
 	
 begin
 	/**********
 	* ARRANGE *
 	***********/
 	create dtoAgent transient;
-	dtoAgent.name := self.myAgent.name;	// EDS-86
+	dtoAgent.name := self.myAgent.name;	
 	dtoAgent.street := New_Street;
 	dtoAgent.city := New_City;
 	dtoAgent.country := New_Country;
@@ -6703,7 +6208,7 @@ begin
 	/******
 	* ACT *
 	*******/
-	dtoResult := self.myWebService.updateAgentWithDTO( dtoAgent );	// EDS-67.v2
+	dtoResult := self.myWebService.updateAgentWithDTO( dtoAgent );	
 	
 	/*********
 	* ASSERT *
@@ -6723,8 +6228,6 @@ end;
 afterClass
 {
 afterClass() updating, unitTestAfterClass;
-// Who		When		Ticket		Details
-// Dan T	12/06/2023	EDS-67		Refactor web services to use the TAF
 
 begin
 	inheritMethod();
@@ -6733,8 +6236,6 @@ end;
 afterTest
 {
 afterTest() updating, unitTestAfter;
-// Who		When		Ticket		Details
-// Dan T	12/06/2023	EDS-67		Refactor web services to use the TAF
 
 begin
 	inheritMethod();
@@ -6743,8 +6244,6 @@ end;
 beforeClass
 {
 beforeClass() updating, unitTestBeforeClass;
-// Who		When		Ticket		Details
-// Dan T	12/06/2023	EDS-67		Refactor web services to use the TAF
 
 begin
 	inheritMethod();
@@ -6753,8 +6252,6 @@ end;
 beforeTest
 {
 beforeTest() updating, unitTestBefore;
-// Who		When		Ticket		Details
-// Dan T	12/06/2023	EDS-67		Refactor web services to use the TAF
 
 begin
 	inheritMethod();
@@ -6763,11 +6260,6 @@ end;
 testInvalidClient
 {
 testInvalidClient() unitTest;
-// Who		When		Ticket		Details
-// Dan T	09/06/2023	EDS-67		Refactor web services to use the TAF
-// Dan T	28/06/2023	EDS-79		Translatable strings: Remove concatenation
-// Dan T	04/07/2023	EDS-79.v2	Removed WithParam suffix for Translatable Strings
-// Dan T	06/07/2023	EDS-67.v2	Web Services Improvements
 
 constants
 	Client_Name				: String	= "Client Name Does Not Exist";
@@ -6782,7 +6274,7 @@ constants
 	Expected_Error_Count 	: Integer	= 1;
 	
 vars
-	dtoResult : DTOResult;	// EDS-67.v2
+	dtoResult : DTOResult;	
 	
 begin
 	/**********
@@ -6793,14 +6285,14 @@ begin
 	/******
 	* ACT *
 	*******/
-	dtoResult := self.myWebService.updateClient( Client_Name, New_Street, New_City, New_Country, New_Phone, New_Fax, New_Email, New_Website ); // EDS-67.v2
+	dtoResult := self.myWebService.updateClient( Client_Name, New_Street, New_City, New_Country, New_Phone, New_Fax, New_Email, New_Website ); 
 	
 	/*********
 	* ASSERT *
 	**********/
 	self.assertEquals( Expected_Error, dtoResult.statusCode );
 	self.assertEquals( Expected_Error_Count, dtoResult.allErrors.size() );
-	self.assertEquals( $ClientNameNotFound( Client_Name ), dtoResult.allErrors[ 1 ] );	// EDS-79	// EDS-79.v2
+	self.assertEquals( $ClientNameNotFound( Client_Name ), dtoResult.allErrors[ 1 ] );	
 
 epilog
 	delete dtoResult;
@@ -6809,9 +6301,6 @@ end;
 testValidClient
 {
 testValidClient() unitTest;
-// Who		When		Ticket		Details
-// Dan T	09/06/2023	EDS-67		Refactor web services to use the TAF
-// Dan T	06/07/2023	EDS-67.v2	Web Services Improvements
 
 constants
 	Client_Name		: String	= "Pauline Wild";
@@ -6825,7 +6314,7 @@ constants
 	Expected_Status : Integer	= 200;
 	
 vars
-	dtoResult : DTOResult;	// EDS-67.v2
+	dtoResult : DTOResult;	
 	clientTA : ClientTA;
 	addressTA : AddressTA;
 begin
@@ -6863,7 +6352,7 @@ begin
 	* ASSERT *
 	**********/
 	self.assertEquals( Expected_Status, dtoResult.statusCode );
-	self.assertTrue( dtoResult.guid <> null ); 	// EDS-67.v2
+	self.assertTrue( dtoResult.guid <> null ); 	
 
 epilog
 	delete dtoResult;
@@ -6876,8 +6365,6 @@ end;
 afterClass
 {
 afterClass() updating, unitTestAfterClass;
-// Who		When		Ticket		Details
-// Dan T	12/06/2023	EDS-67		Refactor web services to use the TAF
 
 begin
 	inheritMethod();
@@ -6886,8 +6373,6 @@ end;
 afterTest
 {
 afterTest() updating, unitTestAfter;
-// Who		When		Ticket		Details
-// Dan T	12/06/2023	EDS-67		Refactor web services to use the TAF
 
 begin
 	inheritMethod();
@@ -6896,8 +6381,6 @@ end;
 beforeClass
 {
 beforeClass() updating, unitTestBeforeClass;
-// Who		When		Ticket		Details
-// Dan T	12/06/2023	EDS-67		Refactor web services to use the TAF
 
 begin
 	inheritMethod();
@@ -6906,8 +6389,6 @@ end;
 beforeTest
 {
 beforeTest() updating, unitTestBefore;
-// Who		When		Ticket		Details
-// Dan T	12/06/2023	EDS-67		Refactor web services to use the TAF
 
 begin
 	inheritMethod();
@@ -6916,11 +6397,6 @@ end;
 testInvalidClient
 {
 testInvalidClient() unitTest;
-// Who		When		Ticket		Details
-// Dan T	09/06/2023	EDS-67		Refactor web services to use the TAF
-// Dan T	28/06/2023	EDS-79		Translatable strings: Remove concatenation
-// Dan T	04/07/2023	EDS-79.v2	Removed WithParam suffix for Translatable Strings
-// Dan T	06/07/2023	EDS-67.v2	Web Services Improvements
 
 
 constants
@@ -6936,7 +6412,7 @@ constants
 	Expected_Error_Count 	: Integer	= 1;
 	
 vars
-	dtoResult : DTOResult;	// EDS-67.v2
+	dtoResult : DTOResult;	
 	dtoClient : DTOClient;
 	
 begin
@@ -6957,14 +6433,14 @@ begin
 	/******
 	* ACT *
 	*******/
-	dtoResult := self.myWebService.updateClientWithDTO( dtoClient );	// EDS-67.v2
+	dtoResult := self.myWebService.updateClientWithDTO( dtoClient );	
 	
 	/*********
 	* ASSERT *
 	**********/
 	self.assertEquals( Expected_Error, dtoResult.statusCode );
 	self.assertEquals( Expected_Error_Count, dtoResult.allErrors.size() );
-	self.assertEquals( $ClientNameNotFound( New_Client_Name ), dtoResult.allErrors[ 1 ] );	// EDS-79	// EDS-79.v2
+	self.assertEquals( $ClientNameNotFound( New_Client_Name ), dtoResult.allErrors[ 1 ] );	
 
 epilog 
 	delete dtoClient;
@@ -6974,9 +6450,6 @@ end;
 testValidClient
 {
 testValidClient() unitTest;
-// Who		When		Ticket		Details
-// Dan T	09/06/2023	EDS-67		Refactor web services to use the TAF
-// Dan T	06/07/2023	EDS-67.v2	Web Services Improvements
 
 constants
 	Client_Name		: String	= "Roger Boeing";
@@ -6987,7 +6460,7 @@ constants
 	New_Fax 		: String 	= "06172 01264";
 	New_Email 		: String 	= "roger@friedrichsdorf.de";
 	New_Website 	: String 	= "www.Friedrichsdorf.de";
-	Expected_Status	: Integer	= 200;	// EDS-67.v2
+	Expected_Status	: Integer	= 200;	
 	
 vars
 	dtoClient : DTOClient;
@@ -7033,7 +6506,7 @@ begin
 	/******
 	* ACT *
 	*******/
-	dtoResult := self.myWebService.updateClientWithDTO( dtoClient );	// EDS-67.v2
+	dtoResult := self.myWebService.updateClientWithDTO( dtoClient );	
 	
 	/*********
 	* ASSERT *
@@ -7064,11 +6537,6 @@ getAgent( pName : String ) : DTOAgent webService;
 //
 // Returns:		A DTOAgent object for the found agent
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	08/06/2023	EDS-67		Refactor web services to use the TAF
-// Dan T	28/06/2023	EDS-79		Translatable strings: Remove concatenation
-// Dan T	04/07/2023	EDS-79.v2	Removed WithParam suffix for Translatable Strings
-// Dan T	06/07/2023	EDS-67.v2	Web Services Improvements
 
 
 vars
@@ -7078,7 +6546,7 @@ begin
 	agent := app.myCompany.allAgents[ pName ];
 	
 	if agent = null then
-		return null;	// EDS-67.v2
+		return null;	
 	endif;
 	
 	create dtoAgent transient;
@@ -7099,8 +6567,6 @@ getAgentNames() : DTONameArray webService;
 //
 // Returns:		A DTONameArray containing the names of all Agents in the company.
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	08/06/2023	EDS-67		Refactor web services to use the TAF
 
 vars
 	dtoName : DTOName;
@@ -7130,11 +6596,6 @@ getClient( pName : String ) : DTOClient webService;
 //
 // Returns:		A DTOClient object for the found client
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	08/06/2023	EDS-67		Refactor web services to use the TAF
-// Dan T	28/06/2023	EDS-79		Translatable strings: Remove concatenation
-// Dan T	04/07/2023	EDS-79.v2	Removed WithParam suffix for Translatable Strings
-// Dan T	06/07/2023	EDS-67.v2	Web Services Improvements
 
 vars
 	dtoClient : DTOClient;
@@ -7144,7 +6605,7 @@ begin
 	client := app.myCompany.allClients[ pName.trimBlanks() ];
 	
 	if client = null then
-		return null;	// EDS-67.v2
+		return null;	
 	endif;
 	
 	create dtoClient transient;
@@ -7165,8 +6626,6 @@ getClientNames() : DTONameArray webService;
 //
 // Returns:		A DTONameArray containing the names of all Clients in the company.
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	08/06/2023	EDS-67		Refactor web services to use the TAF
 
 vars
 	dtoName : DTOName;
@@ -7196,21 +6655,17 @@ getPhoto( pName : String ) : DTOPhoto webService;
 //
 // Returns:		A DTOPhoto object containing the found photo as a Binary
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	08/06/2023	EDS-67		Refactor web services to use the TAF
-// Dan T	28/06/2023	EDS-79		Translatable strings: Remove concatenation
-// Dan T	04/07/2023	EDS-79.v2	Removed WithParam suffix for Translatable Strings
 
 vars
 	client : Client;
 	sale : Sale;
-	dtoPhoto : DTOPhoto;	// EDS-67.v2
+	dtoPhoto : DTOPhoto;	
 	
 begin
 	client := app.myCompany.allClients[ pName ];
 	
 	if client = null then
-		return null;	// EDS-67.v2
+		return null;	
 	endif;
 	
 	create dtoPhoto transient;
@@ -7250,15 +6705,10 @@ updateAgent( 	pName : String;
 //
 // Returns:		A DTOResult
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	08/06/2023	EDS-67		Refactor web services to use the TAF
-// Dan T	28/06/2023	EDS-79		Translatable strings: Remove concatenation
-// Dan T	04/07/2023	EDS-79.v2	Removed WithParam suffix for Translatable Strings
-// Dan T	06/07/2023	EDS-67.v2	Web Services Improvements
 
 vars
 	agent : Agent;
-	dtoResult : DTOResult;	// EDS-67.v2
+	dtoResult : DTOResult;	
 	agentTA : AgentTA;
 	
 begin
@@ -7269,7 +6719,7 @@ begin
 	// Check if the agent was found, if not return a 404 (Not Found) status code
 	if agent = null then
 		dtoResult.statusCode := Error_Not_Found;
-		dtoResult.allErrors.add( $AgentNameNotFound( pName ) );	// EDS-79	// EDS-79.v2
+		dtoResult.allErrors.add( $AgentNameNotFound( pName ) );	
 		return dtoResult;
 	endif;
 	
@@ -7295,8 +6745,8 @@ begin
 		return dtoResult;
 	endif;
 
-	dtoResult.statusCode := Status_Success;				// EDS-67.v2
-	dtoResult.guid := agentTA.getModelObject().guid;	// EDS-67.v2
+	dtoResult.statusCode := Status_Success;				
+	dtoResult.guid := agentTA.getModelObject().guid;	
 	
 	return dtoResult;
 end;
@@ -7313,26 +6763,21 @@ updateAgentWithDTO( pDTOAgent : DTOAgent ) : DTOResult webService;
 //
 // Returns:		A DTOAgent containing the updated Agent details
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	08/06/2023	EDS-67		Refactor web services to use the TAF
-// Dan T	28/06/2023	EDS-79		Translatable strings: Remove concatenation
-// Dan T	04/07/2023	EDS-79.v2	Removed WithParam suffix for Translatable Strings
-// Dan T	06/07/2023	EDS-67.v2	Web Services Improvements
 
 vars
 	agent : Agent;
-	dtoResult : DTOResult;	// EDS-67.v2
+	dtoResult : DTOResult;	
 	agentTA : AgentTA;
 	
 begin
-	create dtoResult transient;	// EDS-67.v2
+	create dtoResult transient;	
 	
 	agent := app.myCompany.allAgents[ pDTOAgent.name ];
 	
 	// Check if the agent was found, if not return a 404 (Not Found) status code
 	if agent = null then
 		dtoResult.statusCode := Error_Not_Found;
-		dtoResult.allErrors.add( $AgentNameNotFound( pDTOAgent.name) );	// EDS-79	// EDS-79.v2
+		dtoResult.allErrors.add( $AgentNameNotFound( pDTOAgent.name) );	
 		return dtoResult;
 	endif;
 	
@@ -7358,10 +6803,10 @@ begin
 		return dtoResult;
 	endif;
 
-	dtoResult.guid := agentTA.getModelObject().guid;	// EDS-67.v2
-	dtoResult.statusCode := Status_Success;				// EDS-67.v2
+	dtoResult.guid := agentTA.getModelObject().guid;	
+	dtoResult.statusCode := Status_Success;				
 	
-	return dtoResult;	// EDS-67.v2
+	return dtoResult;	
 end;
 }
 updateClient
@@ -7390,16 +6835,11 @@ updateClient( 	pName : String;
 //
 // Returns:		A DTOClient containing the updated Client details
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	08/06/2023	EDS-67		Refactor web services to use the TAF
-// Dan T	28/06/2023	EDS-79		Translatable strings: Remove concatenation
-// Dan T	04/07/2023	EDS-79.v2	Removed WithParam suffix for Translatable Strings
-// Dan T	06/07/2023	EDS-67.v2	Web Services Improvements
 
 
 vars
 	client : Client;
-	dtoResult : DTOResult;	// EDS-67.v2
+	dtoResult : DTOResult;	
 	clientTA : ClientTA;
 	
 begin
@@ -7410,7 +6850,7 @@ begin
 	// Check if the client was found, if not return a 404 (Not Found) status code
 	if client = null then
 		dtoResult.statusCode := Error_Not_Found;
-		dtoResult.allErrors.add( $ClientNameNotFound( pName ) );	// EDS-79	// EDS-79.v2
+		dtoResult.allErrors.add( $ClientNameNotFound( pName ) );	
 		return dtoResult;
 	endif;
 	
@@ -7437,10 +6877,10 @@ begin
 	endif;
 
 	// Create Client DTO
-	dtoResult.guid := clientTA.getModelObject().guid;	// EDS-67.v2
-	dtoResult.statusCode := Status_Success;				// EDS-67.v2
+	dtoResult.guid := clientTA.getModelObject().guid;	
+	dtoResult.statusCode := Status_Success;				
 	
-	return dtoResult;	// EDS-67.v2
+	return dtoResult;	
 end;
 }
 updateClientWithDTO
@@ -7455,11 +6895,6 @@ updateClientWithDTO( pDTOClient : DTOClient ) : DTOResult webService;
 //
 // Returns:		A DTOClient containing the updated Client details
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	08/06/2023	EDS-67		Refactor web services to use the TAF
-// Dan T	28/06/2023	EDS-79		Translatable strings: Remove concatenation
-// Dan T	04/07/2023	EDS-79.v2	Removed WithParam suffix for Translatable Strings
-// Dan T	06/07/2023	EDS-67.v2	Web Services Improvements
 
 vars
 	client : Client;
@@ -7467,14 +6902,14 @@ vars
 	clientTA : ClientTA;
 	
 begin
-	create dtoResult transient;	// EDS-67.v2
+	create dtoResult transient;	
 	
 	client := app.myCompany.allClients[ pDTOClient.name ];
 	
 	// Check if the client was found, if not return a 404 (Not Found) status code
 	if client = null then
 		dtoResult.statusCode := Error_Not_Found;
-		dtoResult.allErrors.add( $ClientNameNotFound( pDTOClient.name ) );	// EDS-79	// EDS-79.v2
+		dtoResult.allErrors.add( $ClientNameNotFound( pDTOClient.name ) );	
 		return dtoResult;
 	endif;
 	
@@ -7499,10 +6934,10 @@ begin
 		return dtoResult;
 	endif;
 
-	dtoResult.guid := clientTA.getModelObject().guid;	// EDS-67.v2
-	dtoResult.statusCode := Status_Success;				// EDS-67.v2
+	dtoResult.guid := clientTA.getModelObject().guid;	
+	dtoResult.statusCode := Status_Success;				
 	
-	return dtoResult;	// EDS-67.v2
+	return dtoResult;	
 end;
 }
 	)
@@ -7534,17 +6969,11 @@ createAgent( 	pName : String;
 //
 // Returns:		A DTOResult containing the updated Agents guid
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	08/06/2023	EDS-67		Refactor web services to use the TAF
-// Dan T	28/06/2023	EDS-79		Translatable strings: Remove concatenation
-// Dan T	04/07/2023	EDS-79.v2	Removed WithParam suffix for Translatable Strings
-// Dan T	04/07/2023	EDS-79.v3	Corrected Error Messages
-// Dan T	06/07/2023	EDS-67.v2	Web Services Improvements
 
 
 vars
 	agent : Agent;
-	dtoResult : DTOResult;	// EDS-67.v2
+	dtoResult : DTOResult;	
 	agentTA : AgentTA;
 	addressTA : AddressTA;
 	
@@ -7556,7 +6985,7 @@ begin
 	// Check if the agent was found
 	if agent <> null then
 		dtoResult.statusCode := Error_Conflict;
-		dtoResult.allErrors.add( $AgentNameAlreadyExists( pName ) );	// EDS-79	// EDS-79.v2	// EDS-79.v3
+		dtoResult.allErrors.add( $AgentNameAlreadyExists( pName ) );	
 		return dtoResult;	
 	endif;
 	
@@ -7581,8 +7010,8 @@ begin
 		return dtoResult;
 	endif;
 
-	dtoResult.guid := agentTA.getModelObject().guid;	// EDS-67.v2
-	dtoResult.statusCode := Status_Created;				// EDS-67.v2
+	dtoResult.guid := agentTA.getModelObject().guid;	
+	dtoResult.statusCode := Status_Created;				
 	
 	return dtoResult;
 end;
@@ -7613,29 +7042,23 @@ createClient( 	pName : String;
 //
 // Returns:		A DTOResult containing the updated Clients guid
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	08/06/2023	EDS-67		Refactor web services to use the TAF
-// Dan T	28/06/2023	EDS-79		Translatable strings: Remove concatenation
-// Dan T	04/07/2023	EDS-79.v2	Removed WithParam suffix for Translatable Strings
-// Dan T	04/07/2023	EDS-79.v3	Corrected Error Messages
-// Dan T	06/07/2023	EDS-67.v2	Web Services Improvements
 
 
 vars
 	client : Client;
-	dtoResult : DTOResult;	// EDS-67.v2
+	dtoResult : DTOResult;	
 	clientTA : ClientTA;
 	addressTA : AddressTA;
 	
 begin
-	create dtoResult transient;	// EDS-67.v2
+	create dtoResult transient;	
 	
 	client := app.myCompany.allClients[ pName ];
 	
 	// Check if the client was found
 	if client <> null then
 		dtoResult.statusCode := Error_Conflict;
-		dtoResult.allErrors.add( $ClientNameAlreadyExists( pName ) );	// EDS-79	// EDS-79.v2	// EDS-79.v3
+		dtoResult.allErrors.add( $ClientNameAlreadyExists( pName ) );	
 		return dtoResult;
 	endif;
 	
@@ -7660,8 +7083,8 @@ begin
 		return dtoResult;
 	endif;
 	
-	dtoResult.guid := clientTA.getModelObject().guid;	// EDS-67.v2
-	dtoResult.statusCode := Status_Created;				// EDS-67.v2
+	dtoResult.guid := clientTA.getModelObject().guid;	
+	dtoResult.statusCode := Status_Created;				
 	
 	return dtoResult;
 end;
@@ -7678,27 +7101,21 @@ deleteAgent( pName : String ) : DTOResult webService;
 //
 // Returns:		A DTOResult 
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	08/06/2023	EDS-67		Refactor web services to use the TAF
-// Dan T	28/06/2023	EDS-79		Translatable strings: Remove concatenation
-// Dan T	04/07/2023	EDS-79.v2	Removed WithParam suffix for Translatable Strings
-// Dan T	04/07/2023	EDS-79.v2	Removed WithParam suffix for Translatable Strings
-// Dan T	06/07/2023	EDS-67.v2	Web Services Improvements
 
 vars
 	agent : Agent;
-	dtoResult : DTOResult;	// EDS-67.v2
+	dtoResult : DTOResult;	
 	agentTA : AgentTA;
 	
 begin
-	create dtoResult transient;	// EDS-67.v2
+	create dtoResult transient;	
 	
 	agent := app.myCompany.allAgents[ pName ];
 	
 	// Check if the agent was found
 	if agent = null then
 		dtoResult.statusCode := Error_Not_Found;
-		dtoResult.allErrors.add( $AgentNameNotFound( pName ) );	// EDS-79	// EDS-79.v2
+		dtoResult.allErrors.add( $AgentNameNotFound( pName ) );	
 		return dtoResult;
 	endif;
 	
@@ -7710,7 +7127,7 @@ begin
 	// Attempt to delete the agent
 	if not agentTA.persistEntity( TransactionType_Delete ) then
 		dtoResult.statusCode := Error_Server_Error;
-		dtoResult.allErrors.add( $CouldNotDeleteAgent( pName ) );	// EDS-79	// EDS-79.v2
+		dtoResult.allErrors.add( $CouldNotDeleteAgent( pName ) );	
 		return dtoResult;
 	endif;
 
@@ -7731,20 +7148,15 @@ deleteClient( pName : String ) : DTOResult webService;
 //
 // Returns:		A DTOResult
 // --------------------------------------------------------------------------------
-// Who		When		Ticket		Details
-// Dan T	08/06/2023	EDS-67		Refactor web services to use the TAF
-// Dan T	28/06/2023	EDS-79		Translatable strings: Remove concatenation
-// Dan T	04/07/2023	EDS-79.v2	Removed WithParam suffix for Translatable Strings
-// Dan T	06/07/2023	EDS-67.v2	Web Services Improvements
 
 
 vars
 	client : Client;
-	dtoResult : DTOResult;	// EDS-67.v2
+	dtoResult : DTOResult;	
 	clientTA : ClientTA;
 	
 begin
-	create dtoResult transient;	// EDS-67.v2
+	create dtoResult transient;	
 	
 	// Find the Client
 	client := app.myCompany.allClients[ pName ];
@@ -7752,7 +7164,7 @@ begin
 	// Check if the client was found
 	if client = null then
 		dtoResult.statusCode := Error_Not_Found;
-		dtoResult.allErrors.add( $ClientNameNotFound( pName ) );	// EDS-79	// EDS-79.v2
+		dtoResult.allErrors.add( $ClientNameNotFound( pName ) );	
 		return dtoResult;
 	endif;
 	
@@ -7764,13 +7176,13 @@ begin
 	// Attempt to delete the client
 	if not clientTA.persistEntity( TransactionType_Delete ) then
 		dtoResult.statusCode := Error_Server_Error;
-		dtoResult.allErrors.add( $CouldNotDeleteClient( pName ) );	// EDS-79	// EDS-79.v2
+		dtoResult.allErrors.add( $CouldNotDeleteClient( pName ) );	
 		return dtoResult;
 	endif;
 
-	dtoResult.statusCode := Status_Success;	// EDS-67.v2
+	dtoResult.statusCode := Status_Success;	
 	
-	return dtoResult;						// EDS-67.v2
+	return dtoResult;						
 end;
 }
 	)
