@@ -1,0 +1,91 @@
+﻿<Window x:Class="ShopUI.Views.Confirmation"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ShopUI.Views"
+        mc:Ignorable="d"
+        xmlns:viewmodels="clr-namespace:ShopUI.ViewModels" 
+        xmlns:Components="clr-namespace:ShopUI.Components"
+        d:DataContext="{d:DesignInstance Type=viewmodels:ConfirmationVM}"
+        Title="Confirmation" MinHeight="600" MinWidth="800">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+
+        <Components:PageHeader Grid.Row="0" />
+
+        <Label Grid.Row="1" Style="{StaticResource Heading2}" Content="Confirmation Receipt" HorizontalAlignment="Center" Margin="15"/>
+
+        <DataGrid Grid.Row="2" SelectionMode="Single" SelectionUnit="FullRow" ItemsSource="{Binding Path=CartItems}" AutoGenerateColumns="False" IsReadOnly="True">
+            <DataGrid.Columns>
+                <!-- Transaction -->
+                <DataGridTemplateColumn Header="Transaction" Width="80">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Label Content="{Binding Transaction}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <!-- Item Code -->
+                <DataGridTemplateColumn Header="Code" Width="80">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Label Content="{Binding Code}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <!-- Item Name -->
+                <DataGridTemplateColumn Header="Product" Width="200">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Label Content="{Binding MyItem.Name}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <!-- Item Price -->
+                <DataGridTemplateColumn Header="Item Price" Width="100">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Label Content="{Binding MyItem.Price}" ContentStringFormat="C" HorizontalContentAlignment="Center"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <!-- Offer -->
+                <DataGridTemplateColumn Header="Tender Offer" Width="100">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Label Content="{Binding Offer}" ContentStringFormat="C" HorizontalContentAlignment="Center"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <!-- Agent -->
+                <DataGridTemplateColumn Header="Agent" Width="150">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Label Content="{Binding MyItem.MyAgent.Name}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+            </DataGrid.Columns>
+            
+        </DataGrid>
+
+        <Button Grid.Row="3" Style="{StaticResource ButtonBlue}" Content="Close" Command="{Binding CloseCommand}" Margin="0 20 0 50" Width="100" />
+
+        <Components:PageFooter Grid.Row="4">
+            <TextBlock  Margin="15,5" Width="525" TextWrapping="Wrap">
+                    The above Retail Sale items have been charged to your Account and will be sent to you within 24 hours. Any bids you have made for Tender items have been
+                    recorded, and you will be advised of the success of your bid by email following the closure of bidding.
+            </TextBlock>
+        </Components:PageFooter>
+        
+        
+    </Grid>
+</Window>

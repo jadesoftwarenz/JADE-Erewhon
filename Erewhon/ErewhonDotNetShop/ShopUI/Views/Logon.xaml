@@ -1,0 +1,45 @@
+﻿<Window x:Class="ShopUI.Views.Logon"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:Components="clr-namespace:ShopUI.Components"
+        xmlns:local="clr-namespace:ShopUI.Views" 
+        xmlns:viewmodels="clr-namespace:ShopUI.ViewModels" 
+        d:DataContext="{d:DesignInstance Type=viewmodels:LogonVM}"
+        mc:Ignorable="d"
+        Title="Erewhon Logon" Height="300" Width="500" ResizeMode="NoResize">
+
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="55" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+
+        <Components:PageHeader Grid.Row="0"/>
+        
+        <Label Grid.Row="1" FontSize="13" Content="Select a Client to use in the Shop app"  HorizontalAlignment="Center" VerticalAlignment="Bottom" />
+        
+        <!-- Client Combobox -->
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Label Content="Select User:" Style="{StaticResource LabelFormField}"/>
+            <ComboBox ItemsSource="{Binding Path=Clients}" SelectedItem="{Binding SelectedClient}" Width="300">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{Binding Path=Name}" />
+                        </StackPanel>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+        </StackPanel>
+
+        <!-- Action Buttons-->
+        <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Center" Margin="20">
+            <Button Command="{Binding LogonCommand}" Content="Login" Margin="5 0" Style="{StaticResource ButtonBlue}" IsEnabled="{Binding ClientSelected}"/>
+            <Button Command="{Binding CloseCommand}" Content="Cancel" Margin="5 0" Style="{StaticResource ButtonGrey}"/>
+        </StackPanel>
+    </Grid>
+</Window>

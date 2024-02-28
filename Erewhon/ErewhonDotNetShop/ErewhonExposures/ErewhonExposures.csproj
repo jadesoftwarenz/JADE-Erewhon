@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFrameworks>net48;net6.0</TargetFrameworks>
+    <OutputType>Library</OutputType>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <Platforms>x64</Platforms>
+  </PropertyGroup>
+  <PropertyGroup>	
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="JadeSoftware.Joob-Ansi" Version="22.0.03.*" />
+  </ItemGroup>
+</Project>
+
