@@ -1,0 +1,8 @@
+#MULTIPLE_SCHEMA_EXTRACT
+CardSchema.scm CardSchema.ddx
+ErewhonBaseSchema.scm ErewhonBaseSchema.ddx
+ErewhonWebServiceConsumerSchema.scm ErewhonWebServiceConsumerSchema.ddx
+ErewhonSelfDocumentorSchema.scm ErewhonSelfDocumentorSchema.ddx
+ErewhonModelSchema.scm ErewhonModelSchema.ddx
+ErewhonViewSchema.scm ErewhonViewSchema.ddx
+ErehwhonExternalInterfacesSchema.scm ErehwhonExternalInterfacesSchema.ddx

@@ -1,0 +1,146 @@
+﻿<Application x:Class="ShopUI.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:ShopUI"
+             StartupUri="Views/Logon.xaml">
+    <Application.Resources>
+
+        <BooleanToVisibilityConverter x:Key="BoolToVis" />
+        
+        <!-- Page Title-->
+        <Style x:Key="PageTitle" TargetType="{x:Type Label}">
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="FontWeight" Value="Bold" />
+            <Setter Property="FontSize" Value="20"/>
+        </Style>
+
+        <!-- Erewhon Logo-->
+        <Style x:Key="ErewhonLogo" TargetType="{x:Type Label}">
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="FontWeight" Value="Bold" />
+            <Setter Property="FontSize" Value="30"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Content" Value="erewhon"/>
+        </Style>
+
+        <!-- Welcome Message -->
+        <Style x:Key="WelcomeMessage" TargetType="{x:Type Label}">
+            <Setter Property="Foreground" Value="#171717"/>
+            <Setter Property="FontWeight" Value="Light" />
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Content" Value="{Binding Path=WelcomeMessage}"/>
+        </Style>
+
+        <!-- Labels -->
+        <Style TargetType="{x:Type Label}">
+            <Setter Property="Foreground" Value="#161616"/>
+            <Setter Property="FontWeight" Value="Normal" />
+            <Setter Property="FontSize" Value="12"/>
+        </Style>
+
+        <!-- Label (Form Field) -->
+        <Style x:Key="LabelFormField" TargetType="{x:Type Label}" BasedOn="{StaticResource {x:Type Label}}">
+            <Setter Property="Foreground" Value="#131313"/>
+            <Setter Property="FontWeight" Value="Medium" />
+            <Setter Property="FontSize" Value="12"/>
+        </Style>
+
+        <!-- Heading 1 -->
+        <Style x:Key="Heading1" TargetType="{x:Type Label}">
+            <Setter Property="Foreground" Value="#161616"/>
+            <Setter Property="FontWeight" Value="Heavy" />
+            <Setter Property="FontSize" Value="25"/>
+        </Style>
+
+        <!-- Heading 2 -->
+        <Style x:Key="Heading2" TargetType="{x:Type Label}">
+            <Setter Property="Foreground" Value="#161616"/>
+            <Setter Property="FontWeight" Value="Bold" />
+            <Setter Property="FontSize" Value="15"/>
+        </Style>
+
+
+        <!-- Textboxes -->
+        <Style TargetType="{x:Type TextBox}">
+            <Style.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Style.Resources>
+            <Setter Property="BorderBrush" Value="#2F80ED"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Foreground" Value="#171717"/>
+            <Setter Property="FontWeight" Value="Light" />
+            <Setter Property="Padding" Value="5"/>
+            <Setter Property="FontSize" Value="16"/>
+        </Style>
+
+        <!-- ComboBoxes -->
+        <Style TargetType="{x:Type ComboBox}">
+            <Style.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="BorderBrush" Value="#2F80ED"/>
+                    <Setter Property="BorderThickness" Value="4"/>
+                </Style>
+            </Style.Resources>
+            <!--<Setter Property="BorderBrush" Value="#2F80ED"/>-->
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Foreground" Value="#171717"/>
+            <Setter Property="FontWeight" Value="Light" />
+            <Setter Property="Padding" Value="5"/>
+            <Setter Property="FontSize" Value="16"/>
+        </Style>
+
+        <!-- Radio Button -->
+        <Style TargetType="{x:Type RadioButton}">
+            <Setter Property="Background" Value="White" />
+            <Setter Property="BorderBrush" Value="#2F80ED"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Foreground" Value="#171717"/>
+            <Setter Property="Margin" Value="0 2"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="FontWeight" Value="Light" />
+            <Setter Property="FontSize" Value="16"/>
+        </Style>
+
+
+        <!-- Button (GLOBAL) -->
+        <Style x:Key="GlobalButton" TargetType="{x:Type Button}">
+            <Style.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Style.Resources>
+            <Setter Property="FontWeight" Value="Normal" />
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="Padding" Value="15 5" />
+            <Setter Property="Margin" Value="2" />
+        </Style>
+
+        <!-- Button (Blue) -->
+        <Style x:Key="ButtonBlue" TargetType="{x:Type Button}" BasedOn="{StaticResource GlobalButton}">
+            <Setter Property="Background" Value="#2F80ED" />
+            <Setter Property="Foreground" Value="#FFFFFF" />
+        </Style>
+
+        <!-- Button (Green) -->
+        <Style x:Key="ButtonGreen" TargetType="{x:Type Button}" BasedOn="{StaticResource GlobalButton}">
+            <Setter Property="Background" Value="#028910" />
+            <Setter Property="Foreground" Value="#FFFFFF" />
+        </Style>
+
+        <!-- Button (Grey) -->
+        <Style x:Key="ButtonGrey" TargetType="{x:Type Button}" BasedOn="{StaticResource GlobalButton}">
+            <Setter Property="Background" Value="#CCCCCC" />
+            <Setter Property="Foreground" Value="Black" />
+        </Style>
+
+        <!-- Button (Red) -->
+        <Style x:Key="ButtonRed" TargetType="{x:Type Button}" BasedOn="{StaticResource GlobalButton}">
+            <Setter Property="Background" Value="#B33A3A" />
+            <Setter Property="Foreground" Value="#FFFFFF" />
+        </Style>
+
+    </Application.Resources>
+</Application>

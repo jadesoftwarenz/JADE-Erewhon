@@ -1,0 +1,49 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <Platforms>x64</Platforms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Assets\cart-icon.png" />
+    <None Remove="Assets\made-in-jade.bmp" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ErewhonExposures\ErewhonExposures.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="JadeSoftware.Jade.DotNetInterop">
+      <HintPath>c:\jade\bin\JadeSoftware.Jade.DotNetInterop.dll</HintPath>
+    </Reference>
+    <Reference Include="JadeSoftware.Joob">
+      <HintPath>c:\jade\bin\JadeSoftware.Joob.dll</HintPath>
+    </Reference>
+    <Reference Include="JadeSoftware.Joob.Common">
+      <HintPath>c:\jade\bin\JadeSoftware.Joob.Common.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\cart-icon.png" />
+    <Resource Include="Assets\made-in-jade.bmp" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="DELETE\TestShop.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="DELETE\TestShop.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+
+</Project>
